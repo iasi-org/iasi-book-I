@@ -1,8 +1,0 @@
-3title: PlantUML2
-author: Javier G. Grandez
-version: 0.1.0
-quarto-required: ">=1.4.0"
-
-contributes:
-  filters:
-    - plantuml3.lua

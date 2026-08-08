@@ -68,12 +68,13 @@ copyright:
 license: "CC BY"
 
 filters:
-  - resources/quarto/_extensions/plantuml5
+  - resources/quarto/_extensions/plantuml
   
-engines:
+filter-options:
   plantuml:
     enabled: true
     server: http://javier:1025
     format: svg
     cache: clean
-    
+    styles:
+      - resources/plantuml/iasi.puml

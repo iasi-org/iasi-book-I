@@ -1,7 +1,0 @@
-FROM plantuml/plantuml-server:jetty-v1.2026.6
-
-LABEL org.opencontainers.image.title="IASI PlantUML Server"
-LABEL org.opencontainers.image.description="Servidor PlantUML local para Quarto"
-LABEL org.opencontainers.image.source="IASI"
-
-EXPOSE 8080
