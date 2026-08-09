@@ -25,6 +25,12 @@ book:
   author: "Javier G. Grandez"
   output-file: "iasi"
 
+  announcement:
+    dismissable: false
+    content: "![](/resources/images/ants.png){.iasi-ants-image}"
+    type: light
+    position: above-navbar
+
   page-footer:
     left: "© 2026 Javier G. Grandez"
     right:

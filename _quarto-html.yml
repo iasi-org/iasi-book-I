@@ -3,10 +3,12 @@ project:
 
 format:
   html:
+    include-before-body: resources/html/banner.html
     theme: cosmo
     toc: true
-    css: iasi.css
-    
+    css: 
+       -resoures/css/iasi.css
+       -resources/css/book.css
     grid:
        body-width: 1440px
        
