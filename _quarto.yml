@@ -1,9 +1,6 @@
 project:
   type: book
 
-  pre-render:
-    - R/generate-book-structure.R
-
   resources:
     - LICENSES/*.txt
     
@@ -68,13 +65,13 @@ copyright:
 license: "CC BY"
 
 filters:
-  - resources/quarto/_extensions/plantuml
-  
+  - iasi-plantuml
+
 filter-options:
   plantuml:
     enabled: true
     server: http://javier:1025
-    format: svg
-    cache: clean
+    cache: true
     styles:
       - resources/plantuml/iasi.puml
+      

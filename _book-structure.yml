@@ -1,0 +1,8 @@
+book:
+  chapters:
+    - "index.qmd"
+    - "01-manifesto.qmd"
+    - "02-principles.qmd"
+    - "90-summary.qmd"
+    - "95-references.qmd"
+    - "99-licenses.qmd"
