@@ -1,0 +1,268 @@
+# La ventana de contexto
+
+En el apartado anterior definimos el contexto como la información que el modelo tiene disponible para realizar una tarea.
+
+Esa información no puede crecer indefinidamente.
+
+Todo modelo de lenguaje tiene un límite sobre la cantidad de contenido que puede procesar en una interacción. Ese espacio limitado recibe el nombre de **ventana de contexto**.
+
+Podemos imaginarla como el área de trabajo que el modelo tiene abierta en un momento determinado. Dentro de ella pueden encontrarse las instrucciones, la conversación, los documentos recuperados, los resultados de herramientas y la respuesta que está generando.
+
+Lo que queda fuera de esa ventana no está disponible para la tarea actual, aunque haya aparecido anteriormente en la conversación o se encuentre almacenado en otro lugar.
+
+## Un espacio de trabajo limitado
+
+La ventana de contexto no representa todo lo que el modelo sabe.
+
+Tampoco es un archivo completo de la conversación ni una memoria permanente. Es el espacio en el que se reúne la información que el modelo puede utilizar durante una operación concreta.
+
+Dentro de ella podrían aparecer, por ejemplo:
+
+* las instrucciones generales del sistema;
+* las reglas definidas por una aplicación;
+* la pregunta actual del usuario;
+* mensajes anteriores de la conversación;
+* documentos relacionados con la tarea;
+* recuerdos recuperados;
+* resultados obtenidos mediante herramientas;
+* ejemplos que orientan la respuesta;
+* el texto que el propio modelo está generando.
+
+Todos estos elementos compiten por el mismo espacio.
+
+Una conversación larga ocupa parte de la ventana. Un documento extenso ocupa otra parte. Las instrucciones y los resultados de herramientas también consumen capacidad. Además, el sistema debe reservar espacio para la respuesta.
+
+Por tanto, el límite no se aplica únicamente a lo que escribe el usuario. Se aplica al conjunto completo de información que interviene en la interacción.
+
+## La ventana se mide en tokens
+
+La capacidad de una ventana de contexto no se mide directamente en palabras, páginas o caracteres. Se mide en **tokens**.
+
+Un token es una unidad utilizada por el modelo para representar y procesar el contenido. Puede corresponder a una palabra completa, a una parte de una palabra, a un signo de puntuación o incluso a un espacio, dependiendo del texto y del sistema utilizado.
+
+Esto significa que dos documentos con el mismo número de palabras pueden ocupar cantidades diferentes de contexto.
+
+El idioma, el vocabulario, el código fuente, los símbolos y el formato influyen en la cantidad de tokens necesarios.
+
+Más adelante estudiaremos los tokens con mayor detalle. Por ahora basta con comprender que toda la información incluida en el contexto debe transformarse en estas unidades antes de que el modelo pueda procesarla.
+
+## Entrada y salida comparten el espacio
+
+La ventana de contexto debe contener tanto la información de entrada como la respuesta generada.
+
+Supongamos que un sistema admite una determinada cantidad total de tokens. Si las instrucciones, la conversación y los documentos consumen casi toda la capacidad disponible, quedará poco espacio para producir la respuesta.
+
+De forma simplificada:
+
+> ventana de contexto = información de entrada + respuesta generada
+
+Por este motivo, proporcionar grandes cantidades de información puede limitar la extensión de la respuesta o provocar que el sistema tenga que excluir parte del contenido anterior.
+
+Una ventana amplia permite trabajar con conversaciones y documentos mayores, pero sigue siendo un recurso limitado que debe administrarse.
+
+## Qué sucede cuando el contenido no cabe
+
+Cuando la información supera la capacidad disponible, el sistema debe tomar decisiones.
+
+Según su diseño, puede:
+
+* eliminar los mensajes más antiguos;
+* resumir parte de la conversación;
+* seleccionar únicamente los documentos considerados relevantes;
+* dividir el contenido en fragmentos;
+* conservar instrucciones y descartar detalles secundarios;
+* recuperar información nuevamente cuando sea necesaria;
+* pedir al usuario que reduzca o divida el material;
+* rechazar la operación porque excede el límite.
+
+El modelo no decide necesariamente todo esto por sí mismo. Con frecuencia es la aplicación que lo rodea la que prepara el contexto antes de realizar cada petición.
+
+Esto explica por qué dos aplicaciones que utilizan el mismo modelo pueden comportarse de manera diferente durante una conversación extensa. Cada una puede seleccionar, resumir y organizar el historial siguiendo criterios distintos.
+
+## Una conversación no permanece intacta
+
+Desde el punto de vista del usuario, una conversación puede parecer continua. Sin embargo, el modelo no conserva necesariamente una copia completa de todo lo dicho.
+
+En cada nueva interacción, el sistema construye el contexto que enviará al modelo. Puede incluir toda la conversación, solo una parte o un resumen de los mensajes anteriores.
+
+Imaginemos una conversación prolongada sobre el diseño de una aplicación. Al principio se establece que la solución debe funcionar sin conexión. Muchas páginas después se propone utilizar un servicio que requiere acceso permanente a Internet.
+
+Si la restricción inicial ya no se encuentra en la ventana de contexto, el modelo puede sugerir una solución incompatible sin ser consciente de la contradicción.
+
+No ha decidido ignorar la condición. Simplemente puede que ya no la tenga disponible.
+
+Esta situación muestra por qué las decisiones importantes no deberían depender únicamente de que aparecieron una vez, mucho tiempo atrás, en una conversación.
+
+## Una ventana grande no garantiza una atención perfecta
+
+Disponer de una ventana de contexto mayor permite incluir más información, pero no garantiza que toda ella influya de la misma manera en la respuesta.
+
+El modelo debe relacionar muchos fragmentos y determinar cuáles son relevantes para la tarea. Cuanto mayor y más heterogéneo sea el contexto, más difícil puede resultar identificar lo esencial.
+
+Una instrucción puede quedar enterrada entre cientos de páginas. Dos documentos pueden contener versiones diferentes de un mismo dato. Un fragmento irrelevante puede parecer relacionado con la pregunta y desviar la respuesta.
+
+Por tanto, existen dos problemas diferentes:
+
+1. que la información no quepa en la ventana;
+2. que la información esté dentro, pero no sea utilizada correctamente.
+
+El primero es un problema de capacidad.
+
+El segundo es un problema de selección, organización e interpretación.
+
+Una ventana amplia resuelve parcialmente el problema de capacidad, pero no sustituye un contexto bien construido.
+
+## Más información no siempre es mejor
+
+Puede parecer razonable proporcionar al modelo toda la información disponible y dejar que encuentre lo importante.
+
+En la práctica, esta estrategia suele introducir ruido.
+
+Supongamos que queremos consultar una norma concreta y añadimos miles de documentos completos. Es posible que la respuesta correcta se encuentre en algún punto del conjunto, pero también pueden aparecer versiones antiguas, excepciones, referencias indirectas y textos sin relación con el caso.
+
+Un contexto de menor tamaño, formado por los fragmentos pertinentes y acompañados de información sobre su procedencia, puede producir un resultado mejor.
+
+El objetivo no consiste en llenar la ventana.
+
+Consiste en utilizarla con información relevante, suficiente y coherente.
+
+## Seleccionar, resumir y recuperar
+
+Los sistemas inteligentes utilizan varias estrategias para trabajar con información que no cabe simultáneamente en la ventana.
+
+### Selección
+
+El sistema incorpora solo los fragmentos que considera relacionados con la pregunta.
+
+Por ejemplo, ante una consulta sobre vacaciones laborales, puede recuperar las secciones correspondientes del convenio en lugar de cargar el documento completo.
+
+### Resumen
+
+La conversación o los documentos anteriores se condensan para conservar sus ideas principales ocupando menos espacio.
+
+El resumen reduce el volumen, aunque también puede eliminar matices o detalles que más adelante resulten importantes.
+
+### Fragmentación
+
+Un documento extenso se divide en partes más pequeñas que pueden procesarse por separado.
+
+Después, el sistema puede combinar los resultados obtenidos en cada fragmento.
+
+### Recuperación
+
+La información se almacena fuera de la ventana y se incorpora únicamente cuando una tarea la necesita.
+
+Esta estrategia permite trabajar con colecciones mucho mayores que la capacidad del modelo. La ventana contiene solo una selección temporal de ese conocimiento externo.
+
+Estas técnicas no eliminan el límite. Lo administran.
+
+## Ventana de contexto y memoria
+
+La ventana de contexto y la memoria resuelven problemas diferentes.
+
+La ventana determina cuánta información puede utilizar el modelo simultáneamente.
+
+La memoria permite conservar información fuera de esa ventana para recuperarla en otro momento.
+
+Una preferencia del usuario puede estar almacenada durante meses, pero no ocupa necesariamente espacio en todas las conversaciones. El sistema puede decidir recuperarla e incorporarla al contexto solo cuando resulte relevante.
+
+Por ejemplo, recordar que un proyecto utiliza Java puede ser útil al generar código para ese proyecto, pero innecesario al responder una pregunta sobre historia.
+
+La memoria amplía la continuidad del sistema, pero para que un recuerdo influya en una respuesta debe volver a introducirse en la ventana de contexto.
+
+## Ventana de contexto y documentos
+
+Un sistema puede tener acceso a miles o millones de documentos sin incluirlos todos en cada petición.
+
+Los documentos permanecen almacenados fuera del modelo. Cuando el usuario realiza una consulta, el sistema busca los fragmentos más relacionados y los coloca dentro de la ventana.
+
+El modelo responde utilizando esa selección.
+
+Esto permite distinguir entre:
+
+* la información disponible en el conjunto documental;
+* la información recuperada para una consulta;
+* la información que finalmente entra en la ventana;
+* la información que el modelo utiliza al generar la respuesta.
+
+Que un documento exista no significa que haya sido recuperado.
+
+Que haya sido recuperado no garantiza que se haya seleccionado el fragmento correcto.
+
+Y que el fragmento esté dentro del contexto no garantiza que el modelo lo interprete adecuadamente.
+
+Cada paso puede afectar al resultado.
+
+## Un ejemplo práctico
+
+Imaginemos un asistente que ayuda a mantener un proyecto de software.
+
+El sistema dispone de:
+
+* el código fuente completo;
+* la documentación de arquitectura;
+* las decisiones técnicas del equipo;
+* el historial de incidencias;
+* las instrucciones del usuario;
+* la conversación actual.
+
+Todo ese material puede superar ampliamente la ventana de contexto.
+
+Ante una pregunta sobre un error concreto, el sistema podría construir el contexto con:
+
+1. las instrucciones generales;
+2. la descripción del error;
+3. los archivos de código relacionados;
+4. la decisión arquitectónica aplicable;
+5. los mensajes recientes de la conversación;
+6. el resultado de una herramienta de análisis.
+
+El resto del proyecto continúa existiendo, pero no se incluye porque no parece necesario para resolver esa tarea.
+
+La calidad de la respuesta dependerá de que el sistema haya seleccionado correctamente la información relevante.
+
+## Diseñar para no olvidar
+
+En procesos largos no conviene confiar en que todo permanecerá disponible por el simple hecho de formar parte de una conversación.
+
+Las decisiones importantes pueden conservarse de forma explícita:
+
+* en documentos de requisitos;
+* en registros de decisiones;
+* en resúmenes actualizados;
+* en una memoria estructurada;
+* en el estado de una tarea;
+* en bases de conocimiento;
+* en instrucciones estables del sistema.
+
+De este modo, la información puede recuperarse cuando sea necesaria, en lugar de depender de que siga ocupando una posición dentro del historial visible.
+
+Esta práctica no es exclusiva de la inteligencia artificial. En ingeniería ya documentamos requisitos, interfaces, decisiones y restricciones porque sabemos que la memoria humana y las conversaciones informales no son suficientes.
+
+La ventana de contexto introduce la misma necesidad en los sistemas inteligentes.
+
+## El contexto debe administrarse
+
+La ventana de contexto es un recurso de la arquitectura.
+
+Su gestión afecta a:
+
+* la continuidad de las conversaciones;
+* la cantidad de documentos que pueden analizarse;
+* la longitud de las respuestas;
+* el coste de cada operación;
+* el tiempo necesario para procesar la petición;
+* la coherencia entre distintos pasos;
+* la conservación de decisiones importantes;
+* la protección de información privada.
+
+Por ello, diseñar un sistema inteligente implica decidir no solo qué modelo utilizar, sino también qué información debe entrar en su ventana en cada momento.
+
+## Idea clave
+
+La ventana de contexto establece cuánto puede tener presente el modelo durante una interacción.
+
+Una ventana mayor permite incluir más información, pero no sustituye la selección, la organización ni la memoria. El reto no consiste únicamente en disponer de más espacio, sino en decidir qué debe ocuparlo.
+
+Para comprender cómo se mide ese espacio y cómo llega el texto hasta el modelo, el siguiente paso será estudiar los **tokens**.
+

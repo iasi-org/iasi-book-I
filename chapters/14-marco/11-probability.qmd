@@ -1,0 +1,1116 @@
+# Generación probabilística
+
+En el apartado anterior vimos que un modelo de lenguaje genera una respuesta token a token.
+
+En cada paso, el modelo no produce directamente una palabra definitiva. Calcula una distribución de probabilidades sobre los posibles tokens que podrían continuar la secuencia.
+
+Dado un contexto:
+
+$$
+t_1,t_2,\ldots,t_n
+$$
+
+el modelo estima:
+
+$$
+P_{\theta}
+\left(
+t_{n+1}
+\mid
+t_1,t_2,\ldots,t_n
+\right)
+$$
+
+El resultado podría representarse, de forma simplificada, así:
+
+```text
+"datos"          0,42
+"información"    0,27
+"conocimiento"   0,16
+"reglas"         0,08
+otros            0,07
+```
+
+El modelo ha calculado varias continuaciones posibles.
+
+El sistema debe decidir cuál utilizar.
+
+Después, el token seleccionado se añade al contexto y el proceso se repite para generar el siguiente.
+
+## Una respuesta se construye paso a paso
+
+Supongamos que el contexto termina con:
+
+> La ventana de contexto limita la cantidad de...
+
+El modelo calcula las probabilidades del siguiente token.
+
+Podría seleccionar:
+
+```text
+información
+```
+
+La secuencia pasa a ser:
+
+> La ventana de contexto limita la cantidad de información...
+
+El modelo vuelve a calcular las probabilidades y selecciona otro token:
+
+```text
+que
+```
+
+Después:
+
+```text
+el
+```
+
+Y posteriormente:
+
+```text
+modelo
+```
+
+La respuesta emerge mediante numerosas decisiones sucesivas:
+
+```text
+La → ventana → de → contexto → limita → ...
+```
+
+No existe necesariamente una frase completa almacenada dentro del modelo esperando ser recuperada.
+
+La frase se construye durante la generación.
+
+## De las representaciones a las probabilidades
+
+Después de procesar el contexto, el modelo obtiene una representación interna de la secuencia.
+
+Esa representación se transforma en una puntuación para cada token del vocabulario.
+
+Estas puntuaciones se denominan habitualmente **logits**.
+
+Podemos representarlas como:
+
+$$
+\mathbf{z}
+=
+[z_1,z_2,\ldots,z_V]
+$$
+
+donde:
+
+* $V$ es el tamaño del vocabulario;
+* $z_i$ es la puntuación asignada al token $i$.
+
+Los logits no son todavía probabilidades.
+
+Pueden ser positivos, negativos y no tienen por qué sumar uno.
+
+Para convertirlos en una distribución de probabilidad se utiliza normalmente la función *softmax*:
+
+$$
+P(t_i)
+=
+\frac{e^{z_i}}
+{\sum_{j=1}^{V}e^{z_j}}
+$$
+
+El resultado cumple:
+
+$$
+0\leq P(t_i)\leq 1
+$$
+
+y:
+
+$$
+\sum_{i=1}^{V}P(t_i)=1
+$$
+
+Cada token recibe así una probabilidad relativa dentro del vocabulario.
+
+## La opción más probable
+
+La estrategia más sencilla consiste en seleccionar siempre el token con mayor probabilidad.
+
+$$
+t_{n+1}
+=
+\arg\max_{t}
+P
+\left(
+t
+\mid
+t_1,\ldots,t_n
+\right)
+$$
+
+Esta estrategia se denomina habitualmente **selección voraz** o *greedy decoding*.
+
+Si las probabilidades son:
+
+```text
+"datos"          0,42
+"información"    0,27
+"conocimiento"   0,16
+"reglas"         0,08
+```
+
+se seleccionará:
+
+```text
+datos
+```
+
+La selección voraz produce resultados relativamente estables, pero no garantiza la mejor respuesta completa.
+
+La opción más probable en un paso puede conducir posteriormente a una continuación pobre, repetitiva o menos adecuada que otra alternativa inicialmente algo menos probable.
+
+El modelo toma decisiones locales mientras construye una secuencia global.
+
+## Probabilidad local y calidad global
+
+Supongamos que una secuencia puede continuar por dos caminos.
+
+```text
+Camino A:
+probabilidad inicial alta
+continuación posterior pobre
+
+Camino B:
+probabilidad inicial algo menor
+continuación posterior mejor
+```
+
+Elegir siempre la opción más probable en cada paso no implica obtener la secuencia completa más adecuada.
+
+La probabilidad de una secuencia puede expresarse como:
+
+$$
+P(t_1,t_2,\ldots,t_n)
+=
+\prod_{i=1}^{n}
+P
+\left(
+t_i
+\mid
+t_1,\ldots,t_{i-1}
+\right)
+$$
+
+Cada decisión condiciona las siguientes.
+
+Un token seleccionado al comienzo puede cambiar por completo el camino posterior.
+
+Esto ayuda a explicar por qué pequeñas variaciones durante la generación pueden producir respuestas notablemente diferentes.
+
+## Muestreo
+
+En lugar de elegir siempre el token más probable, el sistema puede **muestrear** uno de acuerdo con la distribución calculada.
+
+Si las probabilidades son:
+
+```text
+"datos"          0,42
+"información"    0,27
+"conocimiento"   0,16
+"reglas"         0,08
+otros            0,07
+```
+
+«datos» sigue siendo la opción más probable, pero «información» o «conocimiento» también pueden seleccionarse.
+
+Este procedimiento introduce variabilidad.
+
+La misma pregunta puede producir respuestas distintas aunque:
+
+* el modelo sea el mismo;
+* el contexto sea el mismo;
+* las instrucciones sean las mismas.
+
+La diferencia puede proceder de las decisiones tomadas durante el muestreo.
+
+## Temperatura
+
+La **temperatura** modifica la distribución de probabilidades antes de seleccionar el siguiente token.
+
+Puede expresarse como:
+
+$$
+P_T(t_i)
+=
+\frac{e^{z_i/T}}
+{\sum_{j=1}^{V}e^{z_j/T}}
+$$
+
+donde $T$ representa la temperatura.
+
+### Temperatura baja
+
+Cuando $T$ es menor, la distribución se concentra en los tokens con puntuaciones más altas.
+
+```text
+resultado:
+más estable
+más predecible
+menos variado
+```
+
+### Temperatura alta
+
+Cuando $T$ aumenta, las probabilidades se distribuyen entre más alternativas.
+
+```text
+resultado:
+más variado
+más creativo
+menos predecible
+mayor riesgo de desviación
+```
+
+La temperatura no aumenta la inteligencia del modelo.
+
+Tampoco mejora automáticamente la creatividad.
+
+Modifica cuánto se favorecen las opciones más probables frente a otras alternativas.
+
+## Un ejemplo de temperatura
+
+Supongamos que los logits producen inicialmente estas probabilidades:
+
+```text
+A   0,65
+B   0,25
+C   0,10
+```
+
+Con una temperatura baja, podrían transformarse aproximadamente en:
+
+```text
+A   0,87
+B   0,11
+C   0,02
+```
+
+Con una temperatura más alta, podrían quedar:
+
+```text
+A   0,48
+B   0,31
+C   0,21
+```
+
+La opción A continúa siendo la más probable, pero las demás tienen más posibilidades de ser elegidas.
+
+Este ejemplo es ilustrativo. Los valores reales dependen de los logits y de la temperatura aplicada.
+
+## Temperatura cero
+
+A veces se habla de temperatura cero para indicar una selección prácticamente determinista.
+
+En ese caso, el sistema elige normalmente el token con mayor puntuación.
+
+Sin embargo, esto no garantiza siempre una repetición idéntica.
+
+El resultado puede variar por:
+
+* cambios en la versión del modelo;
+* diferencias en el contexto;
+* herramientas externas;
+* cálculos paralelos;
+* bibliotecas;
+* infraestructura;
+* optimizaciones internas.
+
+La configuración reduce la variabilidad de la selección, pero la reproducibilidad completa depende del sistema entero.
+
+## Top-k
+
+La estrategia **top-k** limita la selección a los $k$ tokens más probables.
+
+Si:
+
+$$
+k=3
+$$
+
+y la distribución es:
+
+```text
+A   0,40
+B   0,25
+C   0,15
+D   0,10
+E   0,06
+F   0,04
+```
+
+solo se conservarán:
+
+```text
+A
+B
+C
+```
+
+Las probabilidades se normalizan de nuevo dentro de ese conjunto.
+
+Los demás tokens quedan excluidos de la selección.
+
+Un valor pequeño produce resultados más controlados.
+
+Un valor grande permite mayor diversidad.
+
+El problema es que un mismo valor de $k$ se aplica de igual forma aunque la distribución sea muy diferente.
+
+## Top-p
+
+La estrategia **top-p**, también denominada muestreo por núcleo o *nucleus sampling*, selecciona el conjunto mínimo de tokens cuya probabilidad acumulada alcanza un umbral $p$.
+
+Por ejemplo, si:
+
+$$
+p=0,90
+$$
+
+y tenemos:
+
+```text
+A   0,45
+B   0,25
+C   0,15
+D   0,08
+E   0,05
+F   0,02
+```
+
+la suma acumulada sería:
+
+```text
+A             0,45
+A + B         0,70
+A + B + C     0,85
+A + B + C + D 0,93
+```
+
+El conjunto de candidatos incluiría:
+
+```text
+A, B, C y D
+```
+
+Los tokens restantes se excluyen.
+
+La ventaja de top-p es que el número de candidatos se adapta a la distribución.
+
+Cuando una opción es claramente dominante, el conjunto puede ser pequeño.
+
+Cuando existen muchas alternativas razonables, puede ampliarse.
+
+## Combinar estrategias
+
+Los sistemas pueden combinar:
+
+* temperatura;
+* top-k;
+* top-p;
+* penalizaciones;
+* restricciones de formato;
+* reglas sobre tokens permitidos.
+
+El proceso conceptual podría ser:
+
+```text
+logits
+  ↓
+temperatura
+  ↓
+filtrado top-k o top-p
+  ↓
+penalizaciones
+  ↓
+normalización
+  ↓
+selección
+```
+
+El orden y la implementación exactos dependen del sistema.
+
+Estas decisiones forman parte de la configuración de generación, no de los parámetros aprendidos durante el entrenamiento.
+
+## Penalizaciones de repetición
+
+Los modelos pueden caer en repeticiones:
+
+> El sistema permite analizar el sistema y mejorar el sistema mediante...
+
+Para reducirlas pueden aplicarse penalizaciones a tokens que ya han aparecido.
+
+Una modificación conceptual de la puntuación podría expresarse como:
+
+$$
+z_i'
+=
+z_i-\lambda r_i
+$$
+
+donde:
+
+* $z_i$ es la puntuación original;
+* $r_i$ representa la repetición del token;
+* $\lambda$ controla la penalización;
+* $z_i'$ es la puntuación modificada.
+
+Estas penalizaciones pueden mejorar la variedad, pero si son excesivas también pueden perjudicar:
+
+* términos técnicos que deben repetirse;
+* nombres propios;
+* estructuras formales;
+* código;
+* listas coherentes.
+
+La repetición no siempre es un error.
+
+## Restricciones de generación
+
+En algunas tareas no basta con favorecer determinadas opciones. Es necesario impedir secuencias inválidas.
+
+Por ejemplo, si el sistema debe generar JSON, puede limitar la selección para respetar su gramática.
+
+```json
+{
+  "estado": "correcto"
+}
+```
+
+El sistema puede restringir qué tokens son válidos en cada posición.
+
+Esto se denomina a menudo **generación restringida**.
+
+Puede utilizarse para:
+
+* JSON;
+* XML;
+* llamadas a funciones;
+* expresiones regulares;
+* lenguajes formales;
+* estructuras de datos;
+* respuestas con un esquema definido.
+
+Las restricciones reducen la libertad de generación y aumentan la fiabilidad del formato.
+
+No garantizan que el contenido sea correcto.
+
+Un JSON puede ser sintácticamente válido y contener datos inventados.
+
+## Generar no es recuperar
+
+Cuando un modelo responde a una pregunta, puede parecer que ha localizado una frase dentro de su conocimiento.
+
+En realidad, genera una continuación compatible con:
+
+* los parámetros aprendidos;
+* el contexto recibido;
+* las instrucciones;
+* las decisiones de muestreo.
+
+Esto explica por qué puede expresar la misma idea de distintas maneras.
+
+También explica por qué puede completar los huecos con información plausible aunque no disponga de datos suficientes.
+
+El objetivo inmediato del modelo es producir una continuación probable.
+
+No verificar que cada afirmación corresponde a un hecho verdadero.
+
+## Plausibilidad y verdad
+
+Una frase puede ser lingüísticamente plausible y factualmente falsa.
+
+Por ejemplo:
+
+> La norma fue aprobada en 2019 y entró en vigor al año siguiente.
+
+La estructura es natural.
+
+La relación temporal parece razonable.
+
+Pero el modelo podría haber generado las fechas sin disponer de una fuente que las confirme.
+
+La probabilidad calculada responde a una pregunta semejante a:
+
+> ¿Qué token encaja bien a continuación?
+
+No responde necesariamente a:
+
+> ¿Qué afirmación está verificada mediante una fuente fiable?
+
+Podemos expresar esta diferencia conceptualmente:
+
+$$
+P(\text{texto plausible})
+\neq
+P(\text{afirmación verdadera})
+$$
+
+La calidad lingüística y la exactitud factual son dimensiones diferentes.
+
+## Las alucinaciones
+
+Se denomina habitualmente **alucinación** a la generación de contenido presentado como válido, pero que no está respaldado por los datos disponibles o es incorrecto.
+
+Puede incluir:
+
+* hechos inventados;
+* citas inexistentes;
+* referencias falsas;
+* fechas incorrectas;
+* funciones que no existen;
+* detalles añadidos a una historia;
+* interpretaciones no sustentadas;
+* resultados supuestamente obtenidos de una herramienta.
+
+El término no describe un único mecanismo interno.
+
+Agrupa diferentes tipos de error que pueden surgir por varias razones.
+
+## Por qué aparecen
+
+Las alucinaciones pueden producirse cuando:
+
+* falta información en el contexto;
+* la pregunta presupone algo falso;
+* los datos de entrenamiento contienen errores;
+* el modelo mezcla patrones parecidos;
+* se solicita una precisión que no puede garantizar;
+* la generación favorece continuaciones plausibles;
+* se recuperan documentos incorrectos;
+* el sistema no verifica la salida;
+* el modelo intenta satisfacer la petición en lugar de reconocer la incertidumbre.
+
+La naturaleza probabilística contribuye al problema, pero no es su única causa.
+
+Una configuración determinista también puede producir siempre la misma afirmación falsa.
+
+## Alucinación no significa aleatoriedad
+
+Podemos tener:
+
+```text
+respuesta variable y correcta
+```
+
+o:
+
+```text
+respuesta estable e incorrecta
+```
+
+La aleatoriedad afecta a qué continuación se selecciona.
+
+La alucinación afecta a la relación entre el contenido generado y la realidad o las fuentes disponibles.
+
+Reducir la temperatura puede disminuir la variedad, pero no convierte automáticamente una respuesta en verdadera.
+
+## Confianza expresiva
+
+Los modelos pueden formular una afirmación con seguridad aunque sea incorrecta.
+
+Por ejemplo:
+
+> El artículo 42 establece claramente que...
+
+La expresión «establece claramente» transmite certeza.
+
+Sin embargo, el estilo de la frase no representa una medición fiable de la confianza factual.
+
+El modelo ha aprendido cómo suelen redactarse las respuestas seguras.
+
+No necesariamente ha verificado el artículo mencionado.
+
+Por tanto:
+
+$$
+\text{seguridad del tono}
+\neq
+\text{certeza del contenido}
+$$
+
+La confianza debe apoyarse en fuentes, validaciones o cálculos externos, no únicamente en la forma de expresarse.
+
+## Probabilidad del token y confianza factual
+
+Una probabilidad alta para un token tampoco significa que la afirmación completa sea verdadera.
+
+El modelo puede asignar una gran probabilidad a una continuación porque aparece frecuentemente en estructuras semejantes.
+
+Por ejemplo, tras:
+
+> La capital de Australia es...
+
+puede asignar correctamente una probabilidad alta a «Canberra».
+
+Pero en una cuestión rara, reciente o ambigua puede asignar gran probabilidad a una asociación frecuente y equivocada.
+
+La probabilidad del siguiente token mide compatibilidad con el contexto y los parámetros.
+
+No constituye una certificación factual.
+
+## Conocimiento incompleto
+
+Cuando el contexto no contiene la respuesta, el modelo puede apoyarse en patrones generales.
+
+Supongamos que se pregunta:
+
+> ¿Qué decidió ayer el comité interno del proyecto?
+
+Si el modelo no dispone del acta, del correo o de una memoria fiable, no puede conocer la decisión concreta.
+
+Sin embargo, puede generar una respuesta plausible basada en decisiones habituales de comités semejantes.
+
+El resultado puede sonar razonable y ser completamente inventado.
+
+La respuesta correcta debería reconocer la ausencia de información o utilizar una herramienta para buscarla.
+
+## Preguntas con premisas falsas
+
+El modelo puede aceptar una premisa falsa incluida en la pregunta.
+
+Por ejemplo:
+
+> ¿Por qué Einstein recibió el Premio Nobel por la teoría de la relatividad?
+
+La pregunta presupone que recibió el premio por ese trabajo.
+
+Un sistema puede seguir la estructura y generar una explicación incorrecta en lugar de corregir la premisa.
+
+Este comportamiento puede entenderse como una forma de continuación cooperativa: el modelo intenta responder dentro del marco planteado.
+
+Por ello, una buena respuesta debe evaluar también las premisas de la consulta.
+
+## Citas y referencias
+
+Las referencias bibliográficas son especialmente sensibles.
+
+Un modelo puede generar:
+
+* títulos plausibles;
+* nombres de autores relacionados;
+* revistas existentes;
+* años razonables;
+* identificadores con formato correcto.
+
+La combinación puede parecer una referencia académica auténtica sin corresponder a ninguna publicación real.
+
+Por ejemplo:
+
+```text
+Apellido, A. (2021). Título plausible.
+Revista de nombre verosímil, 14(2), 120-135.
+```
+
+La estructura es correcta.
+
+La referencia puede ser completamente inventada.
+
+Por eso, las citas deben verificarse mediante catálogos, bases bibliográficas o documentos originales.
+
+## Código plausible
+
+La generación de código presenta un problema semejante.
+
+El modelo puede producir una llamada como:
+
+```python
+resultado = biblioteca.funcion_perfectamente_plausible()
+```
+
+La función tiene un nombre razonable y encaja con el estilo de la biblioteca.
+
+Sin embargo, puede no existir.
+
+También puede:
+
+* mezclar versiones;
+* utilizar parámetros incorrectos;
+* combinar APIs diferentes;
+* omitir casos de error;
+* producir código inseguro.
+
+La apariencia profesional del código no sustituye su compilación, ejecución y prueba.
+
+## Reducir alucinaciones
+
+No existe una técnica única que elimine completamente las alucinaciones.
+
+Pueden reducirse mediante varias estrategias.
+
+### Proporcionar contexto suficiente
+
+Incluir los datos necesarios evita que el modelo tenga que completar huecos.
+
+### Recuperar fuentes
+
+Los documentos relevantes pueden incorporarse antes de generar la respuesta.
+
+### Solicitar citas verificables
+
+La respuesta puede exigir referencias a los fragmentos utilizados.
+
+### Utilizar herramientas
+
+Cálculos, búsquedas y consultas exactas pueden delegarse en sistemas especializados.
+
+### Validar la salida
+
+Los hechos, formatos, números y acciones pueden revisarse antes de aceptarse.
+
+### Permitir reconocer incertidumbre
+
+Las instrucciones deben permitir que el modelo diga que no dispone de información suficiente.
+
+### Limitar el ámbito
+
+Una tarea bien definida reduce interpretaciones innecesarias.
+
+### Separar generación y verificación
+
+Un proceso puede generar una propuesta y otro comprobarla.
+
+## Generación y recuperación
+
+Un sistema puede combinar generación con recuperación documental.
+
+```text
+pregunta
+  ↓
+búsqueda
+  ↓
+fragmentos relevantes
+  ↓
+contexto
+  ↓
+generación
+```
+
+Esta técnica permite que el modelo utilice información externa y actualizable.
+
+Sin embargo, no elimina todos los errores.
+
+Puede fallar porque:
+
+* no se recuperó el documento correcto;
+* el fragmento era insuficiente;
+* había varias versiones;
+* el modelo ignoró una parte;
+* la fuente contenía un error;
+* la respuesta añadió detalles no presentes.
+
+La recuperación mejora la base informativa.
+
+La generación sigue necesitando control.
+
+## Generación y herramientas
+
+Para determinadas tareas resulta mejor ejecutar una herramienta que confiar en la continuación textual.
+
+Por ejemplo:
+
+```text
+Cálculo exacto
+→ calculadora
+
+Fecha actual
+→ reloj o calendario
+
+Datos empresariales
+→ base de datos
+
+Cotización
+→ servicio financiero
+
+Código
+→ compilador y pruebas
+```
+
+El modelo puede decidir qué herramienta utilizar, preparar sus parámetros e interpretar el resultado.
+
+La exactitud procede entonces de la herramienta, no de la probabilidad lingüística del modelo.
+
+## Variabilidad útil
+
+La variabilidad no es necesariamente un defecto.
+
+Puede ser útil para:
+
+* proponer alternativas;
+* explorar diseños;
+* generar ejemplos;
+* redactar distintas versiones;
+* buscar soluciones creativas;
+* evitar respuestas repetitivas.
+
+En estas tareas, varias continuaciones pueden ser válidas.
+
+Por ejemplo:
+
+> Propón tres nombres para este componente.
+
+No existe una única respuesta correcta.
+
+Una generación más abierta puede ofrecer mayor diversidad.
+
+## Variabilidad problemática
+
+En otras tareas, la variabilidad puede ser indeseable.
+
+Por ejemplo:
+
+* extracción de datos;
+* clasificación;
+* generación de configuraciones;
+* aplicación de normas;
+* respuestas jurídicas;
+* cálculos;
+* ejecución de acciones.
+
+En estos casos interesa:
+
+* reducir la temperatura;
+* restringir el formato;
+* validar el resultado;
+* utilizar herramientas;
+* registrar la configuración.
+
+La estrategia de generación debe adaptarse a la tarea.
+
+## Determinismo y creatividad
+
+No existe un valor universal adecuado para todos los usos.
+
+Podemos imaginar un continuo:
+
+```text
+más determinismo
+│
+├── extracción
+├── clasificación
+├── código estructurado
+├── explicación técnica
+├── redacción
+├── exploración
+└── creación literaria
+                    │
+              más diversidad
+```
+
+Incluso dentro de una misma tarea pueden combinarse fases.
+
+Un sistema puede generar varias propuestas con mayor diversidad y seleccionar después una mediante criterios más estrictos.
+
+## Semillas aleatorias
+
+Algunos sistemas permiten utilizar una **semilla** para controlar el generador de números pseudoaleatorios.
+
+Con el mismo modelo, contexto, configuración y semilla, puede resultar más fácil reproducir una salida.
+
+Sin embargo, la semilla no garantiza siempre identidad absoluta.
+
+También influyen:
+
+* la infraestructura;
+* el paralelismo;
+* las versiones;
+* las optimizaciones numéricas;
+* las herramientas externas.
+
+La semilla ayuda a controlar una parte de la variabilidad, no todo el sistema.
+
+## Finalización de la respuesta
+
+La generación debe detenerse en algún momento.
+
+Puede finalizar cuando:
+
+* aparece un token especial de fin;
+* se alcanza el número máximo de tokens;
+* se encuentra una secuencia de parada;
+* se completa una estructura;
+* la aplicación interrumpe el proceso;
+* una herramienta cambia el flujo.
+
+Si se alcanza el límite máximo, la respuesta puede quedar incompleta.
+
+Por ejemplo:
+
+```text
+La solución consta de tres pasos:
+
+1. Preparar los datos.
+2. Validar el esquema.
+3.
+```
+
+El modelo no necesariamente decidió terminar ahí.
+
+El sistema pudo agotar el espacio disponible para la salida.
+
+## Longitud de la respuesta
+
+La longitud también emerge de las probabilidades y de las condiciones de parada.
+
+Las instrucciones pueden orientar:
+
+```text
+Responde en una frase.
+
+Escribe un análisis detallado.
+
+Limita la respuesta a 200 palabras.
+```
+
+Sin embargo, el cumplimiento no siempre es exacto.
+
+Para límites estrictos, la aplicación puede:
+
+* contar tokens;
+* truncar;
+* pedir una corrección;
+* validar la longitud;
+* dividir la tarea.
+
+## Generación estructurada
+
+Cuando la salida debe utilizarse por otro sistema, conviene evitar el texto libre.
+
+Por ejemplo:
+
+```json
+{
+  "prioridad": "alta",
+  "requiere_respuesta": true,
+  "motivo": "Interrupción del servicio"
+}
+```
+
+La generación estructurada facilita:
+
+* validación;
+* integración;
+* automatización;
+* detección de errores;
+* aplicación de permisos.
+
+Sin embargo, debemos distinguir:
+
+```text
+estructura válida
+```
+
+de:
+
+```text
+contenido correcto
+```
+
+Ambas condiciones deben comprobarse.
+
+## Evaluar una generación
+
+La calidad puede analizarse mediante varios criterios:
+
+* corrección;
+* relevancia;
+* coherencia;
+* fidelidad a las fuentes;
+* cumplimiento de instrucciones;
+* claridad;
+* seguridad;
+* formato;
+* utilidad.
+
+No existe una única medida válida para todas las tareas.
+
+En una traducción puede evaluarse la fidelidad.
+
+En código, la compilación y las pruebas.
+
+En una extracción, la coincidencia con los datos reales.
+
+En una explicación, la comprensión y la exactitud.
+
+La fluidez por sí sola es una medida insuficiente.
+
+## Un ejemplo completo
+
+Supongamos que el usuario escribe:
+
+> Resume los principales riesgos del proyecto.
+
+La aplicación incorpora:
+
+* instrucciones;
+* documentos;
+* memoria;
+* historial;
+* pregunta.
+
+El modelo procesa el contexto y calcula las probabilidades del primer token.
+
+Después genera:
+
+```text
+Los
+```
+
+Con la nueva secuencia calcula el siguiente:
+
+```text
+principales
+```
+
+Y continúa:
+
+```text
+riesgos
+```
+
+En cada paso intervienen:
+
+* los parámetros aprendidos;
+* el contexto;
+* la atención;
+* la configuración de generación;
+* los tokens ya seleccionados.
+
+Si los documentos contienen los riesgos correctos, el sistema dispone de una buena base.
+
+Si la información es incompleta, el modelo puede añadir riesgos habituales pero no confirmados.
+
+Si la temperatura es mayor, puede variar la formulación o introducir alternativas menos probables.
+
+Si se exige una estructura concreta, la generación puede limitarse a un esquema JSON.
+
+El resultado final no depende únicamente del modelo.
+
+Depende del proceso completo de generación.
+
+## Idea clave
+
+Un modelo generativo calcula probabilidades sobre los posibles tokens siguientes.
+
+La respuesta se construye seleccionando un token, incorporándolo a la secuencia y repitiendo el proceso.
+
+La temperatura, top-k, top-p y otras configuraciones modifican cómo se elige entre las alternativas.
+
+Esta naturaleza probabilística permite flexibilidad y variedad, pero también hace posible que el modelo genere contenido plausible y falso.
+
+Una respuesta segura y bien redactada no constituye una prueba de verdad.
+
+La generación debe complementarse con contexto adecuado, fuentes, herramientas, validaciones y criterios adaptados a la tarea.
+
+El modelo genera.
+
+El sistema debe decidir cuándo confiar, cuándo verificar y qué hacer con el resultado.
+

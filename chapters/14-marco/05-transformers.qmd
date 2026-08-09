@@ -1,0 +1,703 @@
+# Transformers
+
+En los apartados anteriores vimos cómo el texto se divide en tokens y cómo estos se transforman en embeddings.
+
+Esas representaciones deben procesarse para identificar relaciones, interpretar el contexto y producir nuevas representaciones cada vez más elaboradas.
+
+La arquitectura que hizo posible buena parte de los grandes modelos de lenguaje actuales se denomina **transformer**.
+
+Un transformer es una arquitectura de red neuronal diseñada para procesar secuencias de información. Aunque se hizo especialmente conocida por su aplicación al lenguaje, también puede utilizarse con imágenes, audio, vídeo, código y otros tipos de datos.
+
+## El problema de las secuencias
+
+El lenguaje es una secuencia.
+
+Las palabras aparecen en un orden y mantienen relaciones entre sí. Para interpretar una frase, no basta con comprender cada palabra por separado.
+
+Consideremos:
+
+> El perro persigue al gato.
+
+> El gato persigue al perro.
+
+Ambas frases contienen prácticamente los mismos elementos, pero el cambio de orden modifica completamente su significado.
+
+También existen relaciones entre palabras que pueden encontrarse muy alejadas:
+
+> El informe que el equipo de seguridad entregó después de revisar todos los sistemas fue aprobado.
+
+Para interpretar «fue aprobado», debemos relacionarlo con «el informe», aunque entre ambos aparezca una frase completa.
+
+Los modelos anteriores a los transformers procesaban las secuencias principalmente de forma ordenada, elemento tras elemento:
+
+```text
+token 1 → token 2 → token 3 → token 4
+```
+
+Cada paso dependía de la información transmitida por los anteriores.
+
+Este enfoque permitía tratar texto, pero presentaba dificultades al trabajar con secuencias largas. La información debía recorrer numerosos pasos y las relaciones entre elementos alejados podían debilitarse.
+
+Los transformers introdujeron una arquitectura capaz de relacionar directamente distintas posiciones de la secuencia.
+
+## Una arquitectura por bloques
+
+Un transformer está formado por una sucesión de bloques o capas.
+
+De forma simplificada:
+
+```text
+tokens
+  ↓
+embeddings y posición
+  ↓
+bloque transformer
+  ↓
+bloque transformer
+  ↓
+bloque transformer
+  ↓
+representaciones contextualizadas
+```
+
+Cada bloque recibe un conjunto de representaciones, las transforma y entrega el resultado al siguiente.
+
+Podemos expresar este proceso de forma general:
+
+$$
+\mathbf{H}^{(l+1)}
+=
+F^{(l)}
+\left(
+\mathbf{H}^{(l)}
+\right)
+$$
+
+donde:
+
+* $\mathbf{H}^{(l)}$ representa las entradas de la capa $l$;
+* $F^{(l)}$ representa las operaciones realizadas por esa capa;
+* $\mathbf{H}^{(l+1)}$ es el resultado entregado a la siguiente.
+
+Las primeras capas pueden reconocer relaciones relativamente simples, como combinaciones frecuentes, estructuras gramaticales o patrones locales.
+
+Las capas posteriores pueden construir representaciones más abstractas relacionadas con el tema, la intención, las referencias o la función de cada fragmento dentro del conjunto.
+
+Estas funciones no están separadas en compartimentos perfectamente identificables. El conocimiento se distribuye entre muchas capas, parámetros y operaciones.
+
+## El orden de los tokens
+
+Los embeddings representan los tokens, pero no indican necesariamente el orden en que aparecen.
+
+Estas frases contienen los mismos tokens:
+
+> Javier llamó a Laura.
+
+> Laura llamó a Javier.
+
+Para distinguirlas, el transformer necesita información sobre la posición de cada elemento.
+
+De forma simplificada, la entrada puede construirse combinando el embedding del token con una representación de su posición:
+
+$$
+\mathbf{x}_i
+=
+\mathbf{e}_i
++
+\mathbf{p}_i
+$$
+
+donde:
+
+* $\mathbf{e}_i$ es el embedding del token;
+* $\mathbf{p}_i$ representa su posición;
+* $\mathbf{x}_i$ es la entrada que recibe el transformer.
+
+Las distintas arquitecturas pueden representar la posición de formas diferentes. Algunas utilizan vectores aprendidos; otras emplean funciones matemáticas o relaciones entre posiciones.
+
+El objetivo es el mismo: permitir que el modelo conozca el orden y la distancia entre los elementos.
+
+## Los componentes de un bloque
+
+Aunque existen numerosas variantes, un bloque transformer suele combinar varios elementos:
+
+* un mecanismo para relacionar los tokens;
+* una red neuronal que transforma cada representación;
+* conexiones residuales;
+* normalización.
+
+El mecanismo que relaciona los tokens es la **atención**, que estudiaremos en el siguiente apartado.
+
+Por ahora basta con saber que permite que cada posición incorpore información procedente de otras partes de la secuencia.
+
+Después de esa relación, cada representación suele atravesar una red neuronal adicional.
+
+## Redes de alimentación hacia delante
+
+Cada posición pasa por una red denominada habitualmente **red de alimentación hacia delante** o *feed-forward network*.
+
+De forma simplificada:
+
+$$
+\operatorname{FFN}(\mathbf{x})
+=
+\sigma
+\left(
+\mathbf{x}W_1+b_1
+\right)W_2+b_2
+$$
+
+donde:
+
+* $W_1$ y $W_2$ son matrices aprendidas;
+* $b_1$ y $b_2$ son términos de ajuste;
+* $\sigma$ es una función no lineal.
+
+Esta red transforma individualmente la representación de cada posición.
+
+Podemos distinguir así dos funciones dentro del bloque:
+
+* el mecanismo de atención relaciona la información entre distintos tokens;
+* la red *feed-forward* transforma la representación obtenida en cada posición.
+
+Ambas operaciones se repiten a lo largo de numerosas capas.
+
+## Conexiones residuales
+
+Los transformers utilizan también **conexiones residuales**.
+
+En lugar de sustituir completamente una representación por el resultado de una operación, se conserva parte de la entrada original:
+
+$$
+\mathbf{y}
+=
+\mathbf{x}
++
+F(\mathbf{x})
+$$
+
+Esto permite que la información atraviese muchas capas sin tener que reconstruirse por completo en cada una.
+
+Podemos interpretarlo como una transformación incremental.
+
+Cada bloque modifica o amplía una representación que continúa disponible como base para el siguiente paso.
+
+Las conexiones residuales facilitan además el entrenamiento de redes profundas.
+
+## Normalización
+
+Otro componente habitual es la normalización.
+
+Su función es mantener los valores de las representaciones dentro de rangos adecuados y estabilizar el procesamiento.
+
+Una versión simplificada de un bloque podría representarse así:
+
+```text
+entrada
+   ↓
+relación entre tokens
+   ↓
+conexión residual y normalización
+   ↓
+red feed-forward
+   ↓
+conexión residual y normalización
+   ↓
+salida
+```
+
+La disposición concreta puede variar entre arquitecturas. Algunos modelos normalizan antes de cada operación y otros después.
+
+No necesitamos entrar en esas variantes para comprender la idea principal: cada bloque relaciona información, transforma representaciones y conserva una vía para que los datos continúen atravesando la red.
+
+## Codificadores y decodificadores
+
+La arquitectura transformer original se organizaba en dos grandes partes:
+
+* un **codificador**;
+* un **decodificador**.
+
+El codificador procesa la secuencia de entrada y construye una representación de su contenido.
+
+El decodificador utiliza esa representación para producir una secuencia de salida.
+
+Podemos representarlo así:
+
+```text
+entrada
+   ↓
+codificador
+   ↓
+representación
+   ↓
+decodificador
+   ↓
+salida
+```
+
+Sin embargo, los modelos posteriores no utilizan siempre ambas partes.
+
+Existen tres grandes familias.
+
+### Modelos basados en codificadores
+
+Procesan una entrada completa y construyen representaciones útiles para tareas como:
+
+* clasificación;
+* análisis de sentimiento;
+* búsqueda;
+* extracción de información;
+* generación de embeddings.
+
+### Modelos basados en decodificadores
+
+Generan una secuencia paso a paso utilizando los elementos anteriores.
+
+Son habituales en:
+
+* generación de texto;
+* asistentes conversacionales;
+* generación de código;
+* continuación de documentos.
+
+Los grandes modelos de lenguaje generativos pertenecen principalmente a esta familia.
+
+### Modelos codificador-decodificador
+
+Procesan primero una entrada y generan después una salida relacionada.
+
+Se utilizan en tareas como:
+
+* traducción;
+* resumen;
+* transformación de texto;
+* generación condicionada por un documento.
+
+Estas categorías describen la estructura general. Cada modelo puede incorporar numerosas adaptaciones.
+
+## Procesamiento paralelo
+
+Una de las ventajas importantes de los transformers durante el entrenamiento es que permiten procesar muchas posiciones de una secuencia de forma paralela.
+
+Los modelos secuenciales anteriores debían avanzar principalmente token a token:
+
+```text
+t₁ → t₂ → t₃ → t₄
+```
+
+El cálculo de una posición dependía del resultado anterior.
+
+En un transformer, muchas operaciones pueden realizarse simultáneamente sobre toda la secuencia:
+
+```text
+t₁  t₂  t₃  t₄
+↓   ↓   ↓   ↓
+procesamiento paralelo
+```
+
+Esto permitió aprovechar mejor el hardware especializado y entrenar modelos con cantidades de datos y parámetros mucho mayores.
+
+La generación de texto sigue realizándose paso a paso porque cada nuevo token depende de los anteriores. Sin embargo, durante el entrenamiento pueden procesarse en paralelo numerosas relaciones dentro de cada ejemplo.
+
+## De embeddings a representaciones contextuales
+
+Al entrar en el transformer, cada token dispone de una representación inicial.
+
+Después de atravesar las capas, esa representación se modifica según el contexto.
+
+Consideremos de nuevo:
+
+> Me senté en el banco.
+
+> El banco rechazó el préstamo.
+
+El token «banco» puede comenzar con una representación inicial semejante en ambas frases.
+
+Después de procesar el resto de la secuencia, sus representaciones serán diferentes:
+
+$$
+\mathbf{h}_{\text{banco, asiento}}
+\neq
+\mathbf{h}_{\text{banco, financiero}}
+$$
+
+En el primer caso, la representación se relacionará con sentarse y mobiliario.
+
+En el segundo, con préstamos y operaciones financieras.
+
+El transformer no sustituye el token por una definición. Construye una representación dependiente del contexto en el que aparece.
+
+## Transformers generativos
+
+Un transformer generativo recibe una secuencia de tokens y calcula qué token podría continuarla.
+
+Dado:
+
+$$
+t_1,t_2,\ldots,t_n
+$$
+
+el modelo estima una distribución de probabilidad:
+
+$$
+P
+\left(
+t_{n+1}
+\mid
+t_1,t_2,\ldots,t_n
+\right)
+$$
+
+Después selecciona uno de los posibles tokens y lo añade a la secuencia:
+
+$$
+t_1,t_2,\ldots,t_n,t_{n+1}
+$$
+
+La nueva secuencia se utiliza para predecir el siguiente.
+
+Este proceso continúa hasta completar la respuesta.
+
+El transformer proporciona las representaciones necesarias para realizar cada predicción, pero la forma concreta de seleccionar el siguiente token depende también de la estrategia de generación utilizada.
+
+## Transformers y grandes modelos de lenguaje
+
+Un gran modelo de lenguaje no es simplemente un transformer.
+
+El transformer es su arquitectura central, pero el sistema completo incluye además:
+
+* el tokenizador;
+* los parámetros aprendidos;
+* el proceso de entrenamiento;
+* las instrucciones;
+* la ventana de contexto;
+* los mecanismos de generación;
+* las herramientas externas;
+* la memoria;
+* los controles de seguridad;
+* la aplicación que construye cada petición.
+
+Confundir el transformer con todo el sistema sería semejante a identificar una base de datos con la aplicación completa que la utiliza.
+
+Es una pieza esencial, pero no trabaja sola.
+
+## Escalado
+
+Los transformers pueden ampliarse aumentando distintos elementos:
+
+* el número de capas;
+* el tamaño de las representaciones;
+* la cantidad de parámetros;
+* la cantidad de datos de entrenamiento;
+* la longitud del contexto;
+* los recursos de cálculo empleados.
+
+Un modelo con más parámetros puede aprender relaciones más complejas, pero un mayor tamaño no garantiza automáticamente mejores resultados en todas las tareas.
+
+También influyen:
+
+* la calidad de los datos;
+* el proceso de entrenamiento;
+* la arquitectura;
+* el contexto proporcionado;
+* las herramientas disponibles;
+* la evaluación y los controles aplicados.
+
+El tamaño es una característica importante, pero no sustituye el diseño del sistema.
+
+## Coste y limitaciones
+
+Los transformers requieren una cantidad considerable de cálculo y memoria.
+
+El coste aumenta especialmente cuando crece la longitud de la secuencia, porque el modelo debe relacionar numerosos tokens entre sí.
+
+También presentan otras limitaciones:
+
+* solo pueden utilizar la información incluida en su ventana de contexto;
+* pueden generar respuestas plausibles pero incorrectas;
+* no conservan por sí mismos una memoria permanente;
+* dependen de los patrones aprendidos durante el entrenamiento;
+* pueden reproducir errores y sesgos presentes en los datos;
+* sus operaciones internas no siempre resultan fáciles de interpretar;
+* procesar contextos extensos puede ser costoso.
+
+La arquitectura permite construir modelos muy potentes, pero no elimina la necesidad de verificar sus resultados ni de diseñar adecuadamente el sistema que los rodea.
+
+## Por qué fueron importantes
+
+Los transformers hicieron posible combinar varias capacidades fundamentales:
+
+* relacionar elementos próximos y alejados;
+* construir representaciones dependientes del contexto;
+* procesar secuencias de forma eficiente durante el entrenamiento;
+* utilizar arquitecturas con muchas capas y parámetros;
+* trabajar con grandes volúmenes de datos;
+* aplicar una misma estructura general a diferentes tipos de información.
+
+Estas propiedades permitieron desarrollar modelos capaces de realizar numerosas tareas sin diseñar una arquitectura independiente para cada una.
+
+El transformer se convirtió así en una pieza central de los modelos de lenguaje, los sistemas multimodales y muchas otras aplicaciones de inteligencia artificial.
+
+## Idea clave
+
+Un transformer es una arquitectura de red neuronal que procesa secuencias mediante una sucesión de bloques.
+
+Cada bloque relaciona la información entre distintas posiciones, transforma las representaciones, conserva parte de la entrada y entrega un resultado más elaborado a la siguiente capa.
+
+Gracias a este procesamiento, los tokens dejan de ser unidades aisladas y adquieren representaciones dependientes del contexto.
+
+El mecanismo que permite establecer esas relaciones entre tokens se denomina **atención** y será el objeto del siguiente apartado.
+* un **codificador**, que procesa la entrada;
+* un **decodificador**, que genera la salida.
+
+El codificador construye representaciones de la secuencia recibida.
+
+El decodificador utiliza esas representaciones y los elementos ya generados para producir la salida.
+
+Sin embargo, no todos los modelos posteriores utilizan ambas partes de la misma forma.
+
+Existen modelos basados principalmente en:
+
+* codificadores;
+* decodificadores;
+* combinaciones de codificador y decodificador.
+
+Los grandes modelos de lenguaje generativos suelen utilizar arquitecturas basadas en decodificadores.
+
+## Atención causal
+
+Cuando un modelo genera texto, no debe utilizar tokens futuros que todavía no existen.
+
+Al generar esta secuencia:
+
+```text
+La inteligencia artificial puede...
+```
+
+el modelo solo puede utilizar los tokens anteriores para decidir cuál será el siguiente.
+
+Para impedir el acceso a posiciones futuras se emplea una **máscara causal**.
+
+La atención queda limitada de forma semejante a:
+
+```text
+token 1 → puede atender a 1
+token 2 → puede atender a 1 y 2
+token 3 → puede atender a 1, 2 y 3
+token 4 → puede atender a 1, 2, 3 y 4
+```
+
+Matemáticamente, las posiciones futuras reciben un valor que impide que obtengan peso durante el cálculo de atención.
+
+Podemos representar la máscara como una matriz triangular:
+
+$$
+M =
+\begin{bmatrix}
+0 & -\infty & -\infty & -\infty \\
+0 & 0 & -\infty & -\infty \\
+0 & 0 & 0 & -\infty \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+Al aplicarla antes de *softmax*, las posiciones futuras reciben un peso prácticamente nulo.
+
+Esto permite generar el texto de izquierda a derecha sin observar anticipadamente la continuación correcta.
+
+## La generación token a token
+
+Un modelo generativo produce una distribución de probabilidad sobre los posibles tokens siguientes.
+
+Dado un contexto:
+
+$$
+t_1,t_2,\ldots,t_n
+$$
+
+el modelo estima:
+
+$$
+P(t_{n+1}\mid t_1,t_2,\ldots,t_n)
+$$
+
+Después selecciona un token y lo añade a la secuencia:
+
+$$
+t_1,t_2,\ldots,t_n,t_{n+1}
+$$
+
+La nueva secuencia se utiliza para predecir el siguiente:
+
+$$
+P(t_{n+2}\mid t_1,t_2,\ldots,t_n,t_{n+1})
+$$
+
+El proceso se repite hasta completar la respuesta.
+
+La atención permite que cada nueva predicción utilice las relaciones construidas entre los tokens presentes en el contexto.
+
+## La atención no es atención humana
+
+El término puede resultar engañoso.
+
+Cuando decimos que el modelo presta atención a una palabra, no afirmamos que sea consciente de ella ni que decida observarla deliberadamente.
+
+La atención es una operación matemática que calcula relaciones y pesos entre representaciones.
+
+No implica:
+
+* conciencia;
+* intención;
+* comprensión humana;
+* interés;
+* concentración voluntaria.
+
+El nombre describe una función técnica: seleccionar y combinar información de forma diferenciada.
+
+## La atención tampoco explica todo el modelo
+
+Los pesos de atención pueden ayudar a observar algunas relaciones internas, pero no constituyen una explicación completa de por qué el modelo produjo una respuesta.
+
+El resultado depende también de:
+
+* los embeddings;
+* las capas anteriores;
+* las redes *feed-forward*;
+* las conexiones residuales;
+* los parámetros aprendidos;
+* la posición de los tokens;
+* la estrategia de generación;
+* el contexto completo.
+
+Mostrar que un token recibió un peso elevado no demuestra por sí solo que sea la causa única de una decisión.
+
+El comportamiento del modelo emerge de la interacción entre muchos componentes.
+
+## El coste de relacionar los tokens
+
+En la autoatención convencional, cada token puede compararse con todos los demás.
+
+Para una secuencia de (n) tokens, el número de relaciones posibles crece aproximadamente como:
+
+$$
+n^2
+$$
+
+Si duplicamos la longitud de la secuencia:
+
+$$
+(2n)^2 = 4n^2
+$$
+
+El trabajo asociado puede multiplicarse considerablemente.
+
+Esta relación ayuda a comprender por qué las ventanas de contexto largas requieren más capacidad de cálculo y memoria.
+
+Los modelos modernos utilizan distintas optimizaciones para reducir este coste, pero la longitud del contexto sigue siendo una cuestión importante de diseño.
+
+## Atención y ventana de contexto
+
+La ventana de contexto determina qué tokens están disponibles.
+
+La atención determina cómo pueden relacionarse dentro de esa ventana.
+
+Podemos resumirlo así:
+
+```text
+ventana de contexto
+    determina qué información entra
+
+atención
+    determina cómo se relaciona
+```
+
+Una ventana grande permite incluir más contenido.
+
+La atención permite establecer conexiones dentro de ese contenido.
+
+Pero ninguna de las dos garantiza por sí sola que el modelo utilice correctamente toda la información.
+
+Una instrucción puede encontrarse dentro de la ventana y, aun así, no influir suficientemente en la respuesta.
+
+Un documento puede contener la solución y quedar diluido entre numerosos fragmentos irrelevantes.
+
+Por eso, la selección y organización del contexto continúan siendo necesarias.
+
+## Un ejemplo con código
+
+Consideremos esta función:
+
+```python
+def calcular_total(precios):
+    total = 0
+    for precio in precios:
+        total += precio
+    return total
+```
+
+Cuando el modelo analiza `return total`, puede relacionar ese fragmento con:
+
+* la variable inicializada al comienzo;
+* la actualización realizada dentro del bucle;
+* el nombre de la función;
+* el parámetro `precios`.
+
+La atención ayuda a conectar elementos que ocupan posiciones diferentes dentro del código.
+
+En programas más grandes, el modelo puede relacionar nombres, llamadas, tipos, comentarios y estructuras. Sin embargo, solo podrá utilizar los elementos incluidos en la ventana de contexto.
+
+Si la definición de una función se encuentra en un archivo no proporcionado, la atención no puede recuperar por sí sola esa información.
+
+## Un ejemplo con referencias
+
+Consideremos:
+
+> María entregó el informe a Laura después de revisarlo.
+
+El pronombre «lo» dentro de «revisarlo» debe relacionarse con «el informe».
+
+El modelo puede utilizar patrones aprendidos y relaciones de atención para construir esa referencia.
+
+En una frase más ambigua:
+
+> María entregó el informe a Laura después de hablar con ella.
+
+«Ella» podría referirse a María o a Laura dependiendo del contexto.
+
+La atención ayuda a relacionar elementos, pero no elimina todas las ambigüedades del lenguaje.
+
+Cuando la información disponible no permite una interpretación clara, el modelo puede adoptar la opción estadísticamente más probable, aunque no coincida con la intención real.
+
+## Por qué los transformers fueron importantes
+
+Los transformers permitieron:
+
+* procesar relaciones entre elementos alejados;
+* aprovechar mejor el procesamiento paralelo durante el entrenamiento;
+* construir modelos con muchas capas y parámetros;
+* aprender representaciones dependientes del contexto;
+* trabajar con grandes cantidades de datos;
+* adaptar una arquitectura general a múltiples tipos de tareas.
+
+Su aparición hizo posible escalar los modelos de lenguaje hasta alcanzar capacidades que no se observaban con la misma intensidad en arquitecturas anteriores.
+
+Sin embargo, el transformer no es un sistema inteligente completo.
+
+Es la arquitectura central del modelo.
+
+Para construir una aplicación real siguen siendo necesarios otros elementos: instrucciones, contexto, memoria, herramientas, datos, controles y mecanismos de evaluación.
+
+## Idea clave
+
+Los transformers procesan secuencias mediante capas que transforman progresivamente las representaciones de los tokens.
+
+La atención permite que cada token se relacione con los demás y determine qué información debe influir en su representación.
+
+Gracias a este mecanismo, una palabra puede adquirir significados diferentes según el contexto y el modelo puede establecer relaciones entre elementos próximos o alejados.
+
+El transformer construye representaciones contextuales dentro de la ventana disponible.
+
+Pero la información que debe conservarse más allá de una interacción necesita otro mecanismo.
+
+El siguiente apartado estará dedicado a la **memoria**.

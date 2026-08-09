@@ -1,0 +1,428 @@
+# Tokens
+
+Los modelos de lenguaje no procesan directamente palabras, frases o párrafos tal como los vemos las personas.
+
+Antes de que un texto pueda llegar al modelo, debe dividirse en unidades más pequeñas llamadas **tokens**.
+
+Un token puede representar una palabra completa, una parte de una palabra, un signo de puntuación, un número o incluso una combinación frecuente de caracteres. La división concreta depende del **tokenizador** utilizado por cada modelo.
+
+Por ejemplo, una frase como:
+
+> Los sistemas inteligentes aprenden patrones.
+
+podría dividirse conceptualmente de esta forma:
+
+```text
+Los | sistemas | inteligentes | aprenden | patrones | .
+```
+
+Pero también podría dividirse así:
+
+```text
+Los | sistema | s | inteligente | s | aprenden | patrón | es | .
+```
+
+Ambas representaciones son posibles. El resultado depende del vocabulario y de las reglas del tokenizador.
+
+Por tanto, un token no es necesariamente una palabra.
+
+## Por qué se utilizan tokens
+
+Un modelo no puede trabajar directamente con texto.
+
+Necesita transformar el contenido en números que puedan procesarse mediante operaciones matemáticas. La tokenización es el primer paso de esa transformación.
+
+De forma simplificada, el recorrido es el siguiente:
+
+```text
+texto → tokens → identificadores numéricos → representaciones internas
+```
+
+Cada token se asocia con un identificador numérico.
+
+Un ejemplo puramente ilustrativo podría ser:
+
+```text
+"Los"          → 1452
+"sistemas"     → 7821
+"inteligentes" → 16438
+"."            → 13
+```
+
+Estos números no contienen por sí mismos el significado de las palabras. Funcionan como referencias dentro del vocabulario que utiliza el modelo.
+
+Más adelante veremos cómo esos identificadores se transforman en **embeddings**, representaciones numéricas que permiten al modelo trabajar con relaciones y semejanzas.
+
+## El tokenizador
+
+El componente encargado de dividir el texto se denomina **tokenizador**.
+
+Cada familia de modelos puede utilizar un tokenizador diferente. Por ello, un mismo texto puede producir cantidades distintas de tokens según el modelo elegido.
+
+El tokenizador dispone de un vocabulario formado por palabras completas, fragmentos frecuentes, signos y otras secuencias de caracteres.
+
+Las expresiones comunes suelen necesitar pocos tokens. Las palabras poco frecuentes, los nombres propios, los términos técnicos o determinadas combinaciones de símbolos pueden dividirse en varias unidades.
+
+Por ejemplo, una palabra frecuente como:
+
+```text
+casa
+```
+
+podría representarse mediante un único token.
+
+Una palabra menos habitual como:
+
+```text
+hiperautomatización
+```
+
+podría dividirse conceptualmente en:
+
+```text
+hiper | automatización
+```
+
+o incluso en fragmentos más pequeños.
+
+La división exacta no debe suponerse. Solo puede conocerse utilizando el tokenizador concreto del modelo.
+
+## Palabras, caracteres y tokens
+
+No existe una equivalencia universal entre palabras y tokens.
+
+Un texto con mil palabras no produce siempre el mismo número de tokens. La relación depende de varios factores:
+
+* el idioma;
+* la frecuencia de las palabras;
+* la longitud de los términos;
+* el uso de números y símbolos;
+* el formato;
+* el código fuente;
+* el tokenizador empleado.
+
+Como aproximación general podemos expresar:
+
+$$
+T \approx f(P, I, V, F)
+$$
+
+donde:
+
+* (T) es el número de tokens;
+* (P) representa las palabras del texto;
+* (I) es el idioma;
+* (V) representa el vocabulario utilizado;
+* (F) incluye el formato, los símbolos y otros elementos.
+
+No se trata de una fórmula para calcular tokens, sino de una forma de recordar que su cantidad depende de varios factores y no únicamente del número de palabras.
+
+## Los idiomas no ocupan lo mismo
+
+La eficiencia de la tokenización varía entre idiomas.
+
+Un vocabulario puede contener muchas palabras o fragmentos frecuentes de un idioma y representar peor otros. Como consecuencia, una misma idea expresada en dos lenguas diferentes puede ocupar cantidades distintas de tokens.
+
+También influyen las formas flexionadas. En castellano, por ejemplo, una misma raíz puede aparecer en numerosas variantes:
+
+```text
+programar
+programa
+programador
+programadores
+programaremos
+programación
+```
+
+El tokenizador puede reconocer algunas como unidades completas y dividir otras en raíz y terminación.
+
+Esto tiene consecuencias prácticas. Dos textos con una longitud visual parecida pueden consumir cantidades diferentes de ventana de contexto y tener un coste distinto.
+
+## Los espacios y la puntuación también importan
+
+Los tokens no representan únicamente palabras.
+
+Los espacios, saltos de línea, signos de puntuación, comillas y otros elementos pueden formar parte de la tokenización.
+
+Por ejemplo:
+
+```text
+Hola
+```
+
+y:
+
+```text
+ Hola
+```
+
+podrían no producir exactamente la misma secuencia de tokens, porque el espacio inicial puede quedar asociado al texto posterior.
+
+Del mismo modo, estas expresiones pueden tokenizarse de forma diferente:
+
+```text
+sistema-inteligente
+sistema inteligente
+sistema_inteligente
+SistemaInteligente
+```
+
+Para una persona, todas ellas guardan una relación evidente. Para el tokenizador son secuencias de caracteres distintas.
+
+## Los números
+
+Los números tampoco se convierten necesariamente en un único token.
+
+Una cifra como:
+
+```text
+2026
+```
+
+puede representarse mediante un token o dividirse en varios fragmentos, dependiendo del vocabulario.
+
+Lo mismo ocurre con fechas, cantidades, identificadores y códigos:
+
+```text
+31/07/2026
+1.250.000
+ES-2026-00481
+```
+
+Este detalle ayuda a comprender por qué los modelos pueden presentar dificultades con operaciones numéricas exactas o con secuencias largas de dígitos.
+
+El modelo procesa patrones de tokens. No utiliza necesariamente una representación numérica equivalente a la de una calculadora.
+
+## Código fuente
+
+El código también se transforma en tokens.
+
+En este caso intervienen palabras reservadas, nombres de variables, operadores, espacios, tabulaciones, llaves y signos de puntuación.
+
+Por ejemplo:
+
+```python
+total = precio * cantidad
+```
+
+podría dividirse conceptualmente como:
+
+```text
+total | = | precio | * | cantidad
+```
+
+Sin embargo, un identificador largo como:
+
+```python
+calcularImporteTotalPendiente
+```
+
+podría convertirse en varios tokens:
+
+```text
+calcular | Importe | Total | Pendiente
+```
+
+El código suele contener muchos símbolos y nombres poco frecuentes. Por eso puede consumir una cantidad considerable de tokens, especialmente cuando se incluyen archivos completos, registros de ejecución o grandes fragmentos repetidos.
+
+## Tokenización y significado
+
+El tokenizador divide el contenido, pero no lo comprende.
+
+Su función es representar el texto mediante unidades pertenecientes a un vocabulario. El significado emerge posteriormente, cuando el modelo procesa las relaciones entre los tokens y sus representaciones internas.
+
+Esto permite que fragmentos diferentes participen en construcciones relacionadas.
+
+Por ejemplo, los tokens correspondientes a:
+
+```text
+programar
+programador
+programación
+```
+
+pueden ser distintos, pero el modelo puede aprender que aparecen en contextos relacionados.
+
+La tokenización es una operación técnica previa al razonamiento del modelo. No debe confundirse con la comprensión del lenguaje.
+
+## Tokens de entrada y de salida
+
+En una interacción con un modelo podemos distinguir dos grandes grupos.
+
+Los **tokens de entrada** son aquellos que el sistema entrega al modelo:
+
+* instrucciones;
+* pregunta del usuario;
+* historial de conversación;
+* documentos;
+* resultados de herramientas;
+* ejemplos;
+* recuerdos recuperados.
+
+Los **tokens de salida** son los que el modelo genera para construir la respuesta.
+
+Podemos expresar el consumo total de una interacción de forma sencilla:
+
+$$
+T_{\text{total}} = T_{\text{entrada}} + T_{\text{salida}}
+$$
+
+Esta relación será importante cuando estudiemos la ventana de contexto, porque tanto la entrada como la salida deben caber dentro del límite disponible.
+
+## Tokens y ventana de contexto
+
+La ventana de contexto se mide habitualmente en tokens.
+
+Si un modelo admite una ventana máxima de (W) tokens, la suma del contexto recibido y la respuesta generada no debe superar ese límite:
+
+$$
+T_{\text{entrada}} + T_{\text{salida}} \leq W
+$$
+
+Por ejemplo, si una petición ocupa casi toda la ventana, quedará poco espacio para generar la respuesta.
+
+Por este motivo, los sistemas suelen reservar una parte de la capacidad para la salida:
+
+$$
+T_{\text{entrada máximo}} = W - T_{\text{salida reservada}}
+$$
+
+La cantidad reservada depende de la aplicación y de la longitud esperada de la respuesta.
+
+Esta es una de las razones por las que no conviene llenar la ventana con información sin seleccionar.
+
+## Tokens y coste
+
+En muchos servicios comerciales, el uso del modelo se factura según el número de tokens procesados.
+
+De forma simplificada, el coste puede calcularse como:
+
+$$
+C =
+T_{\text{entrada}} \cdot P_{\text{entrada}}
++
+T_{\text{salida}} \cdot P_{\text{salida}}
+$$
+
+donde:
+
+* (C) es el coste total;
+* (T_{\text{entrada}}) es el número de tokens recibidos;
+* (P_{\text{entrada}}) es el precio por token de entrada;
+* (T_{\text{salida}}) es el número de tokens generados;
+* (P_{\text{salida}}) es el precio por token de salida.
+
+En la práctica, los precios suelen publicarse por miles o millones de tokens, pero el principio es el mismo.
+
+Un contexto mayor puede mejorar una respuesta si incorpora información relevante, pero también aumenta el coste y el tiempo de procesamiento.
+
+## Tokens y rendimiento
+
+La cantidad de tokens influye también en el rendimiento del sistema.
+
+Un contexto más largo puede requerir:
+
+* más memoria de cálculo;
+* más tiempo de procesamiento;
+* mayor coste;
+* más esfuerzo para localizar la información relevante;
+* más trabajo para mantener la coherencia.
+
+Esto no significa que debamos reducir siempre el contexto al mínimo. Un contexto insuficiente también produce respuestas pobres.
+
+El objetivo es utilizar los tokens necesarios, no el mayor número posible.
+
+## Tokens especiales
+
+Además de los tokens derivados del texto, algunos sistemas utilizan **tokens especiales**.
+
+Estos pueden señalar:
+
+* el inicio o el final de un mensaje;
+* el papel de quien interviene;
+* la separación entre instrucciones y datos;
+* el inicio de una respuesta;
+* llamadas a herramientas;
+* fragmentos que deben recibir un tratamiento específico.
+
+Estos tokens no suelen ser visibles para el usuario, pero ayudan al sistema a estructurar la conversación.
+
+Por ejemplo, internamente podría existir una organización conceptual como:
+
+```text
+[instrucción del sistema]
+[mensaje del usuario]
+[respuesta del asistente]
+```
+
+La representación real depende de cada modelo y de cada aplicación.
+
+## No todos los tokens tienen la misma importancia
+
+Todos los tokens ocupan espacio, pero no todos influyen de igual manera en la respuesta.
+
+Una instrucción breve puede resultar más importante que cientos de líneas de documentación. Un dato situado cerca de la pregunta puede destacar más que otro enterrado en una conversación extensa. Un fragmento irrelevante puede consumir capacidad sin aportar valor.
+
+Por eso, contar tokens solo resuelve una parte del problema.
+
+También debemos decidir:
+
+* qué información incluir;
+* cómo ordenarla;
+* qué elementos resumir;
+* qué fragmentos recuperar;
+* qué información eliminar;
+* qué espacio reservar para la respuesta.
+
+La gestión de tokens forma parte de la gestión del contexto.
+
+## Una aproximación, no una medida visual
+
+Podemos estimar visualmente la longitud de un texto, pero no conocer su número exacto de tokens sin utilizar el tokenizador correspondiente.
+
+Por ello, expresiones como «una página», «mil palabras» o «diez mil caracteres» solo ofrecen aproximaciones.
+
+Cuando el límite es importante, debe medirse con la herramienta adecuada.
+
+Esto ocurre especialmente en:
+
+* documentos extensos;
+* conversaciones prolongadas;
+* análisis de código;
+* procesamiento de registros;
+* sistemas que recuperan múltiples fuentes;
+* aplicaciones con costes elevados;
+* tareas que requieren respuestas largas.
+
+## Un ejemplo completo
+
+Supongamos que un sistema recibe:
+
+* 500 tokens de instrucciones;
+* 2.000 tokens de conversación;
+* 4.000 tokens de documentos;
+* 1.000 tokens procedentes de herramientas.
+
+La entrada total sería:
+
+$$
+T_{\text{entrada}} = 500 + 2.000 + 4.000 + 1.000 = 7.500
+$$
+
+Si el sistema reserva 2.500 tokens para la respuesta, la operación completa necesitaría una ventana mínima de:
+
+$$
+W = 7.500 + 2.500 = 10.000
+$$
+
+Este ejemplo muestra que el mensaje visible del usuario puede representar solo una pequeña parte de la información que realmente llega al modelo.
+
+## Idea clave
+
+Los tokens son las unidades con las que el modelo recibe y genera contenido.
+
+No equivalen necesariamente a palabras, y su cantidad depende del idioma, del vocabulario, del formato y del tokenizador utilizado.
+
+Las instrucciones, la conversación, los documentos y la respuesta consumen tokens. Todos ellos deben caber dentro de la ventana de contexto.
+
+Ahora que conocemos la unidad con la que se mide ese espacio, podemos estudiar con mayor precisión la **ventana de contexto**.

@@ -1,0 +1,463 @@
+# Embeddings
+
+En el apartado dedicado a los tokens vimos que el texto se divide en unidades y que cada token recibe un identificador numérico.
+
+Sin embargo, ese identificador solo permite distinguir un token de otro.
+
+Por ejemplo:
+
+```text
+"casa"   → 1842
+"hogar"  → 7315
+"avión"  → 9261
+```
+
+Estos números funcionan como códigos dentro del vocabulario del modelo, pero no expresan que «casa» y «hogar» están relacionados ni que ambos conceptos tienen poco que ver con «avión».
+
+Para representar esas relaciones se utilizan los **embeddings**.
+
+Un embedding es una representación numérica de un elemento mediante un conjunto de valores. Habitualmente se expresa como un vector.
+
+De forma simplificada:
+
+$$
+\text{elemento} \longrightarrow
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\vdots \\
+x_n
+\end{bmatrix}
+$$
+
+El elemento puede ser un token, una palabra, una frase, un documento, una imagen o cualquier otra unidad que el sistema sea capaz de representar.
+
+## De un identificador a una representación
+
+Un identificador de token indica qué token estamos procesando.
+
+Un embedding intenta representar características y relaciones aprendidas a partir de los datos.
+
+Podemos imaginar, de forma puramente ilustrativa, los siguientes vectores:
+
+$$
+\text{casa} =
+\begin{bmatrix}
+0.82 \
+0.71 \
+0.12
+\end{bmatrix}
+\qquad
+\text{hogar} =
+\begin{bmatrix}
+0.79 \
+0.75 \
+0.15
+\end{bmatrix}
+\qquad
+\text{avión} =
+\begin{bmatrix}
+0.10 \
+0.18 \
+0.91
+\end{bmatrix}
+$$
+
+Los vectores de «casa» y «hogar» se encuentran próximos entre sí, mientras que el de «avión» aparece más alejado.
+
+Los valores anteriores no corresponden a un modelo real. Solo muestran la idea: elementos utilizados en contextos parecidos tienden a obtener representaciones relacionadas.
+
+El embedding no contiene una definición escrita del elemento. Distribuye información sobre él entre muchas dimensiones numéricas.
+
+## Un espacio de relaciones
+
+Los embeddings permiten situar los elementos dentro de un espacio matemático.
+
+En ese espacio, la posición relativa importa más que cada valor aislado.
+
+Los elementos próximos pueden compartir significado, función, uso o contexto. Los elementos alejados pueden presentar relaciones menores.
+
+Por ejemplo, podrían aparecer agrupaciones relacionadas con:
+
+* animales;
+* ciudades;
+* tecnologías;
+* emociones;
+* operaciones financieras;
+* conceptos jurídicos;
+* funciones de programación.
+
+No es necesario que alguien defina manualmente estas categorías. El modelo aprende patrones a partir de los datos utilizados durante el entrenamiento.
+
+Podemos imaginar el espacio de embeddings como un mapa sin nombres visibles. Cada punto representa un elemento y las distancias ayudan a expresar cómo se relaciona con los demás.
+
+## Muchas dimensiones
+
+Para representar un embedding hemos utilizado tres valores, porque resulta fácil mostrarlos en una página.
+
+Los embeddings reales pueden contener cientos o miles de dimensiones.
+
+Un vector de dimensión (n) puede expresarse como:
+
+$$
+\mathbf{e} =
+\begin{bmatrix}
+e_1,
+e_2,
+e_3,
+\ldots,
+e_n
+\end{bmatrix}
+$$
+
+Cada dimensión no tiene por qué corresponder a una característica reconocible como «color», «tamaño» o «formalidad».
+
+El significado suele estar distribuido entre muchas dimensiones. No podemos observar una posición concreta del vector y afirmar que representa una idea determinada de forma aislada.
+
+El sistema aprende una representación útil para relacionar elementos y realizar cálculos, no una tabla de características diseñada para que una persona pueda interpretarla directamente.
+
+## Similitud entre embeddings
+
+Una vez representados dos elementos mediante vectores, podemos calcular cuánto se parecen.
+
+Una medida habitual es la **similitud del coseno**.
+
+Dados dos vectores $\mathbf{a}$ y $\mathbf{b}$:
+
+$$
+\operatorname{sim}(\mathbf{a},\mathbf{b})
+=
+\frac{\mathbf{a}\cdot\mathbf{b}}
+{\lVert\mathbf{a}\rVert\lVert\mathbf{b}\rVert}
+$$
+
+El numerador representa el producto escalar de ambos vectores y el denominador normaliza el resultado utilizando sus magnitudes.
+
+Sin entrar en el desarrollo matemático, esta operación permite comparar la orientación de los vectores.
+
+Cuando dos vectores apuntan en direcciones parecidas, su similitud es alta. Cuando apuntan en direcciones diferentes, su similitud es menor.
+
+Esta medida se utiliza frecuentemente para localizar elementos relacionados.
+
+Por ejemplo, ante la consulta:
+
+> política de vacaciones de la empresa
+
+un sistema puede buscar fragmentos documentales cuyos embeddings sean próximos al embedding de la consulta.
+
+No necesita que ambos textos contengan exactamente las mismas palabras. Puede encontrar también expresiones como:
+
+* permisos y días libres;
+* descanso anual;
+* solicitud de vacaciones;
+* calendario laboral;
+* ausencias retribuidas.
+
+La búsqueda deja de depender únicamente de coincidencias literales.
+
+## Embeddings y búsqueda semántica
+
+Una búsqueda tradicional puede localizar documentos mediante palabras exactas.
+
+Si buscamos:
+
+```text
+ventana de contexto
+```
+
+el sistema puede recuperar textos que contengan literalmente esa expresión.
+
+Una búsqueda basada en embeddings intenta recuperar contenido relacionado por significado.
+
+Podría encontrar también:
+
+* límite de tokens del modelo;
+* cantidad máxima de información procesable;
+* longitud máxima de entrada;
+* capacidad de contexto;
+* límite de conversación.
+
+Este tipo de búsqueda se denomina habitualmente **búsqueda semántica**.
+
+Su funcionamiento general puede resumirse así:
+
+1. se calcula el embedding de cada documento o fragmento;
+2. los vectores se almacenan junto con su contenido;
+3. se calcula el embedding de la consulta;
+4. se buscan los vectores más próximos;
+5. se recuperan los fragmentos asociados.
+
+De forma simplificada:
+
+$$
+\text{consulta}
+\longrightarrow
+\text{embedding}
+\longrightarrow
+\text{vectores próximos}
+\longrightarrow
+\text{documentos relacionados}
+$$
+
+Esta técnica será importante cuando estudiemos sistemas capaces de incorporar información externa al contexto del modelo.
+
+## Los documentos se fragmentan
+
+Un documento completo puede contener numerosos temas.
+
+Si generamos un único embedding para un libro de quinientas páginas, la representación será demasiado general para localizar una explicación concreta.
+
+Por eso, los documentos suelen dividirse en fragmentos más pequeños.
+
+Cada fragmento obtiene su propio embedding:
+
+```text
+Documento
+├── Fragmento 1 → embedding 1
+├── Fragmento 2 → embedding 2
+├── Fragmento 3 → embedding 3
+└── Fragmento 4 → embedding 4
+```
+
+Cuando se realiza una consulta, el sistema recupera los fragmentos cuyos vectores parecen más relacionados.
+
+El tamaño y la forma de dividir los documentos influyen en el resultado.
+
+Un fragmento demasiado grande puede mezclar temas diferentes.
+
+Un fragmento demasiado pequeño puede perder información necesaria para comprender una idea.
+
+La fragmentación no es un simple detalle técnico. Forma parte del diseño del sistema.
+
+## El embedding no es el contenido
+
+Un embedding no sustituye al texto original.
+
+Permite comparar y localizar información, pero no conserva necesariamente todos sus detalles de una forma que pueda reconstruirse directamente.
+
+Podemos almacenar el embedding de un párrafo para buscarlo, pero cuando queramos utilizar ese párrafo necesitaremos recuperar también el contenido original.
+
+Por ello, los sistemas suelen conservar:
+
+* el vector;
+* el texto o elemento representado;
+* su origen;
+* información adicional sobre el documento;
+* permisos y restricciones de acceso.
+
+El vector actúa como una dirección aproximada dentro del espacio semántico. El contenido sigue siendo necesario para responder con precisión.
+
+## Embeddings de tokens
+
+En los modelos de lenguaje, cada token se transforma inicialmente en un embedding.
+
+Podemos representarlo de forma simplificada así:
+
+$$
+t_i \longrightarrow \mathbf{e}_i
+$$
+
+donde:
+
+* $(t_i)$ es el token situado en la posición (i);
+* $(\mathbf{e}_i)$ es su representación vectorial.
+
+El modelo no procesa directamente el identificador del token. Trabaja con la representación numérica asociada.
+
+Sin embargo, conocer el token no es suficiente. También importa su posición dentro de la secuencia.
+
+Estas frases contienen palabras parecidas:
+
+> El perro mordió al hombre.
+
+> El hombre mordió al perro.
+
+El significado cambia porque cambia el orden.
+
+Por ello, a la representación del token se incorpora información sobre su posición:
+
+$$
+\mathbf{x}_i =
+\mathbf{e}_i +
+\mathbf{p}_i
+$$
+
+donde:
+
+* $(\mathbf{e}_i)$ representa el token;
+* $(\mathbf{p}_i)$ representa su posición;
+* $(\mathbf{x}_i)$ es la información que continúa hacia las siguientes capas del modelo.
+
+La forma concreta de representar la posición depende de la arquitectura utilizada, pero la idea es la misma: el modelo necesita saber qué token aparece y dónde aparece.
+
+## El significado depende del contexto
+
+Una misma palabra puede tener distintos significados.
+
+Por ejemplo:
+
+> Me senté en el banco.
+
+> El banco rechazó el préstamo.
+
+El token «banco» puede comenzar con una representación inicial semejante en ambos casos. Sin embargo, durante el procesamiento, el modelo relaciona ese token con los demás elementos de la frase.
+
+En el primer ejemplo aparecen pistas relacionadas con sentarse y mobiliario.
+
+En el segundo aparecen préstamos y operaciones financieras.
+
+A medida que la información atraviesa las capas del modelo, la representación de cada token se ajusta según su contexto.
+
+Por ello conviene distinguir entre:
+
+* el **embedding inicial**, asociado al token;
+* la **representación contextual**, obtenida después de relacionarlo con los demás tokens.
+
+De forma simplificada:
+
+$$
+\mathbf{h}_i =
+f(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_n)
+$$
+
+La representación final del token situado en la posición (i) depende del conjunto de la secuencia, no únicamente del token aislado.
+
+Esta capacidad permite tratar ambigüedades, referencias y relaciones dentro de una frase o documento.
+
+## Relaciones entre conceptos
+
+Los embeddings se hicieron conocidos por mostrar relaciones que podían expresarse mediante operaciones entre vectores.
+
+El ejemplo clásico se presenta de forma aproximada como:
+
+$$
+\mathbf{rey}
+-
+\mathbf{hombre}
++
+\mathbf{mujer}
+\approx
+\mathbf{reina}
+$$
+
+No debemos interpretar esta expresión como una regla lingüística exacta.
+
+Muestra que las relaciones aprendidas pueden reflejarse en la geometría del espacio vectorial. Algunas direcciones pueden capturar patrones relacionados con género, tiempo verbal, ubicación, categoría o función.
+
+Estas relaciones no han sido programadas una por una. Emergen de los patrones presentes en los datos.
+
+## Embeddings más allá del texto
+
+Los embeddings no se limitan a palabras o documentos.
+
+También pueden representar:
+
+* imágenes;
+* sonidos;
+* vídeos;
+* productos;
+* usuarios;
+* eventos;
+* fragmentos de código;
+* moléculas;
+* registros de actividad.
+
+Cuando distintos tipos de contenido se representan en espacios compatibles, es posible relacionarlos.
+
+Por ejemplo, un sistema puede recibir la descripción:
+
+> un búho dibujado con líneas finas
+
+y localizar imágenes relacionadas con esa idea.
+
+La consulta textual y las imágenes se comparan mediante sus representaciones, aunque su formato original sea diferente.
+
+Esta es una de las bases de los sistemas multimodales.
+
+## Embeddings y recomendaciones
+
+Los embeddings también pueden utilizarse para representar preferencias y elementos recomendables.
+
+Una plataforma puede generar vectores para:
+
+* usuarios;
+* películas;
+* libros;
+* productos;
+* canciones.
+
+Si el vector de un usuario se encuentra próximo al de determinados productos, el sistema puede considerarlos candidatos para una recomendación.
+
+De forma esquemática:
+
+$$
+\text{recomendación}
+=
+\operatorname{elementos\ próximos}
+(\mathbf{e}_{\text{usuario}})
+$$
+
+La recomendación real suele incluir muchos otros factores, pero los embeddings permiten expresar semejanzas y afinidades.
+
+## Qué no garantizan
+
+La proximidad entre embeddings indica relación estadística, no verdad.
+
+Dos textos pueden parecer semánticamente próximos y, sin embargo, defender ideas opuestas.
+
+Por ejemplo:
+
+> El sistema cumple la normativa.
+
+> El sistema no cumple la normativa.
+
+Ambas frases comparten vocabulario y tema. Sus embeddings pueden estar relativamente cerca, aunque su significado final sea contrario.
+
+También pueden producirse errores cuando:
+
+* la consulta es ambigua;
+* el fragmento recuperado menciona el tema, pero no responde a la pregunta;
+* existen documentos muy similares con versiones distintas;
+* la información relevante utiliza un lenguaje inesperado;
+* los datos contienen sesgos o relaciones incorrectas;
+* el modelo de embeddings no representa bien el dominio.
+
+Por ello, una búsqueda semántica no debe tratarse como una garantía de relevancia absoluta.
+
+Localiza candidatos.
+
+Después será necesario evaluar, ordenar y utilizar correctamente la información recuperada.
+
+## Embeddings y conocimiento
+
+Un embedding no constituye por sí mismo una base de conocimiento.
+
+Representa relaciones entre elementos, pero no determina cuáles son ciertos, actuales o autorizados.
+
+Un documento antiguo puede tener un embedding muy próximo a una consulta actual. Una fuente incorrecta puede parecer semánticamente perfecta. Dos versiones contradictorias pueden ocupar posiciones cercanas.
+
+Para utilizar embeddings en un sistema real debemos conservar también información como:
+
+* fecha;
+* procedencia;
+* versión;
+* autoría;
+* permisos;
+* nivel de confianza;
+* tipo de documento.
+
+La semejanza semántica ayuda a encontrar información.
+
+La ingeniería debe decidir si esa información es válida para la tarea.
+
+## Idea clave
+
+Los embeddings transforman tokens, textos y otros elementos en representaciones vectoriales.
+
+Estas representaciones permiten relacionar contenidos, medir semejanzas y localizar información sin depender únicamente de coincidencias exactas.
+
+Dentro de los modelos de lenguaje, los embeddings proporcionan una representación inicial que después se modifica según el contexto.
+
+Para comprender cómo el modelo relaciona unos tokens con otros y construye esas representaciones contextuales, el siguiente paso será estudiar los **transformers** y el mecanismo de **atención**.
+

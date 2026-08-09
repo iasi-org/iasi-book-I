@@ -1,0 +1,38 @@
+---
+title: "Conceptos fundamentales"
+order: 4
+---
+
+## Introduccion
+
+Los sistemas inteligentes actuales se apoyan en varios conceptos que aparecen constantemente cuando hablamos de inteligencia artificial: modelos, contexto, memoria, tokens, embeddings, transformers o ventanas de contexto.
+
+No es necesario conocer en profundidad su funcionamiento matemático para utilizar estos sistemas, pero sí resulta útil comprender qué significa cada concepto y qué papel desempeña. Muchas confusiones sobre la inteligencia artificial proceden precisamente de mezclar elementos diferentes o atribuir al modelo capacidades que pertenecen al sistema construido a su alrededor.
+
+En este capítulo veremos cómo se representa y procesa la información, qué son los tokens y los embeddings, y por qué los transformers han sido fundamentales en el desarrollo de los grandes modelos de lenguaje.
+
+También estudiaremos el contexto, es decir, la información disponible para resolver una tarea concreta, y la ventana de contexto, que limita la cantidad de información que el modelo puede considerar en cada momento.
+
+Diferenciaremos además entre conocimiento, contexto y memoria. Aunque desde el punto de vista del usuario puedan parecer una misma capacidad, corresponden a mecanismos distintos. El modelo puede haber aprendido información durante su entrenamiento, recibir nuevos datos en una conversación o recuperar información conservada anteriormente.
+
+Finalmente, veremos cómo estos elementos se combinan dentro de un sistema inteligente y cómo influyen en sus respuestas, sus capacidades y sus limitaciones.
+
+El propósito no es formar especialistas en cada una de estas materias, sino proporcionar una base suficiente para comprender los conceptos que utilizaremos a lo largo del libro.
+
+Para construir esta base iremos separando los distintos conceptos que intervienen en el funcionamiento de los sistemas inteligentes.
+
+Comenzaremos por el contexto y la ventana de contexto, que determinan qué información tiene disponible el modelo en cada momento. Después veremos los tokens y los embeddings, utilizados para representar y relacionar la información que procesa.
+
+A continuación presentaremos los transformers y el mecanismo de atención, fundamentales en los grandes modelos de lenguaje actuales. Finalmente, diferenciaremos entre conocimiento, contexto y memoria, y veremos cómo estos elementos pueden complementarse mediante documentos y herramientas externas.
+
+Cada apartado se centrará en una pieza concreta. El objetivo no será estudiarla exhaustivamente, sino comprender qué función cumple, cómo se relaciona con las demás y por qué resulta relevante cuando diseñamos o utilizamos un sistema inteligente.
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, el lector debería ser capaz de:
+
+* reconocer los principales conceptos relacionados con el funcionamiento de los modelos de lenguaje;
+* comprender qué son los tokens, los embeddings y los transformers;
+* diferenciar entre conocimiento, contexto, ventana de contexto y memoria;
+* entender de forma general cómo se procesa la información;
+* relacionar estos elementos con las capacidades y limitaciones de los sistemas inteligentes.

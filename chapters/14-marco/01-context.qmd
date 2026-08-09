@@ -1,0 +1,211 @@
+# El contexto
+
+Cuando hacemos una pregunta a un sistema inteligente, la respuesta no depende únicamente de las palabras que acabamos de escribir.
+
+También puede depender de las instrucciones que recibió anteriormente, de los mensajes intercambiados durante la conversación, de los documentos que tenga disponibles, de la información recuperada de una fuente externa o de los resultados obtenidos mediante otras herramientas.
+
+Todo ese conjunto de información forma el **contexto**.
+
+El contexto es, por tanto, la información que el modelo tiene disponible en el momento de realizar una tarea.
+
+Esta definición parece sencilla, pero permite aclarar muchas de las confusiones habituales sobre el funcionamiento de los modelos de lenguaje.
+
+## La pregunta no viaja sola
+
+Supongamos que escribimos:
+
+> Corrige este código.
+
+Para responder correctamente, el sistema necesita algo más que esa instrucción. Necesita el código, pero posiblemente también el lenguaje utilizado, el error que se está produciendo, la versión de las librerías, las restricciones del proyecto y el resultado esperado.
+
+Cada uno de esos elementos aporta contexto.
+
+Lo mismo ocurre con una pregunta aparentemente sencilla:
+
+> ¿Es una buena solución?
+
+La respuesta dependerá de qué problema estamos resolviendo, para quién, con qué coste, bajo qué restricciones y utilizando qué criterios de evaluación.
+
+Una pregunta aislada puede ser ambigua. El contexto permite interpretarla.
+
+## Qué puede formar parte del contexto
+
+El contexto puede estar compuesto por diferentes tipos de información.
+
+La parte más visible es el mensaje del usuario. Sin embargo, en un sistema real pueden intervenir muchas otras fuentes:
+
+* instrucciones generales sobre cómo debe comportarse el sistema;
+* mensajes anteriores de la conversación;
+* ejemplos proporcionados por el usuario;
+* documentos adjuntos;
+* fragmentos recuperados de una base de conocimiento;
+* información obtenida mediante una búsqueda;
+* resultados devueltos por herramientas externas;
+* datos sobre la tarea, el proyecto o el usuario;
+* reglas de seguridad, formato o estilo;
+* decisiones tomadas durante pasos anteriores.
+
+Desde el punto de vista del modelo, todos estos elementos forman el escenario desde el que debe producir una respuesta.
+
+El usuario puede no ver parte de ese escenario. Algunas instrucciones se incorporan automáticamente por el sistema. Otras proceden de aplicaciones, herramientas o procesos anteriores.
+
+Por eso, cuando utilizamos una aplicación basada en inteligencia artificial, no siempre estamos interactuando únicamente con un modelo. Estamos interactuando con un sistema que construye un contexto antes de solicitarle una respuesta.
+
+## El contexto orienta la interpretación
+
+El contexto no sirve únicamente para añadir datos. También determina cómo deben interpretarse.
+
+Consideremos la frase:
+
+> El servicio está caído.
+
+En una conversación doméstica podría referirse a una conexión a Internet. En un equipo de desarrollo podría significar que una API no responde. En un entorno empresarial podría implicar un incidente crítico con impacto económico.
+
+Las palabras son las mismas. El contexto cambia su significado.
+
+Esto ocurre constantemente en el lenguaje. Utilizamos referencias como «eso», «el anterior», «la segunda opción» o «hazlo como antes» porque confiamos en que la otra persona conoce el marco de la conversación.
+
+Un modelo de lenguaje necesita disponer de esa información para interpretar correctamente dichas referencias.
+
+Cuando el contexto es insuficiente, el sistema puede pedir una aclaración, adoptar una suposición o generar una respuesta genérica. Si la suposición parece razonable, la respuesta puede sonar convincente incluso cuando se apoya en una interpretación equivocada.
+
+## Un ejemplo sencillo
+
+Imaginemos esta conversación:
+
+> Usuario: Estoy preparando una aplicación para gestionar una biblioteca.
+> Asistente: ¿Qué parte quieres diseñar primero?
+> Usuario: El préstamo.
+> Asistente: Podemos comenzar por las entidades Libro, Usuario y Préstamo.
+> Usuario: Añade las devoluciones tardías.
+
+El último mensaje no contiene toda la información necesaria. Sin el historial anterior, no sabemos a qué deben añadirse las devoluciones tardías.
+
+El contexto permite entender que estamos diseñando un sistema de préstamos de una biblioteca y que probablemente debemos incorporar fechas de devolución, retrasos y posibles penalizaciones.
+
+La respuesta se construye a partir del mensaje actual, pero también de lo que ya se ha establecido.
+
+## Contexto no es conocimiento
+
+Es importante distinguir entre lo que el modelo ha aprendido y lo que tiene disponible en una interacción concreta.
+
+El **conocimiento** procede principalmente del entrenamiento. Está representado de forma distribuida en los parámetros del modelo y permite reconocer patrones, conceptos, relaciones y formas de expresión.
+
+El **contexto**, en cambio, contiene la información disponible para la tarea actual.
+
+Un modelo puede conocer Java, pero necesita recibir el código concreto que debe revisar. Puede conocer los principios generales de una empresa, pero necesita disponer de sus normas internas para aplicarlas. Puede saber cómo se redacta un contrato, pero no conoce las condiciones acordadas entre dos partes si nadie se las proporciona.
+
+El conocimiento aporta capacidades generales.
+
+El contexto aporta la situación concreta.
+
+## Contexto no es memoria
+
+También es habitual confundir contexto y memoria.
+
+La **memoria** permite conservar o recuperar información para utilizarla más adelante. El contexto es el lugar donde esa información debe aparecer para que el modelo pueda emplearla durante la tarea actual.
+
+Un sistema puede recordar que un usuario prefiere respuestas en castellano. Sin embargo, para que esa preferencia influya en una respuesta, deberá incorporarla de alguna manera al contexto de la conversación.
+
+La memoria conserva.
+
+El contexto presenta.
+
+Esta diferencia será importante cuando estudiemos cómo los sistemas mantienen información entre sesiones y cómo seleccionan qué recuerdos son relevantes en cada momento.
+
+## La calidad del contexto
+
+Un buen contexto no es necesariamente el más largo.
+
+Para resultar útil debe ser:
+
+* **relevante**, porque aporta información relacionada con la tarea;
+* **suficiente**, porque permite comprender el problema;
+* **coherente**, porque no contiene instrucciones o datos incompatibles;
+* **actual**, porque refleja la situación vigente;
+* **claro**, porque permite distinguir hechos, hipótesis, ejemplos y objetivos.
+
+Añadir información sin criterio puede empeorar el resultado.
+
+Un documento antiguo puede contradecir una decisión reciente. Una gran cantidad de detalles irrelevantes puede ocultar la información importante. Varias instrucciones similares, pero no idénticas, pueden hacer que el sistema adopte una interpretación incorrecta.
+
+Por tanto, construir contexto no consiste en acumular datos. Consiste en seleccionar y organizar la información que el modelo necesita para resolver una tarea.
+
+## Cuando el contexto falla
+
+Muchos errores atribuidos directamente al modelo tienen su origen en el contexto.
+
+El sistema puede fallar porque:
+
+* falta información esencial;
+* la petición es ambigua;
+* una instrucción importante quedó demasiado atrás;
+* se incorporó un documento que no correspondía;
+* existen datos contradictorios;
+* se utilizó información desactualizada;
+* el sistema recuperó un fragmento relacionado, pero insuficiente;
+* el modelo no pudo identificar qué información era prioritaria.
+
+En estos casos, cambiar de modelo puede no resolver el problema. Si el nuevo modelo recibe el mismo contexto defectuoso, probablemente encontrará dificultades similares.
+
+Esta es una idea central en la construcción de sistemas inteligentes: la calidad de la respuesta depende tanto de las capacidades del modelo como de la información que ponemos a su disposición.
+
+## El contexto se construye
+
+En una conversación sencilla, el contexto puede parecer algo automático: escribimos varios mensajes y el sistema utiliza lo que se ha dicho anteriormente.
+
+En aplicaciones más complejas, el contexto se diseña.
+
+El sistema debe decidir qué mensajes conservar, qué documentos recuperar, qué recuerdos incorporar, qué resultados de herramientas incluir y qué instrucciones deben tener prioridad.
+
+También debe evitar que información privada llegue a usuarios no autorizados, impedir que un documento modifique reglas que no debería controlar y mantener separadas las instrucciones de los datos.
+
+El contexto deja así de ser un mero historial de conversación y se convierte en una pieza de la arquitectura.
+
+## El marco de contexto
+
+Podemos llamar **marco de contexto** al conjunto organizado de información, instrucciones, restricciones y criterios desde los que el sistema debe interpretar una tarea.
+
+El contexto aporta los elementos disponibles. El marco les da una estructura y una finalidad.
+
+Por ejemplo, para revisar una solución técnica podríamos proporcionar:
+
+* el problema que debe resolverse;
+* la arquitectura actual;
+* las restricciones de seguridad;
+* el volumen esperado;
+* las tecnologías permitidas;
+* los criterios con los que se evaluará la propuesta.
+
+No estamos simplemente entregando datos. Estamos definiendo desde qué perspectiva debe analizarse la solución.
+
+Un mismo diseño puede ser adecuado desde el punto de vista funcional y resultar inaceptable desde el punto de vista de la seguridad, el coste o la operación. Cambiar el marco puede cambiar la respuesta sin modificar los hechos.
+
+## El contexto tiene límites
+
+El modelo no puede recibir una cantidad ilimitada de información.
+
+Existe un límite sobre el número de tokens que puede procesar en una interacción. Ese límite se conoce como **ventana de contexto**.
+
+La ventana de contexto determina cuánto contenido puede estar disponible simultáneamente. Cuando una conversación o un conjunto de documentos supera ese espacio, el sistema debe seleccionar, resumir, fragmentar o descartar información.
+
+Por eso, contexto y ventana de contexto no son lo mismo.
+
+El contexto es la información disponible.
+
+La ventana de contexto es el espacio limitado en el que esa información debe caber.
+
+Esta limitación condiciona la forma en que se diseñan conversaciones extensas, sistemas de memoria, recuperación de documentos y agentes capaces de realizar tareas durante muchos pasos.
+
+La estudiaremos en el siguiente apartado.
+
+## Idea clave
+
+El modelo no responde únicamente a una pregunta.
+
+Responde a la pregunta dentro del contexto que el sistema ha construido.
+
+Ese contexto debe transformarse en unidades que el modelo pueda procesar. Esas unidades se denominan **tokens** y constituyen también la forma habitual de medir cuánto contenido puede manejar el modelo en una interacción.
+
+Antes de estudiar los límites del contexto, veremos qué son los tokens y cómo se representa el texto para que pueda ser procesado.
+

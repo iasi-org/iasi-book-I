@@ -1,0 +1,336 @@
+# Una visión de conjunto
+
+A lo largo de este capítulo hemos presentado los principales conceptos que aparecen cuando trabajamos con modelos de lenguaje y sistemas inteligentes.
+
+No hemos estudiado cada mecanismo con la profundidad necesaria para construir un modelo desde cero. El propósito era disponer de un mapa: reconocer las piezas, comprender su función y evitar confundirlas cuando aparezcan en los siguientes capítulos.
+
+Podemos resumir el recorrido completo de esta forma:
+
+```text
+texto
+  ↓
+tokens
+  ↓
+embeddings
+  ↓
+transformer
+  ↓
+atención
+  ↓
+representaciones dependientes del contexto
+  ↓
+probabilidades
+  ↓
+generación de nuevos tokens
+```
+
+Este proceso ocurre dentro de una ventana de contexto limitada y utilizando los parámetros aprendidos durante el entrenamiento.
+
+Pero el modelo no trabaja aislado.
+
+```text
+Sistema inteligente
+├── modelo
+├── instrucciones
+├── contexto
+├── memoria
+├── documentos
+├── herramientas
+├── permisos
+├── validaciones
+└── aplicación
+```
+
+El comportamiento que observa el usuario surge de la combinación de todos estos elementos.
+
+## Las piezas principales
+
+El **modelo** es una estructura matemática formada por una arquitectura y unos parámetros aprendidos.
+
+El **entrenamiento** modifica esos parámetros a partir de datos y ejemplos.
+
+La **inferencia** utiliza el modelo ya entrenado para procesar entradas nuevas.
+
+Los **tokens** son las unidades con las que el modelo recibe y genera contenido.
+
+Los **embeddings** transforman esos elementos en representaciones numéricas capaces de expresar relaciones.
+
+Los **transformers** procesan las secuencias mediante capas sucesivas.
+
+La **atención** permite relacionar unos tokens con otros y construir representaciones dependientes del contexto.
+
+El **contexto** contiene la información disponible para resolver la tarea actual.
+
+La **ventana de contexto** limita cuánta información puede procesarse simultáneamente.
+
+La **memoria** conserva información fuera de esa ventana y permite recuperarla posteriormente.
+
+La **generación probabilística** construye la respuesta seleccionando sucesivamente entre distintas continuaciones posibles.
+
+Finalmente, el **sistema** coordina el modelo con instrucciones, documentos, memoria, herramientas, controles y acciones.
+
+## Diferencias que conviene conservar
+
+Algunos conceptos pueden parecer similares desde el punto de vista del usuario, pero representan mecanismos distintos.
+
+### Conocimiento y contexto
+
+El conocimiento procede principalmente de los patrones aprendidos durante el entrenamiento.
+
+El contexto contiene la información disponible para la tarea actual.
+
+Un modelo puede conocer una tecnología y no disponer del código concreto que debe analizar.
+
+### Contexto y ventana de contexto
+
+El contexto es la información que se proporciona al modelo.
+
+La ventana de contexto es el espacio limitado en el que esa información debe caber.
+
+### Contexto y memoria
+
+El contexto presenta información durante una interacción.
+
+La memoria la conserva para poder recuperarla en el futuro.
+
+### Memoria y entrenamiento
+
+La memoria almacena datos sin modificar necesariamente el modelo.
+
+El entrenamiento cambia sus parámetros.
+
+### Inferencia y generación
+
+La inferencia es el proceso completo de utilizar el modelo entrenado.
+
+La generación es la construcción progresiva de una salida, normalmente token a token.
+
+### Modelo y sistema
+
+El modelo interpreta y genera.
+
+El sistema selecciona información, conecta herramientas, controla permisos, valida resultados y ejecuta acciones.
+
+## Una respuesta no depende solo del modelo
+
+Podemos representar el comportamiento observado de forma conceptual:
+
+$$
+R =
+f(
+M,
+C,
+I,
+D,
+E,
+H,
+G
+)
+$$
+
+donde:
+
+* $R$ es la respuesta;
+* $M$ es el modelo;
+* $C$ es el contexto;
+* $I$ son las instrucciones;
+* $D$ son los documentos;
+* $E$ son las herramientas externas;
+* $H$ representa el historial y la memoria;
+* $G$ es la configuración de generación.
+
+Esta expresión no pretende describir una fórmula ejecutable.
+
+Sirve para recordar que una respuesta no puede evaluarse observando únicamente el nombre del modelo.
+
+Dos sistemas pueden utilizar el mismo modelo y comportarse de formas muy diferentes.
+
+También pueden producir respuestas distintas porque han recuperado documentos diferentes, aplicado otras instrucciones o utilizado configuraciones de generación distintas.
+
+## No es una base de datos
+
+Un modelo de lenguaje no recupera necesariamente una respuesta exacta de un almacén interno.
+
+Genera una continuación a partir de:
+
+* sus parámetros;
+* el contexto;
+* los tokens anteriores;
+* las probabilidades calculadas.
+
+Por eso puede:
+
+* reformular una idea;
+* combinar conceptos;
+* generar ejemplos nuevos;
+* responder de varias maneras;
+* producir información plausible pero incorrecta.
+
+Cuando necesitamos exactitud, actualidad o trazabilidad, debemos complementar el modelo con fuentes y herramientas adecuadas.
+
+## No es una memoria permanente
+
+El modelo tampoco conserva automáticamente todas las conversaciones.
+
+La continuidad puede proceder de:
+
+* mensajes anteriores incluidos en el contexto;
+* resúmenes;
+* documentos;
+* memoria persistente;
+* estados almacenados por la aplicación.
+
+Para que un recuerdo influya en una respuesta, debe volver a incorporarse al contexto.
+
+## No aprende normalmente durante la conversación
+
+Una corrección realizada por el usuario puede modificar las respuestas posteriores sin alterar los parámetros del modelo.
+
+Por ejemplo:
+
+```text
+Usuario:
+En este proyecto utilizamos Java 21.
+
+Sistema:
+guarda o conserva la información.
+
+Nueva petición:
+la información se incorpora al contexto.
+
+Modelo:
+responde teniendo en cuenta Java 21.
+```
+
+Desde fuera parece aprendizaje.
+
+Técnicamente puede ser contexto o memoria.
+
+El entrenamiento es un proceso diferente que modifica los parámetros.
+
+## No verifica automáticamente la verdad
+
+El modelo calcula continuaciones probables.
+
+Una frase bien escrita puede ser falsa.
+
+Una cita puede parecer auténtica y no existir.
+
+Una función puede tener un nombre razonable y no formar parte de ninguna biblioteca.
+
+Un cálculo puede parecer correcto y contener un error.
+
+Por ello, la calidad lingüística no debe confundirse con la veracidad.
+
+```text
+Fluidez
+no implica
+exactitud.
+```
+
+La verificación debe apoyarse en documentos, herramientas, pruebas y fuentes fiables.
+
+## Qué debe preguntar un ingeniero
+
+Ante el comportamiento de un sistema inteligente, resulta útil formular preguntas como:
+
+* ¿qué modelo se está utilizando?;
+* ¿qué información recibió?;
+* ¿qué instrucciones condicionaron la respuesta?;
+* ¿qué documentos se recuperaron?;
+* ¿qué memoria se incorporó?;
+* ¿qué herramientas se ejecutaron?;
+* ¿qué versión de los datos estaba vigente?;
+* ¿qué validaciones se aplicaron?;
+* ¿qué acción se realizó realmente?;
+* ¿puede reconstruirse el proceso?
+
+Estas preguntas permiten pasar de la impresión superficial a una evaluación técnica.
+
+## Un ejemplo de extremo a extremo
+
+Supongamos que un usuario solicita:
+
+> Analiza el código y propón una corrección.
+
+El sistema podría realizar los siguientes pasos:
+
+1. identificar el proyecto;
+2. recuperar sus reglas y decisiones;
+3. localizar los archivos relacionados;
+4. construir el contexto;
+5. transformar el contenido en tokens;
+6. procesarlo mediante el modelo;
+7. generar una propuesta;
+8. modificar temporalmente el código;
+9. ejecutar las pruebas;
+10. mostrar las diferencias;
+11. solicitar aprobación;
+12. registrar la decisión.
+
+En este proceso intervienen distintas piezas:
+
+```text
+Contexto
+    contiene el código y las reglas.
+
+Memoria
+    conserva decisiones del proyecto.
+
+Modelo
+    interpreta y propone.
+
+Generación
+    produce la modificación.
+
+Herramientas
+    editan y ejecutan pruebas.
+
+Validación
+    comprueba el resultado.
+
+Usuario
+    aprueba la acción.
+```
+
+La solución no reside en una única pieza.
+
+Surge de la coordinación entre todas ellas.
+
+## Del concepto a la ingeniería
+
+Comprender estos elementos no nos convierte en especialistas en entrenamiento de modelos ni en investigadores de arquitecturas neuronales.
+
+Tampoco era ese el objetivo.
+
+Ahora disponemos de una base suficiente para comprender qué ocurre cuando un sistema:
+
+* recibe instrucciones;
+* recupera información;
+* recuerda decisiones;
+* utiliza herramientas;
+* genera respuestas;
+* ejecuta tareas;
+* coordina varios componentes.
+
+En los siguientes capítulos dejaremos de observar cada pieza de forma aislada.
+
+Comenzaremos a estudiar cómo se combinan para construir sistemas inteligentes capaces de participar en procesos reales.
+
+## Ideas clave
+
+* Un modelo es una pieza matemática con parámetros aprendidos.
+* El entrenamiento modifica esos parámetros.
+* La inferencia utiliza el modelo sin modificarlo normalmente.
+* El texto se procesa mediante tokens y representaciones numéricas.
+* Los transformers y la atención construyen relaciones dependientes del contexto.
+* La ventana de contexto limita la información disponible.
+* La memoria conserva información fuera de esa ventana.
+* La generación es probabilística y puede producir errores plausibles.
+* Las herramientas aportan capacidades externas y verificables.
+* El sistema completo, no solo el modelo, determina el comportamiento final.
+
+Ya no observamos una respuesta aislada.
+
+Empezamos a ver el sistema que la produce.
+
