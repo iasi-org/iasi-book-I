@@ -1,0 +1,68 @@
+# Licencias {.unnumbered}
+
+El proyecto **iasi** contiene materiales de distinta naturaleza. Cada tipo de material se distribuye bajo una licencia específica.
+
+Copyright © 2026 Javier G. Grandez.
+
+## Código fuente
+
+El código fuente, los scripts, las automatizaciones, las utilidades y los ejemplos ejecutables se distribuyen bajo la **Licencia MIT**, salvo que se indique expresamente otra licencia.
+
+Esto incluye, entre otros:
+
+* scripts escritos en R;
+* filtros, extensiones y utilidades;
+* archivos de automatización;
+* herramientas de construcción y publicación;
+* fragmentos y ejemplos de código reutilizables.
+
+La Licencia MIT permite utilizar, copiar, modificar, integrar, publicar, distribuir, sublicenciar y vender el código, siempre que se conserve el aviso de copyright y el texto de la licencia.
+
+El texto completo está disponible en:
+
+[Licencia MIT](LICENSES/MIT.txt)
+
+Identificador SPDX: `MIT`.
+
+## Contenido editorial
+
+Los textos, capítulos, diagramas, tablas e imágenes originales de la obra **Ingeniería asistida por sistemas inteligentes** se distribuyen bajo la licencia **Creative Commons Attribution 4.0 International**, salvo que se indique expresamente otra licencia.
+
+Esto incluye, entre otros:
+
+* los documentos y capítulos escritos en formato `.qmd`;
+* el manifiesto y los principios;
+* los diagramas, tablas e ilustraciones originales;
+* las versiones HTML y PDF generadas a partir de la obra.
+
+Esta licencia permite compartir y adaptar el contenido, incluso con fines comerciales, siempre que se reconozca adecuadamente la autoría, se proporcione una referencia a la licencia y se indiquen los cambios realizados.
+
+El texto legal completo está disponible en:
+
+[Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt)
+
+Identificador SPDX: `CC-BY-4.0`.
+
+## Atribución
+
+Para reutilizar el contenido editorial, se recomienda utilizar una atribución semejante a la siguiente:
+
+> Javier G. Grandez, *Ingeniería asistida por sistemas inteligentes*, 2026. Licencia CC BY 4.0.
+
+Cuando el contenido haya sido modificado, deberá indicarse de forma razonable que se han realizado cambios.
+
+## Materiales de terceros
+
+Los materiales pertenecientes a terceros conservan sus respectivas licencias, derechos de autor y condiciones de uso.
+
+Su inclusión o referencia en este proyecto no implica que estén cubiertos por la Licencia MIT ni por la licencia CC BY 4.0.
+
+Cuando corresponda, la autoría, la procedencia y la licencia aplicable se indicarán junto al material o en su referencia bibliográfica.
+
+## Alcance
+
+La Licencia MIT se aplica al **código**.
+
+La licencia CC BY 4.0 se aplica al **contenido editorial original**.
+
+Cuando un archivo incluya una indicación de licencia específica, esa indicación prevalecerá para dicho archivo.

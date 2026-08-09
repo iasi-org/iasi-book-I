@@ -1,0 +1,78 @@
+# Manifiesto {.unnumbered}
+
+## Escribo en castellano
+
+Este libro está escrito conscientemente en castellano.
+
+No por rechazo al inglés ni por ignorar que gran parte de la tecnología se desarrolla y documenta primero en ese idioma. Está escrito en castellano porque es la lengua en la que pienso, dudo, discuto y encuentro los matices.
+
+Y en ingeniería, los matices importan.
+
+Las traducciones podrán venir después. El pensamiento original, no.
+
+## No enseñamos a usar herramientas. Enseñamos a trabajar
+
+ChatGPT, Copilot, Claude, Gemini, Cursor y las herramientas que todavía no existen son instrumentos.
+
+Cambiarán los nombres, los modelos, las interfaces y las plataformas. Algunas desaparecerán. Otras ocuparán su lugar.
+
+Este libro no pretende enseñar una colección de botones y recetas ligadas a una herramienta concreta. Pretende construir una forma de trabajar que sobreviva a todas ellas.
+
+Las herramientas cambian.
+
+El criterio permanece.
+
+## Cuestiónalo todo
+
+No aceptes una afirmación por la autoridad de quien la pronuncia.
+
+Ni siquiera por la mía.
+
+Cuestiona lo que leas. Critícalo. Contrástalo. Busca los errores, las contradicciones, las excepciones y los límites.
+
+No aceptes una respuesta porque resulte convincente, porque aparezca impresa o porque la haya generado un sistema inteligente.
+
+La ingeniería avanza mediante preguntas, pruebas, evidencias y argumentos.
+
+## No memorices. Comprende
+
+Los modelos, las APIs, los lenguajes y las plataformas cambian.
+
+Memorizar su funcionamiento puede resolver el problema de hoy. Comprender los principios permite enfrentarse al problema de mañana.
+
+No buscamos acumular respuestas.
+
+Buscamos aprender a formular preguntas, analizar problemas, evaluar alternativas y justificar decisiones.
+
+## Experimenta
+
+Una idea no se convierte en conocimiento porque suene razonable.
+
+Hay que probarla.
+
+Los laboratorios de este libro no son ejercicios añadidos después de la teoría. Son el lugar donde las ideas se enfrentan con la realidad.
+
+Experimentamos para comprender.
+
+Medimos para aprender.
+
+Fallamos para descubrir aquello que todavía no habíamos entendido.
+
+## La ingeniería manda
+
+Los sistemas inteligentes pueden proponer, generar, analizar, explicar y ejecutar.
+
+Pero no poseen autoridad profesional ni asumen responsabilidad por las consecuencias.
+
+El sistema inteligente asiste.
+
+El ingeniero comprende, decide, verifica y responde.
+
+Por eso hablamos de:
+
+> **Ingeniería asistida por sistemas inteligentes.**
+
+El **por** establece la relación.
+
+La ingeniería manda.
+

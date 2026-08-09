@@ -1,0 +1,91 @@
+# Principios {.unnumbered}
+
+## 1. No somos mecanógrafos. Somos ingenieros
+
+Un ingeniero no está para traducir mecánicamente especificaciones en código.
+
+Recibe un problema, lo comprende, explora el espacio de soluciones y construye la respuesta más adecuada.
+
+El código, las tecnologías y las herramientas son medios. La ingeniería consiste en comprender y resolver.
+
+## 2. El modelo no es el sistema
+
+Un modelo puede ser una pieza poderosa, pero sigue siendo solo una pieza.
+
+El sistema incluye datos, personas, procesos, interfaces, controles, infraestructura, seguridad, operación y responsabilidad.
+
+Evaluar únicamente el modelo es ignorar gran parte del problema.
+
+## 3. Capacidad no equivale a autoridad
+
+Que un sistema pueda hacer algo no significa que deba hacerlo.
+
+La capacidad técnica no concede autoridad para decidir, actuar o asumir riesgos.
+
+La autoridad debe asignarse explícitamente y ser proporcional al contexto, al impacto y a las consecuencias.
+
+## 4. Generar no es verificar
+
+Una respuesta plausible no es necesariamente correcta.
+
+Todo resultado generado debe poder ser revisado, contrastado y validado según el riesgo que implique.
+
+Cuanto mayor sea el impacto, mayor debe ser la exigencia de verificación.
+
+## 5. La responsabilidad no se delega
+
+Podemos delegar tareas.
+
+Podemos automatizar procesos.
+
+Podemos ampliar nuestra capacidad mediante sistemas inteligentes.
+
+Pero la responsabilidad permanece en las personas y organizaciones que diseñan, autorizan, implantan y utilizan el sistema.
+
+## 6. No automatizamos lo que no comprendemos
+
+Automatizar un proceso incomprendido no elimina sus defectos.
+
+Los acelera, los multiplica y los oculta.
+
+Antes de automatizar debemos comprender el objetivo, las reglas, las excepciones, los riesgos y las consecuencias.
+
+## 7. El fallo forma parte del diseño
+
+Los sistemas fallan.
+
+Los modelos se equivocan. Los datos contienen errores. Las integraciones se rompen. Las personas interpretan mal los resultados.
+
+El fallo no es una anomalía que pueda ignorarse. Es una condición que debe contemplarse desde el diseño.
+
+## 8. Todo sistema debe ser controlable
+
+Un sistema debe poder observarse, limitarse, corregirse y detenerse.
+
+La autonomía sin control no es inteligencia.
+
+Es abandono de responsabilidad.
+
+## 9. Todo debe ser trazable
+
+Debemos poder conocer qué ocurrió, qué información se utilizó, qué resultado se produjo y quién autorizó la acción.
+
+Sin trazabilidad no hay explicación, auditoría ni aprendizaje.
+
+## 10. Pensar sigue siendo nuestra responsabilidad
+
+Los sistemas inteligentes pueden ayudarnos a pensar.
+
+No deben acostumbrarnos a dejar de hacerlo.
+
+Este libro no pretende ofrecer respuestas para que el lector las acepte. Pretende proporcionar herramientas para que pueda construir, discutir y defender las suyas.
+
+---
+
+Escribo en castellano.
+
+Cuestiona y critica.
+
+Yo pienso así.
+
+
