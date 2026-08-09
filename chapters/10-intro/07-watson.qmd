@@ -1,0 +1,17 @@
+---
+title: "Antes de los LLM"
+---
+
+## De Watson a los LLM
+
+Cuando hoy se habla de Inteligencia Artificial es habitual pensar inmediatamente en ChatGPT, Claude, Gemini o cualquier otro modelo de lenguaje. Sin embargo, la idea de construir sistemas capaces de comprender preguntas formuladas en lenguaje natural y responder de forma inteligente es muy anterior a la aparición de los Large Language Models.
+
+Uno de los ejemplos más conocidos fue **Watson**, desarrollado por IBM[@ferrucci2010]. En 2011 alcanzó notoriedad internacional al derrotar a los mejores concursantes humanos en el programa de televisión *Jeopardy!*, un concurso que exige comprender preguntas complejas, interpretar juegos de palabras y localizar rápidamente la respuesta más adecuada.
+
+Aunque desde el exterior Watson parecía mantener una conversación con los concursantes, su funcionamiento era muy diferente al de un LLM moderno. No se basaba en una única red neuronal de grandes dimensiones, sino en la integración de numerosas tecnologías especializadas que trabajaban de forma coordinada[@ferrucci2010]. El sistema combinaba procesamiento del lenguaje natural, búsqueda de información, aprendizaje automático, análisis estadístico y mecanismos de razonamiento para generar varias respuestas posibles y seleccionar aquella que ofrecía un mayor grado de confianza.
+
+Watson representó un extraordinario logro de la Ingeniería del Software y de la Inteligencia Artificial de su tiempo. Demostró que era posible construir sistemas capaces de interpretar preguntas expresadas en lenguaje natural y ofrecer respuestas útiles, pero también puso de manifiesto la enorme complejidad que suponía integrar y mantener un gran número de componentes especializados.
+
+La siguiente gran evolución no consistió únicamente en mejorar cada uno de esos componentes, sino en cambiar el enfoque. En lugar de construir un sistema formado por numerosos módulos independientes, la investigación comenzó a explorar la posibilidad de que una única red neuronal aprendiera por sí misma muchas de esas capacidades durante su entrenamiento.
+
+Ese cambio de paradigma dio origen a una nueva generación de sistemas: los **Large Language Models**, o **LLM**.

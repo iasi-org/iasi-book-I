@@ -1,0 +1,15 @@
+---
+title: "Large Language Models"
+---
+
+# Cuando el lenguaje se convirtió en conocimiento
+
+A lo largo de los capítulos anteriores hemos recorrido la evolución de la Inteligencia Artificial desde los primeros sistemas basados en reglas hasta las redes neuronales profundas. Cada etapa respondió a las limitaciones de la anterior y aportó nuevas capacidades, acercándonos progresivamente a sistemas cada vez más flexibles y capaces de aprender a partir de los datos.
+
+Ese recorrido nos conduce finalmente a los **Large Language Models (LLM)**, la tecnología que ha hecho posible una nueva generación de sistemas inteligentes y que constituye el punto de partida del resto de este trabajo.
+
+El objetivo de este libro no es estudiar los LLM como un fin en sí mismos, sino comprender cómo pueden utilizarse como elemento fundamental en la construcción de sistemas de Ingeniería y Arquitectura del Software asistidos por Inteligencia Artificial. Los modelos de lenguaje han dejado de ser simples generadores de texto para convertirse en el núcleo sobre el que se integran herramientas, conocimiento, procesos, agentes y servicios capaces de colaborar con las personas durante todo el ciclo de vida del software.
+
+Un **Large Language Model** es una red neuronal entrenada con cantidades masivas de texto para aprender las regularidades, estructuras y relaciones presentes en el lenguaje. Gracias a ese aprendizaje, el modelo puede adaptarse a una enorme variedad de tareas sin haber sido programado específicamente para cada una de ellas. Esta capacidad de generalización es la que ha permitido que los LLM trasciendan el ámbito del procesamiento del lenguaje natural y se conviertan en componentes fundamentales de sistemas inteligentes cada vez más complejos.
+
+Comprender qué es un LLM y cuáles son sus capacidades resulta imprescindible para entender el resto de la obra. En los capítulos siguientes se analizarán los conceptos fundamentales que sustentan estos modelos y, posteriormente, cómo se integran dentro de arquitecturas modernas para diseñar, desarrollar y operar soluciones de Ingeniería del Software asistidas por sistemas inteligentes.

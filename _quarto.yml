@@ -40,16 +40,16 @@ book:
         href: index.qmd
 
       - text: "Introducción"
-        href: chapters/01-intro/index.qmd
+        href: chapters/10-intro/index.qmd
 
       - text: "Conceptos"
-        href: chapters/02-conceptos/index.qmd
+        href: chapters/11-conceptos/index.qmd
 
       - text: "Foundations"
-        href: chapters/03-foundations/index.qmd
+        href: chapters/12-foundations/index.qmd
         
       - text: "Conceptos LLM"
-        href: chapters/03-foundations/index.qmd
+        href: chapters/13-foundations/index.qmd
 
       - text: "Saco"
         href: chapters/99-saco/index.qmd

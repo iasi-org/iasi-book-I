@@ -1,0 +1,26 @@
+---
+title: "Introducción"
+order: 1
+---
+
+
+> *"Toda revolución tecnológica nace porque el paradigma anterior encuentra sus límites."*
+
+## Introducción
+
+Los Large Language Models (LLM) representan uno de los cambios más importantes en la historia reciente de la Ingeniería del Software. Sin embargo, para comprender realmente su impacto no basta con estudiar su funcionamiento interno, antes debemos entender **qué problema intentan resolver** y **por qué los modelos tradicionales de programación resultaban insuficientes para determinadas clases de problemas**.
+
+Este capítulo propone un recorrido progresivo, comenzaremos revisando cómo hemos construido software durante más de medio siglo, analizaremos las limitaciones de ese paradigma y seguiremos la evolución que condujo al desarrollo de los modelos actuales.
+
+El objetivo no es aprender a utilizar un LLM, sino comprender el cambio conceptual que introduce en la forma de diseñar sistemas software.
+
+## Objetivos
+
+Al finalizar este capítulo el lector será capaz de:
+
+- Comprender el paradigma de la programación basada en algoritmos explícitos.
+- Identificar las limitaciones de este enfoque para ciertos problemas.
+- Entender la evolución histórica del Procesamiento del Lenguaje Natural.
+- Explicar qué es un Large Language Model.
+- Comprender, a alto nivel, cómo funcionan los LLM y cuáles son sus capacidades y limitaciones.
+- Sentar las bases para los capítulos posteriores de IAASI.

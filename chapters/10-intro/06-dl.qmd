@@ -1,0 +1,53 @@
+---
+title: "Deep Learning"
+---
+
+# Mas allá de los algoritmos
+
+Si cada algoritmo está diseñado para resolver una determinada familia de problemas y el número de problemas del mundo real es prácticamente ilimitado, parecería lógico pensar que también sería necesario desarrollar un número ilimitado de algoritmos, aquí aparecen las Redes Neuronales.
+
+Las redes neuronales artificiales no eran una idea nueva. Sus primeros modelos se remontan a la década de 1940 con los trabajos de McCulloch y Pitts [@mcculloch1943], y pocos años después Frank Rosenblatt presentó el perceptrón, considerado la primera red neuronal capaz de aprender a partir de ejemplos [@rosenblatt1958]. Durante las décadas siguientes la investigación continuó avanzando, alternando periodos de entusiasmo con otros de profundo escepticismo, especialmente tras la publicación de *Perceptrons* de Marvin Minsky y Seymour Papert, que puso de manifiesto importantes limitaciones de los modelos existentes [@minsky1969].
+
+Lejos de desaparecer, las redes neuronales continuaron evolucionando, la aparición del algoritmo de retropropagación permitió entrenar redes de mayor complejidad [@rumelhart1986], y poco después comenzaron a demostrar su utilidad en aplicaciones reales como el reconocimiento automático de caracteres manuscritos [@lecun1989]; sin embargo, durante muchos años siguieron siendo una técnica más dentro del amplio conjunto de algoritmos de _Machine Learning_, en numerosos problemas, otros métodos ofrecían mejores resultados con un menor coste computacional.
+
+El cambio comenzó a producirse cuando coincidieron varios factores. La capacidad de cálculo de los ordenadores aumentó de forma extraordinaria, aparecieron procesadores especialmente adecuados para realizar millones de operaciones en paralelo y la cantidad de datos disponibles creció a una escala nunca antes vista. En ese nuevo contexto, las redes neuronales empezaron a mostrar un comportamiento muy diferente al observado durante las décadas anteriores.
+
+En 2006 Geoffrey Hinton y Ruslan Salakhutdinov demostraron que era posible entrenar redes neuronales mucho más profundas que las utilizadas hasta entonces [@hinton2006]. Aquella línea de investigación culminó pocos años después con AlexNet, una red neuronal que obtuvo unos resultados espectaculares en el concurso internacional _ImageNet_ y marcó un punto de inflexión para la comunidad científica [@krizhevsky2012].
+
+Fue entonces cuando comenzó a popularizarse el término **Deep Learning**. Más que una nueva disciplina, describía una nueva generación de redes neuronales caracterizadas por un mayor número de capas y una capacidad muy superior para aprender representaciones complejas de los datos. La idea fundamental seguía siendo la misma que décadas atrás, pero la tecnología había alcanzado por fin el nivel necesario para explotar todo su potencial.
+
+El _Deep Learning_ no eliminó los algoritmos clásicos de _Machine Learning_, que continúan siendo la mejor elección en numerosos problemas. Su verdadera aportación fue demostrar que una misma familia de modelos podía abordar tareas extraordinariamente diversas, desde el reconocimiento de imágenes hasta la traducción automática, el reconocimiento del habla o la generación de texto, aquella aparente necesidad de crear un algoritmo diferente para cada problema comenzó a diluirse, no porque existiera un algoritmo universal, sino porque las redes neuronales demostraron una capacidad de adaptación muy superior a la imaginada durante sus primeras décadas de existencia.
+
+Para comprender por qué esto fue posible es necesario conocer cómo está construida una red neuronal y cuál es el mecanismo que le permite aprender a partir de los datos.
+
+## ¿Qué es una red neuronal?
+
+A pesar de su nombre, una red neuronal artificial está muy lejos de reproducir el funcionamiento del cerebro humano. El término *neuronal* responde más a una inspiración biológica que a una copia de la realidad. Sus primeros investigadores observaron que el cerebro era capaz de aprender a partir de la experiencia y se preguntaron si sería posible construir modelos matemáticos que, de forma muy simplificada, presentaran un comportamiento similar.
+
+La idea era sorprendentemente sencilla. En lugar de diseñar un algoritmo específico para cada problema, se construía una estructura formada por un gran número de unidades muy simples, denominadas **neuronas artificiales**, conectadas entre sí. Cada una de ellas recibía información procedente de otras neuronas, realizaba un pequeño cálculo matemático y transmitía el resultado a las siguientes.
+
+De forma aislada, una neurona artificial apenas tiene capacidad para resolver ningún problema interesante. Su funcionamiento consiste únicamente en combinar una serie de valores numéricos, aplicar una función matemática y producir un nuevo valor como resultado. Sin embargo, cuando miles o incluso millones de estas neuronas trabajan conjuntamente, comienzan a emerger comportamientos mucho más complejos.
+
+Las conexiones entre las neuronas no tienen todas la misma importancia. Cada una posee un valor numérico asociado, denominado **peso**, que determina cuánto influye una señal sobre la siguiente neurona. Durante el entrenamiento estos pesos se modifican continuamente, reforzando aquellas conexiones que ayudan a obtener respuestas correctas y debilitando las que producen errores. En realidad, aprender no significa otra cosa que encontrar la combinación de millones de pesos que mejor representa las relaciones existentes en los datos.
+
+Las neuronas suelen organizarse en capas. Una primera capa recibe la información de entrada, varias capas intermedias transforman progresivamente esa información y una última capa genera el resultado final. Cuantas más capas intervienen en ese proceso, mayor es la capacidad del modelo para descubrir relaciones complejas. Precisamente de esa mayor profundidad procede el término **Deep Learning**.
+
+La enorme ventaja de este enfoque es que la estructura general de la red apenas cambia de un problema a otro. Lo que realmente varía son los valores de sus millones de pesos, que se ajustan automáticamente durante el entrenamiento. Una misma arquitectura puede aprender a reconocer objetos en imágenes, traducir textos entre idiomas, identificar enfermedades a partir de pruebas médicas o mantener una conversación con un usuario. No porque haya sido programada específicamente para cada una de esas tareas, sino porque ha aprendido patrones diferentes modificando sus conexiones internas.
+
+Comprender esta idea resulta fundamental para entender la evolución reciente de la Inteligencia Artificial. Sin embargo, todavía queda una pregunta por responder. Si una red neuronal contiene millones o incluso miles de millones de pesos, ¿cómo consigue ajustarlos para aprender sin que un ingeniero tenga que modificarlos uno a uno?
+
+## ¿Cómo aprende una red neuronal?
+
+Una red neuronal aprende mediante un proceso iterativo de prueba y error. Durante el entrenamiento recibe un gran número de ejemplos, genera una respuesta para cada uno de ellos y la compara con el resultado esperado. Si la respuesta es correcta, apenas realiza cambios. Si se ha equivocado, modifica ligeramente los pesos de sus conexiones para intentar reducir ese error en la siguiente ocasión.
+
+Este proceso se repite miles, millones o incluso miles de millones de veces. Cada modificación individual es prácticamente insignificante, pero la acumulación de todos esos pequeños ajustes termina construyendo un modelo capaz de reconocer patrones muy complejos.
+
+La clave del aprendizaje no consiste en memorizar los ejemplos utilizados durante el entrenamiento, sino en encontrar una configuración de pesos que permita responder correctamente también ante datos nuevos. Dicho de otro modo, la red no aprende respuestas concretas, sino las relaciones matemáticas que existen entre los datos.
+
+Todo este proceso se realiza de forma automática mediante algoritmos de optimización que calculan cómo deben modificarse los pesos para reducir progresivamente el error. Aunque la base matemática que lo hace posible es compleja, desde el punto de vista conceptual la idea resulta sencilla: la red prueba, mide el error, ajusta sus conexiones y vuelve a intentarlo una y otra vez hasta que alcanza un resultado satisfactorio.
+
+Este mecanismo de aprendizaje, combinado con grandes cantidades de datos y una enorme capacidad de cálculo, es el que ha convertido a las redes neuronales profundas en la base de la mayoría de los sistemas modernos de Inteligencia Artificial.
+
+## Siguiente paso
+
+A medida que las redes neuronales aumentaban de tamaño comenzaron a aparecer capacidades que antes parecían inalcanzables. Ya no solo reconocían imágenes o clasificaban datos. También empezaban a comprender relaciones complejas entre palabras, frases y documentos completos. Aquello abrió el camino hacia una nueva generación de modelos conocidos como Large Language Models (LLM).

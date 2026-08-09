@@ -1,0 +1,64 @@
+---
+title: "Progrmacion declarativa"
+---
+
+# Describiendo el resultado, no el procedimiento
+
+La programación declarativa representa un nuevo paso en la evolución de los niveles de abstracción del software, mientras que la programación imperativa obliga al desarrollador a describir paso a paso el algoritmo que debe ejecutar el ordenador, y la programación funcional centra la atención en las transformaciones aplicadas sobre los datos, la programación declarativa propone un enfoque completamente diferente: El desarrollador deja de indicar **cómo** resolver un problema y comienza a describir **qué** resultado desea obtener.
+
+La responsabilidad de encontrar el procedimiento adecuado pasa a formar parte del propio sistema.
+
+## Del algoritmo a la especificación
+
+En un lenguaje imperativo, obtener una lista de clientes con saldo pendiente implica diseñar un algoritmo completo, será necesario recorrer estructuras de datos, evaluar condiciones, almacenar resultados y decidir el orden de ejecución de cada operación, en un lenguaje declarativo como SQL, el mismo problema puede expresarse de forma mucho más sencilla.
+
+```sql
+SELECT *
+FROM clientes
+WHERE saldo > 0;
+```
+
+La consulta no indica cómo recorrer la tabla, qué algoritmo utilizar ni qué índices emplear, simplemente especifica el resultado esperado. El sistema gestor de bases de datos (SGDB) analiza la consulta, estudia las estadísticas disponibles y selecciona automáticamente el plan de ejecución que considera más eficiente, por primera vez, el desarrollador comienza a delegar decisiones importantes en la propia plataforma.
+
+## El estado deseado
+
+Este mismo principio aparece hoy en numerosas tecnologías modernas, cuando utilizamos _Terraform_, _Kubernetes_ o _Docker Compose_ no describimos una secuencia de operaciones, describimos el estado final que deseamos alcanzar, no indicamos cómo crear una máquina virtual, desplegar un contenedor o configurar una red, simplemente declaramos cuál debe ser el resultado final y dejamos que la plataforma determine el procedimiento necesario para conseguirlo.
+
+La programación deja de ser una descripción detallada de acciones y se convierte en una especificación de objetivos.
+
+## Delegar decisiones
+
+La programación declarativa introduce un cambio conceptual muy importante: El desarrollador ya no controla todas las decisiones del proceso de ejecución, parte de esas decisiones se delegan en el propio sistema:
+
+- Un optimizador SQL decide qué índices utilizar.
+- Un planificador de Kubernetes decide en qué nodo ejecutar un contenedor.
+- Terraform calcula automáticamente las dependencias entre recursos.
+
+El ingeniero continúa definiendo el problema, pero deja de ser responsable de todos los detalles de su resolución, esta idea constituye uno de los mayores avances en la historia de la Ingeniería del Software.
+
+## El puente hacia la Inteligencia Artificial
+
+La programación declarativa también estableció un puente natural hacia los primeros sistemas de Inteligencia Artificial, lenguajes como Prolog permitían describir hechos y reglas lógicas sin implementar explícitamente el algoritmo de razonamiento, El programador escribía afirmaciones como:
+
+* Juan es padre de Pedro.
+* Pedro es padre de Luis.
+
+Y definía reglas del tipo:
+
+* Si X es padre de Y e Y es padre de Z, entonces X es abuelo de Z.
+
+El motor de inferencia era el encargado de encontrar automáticamente las respuestas, por primera vez, el conocimiento comenzaba a representarse de forma explícita y el sistema asumía parte del proceso de razonamiento. Esta idea inspiró el desarrollo de la Inteligencia Artificial simbólica y de los sistemas expertos durante las décadas siguientes.
+
+Aunque aquellos sistemas demostraron importantes limitaciones, introdujeron un concepto que sigue siendo fundamental en la actualidad: el ingeniero no siempre necesita describir el procedimiento completo; en muchas ocasiones basta con representar correctamente el conocimiento y dejar que el sistema realice el resto del trabajo.
+
+## Una evolución continua
+
+La programación declarativa no constituye el final de esta evolución, representa un nuevo escalón en un proceso de abstracción creciente, cada nuevo paradigma ha desplazado una parte mayor de la complejidad desde el desarrollador hacia las herramientas.
+
+* La programación imperativa delegó el código máquina en el compilador.
+* La programación funcional delegó numerosos detalles de implementación en el lenguaje.
+* La programación declarativa delegó la estrategia de resolución en motores especializados.
+
+El siguiente paso consistirá en delegar no solo la estrategia de ejecución, sino también parte del conocimiento necesario para resolver el problema, este cambio marcará el comienzo de una nueva etapa en la evolución de la Ingeniería del Software.
+
+
