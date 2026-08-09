@@ -1,0 +1,281 @@
+---
+title: "Embeddings"
+--- 
+
+# Representar significado mediante números"
+
+Después de dividir el texto en tokens, cada uno de ellos se identifica mediante un número dentro del vocabulario del modelo.
+
+Sin embargo, ese identificador solo permite distinguir un token de otro. El número asignado no contiene por sí mismo información sobre su significado, su función o su relación con otros tokens.
+
+Por ejemplo, que los tokens *gato* y *felino* tengan los identificadores 4.215 y 18.732 no indica que ambos conceptos estén relacionados. Los números actúan únicamente como referencias dentro de una tabla.
+
+Para que el modelo pueda trabajar con semejanzas, diferencias y relaciones, cada token debe transformarse en una representación matemática más rica.
+
+Esa representación recibe el nombre de **embedding**.
+
+## Qué es un embedding
+
+Un embedding es un conjunto de valores numéricos que representa las características aprendidas de un elemento.
+
+En un modelo de lenguaje, ese elemento puede ser:
+
+* un token;
+* una palabra;
+* una frase;
+* un párrafo;
+* un documento completo;
+* incluso una imagen, un fragmento de audio u otro tipo de información.
+
+Podemos imaginar un embedding como una lista de números:
+
+```text
+gato → [0.18, -0.42, 0.73, 0.09, ...]
+```
+
+En los modelos reales, estas representaciones pueden contener cientos o miles de valores.
+
+Cada valor individual no suele corresponder a una característica fácilmente interpretable. No existe necesariamente una posición que signifique *animal*, otra que signifique *doméstico* y otra que signifique *mamífero*.
+
+El significado se encuentra distribuido entre muchas dimensiones y surge de la combinación de todos esos valores.
+
+## Un espacio de representaciones
+
+Los embeddings pueden interpretarse como posiciones dentro de un espacio matemático de muchas dimensiones.
+
+En ese espacio, los elementos utilizados en contextos parecidos tienden a adquirir representaciones próximas o relacionadas.
+
+Por ejemplo, podrían aparecer asociaciones entre términos como:
+
+* *gato*, *perro* y *animal*;
+* *Madrid*, *París* y *ciudad*;
+* *programar*, *código* y *software*;
+* *factura*, *pago* y *contabilidad*.
+
+Esto no significa que el modelo contenga una definición formal de cada concepto.
+
+Significa que, durante el entrenamiento, ha encontrado regularidades en la forma en que esos elementos aparecen y se relacionan dentro de los datos.
+
+Una idea fundamental de los modelos de lenguaje es que gran parte de la información sobre el significado puede aprenderse observando el uso del lenguaje.
+
+Las palabras que aparecen en contextos similares suelen desempeñar funciones o expresar conceptos relacionados.
+
+## Del identificador al embedding
+
+Cuando el modelo recibe un token, utiliza su identificador para recuperar una representación inicial desde una tabla de embeddings.
+
+De forma simplificada:
+
+```text
+token
+  ↓
+identificador
+  ↓
+vector de embedding
+```
+
+Por ejemplo:
+
+```text
+"servidor"
+    ↓
+  8431
+    ↓
+[0.14, -0.31, 0.82, ...]
+```
+
+Esta transformación convierte un identificador arbitrario en una representación numérica que el modelo puede procesar mediante operaciones matemáticas.
+
+La tabla de embeddings forma parte de los parámetros del modelo y se ajusta durante el entrenamiento.
+
+Por tanto, el ingeniero no asigna manualmente los valores asociados a cada token. El modelo los aprende a partir de los datos y del objetivo de entrenamiento.
+
+## Similitud entre embeddings
+
+Una de las propiedades más útiles de los embeddings es que permiten medir matemáticamente la proximidad entre representaciones.
+
+Dos embeddings pueden compararse para estimar si los elementos que representan guardan alguna relación.
+
+Por ejemplo, un sistema podría determinar que una consulta sobre:
+
+> problemas al iniciar sesión
+
+está relacionada con un documento titulado:
+
+> recuperación de acceso y contraseña
+
+aunque ambos textos no utilicen exactamente las mismas palabras.
+
+Esta capacidad se utiliza en numerosas soluciones:
+
+* buscadores semánticos;
+* sistemas de recomendación;
+* clasificación de documentos;
+* agrupación de contenidos;
+* detección de duplicados;
+* recuperación de información para sistemas RAG;
+* comparación entre preguntas y respuestas;
+* identificación de contenidos relacionados.
+
+La búsqueda tradicional suele depender en gran medida de la coincidencia entre términos. La búsqueda mediante embeddings permite comparar representaciones aproximadas de su contenido.
+
+Por ello, puede encontrar relaciones que no serían evidentes mediante una búsqueda literal.
+
+## Similitud no significa identidad
+
+La proximidad entre embeddings debe interpretarse con precaución.
+
+Dos representaciones pueden ser cercanas porque comparten:
+
+* significado;
+* tema;
+* función;
+* contexto de uso;
+* estilo;
+* estructura;
+* asociaciones frecuentes.
+
+Por ejemplo, *médico* y *hospital* pueden aparecer próximos aunque no sean conceptos equivalentes.
+
+También pueden encontrarse próximos términos opuestos, como *frío* y *caliente*, porque aparecen en contextos lingüísticos parecidos.
+
+Por tanto, la cercanía matemática no constituye una definición exacta del significado. Es una señal aprendida sobre las relaciones presentes en los datos.
+
+## El significado depende del contexto
+
+Una palabra aislada puede tener varios significados.
+
+Consideremos el término:
+
+> banco
+
+Puede referirse a:
+
+* una entidad financiera;
+* un asiento;
+* un conjunto de peces;
+* una acumulación de arena;
+* una reserva de datos o recursos.
+
+Una representación fija del token no basta para determinar cuál de estas interpretaciones es correcta.
+
+El significado depende de los demás elementos de la secuencia:
+
+> El banco aprobó el préstamo.
+
+> Nos sentamos en un banco del parque.
+
+> El barco atravesó un banco de arena.
+
+El token inicial puede ser el mismo, pero su representación útil debe cambiar según el contexto en el que aparece.
+
+Los modelos de lenguaje modernos resuelven este problema construyendo **representaciones contextuales**.
+
+El embedding inicial proporciona un punto de partida, pero después el modelo lo transforma teniendo en cuenta los demás tokens de la secuencia.
+
+Así, la representación de *banco* termina siendo diferente en cada uno de los ejemplos anteriores.
+
+## Embeddings iniciales y representaciones contextuales
+
+Conviene distinguir dos momentos del procesamiento.
+
+### Embedding inicial
+
+Es la representación que el modelo obtiene al identificar el token.
+
+En esta fase, el token todavía no ha sido interpretado completamente dentro de la frase.
+
+### Representación contextual
+
+Es la representación resultante después de relacionar el token con los demás elementos del contexto.
+
+Esta representación incorpora información sobre:
+
+* las palabras que lo rodean;
+* su posición en la secuencia;
+* la estructura de la frase;
+* las referencias anteriores;
+* el sentido que adquiere dentro del texto.
+
+Podemos expresarlo de forma simplificada:
+
+```text
+embedding inicial + contexto → representación contextual
+```
+
+El modelo no trabaja únicamente con una colección de palabras aisladas. Construye representaciones que evolucionan a medida que la información atraviesa sus distintas capas.
+
+## Embeddings de frases y documentos
+
+Los embeddings no se utilizan únicamente para representar tokens.
+
+También pueden generarse representaciones de unidades mayores, como frases o documentos completos.
+
+Por ejemplo, las siguientes expresiones podrían producir embeddings próximos:
+
+> No puedo acceder a mi cuenta.
+
+> He olvidado mis credenciales de acceso.
+
+> Necesito recuperar mi contraseña.
+
+Aunque no son idénticas, comparten una intención relacionada.
+
+Un sistema puede utilizar esta proximidad para buscar documentos relevantes, clasificar solicitudes o recuperar información que posteriormente será proporcionada a un modelo de lenguaje.
+
+En estos casos, el embedding no pretende reproducir cada detalle del texto. Produce una representación condensada de algunas de sus características más relevantes.
+
+Esa condensación implica inevitablemente una pérdida de información. Por ello, un embedding resulta útil para encontrar o comparar contenidos, pero no sustituye al contenido original.
+
+## Embeddings dentro de un sistema inteligente
+
+Los embeddings son una capacidad matemática que puede integrarse en distintos componentes de un sistema inteligente.
+
+Por ejemplo, un sistema de atención al cliente podría:
+
+1. recibir una consulta;
+2. generar un embedding de la pregunta;
+3. compararlo con embeddings de documentos internos;
+4. recuperar los documentos más relacionados;
+5. proporcionar esos documentos a un modelo de lenguaje;
+6. generar una propuesta de respuesta;
+7. validar el resultado antes de mostrarlo o enviarlo.
+
+El embedding no responde a la pregunta ni toma una decisión. Permite localizar información potencialmente relevante.
+
+De nuevo, observamos la diferencia entre una capacidad concreta y el sistema completo que la utiliza.
+
+## Una representación aprendida, no una verdad objetiva
+
+Los embeddings se construyen a partir de los datos utilizados durante el entrenamiento.
+
+Por ello, reflejan:
+
+* las regularidades presentes en esos datos;
+* las asociaciones frecuentes;
+* sus limitaciones;
+* sus desequilibrios;
+* y también sus posibles sesgos.
+
+Un espacio de embeddings no constituye una representación neutral y universal del conocimiento.
+
+Es una representación aprendida para cumplir un objetivo determinado.
+
+Su utilidad debe evaluarse dentro del sistema concreto, teniendo en cuenta los datos, el dominio, el idioma y las consecuencias de los posibles errores.
+
+## De representar a relacionar
+
+Hasta ahora hemos recorrido el siguiente camino:
+
+> texto → tokens → identificadores → embeddings
+
+Los embeddings proporcionan una representación matemática inicial de cada token.
+
+Pero todavía queda una cuestión esencial:
+
+> ¿Cómo determina el modelo qué partes del contexto son relevantes para interpretar cada token?
+
+Para construir representaciones contextuales, el modelo debe relacionar unas posiciones de la secuencia con otras y calcular cuáles merecen mayor atención en cada momento.
+
+Ese mecanismo recibe precisamente el nombre de **atención**.
+

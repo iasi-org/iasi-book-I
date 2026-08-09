@@ -1,0 +1,297 @@
+---
+title: Attention
+---
+
+# Atención: relacionar cada token con su contexto
+
+Los embeddings proporcionan una representación matemática inicial de cada token. Sin embargo, el significado que adquiere un elemento dentro de una frase no depende únicamente de su representación aislada.
+
+Para interpretar correctamente una secuencia, el modelo debe relacionar cada token con los demás tokens disponibles en el contexto.
+
+Consideremos la siguiente frase:
+
+> La aplicación no pudo conectarse al servidor porque estaba apagado.
+
+Para interpretar la expresión *estaba apagado*, el modelo debe relacionarla principalmente con *servidor*. Otros elementos de la frase aportan información, pero no todos tienen la misma relevancia para resolver esa relación.
+
+El mecanismo que permite calcular dinámicamente qué partes de la secuencia resultan más relevantes para representar cada token recibe el nombre de **atención**.
+
+## Qué es la atención
+
+La atención es un mecanismo que permite al modelo asignar distintos grados de importancia a los elementos de una secuencia.
+
+Para construir la representación contextual de un token, el modelo:
+
+1. compara ese token con los demás tokens disponibles;
+2. calcula cuánto debe atender a cada uno;
+3. asigna un peso a cada relación;
+4. combina la información utilizando esos pesos.
+
+De forma simplificada:
+
+> token actual + relaciones con el contexto → representación contextual
+
+El resultado no es una selección única.
+
+El modelo no elige necesariamente una palabra y descarta todas las demás. Distribuye diferentes pesos entre los tokens de la secuencia.
+
+Por ejemplo, al procesar *apagado*, podría asignar:
+
+* un peso elevado a *servidor*;
+* cierta relevancia a *conectarse*;
+* un peso menor a *aplicación*;
+* muy poca relevancia a otros elementos.
+
+Estos pesos no están definidos previamente mediante reglas lingüísticas. Se calculan para cada secuencia a partir de los parámetros aprendidos durante el entrenamiento.
+
+## La atención depende de la relación
+
+Un token no tiene una importancia absoluta dentro del texto.
+
+Su relevancia depende de:
+
+* qué token se está procesando;
+* qué información se necesita obtener;
+* qué otros tokens forman parte del contexto;
+* qué relaciones ha aprendido el modelo durante el entrenamiento.
+
+En la frase:
+
+> El banco aprobó el préstamo.
+
+el término *banco* se relaciona con *aprobó* y *préstamo*.
+
+En cambio, en:
+
+> Nos sentamos en el banco del parque.
+
+el mismo token se relaciona con *sentamos* y *parque*.
+
+El embedding inicial puede ser semejante en ambos casos, pero el mecanismo de atención produce representaciones contextuales diferentes.
+
+Por tanto, la atención permite que el significado operativo de un token se adapte a la secuencia en la que aparece.
+
+## Consultas, claves y valores
+
+Para calcular la atención, el modelo genera tres representaciones diferentes a partir de cada token:
+
+* **consulta** o *query*;
+* **clave** o *key*;
+* **valor** o *value*.
+
+Estos tres conceptos suelen representarse mediante las letras **Q**, **K** y **V**.
+
+### Consulta
+
+La consulta representa la información que el token necesita localizar en el contexto.
+
+Podemos interpretarla como una pregunta matemática:
+
+> ¿Qué información de los demás tokens resulta relevante para mí?
+
+### Clave
+
+La clave representa el tipo de información que cada token puede ofrecer.
+
+La consulta de un token se compara con las claves de los demás para calcular la intensidad de cada relación.
+
+### Valor
+
+El valor contiene la información que el token aportará si se considera relevante.
+
+La clave se utiliza para determinar cuánto atender al token. El valor proporciona la información que se incorporará al resultado.
+
+Podemos resumirlo así:
+
+> la consulta busca, la clave permite comparar y el valor aporta información
+
+Estas representaciones no se escriben manualmente. Se obtienen mediante transformaciones matemáticas cuyos parámetros se ajustan durante el entrenamiento.
+
+## Cálculo de la atención
+
+El modelo compara cada consulta con las claves de los tokens disponibles.
+
+Cuanto mayor sea la compatibilidad entre una consulta y una clave, mayor será normalmente el peso asignado a esa relación.
+
+En el mecanismo denominado **atención por producto escalar escalado**, el cálculo se expresa mediante:
+
+$$
+\operatorname{Atención}(Q,K,V)
+=
+\operatorname{softmax}
+\left(
+\frac{QK^{T}}{\sqrt{d_k}}
+\right)V
+$$
+
+Esta expresión puede interpretarse en cuatro pasos:
+
+1. $QK^{T}$ compara las consultas con las claves.
+2. La división por $\sqrt{d_k}$ reduce el efecto de valores excesivamente grandes y estabiliza el cálculo.
+3. La función $\operatorname{softmax}$ transforma las puntuaciones obtenidas en pesos relativos.
+4. Los pesos se aplican a los valores $V$ para construir la representación resultante.
+
+No es necesario realizar manualmente estas operaciones para utilizar un modelo, pero comprender su función permite abandonar una visión vaga de la atención.
+
+La atención no es una intuición abstracta. Es un cálculo que produce una combinación ponderada de información.
+
+## Autoatención
+
+Cuando las consultas, claves y valores proceden de la misma secuencia, hablamos de **autoatención** o *self-attention*.
+
+En una frase, cada token puede atender a los demás tokens de esa misma frase y construir su representación contextual.
+
+De forma simplificada:
+
+```text
+secuencia de tokens
+        ↓
+cada token se compara con los demás
+        ↓
+se calculan pesos de atención
+        ↓
+se generan representaciones contextuales
+```
+
+La autoatención permite establecer relaciones entre elementos aunque se encuentren separados dentro de la secuencia.
+
+Por ejemplo:
+
+> El informe que presentó el equipo después de varias semanas de trabajo fue aprobado.
+
+Para interpretar *fue aprobado*, el modelo debe conservar la relación con *informe*, aunque entre ambos aparezcan numerosos tokens.
+
+A diferencia de otros enfoques anteriores que procesaban el texto principalmente de forma secuencial, la autoatención permite calcular directamente relaciones entre distintas posiciones.
+
+## Atención causal
+
+Un modelo destinado a generar texto no debe utilizar información que todavía no ha sido generada.
+
+Cuando predice el siguiente token, solo puede considerar los tokens anteriores.
+
+Para garantizarlo se utiliza una **máscara causal**, que impide atender a posiciones futuras.
+
+Por ejemplo, durante la generación de:
+
+> El sistema inteligente utiliza...
+
+al predecir el token situado después de *utiliza*, el modelo puede atender a:
+
+* *El*;
+* *sistema*;
+* *inteligente*;
+* *utiliza*.
+
+Pero no puede utilizar los tokens que todavía no existen.
+
+Esta restricción mantiene el carácter autoregresivo de la generación:
+
+> contexto disponible → siguiente token → nuevo contexto → siguiente token
+
+El proceso se repite hasta completar la respuesta.
+
+## Atención múltiple
+
+Una única operación de atención puede concentrarse en un determinado tipo de relación.
+
+Sin embargo, una secuencia contiene simultáneamente relaciones diferentes:
+
+* sintácticas;
+* semánticas;
+* temporales;
+* referenciales;
+* estructurales;
+* relacionadas con la posición;
+* relacionadas con la tarea solicitada.
+
+Por ello, el Transformer utiliza **atención multicabeza** o *multi-head attention*.
+
+Cada cabeza de atención dispone de sus propias transformaciones para consultas, claves y valores. Esto permite que distintas cabezas aprendan a capturar diferentes relaciones dentro de la misma secuencia.
+
+De forma conceptual:
+
+```text
+                 ┌─ cabeza 1 ─ relaciones sintácticas
+representaciones ├─ cabeza 2 ─ referencias entre elementos
+                 ├─ cabeza 3 ─ relaciones semánticas
+                 └─ cabeza n ─ otros patrones aprendidos
+                              ↓
+                     resultado combinado
+```
+
+No existe una asignación fija que obligue a cada cabeza a especializarse en una función concreta. Las relaciones emergen durante el entrenamiento y no siempre resultan fáciles de interpretar.
+
+Los resultados de todas las cabezas se combinan para producir una nueva representación de cada posición.
+
+## Atención y posición
+
+La autoatención compara los tokens de una secuencia, pero por sí sola no incorpora necesariamente su orden.
+
+Las frases:
+
+> El perro persigue al gato.
+
+y:
+
+> El gato persigue al perro.
+
+contienen tokens semejantes, pero expresan relaciones diferentes debido a su posición.
+
+Por esta razón, el Transformer incorpora información posicional a las representaciones de entrada. Esa información permite distinguir:
+
+* qué token aparece antes;
+* cuál aparece después;
+* la distancia aproximada entre posiciones;
+* el orden de los elementos dentro de la secuencia.
+
+La atención relaciona los elementos. La información posicional permite interpretar esas relaciones dentro de una secuencia ordenada.
+
+## Atención no significa conciencia
+
+El término *atención* procede de una analogía con la capacidad humana de concentrarse en determinados elementos.
+
+Sin embargo, el mecanismo no implica:
+
+* conciencia;
+* intención;
+* comprensión humana;
+* interés;
+* reflexión deliberada.
+
+Se trata de una operación matemática aprendida que distribuye pesos entre representaciones.
+
+El modelo no decide conscientemente prestar atención a una palabra. Calcula relaciones numéricas que han resultado útiles para reducir el error durante el entrenamiento.
+
+## Los pesos de atención no son una explicación completa
+
+Los pesos de atención pueden ayudar a observar algunas relaciones internas del modelo, pero no deben considerarse automáticamente una explicación completa de su resultado.
+
+Una salida se produce mediante:
+
+* múltiples cabezas de atención;
+* numerosas capas sucesivas;
+* transformaciones adicionales;
+* conexiones residuales;
+* redes neuronales internas;
+* interacciones distribuidas entre muchos parámetros.
+
+Que un token reciba un peso elevado en una cabeza concreta no demuestra por sí solo que sea la causa única de la respuesta.
+
+La atención aporta información sobre el procesamiento, pero no convierte automáticamente al modelo en un sistema transparente o completamente explicable.
+
+## De la atención al Transformer
+
+Los mecanismos de atención ya se utilizaban antes de la aparición del Transformer, especialmente en sistemas de traducción automática[@bahdanau2015]. Permitían seleccionar dinámicamente las partes de una secuencia de entrada más relevantes para generar cada elemento de la salida.
+
+En 2017, Vaswani y sus colaboradores presentaron el artículo *Attention Is All You Need*[@vaswani2017]. Su propuesta fue construir una arquitectura basada principalmente en mecanismos de atención, eliminando la necesidad de utilizar redes recurrentes o convolucionales como componentes centrales para procesar las secuencias.
+
+Esa arquitectura recibió el nombre de **Transformer**.
+
+El título del artículo resume su idea principal: la atención no sería únicamente un mecanismo auxiliar dentro de otra arquitectura. Podía convertirse en el fundamento sobre el que construir el modelo.
+
+El recorrido realizado hasta ahora puede resumirse así:
+
+> texto → tokens → embeddings → atención → representaciones contextuales
+
+En la siguiente sección reuniremos estas piezas para comprender la arquitectura que hizo posible el desarrollo de los grandes modelos de lenguaje modernos: el Transformer.
+

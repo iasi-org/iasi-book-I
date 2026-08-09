@@ -1,0 +1,120 @@
+---
+title: "Sistema Inteligente"
+---
+
+# ¿Qué es?
+
+Cuando se habla actualmente de inteligencia artificial, suelen utilizarse expresiones como *IA*, *IA generativa*, *modelo de lenguaje*, *agente* o *asistente*. Estos términos describen tecnologías, capacidades o componentes concretos, pero no necesariamente la solución completa. A lo largo de este libro utilizaremos un concepto más amplio: **sistema inteligente**.
+
+***Un sistema inteligente es una solución diseñada para recibir información, interpretarla y producir resultados o acciones orientadas a un objetivo.***
+
+Puede incorporar uno o varios modelos de inteligencia artificial, pero también datos, reglas de negocio, herramientas, controles, mecanismos de validación, interfaces y supervisión humana.Por tanto, un LLM no es el sistema, la IA generativa no es el sistema y un agente tampoco es el sistema, son piezas que pueden formar parte de él.
+
+Esta distinción será la base de todo el libro: no estudiaremos únicamente modelos de inteligencia artificial, sino cómo integrarlos dentro de sistemas útiles, seguros, verificables y gobernados por decisiones de ingeniería.
+
+
+Cuando hablamos de inteligencia artificial, es fácil comenzar por sus manifestaciones más visibles: asistentes conversacionales, generadores de imágenes, sistemas de recomendación o herramientas capaces de producir código. Sin embargo, estos ejemplos representan soluciones muy diferentes entre sí y no permiten, por sí solos, definir qué entendemos por **sistema inteligente**.
+
+En términos generales, podemos considerar un sistema inteligente a aquel que recibe información de su entorno, la procesa utilizando algún tipo de modelo y produce una respuesta, una decisión o una acción orientada a un objetivo.
+
+De forma simplificada, su funcionamiento puede representarse mediante cuatro elementos:
+
+1. **Entradas:** la información que recibe el sistema.
+2. **Modelo:** el mecanismo utilizado para interpretar esa información.
+3. **Resultado:** la respuesta, predicción o recomendación generada.
+4. **Acción:** el efecto que el resultado puede producir sobre otro sistema o sobre el entorno.
+
+Por ejemplo, un filtro de correo no deseado recibe un mensaje, analiza sus características y determina la probabilidad de que sea spam. Un sistema de detección de fraude examina una operación bancaria y estima si presenta un comportamiento anómalo. Un recomendador analiza preferencias y comportamientos anteriores para seleccionar contenidos que podrían resultar relevantes.
+
+En todos estos casos existe un proceso común:
+
+> información → interpretación → resultado
+
+No obstante, el término *inteligente* debe utilizarse con cierta precaución. No implica necesariamente que el sistema comprenda el problema como lo haría una persona, que sea consciente de sus decisiones o que pueda explicar correctamente por qué ha producido un resultado.
+
+En este contexto, la inteligencia no describe una cualidad humana, sino una **capacidad funcional**: resolver determinados problemas, reconocer patrones, realizar predicciones, generar contenido o adaptar su comportamiento ante distintas entradas.
+
+# Diferentes grados de autonomía
+
+No todos los sistemas inteligentes tienen el mismo nivel de autonomía.
+
+Algunos se limitan a producir información:
+
+* clasifican un correo;
+* calculan una probabilidad;
+* resumen un documento;
+* recomiendan una posible acción.
+
+Otros sistemas utilizan ese resultado para ejecutar automáticamente una operación:
+
+* bloquear una transacción;
+* modificar el precio de un producto;
+* detener una máquina;
+* enviar una comunicación;
+* conceder o rechazar una solicitud.
+
+Esta diferencia es fundamental. Generar una recomendación no equivale a tomar una decisión, y producir una decisión no implica necesariamente que el sistema deba ejecutarla de forma autónoma.
+
+El grado de autonomía debe formar parte del diseño de la solución y depender del riesgo, el impacto y la posibilidad de corregir un error.
+
+Un sistema que recomienda una película puede tolerar fácilmente una predicción equivocada. Un sistema que participa en una decisión médica, financiera, laboral o judicial requiere controles mucho más estrictos.
+
+Por tanto, la cuestión relevante no es únicamente:
+
+> ¿Qué puede hacer el sistema?
+
+También debemos preguntar:
+
+> ¿Qué debe permitírsele hacer sin supervisión?
+
+# Un modelo no es un sistema completo
+
+Otro error frecuente consiste en identificar el modelo con el sistema entero. Un modelo puede recibir datos y generar una salida, pero una solución real suele necesitar muchos otros componentes:
+
+* mecanismos para obtener y preparar la información;
+* reglas de negocio;
+* controles de acceso;
+* validación de entradas y resultados;
+* conexión con bases de datos y aplicaciones;
+* registro de operaciones;
+* gestión de errores;
+* supervisión humana;
+* mecanismos de seguridad y auditoría.
+
+Por ejemplo, un modelo de lenguaje puede redactar una respuesta para un cliente, pero el sistema completo debe decidir qué información puede proporcionarse, comprobar que los datos utilizados son correctos, evitar la exposición de información confidencial y determinar si la respuesta puede enviarse automáticamente o necesita revisión.
+
+El modelo aporta una capacidad. El sistema establece cómo, cuándo y bajo qué condiciones puede utilizarse.
+
+# Sistemas inteligentes e inteligencia artificial generativa
+
+Tampoco todos los sistemas inteligentes son sistemas de inteligencia artificial generativa. Un detector de fraude, un clasificador de imágenes o un modelo de predicción de demanda pueden analizar información y producir resultados sin generar contenido nuevo.
+
+La inteligencia artificial generativa se caracteriza por crear una salida a partir de los patrones aprendidos durante el entrenamiento. Esa salida puede ser texto, código, imágenes, audio, vídeo u otros tipos de contenido.
+
+Los grandes modelos de lenguaje pertenecen a esta categoría, pero constituyen solo una parte del conjunto de sistemas inteligentes.
+
+Podemos establecer, por tanto, una primera distinción:
+
+* **Sistema inteligente:** solución capaz de interpretar información y producir resultados orientados a un objetivo.
+* **Modelo de inteligencia artificial:** componente que aprende o representa patrones utilizados para producir esos resultados.
+* **Modelo generativo:** modelo capaz de generar contenido nuevo.
+* **LLM:** modelo generativo especializado en trabajar con lenguaje y otros datos representados como secuencias.
+
+Estas categorías no son equivalentes. Un LLM puede formar parte de un sistema inteligente, pero no todo sistema inteligente utiliza un LLM, ni un LLM aislado constituye necesariamente una solución completa.
+
+# Inteligencia y responsabilidad
+
+La utilización de un sistema inteligente no elimina la responsabilidad de quienes lo diseñan, integran, despliegan o utilizan. El sistema puede producir una clasificación, una recomendación o una propuesta. Sin embargo, alguien debe determinar:
+
+* qué objetivo persigue;
+* qué datos puede utilizar;
+* qué errores son aceptables;
+* cómo se verifican sus resultados;
+* qué acciones puede ejecutar;
+* cuándo es necesaria la intervención humana;
+* quién responde cuando el sistema falla.
+
+Por eso, a lo largo de este libro trataremos la inteligencia artificial como una capacidad tecnológica integrada dentro de un sistema de ingeniería. La IA puede analizar, proponer, generar o recomendar. La decisión sobre su utilización, sus límites y sus consecuencias corresponde al ingeniero y a la organización responsable.
+
+En la siguiente sección examinaremos una diferencia fundamental para comprender cómo se construyen estos sistemas: la distinción entre programar reglas explícitas y desarrollar modelos capaces de aprender patrones a partir de datos.
+

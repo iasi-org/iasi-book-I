@@ -1,0 +1,43 @@
+---
+title: "Conceptos de Sistemas Inteligentes y LLM"
+order: 2
+---
+
+## Introducción
+
+El capítulo anterior nos ha conducido desde la informática tradicional hasta la aparición de los grandes modelos de lenguaje. Hemos visto cómo la evolución del software ha ido incorporando nuevas formas de resolver problemas, pasando de sistemas construidos mediante reglas explícitas a modelos capaces de aprender patrones a partir de grandes cantidades de datos.
+
+Llegados a este punto, antes de utilizar estas tecnologías o construir soluciones sobre ellas, necesitamos comprender qué tenemos realmente delante.
+
+Los modelos de lenguaje suelen presentarse a través de sus resultados: redactan textos, responden preguntas, resumen documentos, generan código o mantienen conversaciones. Sin embargo, estas capacidades pueden crear una imagen engañosa de su funcionamiento. Un LLM no comprende, recuerda o razona necesariamente de la misma forma que una persona, aunque sus respuestas puedan producir esa impresión.
+
+Este capítulo introduce los conceptos necesarios para interpretar correctamente su comportamiento, sus posibilidades y sus límites.
+
+## Descripción
+
+Comenzaremos definiendo qué entendemos por sistema inteligente y distinguiendo entre los sistemas basados en reglas y aquellos que aprenden a partir de datos.
+
+A continuación, presentaremos los conceptos de modelo, entrenamiento e inferencia, que permiten comprender cómo se construye y utiliza un sistema de aprendizaje automático. Introduciremos también, sin necesidad de profundizar todavía en sus fundamentos matemáticos, el papel de las redes neuronales y de la arquitectura transformer.
+
+Sobre esta base estudiaremos qué es un modelo de lenguaje, cómo representa el texto mediante tokens y cómo genera una respuesta estimando de forma sucesiva qué fragmentos son más probables en cada momento.
+
+También diferenciaremos entre el conocimiento adquirido durante el entrenamiento, el contexto proporcionado en una interacción, la memoria externa y el acceso a herramientas o fuentes de información.
+
+Por último, analizaremos las principales capacidades y limitaciones de los LLM. Esta distinción será esencial durante el resto del curso, porque una respuesta convincente no es necesariamente una respuesta correcta, y un modelo capaz de generar lenguaje no constituye por sí mismo un sistema completo.
+
+## Objetivos
+
+Al finalizar este capítulo, el lector será capaz de:
+
+* explicar qué entendemos por sistema inteligente;
+* distinguir entre un sistema basado en reglas y un sistema basado en aprendizaje;
+* diferenciar los conceptos de modelo, entrenamiento e inferencia;
+* describir de forma general qué es una red neuronal y qué papel desempeña un transformer;
+* explicar qué es un modelo de lenguaje y cómo genera texto;
+* comprender qué son los tokens y la ventana de contexto;
+* distinguir entre conocimiento entrenado, contexto, memoria externa y herramientas;
+* interpretar el carácter probabilístico de las respuestas de un LLM;
+* identificar las principales capacidades y limitaciones de estos modelos;
+* comprender por qué un LLM debe considerarse un componente dentro de un sistema, y no el sistema completo.
+
+Comprender estos conceptos nos permitirá utilizar los modelos de lenguaje con mayor criterio. En los capítulos siguientes veremos cómo interactuar con ellos, cómo ampliar sus capacidades y cómo integrarlos dentro de sistemas inteligentes útiles, verificables y controlados.

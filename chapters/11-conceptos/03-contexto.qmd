@@ -1,0 +1,190 @@
+---
+title: "Contextos"
+--- 
+
+# Tokens, contexto y ventana de contexto
+
+Un modelo matemático no recibe palabras, frases o documentos de la misma manera que una persona los percibe. Para poder procesar lenguaje, el texto debe transformarse en una representación numérica.
+
+El primer paso de esa transformación consiste en dividir el contenido en unidades denominadas **tokens**.
+
+## Tokens
+
+Un token es una unidad de texto que el modelo puede identificar y procesar.
+
+Un token puede corresponder a:
+
+* una palabra completa;
+* una parte de una palabra;
+* un signo de puntuación;
+* un número;
+* un espacio combinado con una palabra;
+* una secuencia frecuente de caracteres.
+
+Por tanto, token y palabra no son conceptos equivalentes.
+
+Una frase como:
+
+> Los sistemas inteligentes aprenden patrones.
+
+podría dividirse, de forma simplificada, en unidades como:
+
+```text
+Los | sistemas | inteligentes | aprenden | patrones | .
+```
+
+Sin embargo, dependiendo del tokenizador utilizado, una palabra puede dividirse en varios fragmentos:
+
+```text
+intelig | entes
+```
+
+El resultado exacto depende del vocabulario y del método de tokenización empleado por cada modelo.
+
+Los modelos suelen utilizar fragmentos frecuentes porque permiten representar un vocabulario muy amplio sin tener que almacenar cada palabra posible como una unidad independiente. De esta forma también pueden procesar palabras desconocidas, nombres propios, términos técnicos o variaciones lingüísticas dividiéndolos en componentes más pequeños.
+
+## Del texto a identificadores numéricos
+
+Cada token está asociado a un identificador numérico dentro del vocabulario del modelo.
+
+De forma simplificada, una secuencia de texto podría convertirse en algo parecido a:
+
+```text
+"Los sistemas inteligentes"
+          ↓
+[1452, 8734, 21987]
+```
+
+Estos números no representan directamente el significado de las palabras. Son identificadores que permiten localizar cada token dentro del vocabulario.
+
+Posteriormente, cada identificador se transforma en una representación matemática más rica. Esta representación permitirá al modelo establecer relaciones entre tokens, reconocer patrones y utilizar la información disponible en la secuencia.
+
+Ese proceso se estudiará en la siguiente sección al introducir el concepto de **embedding**.
+
+## Por qué importan los tokens
+
+Los tokens son relevantes no solo para comprender el funcionamiento interno del modelo. También tienen consecuencias prácticas.
+
+La cantidad de tokens influye en:
+
+* el volumen de información que puede procesarse;
+* el tiempo necesario para generar una respuesta;
+* el coste de utilización de algunos servicios;
+* la longitud máxima de una conversación o documento;
+* la cantidad de texto que el modelo puede considerar simultáneamente.
+
+Dos textos con el mismo número de palabras pueden producir cantidades diferentes de tokens. Esto depende del idioma, la puntuación, el vocabulario utilizado y el tokenizador del modelo.
+
+Los términos frecuentes suelen representarse mediante pocos tokens. Las palabras poco comunes, los identificadores técnicos, determinadas secuencias numéricas o algunos fragmentos de código pueden requerir más.
+
+Por esta razón, medir únicamente caracteres o palabras no permite conocer con exactitud cuánto espacio ocupará un contenido para el modelo.
+
+## Contexto
+
+El **contexto** es el conjunto de información disponible para el modelo durante una inferencia.
+
+En una conversación, el contexto puede incluir:
+
+* las instrucciones generales del sistema;
+* la petición actual del usuario;
+* mensajes anteriores;
+* fragmentos de documentos;
+* resultados obtenidos mediante herramientas;
+* ejemplos proporcionados;
+* parte de la respuesta que el modelo ya ha generado.
+
+El modelo utiliza esta información para determinar qué resultado debe producir a continuación.
+
+Por ejemplo, la petición:
+
+> Resume el documento.
+
+no puede interpretarse correctamente si el documento no forma parte del contexto o no puede obtenerse mediante alguna herramienta.
+
+Del mismo modo, una expresión como:
+
+> Hazlo más breve.
+
+solo tiene sentido si el contexto contiene el texto o la respuesta a la que se refiere.
+
+El contexto proporciona la información necesaria para interpretar referencias, mantener la continuidad de una interacción y adaptar la respuesta a una tarea concreta.
+
+## El contexto no modifica el modelo
+
+Proporcionar información en el contexto no equivale a entrenar el modelo.
+
+Durante una conversación, los parámetros del modelo permanecen normalmente sin cambios. El modelo utiliza temporalmente la información incluida en la petición, pero esa información no se incorpora automáticamente a sus parámetros.
+
+La diferencia puede resumirse así:
+
+* el **entrenamiento** modifica los parámetros del modelo;
+* el **contexto** proporciona información temporal durante una inferencia;
+* la **inferencia** utiliza los parámetros y el contexto para producir un resultado.
+
+Esta distinción explica por qué un modelo puede utilizar información nueva sin haber sido entrenado nuevamente.
+
+También explica por qué la información disponible durante una conversación puede dejar de estar accesible si ya no se incluye en el contexto de una petición posterior.
+
+## Ventana de contexto
+
+La **ventana de contexto** es la cantidad máxima de tokens que el modelo puede procesar conjuntamente en una inferencia.
+
+Esta capacidad debe repartirse entre todos los elementos incluidos en la interacción:
+
+* instrucciones;
+* conversación anterior;
+* documentos;
+* ejemplos;
+* resultados de herramientas;
+* petición actual;
+* respuesta generada.
+
+Podemos imaginarla como un espacio de trabajo limitado.
+
+Si el contenido total supera ese límite, el sistema que utiliza el modelo debe adoptar alguna estrategia:
+
+* eliminar mensajes antiguos;
+* recortar documentos;
+* resumir información previa;
+* seleccionar únicamente los fragmentos relevantes;
+* dividir la tarea en varias operaciones.
+
+La forma concreta de gestionar este límite depende de la aplicación que integra el modelo.
+
+Un modelo puede tener una ventana de contexto extensa y, aun así, no utilizar con la misma eficacia toda la información disponible. Incluir más contenido no garantiza automáticamente una respuesta mejor. La información irrelevante, contradictoria o mal organizada puede dificultar la identificación de los elementos importantes.
+
+Por tanto, no solo importa cuánto contexto se proporciona, sino también su calidad, estructura y relevancia.
+
+## Contexto y memoria
+
+Contexto y memoria tampoco son equivalentes.
+
+El contexto contiene la información presente en una inferencia concreta. La memoria requiere algún mecanismo que conserve información y vuelva a proporcionarla cuando resulte necesaria.
+
+Ese mecanismo puede encontrarse fuera del modelo:
+
+* una base de datos;
+* un archivo;
+* un historial de conversación;
+* un sistema de recuperación de información;
+* un perfil del usuario;
+* una memoria diseñada específicamente para un agente.
+
+Cuando una aplicación parece recordar información de una interacción anterior, normalmente existe un sistema externo que la ha almacenado y la incorpora de nuevo al contexto.
+
+El modelo no necesita conservar internamente toda la información. Necesita recibir la información adecuada en el momento en que debe utilizarla.
+
+## Una primera visión del procesamiento del lenguaje
+
+Podemos representar de forma simplificada la entrada de información en un modelo de lenguaje:
+
+> texto → tokens → identificadores numéricos → representaciones matemáticas → modelo
+
+Los tokens constituyen la unidad básica con la que se organiza la secuencia. El contexto determina qué información está disponible, y la ventana de contexto establece cuánto contenido puede procesarse conjuntamente.
+
+Sin embargo, los identificadores numéricos de los tokens todavía no expresan relaciones de significado.
+
+Para que el modelo pueda trabajar con conceptos, similitudes y relaciones, cada token debe convertirse en una representación matemática capaz de situarlo dentro de un espacio de características.
+
+Esa representación recibe el nombre de **embedding**.
+

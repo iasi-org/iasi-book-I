@@ -1,0 +1,133 @@
+---
+title: "Conceptos fundamentales de los sistemas inteligente"
+---
+
+# Modelo, entrenamiento e inferencia
+
+Para comprender cómo funciona un sistema inteligente basado en aprendizaje automático, necesitamos distinguir tres conceptos fundamentales: **modelo**, **entrenamiento** e **inferencia**.
+
+Estos términos aparecen constantemente al hablar de inteligencia artificial, pero con frecuencia se utilizan como si fueran equivalentes. No lo son. Cada uno describe una parte diferente del ciclo de construcción y utilización de un sistema.
+
+## Modelo
+
+Un modelo es una representación matemática capaz de transformar unas entradas en un resultado.
+
+Puede recibir, por ejemplo:
+
+* los datos de una operación bancaria y estimar su nivel de riesgo;
+* una imagen y determinar qué objetos aparecen en ella;
+* información histórica y predecir una demanda futura;
+* una secuencia de texto y generar el fragmento que debería continuarla.
+
+El modelo no contiene necesariamente reglas comprensibles y escritas de forma explícita. Su comportamiento depende de un conjunto de valores internos que han sido ajustados durante el entrenamiento.
+
+De forma simplificada:
+
+> entrada → modelo → resultado
+
+Un modelo no es, por sí solo, un sistema inteligente completo. Es un componente que aporta una determinada capacidad de análisis, predicción o generación.
+
+El sistema completo debe encargarse además de proporcionar los datos, validar las entradas, interpretar los resultados, aplicar reglas, controlar las acciones y gestionar los posibles errores.
+
+## Parámetros
+
+Los parámetros son los valores internos que determinan cómo transforma el modelo una entrada en un resultado.
+
+Durante el entrenamiento, estos valores se modifican progresivamente para mejorar el comportamiento del modelo en una tarea determinada.
+
+En modelos sencillos puede haber unos pocos parámetros. En una red neuronal moderna puede haber millones o miles de millones.
+
+Cuando se dice que un modelo tiene, por ejemplo, siete mil millones de parámetros, no significa que contenga siete mil millones de reglas escritas o siete mil millones de conocimientos individuales.
+
+Significa que dispone de una enorme cantidad de valores numéricos ajustados conjuntamente para representar patrones presentes en los datos de entrenamiento.
+
+Los parámetros no deben confundirse con la información que proporcionamos al utilizar el modelo.
+
+* Los **parámetros** forman parte del modelo.
+* Las **entradas** se proporcionan durante su utilización.
+* El **contexto** contiene la información disponible en una interacción concreta.
+
+Esta diferencia será especialmente importante al estudiar los modelos de lenguaje.
+
+## Entrenamiento
+
+El entrenamiento es el proceso mediante el cual se ajustan los parámetros del modelo.
+
+Durante este proceso, el modelo recibe ejemplos y produce resultados. Estos resultados se comparan con el comportamiento esperado mediante una medida de error.
+
+El proceso se repite muchas veces:
+
+1. el modelo recibe una entrada;
+2. produce un resultado;
+3. se calcula el error;
+4. se ajustan sus parámetros;
+5. se vuelve a evaluar.
+
+El objetivo es reducir progresivamente el error y conseguir que el modelo pueda responder adecuadamente no solo ante los ejemplos utilizados durante el entrenamiento, sino también ante situaciones nuevas.
+
+De forma simplificada:
+
+> datos → entrenamiento → modelo ajustado
+
+El entrenamiento suele ser la fase más costosa del ciclo de vida de un modelo. Puede requerir grandes cantidades de datos, capacidad de cálculo, tiempo y mecanismos de evaluación.
+
+Una vez finalizado, el resultado es un modelo cuyos parámetros han quedado ajustados.
+
+## Inferencia
+
+La inferencia es el proceso de utilizar un modelo ya entrenado para obtener un resultado.
+
+Cuando un modelo clasifica una imagen, estima el riesgo de una operación o genera una respuesta, está realizando una inferencia.
+
+De forma simplificada:
+
+> nueva entrada + modelo entrenado → resultado
+
+En un modelo de lenguaje, cada vez que escribimos una petición y recibimos una respuesta se está ejecutando un proceso de inferencia.
+
+El modelo no se entrena de nuevo con cada pregunta. Utiliza los parámetros adquiridos durante el entrenamiento y la información disponible en el contexto actual para generar el resultado.
+
+Esta distinción es fundamental:
+
+* durante el **entrenamiento**, el modelo modifica sus parámetros;
+* durante la **inferencia**, utiliza esos parámetros;
+* durante una conversación, el contexto puede cambiar, pero el modelo no se reentrena automáticamente.
+
+Que un modelo recuerde información dentro de una conversación no significa que esa información se haya incorporado permanentemente a sus parámetros.
+
+## Entrenamiento e inferencia dentro del sistema
+
+En un sistema inteligente, el entrenamiento y la inferencia pueden producirse en entornos y momentos completamente distintos.
+
+El modelo puede entrenarse en una infraestructura especializada y distribuirse posteriormente para su utilización en servidores, dispositivos móviles, vehículos o sistemas industriales.
+
+También puede utilizarse un modelo previamente entrenado por otra organización e integrarlo dentro de un sistema propio.
+
+En ese caso, el ingeniero no controla necesariamente el entrenamiento original, pero sí debe comprender:
+
+* qué modelo está utilizando;
+* para qué tareas fue diseñado;
+* qué entradas acepta;
+* qué resultados produce;
+* qué limitaciones presenta;
+* cómo debe validarse;
+* qué controles necesita dentro del sistema.
+
+Utilizar un modelo entrenado por terceros no elimina las responsabilidades de diseño e integración.
+
+## Una distinción esencial
+
+Podemos resumir estos conceptos de la siguiente forma:
+
+| Concepto      | Función                                              |
+| ------------- | ---------------------------------------------------- |
+| Modelo        | Transforma entradas en resultados                    |
+| Parámetros    | Valores internos que determinan su comportamiento    |
+| Entrenamiento | Ajusta los parámetros utilizando datos               |
+| Inferencia    | Utiliza el modelo entrenado para producir resultados |
+
+Esta separación proporciona la base para comprender los conceptos que estudiaremos a continuación.
+
+Un modelo de lenguaje es un tipo particular de modelo. Sus entradas y resultados se representan mediante tokens, utiliza una ventana de contexto y genera texto mediante un proceso probabilístico de inferencia.
+
+
