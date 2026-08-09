@@ -1,0 +1,58 @@
+---
+title: "Foundations"
+order: 3
+---
+
+## Introducción
+
+Antes de definir cómo construiremos sistemas inteligentes, necesitamos establecer los principios sobre los que se apoyará todo el trabajo posterior.
+
+A estos principios los denominaremos **foundations**.
+
+No son tecnologías, herramientas ni procedimientos. Son las premisas de diseño que utilizaremos para analizar problemas, tomar decisiones y evaluar las soluciones que construyamos.
+
+## Qué encontrarás en este capítulo
+
+Este capítulo presenta un conjunto reducido de principios fundamentales, entre ellos:
+
+* la IA no decide;
+* el modelo no es el sistema;
+* generar no es verificar;
+* la responsabilidad no se delega;
+* el fallo forma parte del diseño;
+* la seguridad y el control se consideran desde el inicio;
+* la documentación es parte del sistema;
+* todo resultado y toda acción deben ser trazables.
+
+Cada foundation se formulará mediante una afirmación breve y se acompañará de una explicación que delimite su significado y sus consecuencias.
+
+## Por qué son foundations
+
+Utilizamos el término *foundations* porque estos principios cumplen una función semejante a la de los axiomas dentro de una construcción matemática.
+
+No pretendemos demostrarlos en cada proyecto. Los adoptamos como bases desde las que razonaremos.
+
+A partir de ellos definiremos:
+
+* nuestro marco de trabajo;
+* las decisiones de arquitectura;
+* los controles necesarios;
+* los límites de la automatización;
+* los criterios de validación;
+* la relación entre el modelo, el sistema y las personas responsables.
+
+Todo sistema, workshop o solución desarrollada durante el curso deberá poder justificarse a partir de estas bases.
+
+## Objetivos
+
+Al finalizar este capítulo, el lector será capaz de:
+
+* identificar los principios fundamentales utilizados durante el curso;
+* explicar por qué un modelo no constituye por sí mismo un sistema inteligente;
+* distinguir entre capacidad técnica, autoridad y responsabilidad;
+* comprender la necesidad de validar y verificar los resultados generados;
+* reconocer la seguridad, la documentación y la trazabilidad como partes del diseño;
+* utilizar estas foundations como criterio para analizar decisiones posteriores.
+
+El siguiente capítulo convertirá estos principios en una forma concreta de trabajo: el marco que utilizaremos para diseñar, construir, evaluar y mejorar sistemas inteligentes.
+

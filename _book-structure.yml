@@ -23,6 +23,7 @@ book:
         - "chapters/11-conceptos/06-transformers.qmd"
         - "chapters/11-conceptos/07-modelos.qmd"
         - "chapters/11-conceptos/08-limites.qmd"
+    - part: "chapters/12-foundations/index.qmd"
     - "90-summary.qmd"
     - "95-references.qmd"
     - "99-licenses.qmd"
