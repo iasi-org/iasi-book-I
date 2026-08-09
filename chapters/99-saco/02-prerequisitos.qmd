@@ -1,0 +1,177 @@
+# Prerequisitos
+
+Antes de comenzar los laboratorios es necesario preparar el entorno de trabajo.
+
+El objetivo de este capítulo no es aprender nuevas tecnologías ni instalar aplicaciones sin criterio. Su finalidad es construir un laboratorio reproducible, aislado y fácilmente recuperable que utilizaremos durante todo el libro.
+
+A lo largo de los siguientes capítulos prepararemos paso a paso este laboratorio. Una vez completado, no volveremos a preocuparnos por el entorno y podremos centrarnos exclusivamente en aprender Ingeniería de Sistemas Inteligentes.
+
+## Filosofía
+
+Nuestro entorno de trabajo se basa en cuatro principios fundamentales:
+
+1. El sistema operativo principal no debe modificarse innecesariamente.
+2. Todos los laboratorios deben ser reproducibles.
+3. Debemos poder volver atrás en cualquier momento.
+4. Todas las instalaciones y versiones deben quedar documentadas.
+
+La plataforma de referencia utilizada durante el libro es:
+
+* **Sistema operativo anfitrión:** Windows 11
+* **Virtualización:** Oracle VirtualBox
+* **Sistema operativo invitado:** Kubuntu 24.04 LTS
+
+Todo el desarrollo se realizará dentro de la máquina virtual.
+
+Este enfoque presenta varias ventajas:
+
+* El sistema principal permanece intacto.
+* El laboratorio puede eliminarse o recrearse cuando sea necesario.
+* Es posible utilizar instantáneas (*snapshots*) para volver a un estado anterior en pocos segundos.
+* Todos los lectores trabajan sobre un entorno prácticamente idéntico.
+* El libro resulta mucho más sencillo de mantener y reproducir.
+
+## Arquitectura del laboratorio
+
+```text
+Windows 11
+    │
+    ▼
+VirtualBox
+    │
+    ▼
+Kubuntu 24.04 LTS
+    │
+    ▼
+Docker
+    │
+    ▼
+Ollama
+    │
+    ▼
+Herramientas de desarrollo
+```
+
+No estamos instalando herramientas sobre nuestro equipo principal.
+
+Estamos construyendo un laboratorio completo donde podremos experimentar, equivocarnos, romper configuraciones y restaurarlas sin afectar al sistema operativo anfitrión.
+
+## Requisitos del equipo anfitrión
+
+No es necesario disponer de un ordenador de altas prestaciones, pero una configuración adecuada hará que la experiencia sea mucho más fluida.
+
+### Requisitos mínimos
+
+| Recurso              | Mínimo                                   |
+| -------------------- | ---------------------------------------- |
+| Procesador           | 4 núcleos con soporte Intel VT-x o AMD-V |
+| Memoria RAM          | 16 GB                                    |
+| Almacenamiento libre | 100 GB SSD                               |
+| Conexión a Internet  | Recomendada                              |
+
+### Configuración recomendada
+
+| Recurso        | Recomendado          |
+| -------------- | -------------------- |
+| Procesador     | 8 núcleos o superior |
+| Memoria RAM    | 32 GB                |
+| Almacenamiento | SSD NVMe             |
+| GPU            | Opcional             |
+
+> **Nota**
+>
+> Todos los laboratorios del libro pueden realizarse utilizando únicamente la CPU. Una GPU mejora el rendimiento de algunos modelos, pero no es un requisito.
+
+## Configuración de la máquina virtual
+
+La configuración inicial recomendada para VirtualBox es la siguiente:
+
+| Parámetro              | Valor recomendado |
+| ---------------------- | ----------------: |
+| Sistema operativo      | Kubuntu 24.04 LTS |
+| Memoria RAM            |              8 GB |
+| Procesadores virtuales |                 4 |
+| Disco virtual          |  80 GB (dinámico) |
+| Memoria de vídeo       |            128 MB |
+| Red                    |               NAT |
+| Portapapeles           |     Bidireccional |
+| Arrastrar y soltar     |     Bidireccional |
+
+Si el equipo dispone de 32 GB o más de memoria RAM, puede asignarse 16 GB a la máquina virtual para mejorar el rendimiento de los modelos locales.
+
+## Espacio en disco
+
+Durante el curso instalaremos distintos modelos de lenguaje, herramientas de desarrollo y contenedores Docker.
+
+Aunque la máquina virtual puede comenzar con un disco dinámico de 80 GB, es recomendable disponer de espacio adicional en el equipo anfitrión para futuras ampliaciones.
+
+## Virtualización
+
+Antes de comenzar conviene comprobar que la virtualización por hardware está habilitada en la BIOS o UEFI del equipo.
+
+Sin esta característica VirtualBox no podrá ejecutar máquinas virtuales con un rendimiento adecuado.
+
+## Estado del laboratorio
+
+A medida que avancemos en esta guía iremos completando el siguiente estado del entorno:
+
+| Componente         | Estado |
+| ------------------ | :----: |
+| Windows 11         |    ☐   |
+| VirtualBox         |    ☐   |
+| Kubuntu 24.04 LTS  |    ☐   |
+| Guest Additions    |    ☐   |
+| Docker             |    ☐   |
+| Ollama             |    ☐   |
+| Visual Studio Code |    ☐   |
+| Git                |    ☐   |
+| Python             |    ☐   |
+| Java               |    ☐   |
+| Maven              |    ☐   |
+| Quarto             |    ☐   |
+
+## Versiones utilizadas
+
+Con el fin de garantizar la reproducibilidad, mantendremos actualizada la relación de versiones empleadas durante la elaboración del libro.
+
+| Software           | Versión |
+| ------------------ | ------- |
+| Windows            |         |
+| VirtualBox         |         |
+| Kubuntu            |         |
+| Kernel Linux       |         |
+| Docker             |         |
+| Ollama             |         |
+| Modelo LLM         |         |
+| Visual Studio Code |         |
+| Git                |         |
+| Python             |         |
+| Java               |         |
+| Maven              |         |
+| Quarto             |         |
+
+
+## Política de versiones
+
+La tecnología evoluciona constantemente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.
+
+Para garantizar la reproducibilidad de los laboratorios, este libro adopta una política de versiones sencilla y estable.
+
+Siempre que sea posible se utilizarán:
+
+* Versiones **LTS (Long Term Support)** para sistemas operativos y herramientas que las ofrezcan.
+* La **última versión estable** cuando no exista una versión LTS.
+* Versiones oficiales distribuidas por sus respectivos fabricantes o proyectos.
+
+Todas las capturas, ejemplos y laboratorios han sido desarrollados y verificados utilizando las versiones indicadas en este documento.
+
+Aunque muchas herramientas funcionan correctamente con versiones anteriores o posteriores, se recomienda seguir esta guía para obtener una experiencia idéntica a la descrita en el libro.
+
+La siguiente tabla recoge las versiones de referencia utilizadas durante la elaboración de esta obra y se actualizará conforme evolucione el proyecto.
+
+## Próximo paso
+
+Una vez comprobados los requisitos, construiremos nuestro laboratorio.
+
+Comenzaremos instalando **Oracle VirtualBox** y creando una máquina virtual con **Kubuntu 24.04 LTS**, que será el entorno de referencia para todos los laboratorios del libro.
+

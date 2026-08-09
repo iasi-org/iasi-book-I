@@ -1,0 +1,39 @@
+# Documentos, autores, reponsables y colaboradores
+
+Creando el primer lab han salido una serie de documentacion **minima** para casi cualquier proyecto.
+Cada uno de esos documentos tiene un responsable principal y un conjunto de colaboradores habituales, que pueden variar según el proyecto y el equipo.
+preo definemos un conjunto de documentos y roles que pueden servir como referencia para cualquier proyecto.
+
+| Documento               | Responsable principal             | Colaboradores habituales          |
+| ----------------------- | --------------------------------- | --------------------------------- |
+| `vision.md`             | Product Owner / Sponsor           | Equipo, stakeholders              |
+| `principles.md`         | Arquitecto / Líder técnico        | Todo el equipo                    |
+| `functional.md`         | Analista funcional                | Product Owner, usuarios           |
+| `non-functional.md`     | Arquitecto                        | Operaciones, Seguridad, QA        |
+| `architecture.md`       | Arquitecto                        | Tech Leads                        |
+| `modules.md`            | Arquitecto                        | Desarrolladores                   |
+| `constraints.md`        | Arquitecto                        | Operaciones                       |
+| `quality-attributes.md` | Arquitecto                        | QA, Seguridad, Operaciones        |
+| `coding.md`             | Tech Lead                         | Desarrolladores                   |
+| `naming.md`             | Tech Lead                         | Arquitecto                        |
+| `logging.md`            | Arquitecto / Tech Lead            | Operaciones                       |
+| `console.md`            | UX / Tech Lead                    | Desarrolladores                   |
+| `shell.md`              | Especialista Bash                 | Tech Lead                         |
+| `security.md`           | Security Engineer                 | Arquitecto, Operaciones           |
+| `testing.md`            | QA Lead                           | Desarrolladores                   |
+| `documentation.md`      | Technical Writer                  | Todo el equipo                    |
+| `planning.md`           | Project Manager / Product Owner   | Arquitecto                        |
+| `glossary.md`           | Todo el equipo                    | Product Owner, Arquitecto         |
+| `ADR`                   | Arquitecto                        | Equipo técnico                    |
+| `Labs`                  | Cualquier miembro del equipo      | Revisores técnicos                |
+| `OpenSpec`              | Arquitecto / Equipo de ingeniería | Todos los responsables anteriores |
+
+### Observación
+
+Un proyecto no necesita necesariamente una persona distinta para cada documento.
+
+Lo que sí necesita es que **cada responsabilidad esté representada**.
+
+Una misma persona puede asumir varios roles, especialmente en equipos pequeños o proyectos personales. La IA puede asistir en todos ellos, pero la responsabilidad sobre las decisiones sigue perteneciendo al equipo de ingeniería.
+
+

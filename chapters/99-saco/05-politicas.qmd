@@ -1,0 +1,88 @@
+# Políticas
+
+Este documento recoge las políticas y criterios utilizados durante el desarrollo de **Ingeniería de Sistemas Inteligentes**.
+
+Su objetivo es garantizar la coherencia, la reproducibilidad y la mantenibilidad del entorno de trabajo y de todos los laboratorios del libro.
+
+Las políticas aquí definidas prevalecen sobre decisiones puntuales y servirán como referencia cuando existan varias alternativas técnicamente válidas.
+
+## Política de versiones
+
+La tecnología evoluciona continuamente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.
+
+Para garantizar la reproducibilidad de los laboratorios, este proyecto adopta una política de versiones sencilla y estable.
+
+Siempre que sea posible se utilizarán:
+
+* Versiones **LTS (Long Term Support)** para sistemas operativos y herramientas que las ofrezcan.
+* La **última versión estable** cuando no exista una versión LTS.
+* Versiones oficiales distribuidas por sus respectivos fabricantes o proyectos.
+
+Todas las capturas, ejemplos y laboratorios se desarrollarán y verificarán utilizando las versiones indicadas en la documentación del proyecto.
+
+## Política de instalación
+
+Cada herramienta tendrá un **único procedimiento oficial de instalación**.
+
+Siempre que sea posible se utilizará el método recomendado por el propio fabricante o proyecto.
+
+Con el fin de mantener un entorno homogéneo y fácilmente reproducible, se seguirá el siguiente orden de preferencia:
+
+1. Repositorio oficial del proyecto o fabricante.
+2. Gestor de paquetes del sistema operativo cuando el paquete sea oficial y esté adecuadamente mantenido.
+3. Instalador oficial proporcionado por el proyecto.
+4. Otros métodos únicamente cuando exista una justificación técnica documentada.
+
+Se evitará mezclar diferentes métodos de instalación para una misma herramienta.
+
+Asimismo:
+
+* Toda instalación deberá quedar documentada.
+* Toda herramienta tendrá asociada una versión concreta.
+* Cualquier cambio de versión deberá reflejarse en la documentación.
+
+## Política del laboratorio
+
+Todo el desarrollo del libro se realizará dentro de un laboratorio aislado.
+
+La plataforma de referencia será:
+
+* Sistema operativo anfitrión: **Windows 11**
+* Virtualización: **Oracle VirtualBox**
+* Sistema operativo invitado: **Kubuntu 26.04 LTS**
+
+El sistema operativo anfitrión no deberá modificarse innecesariamente.
+
+Siempre que sea posible, los cambios se realizarán exclusivamente dentro de la máquina virtual.
+
+Antes de realizar modificaciones importantes se recomienda crear una instantánea (*snapshot*) que permita recuperar el estado anterior del laboratorio.
+
+## Política de reproducibilidad
+
+Cualquier lector deberá poder reconstruir el laboratorio completo siguiendo únicamente la documentación del proyecto.
+
+Para ello:
+
+* Todas las herramientas utilizadas deberán estar documentadas.
+* Todas las versiones deberán registrarse.
+* Todos los laboratorios deberán poder repetirse obteniendo resultados equivalentes.
+* Las decisiones de diseño deberán estar justificadas cuando existan varias alternativas razonables.
+
+La reproducibilidad es un objetivo prioritario del proyecto.
+
+## Política de simplicidad
+
+Cuando existan varias soluciones técnicamente correctas, se elegirá la más sencilla de comprender, instalar, mantener y reproducir.
+
+No se introducirán herramientas, dependencias o configuraciones cuya complejidad no aporte un beneficio claro al aprendizaje.
+
+La finalidad del laboratorio es aprender Ingeniería de Sistemas Inteligentes, no administrar sistemas operativos.
+
+## Política de evolución
+
+Este proyecto evolucionará con el tiempo.
+
+Las herramientas podrán cambiar y aparecerán nuevas versiones, pero las políticas y principios definidos en este documento deberán mantenerse estables siempre que continúen siendo válidos.
+
+Los laboratorios podrán actualizarse; los principios permanecerán.
+

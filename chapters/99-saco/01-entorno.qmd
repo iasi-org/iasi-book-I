@@ -1,0 +1,168 @@
+# Preparación del Entorno
+
+## Ingeniería de Sistemas Inteligentes
+
+### Objetivo
+
+Este documento describe la preparación del entorno de trabajo utilizado a lo largo de todos los laboratorios del libro.
+
+Su finalidad es disponer de un entorno homogéneo, reproducible y sencillo de mantener.
+
+No pretende ser un manual de Linux ni una guía de instalación de herramientas. Es, simplemente, la preparación del puesto de trabajo de un Ingeniero de Sistemas Inteligentes.
+
+---
+
+# Filosofía
+
+Todos los laboratorios del libro parten del siguiente supuesto:
+
+> El entorno ya está preparado.
+
+Por ello, este documento es independiente de los Labs. De esta forma:
+
+* Los laboratorios permanecen centrados en el aprendizaje.
+* Las actualizaciones de versiones afectan únicamente a este documento.
+* Es posible reproducir exactamente el entorno utilizado durante la escritura del libro.
+
+---
+
+# Plataforma de referencia
+
+* Sistema Operativo: Kubuntu 24.04 LTS
+* Arquitectura: x86_64
+
+> Aunque muchos laboratorios pueden realizarse desde Windows o macOS, la plataforma oficial del curso será Kubuntu 24.04 LTS.
+
+---
+
+# Requisitos recomendados
+
+## Hardware mínimo
+
+* CPU de 64 bits
+* 16 GB de memoria RAM
+* 100 GB libres en SSD
+* Conexión a Internet
+
+## Hardware recomendado
+
+* Procesador multinúcleo moderno
+* 32 GB RAM
+* SSD NVMe
+* GPU NVIDIA (opcional)
+
+> Todos los laboratorios pueden realizarse utilizando únicamente la CPU.
+
+---
+
+# Filosofía de instalación
+
+Siempre que sea posible:
+
+* utilizar paquetes oficiales;
+* utilizar repositorios oficiales;
+* utilizar instalación mediante línea de comandos;
+* evitar instaladores gráficos cuando exista una alternativa reproducible.
+
+El objetivo es que cualquier lector pueda reconstruir exactamente el mismo entorno.
+
+---
+
+# Componentes del entorno
+
+Los siguientes componentes se instalarán durante esta guía.
+
+| Componente         | Estado | Versión |
+| ------------------ | :----: | ------- |
+| Git                |    ☐   |         |
+| Curl               |    ☐   |         |
+| Docker Engine      |    ☐   |         |
+| Docker Compose     |    ☐   |         |
+| Ollama             |    ☐   |         |
+| Visual Studio Code |    ☐   |         |
+| GitHub Copilot     |    ☐   |         |
+| Continue           |    ☐   |         |
+| Python             |    ☐   |         |
+| Java JDK           |    ☐   |         |
+| Maven              |    ☐   |         |
+| Quarto             |    ☐   |         |
+| R                  |    ☐   |         |
+| TinyTeX            |    ☐   |         |
+| DBeaver            |    ☐   |         |
+| MCP Inspector      |    ☐   |         |
+
+---
+
+# Versiones utilizadas
+
+Este documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.
+
+| Software             | Versión utilizada | Observaciones |
+| -------------------- | ----------------- | ------------- |
+| Kubuntu              |                   |               |
+| Kernel Linux         |                   |               |
+| Docker               |                   |               |
+| Ollama               |                   |               |
+| Modelo LLM principal |                   |               |
+| Visual Studio Code   |                   |               |
+| Continue             |                   |               |
+| GitHub Copilot       |                   |               |
+| Python               |                   |               |
+| Java                 |                   |               |
+| Maven                |                   |               |
+| Git                  |                   |               |
+| Quarto               |                   |               |
+| R                    |                   |               |
+| TinyTeX              |                   |               |
+| DBeaver              |                   |               |
+
+---
+
+# Orden de instalación
+
+1. Actualización del sistema
+2. Herramientas básicas
+3. Git
+4. Docker
+5. Ollama
+6. Visual Studio Code
+7. Python
+8. Java
+9. Maven
+10. Quarto
+11. R
+12. TinyTeX
+13. DBeaver
+14. MCP Inspector
+15. Verificación del entorno
+
+---
+
+# Lista de comprobación
+
+Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.
+
+* ☐ El sistema está actualizado.
+* ☐ Git funciona correctamente.
+* ☐ Docker funciona correctamente.
+* ☐ Ollama responde correctamente.
+* ☐ Visual Studio Code está operativo.
+* ☐ Python está instalado.
+* ☐ Java está instalado.
+* ☐ Maven funciona.
+* ☐ Quarto genera HTML.
+* ☐ Quarto genera PDF.
+* ☐ R funciona correctamente.
+* ☐ DBeaver puede conectarse a una base de datos.
+* ☐ MCP Inspector está disponible.
+
+---
+
+# Próximo paso
+
+Una vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.
+
+El primer laboratorio será:
+
+> **Lab 1. Tu primer modelo local**
+

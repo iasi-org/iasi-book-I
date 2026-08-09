@@ -1,0 +1,107 @@
+# Construcción del laboratorio
+
+## Objetivo
+
+Esta guía describe la construcción del entorno de trabajo utilizado durante todos los laboratorios de **Ingeniería de Sistemas Inteligentes**.
+
+El objetivo no es instalar aplicaciones, sino construir un laboratorio reproducible, aislado y fácilmente recuperable.
+
+## Filosofía
+
+Nuestro entorno de trabajo se basa en cuatro principios:
+
+1. El sistema operativo principal no debe modificarse innecesariamente.
+2. Todos los laboratorios deben ser reproducibles.
+3. Debemos poder volver atrás en cualquier momento.
+4. Todas las instalaciones deben estar documentadas.
+
+## Arquitectura del laboratorio
+
+```text
+Windows 11
+    │
+    ▼
+VirtualBox
+    │
+    ▼
+Kubuntu 24.04 LTS
+    │
+    ▼
+Docker
+    │
+    ▼
+Ollama
+    │
+    ▼
+Herramientas de desarrollo
+```
+
+El sistema operativo anfitrión será **Windows 11**.
+
+Sobre él se ejecutará una máquina virtual **VirtualBox**, que alojará una instalación limpia de **Kubuntu 24.04 LTS**.
+
+Todo el desarrollo del libro se realizará dentro de esta máquina virtual.
+
+Esta arquitectura presenta varias ventajas:
+
+* El sistema principal permanece intacto.
+* El laboratorio puede eliminarse o recrearse en cualquier momento.
+* Es posible utilizar instantáneas (*snapshots*) para volver a un estado anterior.
+* Todos los lectores trabajan sobre un entorno prácticamente idéntico.
+
+## Estado del laboratorio
+
+A lo largo de esta guía iremos construyendo el laboratorio paso a paso.
+
+| Componente         | Estado |
+| ------------------ | :----: |
+| Windows 11         |    ☐   |
+| VirtualBox         |    ☐   |
+| Kubuntu 24.04 LTS  |    ☐   |
+| Guest Additions    |    ☐   |
+| Docker             |    ☐   |
+| Ollama             |    ☐   |
+| Visual Studio Code |    ☐   |
+| Git                |    ☐   |
+| Python             |    ☐   |
+| Java               |    ☐   |
+| Maven              |    ☐   |
+| Quarto             |    ☐   |
+
+## Versiones utilizadas
+
+Este libro se ha elaborado utilizando las siguientes versiones de referencia.
+
+| Software           | Versión |
+| ------------------ | ------- |
+| Windows            |         |
+| VirtualBox         |         |
+| Kubuntu            |         |
+| Kernel Linux       |         |
+| Docker             |         |
+| Ollama             |         |
+| Modelo LLM         |         |
+| Visual Studio Code |         |
+| Git                |         |
+| Python             |         |
+| Java               |         |
+| Maven              |         |
+| Quarto             |         |
+
+## Organización de la guía
+
+La construcción del laboratorio se divide en los siguientes pasos:
+
+1. Instalación de VirtualBox.
+2. Creación de la máquina virtual.
+3. Instalación de Kubuntu.
+4. Instalación de Guest Additions.
+5. Creación de la instantánea inicial.
+6. Instalación de Docker.
+7. Instalación de Ollama.
+8. Instalación de Visual Studio Code.
+9. Instalación de las herramientas de desarrollo.
+10. Verificación final del entorno.
+
+Al finalizar esta guía dispondrás de un laboratorio completamente preparado para realizar todos los ejercicios y laboratorios del libro.
+

@@ -29,7 +29,7 @@ book:
     left: "© 2026 Javier G. Grandez"
     right:
       - text: "Licencias"
-        href: licenses.qmd
+        href: 903-licenses.qmd
   navbar:
     title: "IASI"
     background: primary
@@ -49,7 +49,7 @@ book:
         href: chapters/13-foundations/index.qmd
         
       - text: "Conceptos LLM"
-        href: chapters/14-foundations/index.qmd
+        href: chapters/14-marco/index.qmd
 
       - text: "Saco"
         href: chapters/99-saco/index.qmd

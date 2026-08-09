@@ -1,0 +1,34 @@
+# Notas
+
+## Sobre la instalacion
+
+Eso encaja perfectamente con la filosofía que ya hemos definido.
+
+Incluso cambiaría una frase del libro
+
+En vez de decir:
+
+Instalaremos Kubuntu.
+
+Diría:
+
+Construiremos un entorno de ingeniería sobre una instalación mínima de Kubuntu.
+
+Es mucho más representativo de lo que vamos a hacer.
+
+Y otra ventaja que me encanta.
+
+Cuando lleguemos a Docker, Git, Ollama, Quarto...
+
+El lector sabrá que todo lo que hay en su sistema está ahí porque lo ha instalado conscientemente.
+
+No porque venía en la ISO.
+
+Eso enseña una disciplina muy útil para cualquier ingeniero: mantener un entorno limpio, entender cada componente y evitar dependencias innecesarias.
+
+
+## Guest additions
+
+Como hacemos instalacion minima, en necesario instalar gcc, make y perl antes de instalar las guest additions
+
+
