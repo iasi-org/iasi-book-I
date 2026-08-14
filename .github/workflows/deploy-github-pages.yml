@@ -1,4 +1,4 @@
-name: Publish IASI Book
+name: Publish IASI Book Vol. I
 
 on:
   push:
