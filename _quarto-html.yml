@@ -7,8 +7,5 @@ format:
     theme: cosmo
     toc: true
     css: 
-       -resoures/css/iasi.css
-       -resources/css/book.css
-    grid:
-       body-width: 1440px
-       
+       -resoures/css/iasi.scss
+       -resources/css/book.scss
