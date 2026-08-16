@@ -1,5 +1,5 @@
 project:
-  output-dir: outputs/pdf
+  output-dir: _outputs/pdf
 
 format:
   pdf:
@@ -8,3 +8,13 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+    linkcolor: black
+    urlcolor: blue
+    citecolor: blue      
+
+    template-partials:
+      - resources/pdf/before-body.tex
+
+    include-in-header:
+      text: |
+        \usepackage{eso-pic}
