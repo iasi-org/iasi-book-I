@@ -23,7 +23,7 @@ bibliography:
 book:
   title: "Ingeniería asistida por sistemas inteligentes"
   author: "Javier G. Grandez"
-  output-file: "iasi"
+  output-file: "iasi-book-I"
   
   downloads:
      - pdf
