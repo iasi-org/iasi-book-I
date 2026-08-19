@@ -79,7 +79,7 @@ filters:
 filter-options:
   plantuml:
     enabled: true
-    server: http://javier:1025
+    server: http://localhost:10025
     cache: true
     styles:
       - resources/plantuml/iasi.puml
