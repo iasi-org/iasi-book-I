@@ -9,7 +9,7 @@ book:
         href: 903-licenses.qmd
 
   navbar:
-    title: "IASI"
+    title: "IASI VOL. I"
     background: primary
     pinned: true
 
@@ -32,7 +32,7 @@ book:
       - text: "Saco"
         href: chapters/99-saco/index.qmd
         
-    tools:
+    right:
       - icon: box-arrow-up-right
         href: "#iasi-open-external"
         aria-label: "Abrir en una pestaña nueva"
