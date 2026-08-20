@@ -8,6 +8,11 @@ book:
       - text: "Licencias"
         href: 903-licenses.qmd
 
+  announcement:
+     content: "![IASI](resources/images/ants.png){.iasi-ants-image}"
+     position: above-navbar
+     dismissable: false
+    
   navbar:
     title: "IASI VOL. I"
     background: primary
@@ -43,7 +48,6 @@ book:
 
 format:
   html:
-    include-before-body: resources/html/banner.html
     theme: cosmo
     toc: true
     css:

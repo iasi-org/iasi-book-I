@@ -244,13 +244,17 @@ blockquote, ul, ol {
 }
 
 /******************************************************************************/
-/* Icono para abrir iframes en otro ventana
+/* Icono para abrir iframes en otro ventana y control del banner
 /******************************************************************************/
 
-a[href="#iasi-open-external"] {
-  display: none;
+#navbarCollapse a[href$="#iasi-open-external"] {
+  display: none !important;
 }
 
-.iasi-embedded a[href="#iasi-open-external"] {
-  display: inline-flex;
+.iasi-embedded #navbarCollapse a[href$="#iasi-open-external"] {
+  display: inline-flex !important;
+}
+
+.iasi-embedded #quarto-announcement {
+  display: none !important;
 }
