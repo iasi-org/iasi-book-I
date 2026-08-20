@@ -5,7 +5,7 @@ if (iasiEmbedded) {
   document.documentElement.classList.add("iasi-embedded");
 
   document.addEventListener("DOMContentLoaded", function () {
-    const link = document.querySelector('a[href="#iasi-open-external"]');
+    const link = document.querySelector('a[href$="#iasi-open-external"]');
 
     if (link) {
       link.href = window.location.href;
