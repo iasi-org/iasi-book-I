@@ -71,7 +71,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="-resoures/css/iasi.scss -resources/css/book.scss">
+<link rel="stylesheet" href="resources/css/iasi.scss">
+<link rel="stylesheet" href="resources/css/book.scss">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -118,7 +119,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="./iasi-book-I.pdf" title="Descargar PDF" class="quarto-navigation-tool px-1" aria-label="Descargar PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -461,25 +461,37 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 <script>
 
-if (window.self !== window.top) {
+const iasiEmbedded = window.self !== window.top;
+
+
+
+if (iasiEmbedded) {
 
   document.documentElement.classList.add("iasi-embedded");
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const link = document.querySelector('a[href="#iasi-open-external"]');
+
+
+
+    if (link) {
+
+      link.href = window.location.href;
+
+      link.target = "_blank";
+
+      link.rel = "noopener";
+
+    }
+
+  });
 
 }
 
 </script>
-
-
-
-<style>
-
-.iasi-embedded .iasi-corporate-banner {
-
-  display: none;
-
-}
-
-</style>
 
 
 

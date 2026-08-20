@@ -3,7 +3,7 @@ project:
 
   resources:
     - LICENSES/*.txt
-    
+
 profile:
   group:
     - [html, pdf]
@@ -14,58 +14,15 @@ metadata-files:
 lang: es
 
 bibliography:
-   - references/historia-ia.bib
-   - references/inteligencia-artificial.bib
-   - references/historia-software.bib
-   - references/ingenieria-software.bib          
-
+  - references/historia-ia.bib
+  - references/inteligencia-artificial.bib
+  - references/historia-software.bib
+  - references/ingenieria-software.bib
 
 book:
   title: "Ingeniería asistida por sistemas inteligentes"
   author: "Javier G. Grandez"
   output-file: "iasi-book-I"
-  
-  downloads:
-     - pdf
-
-  announcement:
-    dismissable: false
-    content: "![](/resources/images/ants.png){.iasi-ants-image}"
-    type: light
-    position: above-navbar
-
-  page-footer:
-    left: "© 2026 Javier G. Grandez"
-    right:
-      - text: "Licencias"
-        href: 903-licenses.qmd
-  navbar:
-    title: "IASI"
-    background: primary
-    pinned: true
-
-    left:
-      - text: "Inicio"
-        href: index.qmd
-
-      - text: "Introducción"
-        href: chapters/11-intro/index.qmd
-
-      - text: "Conceptos"
-        href: chapters/12-conceptos/index.qmd
-
-      - text: "Foundations"
-        href: chapters/13-foundations/index.qmd
-        
-      - text: "Conceptos LLM"
-        href: chapters/14-marco/index.qmd
-
-      - text: "Saco"
-        href: chapters/99-saco/index.qmd
-
-  search:
-    location: navbar
-    type: overlay
 
 copyright:
   holder: "Javier G. Grandez"
@@ -83,4 +40,3 @@ filter-options:
     cache: true
     styles:
       - resources/plantuml/iasi.puml
-      

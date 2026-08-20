@@ -1,11 +1,51 @@
 project:
   output-dir: _outputs/html
 
+book:
+  page-footer:
+    left: "© 2026 Javier G. Grandez"
+    right:
+      - text: "Licencias"
+        href: 903-licenses.qmd
+
+  navbar:
+    title: "IASI"
+    background: primary
+    pinned: true
+
+    left:
+      - text: "Inicio"
+        href: index.qmd
+
+      - text: "Introducción"
+        href: chapters/11-intro/index.qmd
+
+      - text: "Conceptos"
+        href: chapters/12-conceptos/index.qmd
+
+      - text: "Foundations"
+        href: chapters/13-foundations/index.qmd
+
+      - text: "Conceptos LLM"
+        href: chapters/14-marco/index.qmd
+
+      - text: "Saco"
+        href: chapters/99-saco/index.qmd
+        
+    tools:
+      - icon: box-arrow-up-right
+        href: "#iasi-open-external"
+        aria-label: "Abrir en una pestaña nueva"
+        
+  search:
+    location: navbar
+    type: overlay
+
 format:
   html:
     include-before-body: resources/html/banner.html
     theme: cosmo
     toc: true
-    css: 
-       -resoures/css/iasi.scss
-       -resources/css/book.scss
+    css:
+      - resources/css/iasi.scss
+      - resources/css/book.scss

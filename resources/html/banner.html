@@ -1,14 +1,20 @@
 <script>
-if (window.self !== window.top) {
+const iasiEmbedded = window.self !== window.top;
+
+if (iasiEmbedded) {
   document.documentElement.classList.add("iasi-embedded");
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const link = document.querySelector('a[href="#iasi-open-external"]');
+
+    if (link) {
+      link.href = window.location.href;
+      link.target = "_blank";
+      link.rel = "noopener";
+    }
+  });
 }
 </script>
-
-<style>
-.iasi-embedded .iasi-corporate-banner {
-  display: none;
-}
-</style>
 
 <div class="iasi-corporate-banner">
   <img src="/resources/images/ants.png" alt="IASI">
