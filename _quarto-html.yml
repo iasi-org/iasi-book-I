@@ -1,6 +1,12 @@
 project:
   output-dir: _outputs/html
 
+website:
+  announcement:
+     content: "![IASI](resources/images/ants.png){.iasi-ants-image}"
+     position: above-navbar
+     dismissable: false
+    
 book:
   page-footer:
     left: "© 2026 Javier G. Grandez"
@@ -8,11 +14,6 @@ book:
       - text: "Licencias"
         href: 903-licenses.qmd
 
-  announcement:
-     content: "![IASI](resources/images/ants.png){.iasi-ants-image}"
-     position: above-navbar
-     dismissable: false
-    
   navbar:
     title: "IASI VOL. I"
     background: primary
