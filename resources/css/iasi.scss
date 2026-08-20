@@ -150,10 +150,10 @@ body {
 #quarto-announcement .quarto-announcement-content,
 #quarto-announcement .quarto-figure,
 #quarto-announcement figure {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #quarto-announcement .quarto-announcement-content p {
