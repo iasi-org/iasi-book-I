@@ -138,8 +138,8 @@ body {
 /***********************************************************/
 
 #quarto-announcement {
-  width: 100%;
-  max-width: none;
+  width: 100% !important;
+  max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
