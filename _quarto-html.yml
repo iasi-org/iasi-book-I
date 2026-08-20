@@ -49,8 +49,8 @@ book:
 
 format:
   html:
-    theme: cosmo
-    toc: true
-    css:
+    theme: 
+      - cosmo
       - resources/css/iasi.scss
       - resources/css/book.scss
+    toc: true
