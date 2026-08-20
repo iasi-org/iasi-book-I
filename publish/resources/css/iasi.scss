@@ -133,9 +133,13 @@ body {
   text-align: center !important;
 }
 
+/***********************************************************/
 /* Corporate banner: Quarto announcement above the navbar. */
+/***********************************************************/
+
 #quarto-announcement {
   width: 100%;
+  max-width: none;
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
@@ -143,7 +147,9 @@ body {
   background: transparent !important;
 }
 
-#quarto-announcement .quarto-announcement-content {
+#quarto-announcement .quarto-announcement-content,
+#quarto-announcement .quarto-figure,
+#quarto-announcement figure {
   width: 100%;
   max-width: none;
   margin: 0;
