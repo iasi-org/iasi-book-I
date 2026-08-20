@@ -4,10 +4,54 @@
     "href": "index.html",
     "title": "Ingeniería asistida por sistemas inteligentes",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Presentación\nLa Ingeniería del Software siempre ha evolucionado desplazando el lugar donde reside la complejidad.\nPrimero aprendimos a expresar instrucciones. Después construimos lenguajes, abstracciones, bibliotecas, frameworks, plataformas y herramientas capaces de ocultar una parte creciente de esa complejidad, los sistemas inteligentes introducen un cambio distinto.\nPor primera vez podemos trabajar con sistemas capaces de interpretar una intención expresada en lenguaje natural, proponer soluciones, escribir código, analizar alternativas, ejecutar tareas, detectar errores y participar activamente en el proceso de construcción de software.\nEso cambia muchas cosas, pero no cambia una fundamental:\nEste libro nace de esa distinción.\nIngeniería Asistida por Sistemas Inteligentes (IASI), no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.\nSino como sistemas capaces de colaborar durante el análisis, el diseño, la implementación, la verificación, la documentación y la evolución de un sistema software, integrándose en el equipo como un participante mas.",
     "crumbs": [
       "Inicio",
-      "Preface"
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "index.html#un-cambio-en-el-lugar-donde-ponemos-el-esfuerzo",
+    "href": "index.html#un-cambio-en-el-lugar-donde-ponemos-el-esfuerzo",
+    "title": "Ingeniería asistida por sistemas inteligentes",
+    "section": "Un cambio en el lugar donde ponemos el esfuerzo",
+    "text": "Un cambio en el lugar donde ponemos el esfuerzo\nDurante décadas, una parte enorme del coste de construir software estuvo asociada a transformar una idea en una implementación; había que escribirla, había que traducir decisiones humanas a lenguajes formales, configurar herramientas, crear estructuras repetitivas, consultar documentación, buscar errores y realizar manualmente innumerables tareas necesarias para convertir una solución pensada en una solución ejecutable.\nLos sistemas inteligentes reducen radicalmente parte de ese trabajo, y cuando cambia el coste de implementar, cambia también el valor relativo de todo lo que ocurre antes y después de la implementación.\n\nEntender el problema.\nDefinir qué queremos conseguir.\nEstablecer restricciones.\nDiseñar.\nEvaluar alternativas.\nProporcionar contexto.\nDistinguir una solución plausible de una solución correcta.\nVerificar.\nDecidir.\nAsumir responsabilidad por lo construido.\n\nPor eso una de las ideas que recorrerá estas páginas es sencilla:\n\nSi la implementación cada vez cuesta menos, el pensamiento cada vez vale más.",
+    "crumbs": [
+      "Inicio",
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "index.html#este-no-es-un-libro-sobre-herramientas-de-ia",
+    "href": "index.html#este-no-es-un-libro-sobre-herramientas-de-ia",
+    "title": "Ingeniería asistida por sistemas inteligentes",
+    "section": "Este no es un libro sobre herramientas de IA",
+    "text": "Este no es un libro sobre herramientas de IA\nLas herramientas actuales cambiarán. También lo harán los modelos, las interfaces, los proveedores y buena parte del vocabulario que utilizamos hoy, por eso este libro comienza por los fundamentos conceptuales y técnicos necesarios para comprender estos sistemas antes de abordar su aplicación a la Ingeniería del Software.\nAntes de preguntarnos cómo trabajar con sistemas inteligentes necesitamos comprender qué son, de dónde vienen, qué los diferencia del software tradicional, cómo representan la información, qué significa realmente contexto, qué papel desempeñan conceptos como tokens, embeddings, attention o transformers y, sobre todo, cuáles son sus capacidades y sus límites.\nEl recorrido comienza deliberadamente antes de los LLM. Volvemos a la programación imperativa, funcional y declarativa; observamos la evolución de la inteligencia artificial, el aprendizaje automático y el aprendizaje profundo; y llegamos progresivamente a los modelos actuales.\nNo buscamos acumular terminología, buscamos construir un modelo mental. Porque solo cuando comprendemos qué tenemos delante podemos empezar a preguntarnos cómo debe cambiar nuestra forma de hacer ingeniería.",
+    "crumbs": [
+      "Inicio",
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "index.html#ingeniería-no-magia",
+    "href": "index.html#ingeniería-no-magia",
+    "title": "Ingeniería asistida por sistemas inteligentes",
+    "section": "Ingeniería, no magia",
+    "text": "Ingeniería, no magia\nUn sistema inteligente puede:\n\nProducir una respuesta extraordinariamente convincente y estar equivocado.\nGenerar una implementación funcional sin comprender las consecuencias de una decisión.\nExplorar cientos de alternativas sin saber cuál de ellas debemos elegir.\nAyudarnos a pensar.\n\nPero no puede asumir nuestra responsabilidad profesional, esta relación constituye la base de IASI:\n\nEl sistema inteligente asiste.\nEl ingeniero comprende, decide, verifica y responde.\n\nNo es una diferencia semántica, es una frontera de responsabilidad, y buena parte de este libro consiste en aprender a trabajar precisamente sobre esa frontera.",
+    "crumbs": [
+      "Inicio",
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "index.html#un-libro-que-forma-parte-de-algo-mayor",
+    "href": "index.html#un-libro-que-forma-parte-de-algo-mayor",
+    "title": "Ingeniería asistida por sistemas inteligentes",
+    "section": "Un libro que forma parte de algo mayor",
+    "text": "Un libro que forma parte de algo mayor\nEste volumen no pretende cerrar una metodología, es el comienzo de una construcción.\nIASI se desarrolla como un proyecto abierto en el que las ideas no solo se describen: se aplican, se discuten, se experimentan, se convierten en herramientas y artefactos y, cuando sobreviven al contacto con la realidad, pasan a formar parte de una forma de trabajo.\nPor eso estas páginas deben leerse con la misma actitud con la que fueron escritas:\n\ncuestionando,\nexperimentando,\ncontrastando,\n\nY cambiando aquello que no resista la prueba.\nEl Manifiesto que sigue establece esa posición.\nLos Principios comienzan a convertirla en criterios de ingeniería.\nY el resto del volumen construye los fundamentos necesarios para entender los sistemas con los que vamos a trabajar. No hace falta aceptar las ideas de este libro, hace falta comprenderlas lo suficiente como para poder discutirlas, ahí empieza la ingeniería.",
+    "crumbs": [
+      "Inicio",
+      "Presentación"
     ]
   },
   {
