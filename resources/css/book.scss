@@ -15,5 +15,5 @@
  
  /* En los libros formales no sacamos los metadatos */
  .quarto-title-meta {
-  display: none;
+  display: none !important;
 }
