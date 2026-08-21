@@ -1,21 +1,19 @@
 <script>
-const iasiEmbedded = window.self !== window.top;
-
-if (iasiEmbedded) {
+if (window.self !== window.top) {
   document.documentElement.classList.add("iasi-embedded");
 
   document.addEventListener("DOMContentLoaded", function () {
+    const announcement = document.getElementById("quarto-announcement");
     const link = document.querySelector('a[href$="#iasi-open-external"]');
 
+    if (announcement) announcement.classList.add("iasi-hidden");
+
     if (link) {
-      link.href = window.location.href;
-      link.target = "_blank";
-      link.rel = "noopener";
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.open(window.location.href, "_blank", "noopener");
+      });
     }
   });
 }
 </script>
-
-<div class="iasi-corporate-banner">
-  <img src="/resources/images/ants.png" alt="IASI">
-</div>
