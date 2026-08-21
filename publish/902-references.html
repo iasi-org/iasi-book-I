@@ -89,25 +89,7 @@ div.csl-indent {
     "search-label": "Buscar"
   }
 }</script>
-<script>
-
-(() => {
-
-  const css = document.querySelector('link[rel="stylesheet"][href*="site_libs/bootstrap/"]');
-
-  if (!css) return;
-
-
-
-  const script = document.createElement("script");
-
-  script.src = css.href.replace(/site_libs\/bootstrap\/[^/]+$/, "resources/js/banner.js");
-
-  document.head.appendChild(script);
-
-})();
-
-</script>
+<script src="resources/js/banner.js"></script>
 
 
 
