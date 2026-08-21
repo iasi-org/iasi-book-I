@@ -53,7 +53,8 @@ book:
 
 format:
   html:
-    include-in-header: resources/html/banner.html
+    include-in-header:
+      - resources/html/banner.html
     theme: 
       - cosmo
       - resources/css/iasi.scss
