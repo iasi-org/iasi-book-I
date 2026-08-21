@@ -53,6 +53,7 @@ book:
 
 format:
   html:
+    pagetitle: "IASI Vol. I"
     include-in-header:
       - resources/html/banner.html
     theme: 
