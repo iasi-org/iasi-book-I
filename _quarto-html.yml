@@ -27,19 +27,16 @@ book:
     left:
       - text: "Inicio"
         href: index.qmd
-
       - text: "Introducción"
         href: chapters/11-intro/index.qmd
-
       - text: "Conceptos"
         href: chapters/12-conceptos/index.qmd
-
       - text: "Foundations"
         href: chapters/13-foundations/index.qmd
-
       - text: "Conceptos LLM"
         href: chapters/14-marco/index.qmd
-
+      - text: "Componentes"
+        href: chapters/20-components/index.qmd
       - text: "Saco"
         href: chapters/99-saco/index.qmd
         

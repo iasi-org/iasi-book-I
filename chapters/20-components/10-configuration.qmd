@@ -1,0 +1,41 @@
+---
+title: "Configuración"
+---
+
+# Decisiones parametrizables
+
+No todas las decisiones de un IISS deben convertirse en instrucciones, reglas o código. Muchas representan parámetros que seleccionan entre comportamientos permitidos: qué modelo utilizar, qué formatos generar, qué herramientas habilitar, qué nivel de detalle solicitar, qué servidor consultar o qué entorno usar. La configuración permite expresar estas decisiones de forma explícita y modificable.
+
+Separar configuración de implementación evita que pequeños cambios requieran alterar procedimientos o reescribir instrucciones. También permite que el mismo conjunto de componentes opere en entornos distintos mediante valores diferentes.
+
+# Configuración del proyecto y del entorno
+
+Una parte de la configuración pertenece al proyecto y debería acompañarlo. Otra depende del entorno de ejecución y no debe almacenarse de la misma manera. Una ruta local, una credencial o un identificador temporal no tiene el mismo carácter que la decisión de utilizar un formato de publicación determinado.
+
+La arquitectura necesita distinguir ambas categorías. Mezclarlas produce configuraciones difíciles de compartir y aumenta el riesgo de publicar información sensible.
+
+También puede existir configuración proporcionada por el usuario durante una operación. El sistema debe resolver cómo se combinan los valores por defecto, la configuración persistente y las opciones específicas de la ejecución.
+
+# Configuración no es política
+
+Un parámetro puede seleccionar una opción válida, pero no debería utilizarse para ocultar restricciones esenciales. Si una operación está prohibida por una regla de seguridad, no conviene representarla simplemente como una preferencia configurable que cualquiera puede desactivar.
+
+La configuración expresa variabilidad permitida. Las reglas determinan límites que deben respetarse. Esta separación permite conocer qué decisiones pueden cambiarse libremente y cuáles requieren revisar la política del sistema.
+
+# Configuración y *definitions*
+
+Las *definitions* representan conocimiento estructurado sobre el problema. La configuración determina cómo debe comportarse una ejecución o una implementación dentro de ese conocimiento. En algunos proyectos ambos elementos pueden utilizar formatos similares, pero su propósito sigue siendo distinto.
+
+Una *definition* podría indicar que un libro admite HTML y PDF. La configuración de una ejecución podría seleccionar únicamente HTML. La primera describe una capacidad o una decisión del proyecto; la segunda elige cómo se utilizará en una situación concreta.
+
+# Validación de configuración
+
+La configuración debería poder validarse antes de ejecutar operaciones costosas. Un modelo inexistente, una combinación incompatible de formatos o una herramienta requerida que no está habilitada deberían detectarse cuanto antes.
+
+También conviene que los valores desconocidos produzcan errores claros en lugar de ser ignorados silenciosamente. El crecimiento de un sistema suele introducir configuraciones obsoletas y, sin validación, pueden permanecer durante mucho tiempo dando una falsa impresión de control.
+
+# *Adapters* y diferencias de plataforma
+
+La configuración es uno de los lugares donde aparecen con mayor claridad las diferencias entre agentes y modelos. Una plataforma puede permitir seleccionar ciertos parámetros y otra no exponerlos. Un *adapter* debe traducir las opciones canónicas a las disponibles y declarar cuáles no pueden representarse.
+
+La metodología puede así definir qué aspectos considera configurables sin depender de la interfaz concreta de un proveedor.

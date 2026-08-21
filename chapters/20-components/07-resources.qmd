@@ -1,0 +1,53 @@
+---
+title: "*Resources*"
+---
+
+# Información disponible fuera del modelo
+
+El conocimiento almacenado en los parámetros de un modelo es amplio, pero no contiene necesariamente la información concreta, privada, actualizada o versionada que necesita una tarea. Los IISS deben poder trabajar con documentos, repositorios, bases de datos, incidencias, configuraciones, páginas, resultados de servicios y otras fuentes externas. Llamaremos *resources* a estas fuentes de información accesibles para el sistema.
+
+El concepto es más amplio que la categoría *resource* de MCP, aunque puede materializarse mediante ella. Un recurso puede residir en el sistema de archivos, en un servicio remoto, en una base documental o en cualquier otro almacén. Lo que importa es que el sistema puede identificarlo, acceder a su contenido de forma controlada y conocer suficientemente su procedencia.
+
+# Identidad y procedencia
+
+Una respuesta basada en información externa es más útil cuando puede rastrearse hasta la fuente que la sustentó. Por ello un recurso debería conservar una identidad estable siempre que sea posible. No basta con recuperar un fragmento de texto; conviene saber de qué documento procede, qué versión se consultó, cuándo se obtuvo y bajo qué permisos.
+
+Esta procedencia permite volver a comprobar una afirmación, detectar que una fuente ha cambiado y resolver conflictos entre versiones. También permite distinguir entre información oficial, notas internas, resultados temporales y contenido generado por el propio sistema.
+
+La procedencia no implica que todo deba mostrarse al usuario en cada respuesta, pero debería permanecer disponible para los procesos que necesiten validación o auditoría.
+
+# Recuperación y selección
+
+Disponer de un recurso no significa introducirlo completo en la ventana de contexto. El sistema necesita seleccionar la información relevante para la tarea. Esta selección puede realizarse mediante búsqueda textual, índices semánticos, metadatos, relaciones estructuradas o combinaciones de varios métodos.
+
+El proceso de recuperación forma parte de la arquitectura porque determina qué evidencia verá realmente el modelo. Un excelente documento resulta inútil si el sistema recupera el fragmento equivocado. Del mismo modo, una recuperación demasiado amplia puede saturar el contexto con información irrelevante.
+
+Las *skills* y los *workflows* pueden establecer estrategias diferentes según el tipo de recurso. Buscar una definición en un repositorio no requiere necesariamente el mismo mecanismo que investigar documentación extensa o consultar un registro estructurado.
+
+# Actualidad y versiones
+
+Los recursos cambian. Un archivo puede modificarse, una página puede actualizarse y una incidencia puede resolverse mientras el sistema trabaja. El IISS debe evitar tratar como permanente una copia que solo representaba el estado de un momento concreto.
+
+Cuando la actualidad sea relevante, el sistema debería conocer la fecha o versión del recurso y, si es necesario, recuperarlo de nuevo. En procesos largos también puede ser necesario comprobar que un recurso no ha cambiado entre la planificación y la ejecución.
+
+Esta cuestión se vuelve crítica cuando una operación de escritura se basa en información leída anteriormente. Si otro actor ha modificado el recurso, el sistema puede necesitar detectar el conflicto antes de sobrescribirlo.
+
+# Recursos y permisos
+
+La recuperación de información debe respetar los mismos límites que cualquier otra capacidad. Un modelo no debería recibir automáticamente todo aquello a lo que técnicamente tiene acceso la aplicación. Los permisos pueden depender del usuario, del proyecto, del tipo de dato o de la tarea.
+
+También es importante minimizar la exposición. Si una operación necesita un campo concreto, puede no ser necesario introducir un documento confidencial completo en el contexto. El diseño de recursos debería facilitar accesos suficientemente granulares.
+
+Los *adapters* pueden encargarse de traducir permisos y mecanismos de acceso entre plataformas, pero la política pertenece al sistema.
+
+# Recursos frente a memoria y *definitions*
+
+Un recurso es una fuente de información disponible para consulta. La memoria conserva información seleccionada para reutilizarla en interacciones futuras. Una *definition* representa conocimiento estructurado que el sistema considera parte del estado entendido del proyecto.
+
+Estas categorías pueden relacionarse. Una *definition* puede derivarse de varios recursos; una memoria puede conservar la preferencia necesaria para seleccionar un recurso; un recurso puede contener la fuente original de una decisión. Sin embargo, mantenerlas diferenciadas evita tratar cualquier documento disponible como si fuera conocimiento canónico.
+
+# Un componente de conocimiento, no de verdad
+
+Que una información proceda de un recurso no garantiza que sea correcta. Un repositorio puede contener código obsoleto, una página puede estar equivocada y un documento interno puede contradecir una decisión posterior. El sistema necesita evaluar procedencia, prioridad y actualidad.
+
+Los recursos amplían aquello que el IISS puede consultar. Las validaciones, las reglas y las *definitions* ayudan a decidir qué información debe aceptarse y cómo utilizarla.

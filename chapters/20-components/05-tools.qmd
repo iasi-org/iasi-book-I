@@ -1,0 +1,53 @@
+---
+title: "*Tools*"
+---
+
+# Capacidad de actuar sobre el exterior
+
+Un modelo puede generar una descripción de cómo consultar una base de datos, modificar un archivo o crear una incidencia, pero describir una operación no equivale a ejecutarla. Para que un IISS pueda interactuar con el entorno necesita mecanismos que conviertan una intención en una acción observable. Llamaremos *tools* a esas capacidades externas invocables.
+
+Una herramienta puede ser muy simple, como leer un archivo, o representar una operación compleja ofrecida por otro sistema. Puede consultar información sin producir efectos, modificar recursos, ejecutar código, controlar infraestructura o comunicarse con servicios remotos. Desde el punto de vista del IISS, lo relevante es que existe un contrato mediante el que puede solicitar una operación y recibir un resultado.
+
+# Contratos claros
+
+Cuanto más estructurada sea la interfaz de una herramienta, menos necesita inferir el modelo. El sistema debería conocer qué operación realiza, qué parámetros admite, qué devuelve, qué errores puede producir y si tiene efectos secundarios.
+
+Una descripción imprecisa obliga al modelo a adivinar. Si una herramienta acepta un identificador pero no queda claro si corresponde a un nombre visible, una ruta o un identificador interno, aumentan los errores. Lo mismo ocurre cuando una salida mezcla datos, mensajes y estados sin una estructura predecible.
+
+Por ello las herramientas no son únicamente conectores técnicos. Su diseño forma parte de la interfaz cognitiva del IISS. Deben presentar capacidades de forma que el sistema pueda elegirlas y utilizarlas con el menor grado posible de ambigüedad.
+
+# Lectura, escritura y efectos
+
+Conviene distinguir entre herramientas que observan y herramientas que modifican. Una consulta de documentación o la lectura de un archivo suele ser reversible porque no altera el entorno. Borrar un recurso, enviar un mensaje o desplegar una versión produce efectos que pueden ser difíciles de deshacer.
+
+Esta diferencia debería influir en las políticas de autorización. El sistema puede permitir determinadas lecturas de forma automática y exigir confirmación para operaciones destructivas. También puede utilizar validaciones previas, simulaciones o modos de vista previa antes de ejecutar un cambio.
+
+No todas las escrituras tienen el mismo riesgo. Crear un archivo temporal es diferente de modificar una rama principal; generar un borrador es diferente de enviarlo. El contrato de la herramienta debería permitir que la arquitectura conozca estas diferencias.
+
+# Errores como parte de la interfaz
+
+Una herramienta que falla sin explicar por qué obliga al modelo a interpretar señales ambiguas. Los errores deberían ser estructurados siempre que sea posible y distinguir entre problemas de parámetros, permisos, disponibilidad, conflicto de estado y fallos internos.
+
+El tratamiento de errores también pertenece a los *workflows*. Un fallo transitorio puede justificar un nuevo intento; un conflicto de versión puede exigir recuperar el estado actual; un error de autorización debe detener la operación. La herramienta informa del problema y el *workflow* decide qué hacer con él.
+
+El modelo puede colaborar en esa decisión, pero la arquitectura no debería depender de que improvise la misma política cada vez.
+
+# Herramientas y autonomía
+
+Añadir herramientas cambia la naturaleza del sistema. Un modelo sin herramientas puede producir información incorrecta, pero su efecto inmediato suele limitarse a la respuesta. Un sistema con capacidad para modificar recursos puede convertir una interpretación equivocada en una acción real.
+
+Por ello la calidad de la autonomía depende tanto de las herramientas y sus controles como del modelo. Un sistema con un modelo excelente y herramientas mal diseñadas puede ser menos fiable que otro con capacidades más modestas pero contratos, permisos y validaciones claros.
+
+También resulta útil limitar las herramientas disponibles a las necesarias para la tarea. Exponer capacidades irrelevantes aumenta el espacio de decisión y puede producir selecciones accidentales.
+
+# *Tools* y protocolos
+
+Las herramientas pueden integrarse de muchas formas. Una aplicación puede definir funciones internas, utilizar interfaces de servicios, ejecutar programas o descubrir capacidades a través de protocolos como MCP. El protocolo no cambia la categoría conceptual. MCP puede proporcionar una forma estandarizada de descubrir e invocar herramientas, pero la responsabilidad de diseñarlas correctamente sigue existiendo.
+
+Los *adapters* permiten que una herramienta canónica se materialice de formas distintas. Una operación de lectura de repositorio podría utilizar un conector nativo en una plataforma y una herramienta MCP en otra. Para el resto de la arquitectura, ambas representan la misma capacidad si ofrecen contratos equivalentes.
+
+# La herramienta no contiene necesariamente el procedimiento
+
+Una herramienta sabe hacer una operación, pero no tiene por qué saber cuándo conviene usarla, qué pasos deben precederla o cómo interpretar su resultado dentro de una tarea compleja. Ese conocimiento puede pertenecer a una *skill* o a un *workflow*.
+
+Separar capacidad y procedimiento evita crear herramientas excesivamente específicas que mezclan conexión técnica con lógica de proceso. También permite reutilizar una misma capacidad en situaciones distintas y cambiar la implementación sin reescribir el conocimiento operativo.
