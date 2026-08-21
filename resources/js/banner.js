@@ -1,3 +1,18 @@
+alert("banner.js cargado");
+
+document.addEventListener("DOMContentLoaded", () => {
+   alert("Antes del if");
+  if (window.self !== window.top) {
+     alert("Es un iframe");
+    const banner = document.getElementById("quarto-announcement");
+
+    if (banner) {
+      banner.style.display = "none";
+    }
+  }
+});
+
+/*
 document.addEventListener("DOMContentLoaded", function () {
   if (window.self === window.top) return;
 
@@ -15,3 +30,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+*/

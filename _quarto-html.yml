@@ -53,7 +53,7 @@ book:
 
 format:
   html:
-    title-block-style: none  
+    title-block-style: none
     include-in-header:
       - resources/html/banner.html
     theme: 
