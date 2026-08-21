@@ -11,6 +11,7 @@ website:
 book:
   page-footer:
     left: "© 2026 Javier G. Grandez"
+    center: '<span id="iasi-publish-date"></span>'
     right:
       - text: "Licencias"
         href: 903-licenses.qmd
