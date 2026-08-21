@@ -8,3 +8,12 @@
  * La identidad corporativa común vive en iasi.css.
  */
  
+ 
+ /***********************************************/
+ /* QUARTO                                      */
+ /***********************************************/
+ 
+ /* En los libros formales no sacamos los metadatos */
+ .quarto-title-meta {
+  display: none;
+}
