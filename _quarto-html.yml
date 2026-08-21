@@ -3,7 +3,7 @@ project:
 
 website:
   announcement:
-     content: "![](resources/images/ants.png){.iasi-ants-image}"
+     content: "{{< include resources/html/banner.html >}}"
      position: above-navbar
      dismissable: false
     
