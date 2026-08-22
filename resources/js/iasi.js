@@ -1,14 +1,11 @@
 function setupEmbeddedView() {
   if (window.self === window.top) return;
 
-  const announcement = document.getElementById("quarto-announcement");
+  document.documentElement.classList.add("iasi-embedded");
+
   const link = document.querySelector('a[href$="#iasi-open-external"]');
 
-  if (announcement) announcement.classList.add("iasi-hidden");
-
   if (link) {
-    link.classList.remove("iasi-hidden");
-
     link.addEventListener("click", function (event) {
       event.preventDefault();
       window.open(window.location.href, "_blank", "noopener");
@@ -43,22 +40,32 @@ async function setupExportsMenu() {
     const exports = Array.isArray(data.exports) ? data.exports : [];
 
     for (const entry of exports) {
-      const newItem = markerItem.cloneNode(true);
-      const link = newItem.querySelector("a");
-      const text = newItem.querySelector(".dropdown-text");
+         const newItem = markerItem.cloneNode(true);
+         const link = newItem.querySelector("a");
+         const text = newItem.querySelector(".dropdown-text");
 
-      const href = new URL(entry.href, exportsUrl).href;
+         const href = new URL(entry.href, exportsUrl).href;
 
-      link.href = href;
-      link.dataset.originalHref = href;
+         link.href = href;
+         link.dataset.originalHref = href;
 
-      if (text) {
-        text.textContent = entry.text;
-      }
+         if (text) {
+            text.textContent = entry.text;
 
-      menu.insertBefore(newItem, markerItem);
+            if (entry.icon) {
+                const icon = document.createElement("i");
+
+                icon.className = `bi bi-${entry.icon}`;
+                icon.setAttribute("aria-hidden", "true");
+
+                link.insertBefore(icon, text);
+                link.insertBefore(document.createTextNode(" "), text);
+            }
+         }
+
+         menu.insertBefore(newItem, markerItem);
     }
-
+    
     markerItem.remove();
   } catch {
     return;
