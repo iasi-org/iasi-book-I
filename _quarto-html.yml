@@ -4,13 +4,13 @@ project:
 website:
   announcement:
      content: |
-        ![](resources/images/ants.png){.iasi-ants-image}
+        ![](/resources/images/ants.png){.iasi-ants-image}
      position: above-navbar
      dismissable: false
     
 book:
   page-footer:
-    left: "© 2026 Javier G. Grandez"
+    left: "© 2026 Javier G. Grandez · IASI Rocks 🤘"
     center: '<span id="iasi-publish-date"></span>'
     right:
       - text: "Licencias"
