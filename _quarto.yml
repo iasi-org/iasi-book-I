@@ -6,7 +6,7 @@ project:
 
 profile:
   group:
-    - [html, pdf]
+    - [html, pdf, epub]
 
 metadata-files:
   - _book-structure.yml
