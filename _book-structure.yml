@@ -44,6 +44,10 @@ book:
         - "chapters/20-methodologies/11-capas.qmd"
         - "chapters/20-methodologies/12-apollo.qmd"
         - "chapters/20-methodologies/13-basilea.qmd"
+        - "chapters/20-methodologies/14-google.qmd"
+        - "chapters/20-methodologies/15-netflix.qmd"
+        - "chapters/20-methodologies/16-amazon.qmd"
+        - "chapters/20-methodologies/17-visa.qmd"
     - part: "chapters/30-components/index.qmd"
       chapters:
         - "chapters/30-components/01-arquitectura.qmd"

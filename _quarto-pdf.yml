@@ -1,6 +1,9 @@
 project:
   output-dir: _outputs/pdf
 
+#book:
+#  output-file: "IASI Vol-I"
+  
 format:
   pdf:
     documentclass: scrreprt

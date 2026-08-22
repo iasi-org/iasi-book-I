@@ -1,0 +1,117 @@
+# Visa
+
+Visa es necesariamente una red distribuida. Una autorización de pago puede atravesar comercios, adquirentes, la propia red Visa, bancos emisores, centros de proceso y sistemas redundantes situados en lugares diferentes. El caso que nos interesa, por tanto, no pretende defender que un sistema de esta naturaleza deba ejecutarse como una única aplicación en una única máquina. La cuestión es otra: dentro del camino crítico de una autorización existen operaciones que, desde el punto de vista del negocio, forman una unidad y deben completarse dentro de un tiempo muy reducido. Fragmentar artificialmente esa unidad en numerosos servicios remotos puede empeorar precisamente aquello que más importa: la latencia, la disponibilidad y la capacidad de completar correctamente la operación.
+
+Cada nueva frontera física introduce una comunicación. Cada comunicación introduce latencia, serialización, *timeouts*, reintentos y una nueva posibilidad de fallo. Si para autorizar una operación necesitamos que respondan ocho componentes diferentes y los ocho son imprescindibles, desplegarlos independientemente no elimina su dependencia. Podemos haber conseguido una separación lógica impecable y, al mismo tiempo, haber construido un sistema operacionalmente más frágil.
+
+Esto no significa que la escalabilidad proporcionada por sistemas distribuidos o por la nube no pueda resultar valiosa para una infraestructura como Visa. Puede ser fundamental para absorber picos de carga, distribuir capacidad, proporcionar redundancia o mantener disponibilidad a escala mundial. Pero ese es otro problema. Aquí no estamos analizando escalabilidad, sino una decisión arquitectónica que con frecuencia se ha convertido en moda: asumir que una aplicación moderna debe descomponerse necesariamente en microservicios.
+
+Una autorización de pago permite observar con bastante claridad los límites de esa idea.
+
+Cuando un cliente presenta una tarjeta para realizar una compra se inicia una operación cuyo objetivo es muy concreto: determinar si esa transacción puede ser autorizada. El comercio genera una solicitud que llega a través del adquirente, *acquirer*, a la red de pagos. Se realizan las validaciones y controles correspondientes, la operación se dirige hacia el banco emisor, *issuer*, y este debe producir una decisión. La respuesta, autorización o rechazo, recorre después el camino inverso hasta llegar de nuevo al comercio.
+
+Desde el punto de vista del cliente todo ocurre en unos instantes. Presenta la tarjeta, espera unos segundos y recibe una respuesta. Pero esa sencillez aparente es precisamente una de las exigencias fundamentales del sistema. El comercio está esperando. El terminal está esperando. El cliente está esperando. La operación se encuentra dentro de un camino síncrono y existe un presupuesto temporal limitado para completarlo.
+
+Además, desde el punto de vista del negocio, una autorización incompleta no tiene utilidad. No podemos responder al comercio que la operación ha sido autorizada y decidir unas horas después si realmente debía haberlo sido. Si determinadas comprobaciones son necesarias para producir la autorización, esas comprobaciones tienen que formar parte del proceso que conduce a la respuesta. La operación posee así una forma de atomicidad desde la perspectiva del negocio, aunque no debamos confundirla con una única transacción ACID distribuida ejecutándose sobre toda la red.
+
+La autorización o existe o no existe.
+
+Podemos modularizar internamente todas las responsabilidades implicadas. Podemos disponer de componentes especializados en validación, seguridad, detección de fraude, enrutamiento o comunicaciones con los emisores. Cada componente puede tener una responsabilidad claramente delimitada y el código puede estar perfectamente organizado alrededor de ellas. Pero de esa separación lógica no se deduce que cada una deba convertirse también en un proceso independiente situado detrás de una llamada de red.
+
+Esta distinción resulta especialmente importante porque durante años una parte de la industria terminó asociando modernidad arquitectónica con microservicios. Una aplicación monolítica comenzó a considerarse algo que necesariamente debía abandonarse, mientras que dividirla en numerosos servicios desplegables de forma independiente parecía constituir una evolución natural. La separación de responsabilidades, una buena práctica de ingeniería mucho más antigua, empezó a confundirse en ocasiones con la necesidad de separación física.
+
+Pero no son la misma cosa.
+
+Un módulo puede tener una única responsabilidad sin necesitar su propia máquina, su propio contenedor, su propia API y una comunicación remota para utilizarlo. Como hemos visto en otros entornos corporativos, mucho antes de que apareciera el término microservicio ya existían módulos especializados, rutinas compartidas y funciones corporativas reutilizadas por múltiples aplicaciones. La modularidad intenta controlar la complejidad interna del software. La distribución introduce además problemas operacionales que solamente están justificados cuando proporciona alguna ventaja que necesitamos.
+
+Supongamos que dividimos el camino de autorización en numerosos microservicios. Uno comprueba la estructura de la petición, otro realiza determinadas validaciones de seguridad, otro consulta reglas de fraude, otro decide el enrutamiento, otro establece la comunicación con el emisor y otros realizan operaciones adicionales. Desde el punto de vista del diseño puede resultar atractivo: cada servicio hace una sola cosa y cada equipo puede mantenerlo independientemente.
+
+Pero la pregunta realmente importante aparece durante la ejecución.
+
+¿Puede alguno de esos servicios completar su función sin que respondan los demás?
+
+Si todos ellos son imprescindibles para autorizar una operación, la respuesta será no. El primer servicio necesita al segundo, el segundo necesita al tercero y así sucesivamente hasta obtener finalmente una decisión. Podemos desplegarlos de manera independiente, pero la operación continúa dependiendo de todos ellos. La independencia de despliegue no se ha convertido en independencia operacional.
+
+Y cada frontera introducida tiene un coste. Una llamada local que antes ocurría dentro de un proceso se convierte ahora en una comunicación remota. Tenemos que serializar información, transmitirla, deserializarla, controlar la conectividad, establecer un *timeout*, decidir si podemos reintentar y determinar qué ocurre si no sabemos con certeza si el servicio remoto llegó a ejecutar la operación. Necesitamos además observabilidad distribuida para reconstruir posteriormente qué sucedió durante una petición que atravesó numerosos componentes.
+
+El problema no es únicamente el tiempo consumido por cada comunicación. También estamos multiplicando los puntos en los que la operación puede fracasar.
+
+Si una operación necesita ocho servicios y cualquiera de ellos puede impedir que termine, hemos transformado un único camino crítico en una cadena formada por ocho elementos cuya disponibilidad conjunta determina la disponibilidad efectiva del proceso. Podemos replicar cada uno de ellos, proporcionar redundancia, balancear carga y diseñar mecanismos muy sofisticados para mantenerlos disponibles, pero seguimos teniendo una dependencia que pertenece al propio negocio: todos los pasos necesarios para producir la autorización tienen que completarse.
+
+En estos casos podemos terminar construyendo lo que habitualmente se denomina un *distributed monolith*. Los componentes están físicamente separados, quizá incluso desarrollados por equipos diferentes y desplegados mediante *pipelines* independientes, pero durante la ejecución siguen comportándose como una única aplicación porque ninguno posee verdadera autonomía frente a los demás.
+
+Hemos comprado buena parte de la complejidad de los sistemas distribuidos sin obtener necesariamente la independencia que justificaba asumirla.
+
+Esto no significa que Visa no deba utilizar servicios distribuidos ni que conozcamos o pretendamos describir su arquitectura interna. Una infraestructura de pagos de alcance mundial contiene necesariamente numerosos sistemas, redes y mecanismos de redundancia. El ejemplo sirve para estudiar algo más general: existen operaciones cuyo propio significado establece una frontera natural que no podemos eliminar simplemente aplicando un patrón arquitectónico.
+
+La arquitectura puede eliminar dependencias accidentales. Puede separar capacidades que no necesitan evolucionar juntas, aislar fallos, distribuir carga o permitir que determinados procesos continúen aunque otros estén temporalmente indisponibles. Lo que no puede hacer es eliminar una dependencia que pertenece a la semántica del negocio.
+
+Si para autorizar una operación necesitamos una determinada comprobación, alguien tiene que realizarla antes de devolver la autorización. Si necesitamos una decisión del emisor, o el mecanismo previsto para actuar cuando ese emisor no puede responder, esa decisión tiene que producirse dentro del proceso que determina el resultado. No podemos resolver el problema declarando que el sistema será eventualmente consistente y completando mañana aquello que necesitábamos saber hoy.
+
+Esta característica diferencia claramente el caso de Visa de un proceso de comercio electrónico como el que analizábamos en Amazon. En Amazon, una vez creado correctamente el pedido, numerosas actividades pueden ejecutarse posteriormente. El sistema contable puede estar temporalmente indisponible, una notificación puede retrasarse, la orden al almacén puede quedar pendiente o determinado proceso analítico puede ejecutarse más tarde. El pedido ya existe y aquellas actividades forman parte de un proceso de negocio que puede continuar durante horas o días.
+
+En una autorización de tarjeta sucede algo distinto. Si todavía no hemos obtenido aquello que necesitamos para decidir si la operación puede ser autorizada, no existe un resultado que podamos completar posteriormente. No tenemos una autorización pendiente de contabilizar. Tenemos una autorización que todavía no ha podido producirse.
+
+Sin embargo, resulta especialmente interesante observar que esta necesidad de sincronía desaparece en cuanto atravesamos determinada frontera del proceso.
+
+La autorización no es el final de toda la actividad financiera asociada a una compra. Después aparecen procesos de *clearing*, conciliación, *settlement*, contabilización, informes y transferencias entre las entidades participantes. Las operaciones individuales deben conservarse y procesarse correctamente, pero ya no todo tiene que ocurrir mientras el cliente espera delante del terminal.
+
+Aquí vuelve a aparecer la posibilidad de desacoplar.
+
+Una red de pagos no necesita transferir dinero físicamente entre entidades cada vez que alguien compra un café. Las transacciones pueden acumularse, conciliarse y utilizarse posteriormente para determinar las posiciones económicas de los participantes. El *settlement* puede trabajar sobre posiciones netas, *netting*, en lugar de convertir cada compra individual en una transferencia financiera independiente entre bancos en tiempo real.
+
+La diferencia arquitectónica resulta reveladora. Durante la autorización existe un camino crítico síncrono sometido a una fuerte restricción temporal. Después de la autorización aparecen procesos que pueden admitir procesamiento diferido, acumulación, conciliación, reintentos y compensación.
+
+El mismo negocio contiene problemas distintos y, por tanto, puede necesitar soluciones arquitectónicas distintas.
+
+Esta observación resulta mucho más útil que intentar imponer una arquitectura uniforme a toda la organización. No existe ninguna razón para que aquello que funciona bien en el procesamiento posterior tenga que utilizarse también dentro del camino crítico de autorización, ni para que la arquitectura optimizada para responder en unos instantes tenga que utilizarse en procesos que pueden ejecutarse posteriormente.
+
+Es precisamente aquí donde las modas arquitectónicas pueden resultar peligrosas. Una tecnología o un patrón comienza resolviendo correctamente determinado tipo de problema y, después de demostrar su utilidad, termina convertido en una recomendación general. De «los microservicios permiten que determinadas capacidades evolucionen y fallen independientemente» podemos pasar fácilmente a «una arquitectura moderna debe estar formada por microservicios».
+
+Pero esa conclusión elimina la condición que hacía valiosa la primera afirmación: la independencia.
+
+Los microservicios proporcionan una ventaja importante cuando existe una frontera en la que una capacidad puede desplegarse, evolucionar, escalar o fallar sin obligar necesariamente a detener las demás. Amazon proporciona muchos ejemplos naturales de esa situación. Un sistema de recomendaciones puede fallar mientras el usuario continúa comprando. Un proceso contable puede retrasarse mientras el pedido sigue avanzando. Distintas capacidades pueden trabajar a ritmos diferentes porque no necesitan encontrarse permanentemente en el mismo estado.
+
+Cuando esa independencia no existe, dividir físicamente puede aportar mucho menos.
+
+Si A necesita siempre a B, B necesita siempre a C y los tres deben terminar correctamente dentro de la misma ventana temporal para producir una única respuesta, quizá existan buenas razones para mantenerlos próximos operacionalmente, aunque internamente estén perfectamente modularizados. No porque los monolitos sean mejores que los microservicios, sino porque el problema presenta una cohesión que la arquitectura debería respetar.
+
+Esto permite formular una distinción especialmente útil: no toda separación lógica debe convertirse en una separación física.
+
+Podemos organizar el software alrededor de responsabilidades claras, módulos pequeños, interfaces explícitas y componentes reutilizables sin convertir necesariamente cada uno en un servicio remoto. La ingeniería modular y los microservicios no son sinónimos. La primera intenta separar responsabilidades. Los segundos añaden independencia operacional y distribución. Si no necesitamos esa independencia, debemos preguntarnos qué estamos obteniendo a cambio de asumir la distribución.
+
+La frontera correcta tampoco se encuentra contando líneas de código, funciones o clases. Hay que buscarla en el comportamiento del negocio.
+
+- ¿Qué cosas pueden continuar si otras están caídas?
+- ¿Qué actividades pueden aplazarse?
+- ¿Qué estados pueden ser eventualmente consistentes?
+- ¿Qué operaciones necesitan completarse conjuntamente?
+- ¿Qué restricciones de latencia existen?
+- ¿Qué ocurriría si uno de los componentes no respondiera durante varios segundos?
+- ¿Qué dependencias son accidentales y cuáles pertenecen al propio significado de la operación?
+
+Estas preguntas ayudan mucho más a encontrar una arquitectura adecuada que comenzar el diseño preguntando cuántos microservicios necesitamos.
+
+Visa resulta especialmente útil porque hace visible el límite. Una operación de autorización está sometida a una restricción temporal, posee un resultado que únicamente tiene sentido cuando se han completado determinadas actividades y contiene dependencias que no podemos eliminar sin modificar la propia naturaleza de la operación. Introducir indiscriminadamente nuevas fronteras de red en ese camino puede añadir latencia y puntos de fallo sin proporcionar verdadera independencia operacional.
+
+Después de esa frontera, en cambio, aparecen otras actividades que pueden tratarse de manera completamente diferente. *Clearing*, *settlement*, conciliación, contabilidad y otros procesos posteriores pueden organizarse alrededor de sus propias necesidades y utilizar procesamiento asíncrono, lotes, eventos o cualquier otra solución que resulte apropiada.
+
+Y eso nos devuelve nuevamente al propósito de estos casos.
+
+No intentamos establecer que los microservicios sean buenos o malos, del mismo modo que no pretendíamos demostrar que *Waterfall* fuera bueno o malo, que Hadoop fuera una mala tecnología o que *DevOps* debiera utilizarse en todas las organizaciones. Intentamos observar qué ocurre cuando una solución adecuada para determinado problema se transforma en una receta aplicable a cualquier problema.
+
+La arquitectura no debería comenzar con la solución.
+
+Debe comenzar con las restricciones, las dependencias, el comportamiento esperado y las consecuencias del fallo.
+
+En ocasiones descubriremos que necesitamos distribuir, desacoplar y permitir consistencia eventual.
+
+En otras encontraremos capacidades que deben evolucionar independientemente y para las que los microservicios proporcionan una solución excelente.
+
+Y también encontraremos operaciones que, por su propia naturaleza, pertenecen juntas y tienen que completarse dentro de una misma ventana temporal.
+
+Separarlas porque podemos hacerlo no constituye necesariamente mejor ingeniería.
+
+Porque distribuir una transacción que debe comportarse como una unidad no elimina sus dependencias.
+
+Solo distribuye sus posibilidades de fallo.

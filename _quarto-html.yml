@@ -35,8 +35,10 @@ book:
         href: chapters/13-foundations/index.qmd
       - text: "Conceptos LLM"
         href: chapters/14-marco/index.qmd
+      - text: "Metodologias"
+        href: chapters/20-methodologies/index.qmd
       - text: "Componentes"
-        href: chapters/20-components/index.qmd
+        href: chapters/30-components/index.qmd
       - text: "Saco"
         href: chapters/99-saco/index.qmd
         
