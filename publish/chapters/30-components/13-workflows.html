@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/20-components/13-workflows.html" rel="next">
-<link href="../../chapters/20-components/11-rules.html" rel="prev">
+<link href="../../chapters/30-components/14-agents.html" rel="next">
+<link href="../../chapters/30-components/12-context-memory.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/12-context-memory.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/13-workflows.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,119 +397,148 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,22 +624,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#continuidad-más-allá-de-una-inferencia" id="toc-continuidad-más-allá-de-una-inferencia" class="nav-link active" data-scroll-target="#continuidad-más-allá-de-una-inferencia"><span class="header-section-number">42</span> Continuidad más allá de una inferencia</a></li>
-  <li><a href="#contexto-construido" id="toc-contexto-construido" class="nav-link" data-scroll-target="#contexto-construido"><span class="header-section-number">43</span> Contexto construido</a></li>
-  <li><a href="#estado-del-proceso" id="toc-estado-del-proceso" class="nav-link" data-scroll-target="#estado-del-proceso"><span class="header-section-number">44</span> Estado del proceso</a></li>
-  <li><a href="#memoria" id="toc-memoria" class="nav-link" data-scroll-target="#memoria"><span class="header-section-number">45</span> Memoria</a></li>
-  <li><a href="#memoria-y-definitions" id="toc-memoria-y-definitions" class="nav-link" data-scroll-target="#memoria-y-definitions"><span class="header-section-number">46</span> Memoria y <em>definitions</em></a></li>
-  <li><a href="#compresión-y-pérdida" id="toc-compresión-y-pérdida" class="nav-link" data-scroll-target="#compresión-y-pérdida"><span class="header-section-number">47</span> Compresión y pérdida</a></li>
-  <li><a href="#adapters-y-persistencia" id="toc-adapters-y-persistencia" class="nav-link" data-scroll-target="#adapters-y-persistencia"><span class="header-section-number">48</span> <em>Adapters</em> y persistencia</a></li>
+  <li><a href="#organizar-un-proceso" id="toc-organizar-un-proceso" class="nav-link active" data-scroll-target="#organizar-un-proceso"><span class="header-section-number">46</span> Organizar un proceso</a></li>
+  <li><a href="#secuencia-y-condiciones" id="toc-secuencia-y-condiciones" class="nav-link" data-scroll-target="#secuencia-y-condiciones"><span class="header-section-number">47</span> Secuencia y condiciones</a></li>
+  <li><a href="#workflows-y-commands" id="toc-workflows-y-commands" class="nav-link" data-scroll-target="#workflows-y-commands"><span class="header-section-number">48</span> <em>Workflows</em> y <em>commands</em></a></li>
+  <li><a href="#workflows-y-skills" id="toc-workflows-y-skills" class="nav-link" data-scroll-target="#workflows-y-skills"><span class="header-section-number">49</span> <em>Workflows</em> y <em>skills</em></a></li>
+  <li><a href="#determinismo-y-razonamiento" id="toc-determinismo-y-razonamiento" class="nav-link" data-scroll-target="#determinismo-y-razonamiento"><span class="header-section-number">50</span> Determinismo y razonamiento</a></li>
+  <li><a href="#puntos-de-control-humanos" id="toc-puntos-de-control-humanos" class="nav-link" data-scroll-target="#puntos-de-control-humanos"><span class="header-section-number">51</span> Puntos de control humanos</a></li>
+  <li><a href="#observabilidad" id="toc-observabilidad" class="nav-link" data-scroll-target="#observabilidad"><span class="header-section-number">52</span> Observabilidad</a></li>
+  <li><a href="#workflows-como-parte-de-la-metodología" id="toc-workflows-como-parte-de-la-metodología" class="nav-link" data-scroll-target="#workflows-como-parte-de-la-metodología"><span class="header-section-number">53</span> <em>Workflows</em> como parte de la metodología</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/12-context-memory.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/13-workflows.html"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></h1>
+<h1 class="title"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></h1>
 </div>
 
 
@@ -624,45 +657,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="continuidad-más-allá-de-una-inferencia" class="level1" data-number="42">
-<h1 data-number="42"><span class="header-section-number">42</span> Continuidad más allá de una inferencia</h1>
-<p>Cada llamada a un modelo trabaja con un contexto finito. El sistema puede incluir instrucciones, mensajes anteriores, documentos, <em>definitions</em>, resultados de herramientas y cualquier otra información relevante, pero todo aquello que no se incorpora a esa interacción no participa directamente en la inferencia. Esta limitación obliga a distinguir entre contexto, estado y memoria.</p>
-<p>El contexto es la información disponible para la inferencia actual. El estado representa la situación de un proceso o de una entidad en un momento determinado. La memoria conserva información que puede recuperarse en interacciones futuras. Las tres categorías se relacionan, pero no son equivalentes.</p>
+<section id="organizar-un-proceso" class="level1" data-number="46">
+<h1 data-number="46"><span class="header-section-number">46</span> Organizar un proceso</h1>
+<p>Muchas tareas relevantes no consisten en una única operación. Requieren comprender una entrada, preparar información, ejecutar acciones, comprobar resultados y decidir qué hacer a continuación. Un <em>workflow</em> representa esa organización del trabajo.</p>
+<p>A diferencia de una <em>skill</em>, que puede contener conocimiento procedimental flexible, un <em>workflow</em> hace explícita la estructura de un proceso. Puede definir pasos, condiciones, dependencias, puntos de control, estados y resultados intermedios. No tiene que ser completamente automático; puede incluir decisiones humanas y actividades ejecutadas por distintos agentes o herramientas.</p>
 </section>
-<section id="contexto-construido" class="level1" data-number="43">
-<h1 data-number="43"><span class="header-section-number">43</span> Contexto construido</h1>
-<p>El contexto no debería considerarse simplemente el historial completo de una conversación. Un IISS puede construirlo seleccionando solo aquello que resulte necesario para la tarea. Puede incluir instrucciones permanentes, una <em>definition</em> relevante, el resultado de una herramienta y un resumen de decisiones anteriores sin incorporar miles de mensajes previos.</p>
-<p>Esta selección es una responsabilidad de la aplicación. Cuanto más largo sea el proceso, menos viable resulta enviar todo lo ocurrido anteriormente. El sistema necesita mecanismos de resumen, recuperación y priorización.</p>
-<p>También debe conservar la procedencia de la información. El modelo puede recibir texto, pero la arquitectura debería saber qué parte pertenece a una instrucción, qué parte procede de un recurso y qué parte fue generada en un paso previo.</p>
+<section id="secuencia-y-condiciones" class="level1" data-number="47">
+<h1 data-number="47"><span class="header-section-number">47</span> Secuencia y condiciones</h1>
+<p>El caso más simple es una secuencia de pasos. Sin embargo, los procesos reales suelen necesitar bifurcaciones. Si una validación falla, el sistema puede volver a una fase anterior. Si falta una autorización, debe detenerse. Si una herramienta no está disponible, puede utilizar una alternativa o declarar que no puede continuar.</p>
+<p>Representar estas condiciones explícitamente reduce la improvisación y permite inspeccionar el proceso antes de ejecutarlo.</p>
+<p>También facilita la reanudación. Si el estado del <em>workflow</em> está persistido, un fallo no obliga a empezar desde cero ni a reconstruir manualmente qué pasos ya se completaron.</p>
 </section>
-<section id="estado-del-proceso" class="level1" data-number="44">
-<h1 data-number="44"><span class="header-section-number">44</span> Estado del proceso</h1>
-<p>Un <em>workflow</em> puede encontrarse esperando una validación, haber completado una fase o necesitar una autorización. Ese estado no debería deducirse cada vez leyendo la conversación. Conviene representarlo explícitamente para que el proceso pueda reanudarse, inspeccionarse y recuperarse después de un fallo.</p>
-<p>El estado también puede pertenecer a un artefacto. Una <em>definition</em> puede estar en borrador, validada o sustituida. Un <em>command</em> puede encontrarse pendiente, en ejecución o completado.</p>
-<p>Esta información permite que el IISS conozca dónde está sin confundir continuidad operativa con memoria conversacional.</p>
+<section id="workflows-y-commands" class="level1" data-number="48">
+<h1 data-number="48"><span class="header-section-number">48</span> <em>Workflows</em> y <em>commands</em></h1>
+<p>Un <em>command</em> puede iniciar un <em>workflow</em>. La operación «publicar» puede activar una secuencia que valida el proyecto, genera formatos, prepara el artefacto, registra la publicación y despliega el resultado. Desde el punto de vista del usuario sigue siendo una intención reconocible, mientras que el <em>workflow</em> organiza su realización.</p>
+<p>Un paso del <em>workflow</em> también puede invocar otros <em>commands</em>. Esta composición permite construir procesos complejos a partir de operaciones más pequeñas y verificables.</p>
 </section>
-<section id="memoria" class="level1" data-number="45">
-<h1 data-number="45"><span class="header-section-number">45</span> Memoria</h1>
-<p>La memoria conserva información que puede resultar útil en el futuro y la recupera cuando el contexto lo necesita. Puede almacenar preferencias, decisiones, hechos del proyecto, resúmenes o referencias a recursos.</p>
-<p>No toda información merece convertirse en memoria. Guardar indiscriminadamente cada detalle genera ruido y puede reintroducir datos obsoletos. La arquitectura necesita criterios sobre qué se conserva, durante cuánto tiempo, con qué ámbito y cómo se actualiza.</p>
-<p>También debe distinguir entre recordar una afirmación y verificar que sigue siendo válida. Una memoria puede indicar qué decisión se tomó, pero un recurso actual puede mostrar que posteriormente fue modificada.</p>
+<section id="workflows-y-skills" class="level1" data-number="49">
+<h1 data-number="49"><span class="header-section-number">49</span> <em>Workflows</em> y <em>skills</em></h1>
+<p>Una <em>skill</em> puede enseñar cómo resolver una actividad dentro del proceso. El <em>workflow</em> no necesita contener todos los detalles del conocimiento operativo. Puede indicar «revisar el cambio» y delegar en una <em>skill</em> la estrategia concreta de revisión.</p>
+<p>Esta separación evita que cada proceso duplique los mismos procedimientos. También permite actualizar una <em>skill</em> y mejorar todos los <em>workflows</em> que la utilizan.</p>
 </section>
-<section id="memoria-y-definitions" class="level1" data-number="46">
-<h1 data-number="46"><span class="header-section-number">46</span> Memoria y <em>definitions</em></h1>
-<p>Las <em>definitions</em> representan conocimiento canónico del proyecto y deberían consultarse directamente cuando exista una representación estructurada adecuada. La memoria resulta más útil para información que ayuda a contextualizar interacciones pero no pertenece necesariamente al modelo formal del proyecto.</p>
-<p>Si el sistema utiliza memoria para almacenar aquello que debería vivir en una <em>definition</em>, el conocimiento puede volverse difícil de inspeccionar y validar. Por el contrario, convertir cada preferencia conversacional en una <em>definition</em> introduciría una formalidad innecesaria.</p>
-<p>La arquitectura necesita ambos mecanismos porque resuelven problemas diferentes.</p>
+<section id="determinismo-y-razonamiento" class="level1" data-number="50">
+<h1 data-number="50"><span class="header-section-number">50</span> Determinismo y razonamiento</h1>
+<p>No todos los pasos deben estar fijados de antemano. Un <em>workflow</em> puede delegar determinadas decisiones al modelo cuando el problema requiere interpretación. La arquitectura debería distinguir entre transiciones deterministas y decisiones abiertas.</p>
+<p>Por ejemplo, comprobar si un archivo existe puede resolverse de forma determinista. Decidir qué documentación adicional necesita una tarea puede requerir razonamiento. Mezclar ambos tipos sin distinguirlos dificulta comprender qué partes del proceso son reproducibles y cuáles dependen del modelo.</p>
+<p>Una buena arquitectura utiliza determinismo donde el problema ya está resuelto y reserva el razonamiento para aquello que realmente lo necesita.</p>
 </section>
-<section id="compresión-y-pérdida" class="level1" data-number="47">
-<h1 data-number="47"><span class="header-section-number">47</span> Compresión y pérdida</h1>
-<p>Resumir conversaciones o estados reduce el volumen de contexto, pero toda compresión puede perder matices. El sistema debería elegir qué información necesita conservar literalmente y qué puede representarse mediante un resumen.</p>
-<p>Las decisiones relevantes, los contratos y los valores estructurados suelen merecer artefactos explícitos. Las discusiones exploratorias pueden resumirse siempre que se mantenga la posibilidad de volver a las fuentes cuando sea necesario.</p>
-<p>Esta estrategia permite mantener procesos largos sin fingir que el modelo posee una memoria humana continua.</p>
+<section id="puntos-de-control-humanos" class="level1" data-number="51">
+<h1 data-number="51"><span class="header-section-number">51</span> Puntos de control humanos</h1>
+<p>Los <em>workflows</em> permiten insertar revisión humana en lugares concretos. En vez de exigir confirmación para cada acción o conceder autonomía completa, el sistema puede agrupar trabajo y detenerse cuando aparece una decisión de riesgo, una ambigüedad o un cambio irreversible.</p>
+<p>Esto hace posible ajustar la autonomía según el proceso. Un <em>workflow</em> de documentación puede ejecutarse casi por completo de forma automática, mientras que otro que modifica infraestructura puede incluir aprobaciones obligatorias.</p>
 </section>
-<section id="adapters-y-persistencia" class="level1" data-number="48">
-<h1 data-number="48"><span class="header-section-number">48</span> <em>Adapters</em> y persistencia</h1>
-<p>Cada plataforma ofrece capacidades distintas de historial y memoria. Algunas mantienen conversaciones persistentes; otras trabajan principalmente sobre archivos o sesiones. El <em>adapter</em> debe aprovechar esas funciones cuando resulten útiles, pero la arquitectura no debería asumir que una memoria proporcionada por un producto sustituye al estado canónico del proyecto.</p>
-<p>La continuidad del IISS debe poder explicarse mediante componentes controlables, no depender únicamente de una función opaca del agente utilizado.</p>
+<section id="observabilidad" class="level1" data-number="52">
+<h1 data-number="52"><span class="header-section-number">52</span> Observabilidad</h1>
+<p>Un proceso explícito puede informar de su estado, duración, errores y resultados. Esta observabilidad es esencial cuando los IISS ejecutan tareas largas o en segundo plano.</p>
+<p>El sistema debería poder responder qué está haciendo, qué ha completado, por qué se detuvo y qué necesita para continuar. Sin esta información, la automatización se convierte en una caja negra difícil de operar.</p>
+</section>
+<section id="workflows-como-parte-de-la-metodología" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> <em>Workflows</em> como parte de la metodología</h1>
+<p>Una metodología puede definir <em>workflows</em> para actividades recurrentes, pero el concepto existe con independencia de una metodología concreta. Esta parte del libro estudia la necesidad arquitectónica. Más adelante será posible decidir qué procesos merece la pena formalizar, cuáles deben permanecer flexibles y cómo se representan de manera canónica.</p>
 
 
 </section>
@@ -1070,13 +1104,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/20-components/11-rules.html" class="pagination-link" aria-label="Reglas">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span>
+      <a href="../../chapters/30-components/12-context-memory.html" class="pagination-link" aria-label="Contexto, estado y memoria">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/20-components/13-workflows.html" class="pagination-link" aria-label="*Workflows*">
-        <span class="nav-page-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/30-components/14-agents.html" class="pagination-link" aria-label="Agentes">
+        <span class="nav-page-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/20-components/10-configuration.html" rel="next">
-<link href="../../chapters/20-components/08-skills.html" rel="prev">
+<link href="../../chapters/30-components/17-adapters.html" rel="next">
+<link href="../../chapters/30-components/15-validations.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/09-templates.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/16-automations.html"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,119 +397,148 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,21 +624,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#estructuras-reutilizables" id="toc-estructuras-reutilizables" class="nav-link active" data-scroll-target="#estructuras-reutilizables"><span class="header-section-number">39</span> Estructuras reutilizables</a></li>
-  <li><a href="#forma-y-contenido" id="toc-forma-y-contenido" class="nav-link" data-scroll-target="#forma-y-contenido"><span class="header-section-number">40</span> Forma y contenido</a></li>
-  <li><a href="#templates-y-ejemplos" id="toc-templates-y-ejemplos" class="nav-link" data-scroll-target="#templates-y-ejemplos"><span class="header-section-number">41</span> <em>Templates</em> y ejemplos</a></li>
-  <li><a href="#validación-de-resultados" id="toc-validación-de-resultados" class="nav-link" data-scroll-target="#validación-de-resultados"><span class="header-section-number">42</span> Validación de resultados</a></li>
-  <li><a href="#templates-y-generación" id="toc-templates-y-generación" class="nav-link" data-scroll-target="#templates-y-generación"><span class="header-section-number">43</span> <em>Templates</em> y generación</a></li>
-  <li><a href="#independencia-de-plataforma" id="toc-independencia-de-plataforma" class="nav-link" data-scroll-target="#independencia-de-plataforma"><span class="header-section-number">44</span> Independencia de plataforma</a></li>
+  <li><a href="#trabajo-que-no-comienza-con-una-conversación" id="toc-trabajo-que-no-comienza-con-una-conversación" class="nav-link active" data-scroll-target="#trabajo-que-no-comienza-con-una-conversación"><span class="header-section-number">49</span> Trabajo que no comienza con una conversación</a></li>
+  <li><a href="#triggers-y-condiciones" id="toc-triggers-y-condiciones" class="nav-link" data-scroll-target="#triggers-y-condiciones"><span class="header-section-number">50</span> <em>Triggers</em> y condiciones</a></li>
+  <li><a href="#automatización-y-workflow" id="toc-automatización-y-workflow" class="nav-link" data-scroll-target="#automatización-y-workflow"><span class="header-section-number">51</span> Automatización y <em>workflow</em></a></li>
+  <li><a href="#idempotencia" id="toc-idempotencia" class="nav-link" data-scroll-target="#idempotencia"><span class="header-section-number">52</span> Idempotencia</a></li>
+  <li><a href="#reintentos-y-errores" id="toc-reintentos-y-errores" class="nav-link" data-scroll-target="#reintentos-y-errores"><span class="header-section-number">53</span> Reintentos y errores</a></li>
+  <li><a href="#autonomía-diferida" id="toc-autonomía-diferida" class="nav-link" data-scroll-target="#autonomía-diferida"><span class="header-section-number">54</span> Autonomía diferida</a></li>
+  <li><a href="#automatización-y-aprendizaje-operativo" id="toc-automatización-y-aprendizaje-operativo" class="nav-link" data-scroll-target="#automatización-y-aprendizaje-operativo"><span class="header-section-number">55</span> Automatización y aprendizaje operativo</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/09-templates.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/16-automations.html"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></h1>
+<h1 class="title"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></h1>
 </div>
 
 
@@ -623,38 +656,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="estructuras-reutilizables" class="level1" data-number="39">
-<h1 data-number="39"><span class="header-section-number">39</span> Estructuras reutilizables</h1>
-<p>Muchos resultados de ingeniería comparten una forma reconocible. Un informe puede necesitar secciones obligatorias; una decisión arquitectónica puede seguir una estructura acordada; un repositorio puede comenzar con un conjunto conocido de archivos; una configuración puede requerir campos determinados. Las <em>templates</em> permiten conservar estas estructuras para no reconstruirlas cada vez.</p>
-<p>Una <em>template</em> no describe necesariamente el procedimiento para producir el resultado. Define principalmente una forma, un punto de partida o un contrato estructural. Puede contener texto fijo, marcadores, archivos, directorios, fragmentos de configuración o cualquier elemento que deba repetirse de manera consistente.</p>
-<p>Esta función parece simple, pero adquiere importancia cuando los IISS generan artefactos. Sin una estructura explícita, el modelo puede producir variaciones innecesarias entre ejecuciones. La <em>template</em> reduce ese espacio de variabilidad allí donde la organización ya ha decidido cómo debe presentarse o componerse un resultado.</p>
+<section id="trabajo-que-no-comienza-con-una-conversación" class="level1" data-number="49">
+<h1 data-number="49"><span class="header-section-number">49</span> Trabajo que no comienza con una conversación</h1>
+<p>Hasta ahora hemos descrito componentes que suelen participar en una interacción iniciada por un usuario. Sin embargo, muchos procesos deben ejecutarse cuando llega una hora, cambia un recurso, se publica una versión o aparece una condición determinada. Las automatizaciones permiten que el sistema inicie trabajo sin depender de una petición conversacional inmediata.</p>
+<p>Una automatización combina un disparador con una operación. El disparador puede ser temporal, un evento, un cambio de estado o una condición detectada periódicamente. La operación puede invocar un <em>command</em>, iniciar un <em>workflow</em> o ejecutar una comprobación.</p>
 </section>
-<section id="forma-y-contenido" class="level1" data-number="40">
-<h1 data-number="40"><span class="header-section-number">40</span> Forma y contenido</h1>
-<p>Una <em>template</em> debería distinguir entre aquello que pertenece a la estructura y aquello que debe completarse para cada caso. Si una plantilla contiene demasiadas decisiones específicas, deja de ser reutilizable; si es excesivamente vacía, aporta poco valor.</p>
-<p>El IISS puede utilizar <em>definitions</em> para completar una <em>template</em>. Por ejemplo, una <em>definition</em> puede contener los datos de un componente y la plantilla determinar cómo convertirlos en una página de documentación. También puede utilizar una <em>skill</em> para decidir qué partes deben incluirse o cómo resolver casos opcionales.</p>
-<p>Esta composición evita insertar lógica compleja dentro de la propia plantilla.</p>
+<section id="triggers-y-condiciones" class="level1" data-number="50">
+<h1 data-number="50"><span class="header-section-number">50</span> <em>Triggers</em> y condiciones</h1>
+<p>El disparador debe estar definido con suficiente precisión. «Cuando cambie algo importante» puede ser una intención útil para una persona, pero el sistema necesita un mecanismo que determine qué cambios observa y cómo decide que cumplen la condición.</p>
+<p>Algunas plataformas ofrecen eventos nativos; otras requieren comprobaciones periódicas. Los <em>adapters</em> pueden traducir la automatización canónica al mecanismo disponible.</p>
+<p>También conviene distinguir entre detectar una condición y notificar. Un proceso puede comprobar cada hora si existe un cambio, pero solo producir una comunicación cuando la condición se cumple. Mezclar ambos conceptos genera ruido y dificulta ajustar la frecuencia de observación.</p>
 </section>
-<section id="templates-y-ejemplos" class="level1" data-number="41">
-<h1 data-number="41"><span class="header-section-number">41</span> <em>Templates</em> y ejemplos</h1>
-<p>Un ejemplo muestra una realización concreta. Una <em>template</em> define una estructura destinada a producir nuevas realizaciones. Aunque ambos pueden parecer similares, la diferencia afecta a cómo debe interpretarlos el sistema.</p>
-<p>Copiar un ejemplo literalmente puede arrastrar valores accidentales. Utilizar una <em>template</em> obliga a reconocer qué partes son constantes y cuáles deben obtenerse del contexto. Por ello conviene que los marcadores y las condiciones sean explícitos.</p>
-<p>Los ejemplos siguen siendo útiles dentro de una <em>skill</em> para enseñar cómo aplicar una plantilla en situaciones distintas.</p>
+<section id="automatización-y-workflow" class="level1" data-number="51">
+<h1 data-number="51"><span class="header-section-number">51</span> Automatización y <em>workflow</em></h1>
+<p>La automatización decide cuándo empieza el trabajo. El <em>workflow</em> describe cómo se realiza. Mantener esta separación permite reutilizar el mismo proceso desde una conversación, un <em>command</em> manual o un disparador automático.</p>
+<p>Por ejemplo, un <em>workflow</em> de publicación puede ejecutarse manualmente durante desarrollo y activarse automáticamente cuando se crea una etiqueta determinada. No necesitamos mantener dos procesos diferentes.</p>
 </section>
-<section id="validación-de-resultados" class="level1" data-number="42">
-<h1 data-number="42"><span class="header-section-number">42</span> Validación de resultados</h1>
-<p>Una <em>template</em> puede contribuir a la consistencia, pero no garantiza que el resultado final sea correcto. Después de completarla pueden existir campos vacíos, enlaces inválidos o combinaciones semánticamente incompatibles. Las validaciones deben comprobar aquello que la estructura por sí sola no puede asegurar.</p>
-<p>También puede ocurrir que una <em>template</em> evolucione. Los artefactos antiguos no tienen por qué actualizarse automáticamente, pero el sistema debería conocer qué versión se utilizó cuando esa información resulte relevante.</p>
+<section id="idempotencia" class="level1" data-number="52">
+<h1 data-number="52"><span class="header-section-number">52</span> Idempotencia</h1>
+<p>Las automatizaciones pueden ejecutarse más de una vez, especialmente cuando existen reintentos o eventos duplicados. Por ello conviene diseñar operaciones idempotentes cuando sea posible: repetirlas con el mismo estado inicial no debería producir efectos acumulativos indeseados.</p>
+<p>Si una operación no puede ser idempotente, el sistema necesita mecanismos para identificar ejecuciones anteriores y evitar duplicados. Enviar dos veces una comunicación o crear dos despliegues idénticos puede ser más problemático que repetir una lectura.</p>
 </section>
-<section id="templates-y-generación" class="level1" data-number="43">
-<h1 data-number="43"><span class="header-section-number">43</span> <em>Templates</em> y generación</h1>
-<p>Los modelos generativos son especialmente buenos completando estructuras cuando disponen de contexto suficiente. Una <em>template</em> aprovecha esa capacidad sin delegar en el modelo decisiones que ya están resueltas. El modelo puede concentrarse en generar el contenido variable mientras la arquitectura conserva las partes estables.</p>
-<p>Este principio también reduce la necesidad de instrucciones repetitivas. En lugar de explicar en cada <em>prompt</em> el formato completo de un artefacto, el sistema puede proporcionar una plantilla identificada y dejar que el procedimiento especializado se ocupe de completarla.</p>
+<section id="reintentos-y-errores" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> Reintentos y errores</h1>
+<p>Un servicio externo puede fallar de forma temporal. Una automatización necesita saber cuándo reintentar y cuándo detenerse. Repetir indefinidamente una operación que falla por falta de permisos no resolverá el problema y puede generar carga o efectos inesperados.</p>
+<p>Los errores deberían propagarse de forma observable y permitir que una persona conozca qué automatización falló, en qué paso y con qué estado.</p>
 </section>
-<section id="independencia-de-plataforma" class="level1" data-number="44">
-<h1 data-number="44"><span class="header-section-number">44</span> Independencia de plataforma</h1>
-<p>Las <em>templates</em> pueden materializarse como archivos, directorios, fragmentos incrustados o recursos ofrecidos por una plataforma. El concepto no depende del mecanismo de almacenamiento.</p>
-<p>Los <em>adapters</em> pueden transformar una plantilla canónica al formato que necesite una herramienta concreta. Si una plataforma exige una estructura diferente, esa adaptación debería permanecer en la frontera y no contaminar la representación común del proyecto.</p>
+<section id="autonomía-diferida" class="level1" data-number="54">
+<h1 data-number="54"><span class="header-section-number">54</span> Autonomía diferida</h1>
+<p>Una automatización puede ejecutar trabajo cuando nadie está observando directamente. Esto aumenta la importancia de permisos, validaciones y límites de efectos. Una operación aceptable durante una sesión supervisada puede necesitar controles adicionales cuando se ejecuta de madrugada de forma autónoma.</p>
+<p>La arquitectura puede limitar qué <em>commands</em> son automatizables o exigir que determinados <em>workflows</em> se detengan antes de pasos de alto impacto.</p>
+</section>
+<section id="automatización-y-aprendizaje-operativo" class="level1" data-number="55">
+<h1 data-number="55"><span class="header-section-number">55</span> Automatización y aprendizaje operativo</h1>
+<p>Los procesos recurrentes revelan patrones. Si una persona repite cada semana la misma secuencia de recuperación, análisis y publicación, existe un candidato natural para automatización. Sin embargo, automatizar demasiado pronto puede congelar un procedimiento que todavía estamos aprendiendo.</p>
+<p>Conviene comprender primero el proceso, convertir sus pasos estables en componentes y automatizar aquello que ya tiene contratos y validaciones suficientes. La automatización debería ser la consecuencia de una ingeniería más explícita, no un sustituto de ella.</p>
 
 
 </section>
@@ -1062,13 +1098,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/20-components/08-skills.html" class="pagination-link" aria-label="*Skills*">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span>
+      <a href="../../chapters/30-components/15-validations.html" class="pagination-link" aria-label="Validaciones">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/20-components/10-configuration.html" class="pagination-link" aria-label="Configuración">
-        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/30-components/17-adapters.html" class="pagination-link" aria-label="*Adapters*">
+        <span class="nav-page-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Introduccion</a></li><li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Saco</a></li><li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,8 +397,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Componentes de los IISS</span></a>
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -403,110 +406,139 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,32 +624,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#ingeniería-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">49.1</span> Ingeniería de Sistemas Inteligentes</a>
+  <li><a href="#ingeniería-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">52.1</span> Ingeniería de Sistemas Inteligentes</a>
   <ul class="collapse">
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">49.1.1</span> Objetivo</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">52.1.1</span> Objetivo</a></li>
   </ul></li>
-  <li><a href="#filosofía" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">50</span> Filosofía</a></li>
-  <li><a href="#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">51</span> Plataforma de referencia</a></li>
-  <li><a href="#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">52</span> Requisitos recomendados</a>
+  <li><a href="#filosofía" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">53</span> Filosofía</a></li>
+  <li><a href="#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">54</span> Plataforma de referencia</a></li>
+  <li><a href="#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">55</span> Requisitos recomendados</a>
   <ul class="collapse">
-  <li><a href="#hardware-mínimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">52.1</span> Hardware mínimo</a></li>
-  <li><a href="#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">52.2</span> Hardware recomendado</a></li>
+  <li><a href="#hardware-mínimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">55.1</span> Hardware mínimo</a></li>
+  <li><a href="#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">55.2</span> Hardware recomendado</a></li>
   </ul></li>
-  <li><a href="#filosofía-de-instalación" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">53</span> Filosofía de instalación</a></li>
-  <li><a href="#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">54</span> Componentes del entorno</a></li>
-  <li><a href="#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">55</span> Versiones utilizadas</a></li>
-  <li><a href="#orden-de-instalación" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">56</span> Orden de instalación</a></li>
-  <li><a href="#lista-de-comprobación" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">57</span> Lista de comprobación</a></li>
-  <li><a href="#próximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">58</span> Próximo paso</a></li>
+  <li><a href="#filosofía-de-instalación" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">56</span> Filosofía de instalación</a></li>
+  <li><a href="#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">57</span> Componentes del entorno</a></li>
+  <li><a href="#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">58</span> Versiones utilizadas</a></li>
+  <li><a href="#orden-de-instalación" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">59</span> Orden de instalación</a></li>
+  <li><a href="#lista-de-comprobación" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">60</span> Lista de comprobación</a></li>
+  <li><a href="#próximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">61</span> Próximo paso</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Introduccion</a></li><li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Saco</a></li><li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></h1>
+<h1 class="title"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></h1>
 </div>
 
 
@@ -634,18 +666,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ingeniería-de-sistemas-inteligentes" class="level2" data-number="49.1">
-<h2 data-number="49.1" class="anchored" data-anchor-id="ingeniería-de-sistemas-inteligentes"><span class="header-section-number">49.1</span> Ingeniería de Sistemas Inteligentes</h2>
-<section id="objetivo" class="level3" data-number="49.1.1">
-<h3 data-number="49.1.1" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">49.1.1</span> Objetivo</h3>
+<section id="ingeniería-de-sistemas-inteligentes" class="level2" data-number="52.1">
+<h2 data-number="52.1" class="anchored" data-anchor-id="ingeniería-de-sistemas-inteligentes"><span class="header-section-number">52.1</span> Ingeniería de Sistemas Inteligentes</h2>
+<section id="objetivo" class="level3" data-number="52.1.1">
+<h3 data-number="52.1.1" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">52.1.1</span> Objetivo</h3>
 <p>Este documento describe la preparación del entorno de trabajo utilizado a lo largo de todos los laboratorios del libro.</p>
 <p>Su finalidad es disponer de un entorno homogéneo, reproducible y sencillo de mantener.</p>
 <p>No pretende ser un manual de Linux ni una guía de instalación de herramientas. Es, simplemente, la preparación del puesto de trabajo de un Ingeniero de Sistemas Inteligentes.</p>
 <hr>
 </section>
 </section>
-<section id="filosofía" class="level1" data-number="50">
-<h1 data-number="50"><span class="header-section-number">50</span> Filosofía</h1>
+<section id="filosofía" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> Filosofía</h1>
 <p>Todos los laboratorios del libro parten del siguiente supuesto:</p>
 <blockquote class="blockquote">
 <p>El entorno ya está preparado.</p>
@@ -658,8 +690,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="plataforma-de-referencia" class="level1" data-number="51">
-<h1 data-number="51"><span class="header-section-number">51</span> Plataforma de referencia</h1>
+<section id="plataforma-de-referencia" class="level1" data-number="54">
+<h1 data-number="54"><span class="header-section-number">54</span> Plataforma de referencia</h1>
 <ul>
 <li>Sistema Operativo: Kubuntu 24.04 LTS</li>
 <li>Arquitectura: x86_64</li>
@@ -669,10 +701,10 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <hr>
 </section>
-<section id="requisitos-recomendados" class="level1" data-number="52">
-<h1 data-number="52"><span class="header-section-number">52</span> Requisitos recomendados</h1>
-<section id="hardware-mínimo" class="level2" data-number="52.1">
-<h2 data-number="52.1" class="anchored" data-anchor-id="hardware-mínimo"><span class="header-section-number">52.1</span> Hardware mínimo</h2>
+<section id="requisitos-recomendados" class="level1" data-number="55">
+<h1 data-number="55"><span class="header-section-number">55</span> Requisitos recomendados</h1>
+<section id="hardware-mínimo" class="level2" data-number="55.1">
+<h2 data-number="55.1" class="anchored" data-anchor-id="hardware-mínimo"><span class="header-section-number">55.1</span> Hardware mínimo</h2>
 <ul>
 <li>CPU de 64 bits</li>
 <li>16 GB de memoria RAM</li>
@@ -680,8 +712,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Conexión a Internet</li>
 </ul>
 </section>
-<section id="hardware-recomendado" class="level2" data-number="52.2">
-<h2 data-number="52.2" class="anchored" data-anchor-id="hardware-recomendado"><span class="header-section-number">52.2</span> Hardware recomendado</h2>
+<section id="hardware-recomendado" class="level2" data-number="55.2">
+<h2 data-number="55.2" class="anchored" data-anchor-id="hardware-recomendado"><span class="header-section-number">55.2</span> Hardware recomendado</h2>
 <ul>
 <li>Procesador multinúcleo moderno</li>
 <li>32 GB RAM</li>
@@ -694,8 +726,8 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="filosofía-de-instalación" class="level1" data-number="53">
-<h1 data-number="53"><span class="header-section-number">53</span> Filosofía de instalación</h1>
+<section id="filosofía-de-instalación" class="level1" data-number="56">
+<h1 data-number="56"><span class="header-section-number">56</span> Filosofía de instalación</h1>
 <p>Siempre que sea posible:</p>
 <ul>
 <li>utilizar paquetes oficiales;</li>
@@ -706,8 +738,8 @@ ul.task-list li input[type="checkbox"] {
 <p>El objetivo es que cualquier lector pueda reconstruir exactamente el mismo entorno.</p>
 <hr>
 </section>
-<section id="componentes-del-entorno" class="level1" data-number="54">
-<h1 data-number="54"><span class="header-section-number">54</span> Componentes del entorno</h1>
+<section id="componentes-del-entorno" class="level1" data-number="57">
+<h1 data-number="57"><span class="header-section-number">57</span> Componentes del entorno</h1>
 <p>Los siguientes componentes se instalarán durante esta guía.</p>
 <table class="caption-top table">
 <thead>
@@ -802,8 +834,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <hr>
 </section>
-<section id="versiones-utilizadas" class="level1" data-number="55">
-<h1 data-number="55"><span class="header-section-number">55</span> Versiones utilizadas</h1>
+<section id="versiones-utilizadas" class="level1" data-number="58">
+<h1 data-number="58"><span class="header-section-number">58</span> Versiones utilizadas</h1>
 <p>Este documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.</p>
 <table class="caption-top table">
 <thead>
@@ -898,8 +930,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <hr>
 </section>
-<section id="orden-de-instalación" class="level1" data-number="56">
-<h1 data-number="56"><span class="header-section-number">56</span> Orden de instalación</h1>
+<section id="orden-de-instalación" class="level1" data-number="59">
+<h1 data-number="59"><span class="header-section-number">59</span> Orden de instalación</h1>
 <ol type="1">
 <li>Actualización del sistema</li>
 <li>Herramientas básicas</li>
@@ -919,8 +951,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <hr>
 </section>
-<section id="lista-de-comprobación" class="level1" data-number="57">
-<h1 data-number="57"><span class="header-section-number">57</span> Lista de comprobación</h1>
+<section id="lista-de-comprobación" class="level1" data-number="60">
+<h1 data-number="60"><span class="header-section-number">60</span> Lista de comprobación</h1>
 <p>Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.</p>
 <ul class="task-list">
 <li><label><input type="checkbox">El sistema está actualizado.</label></li>
@@ -939,8 +971,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="próximo-paso" class="level1" data-number="58">
-<h1 data-number="58"><span class="header-section-number">58</span> Próximo paso</h1>
+<section id="próximo-paso" class="level1" data-number="61">
+<h1 data-number="61"><span class="header-section-number">61</span> Próximo paso</h1>
 <p>Una vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.</p>
 <p>El primer laboratorio será:</p>
 <blockquote class="blockquote">
@@ -1354,12 +1386,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../chapters/99-saco/00-construccion.html" class="pagination-link" aria-label="Construcción del laboratorio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/99-saco/02-prerequisitos.html" class="pagination-link" aria-label="Prerequisitos">
-        <span class="nav-page-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

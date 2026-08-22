@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/99-saco/index.html" rel="next">
-<link href="../../chapters/20-components/17-adapters.html" rel="prev">
+<link href="../../chapters/30-components/15-validations.html" rel="next">
+<link href="../../chapters/30-components/13-workflows.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/18-sintesis.html"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/14-agents.html"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,119 +397,148 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,20 +624,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#un-sistema-formado-por-responsabilidades" id="toc-un-sistema-formado-por-responsabilidades" class="nav-link active" data-scroll-target="#un-sistema-formado-por-responsabilidades"><span class="header-section-number">48</span> Un sistema formado por responsabilidades</a></li>
-  <li><a href="#componentes-que-se-combinan" id="toc-componentes-que-se-combinan" class="nav-link" data-scroll-target="#componentes-que-se-combinan"><span class="header-section-number">49</span> Componentes que se combinan</a></li>
-  <li><a href="#el-concepto-antes-que-el-nombre-del-producto" id="toc-el-concepto-antes-que-el-nombre-del-producto" class="nav-link" data-scroll-target="#el-concepto-antes-que-el-nombre-del-producto"><span class="header-section-number">50</span> El concepto antes que el nombre del producto</a></li>
-  <li><a href="#del-diálogo-al-sistema" id="toc-del-diálogo-al-sistema" class="nav-link" data-scroll-target="#del-diálogo-al-sistema"><span class="header-section-number">51</span> Del diálogo al sistema</a></li>
-  <li><a href="#una-base-para-la-metodología" id="toc-una-base-para-la-metodología" class="nav-link" data-scroll-target="#una-base-para-la-metodología"><span class="header-section-number">52</span> Una base para la metodología</a></li>
+  <li><a href="#un-modo-de-organizar-autonomía" id="toc-un-modo-de-organizar-autonomía" class="nav-link active" data-scroll-target="#un-modo-de-organizar-autonomía"><span class="header-section-number">47</span> Un modo de organizar autonomía</a></li>
+  <li><a href="#objetivo-y-bucle-de-decisión" id="toc-objetivo-y-bucle-de-decisión" class="nav-link" data-scroll-target="#objetivo-y-bucle-de-decisión"><span class="header-section-number">48</span> Objetivo y bucle de decisión</a></li>
+  <li><a href="#planificación-y-ejecución" id="toc-planificación-y-ejecución" class="nav-link" data-scroll-target="#planificación-y-ejecución"><span class="header-section-number">49</span> Planificación y ejecución</a></li>
+  <li><a href="#agentes-especializados" id="toc-agentes-especializados" class="nav-link" data-scroll-target="#agentes-especializados"><span class="header-section-number">50</span> Agentes especializados</a></li>
+  <li><a href="#multiagente-y-comunicación" id="toc-multiagente-y-comunicación" class="nav-link" data-scroll-target="#multiagente-y-comunicación"><span class="header-section-number">51</span> Multiagente y comunicación</a></li>
+  <li><a href="#autonomía-graduada" id="toc-autonomía-graduada" class="nav-link" data-scroll-target="#autonomía-graduada"><span class="header-section-number">52</span> Autonomía graduada</a></li>
+  <li><a href="#agent-como-implementación" id="toc-agent-como-implementación" class="nav-link" data-scroll-target="#agent-como-implementación"><span class="header-section-number">53</span> <em>Agent</em> como implementación</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/18-sintesis.html"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/14-agents.html"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></h1>
+<h1 class="title"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></h1>
 </div>
 
 
@@ -622,35 +656,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="un-sistema-formado-por-responsabilidades" class="level1" data-number="48">
-<h1 data-number="48"><span class="header-section-number">48</span> Un sistema formado por responsabilidades</h1>
-<p>A lo largo de esta parte hemos separado una serie de responsabilidades que suelen aparecer mezcladas cuando observamos un agente desde fuera. La aplicación puede presentarlas detrás de una única conversación, pero la ingeniería necesita reconocerlas porque cada una cambia de manera distinta, tiene riesgos diferentes y requiere mecanismos propios de validación.</p>
-<p>Las instrucciones gobiernan el comportamiento. Las <em>definitions</em> representan de forma estructurada aquello que el sistema ha entendido y necesita conservar como conocimiento operativo. Los <em>commands</em> expresan intenciones invocables. Las <em>tools</em> aportan capacidad de actuación sobre el exterior. MCP ofrece un protocolo para conectar determinadas herramientas, recursos y contenidos reutilizables. Los <em>resources</em> proporcionan información externa y trazable. Las <em>skills</em> conservan conocimiento procedimental. Las <em>templates</em> mantienen estructuras repetibles. La configuración selecciona comportamientos permitidos y las reglas establecen restricciones.</p>
-<p>El contexto reúne la información necesaria para la inferencia actual, el estado permite conocer dónde se encuentra un proceso y la memoria conserva información recuperable para interacciones futuras. Los <em>workflows</em> organizan actividades y decisiones. Los agentes combinan estos componentes para perseguir objetivos con distintos grados de autonomía. Las validaciones comprueban condiciones y resultados. Las automatizaciones deciden cuándo iniciar procesos sin una petición conversacional inmediata. Finalmente, los <em>adapters</em> protegen todo este modelo conceptual frente a las diferencias entre productos y proveedores.</p>
+<section id="un-modo-de-organizar-autonomía" class="level1" data-number="47">
+<h1 data-number="47"><span class="header-section-number">47</span> Un modo de organizar autonomía</h1>
+<p>El término agente se utiliza con significados muy diferentes. Puede describir una aplicación conversacional con herramientas, un proceso capaz de planificar y ejecutar varios pasos, un rol especializado dentro de un sistema o una entidad que coopera con otros agentes. Para evitar que el nombre sustituya al análisis, conviene describir un agente por las capacidades y responsabilidades que realmente posee.</p>
+<p>Desde nuestra perspectiva, un agente no introduce necesariamente una nueva clase de conocimiento. Es una forma de combinar modelo, instrucciones, contexto, herramientas, memoria, <em>skills</em>, <em>workflows</em> y controles para perseguir un objetivo con cierto grado de autonomía.</p>
 </section>
-<section id="componentes-que-se-combinan" class="level1" data-number="49">
-<h1 data-number="49"><span class="header-section-number">49</span> Componentes que se combinan</h1>
-<p>Estas piezas no forman una cadena rígida. Un mismo proceso puede utilizar solo algunas y otro necesitar casi todas. Una tarea sencilla puede resolverse con instrucciones, un recurso y una herramienta. Un proceso de ingeniería más complejo puede comenzar con entradas no estructuradas, construir <em>definitions</em>, ejecutar un <em>command</em> que activa un <em>workflow</em>, cargar una <em>skill</em>, utilizar varias herramientas, validar los resultados y terminar actualizando el estado del proyecto.</p>
-<p>La arquitectura debe permitir esta composición sin obligar a introducir componentes que no aportan valor. El objetivo de la taxonomía no es aumentar el número de artefactos, sino disponer de nombres y responsabilidades cuando aparecen necesidades reales.</p>
-<p>También permite detectar diseños confusos. Si un archivo de instrucciones contiene procedimientos, estado, configuración y reglas, sabemos que varias responsabilidades están mezcladas. Puede seguir funcionando, pero será más difícil de mantener, validar y adaptar a otra plataforma.</p>
+<section id="objetivo-y-bucle-de-decisión" class="level1" data-number="48">
+<h1 data-number="48"><span class="header-section-number">48</span> Objetivo y bucle de decisión</h1>
+<p>Un agente suele operar mediante ciclos. Observa el estado disponible, decide una acción, utiliza una capacidad, interpreta el resultado y vuelve a decidir. La cantidad de pasos y la libertad de elección pueden variar considerablemente.</p>
+<p>En un extremo, el agente ejecuta una secuencia casi fija y solo utiliza el modelo para completar ciertos pasos. En el otro, puede planificar dinámicamente, seleccionar herramientas y revisar su propio trabajo. Ambos casos pueden llamarse agentes, pero sus riesgos y requisitos de control son distintos.</p>
+<p>Por ello resulta más útil preguntar qué decisiones puede tomar que limitarse a clasificarlo como «agente».</p>
 </section>
-<section id="el-concepto-antes-que-el-nombre-del-producto" class="level1" data-number="50">
-<h1 data-number="50"><span class="header-section-number">50</span> El concepto antes que el nombre del producto</h1>
-<p>Los términos elegidos en esta parte constituyen un vocabulario conceptual. Algunos coinciden con nombres utilizados por herramientas actuales, pero su significado aquí depende de la responsabilidad que hemos definido.</p>
-<p>Esta decisión resulta especialmente importante para IASI. La metodología puede definir qué componentes necesita sin preguntar primero qué ofrece un agente concreto. Después, los <em>adapters</em> resolverán la traducción a cada entorno. Si una plataforma utiliza nombres diferentes, no necesitamos cambiar el modelo. Si incorpora una capacidad nueva, podemos evaluar si representa realmente un componente conceptual adicional o una forma distinta de implementar uno existente.</p>
-<p>Así evitamos que la arquitectura nazca de una enumeración de funciones comerciales.</p>
+<section id="planificación-y-ejecución" class="level1" data-number="49">
+<h1 data-number="49"><span class="header-section-number">49</span> Planificación y ejecución</h1>
+<p>Separar planificación y ejecución puede mejorar el control. El sistema puede permitir que el modelo proponga un plan amplio y exigir validación antes de ejecutar acciones con efectos. También puede revisar el plan a medida que aparecen nuevos resultados.</p>
+<p>No siempre es necesario crear dos componentes distintos. Lo importante es que la arquitectura pueda distinguir la intención prevista de las acciones realmente ejecutadas.</p>
+<p>Esta distinción facilita auditar cambios y detectar desviaciones. Si el sistema planeaba modificar tres archivos y terminó alterando veinte, existe una señal clara que merece revisión.</p>
 </section>
-<section id="del-diálogo-al-sistema" class="level1" data-number="51">
-<h1 data-number="51"><span class="header-section-number">51</span> Del diálogo al sistema</h1>
-<p>La conversación continúa siendo una interfaz fundamental. Permite explorar, discutir alternativas, corregir interpretaciones y formular necesidades que todavía no tienen una estructura estable. Sin embargo, un proyecto no puede depender exclusivamente de conversaciones si quiere conservar conocimiento y ejecutar procesos de forma repetible.</p>
-<p>Los componentes descritos en esta parte muestran cómo puede producirse esa transición. Parte de lo hablado se convierte en <em>definitions</em>; los procedimientos recurrentes pueden convertirse en <em>skills</em>; las operaciones frecuentes pueden exponerse como <em>commands</em>; las secuencias estables pueden formalizarse como <em>workflows</em>; las restricciones pueden expresarse como reglas y validaciones; aquello que se repite en el tiempo puede automatizarse.</p>
-<p>No todo debe formalizarse inmediatamente. La ingeniería consiste también en decidir qué necesita estructura y qué conviene mantener flexible mientras seguimos aprendiendo.</p>
+<section id="agentes-especializados" class="level1" data-number="50">
+<h1 data-number="50"><span class="header-section-number">50</span> Agentes especializados</h1>
+<p>Un sistema puede disponer de agentes con responsabilidades diferentes. Uno puede analizar documentación, otro trabajar sobre código y otro validar resultados. Esta especialización puede reducir el conjunto de herramientas e instrucciones que cada agente necesita.</p>
+<p>Sin embargo, multiplicar agentes no resuelve automáticamente la complejidad. Introduce coordinación, transferencia de contexto y posibles contradicciones. Si dos agentes mantienen representaciones diferentes del estado del proyecto, el sistema necesita una fuente canónica que evite que cada uno actúe sobre una realidad distinta.</p>
+<p>Las <em>definitions</em> y el estado compartido pueden desempeñar este papel.</p>
 </section>
-<section id="una-base-para-la-metodología" class="level1" data-number="52">
-<h1 data-number="52"><span class="header-section-number">52</span> Una base para la metodología</h1>
-<p>Esta parte no define todavía cómo IASI organiza cada componente dentro de un proyecto ni qué formatos concretos utiliza. Su objetivo era construir el vocabulario necesario para poder hacerlo después sin introducir conceptos nuevos a mitad de la metodología.</p>
-<p>Cuando lleguemos a esa formalización podremos decidir qué <em>definitions</em> existen, qué <em>commands</em> ofrece el sistema, cómo se organizan las <em>skills</em>, qué <em>workflows</em> forman parte del proceso y qué responsabilidades corresponden a los <em>adapters</em>. Esas decisiones pertenecerán a la metodología.</p>
-<p>La base conceptual queda, sin embargo, establecida: un IISS útil no es únicamente un modelo que genera respuestas. Es una arquitectura que combina conocimiento, intención, capacidad, estado, procedimiento y control, y que debe poder mantener esas responsabilidades aunque cambie la tecnología concreta con la que se implementa.</p>
+<section id="multiagente-y-comunicación" class="level1" data-number="51">
+<h1 data-number="51"><span class="header-section-number">51</span> Multiagente y comunicación</h1>
+<p>Cuando varios agentes colaboran, la comunicación entre ellos debería tratarse como una interfaz del sistema. No basta con permitir que intercambien texto libre sin límites. Conviene conocer qué información se transfiere, qué decisiones puede tomar cada rol y quién posee autoridad sobre el estado compartido.</p>
+<p>Algunas tareas pueden beneficiarse de una revisión independiente, porque un agente evalúa el trabajo producido por otro. Otras no justifican el coste y la complejidad de mantener varias entidades.</p>
+<p>La arquitectura debería utilizar múltiples agentes cuando la separación de responsabilidades aporte valor, no porque el término resulte atractivo.</p>
+</section>
+<section id="autonomía-graduada" class="level1" data-number="52">
+<h1 data-number="52"><span class="header-section-number">52</span> Autonomía graduada</h1>
+<p>La autonomía no es binaria. Un agente puede leer libremente pero necesitar aprobación para escribir; puede modificar una rama temporal pero no desplegar; puede ejecutar un <em>workflow</em> completo salvo cuando una validación detecta una excepción.</p>
+<p>Esta graduación depende de herramientas, reglas, permisos y puntos de control. Por ello la seguridad de un agente no puede evaluarse observando únicamente el modelo.</p>
+<p>La arquitectura más útil es aquella que permite aumentar autonomía allí donde existen contratos y validaciones suficientes, y conservar supervisión humana donde el impacto o la incertidumbre lo exigen.</p>
+</section>
+<section id="agent-como-implementación" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> <em>Agent</em> como implementación</h1>
+<p>Algunas plataformas denominan agente a todo el entorno que rodea al modelo. Otras reservan el término para procesos autónomos. Nuestro modelo conceptual no necesita imponer una definición comercial.</p>
+<p>Los <em>adapters</em> pueden mapear agentes canónicos o roles a las primitivas disponibles. Lo importante será describir qué componentes recibe cada agente, qué capacidades posee, qué estado comparte y qué límites gobiernan su comportamiento.</p>
 
 
 </section>
@@ -1058,13 +1102,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/20-components/17-adapters.html" class="pagination-link" aria-label="*Adapters*">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span>
+      <a href="../../chapters/30-components/13-workflows.html" class="pagination-link" aria-label="*Workflows*">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/99-saco/index.html" class="pagination-link" aria-label="Introduccion">
-        <span class="nav-page-text">Introduccion</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/30-components/15-validations.html" class="pagination-link" aria-label="Validaciones">
+        <span class="nav-page-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

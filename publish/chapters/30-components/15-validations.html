@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/20-components/01-arquitectura.html" rel="next">
-<link href="../../chapters/14-marco/13-syntesis.html" rel="prev">
+<link href="../../chapters/30-components/16-automations.html" rel="next">
+<link href="../../chapters/30-components/14-agents.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/15-validations.html"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,119 +397,148 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,20 +624,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#del-modelo-a-una-arquitectura-de-capacidades" id="toc-del-modelo-a-una-arquitectura-de-capacidades" class="nav-link" data-scroll-target="#del-modelo-a-una-arquitectura-de-capacidades">Del modelo a una arquitectura de capacidades</a></li>
-  <li><a href="#una-taxonomía-estable-sobre-implementaciones-cambiantes" id="toc-una-taxonomía-estable-sobre-implementaciones-cambiantes" class="nav-link" data-scroll-target="#una-taxonomía-estable-sobre-implementaciones-cambiantes">Una taxonomía estable sobre implementaciones cambiantes</a></li>
-  <li><a href="#descripción-de-la-parte" id="toc-descripción-de-la-parte" class="nav-link" data-scroll-target="#descripción-de-la-parte">Descripción de la parte</a></li>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a></li>
+  <li><a href="#comprobar-antes-de-confiar" id="toc-comprobar-antes-de-confiar" class="nav-link active" data-scroll-target="#comprobar-antes-de-confiar"><span class="header-section-number">48</span> Comprobar antes de confiar</a></li>
+  <li><a href="#validaciones-previas-y-posteriores" id="toc-validaciones-previas-y-posteriores" class="nav-link" data-scroll-target="#validaciones-previas-y-posteriores"><span class="header-section-number">49</span> Validaciones previas y posteriores</a></li>
+  <li><a href="#sintaxis-y-semántica" id="toc-sintaxis-y-semántica" class="nav-link" data-scroll-target="#sintaxis-y-semántica"><span class="header-section-number">50</span> Sintaxis y semántica</a></li>
+  <li><a href="#validación-y-reglas" id="toc-validación-y-reglas" class="nav-link" data-scroll-target="#validación-y-reglas"><span class="header-section-number">51</span> Validación y reglas</a></li>
+  <li><a href="#validación-humana" id="toc-validación-humana" class="nav-link" data-scroll-target="#validación-humana"><span class="header-section-number">52</span> Validación humana</a></li>
+  <li><a href="#fallar-de-forma-informativa" id="toc-fallar-de-forma-informativa" class="nav-link" data-scroll-target="#fallar-de-forma-informativa"><span class="header-section-number">53</span> Fallar de forma informativa</a></li>
+  <li><a href="#validación-como-límite-de-autonomía" id="toc-validación-como-límite-de-autonomía" class="nav-link" data-scroll-target="#validación-como-límite-de-autonomía"><span class="header-section-number">54</span> Validación como límite de autonomía</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/15-validations.html"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Componentes de los IISS</h1>
+<h1 class="title"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></h1>
 </div>
 
 
@@ -622,34 +656,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>En los capítulos anteriores hemos separado el modelo del sistema y hemos visto que un modelo de lenguaje, por capaz que sea, no constituye por sí solo una solución completa. El modelo puede interpretar instrucciones, relacionar información y generar una salida, pero necesita que otros componentes le proporcionen conocimiento actualizado, mecanismos de actuación, memoria, reglas, controles y una forma de integrarse con el resto del sistema. Cuando estas piezas se combinan de forma coherente aparece algo distinto del modelo aislado: un sistema inteligente capaz de trabajar sobre un problema real.</p>
-<p>Esta parte estudia esas piezas. No pretende describir la interfaz concreta de un producto ni adoptar como universales los nombres utilizados por un agente determinado. Las implementaciones cambian con rapidez, y dos productos que resuelven la misma necesidad pueden utilizar terminologías diferentes. Uno puede hablar de <em>commands</em>, otro de acciones; uno puede proporcionar <em>skills</em>, otro paquetes de instrucciones; uno puede exponer herramientas mediante MCP y otro mediante una interfaz propia. Sin embargo, por debajo de esas diferencias siguen existiendo necesidades arquitectónicas reconocibles.</p>
-<p>Por esa razón utilizaremos una taxonomía conceptual propia. Daremos nombre a los componentes por la función que cumplen dentro de un IISS y no por la etiqueta que haya elegido un proveedor. Más adelante, cuando una metodología o una plataforma necesite utilizar estos componentes sobre tecnologías concretas, los <em>adapters</em> se encargarán de traducir el modelo conceptual a cada implementación. Esta separación permite razonar sobre la arquitectura sin convertirla en una fotografía de las herramientas disponibles en un momento determinado.</p>
+<section id="comprobar-antes-de-confiar" class="level1" data-number="48">
+<h1 data-number="48"><span class="header-section-number">48</span> Comprobar antes de confiar</h1>
+<p>Los modelos generativos producen resultados plausibles, no garantías. Las herramientas pueden fallar, los recursos pueden estar desactualizados y un <em>workflow</em> puede llegar a un estado inesperado. Por ello un IISS necesita mecanismos de validación que comprueben condiciones relevantes antes de aceptar un resultado o continuar con una acción.</p>
+<p>Una validación transforma una expectativa en una comprobación. Puede verificar estructura, consistencia, existencia de recursos, cumplimiento de reglas, resultados de pruebas o cualquier otra condición observable. Algunas pueden automatizarse completamente y otras necesitarán revisión humana.</p>
 </section>
-<section id="del-modelo-a-una-arquitectura-de-capacidades" class="level2">
-<h2 class="anchored" data-anchor-id="del-modelo-a-una-arquitectura-de-capacidades">Del modelo a una arquitectura de capacidades</h2>
-<p>Un IISS necesita responder, como mínimo, a varias preguntas. Debe saber qué instrucciones gobiernan su comportamiento, qué información conoce para la tarea actual, qué representaciones estructuradas describen el problema, qué operaciones puede solicitar, qué herramientas puede ejecutar, cómo accede a recursos externos, qué procedimientos reutilizables conoce, cómo conserva estado, cómo encadena actividades y cómo comprueba que el resultado es aceptable. También necesita decidir qué puede hacer de forma autónoma, qué requiere autorización y cómo se adapta a las capacidades reales del entorno en el que se ejecuta.</p>
-<p>Estas preguntas no son independientes. Una <em>definition</em> puede indicar qué debe construirse; un <em>command</em> puede solicitar una operación sobre esa <em>definition</em>; una <em>skill</em> puede explicar cómo realizarla; un <em>workflow</em> puede ordenar los pasos; una herramienta puede ejecutar una modificación; una validación puede comprobar el resultado; una automatización puede volver a ejecutar el proceso cuando se produzca un evento. El valor del sistema no procede únicamente de disponer de muchas piezas, sino de que cada una tenga una responsabilidad clara y pueda colaborar con las demás.</p>
-<p>También conviene distinguir entre componentes que contienen conocimiento, componentes que expresan intención, componentes que aportan capacidad de actuación y componentes que gobiernan el proceso. Las fronteras no siempre son perfectas y una implementación puede combinar varias funciones en un mismo artefacto, pero mantener la distinción conceptual evita que la arquitectura dependa de detalles accidentales.</p>
+<section id="validaciones-previas-y-posteriores" class="level1" data-number="49">
+<h1 data-number="49"><span class="header-section-number">49</span> Validaciones previas y posteriores</h1>
+<p>Antes de ejecutar una operación conviene comprobar sus condiciones previas. Si un <em>command</em> necesita un archivo de configuración o una herramienta concreta, el sistema debería detectarlo antes de iniciar un proceso largo.</p>
+<p>Después de ejecutar la operación deben comprobarse sus resultados. Crear un archivo no significa que el contenido sea válido; completar una compilación no garantiza que una publicación contenga todos los formatos esperados.</p>
+<p>Separar validaciones previas y posteriores permite saber si un fallo procede del estado inicial o del resultado producido.</p>
 </section>
-<section id="una-taxonomía-estable-sobre-implementaciones-cambiantes" class="level2">
-<h2 class="anchored" data-anchor-id="una-taxonomía-estable-sobre-implementaciones-cambiantes">Una taxonomía estable sobre implementaciones cambiantes</h2>
-<p>A lo largo de esta parte utilizaremos términos como <em>definitions</em>, <em>commands</em>, <em>tools</em>, <em>skills</em>, <em>templates</em>, <em>workflows</em> y <em>adapters</em>. Algunos coinciden con nombres utilizados actualmente por productos concretos y otros se emplean con significados diferentes según el entorno. Aquí no los adoptamos porque una plataforma los haya popularizado, sino porque necesitamos nombrar funciones que aparecen de forma recurrente cuando un IISS deja de limitarse a conversar y comienza a trabajar.</p>
-<p>El criterio será siempre funcional. Si mañana una plataforma elimina la palabra <em>skill</em> y la sustituye por otra, el concepto seguirá siendo necesario si continúa existiendo una pieza reutilizable que encapsula conocimiento operativo. Si un agente deja de hablar de <em>commands</em> y utiliza botones, acciones o peticiones estructuradas, seguirá siendo necesario representar una intención invocable con parámetros y un resultado esperado. Si una plataforma no soporta MCP, seguirá necesitando algún mecanismo para conectar el sistema con herramientas y recursos externos.</p>
-<p>Los <em>adapters</em> ocupan por ello una posición especial. Son la frontera que protege al modelo conceptual de las particularidades de cada tecnología. No intentan fingir que todas las plataformas son iguales, sino expresar de forma explícita qué equivalencias existen, qué capacidades faltan y qué degradaciones son necesarias cuando una implementación no puede representar exactamente el componente canónico.</p>
+<section id="sintaxis-y-semántica" class="level1" data-number="50">
+<h1 data-number="50"><span class="header-section-number">50</span> Sintaxis y semántica</h1>
+<p>Las comprobaciones sintácticas son deterministas y suelen ser baratas. Pueden verificar que un archivo tiene una estructura válida, que existe un campo obligatorio o que una ruta respeta un patrón.</p>
+<p>Las validaciones semánticas analizan si el contenido tiene sentido. Una <em>definition</em> puede ser sintácticamente correcta y, sin embargo, contradecir otra decisión del proyecto. Un documento puede contener todas las secciones requeridas y no responder al objetivo que debía cubrir.</p>
+<p>Los IISS pueden ayudar a realizar comprobaciones semánticas, pero esas validaciones deben reconocer el componente probabilístico del modelo. Cuando sea posible, conviene combinar razonamiento con evidencias y criterios explícitos.</p>
 </section>
-<section id="descripción-de-la-parte" class="level2">
-<h2 class="anchored" data-anchor-id="descripción-de-la-parte">Descripción de la parte</h2>
-<p>Comenzaremos examinando la arquitectura general que convierte un modelo en un sistema operativo. Después estudiaremos las instrucciones y las <em>definitions</em>, porque ambas determinan qué debe entender y respetar el sistema. Continuaremos con los <em>commands</em> y las herramientas, que introducen intención y capacidad de actuación, y con MCP y los recursos, que permiten conectar esas capacidades con el exterior.</p>
-<p>A continuación analizaremos las <em>skills</em>, las <em>templates</em>, la configuración y las reglas. Estas piezas permiten reutilizar conocimiento operativo, mantener estructuras consistentes y gobernar comportamientos sin tener que reconstruirlos en cada conversación. Después estudiaremos el contexto, el estado y la memoria, que permiten conservar continuidad más allá de una inferencia aislada.</p>
-<p>Los capítulos posteriores se dedicarán a los <em>workflows</em>, los agentes, las validaciones y las automatizaciones. Finalmente estudiaremos los <em>adapters</em> como mecanismo de desacoplamiento entre el modelo conceptual y las implementaciones concretas, y cerraremos la parte con una síntesis de cómo se relacionan todos los componentes.</p>
+<section id="validación-y-reglas" class="level1" data-number="51">
+<h1 data-number="51"><span class="header-section-number">51</span> Validación y reglas</h1>
+<p>Las reglas declaran condiciones que deben cumplirse. Las validaciones implementan mecanismos para comprobarlas. Una regla puede tener varias validaciones asociadas según el formato o el entorno.</p>
+<p>Esta separación facilita reutilizar políticas y permite mejorar el validador sin cambiar el significado de la regla. También permite indicar qué reglas todavía no pueden verificarse automáticamente y requieren revisión.</p>
 </section>
-<section id="objetivos" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
-<p>Al finalizar esta parte, el lector será capaz de reconocer las principales necesidades arquitectónicas que aparecen al construir IISS alrededor de modelos generativos, diferenciar componentes que a menudo se presentan mezclados por las herramientas comerciales y comprender la función de cada uno dentro del sistema. También podrá distinguir entre una capacidad conceptual y la forma concreta en que un producto decide exponerla, y entender por qué una arquitectura basada en <em>adapters</em> permite conservar un modelo estable aunque cambien los agentes, los modelos o los proveedores.</p>
-<p>El objetivo no es memorizar una colección de nombres. Lo importante es disponer de un mapa suficientemente preciso para analizar cualquier plataforma y preguntar qué componentes ofrece, qué responsabilidades asume cada uno, qué piezas faltan y cómo pueden componerse para construir un sistema controlable, verificable y adaptable.</p>
+<section id="validación-humana" class="level1" data-number="52">
+<h1 data-number="52"><span class="header-section-number">52</span> Validación humana</h1>
+<p>La revisión humana no debe tratarse como un recurso de emergencia que aparece únicamente cuando el sistema no sabe qué hacer. Puede formar parte explícita del diseño.</p>
+<p>Un <em>workflow</em> puede generar un artefacto, ejecutar todas las validaciones automáticas y presentar al humano únicamente los puntos que necesitan juicio. Esta estrategia reduce carga sin fingir que toda decisión puede automatizarse.</p>
+<p>El sistema debería proporcionar a la persona suficiente información para revisar el resultado: qué cambió, qué pruebas se ejecutaron, qué advertencias existen y qué fuentes sustentan las decisiones relevantes.</p>
+</section>
+<section id="fallar-de-forma-informativa" class="level1" data-number="53">
+<h1 data-number="53"><span class="header-section-number">53</span> Fallar de forma informativa</h1>
+<p>Una validación útil no se limita a devolver verdadero o falso. Cuando falla debería explicar qué condición no se cumplió y, si es posible, indicar qué información necesita el sistema para corregirla.</p>
+<p>Esta salida puede alimentar una <em>skill</em> de resolución o una transición del <em>workflow</em>. Un error suficientemente estructurado permite que el IISS actúe sobre el problema sin tener que interpretar mensajes ambiguos.</p>
+</section>
+<section id="validación-como-límite-de-autonomía" class="level1" data-number="54">
+<h1 data-number="54"><span class="header-section-number">54</span> Validación como límite de autonomía</h1>
+<p>Cuanto mejores sean las validaciones, más tareas pueden delegarse con seguridad. Si el sistema puede comprobar de manera fiable que un cambio respeta contratos, pasa pruebas y no altera recursos prohibidos, puede ejecutar más trabajo antes de solicitar intervención.</p>
+<p>Esto no convierte la validación en una garantía absoluta, pero desplaza la autonomía desde la confianza subjetiva en el modelo hacia controles explícitos. La ingeniería del IISS reside precisamente en esa combinación.</p>
 
 
 </section>
@@ -1057,13 +1100,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/14-marco/13-syntesis.html" class="pagination-link" aria-label="Una visión de conjunto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></span>
+      <a href="../../chapters/30-components/14-agents.html" class="pagination-link" aria-label="Agentes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/20-components/01-arquitectura.html" class="pagination-link" aria-label="Del modelo al sistema">
-        <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/30-components/16-automations.html" class="pagination-link" aria-label="Automatizaciones">
+        <span class="nav-page-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

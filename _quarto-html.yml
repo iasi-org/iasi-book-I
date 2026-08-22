@@ -41,7 +41,8 @@ book:
         href: chapters/99-saco/index.qmd
         
     right:
-      - text: "Guardar ..."
+      - icon: download 
+        text: "Guardar ..."
         menu: 
            - text: "Guardar ..."
              href: "#iasi-exports"    
@@ -58,7 +59,7 @@ format:
     pagetitle: "IASI Vol. I"
     title-prefix: ""
     include-in-header:
-      - resources/html/banner.html
+      text: '<script src="resources/js/iasi.js"></script>'
     theme: 
       - cosmo
       - resources/css/iasi.scss

@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/20-components/07-resources.html" rel="next">
-<link href="../../chapters/20-components/05-tools.html" rel="prev">
+<link href="../../chapters/30-components/06-mcp.html" rel="next">
+<link href="../../chapters/30-components/04-commands.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="resources/js/iasi.js"></script>
 
 
 </head>
@@ -115,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Conceptos LLM</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chapters/20-components/index.html"> 
+    <a class="nav-link" href="../../chapters/20-components/index.qmd"> 
 <span class="menu-text">Componentes</span></a>
   </li>  
   <li class="nav-item">
@@ -126,6 +127,8 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
  <span class="menu-text">Guardar …</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/06-mcp.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/05-tools.html"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -394,119 +397,148 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/20-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/20-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acerca de esta parte</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  <a href="../../chapters/20-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/02-instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  <a href="../../chapters/20-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/03-definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  <a href="../../chapters/20-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/04-commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  <a href="../../chapters/30-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/05-tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  <a href="../../chapters/30-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/06-mcp.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  <a href="../../chapters/30-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/07-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  <a href="../../chapters/30-components/05-tools.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/08-skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  <a href="../../chapters/30-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/09-templates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  <a href="../../chapters/30-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/10-configuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  <a href="../../chapters/30-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/11-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  <a href="../../chapters/30-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  <a href="../../chapters/30-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/13-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  <a href="../../chapters/30-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/14-agents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  <a href="../../chapters/30-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/15-validations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  <a href="../../chapters/30-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/16-automations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  <a href="../../chapters/30-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/17-adapters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  <a href="../../chapters/30-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/20-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  <a href="../../chapters/30-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/30-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
   </div>
 </li>
       </ul>
@@ -514,52 +546,52 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduccion</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Construcción del laboratorio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Preparación del Entorno</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Prerequisitos</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Notas</span></span></a>
   </div>
 </li>
       </ul>
@@ -567,7 +599,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -592,22 +624,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#un-protocolo-para-conectar-capacidades" id="toc-un-protocolo-para-conectar-capacidades" class="nav-link active" data-scroll-target="#un-protocolo-para-conectar-capacidades"><span class="header-section-number">36</span> Un protocolo para conectar capacidades</a></li>
-  <li><a href="#cliente-y-servidor" id="toc-cliente-y-servidor" class="nav-link" data-scroll-target="#cliente-y-servidor"><span class="header-section-number">37</span> Cliente y servidor</a></li>
-  <li><a href="#tools-resources-y-prompts" id="toc-tools-resources-y-prompts" class="nav-link" data-scroll-target="#tools-resources-y-prompts"><span class="header-section-number">38</span> <em>Tools</em>, <em>resources</em> y <em>prompts</em></a></li>
-  <li><a href="#descubrimiento" id="toc-descubrimiento" class="nav-link" data-scroll-target="#descubrimiento"><span class="header-section-number">39</span> Descubrimiento</a></li>
-  <li><a href="#contexto-no-significa-contexto-ilimitado" id="toc-contexto-no-significa-contexto-ilimitado" class="nav-link" data-scroll-target="#contexto-no-significa-contexto-ilimitado"><span class="header-section-number">40</span> Contexto no significa contexto ilimitado</a></li>
-  <li><a href="#seguridad-y-confianza" id="toc-seguridad-y-confianza" class="nav-link" data-scroll-target="#seguridad-y-confianza"><span class="header-section-number">41</span> Seguridad y confianza</a></li>
-  <li><a href="#mcp-como-mecanismo-no-como-dependencia-conceptual" id="toc-mcp-como-mecanismo-no-como-dependencia-conceptual" class="nav-link" data-scroll-target="#mcp-como-mecanismo-no-como-dependencia-conceptual"><span class="header-section-number">42</span> MCP como mecanismo, no como dependencia conceptual</a></li>
+  <li><a href="#capacidad-de-actuar-sobre-el-exterior" id="toc-capacidad-de-actuar-sobre-el-exterior" class="nav-link active" data-scroll-target="#capacidad-de-actuar-sobre-el-exterior"><span class="header-section-number">38</span> Capacidad de actuar sobre el exterior</a></li>
+  <li><a href="#contratos-claros" id="toc-contratos-claros" class="nav-link" data-scroll-target="#contratos-claros"><span class="header-section-number">39</span> Contratos claros</a></li>
+  <li><a href="#lectura-escritura-y-efectos" id="toc-lectura-escritura-y-efectos" class="nav-link" data-scroll-target="#lectura-escritura-y-efectos"><span class="header-section-number">40</span> Lectura, escritura y efectos</a></li>
+  <li><a href="#errores-como-parte-de-la-interfaz" id="toc-errores-como-parte-de-la-interfaz" class="nav-link" data-scroll-target="#errores-como-parte-de-la-interfaz"><span class="header-section-number">41</span> Errores como parte de la interfaz</a></li>
+  <li><a href="#herramientas-y-autonomía" id="toc-herramientas-y-autonomía" class="nav-link" data-scroll-target="#herramientas-y-autonomía"><span class="header-section-number">42</span> Herramientas y autonomía</a></li>
+  <li><a href="#tools-y-protocolos" id="toc-tools-y-protocolos" class="nav-link" data-scroll-target="#tools-y-protocolos"><span class="header-section-number">43</span> <em>Tools</em> y protocolos</a></li>
+  <li><a href="#la-herramienta-no-contiene-necesariamente-el-procedimiento" id="toc-la-herramienta-no-contiene-necesariamente-el-procedimiento" class="nav-link" data-scroll-target="#la-herramienta-no-contiene-necesariamente-el-procedimiento"><span class="header-section-number">44</span> La herramienta no contiene necesariamente el procedimiento</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/20-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/20-components/06-mcp.html"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li><li class="breadcrumb-item"><a href="../../chapters/30-components/05-tools.html"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></h1>
+<h1 class="title"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></h1>
 </div>
 
 
@@ -624,45 +656,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="un-protocolo-para-conectar-capacidades" class="level1" data-number="36">
-<h1 data-number="36"><span class="header-section-number">36</span> Un protocolo para conectar capacidades</h1>
-<p>Cuando cada aplicación integra herramientas, fuentes de información y servicios externos mediante interfaces propias, el coste de conexión crece rápidamente. Un agente necesita conocer cada integración y cada proveedor debe construir adaptaciones para numerosos clientes. MCP, <em>Model Context Protocol</em>, aborda este problema definiendo una forma común de exponer determinadas capacidades a aplicaciones que trabajan con modelos.</p>
-<p>MCP es importante porque introduce una frontera explícita entre la aplicación que utiliza el modelo y los servidores que ofrecen capacidades o información. Sin embargo, no debemos confundir el protocolo con la arquitectura completa de un IISS. MCP resuelve un problema de integración. No define por sí solo cómo debe organizarse una metodología, qué <em>definitions</em> necesita un proyecto, qué <em>workflows</em> deben ejecutarse o qué decisiones requieren aprobación.</p>
+<section id="capacidad-de-actuar-sobre-el-exterior" class="level1" data-number="38">
+<h1 data-number="38"><span class="header-section-number">38</span> Capacidad de actuar sobre el exterior</h1>
+<p>Un modelo puede generar una descripción de cómo consultar una base de datos, modificar un archivo o crear una incidencia, pero describir una operación no equivale a ejecutarla. Para que un IISS pueda interactuar con el entorno necesita mecanismos que conviertan una intención en una acción observable. Llamaremos <em>tools</em> a esas capacidades externas invocables.</p>
+<p>Una herramienta puede ser muy simple, como leer un archivo, o representar una operación compleja ofrecida por otro sistema. Puede consultar información sin producir efectos, modificar recursos, ejecutar código, controlar infraestructura o comunicarse con servicios remotos. Desde el punto de vista del IISS, lo relevante es que existe un contrato mediante el que puede solicitar una operación y recibir un resultado.</p>
 </section>
-<section id="cliente-y-servidor" class="level1" data-number="37">
-<h1 data-number="37"><span class="header-section-number">37</span> Cliente y servidor</h1>
-<p>En una integración MCP existe una parte cliente que participa en la aplicación y una parte servidor que publica capacidades. La aplicación puede descubrir qué ofrece el servidor y utilizar esas capacidades sin que cada una necesite una interfaz exclusiva diseñada para ese agente.</p>
-<p>Esta separación permite que un mismo servidor pueda ser utilizado por clientes diferentes y que un agente pueda conectarse a varios servidores. También facilita aislar credenciales, permisos y dependencias específicas fuera del núcleo que mantiene la conversación con el modelo.</p>
-<p>Desde nuestra perspectiva, MCP puede ser uno de los mecanismos utilizados por los <em>adapters</em> para materializar componentes canónicos. No todos los componentes tienen que convertirse en elementos MCP, ni todas las plataformas necesitan utilizar MCP para ser compatibles con el modelo conceptual.</p>
+<section id="contratos-claros" class="level1" data-number="39">
+<h1 data-number="39"><span class="header-section-number">39</span> Contratos claros</h1>
+<p>Cuanto más estructurada sea la interfaz de una herramienta, menos necesita inferir el modelo. El sistema debería conocer qué operación realiza, qué parámetros admite, qué devuelve, qué errores puede producir y si tiene efectos secundarios.</p>
+<p>Una descripción imprecisa obliga al modelo a adivinar. Si una herramienta acepta un identificador pero no queda claro si corresponde a un nombre visible, una ruta o un identificador interno, aumentan los errores. Lo mismo ocurre cuando una salida mezcla datos, mensajes y estados sin una estructura predecible.</p>
+<p>Por ello las herramientas no son únicamente conectores técnicos. Su diseño forma parte de la interfaz cognitiva del IISS. Deben presentar capacidades de forma que el sistema pueda elegirlas y utilizarlas con el menor grado posible de ambigüedad.</p>
 </section>
-<section id="tools-resources-y-prompts" class="level1" data-number="38">
-<h1 data-number="38"><span class="header-section-number">38</span> <em>Tools</em>, <em>resources</em> y <em>prompts</em></h1>
-<p>MCP distingue categorías como <em>tools</em>, <em>resources</em> y <em>prompts</em>. Las herramientas representan operaciones invocables; los recursos permiten exponer información; los <em>prompts</em> ofrecen contenidos reutilizables que el cliente puede utilizar para construir interacciones.</p>
-<p>Estas categorías son útiles, pero no deben obligarnos a reducir toda la arquitectura a ellas. Una <em>skill</em> puede necesitar instrucciones, ejemplos, archivos y herramientas; una <em>definition</em> puede vivir en el proyecto y no ser un recurso remoto; un <em>command</em> puede representar una intención de negocio que posteriormente utilice varias herramientas MCP.</p>
-<p>La taxonomía del protocolo describe lo que se intercambia a través de esa frontera. Nuestra taxonomía describe lo que el IISS necesita conceptualmente.</p>
+<section id="lectura-escritura-y-efectos" class="level1" data-number="40">
+<h1 data-number="40"><span class="header-section-number">40</span> Lectura, escritura y efectos</h1>
+<p>Conviene distinguir entre herramientas que observan y herramientas que modifican. Una consulta de documentación o la lectura de un archivo suele ser reversible porque no altera el entorno. Borrar un recurso, enviar un mensaje o desplegar una versión produce efectos que pueden ser difíciles de deshacer.</p>
+<p>Esta diferencia debería influir en las políticas de autorización. El sistema puede permitir determinadas lecturas de forma automática y exigir confirmación para operaciones destructivas. También puede utilizar validaciones previas, simulaciones o modos de vista previa antes de ejecutar un cambio.</p>
+<p>No todas las escrituras tienen el mismo riesgo. Crear un archivo temporal es diferente de modificar una rama principal; generar un borrador es diferente de enviarlo. El contrato de la herramienta debería permitir que la arquitectura conozca estas diferencias.</p>
 </section>
-<section id="descubrimiento" class="level1" data-number="39">
-<h1 data-number="39"><span class="header-section-number">39</span> Descubrimiento</h1>
-<p>Una de las ventajas del protocolo es el descubrimiento. La aplicación puede consultar qué capacidades ofrece un servidor en lugar de codificarlas todas de antemano. Esta propiedad resulta especialmente útil cuando el entorno cambia o cuando diferentes proyectos disponen de integraciones distintas.</p>
-<p>El descubrimiento no elimina la necesidad de control. Que una capacidad pueda descubrirse no significa que deba exponerse siempre al modelo ni que esté autorizada para cualquier usuario. La aplicación sigue siendo responsable de decidir qué servidores conecta, qué capacidades habilita y bajo qué permisos se ejecutan.</p>
-<p>También debe gestionar cambios de versión. Una herramienta puede modificar sus parámetros o un recurso puede dejar de existir. La capa de integración necesita detectar estas variaciones antes de asumir que el comportamiento permanece estable.</p>
+<section id="errores-como-parte-de-la-interfaz" class="level1" data-number="41">
+<h1 data-number="41"><span class="header-section-number">41</span> Errores como parte de la interfaz</h1>
+<p>Una herramienta que falla sin explicar por qué obliga al modelo a interpretar señales ambiguas. Los errores deberían ser estructurados siempre que sea posible y distinguir entre problemas de parámetros, permisos, disponibilidad, conflicto de estado y fallos internos.</p>
+<p>El tratamiento de errores también pertenece a los <em>workflows</em>. Un fallo transitorio puede justificar un nuevo intento; un conflicto de versión puede exigir recuperar el estado actual; un error de autorización debe detener la operación. La herramienta informa del problema y el <em>workflow</em> decide qué hacer con él.</p>
+<p>El modelo puede colaborar en esa decisión, pero la arquitectura no debería depender de que improvise la misma política cada vez.</p>
 </section>
-<section id="contexto-no-significa-contexto-ilimitado" class="level1" data-number="40">
-<h1 data-number="40"><span class="header-section-number">40</span> Contexto no significa contexto ilimitado</h1>
-<p>El nombre del protocolo puede sugerir que cualquier información externa debe incorporarse al contexto del modelo. No es así. El sistema puede descubrir un recurso, consultarlo y seleccionar únicamente aquello que resulte relevante para la tarea. El contexto sigue siendo limitado y debe construirse con criterio.</p>
-<p>Una integración que vuelca grandes cantidades de datos en cada petición puede empeorar el comportamiento aunque técnicamente proporcione más información. La arquitectura necesita mecanismos de selección, resumen, filtrado y procedencia.</p>
-<p>MCP facilita el acceso. La decisión sobre qué incorporar pertenece a la aplicación, a las <em>skills</em>, a los <em>workflows</em> y a las políticas del sistema.</p>
+<section id="herramientas-y-autonomía" class="level1" data-number="42">
+<h1 data-number="42"><span class="header-section-number">42</span> Herramientas y autonomía</h1>
+<p>Añadir herramientas cambia la naturaleza del sistema. Un modelo sin herramientas puede producir información incorrecta, pero su efecto inmediato suele limitarse a la respuesta. Un sistema con capacidad para modificar recursos puede convertir una interpretación equivocada en una acción real.</p>
+<p>Por ello la calidad de la autonomía depende tanto de las herramientas y sus controles como del modelo. Un sistema con un modelo excelente y herramientas mal diseñadas puede ser menos fiable que otro con capacidades más modestas pero contratos, permisos y validaciones claros.</p>
+<p>También resulta útil limitar las herramientas disponibles a las necesarias para la tarea. Exponer capacidades irrelevantes aumenta el espacio de decisión y puede producir selecciones accidentales.</p>
 </section>
-<section id="seguridad-y-confianza" class="level1" data-number="41">
-<h1 data-number="41"><span class="header-section-number">41</span> Seguridad y confianza</h1>
-<p>Conectar un servidor MCP equivale a incorporar una nueva frontera de confianza. El servidor puede ofrecer herramientas con efectos, recursos sensibles o instrucciones que influyen en la interacción. Por tanto, la selección de servidores, la autenticación, los permisos y la revisión de las capacidades expuestas forman parte de la seguridad del IISS.</p>
-<p>También conviene mantener separadas las instrucciones normativas del sistema y el contenido que llega desde una integración. Un servidor puede proporcionar información útil, pero esa información no debería adquirir automáticamente la misma autoridad que las políticas del proyecto.</p>
-<p>La arquitectura debe conocer qué parte del contexto procede de MCP y qué permisos estaban activos cuando se produjo una operación.</p>
+<section id="tools-y-protocolos" class="level1" data-number="43">
+<h1 data-number="43"><span class="header-section-number">43</span> <em>Tools</em> y protocolos</h1>
+<p>Las herramientas pueden integrarse de muchas formas. Una aplicación puede definir funciones internas, utilizar interfaces de servicios, ejecutar programas o descubrir capacidades a través de protocolos como MCP. El protocolo no cambia la categoría conceptual. MCP puede proporcionar una forma estandarizada de descubrir e invocar herramientas, pero la responsabilidad de diseñarlas correctamente sigue existiendo.</p>
+<p>Los <em>adapters</em> permiten que una herramienta canónica se materialice de formas distintas. Una operación de lectura de repositorio podría utilizar un conector nativo en una plataforma y una herramienta MCP en otra. Para el resto de la arquitectura, ambas representan la misma capacidad si ofrecen contratos equivalentes.</p>
 </section>
-<section id="mcp-como-mecanismo-no-como-dependencia-conceptual" class="level1" data-number="42">
-<h1 data-number="42"><span class="header-section-number">42</span> MCP como mecanismo, no como dependencia conceptual</h1>
-<p>Un IISS puede utilizar MCP intensamente y seguir necesitando <em>commands</em>, <em>definitions</em>, <em>skills</em>, <em>workflows</em>, validaciones y <em>adapters</em>. También puede implementar parte de esas funciones sin MCP. Esta independencia es saludable porque evita convertir una tecnología de integración en el modelo completo del sistema.</p>
-<p>IASI puede decidir que determinados <em>adapters</em> utilicen MCP cuando la plataforma lo soporte y otra interfaz cuando no lo haga. La metodología conserva así los mismos componentes y delega en la capa de adaptación la forma concreta de conectarlos.</p>
+<section id="la-herramienta-no-contiene-necesariamente-el-procedimiento" class="level1" data-number="44">
+<h1 data-number="44"><span class="header-section-number">44</span> La herramienta no contiene necesariamente el procedimiento</h1>
+<p>Una herramienta sabe hacer una operación, pero no tiene por qué saber cuándo conviene usarla, qué pasos deben precederla o cómo interpretar su resultado dentro de una tarea compleja. Ese conocimiento puede pertenecer a una <em>skill</em> o a un <em>workflow</em>.</p>
+<p>Separar capacidad y procedimiento evita crear herramientas excesivamente específicas que mezclan conexión técnica con lógica de proceso. También permite reutilizar una misma capacidad en situaciones distintas y cambiar la implementación sin reescribir el conocimiento operativo.</p>
 
 
 </section>
@@ -1070,13 +1101,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/20-components/05-tools.html" class="pagination-link" aria-label="*Tools*">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span>
+      <a href="../../chapters/30-components/04-commands.html" class="pagination-link" aria-label="*Commands*">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/20-components/07-resources.html" class="pagination-link" aria-label="*Resources*">
-        <span class="nav-page-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/30-components/06-mcp.html" class="pagination-link" aria-label="*Model Context Protocol* (MCP)">
+        <span class="nav-page-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

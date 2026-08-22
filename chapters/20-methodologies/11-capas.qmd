@@ -1,0 +1,53 @@
+# Arquitectura en capas
+
+El diseño en capas no empezó con las capas, al menos no con el nombre con el que hoy lo conocemos. En determinados momentos de la evolución de la ingeniería de software aparecen conceptos que se presentan como una ruptura con todo lo anterior. Uno de los ejemplos más conocidos es precisamente la arquitectura en capas. La explicación habitual resulta familiar: las aplicaciones antiguas eran grandes sistemas monolíticos en los que presentación, lógica de negocio y acceso a datos aparecían mezclados; posteriormente aprendimos a separar responsabilidades y comenzaron a surgir arquitecturas y patrones como *Model-View-Controller* (MVC) y muchas de sus variantes. La explicación es sencilla, resulta didáctica y contiene una parte de verdad, pero el problema aparece cuando esa simplificación termina convirtiéndose en una descripción histórica. Cualquiera que hubiera trabajado años antes en determinados entornos corporativos reconocería inmediatamente buena parte de esas ideas.
+
+La explicación es sencilla, resulta didáctica y contiene una parte de verdad. El problema aparece cuando esa simplificación termina convirtiéndose en una descripción histórica. Porque cualquiera que hubiera trabajado años antes en determinados entornos corporativos reconocería inmediatamente buena parte de esas ideas.
+
+Tomemos como ejemplo los sistemas construidos sobre IBM CICS, utilizando lenguajes como COBOL o PL/I. CICS permitía técnicamente construir una transacción de muchas maneras, incluida la posibilidad de concentrar diferentes responsabilidades dentro del mismo programa. Pero una cosa es lo que una plataforma permite y otra muy distinta cómo se utilizaba profesionalmente dentro de organizaciones con estándares de ingeniería establecidos.
+
+En muchos de aquellos entornos corporativos, una transacción se estructuraba mediante módulos claramente diferenciados. Había un módulo encargado de gestionar la interacción con el terminal y las pantallas, otro que contenía la lógica de negocio y otro responsable del acceso a bases de datos, ficheros u otros mecanismos de persistencia. Podían existir más módulos y la arquitectura concreta variaba según la organización y el sistema, pero esas responsabilidades no se mezclaban arbitrariamente.
+
+Y no se trataba simplemente de una recomendación incluida en algún manual que cada programador pudiera decidir seguir o ignorar. Formaba parte de los estándares de desarrollo. El código era revisado y se comprobaba que respetara esas separaciones antes de autorizar su promoción hacia determinados entornos. Una aplicación que incumplía las normas arquitectónicas podía no ser aprobada para continuar hacia integración, pruebas o producción.
+
+Con la terminología actual resulta difícil no reconocer las tres responsabilidades clásicas:
+
+- presentación;
+- lógica de negocio;
+- persistencia.
+
+Entonces no necesitábamos necesariamente llamarlas «capa de presentación», «capa de negocio» y «capa de persistencia». Lo importante era que sabíamos que eran responsabilidades diferentes, que no debían acoplarse innecesariamente y que esa separación debía mantenerse durante la evolución del sistema.
+
+Algo parecido ocurría con los datos que circulaban por la aplicación. En CICS existía la `COMMAREA`, un área de comunicación que permitía conservar y transmitir información entre programas o entre diferentes pasos de una conversación transaccional. No existe una equivalencia exacta con los mecanismos actuales, pero conceptualmente podemos reconocer en ella parte de lo que hoy trataríamos como contexto o estado de una interacción.
+
+Independientemente de ese contexto, los módulos intercambiaban también estructuras de datos específicamente diseñadas para transmitir la información necesaria entre unas partes del sistema y otras. Hoy probablemente las identificaríamos con bastante naturalidad como objetos de transferencia de datos, los conocidos *Data Transfer Objects* o *DTO*.
+
+La separación tampoco terminaba en esas grandes responsabilidades arquitectónicas. Dentro de cada una de ellas se aplicaba además una idea que hoy reconoceríamos inmediatamente como el *Single Responsibility Principle*: un módulo debía hacer una cosa, y hacerla bien. Puede que no se utilizara todavía ese nombre, o que la formulación variara entre organizaciones, pero como *best practice* era perfectamente conocida por quienes trabajaban en aquellos entornos.
+
+Si una aplicación necesitaba validar un DNI, lo razonable no era programar nuevamente el algoritmo de validación dentro de la transacción. Se llamaba a la rutina encargada de validar DNIs, que posiblemente formaba parte de una biblioteca corporativa y era utilizada por muchas aplicaciones.
+
+Si había que calcular un interés, ocurría algo parecido. Se invocaba la rutina corporativa responsable de ese cálculo. En muchos casos ni siquiera era código desarrollado por el equipo del proyecto, sino una funcionalidad común proporcionada y mantenida para toda la organización.
+
+La razón tampoco era especialmente misteriosa. Ya se conocían perfectamente los problemas derivados de tener decenas de programas implementando de maneras ligeramente diferentes una misma regla funcional. Aparecían resultados distintos, correcciones que había que repetir en múltiples lugares, versiones divergentes de una misma lógica y dificultades para garantizar que un cambio normativo o de negocio se aplicara de forma consistente en todos los sistemas.
+
+Por eso se intentaba reutilizar lo que ya existía y evitar tanto la duplicación de trabajo como la reinvención innecesaria de soluciones. La lógica común se concentraba en módulos o rutinas compartidas que podían ser mantenidas y validadas de forma centralizada. Si cambiaba la forma de calcular un determinado interés, el objetivo era modificar la implementación responsable de ese cálculo, no localizar todas las aplicaciones de la organización que hubieran decidido implementarlo por su cuenta.
+
+Visto con terminología actual, encontramos aquí varios principios que posteriormente adquirirían nombres propios y serían presentados como elementos centrales del diseño moderno: responsabilidad única, reutilización, reducción de duplicación, separación de responsabilidades y centralización de reglas de negocio compartidas. Naturalmente, las implementaciones de entonces tenían sus propias limitaciones y problemas, pero las cuestiones de ingeniería que intentaban resolver eran perfectamente conocidas.
+
+Esto no significa que aquellas aplicaciones fueran equivalentes a las arquitecturas actuales. Evidentemente no lo eran. Los terminales, protocolos, bases de datos, lenguajes, mecanismos de comunicación y restricciones operativas pertenecían a otro contexto tecnológico. Tampoco significa que todas las aplicaciones desarrolladas en aquella época siguieran buenas prácticas. Había sistemas bien diseñados y sistemas desastrosos, exactamente igual que ahora.
+
+Lo que resulta difícil sostener es que la separación de responsabilidades apareciera cuando comenzamos a utilizar una terminología nueva para describirla.
+
+La historia de MVC, además, tiene su propio recorrido. El patrón surgió en el entorno de *Smalltalk* y Xerox PARC y no debe presentarse como una evolución directa de las arquitecturas CICS. Lo interesante es precisamente que distintos entornos tecnológicos, enfrentados a problemas diferentes, llegaron a soluciones que compartían un mismo principio de ingeniería: separar responsabilidades para reducir el acoplamiento y permitir que distintas partes del sistema evolucionaran con mayor independencia.
+
+Este ejemplo ilustra un fenómeno que encontraremos repetidamente al recorrer la historia de las metodologías, arquitecturas y prácticas de desarrollo. Cuando aparece un concepto nuevo, resulta tentador construir una narrativa en la que todo lo anterior representa el problema y la nueva propuesta representa la solución. Pero muchas veces el problema ya había sido identificado décadas antes y también existían soluciones maduras para abordarlo.
+
+En algunos casos incluso ocurre algo más curioso: al redescubrir una práctica conservamos su idea esencial pero perdemos parte de la disciplina que la acompañaba. La separación entre presentación, negocio y persistencia no era únicamente una recomendación arquitectónica. En determinadas organizaciones estaba acompañada por estándares, revisiones, controles y mecanismos de aprobación que verificaban que el diseño se respetara antes de permitir que el software avanzara hacia producción.
+
+Lo mismo ocurría con la reutilización. No se trataba únicamente de evitar unas cuantas líneas repetidas de código, sino de impedir que una misma regla funcional terminara teniendo múltiples implementaciones independientes dentro de una organización. La preocupación no era estética. Era una cuestión de consistencia, mantenimiento, calidad y riesgo.
+
+Por eso, cuando una nueva arquitectura, metodología o herramienta afirma resolver un problema que aparentemente nadie había resuelto antes, conviene hacer una pregunta previa: ¿es realmente nuevo el problema?
+
+Con frecuencia descubriremos que no lo es. Lo nuevo puede ser la tecnología, el contexto, la terminología o la forma concreta de implementar la solución. Y eso puede justificar perfectamente una nueva aproximación. Pero reconocer lo que ya sabemos nos permite avanzar desde décadas de experiencia acumulada en lugar de comenzar, una vez más, desde cero.
+
+[^cics]: CICS es una marca de IBM.
