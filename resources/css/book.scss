@@ -23,14 +23,18 @@
   border-top: 1px solid var(--bs-border-color);
 }
 
+#quarto-margin-sidebar {
+  display: none !important;
+}
+
  /*****************************************************************************/
  /* Footer                                                                    */
  /*****************************************************************************/
 
 .nav-footer {
   background: #eef5fb;
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: 0.85rem;
 }
 

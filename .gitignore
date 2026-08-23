@@ -14,6 +14,8 @@
 # Configuración local y posibles secretos
 /_*.local
 
+# Estado de iasi.quarto/
+.iasi/
 
 # ==============================================================================
 # R y RStudio

@@ -2,6 +2,7 @@
 
 // IASI common layout
 $grid-body-width: 1200px;
+$grid-sidebar-width: 360px;
 
 // IASI corporate palette
 $iasi-quarto-blue: #39729e;
@@ -249,9 +250,9 @@ blockquote, ul, ol {
   margin-bottom: 0.5em;
 }
 
-/******************************************************************************/
-/* Icono para abrir iframes en otro ventana y control del banner
-/******************************************************************************/
+/******************************************************************************
+ * Icono para abrir iframes en otro ventana y control del banner             
+ ******************************************************************************/
 
 #navbarCollapse a[href$="#iasi-open-external"] {
   display: none !important;
@@ -267,4 +268,20 @@ blockquote, ul, ol {
 
 .iasi-hidden {
   display: none !important;
+}
+
+/******************************************************************************
+ * Pie de pagina pro defecto
+ ******************************************************************************/
+
+.nav-footer {
+  background: #eef5fb;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  font-size: 0.85rem;
+}
+
+#iasi-publish-date {
+  color: var(--bs-primary);
+  font-weight: 600;
 }
