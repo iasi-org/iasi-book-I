@@ -1,4 +1,6 @@
-# Prerequisitos
+---
+title: "Prerequisitos"
+---
 
 Antes de comenzar los laboratorios es necesario preparar el entorno de trabajo.
 

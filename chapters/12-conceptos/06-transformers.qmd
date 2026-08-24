@@ -2,8 +2,7 @@
 title: "Transformers"
 ---
 
-# Una arquitectura basada en atención
-
+## Una arquitectura basada en atención
 En las secciones anteriores hemos presentado las piezas necesarias para representar y relacionar el lenguaje:
 
 * los **tokens** dividen el texto en unidades procesables;
@@ -16,8 +15,7 @@ Fue presentado en 2017 por Vaswani y sus colaboradores en el artículo *Attentio
 
 Esta arquitectura constituye la base de gran parte de los modelos de lenguaje modernos.
 
-## Antes del Transformer
-
+### Antes del Transformer
 El lenguaje es una secuencia ordenada.
 
 Para interpretar una frase, el modelo debe considerar:
@@ -47,8 +45,7 @@ El Transformer propone una organización diferente.
 
 En lugar de recorrer necesariamente el texto token a token para relacionar sus elementos, permite comparar directamente múltiples posiciones mediante autoatención.
 
-## La idea fundamental
-
+### La idea fundamental
 En un Transformer, cada token construye su representación teniendo en cuenta los demás tokens disponibles en el contexto.
 
 De forma simplificada:
@@ -73,8 +70,7 @@ Por tanto, el Transformer no aplica una única operación de atención.
 
 Utiliza múltiples cabezas de atención, transformaciones neuronales y numerosas capas sucesivas.
 
-## Información posicional
-
+### Información posicional
 La atención permite relacionar tokens, pero necesita también conocer su posición dentro de la secuencia.
 
 Consideremos:
@@ -106,8 +102,7 @@ Esta información permite distinguir:
 
 La propuesta original utilizaba codificaciones posicionales basadas en funciones matemáticas [@vaswani2017]. Arquitecturas posteriores han desarrollado otros mecanismos para representar la posición y las distancias relativas entre tokens.
 
-## Bloques Transformer
-
+### Bloques Transformer
 Un Transformer se construye mediante la repetición de bloques.
 
 Aunque existen distintas variantes, un bloque suele incluir dos componentes principales:
@@ -129,8 +124,7 @@ representaciones de salida
 
 A estos componentes se añaden conexiones residuales y mecanismos de normalización que facilitan el entrenamiento de redes profundas.
 
-## Atención multicabeza
-
+### Atención multicabeza
 La atención multicabeza permite calcular varias relaciones en paralelo.
 
 Cada cabeza genera sus propias consultas, claves y valores, y puede aprender a identificar patrones diferentes.
@@ -150,8 +144,7 @@ representaciones ──┼─ cabeza 2 ─┼─ combinación → resultado
 
 El resultado de todas las cabezas se combina y se transforma para obtener una nueva representación de cada token.
 
-## Redes feed-forward
-
+### Redes feed-forward
 Después de la atención, cada posición atraviesa una pequeña red neuronal denominada normalmente **feed-forward**.
 
 La atención combina información entre diferentes posiciones.
@@ -165,8 +158,7 @@ Podemos distinguir ambas funciones:
 
 Estas redes utilizan los mismos parámetros para todas las posiciones de la secuencia, aunque procesan una representación contextual diferente en cada una.
 
-## Conexiones residuales
-
+### Conexiones residuales
 Los bloques Transformer incorporan conexiones residuales.
 
 En lugar de sustituir completamente la entrada de una capa por el nuevo resultado, parte de la información original se suma a la transformación realizada.
@@ -188,8 +180,7 @@ Estas conexiones ayudan a:
 * facilitar el flujo de la señal y del error;
 * reducir algunos problemas asociados a redes muy profundas.
 
-## Normalización
-
+### Normalización
 El Transformer también utiliza mecanismos de normalización para mantener valores internos en rangos adecuados y estabilizar el entrenamiento.
 
 La combinación habitual de:
@@ -203,23 +194,20 @@ forma la unidad básica que se repite a lo largo de la arquitectura.
 
 Cada nueva capa recibe las representaciones producidas por la anterior y las refina.
 
-## Encoder y decoder
-
+### Encoder y decoder
 La arquitectura presentada originalmente estaba formada por dos grandes componentes:
 
 * **encoder**;
 * **decoder**.
 
-### Encoder
-
+#### Encoder
 El encoder recibe una secuencia de entrada y construye representaciones contextuales de sus elementos.
 
 Cada posición puede relacionarse con todas las demás posiciones de la entrada.
 
 Por ejemplo, en un sistema de traducción, el encoder podría procesar la frase escrita en el idioma de origen.
 
-### Decoder
-
+#### Decoder
 El decoder genera una secuencia de salida.
 
 Durante esa generación utiliza:
@@ -244,14 +232,12 @@ representación contextual
 secuencia de salida
 ```
 
-## Variantes de la arquitectura
-
+### Variantes de la arquitectura
 No todos los modelos basados en Transformers utilizan simultáneamente encoder y decoder.
 
 A partir de la arquitectura original aparecieron varias familias.
 
-### Modelos de tipo encoder
-
+#### Modelos de tipo encoder
 Utilizan principalmente bloques encoder.
 
 Están orientados a construir representaciones del texto y resultan adecuados para tareas como:
@@ -262,16 +248,14 @@ Están orientados a construir representaciones del texto y resultan adecuados pa
 * comparación semántica;
 * comprensión de documentos.
 
-### Modelos de tipo decoder
-
+#### Modelos de tipo decoder
 Utilizan bloques decoder con atención causal.
 
 Generan el texto progresivamente, prediciendo cada token a partir de los anteriores.
 
 Son la base de muchos modelos generativos y asistentes conversacionales.
 
-### Modelos encoder-decoder
-
+#### Modelos encoder-decoder
 Mantienen ambos componentes.
 
 Resultan especialmente adecuados cuando se transforma una secuencia de entrada en otra secuencia de salida:
@@ -284,8 +268,7 @@ Resultan especialmente adecuados cuando se transforma una secuencia de entrada e
 
 Estas categorías comparten los principios fundamentales del Transformer, pero organizan sus bloques de manera diferente según el objetivo.
 
-## Procesamiento en paralelo
-
+### Procesamiento en paralelo
 Una ventaja importante del Transformer es que, durante el entrenamiento, puede procesar simultáneamente múltiples posiciones de una secuencia.
 
 En una arquitectura estrictamente recurrente, el cálculo de una posición depende del estado producido en la posición anterior.
@@ -304,8 +287,7 @@ La capacidad de paralelización contribuyó a entrenar modelos con:
 
 El Transformer no es importante únicamente por representar mejor ciertas relaciones lingüísticas. También hizo viable escalar el entrenamiento de modelos de lenguaje.
 
-## Capas y representaciones
-
+### Capas y representaciones
 Las representaciones no permanecen iguales mientras atraviesan el Transformer.
 
 En las primeras capas pueden aparecer relaciones relativamente locales o estructurales.
@@ -325,8 +307,7 @@ El conocimiento y el comportamiento del modelo están distribuidos entre:
 
 Las capacidades del modelo emergen de la interacción conjunta de estos componentes.
 
-## Transformer y ventana de contexto
-
+### Transformer y ventana de contexto
 La atención se calcula sobre los tokens disponibles dentro de la ventana de contexto.
 
 Cuanto mayor sea el contexto, mayor puede ser el número de relaciones que deben evaluarse.
@@ -345,8 +326,7 @@ Las arquitecturas posteriores han introducido distintas optimizaciones para:
 
 La ventana de contexto no es, por tanto, un límite puramente arbitrario. Está relacionada también con el coste técnico de procesar las relaciones entre tokens.
 
-## El Transformer no es un LLM
-
+### El Transformer no es un LLM
 Transformer y LLM tampoco son conceptos equivalentes.
 
 El Transformer es una **arquitectura**.
@@ -374,8 +354,7 @@ Existen modelos basados en esta arquitectura para trabajar con:
 
 La arquitectura define cómo se procesa y relaciona la información. El entrenamiento y los datos determinan qué capacidad concreta desarrolla el modelo.
 
-## Una arquitectura dentro de un sistema inteligente
-
+### Una arquitectura dentro de un sistema inteligente
 Un modelo basado en Transformers continúa siendo solo un componente.
 
 Para convertirlo en un sistema inteligente útil, sigue siendo necesario decidir:
@@ -394,8 +373,7 @@ La arquitectura aporta capacidad para representar, relacionar y generar informac
 
 El sistema inteligente determina cómo se utiliza esa capacidad.
 
-## Del Transformer al modelo de lenguaje
-
+### Del Transformer al modelo de lenguaje
 El recorrido conceptual queda ahora así:
 
 > texto

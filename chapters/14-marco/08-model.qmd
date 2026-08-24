@@ -1,4 +1,6 @@
-# Modelo
+---
+title: "Modelo"
+---
 
 A lo largo de este capítulo hemos utilizado repetidamente la palabra **modelo**.
 

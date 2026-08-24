@@ -2,8 +2,7 @@
 title: "Programacion funcional"
 ---
 
-# Describiendo el problema, no el procedimiento
-
+## Describiendo el problema, no el procedimiento
 Los lenguajes de tercera generación (3GL) supusieron un enorme avance en la construcción de software. El ingeniero describía, paso a paso, el algoritmo que debía ejecutar el ordenador, sin embargo, conforme los sistemas crecían en tamaño y complejidad, comenzó a surgir una pregunta cada vez más importante.
 
 **¿Es realmente necesario describir todos los detalles del procedimiento?**
@@ -12,8 +11,7 @@ En muchos programas, una parte significativa del código no representa el proble
 
 La programación funcional propone un cambio de perspectiva: En lugar de describir detalladamente cómo realizar cada paso del algoritmo, el desarrollador expresa qué transformación desea aplicar sobre los datos, el interés deja de centrarse en el procedimiento y pasa a centrarse en el resultado de cada transformación.
 
-## Del estado a la transformación
-
+### Del estado a la transformación
 En la programación imperativa el estado del programa cambia continuamente.
 
 Por ejemplo:
@@ -32,8 +30,7 @@ total <- sum(ventas)
 
 El desarrollador ya no explica cómo recorrer la colección si no que simplemente indica cuál es el resultado que desea obtener, es el propio lenguaje quien decide cómo ejecutar esa operación.
 
-## Composición de funciones
-
+### Composición de funciones
 Una de las características más importantes de la programación funcional consiste en considerar las funciones como elementos que pueden componerse entre sí:
 
 1. Cada función recibe unos datos.
@@ -53,8 +50,7 @@ ventas_validas <-
 Cada línea representa una transformación independiente, no aparecen índices, no existen bucles explícitos, las variables temporales prácticamente desaparecen. 
 El código deja de describir el recorrido y comienza a describir una secuencia lógica de transformaciones, esta forma de trabajar facilita enormemente la lectura del programa por que cada operación expresa claramente su intención.
 
-## Funciones puras
-
+### Funciones puras
 Otro de los pilares fundamentales de la programación funcional son las funciones puras: Una función pura siempre produce el mismo resultado cuando recibe los mismos parámetros.
 
 - No modifica variables globales.
@@ -71,19 +67,16 @@ precio_con_iva <- function(precio) {
 
 Su comportamiento es completamente predecible. Esta propiedad simplifica las pruebas, facilita la depuración y permite razonar sobre el software con mucha mayor facilidad.
 
-## Inmutabilidad
-
+### Inmutabilidad
 En programación funcional los datos tienden a considerarse inmutables, en lugar de modificar un objeto existente, se genera uno nuevo que representa el resultado de la transformación.
 Aunque internamente el lenguaje pueda optimizar este proceso, conceptualmente el programa deja de construirse mediante cambios continuos de estado y pasa a entenderse como una cadena de transformaciones sucesivas. Esta filosofía reduce numerosos errores relacionados con estados compartidos, concurrencia y efectos inesperados.
 
-## ¿Qué aporta realmente la programación funcional?
-
+### ¿Qué aporta realmente la programación funcional?
 La programación funcional no elimina la necesidad de diseñar algoritmos, el ingeniero continúa siendo responsable de definir la lógica que resuelve el problema sin embargo, desplaza parte de la responsabilidad desde el desarrollador hacia el propio lenguaje.
 
 El programador deja de describir numerosos mecanismos de bajo nivel y comienza a expresar transformaciones de un nivel mucho más cercano al problema que desea resolver, el resultado son programas más compactos, más expresivos y, en muchos casos, más fáciles de mantener.
 
-## Un nuevo nivel de abstracción
-
+### Un nuevo nivel de abstracción
 La evolución de los lenguajes de programación puede interpretarse como una búsqueda constante de niveles superiores de abstracción, en los lenguajes imperativos, el desarrollador describe cada paso del algoritmo, en la programación funcional, describe transformaciones sobre los datos y delega en el lenguaje muchos de los detalles de ejecución aunque el ordenador continúa ejecutando instrucciones.
 
 Pero el ingeniero comienza a expresarse utilizando conceptos cada vez más próximos al problema que desea resolver y cada vez más alejados del funcionamiento interno de la máquina, Este cambio representa un paso más en la evolución de la Ingeniería del Software y, aunque todavía seguimos escribiendo algoritmos, comienza a apreciarse una tendencia que reaparecerá con mucha más fuerza décadas después.

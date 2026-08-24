@@ -1,4 +1,6 @@
-# La ventana de contexto
+---
+title: "La ventana de contexto"
+---
 
 En el apartado anterior definimos el contexto como la información que el modelo tiene disponible para realizar una tarea.
 

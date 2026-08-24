@@ -1,4 +1,6 @@
-# Netflix
+---
+title: "Netflix"
+---
 
 Si *Project Apollo* nos sirve para entender por qué un proyecto puede necesitar planificación, estabilización progresiva y congelación de determinadas decisiones, Netflix permite observar casi el extremo contrario. Aquí encontramos un sistema cuyo valor depende en buena medida de su capacidad para cambiar continuamente, probar ideas, observar cómo responden los usuarios y volver a cambiar. En ese contexto, muchas de las ideas asociadas con *Agile*, *DevOps*, entrega continua y autonomía de los equipos dejan de ser principios abstractos y aparecen como respuestas bastante naturales al problema que la empresa necesita resolver.
 

@@ -1,4 +1,6 @@
-# Memoria
+---
+title: "Memoria"
+---
 
 En los apartados anteriores vimos que el modelo trabaja con la información incluida en su ventana de contexto.
 

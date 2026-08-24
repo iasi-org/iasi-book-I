@@ -1,4 +1,6 @@
-# Entrenamiento
+---
+title: "Entrenamiento"
+---
 
 En el apartado anterior definimos el modelo como una estructura matemática formada por una arquitectura y unos parámetros.
 

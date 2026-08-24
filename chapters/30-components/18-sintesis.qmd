@@ -2,40 +2,35 @@
 title: "Síntesis"
 ---
 
-# Un sistema formado por responsabilidades
-
+## Un sistema formado por responsabilidades
 A lo largo de esta parte hemos separado una serie de responsabilidades que suelen aparecer mezcladas cuando observamos un agente desde fuera. La aplicación puede presentarlas detrás de una única conversación, pero la ingeniería necesita reconocerlas porque cada una cambia de manera distinta, tiene riesgos diferentes y requiere mecanismos propios de validación.
 
 Las instrucciones gobiernan el comportamiento. Las *definitions* representan de forma estructurada aquello que el sistema ha entendido y necesita conservar como conocimiento operativo. Los *commands* expresan intenciones invocables. Las *tools* aportan capacidad de actuación sobre el exterior. MCP ofrece un protocolo para conectar determinadas herramientas, recursos y contenidos reutilizables. Los *resources* proporcionan información externa y trazable. Las *skills* conservan conocimiento procedimental. Las *templates* mantienen estructuras repetibles. La configuración selecciona comportamientos permitidos y las reglas establecen restricciones.
 
 El contexto reúne la información necesaria para la inferencia actual, el estado permite conocer dónde se encuentra un proceso y la memoria conserva información recuperable para interacciones futuras. Los *workflows* organizan actividades y decisiones. Los agentes combinan estos componentes para perseguir objetivos con distintos grados de autonomía. Las validaciones comprueban condiciones y resultados. Las automatizaciones deciden cuándo iniciar procesos sin una petición conversacional inmediata. Finalmente, los *adapters* protegen todo este modelo conceptual frente a las diferencias entre productos y proveedores.
 
-# Componentes que se combinan
-
+## Componentes que se combinan
 Estas piezas no forman una cadena rígida. Un mismo proceso puede utilizar solo algunas y otro necesitar casi todas. Una tarea sencilla puede resolverse con instrucciones, un recurso y una herramienta. Un proceso de ingeniería más complejo puede comenzar con entradas no estructuradas, construir *definitions*, ejecutar un *command* que activa un *workflow*, cargar una *skill*, utilizar varias herramientas, validar los resultados y terminar actualizando el estado del proyecto.
 
 La arquitectura debe permitir esta composición sin obligar a introducir componentes que no aportan valor. El objetivo de la taxonomía no es aumentar el número de artefactos, sino disponer de nombres y responsabilidades cuando aparecen necesidades reales.
 
 También permite detectar diseños confusos. Si un archivo de instrucciones contiene procedimientos, estado, configuración y reglas, sabemos que varias responsabilidades están mezcladas. Puede seguir funcionando, pero será más difícil de mantener, validar y adaptar a otra plataforma.
 
-# El concepto antes que el nombre del producto
-
+## El concepto antes que el nombre del producto
 Los términos elegidos en esta parte constituyen un vocabulario conceptual. Algunos coinciden con nombres utilizados por herramientas actuales, pero su significado aquí depende de la responsabilidad que hemos definido.
 
 Esta decisión resulta especialmente importante para IASI. La metodología puede definir qué componentes necesita sin preguntar primero qué ofrece un agente concreto. Después, los *adapters* resolverán la traducción a cada entorno. Si una plataforma utiliza nombres diferentes, no necesitamos cambiar el modelo. Si incorpora una capacidad nueva, podemos evaluar si representa realmente un componente conceptual adicional o una forma distinta de implementar uno existente.
 
 Así evitamos que la arquitectura nazca de una enumeración de funciones comerciales.
 
-# Del diálogo al sistema
-
+## Del diálogo al sistema
 La conversación continúa siendo una interfaz fundamental. Permite explorar, discutir alternativas, corregir interpretaciones y formular necesidades que todavía no tienen una estructura estable. Sin embargo, un proyecto no puede depender exclusivamente de conversaciones si quiere conservar conocimiento y ejecutar procesos de forma repetible.
 
 Los componentes descritos en esta parte muestran cómo puede producirse esa transición. Parte de lo hablado se convierte en *definitions*; los procedimientos recurrentes pueden convertirse en *skills*; las operaciones frecuentes pueden exponerse como *commands*; las secuencias estables pueden formalizarse como *workflows*; las restricciones pueden expresarse como reglas y validaciones; aquello que se repite en el tiempo puede automatizarse.
 
 No todo debe formalizarse inmediatamente. La ingeniería consiste también en decidir qué necesita estructura y qué conviene mantener flexible mientras seguimos aprendiendo.
 
-# Una base para la metodología
-
+## Una base para la metodología
 Esta parte no define todavía cómo IASI organiza cada componente dentro de un proyecto ni qué formatos concretos utiliza. Su objetivo era construir el vocabulario necesario para poder hacerlo después sin introducir conceptos nuevos a mitad de la metodología.
 
 Cuando lleguemos a esa formalización podremos decidir qué *definitions* existen, qué *commands* ofrece el sistema, cómo se organizan las *skills*, qué *workflows* forman parte del proceso y qué responsabilidades corresponden a los *adapters*. Esas decisiones pertenecerán a la metodología.

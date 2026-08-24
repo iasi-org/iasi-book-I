@@ -1,4 +1,6 @@
-# Inferencia
+---
+title: "Inferencia"
+---
 
 En el apartado anterior vimos cómo el entrenamiento modifica los parámetros de un modelo a partir de datos.
 

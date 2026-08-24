@@ -2,8 +2,7 @@
 title: "Deep Learning"
 ---
 
-# Mas allá de los algoritmos
-
+## Mas allá de los algoritmos
 Si cada algoritmo está diseñado para resolver una determinada familia de problemas y el número de problemas del mundo real es prácticamente ilimitado, parecería lógico pensar que también sería necesario desarrollar un número ilimitado de algoritmos, aquí aparecen las Redes Neuronales.
 
 Las redes neuronales artificiales no eran una idea nueva. Sus primeros modelos se remontan a la década de 1940 con los trabajos de McCulloch y Pitts [@mcculloch1943], y pocos años después Frank Rosenblatt presentó el perceptrón, considerado la primera red neuronal capaz de aprender a partir de ejemplos [@rosenblatt1958]. Durante las décadas siguientes la investigación continuó avanzando, alternando periodos de entusiasmo con otros de profundo escepticismo, especialmente tras la publicación de *Perceptrons* de Marvin Minsky y Seymour Papert, que puso de manifiesto importantes limitaciones de los modelos existentes [@minsky1969].
@@ -20,8 +19,7 @@ El _Deep Learning_ no eliminó los algoritmos clásicos de _Machine Learning_, q
 
 Para comprender por qué esto fue posible es necesario conocer cómo está construida una red neuronal y cuál es el mecanismo que le permite aprender a partir de los datos.
 
-## ¿Qué es una red neuronal?
-
+### ¿Qué es una red neuronal?
 A pesar de su nombre, una red neuronal artificial está muy lejos de reproducir el funcionamiento del cerebro humano. El término *neuronal* responde más a una inspiración biológica que a una copia de la realidad. Sus primeros investigadores observaron que el cerebro era capaz de aprender a partir de la experiencia y se preguntaron si sería posible construir modelos matemáticos que, de forma muy simplificada, presentaran un comportamiento similar.
 
 La idea era sorprendentemente sencilla. En lugar de diseñar un algoritmo específico para cada problema, se construía una estructura formada por un gran número de unidades muy simples, denominadas **neuronas artificiales**, conectadas entre sí. Cada una de ellas recibía información procedente de otras neuronas, realizaba un pequeño cálculo matemático y transmitía el resultado a las siguientes.
@@ -36,8 +34,7 @@ La enorme ventaja de este enfoque es que la estructura general de la red apenas 
 
 Comprender esta idea resulta fundamental para entender la evolución reciente de la Inteligencia Artificial. Sin embargo, todavía queda una pregunta por responder. Si una red neuronal contiene millones o incluso miles de millones de pesos, ¿cómo consigue ajustarlos para aprender sin que un ingeniero tenga que modificarlos uno a uno?
 
-## ¿Cómo aprende una red neuronal?
-
+### ¿Cómo aprende una red neuronal?
 Una red neuronal aprende mediante un proceso iterativo de prueba y error. Durante el entrenamiento recibe un gran número de ejemplos, genera una respuesta para cada uno de ellos y la compara con el resultado esperado. Si la respuesta es correcta, apenas realiza cambios. Si se ha equivocado, modifica ligeramente los pesos de sus conexiones para intentar reducir ese error en la siguiente ocasión.
 
 Este proceso se repite miles, millones o incluso miles de millones de veces. Cada modificación individual es prácticamente insignificante, pero la acumulación de todos esos pequeños ajustes termina construyendo un modelo capaz de reconocer patrones muy complejos.
@@ -48,6 +45,5 @@ Todo este proceso se realiza de forma automática mediante algoritmos de optimiz
 
 Este mecanismo de aprendizaje, combinado con grandes cantidades de datos y una enorme capacidad de cálculo, es el que ha convertido a las redes neuronales profundas en la base de la mayoría de los sistemas modernos de Inteligencia Artificial.
 
-## Siguiente paso
-
+### Siguiente paso
 A medida que las redes neuronales aumentaban de tamaño comenzaron a aparecer capacidades que antes parecían inalcanzables. Ya no solo reconocían imágenes o clasificaban datos. También empezaban a comprender relaciones complejas entre palabras, frases y documentos completos. Aquello abrió el camino hacia una nueva generación de modelos conocidos como Large Language Models (LLM).

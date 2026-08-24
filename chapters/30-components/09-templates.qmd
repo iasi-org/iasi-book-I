@@ -2,44 +2,38 @@
 title: "*Templates*"
 ---
 
-# Estructuras reutilizables
-
+## Estructuras reutilizables
 Muchos resultados de ingeniería comparten una forma reconocible. Un informe puede necesitar secciones obligatorias; una decisión arquitectónica puede seguir una estructura acordada; un repositorio puede comenzar con un conjunto conocido de archivos; una configuración puede requerir campos determinados. Las *templates* permiten conservar estas estructuras para no reconstruirlas cada vez.
 
 Una *template* no describe necesariamente el procedimiento para producir el resultado. Define principalmente una forma, un punto de partida o un contrato estructural. Puede contener texto fijo, marcadores, archivos, directorios, fragmentos de configuración o cualquier elemento que deba repetirse de manera consistente.
 
 Esta función parece simple, pero adquiere importancia cuando los IISS generan artefactos. Sin una estructura explícita, el modelo puede producir variaciones innecesarias entre ejecuciones. La *template* reduce ese espacio de variabilidad allí donde la organización ya ha decidido cómo debe presentarse o componerse un resultado.
 
-# Forma y contenido
-
+## Forma y contenido
 Una *template* debería distinguir entre aquello que pertenece a la estructura y aquello que debe completarse para cada caso. Si una plantilla contiene demasiadas decisiones específicas, deja de ser reutilizable; si es excesivamente vacía, aporta poco valor.
 
 El IISS puede utilizar *definitions* para completar una *template*. Por ejemplo, una *definition* puede contener los datos de un componente y la plantilla determinar cómo convertirlos en una página de documentación. También puede utilizar una *skill* para decidir qué partes deben incluirse o cómo resolver casos opcionales.
 
 Esta composición evita insertar lógica compleja dentro de la propia plantilla.
 
-# *Templates* y ejemplos
-
+## *Templates* y ejemplos
 Un ejemplo muestra una realización concreta. Una *template* define una estructura destinada a producir nuevas realizaciones. Aunque ambos pueden parecer similares, la diferencia afecta a cómo debe interpretarlos el sistema.
 
 Copiar un ejemplo literalmente puede arrastrar valores accidentales. Utilizar una *template* obliga a reconocer qué partes son constantes y cuáles deben obtenerse del contexto. Por ello conviene que los marcadores y las condiciones sean explícitos.
 
 Los ejemplos siguen siendo útiles dentro de una *skill* para enseñar cómo aplicar una plantilla en situaciones distintas.
 
-# Validación de resultados
-
+## Validación de resultados
 Una *template* puede contribuir a la consistencia, pero no garantiza que el resultado final sea correcto. Después de completarla pueden existir campos vacíos, enlaces inválidos o combinaciones semánticamente incompatibles. Las validaciones deben comprobar aquello que la estructura por sí sola no puede asegurar.
 
 También puede ocurrir que una *template* evolucione. Los artefactos antiguos no tienen por qué actualizarse automáticamente, pero el sistema debería conocer qué versión se utilizó cuando esa información resulte relevante.
 
-# *Templates* y generación
-
+## *Templates* y generación
 Los modelos generativos son especialmente buenos completando estructuras cuando disponen de contexto suficiente. Una *template* aprovecha esa capacidad sin delegar en el modelo decisiones que ya están resueltas. El modelo puede concentrarse en generar el contenido variable mientras la arquitectura conserva las partes estables.
 
 Este principio también reduce la necesidad de instrucciones repetitivas. En lugar de explicar en cada *prompt* el formato completo de un artefacto, el sistema puede proporcionar una plantilla identificada y dejar que el procedimiento especializado se ocupe de completarla.
 
-# Independencia de plataforma
-
+## Independencia de plataforma
 Las *templates* pueden materializarse como archivos, directorios, fragmentos incrustados o recursos ofrecidos por una plataforma. El concepto no depende del mecanismo de almacenamiento.
 
 Los *adapters* pueden transformar una plantilla canónica al formato que necesite una herramienta concreta. Si una plataforma exige una estructura diferente, esa adaptación debería permanecer en la frontera y no contaminar la representación común del proyecto.

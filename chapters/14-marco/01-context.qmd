@@ -1,4 +1,6 @@
-# El contexto
+---
+title: "El contexto"
+---
 
 Cuando hacemos una pregunta a un sistema inteligente, la respuesta no depende únicamente de las palabras que acabamos de escribir.
 

@@ -1,4 +1,6 @@
-# Basilea III
+---
+title: "Basilea III"
+---
 
 Hay proyectos en los que una parte fundamental de aquello que debe construirse no puede negociarse, reinterpretarse libremente ni modificarse porque el equipo haya encontrado una solución que considera mejor. El origen del requisito está fuera del proyecto y, en ocasiones, fuera incluso de la propia organización. La regulación bancaria proporciona algunos de los ejemplos más claros.
 

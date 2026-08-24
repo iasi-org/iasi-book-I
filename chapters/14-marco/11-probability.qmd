@@ -1,4 +1,6 @@
-# Generación probabilística
+---
+title: "Generación probabilística"
+---
 
 En el apartado anterior vimos que un modelo de lenguaje genera una respuesta token a token.
 

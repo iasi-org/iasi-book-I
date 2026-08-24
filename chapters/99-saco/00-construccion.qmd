@@ -1,4 +1,6 @@
-# Construcción del laboratorio
+---
+title: "Construcción del laboratorio"
+---
 
 ## Objetivo
 

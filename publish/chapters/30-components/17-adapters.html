@@ -3,17 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>IASI Vol. I</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -26,9 +29,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../chapters/30-components/18-sintesis.html" rel="next">
 <link href="../../chapters/30-components/16-automations.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script><script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5fcceb720d2abbc69bfe760bb224a836.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d6394c5e0414a18db7c9a0fae3ef3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><div id="quarto-announcement" data-announcement-id="e09f38cd2465ea4345c0e7abe9a41735" class="alert alert-primary hidden"><div class="quarto-announcement-content">
-<p><img src="../..\resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
+<p><img src="../../resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
 </div></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -96,6 +99,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../chapters/20-methodologies/index.html"> 
+<span class="menu-text">Metodologias</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chapters/25-organization/index.html"> 
 <span class="menu-text">Metodologias</span></a>
   </li>  
   <li class="nav-item">
@@ -137,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/17-adapters.html"><span class="chapter-number">53</span>  <span class="chapter-title"><em>Adapters</em></span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/17-adapters.html"><span class="chapter-number">69</span>  <span class="chapter-title"><em>Adapters</em></span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1234,13 +1241,140 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/25-organization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VI Organización y estructuración</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/01-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Organización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0101-organizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Organizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0102-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0102-fractal-html" class="collapse list-unstyled sidebar-section depth2">
+<li class="sidebar-item-section">
+<a href="../../chapters/25-organization/0102-fractal.html#la-organizaci%C3%B3n-fractal" id="toc-la-organización-fractal" class="nav-link active" data-scroll-target="#la-organización-fractal"><span class="header-section-number">3.1</span> La organización fractal</a>
+  <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-25-organization-0102-fractal-html-1">
+<li><a href="../../chapters/25-organization/0102-fractal.html#el-patr%C3%B3n-organizativo" id="toc-el-patrón-organizativo" class="nav-link" data-scroll-target="#el-patrón-organizativo"><span class="header-section-number">3.1.1</span> El patrón organizativo</a></li>
+  </ul>
+<a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html-1" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html-1" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0103-division-of-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">División del trabajo</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0103-division-of-work-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0103-division-of-work.html#la-divisi%C3%B3n-del-trabajo" id="toc-la-división-del-trabajo" class="nav-link active" data-scroll-target="#la-división-del-trabajo"><span class="header-section-number">4.1</span> La división del trabajo</a></li>
+  <li><a href="../../chapters/25-organization/0103-division-of-work.html#paso-1-identificaci%C3%B3n-de-procesos" id="toc-paso-1-identificación-de-procesos" class="nav-link" data-scroll-target="#paso-1-identificación-de-procesos"><span class="header-section-number">4.2</span> Paso 1: Identificación de procesos</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0104-specialization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">Especialización y reutilización</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0104-specialization-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0104-specialization-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0104-specialization-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0104-specialization.html#divisi%C3%B3n-de-procesos-y-especializaci%C3%B3n" id="toc-división-de-procesos-y-especialización" class="nav-link active" data-scroll-target="#división-de-procesos-y-especialización"><span class="header-section-number">5.1</span> División de procesos y especialización</a></li>
+  <li><a href="../../chapters/25-organization/0104-specialization.html#paso-3-diversificacion-y-reutilizaci%C3%B3n" id="toc-paso-3-diversificacion-y-reutilización" class="nav-link" data-scroll-target="#paso-3-diversificacion-y-reutilización"><span class="header-section-number">5.2</span> Paso 3: Diversificacion y reutilización</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0105-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">Estructura organizativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/02-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">Estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/03-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/04-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Equipos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/05-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Roles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/06-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Capacidades</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/07-responsibilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Responsabilidades y autoridad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/08-dynamic-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Roles dinámicos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/09-career.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Evolución profesional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/10-human-iiss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Humanos y Sistemas Inteligentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/11-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VII Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
@@ -1525,12 +1659,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VII Saco</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">VIII Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
@@ -1651,7 +1785,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">62</span>  <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">78</span>  <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1674,19 +1808,19 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-<li><a href="#una-frontera-entre-el-modelo-y-los-productos" id="toc-una-frontera-entre-el-modelo-y-los-productos" class="nav-link active" data-scroll-target="#una-frontera-entre-el-modelo-y-los-productos"><span class="header-section-number">54</span> Una frontera entre el modelo y los productos</a></li>
-  <li><a href="#traducci%C3%B3n-sem%C3%A1ntica" id="toc-traducción-semántica" class="nav-link" data-scroll-target="#traducción-semántica"><span class="header-section-number">55</span> Traducción semántica</a></li>
-  <li><a href="#capacidades-y-degradaci%C3%B3n" id="toc-capacidades-y-degradación" class="nav-link" data-scroll-target="#capacidades-y-degradación"><span class="header-section-number">56</span> Capacidades y degradación</a></li>
-  <li><a href="#entradas-y-salidas-can%C3%B3nicas" id="toc-entradas-y-salidas-canónicas" class="nav-link" data-scroll-target="#entradas-y-salidas-canónicas"><span class="header-section-number">57</span> Entradas y salidas canónicas</a></li>
-  <li><a href="#adapters-y-mcp" id="toc-adapters-y-mcp" class="nav-link" data-scroll-target="#adapters-y-mcp"><span class="header-section-number">58</span> <em>Adapters</em> y MCP</a></li>
-  <li><a href="#evoluci%C3%B3n" id="toc-evolución" class="nav-link" data-scroll-target="#evolución"><span class="header-section-number">59</span> Evolución</a></li>
-  <li><a href="#un-contrato-de-independencia" id="toc-un-contrato-de-independencia" class="nav-link" data-scroll-target="#un-contrato-de-independencia"><span class="header-section-number">60</span> Un contrato de independencia</a></li>
+<li><a href="#una-frontera-entre-el-modelo-y-los-productos" id="toc-una-frontera-entre-el-modelo-y-los-productos" class="nav-link active" data-scroll-target="#una-frontera-entre-el-modelo-y-los-productos"><span class="header-section-number">70</span> Una frontera entre el modelo y los productos</a></li>
+  <li><a href="#traducci%C3%B3n-sem%C3%A1ntica" id="toc-traducción-semántica" class="nav-link" data-scroll-target="#traducción-semántica"><span class="header-section-number">71</span> Traducción semántica</a></li>
+  <li><a href="#capacidades-y-degradaci%C3%B3n" id="toc-capacidades-y-degradación" class="nav-link" data-scroll-target="#capacidades-y-degradación"><span class="header-section-number">72</span> Capacidades y degradación</a></li>
+  <li><a href="#entradas-y-salidas-can%C3%B3nicas" id="toc-entradas-y-salidas-canónicas" class="nav-link" data-scroll-target="#entradas-y-salidas-canónicas"><span class="header-section-number">73</span> Entradas y salidas canónicas</a></li>
+  <li><a href="#adapters-y-mcp" id="toc-adapters-y-mcp" class="nav-link" data-scroll-target="#adapters-y-mcp"><span class="header-section-number">74</span> <em>Adapters</em> y MCP</a></li>
+  <li><a href="#evoluci%C3%B3n" id="toc-evolución" class="nav-link" data-scroll-target="#evolución"><span class="header-section-number">75</span> Evolución</a></li>
+  <li><a href="#un-contrato-de-independencia" id="toc-un-contrato-de-independencia" class="nav-link" data-scroll-target="#un-contrato-de-independencia"><span class="header-section-number">76</span> Un contrato de independencia</a></li>
   </ul></nav>
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/17-adapters.html"><span class="chapter-number">53</span>  <span class="chapter-title"><em>Adapters</em></span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/17-adapters.html"><span class="chapter-number">69</span>  <span class="chapter-title"><em>Adapters</em></span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">17</span>  <span class="chapter-title"><em>Adapters</em></span>
@@ -1704,36 +1838,36 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="una-frontera-entre-el-modelo-y-los-productos" class="level1" data-number="54"><h1 data-number="54">
+</header><section id="una-frontera-entre-el-modelo-y-los-productos" class="level1" data-number="70"><h1 data-number="70">
 <span class="header-section-number">17.1</span> Una frontera entre el modelo y los productos</h1>
 <p>Los agentes, modelos y plataformas cambian con rapidez. Cada uno decide qué nombres utiliza, qué archivos reconoce, qué herramientas puede invocar, cómo mantiene contexto y qué mecanismos ofrece para extender su comportamiento. Si una metodología se construye directamente sobre esas primitivas, termina heredando sus límites y necesita rediseñarse cada vez que cambia el proveedor.</p>
 <p>Los <em>adapters</em> permiten separar ambas capas. El modelo canónico define qué componentes necesita el IISS y qué significado tiene cada uno. El <em>adapter</em> conoce una implementación concreta y traduce esos componentes a las capacidades disponibles.</p>
 <p>Esta separación no busca ocultar las diferencias. Precisamente permite hacerlas explícitas sin propagarlas al resto de la arquitectura.</p>
-</section><section id="traducción-semántica" class="level1" data-number="55"><h1 data-number="55">
+</section><section id="traducción-semántica" class="level1" data-number="71"><h1 data-number="71">
 <span class="header-section-number">17.2</span> Traducción semántica</h1>
 <p>Un <em>adapter</em> no debería limitarse a copiar archivos de un formato a otro. Necesita conservar el significado del componente. Si una <em>skill</em> canónica contiene conocimiento operativo que una plataforma representa mediante un archivo especial, la adaptación puede ser directa. Si otra plataforma no posee <em>skills</em>, quizá sea necesario traducirla a instrucciones recuperables y recursos auxiliares.</p>
 <p>La pregunta relevante no es si ambos productos utilizan el mismo nombre, sino si pueden representar la misma responsabilidad con garantías equivalentes.</p>
 <p>Esta perspectiva permite que IASI defina sus propios nombres. No necesitamos adoptar la taxonomía de un agente para parecer compatibles con él. Definimos qué componentes necesitamos y describimos cómo cada implementación los soporta.</p>
-</section><section id="capacidades-y-degradación" class="level1" data-number="56"><h1 data-number="56">
+</section><section id="capacidades-y-degradación" class="level1" data-number="72"><h1 data-number="72">
 <span class="header-section-number">17.3</span> Capacidades y degradación</h1>
 <p>No todos los <em>adapters</em> podrán ofrecer todas las capacidades. Una plataforma puede no soportar herramientas con ciertos tipos de salida, no disponer de memoria persistente o carecer de un mecanismo para cargar <em>skills</em> dinámicamente.</p>
 <p>El <em>adapter</em> debería declarar estas limitaciones. La ausencia de una capacidad puede provocar un error temprano, seleccionar una estrategia alternativa o reducir la autonomía del proceso. Lo importante es evitar que el sistema finja una equivalencia inexistente.</p>
 <p>Esta transparencia permite construir una matriz de capacidades. Un <em>workflow</em> puede conocer qué requisitos tiene y comprobar si el <em>adapter</em> activo puede satisfacerlos antes de comenzar.</p>
-</section><section id="entradas-y-salidas-canónicas" class="level1" data-number="57"><h1 data-number="57">
+</section><section id="entradas-y-salidas-canónicas" class="level1" data-number="73"><h1 data-number="73">
 <span class="header-section-number">17.4</span> Entradas y salidas canónicas</h1>
 <p>Cuando sea posible, el resto del sistema debería trabajar con representaciones canónicas. El <em>adapter</em> convierte esas representaciones al formato nativo antes de interactuar con la plataforma y transforma los resultados de vuelta al modelo común.</p>
 <p>Esto reduce la propagación de detalles específicos. Una <em>definition</em> no debería llenarse de campos de un proveedor únicamente porque un agente los necesita. Esos campos pertenecen a la capa de adaptación.</p>
 <p>También facilita las pruebas. Podemos comprobar que distintos <em>adapters</em> producen resultados equivalentes para el mismo componente canónico sin exigir que utilicen internamente las mismas técnicas.</p>
-</section><section id="adapters-y-mcp" class="level1" data-number="58"><h1 data-number="58">
+</section><section id="adapters-y-mcp" class="level1" data-number="74"><h1 data-number="74">
 <span class="header-section-number">17.5</span> <em>Adapters</em> y MCP</h1>
 <p>MCP puede reducir parte del trabajo de adaptación para herramientas y recursos, porque ofrece una interfaz común soportada por diferentes clientes. Sin embargo, no elimina la necesidad de <em>adapters</em>.</p>
 <p>La plataforma puede tener diferencias en instrucciones, memoria, <em>skills</em>, permisos, automatizaciones o comportamiento de agentes que MCP no pretende normalizar. Además, incluso cuando dos clientes soportan el protocolo, pueden exponer sus capacidades de forma distinta.</p>
 <p>El <em>adapter</em> puede utilizar MCP como una de sus estrategias, pero sigue siendo responsable de la compatibilidad global.</p>
-</section><section id="evolución" class="level1" data-number="59"><h1 data-number="59">
+</section><section id="evolución" class="level1" data-number="75"><h1 data-number="75">
 <span class="header-section-number">17.6</span> Evolución</h1>
 <p>Los <em>adapters</em> absorben cambios de proveedores. Cuando una plataforma modifica su formato o introduce una nueva capacidad, idealmente actualizamos el <em>adapter</em> sin cambiar las <em>definitions</em>, <em>commands</em> o <em>workflows</em> canónicos.</p>
 <p>Esta propiedad convierte los cambios tecnológicos en un problema localizado. También permite adoptar nuevas capacidades de forma progresiva. Un <em>adapter</em> puede empezar con una implementación mínima y mejorar posteriormente sin alterar el modelo conceptual.</p>
-</section><section id="un-contrato-de-independencia" class="level1" data-number="60"><h1 data-number="60">
+</section><section id="un-contrato-de-independencia" class="level1" data-number="76"><h1 data-number="76">
 <span class="header-section-number">17.7</span> Un contrato de independencia</h1>
 <p>La existencia de <em>adapters</em> establece una disciplina arquitectónica. Antes de incorporar al núcleo una característica específica de una plataforma, debemos preguntar si representa una necesidad conceptual general o un detalle de implementación.</p>
 <p>Si la necesidad es general, merece un componente canónico. Si solo pertenece al proveedor, debe permanecer en el <em>adapter</em>. Esta frontera evita que la metodología se convierta en una colección de excepciones y mantiene la posibilidad real de trabajar con distintos IISS.</p>
@@ -2141,12 +2275,12 @@ ul.task-list li input[type="checkbox"] {
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/30-components/16-automations.html" class="pagination-link" aria-label="Automatizaciones">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">52</span>  <span class="chapter-title">Automatizaciones</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">68</span>  <span class="chapter-title">Automatizaciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/30-components/18-sintesis.html" class="pagination-link" aria-label="Síntesis">
-        <span class="nav-page-text"><span class="chapter-number">54</span>  <span class="chapter-title">Síntesis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">70</span>  <span class="chapter-title">Síntesis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2156,7 +2290,7 @@ ul.task-list li input[type="checkbox"] {
 <p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
 </div>   
     <div class="nav-footer-center">
-<p><span id="iasi-publish-date">Publicado: 23/08/2026</span></p>
+<p><span id="iasi-publish-date">Publicado: 24/08/2026</span></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

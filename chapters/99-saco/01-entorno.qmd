@@ -1,4 +1,6 @@
-# Preparación del Entorno
+---
+title: "Preparación del Entorno"
+---
 
 ## Ingeniería de Sistemas Inteligentes
 
@@ -12,8 +14,7 @@ No pretende ser un manual de Linux ni una guía de instalación de herramientas.
 
 ---
 
-# Filosofía
-
+## Filosofía
 Todos los laboratorios del libro parten del siguiente supuesto:
 
 > El entorno ya está preparado.
@@ -26,8 +27,7 @@ Por ello, este documento es independiente de los Labs. De esta forma:
 
 ---
 
-# Plataforma de referencia
-
+## Plataforma de referencia
 * Sistema Operativo: Kubuntu 24.04 LTS
 * Arquitectura: x86_64
 
@@ -35,17 +35,14 @@ Por ello, este documento es independiente de los Labs. De esta forma:
 
 ---
 
-# Requisitos recomendados
-
-## Hardware mínimo
-
+## Requisitos recomendados
+### Hardware mínimo
 * CPU de 64 bits
 * 16 GB de memoria RAM
 * 100 GB libres en SSD
 * Conexión a Internet
 
-## Hardware recomendado
-
+### Hardware recomendado
 * Procesador multinúcleo moderno
 * 32 GB RAM
 * SSD NVMe
@@ -55,8 +52,7 @@ Por ello, este documento es independiente de los Labs. De esta forma:
 
 ---
 
-# Filosofía de instalación
-
+## Filosofía de instalación
 Siempre que sea posible:
 
 * utilizar paquetes oficiales;
@@ -68,8 +64,7 @@ El objetivo es que cualquier lector pueda reconstruir exactamente el mismo entor
 
 ---
 
-# Componentes del entorno
-
+## Componentes del entorno
 Los siguientes componentes se instalarán durante esta guía.
 
 | Componente         | Estado | Versión |
@@ -93,8 +88,7 @@ Los siguientes componentes se instalarán durante esta guía.
 
 ---
 
-# Versiones utilizadas
-
+## Versiones utilizadas
 Este documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.
 
 | Software             | Versión utilizada | Observaciones |
@@ -118,8 +112,7 @@ Este documento mantiene la relación exacta de versiones utilizadas durante la e
 
 ---
 
-# Orden de instalación
-
+## Orden de instalación
 1. Actualización del sistema
 2. Herramientas básicas
 3. Git
@@ -138,8 +131,7 @@ Este documento mantiene la relación exacta de versiones utilizadas durante la e
 
 ---
 
-# Lista de comprobación
-
+## Lista de comprobación
 Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.
 
 * ☐ El sistema está actualizado.
@@ -158,8 +150,7 @@ Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condi
 
 ---
 
-# Próximo paso
-
+## Próximo paso
 Una vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.
 
 El primer laboratorio será:

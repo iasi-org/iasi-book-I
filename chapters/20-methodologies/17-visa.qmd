@@ -1,4 +1,6 @@
-# Visa
+---
+title: "Visa"
+---
 
 Visa es necesariamente una red distribuida. Una autorización de pago puede atravesar comercios, adquirentes, la propia red Visa, bancos emisores, centros de proceso y sistemas redundantes situados en lugares diferentes. El caso que nos interesa, por tanto, no pretende defender que un sistema de esta naturaleza deba ejecutarse como una única aplicación en una única máquina. La cuestión es otra: dentro del camino crítico de una autorización existen operaciones que, desde el punto de vista del negocio, forman una unidad y deben completarse dentro de un tiempo muy reducido. Fragmentar artificialmente esa unidad en numerosos servicios remotos puede empeorar precisamente aquello que más importa: la latencia, la disponibilidad y la capacidad de completar correctamente la operación.
 

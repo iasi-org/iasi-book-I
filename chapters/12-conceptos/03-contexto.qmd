@@ -2,14 +2,12 @@
 title: "Contextos"
 --- 
 
-# Tokens, contexto y ventana de contexto
-
+## Tokens, contexto y ventana de contexto
 Un modelo matemático no recibe palabras, frases o documentos de la misma manera que una persona los percibe. Para poder procesar lenguaje, el texto debe transformarse en una representación numérica.
 
 El primer paso de esa transformación consiste en dividir el contenido en unidades denominadas **tokens**.
 
-## Tokens
-
+### Tokens
 Un token es una unidad de texto que el modelo puede identificar y procesar.
 
 Un token puede corresponder a:
@@ -43,8 +41,7 @@ El resultado exacto depende del vocabulario y del método de tokenización emple
 
 Los modelos suelen utilizar fragmentos frecuentes porque permiten representar un vocabulario muy amplio sin tener que almacenar cada palabra posible como una unidad independiente. De esta forma también pueden procesar palabras desconocidas, nombres propios, términos técnicos o variaciones lingüísticas dividiéndolos en componentes más pequeños.
 
-## Del texto a identificadores numéricos
-
+### Del texto a identificadores numéricos
 Cada token está asociado a un identificador numérico dentro del vocabulario del modelo.
 
 De forma simplificada, una secuencia de texto podría convertirse en algo parecido a:
@@ -61,8 +58,7 @@ Posteriormente, cada identificador se transforma en una representación matemát
 
 Ese proceso se estudiará en la siguiente sección al introducir el concepto de **embedding**.
 
-## Por qué importan los tokens
-
+### Por qué importan los tokens
 Los tokens son relevantes no solo para comprender el funcionamiento interno del modelo. También tienen consecuencias prácticas.
 
 La cantidad de tokens influye en:
@@ -79,8 +75,7 @@ Los términos frecuentes suelen representarse mediante pocos tokens. Las palabra
 
 Por esta razón, medir únicamente caracteres o palabras no permite conocer con exactitud cuánto espacio ocupará un contenido para el modelo.
 
-## Contexto
-
+### Contexto
 El **contexto** es el conjunto de información disponible para el modelo durante una inferencia.
 
 En una conversación, el contexto puede incluir:
@@ -109,8 +104,7 @@ solo tiene sentido si el contexto contiene el texto o la respuesta a la que se r
 
 El contexto proporciona la información necesaria para interpretar referencias, mantener la continuidad de una interacción y adaptar la respuesta a una tarea concreta.
 
-## El contexto no modifica el modelo
-
+### El contexto no modifica el modelo
 Proporcionar información en el contexto no equivale a entrenar el modelo.
 
 Durante una conversación, los parámetros del modelo permanecen normalmente sin cambios. El modelo utiliza temporalmente la información incluida en la petición, pero esa información no se incorpora automáticamente a sus parámetros.
@@ -125,8 +119,7 @@ Esta distinción explica por qué un modelo puede utilizar información nueva si
 
 También explica por qué la información disponible durante una conversación puede dejar de estar accesible si ya no se incluye en el contexto de una petición posterior.
 
-## Ventana de contexto
-
+### Ventana de contexto
 La **ventana de contexto** es la cantidad máxima de tokens que el modelo puede procesar conjuntamente en una inferencia.
 
 Esta capacidad debe repartirse entre todos los elementos incluidos en la interacción:
@@ -155,8 +148,7 @@ Un modelo puede tener una ventana de contexto extensa y, aun así, no utilizar c
 
 Por tanto, no solo importa cuánto contexto se proporciona, sino también su calidad, estructura y relevancia.
 
-## Contexto y memoria
-
+### Contexto y memoria
 Contexto y memoria tampoco son equivalentes.
 
 El contexto contiene la información presente en una inferencia concreta. La memoria requiere algún mecanismo que conserve información y vuelva a proporcionarla cuando resulte necesaria.
@@ -174,8 +166,7 @@ Cuando una aplicación parece recordar información de una interacción anterior
 
 El modelo no necesita conservar internamente toda la información. Necesita recibir la información adecuada en el momento en que debe utilizarla.
 
-## Una primera visión del procesamiento del lenguaje
-
+### Una primera visión del procesamiento del lenguaje
 Podemos representar de forma simplificada la entrada de información en un modelo de lenguaje:
 
 > texto → tokens → identificadores numéricos → representaciones matemáticas → modelo

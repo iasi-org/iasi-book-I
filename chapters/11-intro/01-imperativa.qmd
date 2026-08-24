@@ -2,8 +2,7 @@
 title: "Programación imperativa"
 ---
 
-# El conocimiento reside en el programa
-
+## El conocimiento reside en el programa
 Desde los primeros ordenadores hasta la actualidad, la inmensa mayoría del software se ha construido siguiendo un mismo principio fundamental.
 
 **El desarrollador describe explícitamente cómo debe resolverse un problema.**
@@ -42,8 +41,7 @@ Si la condición se cumple, se ejecutarán exactamente las instrucciones del pri
 La responsabilidad de decidir **qué hacer**, **cuándo hacerlo**, **cómo hacerlo** y **en qué orden hacerlo** recae completamente sobre el ingeniero de software.
 El ordenador no toma decisiones. Ejecuta las instrucciones que recibe.
 
-## Las fortalezas del modelo
-
+### Las fortalezas del modelo
 Este paradigma ha demostrado durante más de medio siglo ser extraordinariamente eficaz.
 Permite construir sistemas que son:
 
@@ -66,8 +64,7 @@ Gracias a ello se han desarrollado sistemas críticos como:
 
 Durante décadas, este modelo ha constituido la base de la Ingeniería del Software.
 
-## El requisito fundamental
-
+### El requisito fundamental
 Sin embargo, este enfoque tiene un requisito imprescindible: **El ingeniero debe conocer previamente el algoritmo que resuelve el problema.**.
 Antes de escribir una sola línea de código debe ser capaz de responder preguntas como:
 
@@ -84,8 +81,7 @@ En otras palabras:
 
 El ordenador simplemente ejecuta ese conocimiento.
 
-## Cuando el algoritmo no es evidente
-
+### Cuando el algoritmo no es evidente
 Existen, sin embargo, problemas para los que resulta extremadamente difícil escribir un algoritmo preciso.
 
 Por ejemplo:

@@ -1,4 +1,6 @@
-# Arquitectura en capas
+---
+title: "Arquitectura en capas"
+---
 
 El diseño en capas no empezó con las capas, al menos no con el nombre con el que hoy lo conocemos. En determinados momentos de la evolución de la ingeniería de software aparecen conceptos que se presentan como una ruptura con todo lo anterior. Uno de los ejemplos más conocidos es precisamente la arquitectura en capas. La explicación habitual resulta familiar: las aplicaciones antiguas eran grandes sistemas monolíticos en los que presentación, lógica de negocio y acceso a datos aparecían mezclados; posteriormente aprendimos a separar responsabilidades y comenzaron a surgir arquitecturas y patrones como *Model-View-Controller* (MVC) y muchas de sus variantes. La explicación es sencilla, resulta didáctica y contiene una parte de verdad, pero el problema aparece cuando esa simplificación termina convirtiéndose en una descripción histórica. Cualquiera que hubiera trabajado años antes en determinados entornos corporativos reconocería inmediatamente buena parte de esas ideas.
 

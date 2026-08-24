@@ -1,4 +1,6 @@
-# Modelo y Sistema
+---
+title: "Modelo y Sistema"
+---
 
 A lo largo de este capítulo hemos estudiado distintas piezas: contexto, tokens, ventana de contexto, embeddings, transformers, atención, memoria, entrenamiento, inferencia y generación probabilística.
 

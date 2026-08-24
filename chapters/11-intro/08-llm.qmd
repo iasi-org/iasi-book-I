@@ -2,8 +2,7 @@
 title: "Large Language Models"
 ---
 
-# Cuando el lenguaje se convirtió en conocimiento
-
+## Cuando el lenguaje se convirtió en conocimiento
 A lo largo de los capítulos anteriores hemos recorrido la evolución de la Inteligencia Artificial desde los primeros sistemas basados en reglas hasta las redes neuronales profundas. Cada etapa respondió a las limitaciones de la anterior y aportó nuevas capacidades, acercándonos progresivamente a sistemas cada vez más flexibles y capaces de aprender a partir de los datos.
 
 Ese recorrido nos conduce finalmente a los **Large Language Models (LLM)**, la tecnología que ha hecho posible una nueva generación de sistemas inteligentes y que constituye el punto de partida del resto de este trabajo.

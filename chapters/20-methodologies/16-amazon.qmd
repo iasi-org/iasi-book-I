@@ -1,4 +1,6 @@
-# Amazon
+---
+title: "Amazon"
+---
 
 Un sistema de comercio electrónico permite observar con bastante claridad por qué los microservicios pueden ser una buena solución en determinados problemas y, al mismo tiempo, por qué no deberían convertirse en una regla arquitectónica universal. Amazon resulta especialmente útil como ejemplo porque detrás de una operación aparentemente sencilla, comprar un producto, existen numerosos procesos con requisitos de disponibilidad, consistencia y tiempo completamente diferentes.
 

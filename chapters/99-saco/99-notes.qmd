@@ -1,4 +1,6 @@
-# Notas
+---
+title: "Notas"
+---
 
 ## Sobre la instalacion
 

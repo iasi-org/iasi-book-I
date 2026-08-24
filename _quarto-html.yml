@@ -37,6 +37,8 @@ book:
         href: chapters/14-marco/index.qmd
       - text: "Metodologias"
         href: chapters/20-methodologies/index.qmd
+      - text: "Metodologias"
+        href: chapters/25-organization/index.qmd
       - text: "Componentes"
         href: chapters/30-components/index.qmd
       - text: "Saco"

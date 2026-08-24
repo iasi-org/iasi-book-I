@@ -1,4 +1,6 @@
-# Documentos, autores, reponsables y colaboradores
+---
+title: "Documentos, autores, reponsables y colaboradores"
+---
 
 Creando el primer lab han salido una serie de documentacion **minima** para casi cualquier proyecto.
 Cada uno de esos documentos tiene un responsable principal y un conjunto de colaboradores habituales, que pueden variar según el proyecto y el equipo.
@@ -28,7 +30,7 @@ preo definemos un conjunto de documentos y roles que pueden servir como referenc
 | `Labs`                  | Cualquier miembro del equipo      | Revisores técnicos                |
 | `OpenSpec`              | Arquitecto / Equipo de ingeniería | Todos los responsables anteriores |
 
-### Observación
+## Observación
 
 Un proyecto no necesita necesariamente una persona distinta para cada documento.
 

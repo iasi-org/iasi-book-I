@@ -2,8 +2,7 @@
 title: "Embeddings"
 --- 
 
-# Representar significado mediante números"
-
+## Representar significado mediante números"
 Después de dividir el texto en tokens, cada uno de ellos se identifica mediante un número dentro del vocabulario del modelo.
 
 Sin embargo, ese identificador solo permite distinguir un token de otro. El número asignado no contiene por sí mismo información sobre su significado, su función o su relación con otros tokens.
@@ -14,8 +13,7 @@ Para que el modelo pueda trabajar con semejanzas, diferencias y relaciones, cada
 
 Esa representación recibe el nombre de **embedding**.
 
-## Qué es un embedding
-
+### Qué es un embedding
 Un embedding es un conjunto de valores numéricos que representa las características aprendidas de un elemento.
 
 En un modelo de lenguaje, ese elemento puede ser:
@@ -39,8 +37,7 @@ Cada valor individual no suele corresponder a una característica fácilmente in
 
 El significado se encuentra distribuido entre muchas dimensiones y surge de la combinación de todos esos valores.
 
-## Un espacio de representaciones
-
+### Un espacio de representaciones
 Los embeddings pueden interpretarse como posiciones dentro de un espacio matemático de muchas dimensiones.
 
 En ese espacio, los elementos utilizados en contextos parecidos tienden a adquirir representaciones próximas o relacionadas.
@@ -60,8 +57,7 @@ Una idea fundamental de los modelos de lenguaje es que gran parte de la informac
 
 Las palabras que aparecen en contextos similares suelen desempeñar funciones o expresar conceptos relacionados.
 
-## Del identificador al embedding
-
+### Del identificador al embedding
 Cuando el modelo recibe un token, utiliza su identificador para recuperar una representación inicial desde una tabla de embeddings.
 
 De forma simplificada:
@@ -90,8 +86,7 @@ La tabla de embeddings forma parte de los parámetros del modelo y se ajusta dur
 
 Por tanto, el ingeniero no asigna manualmente los valores asociados a cada token. El modelo los aprende a partir de los datos y del objetivo de entrenamiento.
 
-## Similitud entre embeddings
-
+### Similitud entre embeddings
 Una de las propiedades más útiles de los embeddings es que permiten medir matemáticamente la proximidad entre representaciones.
 
 Dos embeddings pueden compararse para estimar si los elementos que representan guardan alguna relación.
@@ -121,8 +116,7 @@ La búsqueda tradicional suele depender en gran medida de la coincidencia entre 
 
 Por ello, puede encontrar relaciones que no serían evidentes mediante una búsqueda literal.
 
-## Similitud no significa identidad
-
+### Similitud no significa identidad
 La proximidad entre embeddings debe interpretarse con precaución.
 
 Dos representaciones pueden ser cercanas porque comparten:
@@ -141,8 +135,7 @@ También pueden encontrarse próximos términos opuestos, como *frío* y *calien
 
 Por tanto, la cercanía matemática no constituye una definición exacta del significado. Es una señal aprendida sobre las relaciones presentes en los datos.
 
-## El significado depende del contexto
-
+### El significado depende del contexto
 Una palabra aislada puede tener varios significados.
 
 Consideremos el término:
@@ -175,18 +168,15 @@ El embedding inicial proporciona un punto de partida, pero después el modelo lo
 
 Así, la representación de *banco* termina siendo diferente en cada uno de los ejemplos anteriores.
 
-## Embeddings iniciales y representaciones contextuales
-
+### Embeddings iniciales y representaciones contextuales
 Conviene distinguir dos momentos del procesamiento.
 
-### Embedding inicial
-
+#### Embedding inicial
 Es la representación que el modelo obtiene al identificar el token.
 
 En esta fase, el token todavía no ha sido interpretado completamente dentro de la frase.
 
-### Representación contextual
-
+#### Representación contextual
 Es la representación resultante después de relacionar el token con los demás elementos del contexto.
 
 Esta representación incorpora información sobre:
@@ -205,8 +195,7 @@ embedding inicial + contexto → representación contextual
 
 El modelo no trabaja únicamente con una colección de palabras aisladas. Construye representaciones que evolucionan a medida que la información atraviesa sus distintas capas.
 
-## Embeddings de frases y documentos
-
+### Embeddings de frases y documentos
 Los embeddings no se utilizan únicamente para representar tokens.
 
 También pueden generarse representaciones de unidades mayores, como frases o documentos completos.
@@ -227,8 +216,7 @@ En estos casos, el embedding no pretende reproducir cada detalle del texto. Prod
 
 Esa condensación implica inevitablemente una pérdida de información. Por ello, un embedding resulta útil para encontrar o comparar contenidos, pero no sustituye al contenido original.
 
-## Embeddings dentro de un sistema inteligente
-
+### Embeddings dentro de un sistema inteligente
 Los embeddings son una capacidad matemática que puede integrarse en distintos componentes de un sistema inteligente.
 
 Por ejemplo, un sistema de atención al cliente podría:
@@ -245,8 +233,7 @@ El embedding no responde a la pregunta ni toma una decisión. Permite localizar 
 
 De nuevo, observamos la diferencia entre una capacidad concreta y el sistema completo que la utiliza.
 
-## Una representación aprendida, no una verdad objetiva
-
+### Una representación aprendida, no una verdad objetiva
 Los embeddings se construyen a partir de los datos utilizados durante el entrenamiento.
 
 Por ello, reflejan:
@@ -263,8 +250,7 @@ Es una representación aprendida para cumplir un objetivo determinado.
 
 Su utilidad debe evaluarse dentro del sistema concreto, teniendo en cuenta los datos, el dominio, el idioma y las consecuencias de los posibles errores.
 
-## De representar a relacionar
-
+### De representar a relacionar
 Hasta ahora hemos recorrido el siguiente camino:
 
 > texto → tokens → identificadores → embeddings

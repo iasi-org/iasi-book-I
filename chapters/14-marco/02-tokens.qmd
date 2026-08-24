@@ -1,4 +1,6 @@
-# Tokens
+---
+title: "Tokens"
+---
 
 Los modelos de lenguaje no procesan directamente palabras, frases o párrafos tal como los vemos las personas.
 

@@ -1,4 +1,6 @@
-# Attention
+---
+title: "Attention"
+---
 
 En el apartado anterior vimos que los transformers procesan los tokens mediante una sucesión de capas y construyen representaciones que dependen del contexto.
 

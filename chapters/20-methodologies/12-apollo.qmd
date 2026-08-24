@@ -1,4 +1,6 @@
-# Project Apollo
+---
+title: "Project Apollo"
+---
 
 Hay proyectos que resultan especialmente útiles para estudiar la historia de la ingeniería porque obligan a separar las modas de los problemas reales. *Project Apollo* es uno de ellos. Cuando, en 1961, Estados Unidos asumió el objetivo de llevar seres humanos a la Luna y traerlos de vuelta con seguridad antes de terminar la década, no existía una metodología de desarrollo de *software* preparada para explicar cómo debía hacerse algo semejante. Buena parte de la propia disciplina que hoy llamamos ingeniería de *software* estaba todavía formándose. Pero tampoco existía el *hardware* que necesitaban. El problema era extraordinariamente complejo y buena parte de las tecnologías necesarias para resolverlo tendrían que diseñarse al mismo tiempo que la propia solución, y además tenía una característica poco negociable: **debía funcionar a la primera**.
 

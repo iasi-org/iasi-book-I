@@ -2,8 +2,7 @@
 title: "Sistema Inteligente"
 ---
 
-# ¿Qué es?
-
+## ¿Qué es?
 Cuando se habla actualmente de inteligencia artificial, suelen utilizarse expresiones como *IA*, *IA generativa*, *modelo de lenguaje*, *agente* o *asistente*. Estos términos describen tecnologías, capacidades o componentes concretos, pero no necesariamente la solución completa. A lo largo de este libro utilizaremos un concepto más amplio: **sistema inteligente**.
 
 ***Un sistema inteligente es una solución diseñada para recibir información, interpretarla y producir resultados o acciones orientadas a un objetivo.***
@@ -34,8 +33,7 @@ No obstante, el término *inteligente* debe utilizarse con cierta precaución. N
 
 En este contexto, la inteligencia no describe una cualidad humana, sino una **capacidad funcional**: resolver determinados problemas, reconocer patrones, realizar predicciones, generar contenido o adaptar su comportamiento ante distintas entradas.
 
-# Diferentes grados de autonomía
-
+## Diferentes grados de autonomía
 No todos los sistemas inteligentes tienen el mismo nivel de autonomía.
 
 Algunos se limitan a producir información:
@@ -67,8 +65,7 @@ También debemos preguntar:
 
 > ¿Qué debe permitírsele hacer sin supervisión?
 
-# Un modelo no es un sistema completo
-
+## Un modelo no es un sistema completo
 Otro error frecuente consiste en identificar el modelo con el sistema entero. Un modelo puede recibir datos y generar una salida, pero una solución real suele necesitar muchos otros componentes:
 
 * mecanismos para obtener y preparar la información;
@@ -85,8 +82,7 @@ Por ejemplo, un modelo de lenguaje puede redactar una respuesta para un cliente,
 
 El modelo aporta una capacidad. El sistema establece cómo, cuándo y bajo qué condiciones puede utilizarse.
 
-# Sistemas inteligentes e inteligencia artificial generativa
-
+## Sistemas inteligentes e inteligencia artificial generativa
 Tampoco todos los sistemas inteligentes son sistemas de inteligencia artificial generativa. Un detector de fraude, un clasificador de imágenes o un modelo de predicción de demanda pueden analizar información y producir resultados sin generar contenido nuevo.
 
 La inteligencia artificial generativa se caracteriza por crear una salida a partir de los patrones aprendidos durante el entrenamiento. Esa salida puede ser texto, código, imágenes, audio, vídeo u otros tipos de contenido.
@@ -102,8 +98,7 @@ Podemos establecer, por tanto, una primera distinción:
 
 Estas categorías no son equivalentes. Un LLM puede formar parte de un sistema inteligente, pero no todo sistema inteligente utiliza un LLM, ni un LLM aislado constituye necesariamente una solución completa.
 
-# Inteligencia y responsabilidad
-
+## Inteligencia y responsabilidad
 La utilización de un sistema inteligente no elimina la responsabilidad de quienes lo diseñan, integran, despliegan o utilizan. El sistema puede producir una clasificación, una recomendación o una propuesta. Sin embargo, alguien debe determinar:
 
 * qué objetivo persigue;

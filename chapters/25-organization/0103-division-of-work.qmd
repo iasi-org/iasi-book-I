@@ -1,0 +1,108 @@
+---
+title: "División del trabajo"
+---
+
+![](../../resources/images/under-construction.png)
+
+En este punto, hagamos una pausa para hablar de Adam Smith. Adam Smith fue un economista que publicó, entre otros, el famoso libro "La riqueza de las naciones" [@smith1776], el cual se considera como uno de los pilares de la economía moderna. 
+
+Nos centraremos aquí en una de sus ideas más conocidas: **la división del trabajo**.
+
+## La división del trabajo
+
+Smith planteaba el supuesto de una empresa de fabricación de alfileres, la cual vamos a modelar de la siguiente manera:
+
+1. Tenemos una empresa que fabrica alfileres
+2. La empresa esta compuesta por 5 practicioners
+3. Todos los practicioners están capacitados para realizar todas las tareas asociadas al negocio
+4. El tiempo de trabajo se mide en Unidades de Trabajo -ut-, asignando 800 ut/dia
+5. El coste (en Unidades Monetarias -um-), por simplicidad, lo asimilaremos a las ut con una relación 1-1; es decir,
+consideramos despreciable el coste del insumo alambre con respecto al coste del insumo Mano de Obra.
+
+Por otro lado, el proceso de fabricación consta de tres fases que se ejecutan en secuencia por cada practicioner:
+
+1. Se corta un trozo de alambre de la medida adecuada
+2. Se le pone una cabeza
+3. Se ajusta la punta
+
+Y por último:
+
+A) Cada una de estas fases requiere una cierta cantidad de tiempo (medida en UTs)
+B) Además hay que considerar que cada fase requiere de:
+      1. Unas herramientas diferentes
+      2. Un "enfoque mental" diferente
+      
+Esto último, el proceso de dejar unas herramientas, recoger otras, prepararse para la nueva tarea,
+también consume tiempo, aunque no sea un proceso productivo. Es lo que llamamos "**cambio de contexto**";
+un proceso o tarea implícito denominado "**coste oculto**", el cual coste suele ignorarse en los modelos.
+
+Dicho esto, nuestro modelo es tan simple como este diagrama:
+
+![](../../resources/images/organization/smith_proceso.png)
+
+A partir de un rollo de alambre, realizamos un cierto proceso que genera un cierto valor añadido,
+y obtenemos unos alfileres que son nuestro producto
+
+## Paso 1: Identificación de procesos {.unlisted}
+
+De acuerdo con la teoría de Smith, analizamos el proceso global e identificamos fases o subprocesos:
+
+![](../../resources/images/organization/smith_0.png)
+
+Ya tenemos nuestro proceso dividido en tres procesos secuenciales, también, aunque no sea muy 
+intuitivo en el diagrama se han "autodefinido" los límites de cada uno:
+
+| Proceso | Entrada | Salida |
+|---------|---------|--------|
+| Cut  | Rollo de alambre | Una pieza de alambre recta de cierta longitud |
+| Head | Una pieza de alambre recta | La misma pieza con una cabeza redonda en una punta |
+| Tail | Una pieza alambre con una cabeza en una punta | La misma pieza con la otra punta afilada | 
+
+Esto, implícitamente, nos permite incrementar la calidad del producto identificando errores o disfunciones, por ejemplo:
+
+- Cut: El alfiler es demasiado largo o corto
+- Head: No tiene cabeza o esta mal
+- Tail: No tiene punta
+
+Y tenemos una secuencia de acciones definidas y documentadas:
+
+![](../../resources/images/organization/smith_2.png)
+
+| Seq. |Accion |
+|------|-------|
+| 1 | Practicioner se prepara para la fase de corte |
+| 2 | Realiza el corte. Es una operación sencilla que consume 1 ut |
+| 3 | Practicioner se prepara para poner la cabeza al alfiler |
+| 4 | Inicia el proceso. Este consume 2 ut |
+| 5 | Finaliza el proceso de la cabeza |
+| 6 | Practicioner se prepara para preparar la punta |
+| 7 | Inicia el proceso. Este consume 2 ut |
+| 8 | Finaliza el proceso |
+| 9 | Se ha creado un alfiler. Reinicia el proceso
+
+Este proceso es el que realiza cada uno de de los practicioners de manera repetitiva a lo largo de su jornada.
+
+De acuerdo con esto y los supuestos del ejemplo:
+
+- Crear un único alfiler cuesta 8 ut.
+- Como tenemos 5 practicioners trabajando "en paralelo", generamos 5 alfileres (outputs) cada 8 ut
+- Si la jornada se divide en 800 ut.
+
+
+$$
+ \begin{aligned}
+    prod_{ut} &= \frac{1\;item}{8\;ut} \: =\: 0.125 \: \frac{item}{ut} \\
+    prod_{pract} &= Prod_{ut} *\: 800 \frac{ut}{dia} = 100 \frac{item}{pract} \\
+    prod\:diaria_1 &= Prod\:practicioner * (5 \; pract.) = modulus ( \frac{500}{item})   \\
+ \end{aligned}    
+$$
+
+
+
+    Capacidad_{dia} &= Prod_{pract} \: * \: \sum practicioner \: &= \: 100 \: * \: 5 \: = 500 \\
+    Coste\:marginal &= \frac{1}{Proc_ut} \: =\: 8
+
+
+
+
+Este proceso se aplica para cada uno de los practicioners de la empresa: 5

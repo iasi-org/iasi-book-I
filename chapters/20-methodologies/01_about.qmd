@@ -1,4 +1,6 @@
-# Introduccion
+---
+title: "Introduccion"
+---
 
 La ingeniería de software no ha trabajado siempre de la misma manera. A medida que cambiaban los sistemas, las organizaciones, las tecnologías y las restricciones, también cambiaban las formas de organizar el trabajo. Algunas de esas formas terminaron convirtiéndose en metodologías reconocibles; otras fueron simplemente prácticas eficaces desarrolladas por equipos que necesitaban resolver un problema concreto. Con el tiempo aparecieron nombres, marcos, certificaciones y escuelas de pensamiento, pero el origen suele ser bastante menos formal: había algo que construir, unas restricciones que respetar y era necesario encontrar una forma razonable de hacerlo.
 

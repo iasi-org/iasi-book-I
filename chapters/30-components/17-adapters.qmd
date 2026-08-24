@@ -2,54 +2,47 @@
 title: "*Adapters*"
 ---
 
-# Una frontera entre el modelo y los productos
-
+## Una frontera entre el modelo y los productos
 Los agentes, modelos y plataformas cambian con rapidez. Cada uno decide qué nombres utiliza, qué archivos reconoce, qué herramientas puede invocar, cómo mantiene contexto y qué mecanismos ofrece para extender su comportamiento. Si una metodología se construye directamente sobre esas primitivas, termina heredando sus límites y necesita rediseñarse cada vez que cambia el proveedor.
 
 Los *adapters* permiten separar ambas capas. El modelo canónico define qué componentes necesita el IISS y qué significado tiene cada uno. El *adapter* conoce una implementación concreta y traduce esos componentes a las capacidades disponibles.
 
 Esta separación no busca ocultar las diferencias. Precisamente permite hacerlas explícitas sin propagarlas al resto de la arquitectura.
 
-# Traducción semántica
-
+## Traducción semántica
 Un *adapter* no debería limitarse a copiar archivos de un formato a otro. Necesita conservar el significado del componente. Si una *skill* canónica contiene conocimiento operativo que una plataforma representa mediante un archivo especial, la adaptación puede ser directa. Si otra plataforma no posee *skills*, quizá sea necesario traducirla a instrucciones recuperables y recursos auxiliares.
 
 La pregunta relevante no es si ambos productos utilizan el mismo nombre, sino si pueden representar la misma responsabilidad con garantías equivalentes.
 
 Esta perspectiva permite que IASI defina sus propios nombres. No necesitamos adoptar la taxonomía de un agente para parecer compatibles con él. Definimos qué componentes necesitamos y describimos cómo cada implementación los soporta.
 
-# Capacidades y degradación
-
+## Capacidades y degradación
 No todos los *adapters* podrán ofrecer todas las capacidades. Una plataforma puede no soportar herramientas con ciertos tipos de salida, no disponer de memoria persistente o carecer de un mecanismo para cargar *skills* dinámicamente.
 
 El *adapter* debería declarar estas limitaciones. La ausencia de una capacidad puede provocar un error temprano, seleccionar una estrategia alternativa o reducir la autonomía del proceso. Lo importante es evitar que el sistema finja una equivalencia inexistente.
 
 Esta transparencia permite construir una matriz de capacidades. Un *workflow* puede conocer qué requisitos tiene y comprobar si el *adapter* activo puede satisfacerlos antes de comenzar.
 
-# Entradas y salidas canónicas
-
+## Entradas y salidas canónicas
 Cuando sea posible, el resto del sistema debería trabajar con representaciones canónicas. El *adapter* convierte esas representaciones al formato nativo antes de interactuar con la plataforma y transforma los resultados de vuelta al modelo común.
 
 Esto reduce la propagación de detalles específicos. Una *definition* no debería llenarse de campos de un proveedor únicamente porque un agente los necesita. Esos campos pertenecen a la capa de adaptación.
 
 También facilita las pruebas. Podemos comprobar que distintos *adapters* producen resultados equivalentes para el mismo componente canónico sin exigir que utilicen internamente las mismas técnicas.
 
-# *Adapters* y MCP
-
+## *Adapters* y MCP
 MCP puede reducir parte del trabajo de adaptación para herramientas y recursos, porque ofrece una interfaz común soportada por diferentes clientes. Sin embargo, no elimina la necesidad de *adapters*.
 
 La plataforma puede tener diferencias en instrucciones, memoria, *skills*, permisos, automatizaciones o comportamiento de agentes que MCP no pretende normalizar. Además, incluso cuando dos clientes soportan el protocolo, pueden exponer sus capacidades de forma distinta.
 
 El *adapter* puede utilizar MCP como una de sus estrategias, pero sigue siendo responsable de la compatibilidad global.
 
-# Evolución
-
+## Evolución
 Los *adapters* absorben cambios de proveedores. Cuando una plataforma modifica su formato o introduce una nueva capacidad, idealmente actualizamos el *adapter* sin cambiar las *definitions*, *commands* o *workflows* canónicos.
 
 Esta propiedad convierte los cambios tecnológicos en un problema localizado. También permite adoptar nuevas capacidades de forma progresiva. Un *adapter* puede empezar con una implementación mínima y mejorar posteriormente sin alterar el modelo conceptual.
 
-# Un contrato de independencia
-
+## Un contrato de independencia
 La existencia de *adapters* establece una disciplina arquitectónica. Antes de incorporar al núcleo una característica específica de una plataforma, debemos preguntar si representa una necesidad conceptual general o un detalle de implementación.
 
 Si la necesidad es general, merece un componente canónico. Si solo pertenece al proveedor, debe permanecer en el *adapter*. Esta frontera evita que la metodología se convierta en una colección de excepciones y mantiene la posibilidad real de trabajar con distintos IISS.

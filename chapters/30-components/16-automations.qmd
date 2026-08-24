@@ -2,46 +2,39 @@
 title: "Automatizaciones"
 ---
 
-# Trabajo que no comienza con una conversación
-
+## Trabajo que no comienza con una conversación
 Hasta ahora hemos descrito componentes que suelen participar en una interacción iniciada por un usuario. Sin embargo, muchos procesos deben ejecutarse cuando llega una hora, cambia un recurso, se publica una versión o aparece una condición determinada. Las automatizaciones permiten que el sistema inicie trabajo sin depender de una petición conversacional inmediata.
 
 Una automatización combina un disparador con una operación. El disparador puede ser temporal, un evento, un cambio de estado o una condición detectada periódicamente. La operación puede invocar un *command*, iniciar un *workflow* o ejecutar una comprobación.
 
-# *Triggers* y condiciones
-
+## *Triggers* y condiciones
 El disparador debe estar definido con suficiente precisión. «Cuando cambie algo importante» puede ser una intención útil para una persona, pero el sistema necesita un mecanismo que determine qué cambios observa y cómo decide que cumplen la condición.
 
 Algunas plataformas ofrecen eventos nativos; otras requieren comprobaciones periódicas. Los *adapters* pueden traducir la automatización canónica al mecanismo disponible.
 
 También conviene distinguir entre detectar una condición y notificar. Un proceso puede comprobar cada hora si existe un cambio, pero solo producir una comunicación cuando la condición se cumple. Mezclar ambos conceptos genera ruido y dificulta ajustar la frecuencia de observación.
 
-# Automatización y *workflow*
-
+## Automatización y *workflow*
 La automatización decide cuándo empieza el trabajo. El *workflow* describe cómo se realiza. Mantener esta separación permite reutilizar el mismo proceso desde una conversación, un *command* manual o un disparador automático.
 
 Por ejemplo, un *workflow* de publicación puede ejecutarse manualmente durante desarrollo y activarse automáticamente cuando se crea una etiqueta determinada. No necesitamos mantener dos procesos diferentes.
 
-# Idempotencia
-
+## Idempotencia
 Las automatizaciones pueden ejecutarse más de una vez, especialmente cuando existen reintentos o eventos duplicados. Por ello conviene diseñar operaciones idempotentes cuando sea posible: repetirlas con el mismo estado inicial no debería producir efectos acumulativos indeseados.
 
 Si una operación no puede ser idempotente, el sistema necesita mecanismos para identificar ejecuciones anteriores y evitar duplicados. Enviar dos veces una comunicación o crear dos despliegues idénticos puede ser más problemático que repetir una lectura.
 
-# Reintentos y errores
-
+## Reintentos y errores
 Un servicio externo puede fallar de forma temporal. Una automatización necesita saber cuándo reintentar y cuándo detenerse. Repetir indefinidamente una operación que falla por falta de permisos no resolverá el problema y puede generar carga o efectos inesperados.
 
 Los errores deberían propagarse de forma observable y permitir que una persona conozca qué automatización falló, en qué paso y con qué estado.
 
-# Autonomía diferida
-
+## Autonomía diferida
 Una automatización puede ejecutar trabajo cuando nadie está observando directamente. Esto aumenta la importancia de permisos, validaciones y límites de efectos. Una operación aceptable durante una sesión supervisada puede necesitar controles adicionales cuando se ejecuta de madrugada de forma autónoma.
 
 La arquitectura puede limitar qué *commands* son automatizables o exigir que determinados *workflows* se detengan antes de pasos de alto impacto.
 
-# Automatización y aprendizaje operativo
-
+## Automatización y aprendizaje operativo
 Los procesos recurrentes revelan patrones. Si una persona repite cada semana la misma secuencia de recuperación, análisis y publicación, existe un candidato natural para automatización. Sin embargo, automatizar demasiado pronto puede congelar un procedimiento que todavía estamos aprendiendo.
 
 Conviene comprender primero el proceso, convertir sus pasos estables en componentes y automatizar aquello que ya tiene contratos y validaciones suficientes. La automatización debería ser la consecuencia de una ingeniería más explícita, no un sustituto de ella.

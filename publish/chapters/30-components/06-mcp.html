@@ -3,17 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>IASI Vol. I</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -26,9 +29,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../chapters/30-components/07-resources.html" rel="next">
 <link href="../../chapters/30-components/05-tools.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script><script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5fcceb720d2abbc69bfe760bb224a836.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d6394c5e0414a18db7c9a0fae3ef3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><div id="quarto-announcement" data-announcement-id="e09f38cd2465ea4345c0e7abe9a41735" class="alert alert-primary hidden"><div class="quarto-announcement-content">
-<p><img src="../..\resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
+<p><img src="../../resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
 </div></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -96,6 +99,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../chapters/20-methodologies/index.html"> 
+<span class="menu-text">Metodologias</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chapters/25-organization/index.html"> 
 <span class="menu-text">Metodologias</span></a>
   </li>  
   <li class="nav-item">
@@ -137,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/06-mcp.html"><span class="chapter-number">42</span>  <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/06-mcp.html"><span class="chapter-number">58</span>  <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1234,13 +1241,140 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/25-organization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VI Organización y estructuración</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/01-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Organización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0101-organizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Organizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0102-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0102-fractal-html" class="collapse list-unstyled sidebar-section depth2">
+<li class="sidebar-item-section">
+<a href="../../chapters/25-organization/0102-fractal.html#la-organizaci%C3%B3n-fractal" id="toc-la-organización-fractal" class="nav-link active" data-scroll-target="#la-organización-fractal"><span class="header-section-number">3.1</span> La organización fractal</a>
+  <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-25-organization-0102-fractal-html-1">
+<li><a href="../../chapters/25-organization/0102-fractal.html#el-patr%C3%B3n-organizativo" id="toc-el-patrón-organizativo" class="nav-link" data-scroll-target="#el-patrón-organizativo"><span class="header-section-number">3.1.1</span> El patrón organizativo</a></li>
+  </ul>
+<a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html-1" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html-1" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0103-division-of-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">División del trabajo</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0103-division-of-work-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0103-division-of-work.html#la-divisi%C3%B3n-del-trabajo" id="toc-la-división-del-trabajo" class="nav-link active" data-scroll-target="#la-división-del-trabajo"><span class="header-section-number">4.1</span> La división del trabajo</a></li>
+  <li><a href="../../chapters/25-organization/0103-division-of-work.html#paso-1-identificaci%C3%B3n-de-procesos" id="toc-paso-1-identificación-de-procesos" class="nav-link" data-scroll-target="#paso-1-identificación-de-procesos"><span class="header-section-number">4.2</span> Paso 1: Identificación de procesos</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0104-specialization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">Especialización y reutilización</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0104-specialization-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0104-specialization-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0104-specialization-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0104-specialization.html#divisi%C3%B3n-de-procesos-y-especializaci%C3%B3n" id="toc-división-de-procesos-y-especialización" class="nav-link active" data-scroll-target="#división-de-procesos-y-especialización"><span class="header-section-number">5.1</span> División de procesos y especialización</a></li>
+  <li><a href="../../chapters/25-organization/0104-specialization.html#paso-3-diversificacion-y-reutilizaci%C3%B3n" id="toc-paso-3-diversificacion-y-reutilización" class="nav-link" data-scroll-target="#paso-3-diversificacion-y-reutilización"><span class="header-section-number">5.2</span> Paso 3: Diversificacion y reutilización</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0105-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">Estructura organizativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/02-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">Estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/03-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/04-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Equipos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/05-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Roles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/06-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Capacidades</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/07-responsibilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Responsabilidades y autoridad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/08-dynamic-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Roles dinámicos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/09-career.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Evolución profesional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/10-human-iiss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Humanos y Sistemas Inteligentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/11-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VII Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
@@ -1525,12 +1659,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VII Saco</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">VIII Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
@@ -1651,7 +1785,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">62</span>  <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">78</span>  <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1674,19 +1808,19 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-<li><a href="#un-protocolo-para-conectar-capacidades" id="toc-un-protocolo-para-conectar-capacidades" class="nav-link active" data-scroll-target="#un-protocolo-para-conectar-capacidades"><span class="header-section-number">43</span> Un protocolo para conectar capacidades</a></li>
-  <li><a href="#cliente-y-servidor" id="toc-cliente-y-servidor" class="nav-link" data-scroll-target="#cliente-y-servidor"><span class="header-section-number">44</span> Cliente y servidor</a></li>
-  <li><a href="#tools-resources-y-prompts" id="toc-tools-resources-y-prompts" class="nav-link" data-scroll-target="#tools-resources-y-prompts"><span class="header-section-number">45</span> <em>Tools</em>, <em>resources</em> y <em>prompts</em></a></li>
-  <li><a href="#descubrimiento" id="toc-descubrimiento" class="nav-link" data-scroll-target="#descubrimiento"><span class="header-section-number">46</span> Descubrimiento</a></li>
-  <li><a href="#contexto-no-significa-contexto-ilimitado" id="toc-contexto-no-significa-contexto-ilimitado" class="nav-link" data-scroll-target="#contexto-no-significa-contexto-ilimitado"><span class="header-section-number">47</span> Contexto no significa contexto ilimitado</a></li>
-  <li><a href="#seguridad-y-confianza" id="toc-seguridad-y-confianza" class="nav-link" data-scroll-target="#seguridad-y-confianza"><span class="header-section-number">48</span> Seguridad y confianza</a></li>
-  <li><a href="#mcp-como-mecanismo-no-como-dependencia-conceptual" id="toc-mcp-como-mecanismo-no-como-dependencia-conceptual" class="nav-link" data-scroll-target="#mcp-como-mecanismo-no-como-dependencia-conceptual"><span class="header-section-number">49</span> MCP como mecanismo, no como dependencia conceptual</a></li>
+<li><a href="#un-protocolo-para-conectar-capacidades" id="toc-un-protocolo-para-conectar-capacidades" class="nav-link active" data-scroll-target="#un-protocolo-para-conectar-capacidades"><span class="header-section-number">59</span> Un protocolo para conectar capacidades</a></li>
+  <li><a href="#cliente-y-servidor" id="toc-cliente-y-servidor" class="nav-link" data-scroll-target="#cliente-y-servidor"><span class="header-section-number">60</span> Cliente y servidor</a></li>
+  <li><a href="#tools-resources-y-prompts" id="toc-tools-resources-y-prompts" class="nav-link" data-scroll-target="#tools-resources-y-prompts"><span class="header-section-number">61</span> <em>Tools</em>, <em>resources</em> y <em>prompts</em></a></li>
+  <li><a href="#descubrimiento" id="toc-descubrimiento" class="nav-link" data-scroll-target="#descubrimiento"><span class="header-section-number">62</span> Descubrimiento</a></li>
+  <li><a href="#contexto-no-significa-contexto-ilimitado" id="toc-contexto-no-significa-contexto-ilimitado" class="nav-link" data-scroll-target="#contexto-no-significa-contexto-ilimitado"><span class="header-section-number">63</span> Contexto no significa contexto ilimitado</a></li>
+  <li><a href="#seguridad-y-confianza" id="toc-seguridad-y-confianza" class="nav-link" data-scroll-target="#seguridad-y-confianza"><span class="header-section-number">64</span> Seguridad y confianza</a></li>
+  <li><a href="#mcp-como-mecanismo-no-como-dependencia-conceptual" id="toc-mcp-como-mecanismo-no-como-dependencia-conceptual" class="nav-link" data-scroll-target="#mcp-como-mecanismo-no-como-dependencia-conceptual"><span class="header-section-number">65</span> MCP como mecanismo, no como dependencia conceptual</a></li>
   </ul></nav>
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/06-mcp.html"><span class="chapter-number">42</span>  <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/06-mcp.html"><span class="chapter-number">58</span>  <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">6</span>  <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span>
@@ -1704,37 +1838,37 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="un-protocolo-para-conectar-capacidades" class="level1" data-number="43"><h1 data-number="43">
+</header><section id="un-protocolo-para-conectar-capacidades" class="level1" data-number="59"><h1 data-number="59">
 <span class="header-section-number">6.1</span> Un protocolo para conectar capacidades</h1>
 <p>Cuando cada aplicación integra herramientas, fuentes de información y servicios externos mediante interfaces propias, el coste de conexión crece rápidamente. Un agente necesita conocer cada integración y cada proveedor debe construir adaptaciones para numerosos clientes. MCP, <em>Model Context Protocol</em>, aborda este problema definiendo una forma común de exponer determinadas capacidades a aplicaciones que trabajan con modelos.</p>
 <p>MCP es importante porque introduce una frontera explícita entre la aplicación que utiliza el modelo y los servidores que ofrecen capacidades o información. Sin embargo, no debemos confundir el protocolo con la arquitectura completa de un IISS. MCP resuelve un problema de integración. No define por sí solo cómo debe organizarse una metodología, qué <em>definitions</em> necesita un proyecto, qué <em>workflows</em> deben ejecutarse o qué decisiones requieren aprobación.</p>
-</section><section id="cliente-y-servidor" class="level1" data-number="44"><h1 data-number="44">
+</section><section id="cliente-y-servidor" class="level1" data-number="60"><h1 data-number="60">
 <span class="header-section-number">6.2</span> Cliente y servidor</h1>
 <p>En una integración MCP existe una parte cliente que participa en la aplicación y una parte servidor que publica capacidades. La aplicación puede descubrir qué ofrece el servidor y utilizar esas capacidades sin que cada una necesite una interfaz exclusiva diseñada para ese agente.</p>
 <p>Esta separación permite que un mismo servidor pueda ser utilizado por clientes diferentes y que un agente pueda conectarse a varios servidores. También facilita aislar credenciales, permisos y dependencias específicas fuera del núcleo que mantiene la conversación con el modelo.</p>
 <p>Desde nuestra perspectiva, MCP puede ser uno de los mecanismos utilizados por los <em>adapters</em> para materializar componentes canónicos. No todos los componentes tienen que convertirse en elementos MCP, ni todas las plataformas necesitan utilizar MCP para ser compatibles con el modelo conceptual.</p>
-</section><section id="tools-resources-y-prompts" class="level1" data-number="45"><h1 data-number="45">
+</section><section id="tools-resources-y-prompts" class="level1" data-number="61"><h1 data-number="61">
 <span class="header-section-number">6.3</span> <em>Tools</em>, <em>resources</em> y <em>prompts</em>
 </h1>
 <p>MCP distingue categorías como <em>tools</em>, <em>resources</em> y <em>prompts</em>. Las herramientas representan operaciones invocables; los recursos permiten exponer información; los <em>prompts</em> ofrecen contenidos reutilizables que el cliente puede utilizar para construir interacciones.</p>
 <p>Estas categorías son útiles, pero no deben obligarnos a reducir toda la arquitectura a ellas. Una <em>skill</em> puede necesitar instrucciones, ejemplos, archivos y herramientas; una <em>definition</em> puede vivir en el proyecto y no ser un recurso remoto; un <em>command</em> puede representar una intención de negocio que posteriormente utilice varias herramientas MCP.</p>
 <p>La taxonomía del protocolo describe lo que se intercambia a través de esa frontera. Nuestra taxonomía describe lo que el IISS necesita conceptualmente.</p>
-</section><section id="descubrimiento" class="level1" data-number="46"><h1 data-number="46">
+</section><section id="descubrimiento" class="level1" data-number="62"><h1 data-number="62">
 <span class="header-section-number">6.4</span> Descubrimiento</h1>
 <p>Una de las ventajas del protocolo es el descubrimiento. La aplicación puede consultar qué capacidades ofrece un servidor en lugar de codificarlas todas de antemano. Esta propiedad resulta especialmente útil cuando el entorno cambia o cuando diferentes proyectos disponen de integraciones distintas.</p>
 <p>El descubrimiento no elimina la necesidad de control. Que una capacidad pueda descubrirse no significa que deba exponerse siempre al modelo ni que esté autorizada para cualquier usuario. La aplicación sigue siendo responsable de decidir qué servidores conecta, qué capacidades habilita y bajo qué permisos se ejecutan.</p>
 <p>También debe gestionar cambios de versión. Una herramienta puede modificar sus parámetros o un recurso puede dejar de existir. La capa de integración necesita detectar estas variaciones antes de asumir que el comportamiento permanece estable.</p>
-</section><section id="contexto-no-significa-contexto-ilimitado" class="level1" data-number="47"><h1 data-number="47">
+</section><section id="contexto-no-significa-contexto-ilimitado" class="level1" data-number="63"><h1 data-number="63">
 <span class="header-section-number">6.5</span> Contexto no significa contexto ilimitado</h1>
 <p>El nombre del protocolo puede sugerir que cualquier información externa debe incorporarse al contexto del modelo. No es así. El sistema puede descubrir un recurso, consultarlo y seleccionar únicamente aquello que resulte relevante para la tarea. El contexto sigue siendo limitado y debe construirse con criterio.</p>
 <p>Una integración que vuelca grandes cantidades de datos en cada petición puede empeorar el comportamiento aunque técnicamente proporcione más información. La arquitectura necesita mecanismos de selección, resumen, filtrado y procedencia.</p>
 <p>MCP facilita el acceso. La decisión sobre qué incorporar pertenece a la aplicación, a las <em>skills</em>, a los <em>workflows</em> y a las políticas del sistema.</p>
-</section><section id="seguridad-y-confianza" class="level1" data-number="48"><h1 data-number="48">
+</section><section id="seguridad-y-confianza" class="level1" data-number="64"><h1 data-number="64">
 <span class="header-section-number">6.6</span> Seguridad y confianza</h1>
 <p>Conectar un servidor MCP equivale a incorporar una nueva frontera de confianza. El servidor puede ofrecer herramientas con efectos, recursos sensibles o instrucciones que influyen en la interacción. Por tanto, la selección de servidores, la autenticación, los permisos y la revisión de las capacidades expuestas forman parte de la seguridad del IISS.</p>
 <p>También conviene mantener separadas las instrucciones normativas del sistema y el contenido que llega desde una integración. Un servidor puede proporcionar información útil, pero esa información no debería adquirir automáticamente la misma autoridad que las políticas del proyecto.</p>
 <p>La arquitectura debe conocer qué parte del contexto procede de MCP y qué permisos estaban activos cuando se produjo una operación.</p>
-</section><section id="mcp-como-mecanismo-no-como-dependencia-conceptual" class="level1" data-number="49"><h1 data-number="49">
+</section><section id="mcp-como-mecanismo-no-como-dependencia-conceptual" class="level1" data-number="65"><h1 data-number="65">
 <span class="header-section-number">6.7</span> MCP como mecanismo, no como dependencia conceptual</h1>
 <p>Un IISS puede utilizar MCP intensamente y seguir necesitando <em>commands</em>, <em>definitions</em>, <em>skills</em>, <em>workflows</em>, validaciones y <em>adapters</em>. También puede implementar parte de esas funciones sin MCP. Esta independencia es saludable porque evita convertir una tecnología de integración en el modelo completo del sistema.</p>
 <p>IASI puede decidir que determinados <em>adapters</em> utilicen MCP cuando la plataforma lo soporte y otra interfaz cuando no lo haga. La metodología conserva así los mismos componentes y delega en la capa de adaptación la forma concreta de conectarlos.</p>
@@ -2141,12 +2275,12 @@ ul.task-list li input[type="checkbox"] {
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/30-components/05-tools.html" class="pagination-link" aria-label="*Tools*">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">41</span>  <span class="chapter-title"><em>Tools</em></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">57</span>  <span class="chapter-title"><em>Tools</em></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/30-components/07-resources.html" class="pagination-link" aria-label="*Resources*">
-        <span class="nav-page-text"><span class="chapter-number">43</span>  <span class="chapter-title"><em>Resources</em></span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">59</span>  <span class="chapter-title"><em>Resources</em></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2156,7 +2290,7 @@ ul.task-list li input[type="checkbox"] {
 <p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
 </div>   
     <div class="nav-footer-center">
-<p><span id="iasi-publish-date">Publicado: 23/08/2026</span></p>
+<p><span id="iasi-publish-date">Publicado: 24/08/2026</span></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

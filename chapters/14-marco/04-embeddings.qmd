@@ -1,4 +1,6 @@
-# Embeddings
+---
+title: "Embeddings"
+---
 
 En el apartado dedicado a los tokens vimos que el texto se divide en unidades y que cada token recibe un identificador numérico.
 

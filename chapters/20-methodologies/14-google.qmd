@@ -1,4 +1,6 @@
-# Google
+---
+title: "Google"
+---
 
 A finales de los años noventa y comienzos de los dos mil, Google empezó a encontrarse con problemas que muy pocas empresas habían tenido que resolver antes en condiciones reales. La Web crecía a una velocidad extraordinaria y un buscador debía recorrerla, almacenar enormes cantidades de información, construir índices sobre ella y responder después a millones de consultas con tiempos aceptables. Muchos de los problemas técnicos implicados no eran completamente nuevos desde el punto de vista académico: la computación distribuida, el procesamiento paralelo, la tolerancia a fallos o la partición de datos llevaban años siendo estudiados. Lo novedoso era tener que resolverlos todos simultáneamente, de forma continua y a una escala que hasta entonces apenas había salido del terreno teórico o de determinados centros de investigación.
 

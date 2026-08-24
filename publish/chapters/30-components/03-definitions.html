@@ -3,17 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>IASI Vol. I</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -26,9 +29,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../chapters/30-components/04-commands.html" rel="next">
 <link href="../../chapters/30-components/02-instructions.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script><script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5fcceb720d2abbc69bfe760bb224a836.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d6394c5e0414a18db7c9a0fae3ef3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><div id="quarto-announcement" data-announcement-id="e09f38cd2465ea4345c0e7abe9a41735" class="alert alert-primary hidden"><div class="quarto-announcement-content">
-<p><img src="../..\resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
+<p><img src="../../resources/images/ants.png" class="iasi-ants-image img-fluid"></p>
 </div></div>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -96,6 +99,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../chapters/20-methodologies/index.html"> 
+<span class="menu-text">Metodologias</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chapters/25-organization/index.html"> 
 <span class="menu-text">Metodologias</span></a>
   </li>  
   <li class="nav-item">
@@ -137,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/03-definitions.html"><span class="chapter-number">39</span>  <span class="chapter-title"><em>Definitions</em></span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/03-definitions.html"><span class="chapter-number">55</span>  <span class="chapter-title"><em>Definitions</em></span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1234,13 +1241,140 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VI Componentes de los IISS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a href="../../chapters/25-organization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VI Organización y estructuración</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/01-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Organización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0101-organizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Organizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0102-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0102-fractal-html" class="collapse list-unstyled sidebar-section depth2">
+<li class="sidebar-item-section">
+<a href="../../chapters/25-organization/0102-fractal.html#la-organizaci%C3%B3n-fractal" id="toc-la-organización-fractal" class="nav-link active" data-scroll-target="#la-organización-fractal"><span class="header-section-number">3.1</span> La organización fractal</a>
+  <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-25-organization-0102-fractal-html-1">
+<li><a href="../../chapters/25-organization/0102-fractal.html#el-patr%C3%B3n-organizativo" id="toc-el-patrón-organizativo" class="nav-link" data-scroll-target="#el-patrón-organizativo"><span class="header-section-number">3.1.1</span> El patrón organizativo</a></li>
+  </ul>
+<a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0102-fractal-html-1" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0102-fractal-html-1" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0103-division-of-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">División del trabajo</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0103-division-of-work-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0103-division-of-work-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0103-division-of-work.html#la-divisi%C3%B3n-del-trabajo" id="toc-la-división-del-trabajo" class="nav-link active" data-scroll-target="#la-división-del-trabajo"><span class="header-section-number">4.1</span> La división del trabajo</a></li>
+  <li><a href="../../chapters/25-organization/0103-division-of-work.html#paso-1-identificaci%C3%B3n-de-procesos" id="toc-paso-1-identificación-de-procesos" class="nav-link" data-scroll-target="#paso-1-identificación-de-procesos"><span class="header-section-number">4.2</span> Paso 1: Identificación de procesos</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0104-specialization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">Especialización y reutilización</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-25-organization-0104-specialization-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-25-organization-0104-specialization-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-25-organization-0104-specialization-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/25-organization/0104-specialization.html#divisi%C3%B3n-de-procesos-y-especializaci%C3%B3n" id="toc-división-de-procesos-y-especialización" class="nav-link active" data-scroll-target="#división-de-procesos-y-especialización"><span class="header-section-number">5.1</span> División de procesos y especialización</a></li>
+  <li><a href="../../chapters/25-organization/0104-specialization.html#paso-3-diversificacion-y-reutilizaci%C3%B3n" id="toc-paso-3-diversificacion-y-reutilización" class="nav-link" data-scroll-target="#paso-3-diversificacion-y-reutilización"><span class="header-section-number">5.2</span> Paso 3: Diversificacion y reutilización</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/0105-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">Estructura organizativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/02-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">Estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/03-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/04-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Equipos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/05-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Roles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/06-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Capacidades</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/07-responsibilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Responsabilidades y autoridad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/08-dynamic-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Roles dinámicos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/09-career.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Evolución profesional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/10-human-iiss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Humanos y Sistemas Inteligentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/25-organization/11-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../chapters/30-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VII Componentes de los IISS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/30-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
@@ -1525,12 +1659,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">VII Saco</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+ <span class="menu-text">VIII Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/00-construccion.html" class="sidebar-item-text sidebar-link">
@@ -1651,7 +1785,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../901-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">62</span>  <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">78</span>  <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1674,18 +1808,18 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-<li><a href="#representar-lo-que-el-sistema-ha-entendido" id="toc-representar-lo-que-el-sistema-ha-entendido" class="nav-link active" data-scroll-target="#representar-lo-que-el-sistema-ha-entendido"><span class="header-section-number">40</span> Representar lo que el sistema ha entendido</a></li>
-  <li><a href="#una-representaci%C3%B3n-no-es-una-transcripci%C3%B3n" id="toc-una-representación-no-es-una-transcripción" class="nav-link" data-scroll-target="#una-representación-no-es-una-transcripción"><span class="header-section-number">41</span> Una representación no es una transcripción</a></li>
-  <li><a href="#estructura-estado-y-significado" id="toc-estructura-estado-y-significado" class="nav-link" data-scroll-target="#estructura-estado-y-significado"><span class="header-section-number">42</span> Estructura, estado y significado</a></li>
-  <li><a href="#definitions-y-especificaciones" id="toc-definitions-y-especificaciones" class="nav-link" data-scroll-target="#definitions-y-especificaciones"><span class="header-section-number">43</span> <em>Definitions</em> y especificaciones</a></li>
-  <li><a href="#calidad-y-validaci%C3%B3n" id="toc-calidad-y-validación" class="nav-link" data-scroll-target="#calidad-y-validación"><span class="header-section-number">44</span> Calidad y validación</a></li>
-  <li><a href="#un-contrato-com%C3%BAn-entre-componentes" id="toc-un-contrato-común-entre-componentes" class="nav-link" data-scroll-target="#un-contrato-común-entre-componentes"><span class="header-section-number">45</span> Un contrato común entre componentes</a></li>
+<li><a href="#representar-lo-que-el-sistema-ha-entendido" id="toc-representar-lo-que-el-sistema-ha-entendido" class="nav-link active" data-scroll-target="#representar-lo-que-el-sistema-ha-entendido"><span class="header-section-number">56</span> Representar lo que el sistema ha entendido</a></li>
+  <li><a href="#una-representaci%C3%B3n-no-es-una-transcripci%C3%B3n" id="toc-una-representación-no-es-una-transcripción" class="nav-link" data-scroll-target="#una-representación-no-es-una-transcripción"><span class="header-section-number">57</span> Una representación no es una transcripción</a></li>
+  <li><a href="#estructura-estado-y-significado" id="toc-estructura-estado-y-significado" class="nav-link" data-scroll-target="#estructura-estado-y-significado"><span class="header-section-number">58</span> Estructura, estado y significado</a></li>
+  <li><a href="#definitions-y-especificaciones" id="toc-definitions-y-especificaciones" class="nav-link" data-scroll-target="#definitions-y-especificaciones"><span class="header-section-number">59</span> <em>Definitions</em> y especificaciones</a></li>
+  <li><a href="#calidad-y-validaci%C3%B3n" id="toc-calidad-y-validación" class="nav-link" data-scroll-target="#calidad-y-validación"><span class="header-section-number">60</span> Calidad y validación</a></li>
+  <li><a href="#un-contrato-com%C3%BAn-entre-componentes" id="toc-un-contrato-común-entre-componentes" class="nav-link" data-scroll-target="#un-contrato-común-entre-componentes"><span class="header-section-number">61</span> Un contrato común entre componentes</a></li>
   </ul></nav>
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/30-components/index.html">Componentes de los IISS</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/30-components/03-definitions.html"><span class="chapter-number">39</span>  <span class="chapter-title"><em>Definitions</em></span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/30-components/03-definitions.html"><span class="chapter-number">55</span>  <span class="chapter-title"><em>Definitions</em></span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">3</span>  <span class="chapter-title"><em>Definitions</em></span>
@@ -1703,32 +1837,32 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="representar-lo-que-el-sistema-ha-entendido" class="level1" data-number="40"><h1 data-number="40">
+</header><section id="representar-lo-que-el-sistema-ha-entendido" class="level1" data-number="56"><h1 data-number="56">
 <span class="header-section-number">3.1</span> Representar lo que el sistema ha entendido</h1>
 <p>Una conversación puede contener gran cantidad de información útil, pero no constituye necesariamente una representación estable del problema. Las decisiones aparecen mezcladas con dudas, alternativas descartadas, ejemplos, correcciones y razonamientos provisionales. Si un IISS debe trabajar de forma repetible sobre ese conocimiento, necesita una forma de convertir parte de la conversación y de otras fuentes en una representación más estructurada. A esa categoría la llamaremos <em>definitions</em>.</p>
 <p>Una <em>definition</em> expresa aquello que el sistema considera establecido sobre una entidad, una necesidad, una interfaz, una restricción, una decisión o cualquier otro elemento relevante para el trabajo. No tiene que adoptar un formato único. Puede materializarse como YAML, JSON, texto estructurado, una especificación, un esquema, un manifiesto o varios documentos relacionados. Lo importante no es la sintaxis, sino la función: ofrecer una representación explícita y persistente de lo que se ha entendido.</p>
 <p>Este concepto resulta especialmente útil cuando diferenciamos la información de entrada de la interpretación realizada sobre ella. Un correo, una conversación, una incidencia o un documento pueden aportar información. La <em>definition</em> no necesita copiarlos literalmente; debe representar de forma adecuada aquello que el sistema necesita conservar y utilizar.</p>
-</section><section id="una-representación-no-es-una-transcripción" class="level1" data-number="41"><h1 data-number="41">
+</section><section id="una-representación-no-es-una-transcripción" class="level1" data-number="57"><h1 data-number="57">
 <span class="header-section-number">3.2</span> Una representación no es una transcripción</h1>
 <p>Si cada entrada produjera una <em>definition</em> idéntica, simplemente habríamos creado otro almacenamiento de documentos. La utilidad aparece cuando el sistema integra varias fuentes, elimina ruido, identifica relaciones y expresa el resultado en una forma apropiada para posteriores operaciones.</p>
 <p>Una misma <em>definition</em> puede derivarse de varias entradas y una entrada puede contribuir a varias <em>definitions</em>. Una decisión sobre una interfaz puede afectar a la descripción de un componente, a sus validaciones y a un <em>workflow</em> de despliegue. Esta relación de muchos a muchos refleja mejor cómo se construye conocimiento en proyectos reales.</p>
 <p>La transformación tampoco debe ocultar la procedencia. Cuando una <em>definition</em> contiene una afirmación relevante, el sistema debería poder conocer de dónde procede y, cuando sea necesario, volver a la fuente original. Estructurar información no significa borrar su historia.</p>
-</section><section id="estructura-estado-y-significado" class="level1" data-number="42"><h1 data-number="42">
+</section><section id="estructura-estado-y-significado" class="level1" data-number="58"><h1 data-number="58">
 <span class="header-section-number">3.3</span> Estructura, estado y significado</h1>
 <p>Las <em>definitions</em> pueden representar tanto estructura como estado. Una puede describir los campos que debe tener un artefacto; otra puede indicar qué decisiones han sido aceptadas; otra puede representar las capacidades requeridas de un componente. En todos los casos ofrecen algo que una conversación aislada no garantiza: una forma de consultar el conocimiento del proyecto sin reconstruirlo desde cero.</p>
 <p>Esto permite que otros componentes trabajen sobre una base común. Un <em>command</em> puede solicitar «validar esta <em>definition</em>». Una <em>skill</em> puede explicar cómo transformarla en código. Una <em>template</em> puede establecer la forma del artefacto que debe generarse. Un <em>workflow</em> puede utilizar su estado para decidir qué paso ejecutar a continuación.</p>
 <p>La existencia de una representación canónica también facilita comparar implementaciones. Si dos agentes reciben la misma <em>definition</em> y producen resultados diferentes, podemos analizar la diferencia sin confundirla con interpretaciones divergentes de una conversación extensa.</p>
-</section><section id="definitions-y-especificaciones" class="level1" data-number="43"><h1 data-number="43">
+</section><section id="definitions-y-especificaciones" class="level1" data-number="59"><h1 data-number="59">
 <span class="header-section-number">3.4</span> <em>Definitions</em> y especificaciones</h1>
 <p>El término especificación suele asociarse a documentos que describen requisitos, interfaces o comportamiento esperado. Una <em>definition</em> puede desempeñar esa función, pero el concepto es deliberadamente más amplio. Puede existir antes de que la información tenga suficiente madurez para convertirse en una especificación formal y puede representar elementos que no solemos llamar requisitos.</p>
 <p>Por ejemplo, una <em>definition</em> podría describir qué formatos soporta un sistema, qué repositorios forman un producto, qué convenciones se han acordado o qué capacidades necesita un <em>adapter</em>. La metodología decidirá posteriormente qué clases de <em>definitions</em> existen y cuáles requieren validaciones particulares.</p>
 <p>Separar el concepto general de su taxonomía concreta permite que esta parte del libro explique la necesidad arquitectónica sin anticipar las decisiones de IASI sobre cómo debe organizarse un proyecto.</p>
-</section><section id="calidad-y-validación" class="level1" data-number="44"><h1 data-number="44">
+</section><section id="calidad-y-validación" class="level1" data-number="60"><h1 data-number="60">
 <span class="header-section-number">3.5</span> Calidad y validación</h1>
 <p>Una representación estructurada es útil únicamente si podemos confiar en ella. Las <em>definitions</em> deberían admitir validaciones sintácticas y semánticas. La primera comprueba que la estructura es correcta; la segunda analiza si su contenido tiene sentido respecto al dominio y a otras <em>definitions</em>.</p>
 <p>También conviene distinguir entre ausencia de información e información negativa. Si una capacidad no se ha definido, el sistema no debería asumir automáticamente que está prohibida o que no existe. Esta diferencia, aparentemente pequeña, afecta a la forma en que los IISS razonan sobre configuraciones incompletas.</p>
 <p>La evolución plantea otra cuestión. Una <em>definition</em> puede cambiar cuando aparecen nuevas entradas o cuando una decisión se revisa. El sistema necesita saber si está actualizando una representación existente, creando una nueva versión o contradiciendo información anterior. La trazabilidad y el control de cambios son por ello parte natural del concepto.</p>
-</section><section id="un-contrato-común-entre-componentes" class="level1" data-number="45"><h1 data-number="45">
+</section><section id="un-contrato-común-entre-componentes" class="level1" data-number="61"><h1 data-number="61">
 <span class="header-section-number">3.6</span> Un contrato común entre componentes</h1>
 <p>Las <em>definitions</em> pueden actuar como contrato entre conocimiento y ejecución. Las conversaciones, documentos y otras entradas proporcionan información; las <em>definitions</em> la estabilizan; los <em>commands</em>, <em>skills</em>, <em>workflows</em> y herramientas actúan sobre ella. Esta separación evita que cada componente tenga que interpretar de nuevo todas las fuentes originales.</p>
 <p>Las implementaciones pueden utilizar otros nombres. Un producto puede hablar de especificaciones, esquemas, estado estructurado o archivos de proyecto. Un <em>adapter</em> será responsable de traducir esas posibilidades a la categoría canónica. Lo que no cambia es la necesidad de disponer de una representación explícita del conocimiento operativo sobre el que trabaja el IISS.</p>
@@ -2135,12 +2269,12 @@ ul.task-list li input[type="checkbox"] {
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/30-components/02-instructions.html" class="pagination-link" aria-label="Instrucciones">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">38</span>  <span class="chapter-title">Instrucciones</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">54</span>  <span class="chapter-title">Instrucciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/30-components/04-commands.html" class="pagination-link" aria-label="*Commands*">
-        <span class="nav-page-text"><span class="chapter-number">40</span>  <span class="chapter-title"><em>Commands</em></span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">56</span>  <span class="chapter-title"><em>Commands</em></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2150,7 +2284,7 @@ ul.task-list li input[type="checkbox"] {
 <p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
 </div>   
     <div class="nav-footer-center">
-<p><span id="iasi-publish-date">Publicado: 23/08/2026</span></p>
+<p><span id="iasi-publish-date">Publicado: 24/08/2026</span></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

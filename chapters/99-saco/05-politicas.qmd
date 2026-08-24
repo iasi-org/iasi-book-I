@@ -1,4 +1,6 @@
-# Políticas
+---
+title: "Políticas"
+---
 
 Este documento recoge las políticas y criterios utilizados durante el desarrollo de **Ingeniería de Sistemas Inteligentes**.
 

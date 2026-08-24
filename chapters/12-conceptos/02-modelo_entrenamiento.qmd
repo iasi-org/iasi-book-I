@@ -2,14 +2,12 @@
 title: "Conceptos fundamentales de los sistemas inteligente"
 ---
 
-# Modelo, entrenamiento e inferencia
-
+## Modelo, entrenamiento e inferencia
 Para comprender cómo funciona un sistema inteligente basado en aprendizaje automático, necesitamos distinguir tres conceptos fundamentales: **modelo**, **entrenamiento** e **inferencia**.
 
 Estos términos aparecen constantemente al hablar de inteligencia artificial, pero con frecuencia se utilizan como si fueran equivalentes. No lo son. Cada uno describe una parte diferente del ciclo de construcción y utilización de un sistema.
 
-## Modelo
-
+### Modelo
 Un modelo es una representación matemática capaz de transformar unas entradas en un resultado.
 
 Puede recibir, por ejemplo:
@@ -29,8 +27,7 @@ Un modelo no es, por sí solo, un sistema inteligente completo. Es un componente
 
 El sistema completo debe encargarse además de proporcionar los datos, validar las entradas, interpretar los resultados, aplicar reglas, controlar las acciones y gestionar los posibles errores.
 
-## Parámetros
-
+### Parámetros
 Los parámetros son los valores internos que determinan cómo transforma el modelo una entrada en un resultado.
 
 Durante el entrenamiento, estos valores se modifican progresivamente para mejorar el comportamiento del modelo en una tarea determinada.
@@ -49,8 +46,7 @@ Los parámetros no deben confundirse con la información que proporcionamos al u
 
 Esta diferencia será especialmente importante al estudiar los modelos de lenguaje.
 
-## Entrenamiento
-
+### Entrenamiento
 El entrenamiento es el proceso mediante el cual se ajustan los parámetros del modelo.
 
 Durante este proceso, el modelo recibe ejemplos y produce resultados. Estos resultados se comparan con el comportamiento esperado mediante una medida de error.
@@ -73,8 +69,7 @@ El entrenamiento suele ser la fase más costosa del ciclo de vida de un modelo. 
 
 Una vez finalizado, el resultado es un modelo cuyos parámetros han quedado ajustados.
 
-## Inferencia
-
+### Inferencia
 La inferencia es el proceso de utilizar un modelo ya entrenado para obtener un resultado.
 
 Cuando un modelo clasifica una imagen, estima el riesgo de una operación o genera una respuesta, está realizando una inferencia.
@@ -95,8 +90,7 @@ Esta distinción es fundamental:
 
 Que un modelo recuerde información dentro de una conversación no significa que esa información se haya incorporado permanentemente a sus parámetros.
 
-## Entrenamiento e inferencia dentro del sistema
-
+### Entrenamiento e inferencia dentro del sistema
 En un sistema inteligente, el entrenamiento y la inferencia pueden producirse en entornos y momentos completamente distintos.
 
 El modelo puede entrenarse en una infraestructura especializada y distribuirse posteriormente para su utilización en servidores, dispositivos móviles, vehículos o sistemas industriales.
@@ -115,8 +109,7 @@ En ese caso, el ingeniero no controla necesariamente el entrenamiento original, 
 
 Utilizar un modelo entrenado por terceros no elimina las responsabilidades de diseño e integración.
 
-## Una distinción esencial
-
+### Una distinción esencial
 Podemos resumir estos conceptos de la siguiente forma:
 
 | Concepto      | Función                                              |
