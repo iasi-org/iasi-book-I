@@ -1,6 +1,6 @@
 {
   "exports": [
-    {"profile": "pdf", "text": "PDF", "icon": "file-earmark-pdf", "href": "../pdf/IASI_Vol_I.pdf"},
-    {"profile": "epub", "text": "eBook", "icon": "book", "href": "../epub/IASI_Vol_I.epub"}
+    {"profile": "pdf", "text": "PDF", "icon": "file-earmark-pdf", "href": "pdf/IASI_Vol_I.pdf"},
+    {"profile": "epub", "text": "eBook", "icon": "book", "href": "epub/IASI_Vol_I.epub"}
   ]
 }
