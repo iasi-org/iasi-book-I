@@ -41,9 +41,7 @@ book:
         href: chapters/25-organization/index.qmd
       - text: "Componentes"
         href: chapters/30-components/index.qmd
-      - text: "Saco"
-        href: chapters/99-saco/index.qmd
-        
+
     right:
       - icon: download 
         text: "Guardar ..."
