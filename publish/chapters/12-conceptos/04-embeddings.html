@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/04-embeddings.html"><span class="chapter-number">12</span>  <span class="chapter-title">Embeddings</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/04-embeddings.html"><span class="chapter-number">13</span>  <span class="chapter-title">Embeddings</span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -313,6 +313,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <ul id="iasi-sidebar--chapters-11-intro-08-llm-html" class="collapse list-unstyled sidebar-section depth2">
 <li><a href="../../chapters/11-intro/08-llm.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">8.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/11-intro/09-basura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Large Language Models</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-11-intro-09-basura-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-11-intro-09-basura-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-11-intro-09-basura-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/11-intro/09-basura.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">9.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
   </ul>
 </li>
       </ul>
@@ -1828,19 +1838,19 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
 <li>
-<a href="#representar-significado-mediante-n%C3%BAmeros" id="toc-representar-significado-mediante-números" class="nav-link active" data-scroll-target="#representar-significado-mediante-números"><span class="header-section-number">12.1</span> Representar significado mediante números”</a>
+<a href="#representar-significado-mediante-n%C3%BAmeros" id="toc-representar-significado-mediante-números" class="nav-link active" data-scroll-target="#representar-significado-mediante-números"><span class="header-section-number">13.1</span> Representar significado mediante números”</a>
   <ul class="collapse">
-<li><a href="#qu%C3%A9-es-un-embedding" id="toc-qué-es-un-embedding" class="nav-link" data-scroll-target="#qué-es-un-embedding"><span class="header-section-number">12.1.1</span> Qué es un embedding</a></li>
-  <li><a href="#un-espacio-de-representaciones" id="toc-un-espacio-de-representaciones" class="nav-link" data-scroll-target="#un-espacio-de-representaciones"><span class="header-section-number">12.1.2</span> Un espacio de representaciones</a></li>
-  <li><a href="#del-identificador-al-embedding" id="toc-del-identificador-al-embedding" class="nav-link" data-scroll-target="#del-identificador-al-embedding"><span class="header-section-number">12.1.3</span> Del identificador al embedding</a></li>
-  <li><a href="#similitud-entre-embeddings" id="toc-similitud-entre-embeddings" class="nav-link" data-scroll-target="#similitud-entre-embeddings"><span class="header-section-number">12.1.4</span> Similitud entre embeddings</a></li>
-  <li><a href="#similitud-no-significa-identidad" id="toc-similitud-no-significa-identidad" class="nav-link" data-scroll-target="#similitud-no-significa-identidad"><span class="header-section-number">12.1.5</span> Similitud no significa identidad</a></li>
-  <li><a href="#el-significado-depende-del-contexto" id="toc-el-significado-depende-del-contexto" class="nav-link" data-scroll-target="#el-significado-depende-del-contexto"><span class="header-section-number">12.1.6</span> El significado depende del contexto</a></li>
-  <li><a href="#embeddings-iniciales-y-representaciones-contextuales" id="toc-embeddings-iniciales-y-representaciones-contextuales" class="nav-link" data-scroll-target="#embeddings-iniciales-y-representaciones-contextuales"><span class="header-section-number">12.1.7</span> Embeddings iniciales y representaciones contextuales</a></li>
-  <li><a href="#embeddings-de-frases-y-documentos" id="toc-embeddings-de-frases-y-documentos" class="nav-link" data-scroll-target="#embeddings-de-frases-y-documentos"><span class="header-section-number">12.1.8</span> Embeddings de frases y documentos</a></li>
-  <li><a href="#embeddings-dentro-de-un-sistema-inteligente" id="toc-embeddings-dentro-de-un-sistema-inteligente" class="nav-link" data-scroll-target="#embeddings-dentro-de-un-sistema-inteligente"><span class="header-section-number">12.1.9</span> Embeddings dentro de un sistema inteligente</a></li>
-  <li><a href="#una-representaci%C3%B3n-aprendida-no-una-verdad-objetiva" id="toc-una-representación-aprendida-no-una-verdad-objetiva" class="nav-link" data-scroll-target="#una-representación-aprendida-no-una-verdad-objetiva"><span class="header-section-number">12.1.10</span> Una representación aprendida, no una verdad objetiva</a></li>
-  <li><a href="#de-representar-a-relacionar" id="toc-de-representar-a-relacionar" class="nav-link" data-scroll-target="#de-representar-a-relacionar"><span class="header-section-number">12.1.11</span> De representar a relacionar</a></li>
+<li><a href="#qu%C3%A9-es-un-embedding" id="toc-qué-es-un-embedding" class="nav-link" data-scroll-target="#qué-es-un-embedding"><span class="header-section-number">13.1.1</span> Qué es un embedding</a></li>
+  <li><a href="#un-espacio-de-representaciones" id="toc-un-espacio-de-representaciones" class="nav-link" data-scroll-target="#un-espacio-de-representaciones"><span class="header-section-number">13.1.2</span> Un espacio de representaciones</a></li>
+  <li><a href="#del-identificador-al-embedding" id="toc-del-identificador-al-embedding" class="nav-link" data-scroll-target="#del-identificador-al-embedding"><span class="header-section-number">13.1.3</span> Del identificador al embedding</a></li>
+  <li><a href="#similitud-entre-embeddings" id="toc-similitud-entre-embeddings" class="nav-link" data-scroll-target="#similitud-entre-embeddings"><span class="header-section-number">13.1.4</span> Similitud entre embeddings</a></li>
+  <li><a href="#similitud-no-significa-identidad" id="toc-similitud-no-significa-identidad" class="nav-link" data-scroll-target="#similitud-no-significa-identidad"><span class="header-section-number">13.1.5</span> Similitud no significa identidad</a></li>
+  <li><a href="#el-significado-depende-del-contexto" id="toc-el-significado-depende-del-contexto" class="nav-link" data-scroll-target="#el-significado-depende-del-contexto"><span class="header-section-number">13.1.6</span> El significado depende del contexto</a></li>
+  <li><a href="#embeddings-iniciales-y-representaciones-contextuales" id="toc-embeddings-iniciales-y-representaciones-contextuales" class="nav-link" data-scroll-target="#embeddings-iniciales-y-representaciones-contextuales"><span class="header-section-number">13.1.7</span> Embeddings iniciales y representaciones contextuales</a></li>
+  <li><a href="#embeddings-de-frases-y-documentos" id="toc-embeddings-de-frases-y-documentos" class="nav-link" data-scroll-target="#embeddings-de-frases-y-documentos"><span class="header-section-number">13.1.8</span> Embeddings de frases y documentos</a></li>
+  <li><a href="#embeddings-dentro-de-un-sistema-inteligente" id="toc-embeddings-dentro-de-un-sistema-inteligente" class="nav-link" data-scroll-target="#embeddings-dentro-de-un-sistema-inteligente"><span class="header-section-number">13.1.9</span> Embeddings dentro de un sistema inteligente</a></li>
+  <li><a href="#una-representaci%C3%B3n-aprendida-no-una-verdad-objetiva" id="toc-una-representación-aprendida-no-una-verdad-objetiva" class="nav-link" data-scroll-target="#una-representación-aprendida-no-una-verdad-objetiva"><span class="header-section-number">13.1.10</span> Una representación aprendida, no una verdad objetiva</a></li>
+  <li><a href="#de-representar-a-relacionar" id="toc-de-representar-a-relacionar" class="nav-link" data-scroll-target="#de-representar-a-relacionar"><span class="header-section-number">13.1.11</span> De representar a relacionar</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -1848,7 +1858,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/04-embeddings.html"><span class="chapter-number">12</span>  <span class="chapter-title">Embeddings</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/04-embeddings.html"><span class="chapter-number">13</span>  <span class="chapter-title">Embeddings</span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">4</span>  <span class="chapter-title">Embeddings</span>
@@ -1866,14 +1876,14 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="representar-significado-mediante-números" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="representar-significado-mediante-números">
+</header><section id="representar-significado-mediante-números" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="representar-significado-mediante-números">
 <span class="header-section-number">4.1</span> Representar significado mediante números”</h2>
 <p>Después de dividir el texto en tokens, cada uno de ellos se identifica mediante un número dentro del vocabulario del modelo.</p>
 <p>Sin embargo, ese identificador solo permite distinguir un token de otro. El número asignado no contiene por sí mismo información sobre su significado, su función o su relación con otros tokens.</p>
 <p>Por ejemplo, que los tokens <em>gato</em> y <em>felino</em> tengan los identificadores 4.215 y 18.732 no indica que ambos conceptos estén relacionados. Los números actúan únicamente como referencias dentro de una tabla.</p>
 <p>Para que el modelo pueda trabajar con semejanzas, diferencias y relaciones, cada token debe transformarse en una representación matemática más rica.</p>
 <p>Esa representación recibe el nombre de <strong>embedding</strong>.</p>
-<section id="qué-es-un-embedding" class="level3" data-number="12.1.1"><h3 data-number="12.1.1" class="anchored" data-anchor-id="qué-es-un-embedding">
+<section id="qué-es-un-embedding" class="level3" data-number="13.1.1"><h3 data-number="13.1.1" class="anchored" data-anchor-id="qué-es-un-embedding">
 <span class="header-section-number">4.1.1</span> Qué es un embedding</h3>
 <p>Un embedding es un conjunto de valores numéricos que representa las características aprendidas de un elemento.</p>
 <p>En un modelo de lenguaje, ese elemento puede ser:</p>
@@ -1890,7 +1900,7 @@ ul.task-list li input[type="checkbox"] {
 <p>En los modelos reales, estas representaciones pueden contener cientos o miles de valores.</p>
 <p>Cada valor individual no suele corresponder a una característica fácilmente interpretable. No existe necesariamente una posición que signifique <em>animal</em>, otra que signifique <em>doméstico</em> y otra que signifique <em>mamífero</em>.</p>
 <p>El significado se encuentra distribuido entre muchas dimensiones y surge de la combinación de todos esos valores.</p>
-</section><section id="un-espacio-de-representaciones" class="level3" data-number="12.1.2"><h3 data-number="12.1.2" class="anchored" data-anchor-id="un-espacio-de-representaciones">
+</section><section id="un-espacio-de-representaciones" class="level3" data-number="13.1.2"><h3 data-number="13.1.2" class="anchored" data-anchor-id="un-espacio-de-representaciones">
 <span class="header-section-number">4.1.2</span> Un espacio de representaciones</h3>
 <p>Los embeddings pueden interpretarse como posiciones dentro de un espacio matemático de muchas dimensiones.</p>
 <p>En ese espacio, los elementos utilizados en contextos parecidos tienden a adquirir representaciones próximas o relacionadas.</p>
@@ -1909,7 +1919,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Significa que, durante el entrenamiento, ha encontrado regularidades en la forma en que esos elementos aparecen y se relacionan dentro de los datos.</p>
 <p>Una idea fundamental de los modelos de lenguaje es que gran parte de la información sobre el significado puede aprenderse observando el uso del lenguaje.</p>
 <p>Las palabras que aparecen en contextos similares suelen desempeñar funciones o expresar conceptos relacionados.</p>
-</section><section id="del-identificador-al-embedding" class="level3" data-number="12.1.3"><h3 data-number="12.1.3" class="anchored" data-anchor-id="del-identificador-al-embedding">
+</section><section id="del-identificador-al-embedding" class="level3" data-number="13.1.3"><h3 data-number="13.1.3" class="anchored" data-anchor-id="del-identificador-al-embedding">
 <span class="header-section-number">4.1.3</span> Del identificador al embedding</h3>
 <p>Cuando el modelo recibe un token, utiliza su identificador para recuperar una representación inicial desde una tabla de embeddings.</p>
 <p>De forma simplificada:</p>
@@ -1927,7 +1937,7 @@ vector de embedding</code></pre>
 <p>Esta transformación convierte un identificador arbitrario en una representación numérica que el modelo puede procesar mediante operaciones matemáticas.</p>
 <p>La tabla de embeddings forma parte de los parámetros del modelo y se ajusta durante el entrenamiento.</p>
 <p>Por tanto, el ingeniero no asigna manualmente los valores asociados a cada token. El modelo los aprende a partir de los datos y del objetivo de entrenamiento.</p>
-</section><section id="similitud-entre-embeddings" class="level3" data-number="12.1.4"><h3 data-number="12.1.4" class="anchored" data-anchor-id="similitud-entre-embeddings">
+</section><section id="similitud-entre-embeddings" class="level3" data-number="13.1.4"><h3 data-number="13.1.4" class="anchored" data-anchor-id="similitud-entre-embeddings">
 <span class="header-section-number">4.1.4</span> Similitud entre embeddings</h3>
 <p>Una de las propiedades más útiles de los embeddings es que permiten medir matemáticamente la proximidad entre representaciones.</p>
 <p>Dos embeddings pueden compararse para estimar si los elementos que representan guardan alguna relación.</p>
@@ -1953,7 +1963,7 @@ vector de embedding</code></pre>
 </ul>
 <p>La búsqueda tradicional suele depender en gran medida de la coincidencia entre términos. La búsqueda mediante embeddings permite comparar representaciones aproximadas de su contenido.</p>
 <p>Por ello, puede encontrar relaciones que no serían evidentes mediante una búsqueda literal.</p>
-</section><section id="similitud-no-significa-identidad" class="level3" data-number="12.1.5"><h3 data-number="12.1.5" class="anchored" data-anchor-id="similitud-no-significa-identidad">
+</section><section id="similitud-no-significa-identidad" class="level3" data-number="13.1.5"><h3 data-number="13.1.5" class="anchored" data-anchor-id="similitud-no-significa-identidad">
 <span class="header-section-number">4.1.5</span> Similitud no significa identidad</h3>
 <p>La proximidad entre embeddings debe interpretarse con precaución.</p>
 <p>Dos representaciones pueden ser cercanas porque comparten:</p>
@@ -1969,7 +1979,7 @@ vector de embedding</code></pre>
 <p>Por ejemplo, <em>médico</em> y <em>hospital</em> pueden aparecer próximos aunque no sean conceptos equivalentes.</p>
 <p>También pueden encontrarse próximos términos opuestos, como <em>frío</em> y <em>caliente</em>, porque aparecen en contextos lingüísticos parecidos.</p>
 <p>Por tanto, la cercanía matemática no constituye una definición exacta del significado. Es una señal aprendida sobre las relaciones presentes en los datos.</p>
-</section><section id="el-significado-depende-del-contexto" class="level3" data-number="12.1.6"><h3 data-number="12.1.6" class="anchored" data-anchor-id="el-significado-depende-del-contexto">
+</section><section id="el-significado-depende-del-contexto" class="level3" data-number="13.1.6"><h3 data-number="13.1.6" class="anchored" data-anchor-id="el-significado-depende-del-contexto">
 <span class="header-section-number">4.1.6</span> El significado depende del contexto</h3>
 <p>Una palabra aislada puede tener varios significados.</p>
 <p>Consideremos el término:</p>
@@ -1999,15 +2009,15 @@ vector de embedding</code></pre>
 <p>Los modelos de lenguaje modernos resuelven este problema construyendo <strong>representaciones contextuales</strong>.</p>
 <p>El embedding inicial proporciona un punto de partida, pero después el modelo lo transforma teniendo en cuenta los demás tokens de la secuencia.</p>
 <p>Así, la representación de <em>banco</em> termina siendo diferente en cada uno de los ejemplos anteriores.</p>
-</section><section id="embeddings-iniciales-y-representaciones-contextuales" class="level3" data-number="12.1.7"><h3 data-number="12.1.7" class="anchored" data-anchor-id="embeddings-iniciales-y-representaciones-contextuales">
+</section><section id="embeddings-iniciales-y-representaciones-contextuales" class="level3" data-number="13.1.7"><h3 data-number="13.1.7" class="anchored" data-anchor-id="embeddings-iniciales-y-representaciones-contextuales">
 <span class="header-section-number">4.1.7</span> Embeddings iniciales y representaciones contextuales</h3>
 <p>Conviene distinguir dos momentos del procesamiento.</p>
-<section id="embedding-inicial" class="level4" data-number="12.1.7.1"><h4 data-number="12.1.7.1" class="anchored" data-anchor-id="embedding-inicial">
-<span class="header-section-number">12.1.7.1</span> Embedding inicial</h4>
+<section id="embedding-inicial" class="level4" data-number="13.1.7.1"><h4 data-number="13.1.7.1" class="anchored" data-anchor-id="embedding-inicial">
+<span class="header-section-number">13.1.7.1</span> Embedding inicial</h4>
 <p>Es la representación que el modelo obtiene al identificar el token.</p>
 <p>En esta fase, el token todavía no ha sido interpretado completamente dentro de la frase.</p>
-</section><section id="representación-contextual" class="level4" data-number="12.1.7.2"><h4 data-number="12.1.7.2" class="anchored" data-anchor-id="representación-contextual">
-<span class="header-section-number">12.1.7.2</span> Representación contextual</h4>
+</section><section id="representación-contextual" class="level4" data-number="13.1.7.2"><h4 data-number="13.1.7.2" class="anchored" data-anchor-id="representación-contextual">
+<span class="header-section-number">13.1.7.2</span> Representación contextual</h4>
 <p>Es la representación resultante después de relacionar el token con los demás elementos del contexto.</p>
 <p>Esta representación incorpora información sobre:</p>
 <ul>
@@ -2020,7 +2030,7 @@ vector de embedding</code></pre>
 <p>Podemos expresarlo de forma simplificada:</p>
 <pre class="text"><code>embedding inicial + contexto → representación contextual</code></pre>
 <p>El modelo no trabaja únicamente con una colección de palabras aisladas. Construye representaciones que evolucionan a medida que la información atraviesa sus distintas capas.</p>
-</section></section><section id="embeddings-de-frases-y-documentos" class="level3" data-number="12.1.8"><h3 data-number="12.1.8" class="anchored" data-anchor-id="embeddings-de-frases-y-documentos">
+</section></section><section id="embeddings-de-frases-y-documentos" class="level3" data-number="13.1.8"><h3 data-number="13.1.8" class="anchored" data-anchor-id="embeddings-de-frases-y-documentos">
 <span class="header-section-number">4.1.8</span> Embeddings de frases y documentos</h3>
 <p>Los embeddings no se utilizan únicamente para representar tokens.</p>
 <p>También pueden generarse representaciones de unidades mayores, como frases o documentos completos.</p>
@@ -2038,7 +2048,7 @@ vector de embedding</code></pre>
 <p>Un sistema puede utilizar esta proximidad para buscar documentos relevantes, clasificar solicitudes o recuperar información que posteriormente será proporcionada a un modelo de lenguaje.</p>
 <p>En estos casos, el embedding no pretende reproducir cada detalle del texto. Produce una representación condensada de algunas de sus características más relevantes.</p>
 <p>Esa condensación implica inevitablemente una pérdida de información. Por ello, un embedding resulta útil para encontrar o comparar contenidos, pero no sustituye al contenido original.</p>
-</section><section id="embeddings-dentro-de-un-sistema-inteligente" class="level3" data-number="12.1.9"><h3 data-number="12.1.9" class="anchored" data-anchor-id="embeddings-dentro-de-un-sistema-inteligente">
+</section><section id="embeddings-dentro-de-un-sistema-inteligente" class="level3" data-number="13.1.9"><h3 data-number="13.1.9" class="anchored" data-anchor-id="embeddings-dentro-de-un-sistema-inteligente">
 <span class="header-section-number">4.1.9</span> Embeddings dentro de un sistema inteligente</h3>
 <p>Los embeddings son una capacidad matemática que puede integrarse en distintos componentes de un sistema inteligente.</p>
 <p>Por ejemplo, un sistema de atención al cliente podría:</p>
@@ -2053,7 +2063,7 @@ vector de embedding</code></pre>
 </ol>
 <p>El embedding no responde a la pregunta ni toma una decisión. Permite localizar información potencialmente relevante.</p>
 <p>De nuevo, observamos la diferencia entre una capacidad concreta y el sistema completo que la utiliza.</p>
-</section><section id="una-representación-aprendida-no-una-verdad-objetiva" class="level3" data-number="12.1.10"><h3 data-number="12.1.10" class="anchored" data-anchor-id="una-representación-aprendida-no-una-verdad-objetiva">
+</section><section id="una-representación-aprendida-no-una-verdad-objetiva" class="level3" data-number="13.1.10"><h3 data-number="13.1.10" class="anchored" data-anchor-id="una-representación-aprendida-no-una-verdad-objetiva">
 <span class="header-section-number">4.1.10</span> Una representación aprendida, no una verdad objetiva</h3>
 <p>Los embeddings se construyen a partir de los datos utilizados durante el entrenamiento.</p>
 <p>Por ello, reflejan:</p>
@@ -2067,7 +2077,7 @@ vector de embedding</code></pre>
 <p>Un espacio de embeddings no constituye una representación neutral y universal del conocimiento.</p>
 <p>Es una representación aprendida para cumplir un objetivo determinado.</p>
 <p>Su utilidad debe evaluarse dentro del sistema concreto, teniendo en cuenta los datos, el dominio, el idioma y las consecuencias de los posibles errores.</p>
-</section><section id="de-representar-a-relacionar" class="level3" data-number="12.1.11"><h3 data-number="12.1.11" class="anchored" data-anchor-id="de-representar-a-relacionar">
+</section><section id="de-representar-a-relacionar" class="level3" data-number="13.1.11"><h3 data-number="13.1.11" class="anchored" data-anchor-id="de-representar-a-relacionar">
 <span class="header-section-number">4.1.11</span> De representar a relacionar</h3>
 <p>Hasta ahora hemos recorrido el siguiente camino:</p>
 <blockquote class="blockquote">
@@ -2483,12 +2493,12 @@ vector de embedding</code></pre>
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/12-conceptos/03-contexto.html" class="pagination-link" aria-label="Contextos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>  <span class="chapter-title">Contextos</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>  <span class="chapter-title">Contextos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/12-conceptos/05-attention.html" class="pagination-link" aria-label="Attention">
-        <span class="nav-page-text"><span class="chapter-number">13</span>  <span class="chapter-title">Attention</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>  <span class="chapter-title">Attention</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

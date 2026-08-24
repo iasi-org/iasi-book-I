@@ -13,6 +13,7 @@ book:
         - "chapters/11-intro/06-dl.qmd"
         - "chapters/11-intro/07-watson.qmd"
         - "chapters/11-intro/08-llm.qmd"
+        - "chapters/11-intro/09-basura.qmd"
     - part: "chapters/12-conceptos/index.qmd"
       chapters:
         - "chapters/12-conceptos/01-sistema_inteligente.qmd"

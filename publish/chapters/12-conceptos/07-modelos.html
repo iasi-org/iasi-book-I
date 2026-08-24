@@ -175,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/07-modelos.html"><span class="chapter-number">15</span>  <span class="chapter-title">Modelos de lenguaje</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/07-modelos.html"><span class="chapter-number">16</span>  <span class="chapter-title">Modelos de lenguaje</span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -348,6 +348,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <ul id="iasi-sidebar--chapters-11-intro-08-llm-html" class="collapse list-unstyled sidebar-section depth2">
 <li><a href="../../chapters/11-intro/08-llm.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">8.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/11-intro/09-basura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Large Language Models</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-11-intro-09-basura-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-11-intro-09-basura-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-11-intro-09-basura-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/11-intro/09-basura.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">9.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
   </ul>
 </li>
       </ul>
@@ -1863,29 +1873,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li>
-<a href="#modelos-de-lenguaje-y-llm" id="toc-modelos-de-lenguaje-y-llm" class="nav-link active" data-scroll-target="#modelos-de-lenguaje-y-llm"><span class="header-section-number">15.1</span> Modelos de lenguaje y LLM</a>
+<a href="#modelos-de-lenguaje-y-llm" id="toc-modelos-de-lenguaje-y-llm" class="nav-link active" data-scroll-target="#modelos-de-lenguaje-y-llm"><span class="header-section-number">16.1</span> Modelos de lenguaje y LLM</a>
   <ul class="collapse">
-<li><a href="#qu%C3%A9-es-un-modelo-de-lenguaje" id="toc-qué-es-un-modelo-de-lenguaje" class="nav-link" data-scroll-target="#qué-es-un-modelo-de-lenguaje"><span class="header-section-number">15.1.1</span> Qué es un modelo de lenguaje</a></li>
-  <li><a href="#predecir-el-siguiente-token" id="toc-predecir-el-siguiente-token" class="nav-link" data-scroll-target="#predecir-el-siguiente-token"><span class="header-section-number">15.1.2</span> Predecir el siguiente token</a></li>
-  <li><a href="#generaci%C3%B3n-autoregresiva" id="toc-generación-autoregresiva" class="nav-link" data-scroll-target="#generación-autoregresiva"><span class="header-section-number">15.1.3</span> Generación autoregresiva</a></li>
-  <li><a href="#una-tarea-sencilla-con-consecuencias-complejas" id="toc-una-tarea-sencilla-con-consecuencias-complejas" class="nav-link" data-scroll-target="#una-tarea-sencilla-con-consecuencias-complejas"><span class="header-section-number">15.1.4</span> Una tarea sencilla con consecuencias complejas</a></li>
-  <li><a href="#predicci%C3%B3n-no-significa-recuperaci%C3%B3n-literal" id="toc-predicción-no-significa-recuperación-literal" class="nav-link" data-scroll-target="#predicción-no-significa-recuperación-literal"><span class="header-section-number">15.1.5</span> Predicción no significa recuperación literal</a></li>
-  <li><a href="#de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" id="toc-de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" class="nav-link" data-scroll-target="#de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje"><span class="header-section-number">15.1.6</span> De modelo de lenguaje a gran modelo de lenguaje</a></li>
-  <li><a href="#escala-y-capacidad" id="toc-escala-y-capacidad" class="nav-link" data-scroll-target="#escala-y-capacidad"><span class="header-section-number">15.1.7</span> Escala y capacidad</a></li>
-  <li><a href="#preentrenamiento" id="toc-preentrenamiento" class="nav-link" data-scroll-target="#preentrenamiento"><span class="header-section-number">15.1.8</span> Preentrenamiento</a></li>
-  <li><a href="#modelos-fundacionales" id="toc-modelos-fundacionales" class="nav-link" data-scroll-target="#modelos-fundacionales"><span class="header-section-number">15.1.9</span> Modelos fundacionales</a></li>
-  <li><a href="#ajuste-para-seguir-instrucciones" id="toc-ajuste-para-seguir-instrucciones" class="nav-link" data-scroll-target="#ajuste-para-seguir-instrucciones"><span class="header-section-number">15.1.10</span> Ajuste para seguir instrucciones</a></li>
-  <li><a href="#alineamiento-y-preferencias-humanas" id="toc-alineamiento-y-preferencias-humanas" class="nav-link" data-scroll-target="#alineamiento-y-preferencias-humanas"><span class="header-section-number">15.1.11</span> Alineamiento y preferencias humanas</a></li>
-  <li><a href="#modelos-de-prop%C3%B3sito-general" id="toc-modelos-de-propósito-general" class="nav-link" data-scroll-target="#modelos-de-propósito-general"><span class="header-section-number">15.1.12</span> Modelos de propósito general</a></li>
-  <li><a href="#aprendizaje-en-contexto" id="toc-aprendizaje-en-contexto" class="nav-link" data-scroll-target="#aprendizaje-en-contexto"><span class="header-section-number">15.1.13</span> Aprendizaje en contexto</a></li>
-  <li><a href="#capacidades-emergentes" id="toc-capacidades-emergentes" class="nav-link" data-scroll-target="#capacidades-emergentes"><span class="header-section-number">15.1.14</span> Capacidades emergentes</a></li>
-  <li><a href="#generaci%C3%B3n-probabil%C3%ADstica" id="toc-generación-probabilística" class="nav-link" data-scroll-target="#generación-probabilística"><span class="header-section-number">15.1.15</span> Generación probabilística</a></li>
-  <li><a href="#la-respuesta-no-estaba-escrita-de-antemano" id="toc-la-respuesta-no-estaba-escrita-de-antemano" class="nav-link" data-scroll-target="#la-respuesta-no-estaba-escrita-de-antemano"><span class="header-section-number">15.1.16</span> La respuesta no estaba escrita de antemano</a></li>
-  <li><a href="#conocimiento-aprendido-y-conocimiento-verificable" id="toc-conocimiento-aprendido-y-conocimiento-verificable" class="nav-link" data-scroll-target="#conocimiento-aprendido-y-conocimiento-verificable"><span class="header-section-number">15.1.17</span> Conocimiento aprendido y conocimiento verificable</a></li>
-  <li><a href="#generar-no-es-verificar" id="toc-generar-no-es-verificar" class="nav-link" data-scroll-target="#generar-no-es-verificar"><span class="header-section-number">15.1.18</span> Generar no es verificar</a></li>
-  <li><a href="#un-llm-no-es-un-sistema-inteligente-completo" id="toc-un-llm-no-es-un-sistema-inteligente-completo" class="nav-link" data-scroll-target="#un-llm-no-es-un-sistema-inteligente-completo"><span class="header-section-number">15.1.19</span> Un LLM no es un sistema inteligente completo</a></li>
-  <li><a href="#una-primera-definici%C3%B3n-completa" id="toc-una-primera-definición-completa" class="nav-link" data-scroll-target="#una-primera-definición-completa"><span class="header-section-number">15.1.20</span> Una primera definición completa</a></li>
-  <li><a href="#del-modelo-al-comportamiento" id="toc-del-modelo-al-comportamiento" class="nav-link" data-scroll-target="#del-modelo-al-comportamiento"><span class="header-section-number">15.1.21</span> Del modelo al comportamiento</a></li>
+<li><a href="#qu%C3%A9-es-un-modelo-de-lenguaje" id="toc-qué-es-un-modelo-de-lenguaje" class="nav-link" data-scroll-target="#qué-es-un-modelo-de-lenguaje"><span class="header-section-number">16.1.1</span> Qué es un modelo de lenguaje</a></li>
+  <li><a href="#predecir-el-siguiente-token" id="toc-predecir-el-siguiente-token" class="nav-link" data-scroll-target="#predecir-el-siguiente-token"><span class="header-section-number">16.1.2</span> Predecir el siguiente token</a></li>
+  <li><a href="#generaci%C3%B3n-autoregresiva" id="toc-generación-autoregresiva" class="nav-link" data-scroll-target="#generación-autoregresiva"><span class="header-section-number">16.1.3</span> Generación autoregresiva</a></li>
+  <li><a href="#una-tarea-sencilla-con-consecuencias-complejas" id="toc-una-tarea-sencilla-con-consecuencias-complejas" class="nav-link" data-scroll-target="#una-tarea-sencilla-con-consecuencias-complejas"><span class="header-section-number">16.1.4</span> Una tarea sencilla con consecuencias complejas</a></li>
+  <li><a href="#predicci%C3%B3n-no-significa-recuperaci%C3%B3n-literal" id="toc-predicción-no-significa-recuperación-literal" class="nav-link" data-scroll-target="#predicción-no-significa-recuperación-literal"><span class="header-section-number">16.1.5</span> Predicción no significa recuperación literal</a></li>
+  <li><a href="#de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" id="toc-de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" class="nav-link" data-scroll-target="#de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje"><span class="header-section-number">16.1.6</span> De modelo de lenguaje a gran modelo de lenguaje</a></li>
+  <li><a href="#escala-y-capacidad" id="toc-escala-y-capacidad" class="nav-link" data-scroll-target="#escala-y-capacidad"><span class="header-section-number">16.1.7</span> Escala y capacidad</a></li>
+  <li><a href="#preentrenamiento" id="toc-preentrenamiento" class="nav-link" data-scroll-target="#preentrenamiento"><span class="header-section-number">16.1.8</span> Preentrenamiento</a></li>
+  <li><a href="#modelos-fundacionales" id="toc-modelos-fundacionales" class="nav-link" data-scroll-target="#modelos-fundacionales"><span class="header-section-number">16.1.9</span> Modelos fundacionales</a></li>
+  <li><a href="#ajuste-para-seguir-instrucciones" id="toc-ajuste-para-seguir-instrucciones" class="nav-link" data-scroll-target="#ajuste-para-seguir-instrucciones"><span class="header-section-number">16.1.10</span> Ajuste para seguir instrucciones</a></li>
+  <li><a href="#alineamiento-y-preferencias-humanas" id="toc-alineamiento-y-preferencias-humanas" class="nav-link" data-scroll-target="#alineamiento-y-preferencias-humanas"><span class="header-section-number">16.1.11</span> Alineamiento y preferencias humanas</a></li>
+  <li><a href="#modelos-de-prop%C3%B3sito-general" id="toc-modelos-de-propósito-general" class="nav-link" data-scroll-target="#modelos-de-propósito-general"><span class="header-section-number">16.1.12</span> Modelos de propósito general</a></li>
+  <li><a href="#aprendizaje-en-contexto" id="toc-aprendizaje-en-contexto" class="nav-link" data-scroll-target="#aprendizaje-en-contexto"><span class="header-section-number">16.1.13</span> Aprendizaje en contexto</a></li>
+  <li><a href="#capacidades-emergentes" id="toc-capacidades-emergentes" class="nav-link" data-scroll-target="#capacidades-emergentes"><span class="header-section-number">16.1.14</span> Capacidades emergentes</a></li>
+  <li><a href="#generaci%C3%B3n-probabil%C3%ADstica" id="toc-generación-probabilística" class="nav-link" data-scroll-target="#generación-probabilística"><span class="header-section-number">16.1.15</span> Generación probabilística</a></li>
+  <li><a href="#la-respuesta-no-estaba-escrita-de-antemano" id="toc-la-respuesta-no-estaba-escrita-de-antemano" class="nav-link" data-scroll-target="#la-respuesta-no-estaba-escrita-de-antemano"><span class="header-section-number">16.1.16</span> La respuesta no estaba escrita de antemano</a></li>
+  <li><a href="#conocimiento-aprendido-y-conocimiento-verificable" id="toc-conocimiento-aprendido-y-conocimiento-verificable" class="nav-link" data-scroll-target="#conocimiento-aprendido-y-conocimiento-verificable"><span class="header-section-number">16.1.17</span> Conocimiento aprendido y conocimiento verificable</a></li>
+  <li><a href="#generar-no-es-verificar" id="toc-generar-no-es-verificar" class="nav-link" data-scroll-target="#generar-no-es-verificar"><span class="header-section-number">16.1.18</span> Generar no es verificar</a></li>
+  <li><a href="#un-llm-no-es-un-sistema-inteligente-completo" id="toc-un-llm-no-es-un-sistema-inteligente-completo" class="nav-link" data-scroll-target="#un-llm-no-es-un-sistema-inteligente-completo"><span class="header-section-number">16.1.19</span> Un LLM no es un sistema inteligente completo</a></li>
+  <li><a href="#una-primera-definici%C3%B3n-completa" id="toc-una-primera-definición-completa" class="nav-link" data-scroll-target="#una-primera-definición-completa"><span class="header-section-number">16.1.20</span> Una primera definición completa</a></li>
+  <li><a href="#del-modelo-al-comportamiento" id="toc-del-modelo-al-comportamiento" class="nav-link" data-scroll-target="#del-modelo-al-comportamiento"><span class="header-section-number">16.1.21</span> Del modelo al comportamiento</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -1893,7 +1903,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/07-modelos.html"><span class="chapter-number">15</span>  <span class="chapter-title">Modelos de lenguaje</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/07-modelos.html"><span class="chapter-number">16</span>  <span class="chapter-title">Modelos de lenguaje</span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">7</span>  <span class="chapter-title">Modelos de lenguaje</span>
@@ -1911,7 +1921,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="modelos-de-lenguaje-y-llm" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="modelos-de-lenguaje-y-llm">
+</header><section id="modelos-de-lenguaje-y-llm" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="modelos-de-lenguaje-y-llm">
 <span class="header-section-number">7.1</span> Modelos de lenguaje y LLM</h2>
 <p>Un Transformer es una arquitectura capaz de procesar secuencias y construir representaciones contextuales de sus elementos.</p>
 <p>Para convertir esa arquitectura en un modelo capaz de trabajar con lenguaje, es necesario definir una tarea de entrenamiento.</p>
@@ -1930,7 +1940,7 @@ funcionaba   0,04
 <p>El modelo no selecciona una palabra mediante una regla escrita previamente.</p>
 <p>Calcula una distribución de probabilidad sobre los tokens de su vocabulario y utiliza esa distribución para determinar cuál puede continuar la secuencia.</p>
 <p>Esta tarea constituye la base de muchos modelos de lenguaje generativos.</p>
-<section id="qué-es-un-modelo-de-lenguaje" class="level3" data-number="15.1.1"><h3 data-number="15.1.1" class="anchored" data-anchor-id="qué-es-un-modelo-de-lenguaje">
+<section id="qué-es-un-modelo-de-lenguaje" class="level3" data-number="16.1.1"><h3 data-number="16.1.1" class="anchored" data-anchor-id="qué-es-un-modelo-de-lenguaje">
 <span class="header-section-number">7.1.1</span> Qué es un modelo de lenguaje</h3>
 <p>Un <strong>modelo de lenguaje</strong> es un modelo matemático que representa regularidades presentes en secuencias lingüísticas.</p>
 <p>Su objetivo fundamental es estimar la probabilidad de una secuencia o de los elementos que pueden aparecer en ella.</p>
@@ -1955,7 +1965,7 @@ funcionaba   0,04
 <li>formas habituales de resolver determinadas tareas.</li>
 </ul>
 <p>El modelo aprende estas regularidades porque le ayudan a reducir el error al predecir tokens.</p>
-</section><section id="predecir-el-siguiente-token" class="level3" data-number="15.1.2"><h3 data-number="15.1.2" class="anchored" data-anchor-id="predecir-el-siguiente-token">
+</section><section id="predecir-el-siguiente-token" class="level3" data-number="16.1.2"><h3 data-number="16.1.2" class="anchored" data-anchor-id="predecir-el-siguiente-token">
 <span class="header-section-number">7.1.2</span> Predecir el siguiente token</h3>
 <p>En un modelo autoregresivo, el objetivo consiste en predecir cada token utilizando los tokens anteriores como contexto.</p>
 <p>Supongamos la secuencia:</p>
@@ -1988,7 +1998,7 @@ cálculo del error
       ↓
 ajuste de parámetros</code></pre>
 <p>El objetivo no consiste en memorizar cada frase, sino en desarrollar representaciones y patrones que permitan predecir correctamente secuencias nuevas.</p>
-</section><section id="generación-autoregresiva" class="level3" data-number="15.1.3"><h3 data-number="15.1.3" class="anchored" data-anchor-id="generación-autoregresiva">
+</section><section id="generación-autoregresiva" class="level3" data-number="16.1.3"><h3 data-number="16.1.3" class="anchored" data-anchor-id="generación-autoregresiva">
 <span class="header-section-number">7.1.3</span> Generación autoregresiva</h3>
 <p>Una vez entrenado, el modelo puede generar texto aplicando repetidamente el mismo proceso.</p>
 <p>Ante una petición, predice un primer token:</p>
@@ -2005,7 +2015,7 @@ ajuste de parámetros</code></pre>
 <p>El modelo no escribe primero una respuesta completa para mostrarla después.</p>
 <p>La produce token a token, utilizando en cada paso tanto la información inicial como los tokens que ya ha generado.</p>
 <p>Esto explica por qué una respuesta puede comenzar correctamente y desviarse posteriormente. Cada nuevo token modifica el contexto utilizado para generar los siguientes.</p>
-</section><section id="una-tarea-sencilla-con-consecuencias-complejas" class="level3" data-number="15.1.4"><h3 data-number="15.1.4" class="anchored" data-anchor-id="una-tarea-sencilla-con-consecuencias-complejas">
+</section><section id="una-tarea-sencilla-con-consecuencias-complejas" class="level3" data-number="16.1.4"><h3 data-number="16.1.4" class="anchored" data-anchor-id="una-tarea-sencilla-con-consecuencias-complejas">
 <span class="header-section-number">7.1.4</span> Una tarea sencilla con consecuencias complejas</h3>
 <p>Predecir el siguiente token puede parecer una tarea limitada.</p>
 <p>Sin embargo, para realizarla correctamente sobre textos complejos, el modelo debe aprender numerosas regularidades.</p>
@@ -2040,7 +2050,7 @@ ajuste de parámetros</code></pre>
 <p>debe identificar patrones propios del lenguaje de programación.</p>
 <p>La tarea de predicción obliga al modelo a construir representaciones útiles de numerosos fenómenos.</p>
 <p>Las capacidades observadas no se programan una por una. Aparecen como resultado del aprendizaje de patrones necesarios para mejorar la predicción.</p>
-</section><section id="predicción-no-significa-recuperación-literal" class="level3" data-number="15.1.5"><h3 data-number="15.1.5" class="anchored" data-anchor-id="predicción-no-significa-recuperación-literal">
+</section><section id="predicción-no-significa-recuperación-literal" class="level3" data-number="16.1.5"><h3 data-number="16.1.5" class="anchored" data-anchor-id="predicción-no-significa-recuperación-literal">
 <span class="header-section-number">7.1.5</span> Predicción no significa recuperación literal</h3>
 <p>Cuando el modelo genera una respuesta, no suele buscar una frase exacta almacenada en una base de datos interna.</p>
 <p>Utiliza sus parámetros para calcular qué continuación resulta probable dentro del contexto actual.</p>
@@ -2058,7 +2068,7 @@ ajuste de parámetros</code></pre>
 <p>Pero esta misma capacidad introduce un riesgo fundamental.</p>
 <p>El modelo puede producir una secuencia lingüísticamente coherente aunque su contenido no sea correcto.</p>
 <p>Su objetivo básico es generar una continuación probable, no verificar automáticamente que cada afirmación corresponda con la realidad.</p>
-</section><section id="de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" class="level3" data-number="15.1.6"><h3 data-number="15.1.6" class="anchored" data-anchor-id="de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje">
+</section><section id="de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje" class="level3" data-number="16.1.6"><h3 data-number="16.1.6" class="anchored" data-anchor-id="de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje">
 <span class="header-section-number">7.1.6</span> De modelo de lenguaje a gran modelo de lenguaje</h3>
 <p>Las siglas <strong>LLM</strong> corresponden a <em>Large Language Model</em>, o <strong>gran modelo de lenguaje</strong>.</p>
 <p>No existe una frontera matemática universal que determine cuándo un modelo pasa a considerarse grande.</p>
@@ -2077,7 +2087,7 @@ ajuste de parámetros</code></pre>
 <blockquote class="blockquote">
 <p>modelo → modelo de lenguaje → modelo de lenguaje basado en Transformer → gran modelo de lenguaje</p>
 </blockquote>
-</section><section id="escala-y-capacidad" class="level3" data-number="15.1.7"><h3 data-number="15.1.7" class="anchored" data-anchor-id="escala-y-capacidad">
+</section><section id="escala-y-capacidad" class="level3" data-number="16.1.7"><h3 data-number="16.1.7" class="anchored" data-anchor-id="escala-y-capacidad">
 <span class="header-section-number">7.1.7</span> Escala y capacidad</h3>
 <p>Al aumentar el tamaño del modelo, la cantidad de datos y el cálculo utilizado durante el entrenamiento, suele mejorar su capacidad para representar patrones complejos.</p>
 <p>La escala puede permitir:</p>
@@ -2102,7 +2112,7 @@ ajuste de parámetros</code></pre>
 </ul>
 <p>Dentro de un sistema inteligente, la elección del modelo debe depender de la necesidad real.</p>
 <p>Utilizar el modelo más grande disponible no constituye por sí mismo una decisión de ingeniería adecuada.</p>
-</section><section id="preentrenamiento" class="level3" data-number="15.1.8"><h3 data-number="15.1.8" class="anchored" data-anchor-id="preentrenamiento">
+</section><section id="preentrenamiento" class="level3" data-number="16.1.8"><h3 data-number="16.1.8" class="anchored" data-anchor-id="preentrenamiento">
 <span class="header-section-number">7.1.8</span> Preentrenamiento</h3>
 <p>Los LLM suelen comenzar con una fase denominada <strong>preentrenamiento</strong>.</p>
 <p>Durante esta fase, el modelo procesa grandes cantidades de texto y aprende a predecir tokens.</p>
@@ -2120,7 +2130,7 @@ ajuste de parámetros</code></pre>
 </ul>
 <p>El resultado recibe con frecuencia el nombre de <strong>modelo base</strong> o <em>base model</em>.</p>
 <p>Un modelo base puede continuar texto, pero no necesariamente seguir instrucciones de la forma esperada por un usuario.</p>
-</section><section id="modelos-fundacionales" class="level3" data-number="15.1.9"><h3 data-number="15.1.9" class="anchored" data-anchor-id="modelos-fundacionales">
+</section><section id="modelos-fundacionales" class="level3" data-number="16.1.9"><h3 data-number="16.1.9" class="anchored" data-anchor-id="modelos-fundacionales">
 <span class="header-section-number">7.1.9</span> Modelos fundacionales</h3>
 <p>Un modelo preentrenado de gran escala puede utilizarse como base para múltiples tareas y sistemas posteriores.</p>
 <p>Por esta razón, algunos modelos se denominan <strong>modelos fundacionales</strong>.</p>
@@ -2140,7 +2150,7 @@ ajuste de parámetros</code></pre>
 <blockquote class="blockquote">
 <p>el modelo proporciona una capacidad general; el sistema inteligente determina cómo se utiliza.</p>
 </blockquote>
-</section><section id="ajuste-para-seguir-instrucciones" class="level3" data-number="15.1.10"><h3 data-number="15.1.10" class="anchored" data-anchor-id="ajuste-para-seguir-instrucciones">
+</section><section id="ajuste-para-seguir-instrucciones" class="level3" data-number="16.1.10"><h3 data-number="16.1.10" class="anchored" data-anchor-id="ajuste-para-seguir-instrucciones">
 <span class="header-section-number">7.1.10</span> Ajuste para seguir instrucciones</h3>
 <p>Un modelo entrenado únicamente para continuar texto puede producir resultados plausibles, pero no necesariamente comportarse como un asistente.</p>
 <p>Para mejorar su capacidad de seguir peticiones, puede realizarse un entrenamiento adicional con ejemplos formados por:</p>
@@ -2172,7 +2182,7 @@ Respuesta esperada:
 </ul>
 <p>El ajuste no sustituye al preentrenamiento.</p>
 <p>Parte de las capacidades generales adquiridas previamente y modifica el comportamiento para facilitar la interacción mediante instrucciones.</p>
-</section><section id="alineamiento-y-preferencias-humanas" class="level3" data-number="15.1.11"><h3 data-number="15.1.11" class="anchored" data-anchor-id="alineamiento-y-preferencias-humanas">
+</section><section id="alineamiento-y-preferencias-humanas" class="level3" data-number="16.1.11"><h3 data-number="16.1.11" class="anchored" data-anchor-id="alineamiento-y-preferencias-humanas">
 <span class="header-section-number">7.1.11</span> Alineamiento y preferencias humanas</h3>
 <p>Además del ajuste mediante instrucciones, algunos modelos atraviesan procesos destinados a adaptar su comportamiento a preferencias y criterios humanos.</p>
 <p>En estos procesos se pueden utilizar:</p>
@@ -2197,7 +2207,7 @@ Respuesta esperada:
 <p>Este proceso suele denominarse <strong>alineamiento</strong>.</p>
 <p>El término debe utilizarse con precaución. No significa que el modelo comprenda valores humanos ni que su comportamiento esté garantizado en cualquier situación.</p>
 <p>Significa que ha sido optimizado para producir determinados comportamientos observables bajo las condiciones evaluadas durante el entrenamiento.</p>
-</section><section id="modelos-de-propósito-general" class="level3" data-number="15.1.12"><h3 data-number="15.1.12" class="anchored" data-anchor-id="modelos-de-propósito-general">
+</section><section id="modelos-de-propósito-general" class="level3" data-number="16.1.12"><h3 data-number="16.1.12" class="anchored" data-anchor-id="modelos-de-propósito-general">
 <span class="header-section-number">7.1.12</span> Modelos de propósito general</h3>
 <p>Una de las características más relevantes de los LLM es que un mismo modelo puede utilizarse para tareas muy diferentes.</p>
 <p>Por ejemplo:</p>
@@ -2218,7 +2228,7 @@ Respuesta esperada:
 <p>Esto convierte al lenguaje en una interfaz de programación de alto nivel.</p>
 <p>Sin embargo, la flexibilidad también reduce parte del determinismo habitual del software tradicional.</p>
 <p>Una instrucción puede ser ambigua, el resultado puede variar y el modelo puede interpretar la tarea de manera diferente a la esperada.</p>
-</section><section id="aprendizaje-en-contexto" class="level3" data-number="15.1.13"><h3 data-number="15.1.13" class="anchored" data-anchor-id="aprendizaje-en-contexto">
+</section><section id="aprendizaje-en-contexto" class="level3" data-number="16.1.13"><h3 data-number="16.1.13" class="anchored" data-anchor-id="aprendizaje-en-contexto">
 <span class="header-section-number">7.1.13</span> Aprendizaje en contexto</h3>
 <p>Un LLM puede adaptar temporalmente su comportamiento utilizando ejemplos incluidos en el contexto.</p>
 <p>Por ejemplo:</p>
@@ -2239,7 +2249,7 @@ Categoría:</code></pre>
 <li>el entrenamiento modifica el modelo;</li>
 <li>el aprendizaje en contexto modifica temporalmente la forma de utilizarlo;</li>
 <li>al desaparecer el contexto, desaparecen también esos ejemplos.</li>
-</ul></section><section id="capacidades-emergentes" class="level3" data-number="15.1.14"><h3 data-number="15.1.14" class="anchored" data-anchor-id="capacidades-emergentes">
+</ul></section><section id="capacidades-emergentes" class="level3" data-number="16.1.14"><h3 data-number="16.1.14" class="anchored" data-anchor-id="capacidades-emergentes">
 <span class="header-section-number">7.1.14</span> Capacidades emergentes</h3>
 <p>Algunas capacidades se hacen más visibles al aumentar la escala del modelo, los datos y el entrenamiento.</p>
 <p>El modelo puede comenzar a realizar tareas para las que no recibió una programación explícita individual.</p>
@@ -2256,20 +2266,20 @@ Categoría:</code></pre>
 </ul>
 <p>En algunos casos, una mejora gradual del modelo puede producir un cambio aparentemente brusco en una métrica concreta.</p>
 <p>También puede ocurrir que la capacidad existiera parcialmente, pero solo resulte visible al utilizar una forma adecuada de evaluación o de instrucción.</p>
-</section><section id="generación-probabilística" class="level3" data-number="15.1.15"><h3 data-number="15.1.15" class="anchored" data-anchor-id="generación-probabilística">
+</section><section id="generación-probabilística" class="level3" data-number="16.1.15"><h3 data-number="16.1.15" class="anchored" data-anchor-id="generación-probabilística">
 <span class="header-section-number">7.1.15</span> Generación probabilística</h3>
 <p>En cada paso, el modelo produce una distribución de probabilidad sobre los posibles tokens siguientes.</p>
 <p>La aplicación puede seleccionar el token utilizando diferentes estrategias.</p>
-<section id="selección-determinista" class="level4" data-number="15.1.15.1"><h4 data-number="15.1.15.1" class="anchored" data-anchor-id="selección-determinista">
-<span class="header-section-number">15.1.15.1</span> Selección determinista</h4>
+<section id="selección-determinista" class="level4" data-number="16.1.15.1"><h4 data-number="16.1.15.1" class="anchored" data-anchor-id="selección-determinista">
+<span class="header-section-number">16.1.15.1</span> Selección determinista</h4>
 <p>Se elige el token con mayor probabilidad.</p>
 <p>Este enfoque puede producir respuestas más estables, aunque no garantiza que sean siempre idénticas en todos los sistemas.</p>
-</section><section id="muestreo" class="level4" data-number="15.1.15.2"><h4 data-number="15.1.15.2" class="anchored" data-anchor-id="muestreo">
-<span class="header-section-number">15.1.15.2</span> Muestreo</h4>
+</section><section id="muestreo" class="level4" data-number="16.1.15.2"><h4 data-number="16.1.15.2" class="anchored" data-anchor-id="muestreo">
+<span class="header-section-number">16.1.15.2</span> Muestreo</h4>
 <p>Se selecciona un token teniendo en cuenta su probabilidad.</p>
 <p>Esto permite mayor variedad, pero también introduce más variabilidad.</p>
-</section><section id="temperatura" class="level4" data-number="15.1.15.3"><h4 data-number="15.1.15.3" class="anchored" data-anchor-id="temperatura">
-<span class="header-section-number">15.1.15.3</span> Temperatura</h4>
+</section><section id="temperatura" class="level4" data-number="16.1.15.3"><h4 data-number="16.1.15.3" class="anchored" data-anchor-id="temperatura">
+<span class="header-section-number">16.1.15.3</span> Temperatura</h4>
 <p>La <strong>temperatura</strong> modifica la distribución utilizada durante la selección.</p>
 <p>Con una temperatura baja, el sistema favorece los tokens más probables.</p>
 <p>Con una temperatura más alta, aumenta la posibilidad de seleccionar alternativas menos probables.</p>
@@ -2281,7 +2291,7 @@ Categoría:</code></pre>
 </ul>
 <p>La temperatura no cambia los parámetros del modelo ni su conocimiento.</p>
 <p>Modifica la forma en que se seleccionan los tokens durante la generación.</p>
-</section></section><section id="la-respuesta-no-estaba-escrita-de-antemano" class="level3" data-number="15.1.16"><h3 data-number="15.1.16" class="anchored" data-anchor-id="la-respuesta-no-estaba-escrita-de-antemano">
+</section></section><section id="la-respuesta-no-estaba-escrita-de-antemano" class="level3" data-number="16.1.16"><h3 data-number="16.1.16" class="anchored" data-anchor-id="la-respuesta-no-estaba-escrita-de-antemano">
 <span class="header-section-number">7.1.16</span> La respuesta no estaba escrita de antemano</h3>
 <p>La salida de un LLM se construye durante la inferencia.</p>
 <p>No existe necesariamente una respuesta completa almacenada esperando a ser recuperada.</p>
@@ -2297,7 +2307,7 @@ Categoría:</code></pre>
 <p>Por esta razón, una misma petición puede producir respuestas diferentes.</p>
 <p>También explica por qué pequeñas modificaciones en la entrada pueden alterar significativamente el resultado.</p>
 <p>El modelo trabaja con relaciones probabilísticas dentro de una secuencia, no con una función determinista diseñada manualmente para cada tarea.</p>
-</section><section id="conocimiento-aprendido-y-conocimiento-verificable" class="level3" data-number="15.1.17"><h3 data-number="15.1.17" class="anchored" data-anchor-id="conocimiento-aprendido-y-conocimiento-verificable">
+</section><section id="conocimiento-aprendido-y-conocimiento-verificable" class="level3" data-number="16.1.17"><h3 data-number="16.1.17" class="anchored" data-anchor-id="conocimiento-aprendido-y-conocimiento-verificable">
 <span class="header-section-number">7.1.17</span> Conocimiento aprendido y conocimiento verificable</h3>
 <p>Durante el entrenamiento, el modelo incorpora patrones relacionados con la información presente en los datos.</p>
 <p>En ese sentido, puede responder utilizando conocimiento adquirido durante el preentrenamiento.</p>
@@ -2321,7 +2331,7 @@ Categoría:</code></pre>
 <li>mecanismos de recuperación;</li>
 <li>validaciones;</li>
 <li>revisión humana.</li>
-</ul></section><section id="generar-no-es-verificar" class="level3" data-number="15.1.18"><h3 data-number="15.1.18" class="anchored" data-anchor-id="generar-no-es-verificar">
+</ul></section><section id="generar-no-es-verificar" class="level3" data-number="16.1.18"><h3 data-number="16.1.18" class="anchored" data-anchor-id="generar-no-es-verificar">
 <span class="header-section-number">7.1.18</span> Generar no es verificar</h3>
 <p>Un LLM puede producir una respuesta bien redactada sin haber comprobado su contenido.</p>
 <p>Esta diferencia es esencial:</p>
@@ -2342,7 +2352,7 @@ Categoría:</code></pre>
 </ul>
 <p>La fluidez de la respuesta no demuestra su corrección.</p>
 <p>Por ello, el diseño del sistema debe decidir qué resultados pueden utilizarse directamente y cuáles necesitan validación.</p>
-</section><section id="un-llm-no-es-un-sistema-inteligente-completo" class="level3" data-number="15.1.19"><h3 data-number="15.1.19" class="anchored" data-anchor-id="un-llm-no-es-un-sistema-inteligente-completo">
+</section><section id="un-llm-no-es-un-sistema-inteligente-completo" class="level3" data-number="16.1.19"><h3 data-number="16.1.19" class="anchored" data-anchor-id="un-llm-no-es-un-sistema-inteligente-completo">
 <span class="header-section-number">7.1.19</span> Un LLM no es un sistema inteligente completo</h3>
 <p>Un LLM puede aportar numerosas capacidades:</p>
 <ul>
@@ -2382,7 +2392,7 @@ Categoría:</code></pre>
 ├── interfaces
 └── supervisión</code></pre>
 <p>El LLM es una pieza especialmente versátil, pero sigue siendo una pieza.</p>
-</section><section id="una-primera-definición-completa" class="level3" data-number="15.1.20"><h3 data-number="15.1.20" class="anchored" data-anchor-id="una-primera-definición-completa">
+</section><section id="una-primera-definición-completa" class="level3" data-number="16.1.20"><h3 data-number="16.1.20" class="anchored" data-anchor-id="una-primera-definición-completa">
 <span class="header-section-number">7.1.20</span> Una primera definición completa</h3>
 <p>Podemos definir un LLM como:</p>
 <blockquote class="blockquote">
@@ -2400,7 +2410,7 @@ Categoría:</code></pre>
 <li>genera resultados mediante <strong>inferencia</strong>;</li>
 <li>produce texto de forma <strong>probabilística</strong>;</li>
 <li>utiliza la información disponible en el <strong>contexto</strong>.</li>
-</ul></section><section id="del-modelo-al-comportamiento" class="level3" data-number="15.1.21"><h3 data-number="15.1.21" class="anchored" data-anchor-id="del-modelo-al-comportamiento">
+</ul></section><section id="del-modelo-al-comportamiento" class="level3" data-number="16.1.21"><h3 data-number="16.1.21" class="anchored" data-anchor-id="del-modelo-al-comportamiento">
 <span class="header-section-number">7.1.21</span> Del modelo al comportamiento</h3>
 <p>Ya conocemos las piezas fundamentales que permiten construir un gran modelo de lenguaje.</p>
 <p>El siguiente paso consiste en comprender qué consecuencias tiene su forma de funcionamiento.</p>
@@ -2822,12 +2832,12 @@ Categoría:</code></pre>
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/12-conceptos/06-transformers.html" class="pagination-link" aria-label="Transformers">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>  <span class="chapter-title">Transformers</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>  <span class="chapter-title">Transformers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/12-conceptos/08-limites.html" class="pagination-link" aria-label="Limites">
-        <span class="nav-page-text"><span class="chapter-number">16</span>  <span class="chapter-title">Limites</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">17</span>  <span class="chapter-title">Limites</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

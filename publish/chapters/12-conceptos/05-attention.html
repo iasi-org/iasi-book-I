@@ -184,7 +184,7 @@ window.Quarto = {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/05-attention.html"><span class="chapter-number">13</span>  <span class="chapter-title">Attention</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/05-attention.html"><span class="chapter-number">14</span>  <span class="chapter-title">Attention</span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -357,6 +357,16 @@ window.Quarto = {
 </div>
 <ul id="iasi-sidebar--chapters-11-intro-08-llm-html" class="collapse list-unstyled sidebar-section depth2">
 <li><a href="../../chapters/11-intro/08-llm.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">8.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/11-intro/09-basura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Large Language Models</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-11-intro-09-basura-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-11-intro-09-basura-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-11-intro-09-basura-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/11-intro/09-basura.html#cuando-el-lenguaje-se-convirti%C3%B3-en-conocimiento" id="toc-cuando-el-lenguaje-se-convirtió-en-conocimiento" class="nav-link active" data-scroll-target="#cuando-el-lenguaje-se-convirtió-en-conocimiento"><span class="header-section-number">9.1</span> Cuando el lenguaje se convirtió en conocimiento</a></li>
   </ul>
 </li>
       </ul>
@@ -1872,19 +1882,19 @@ window.Quarto = {
    
   <ul>
 <li>
-<a href="#atenci%C3%B3n-relacionar-cada-token-con-su-contexto" id="toc-atención-relacionar-cada-token-con-su-contexto" class="nav-link active" data-scroll-target="#atención-relacionar-cada-token-con-su-contexto"><span class="header-section-number">13.1</span> Atención: relacionar cada token con su contexto</a>
+<a href="#atenci%C3%B3n-relacionar-cada-token-con-su-contexto" id="toc-atención-relacionar-cada-token-con-su-contexto" class="nav-link active" data-scroll-target="#atención-relacionar-cada-token-con-su-contexto"><span class="header-section-number">14.1</span> Atención: relacionar cada token con su contexto</a>
   <ul class="collapse">
-<li><a href="#qu%C3%A9-es-la-atenci%C3%B3n" id="toc-qué-es-la-atención" class="nav-link" data-scroll-target="#qué-es-la-atención"><span class="header-section-number">13.1.1</span> Qué es la atención</a></li>
-  <li><a href="#la-atenci%C3%B3n-depende-de-la-relaci%C3%B3n" id="toc-la-atención-depende-de-la-relación" class="nav-link" data-scroll-target="#la-atención-depende-de-la-relación"><span class="header-section-number">13.1.2</span> La atención depende de la relación</a></li>
-  <li><a href="#consultas-claves-y-valores" id="toc-consultas-claves-y-valores" class="nav-link" data-scroll-target="#consultas-claves-y-valores"><span class="header-section-number">13.1.3</span> Consultas, claves y valores</a></li>
-  <li><a href="#c%C3%A1lculo-de-la-atenci%C3%B3n" id="toc-cálculo-de-la-atención" class="nav-link" data-scroll-target="#cálculo-de-la-atención"><span class="header-section-number">13.1.4</span> Cálculo de la atención</a></li>
-  <li><a href="#autoatenci%C3%B3n" id="toc-autoatención" class="nav-link" data-scroll-target="#autoatención"><span class="header-section-number">13.1.5</span> Autoatención</a></li>
-  <li><a href="#atenci%C3%B3n-causal" id="toc-atención-causal" class="nav-link" data-scroll-target="#atención-causal"><span class="header-section-number">13.1.6</span> Atención causal</a></li>
-  <li><a href="#atenci%C3%B3n-m%C3%BAltiple" id="toc-atención-múltiple" class="nav-link" data-scroll-target="#atención-múltiple"><span class="header-section-number">13.1.7</span> Atención múltiple</a></li>
-  <li><a href="#atenci%C3%B3n-y-posici%C3%B3n" id="toc-atención-y-posición" class="nav-link" data-scroll-target="#atención-y-posición"><span class="header-section-number">13.1.8</span> Atención y posición</a></li>
-  <li><a href="#atenci%C3%B3n-no-significa-conciencia" id="toc-atención-no-significa-conciencia" class="nav-link" data-scroll-target="#atención-no-significa-conciencia"><span class="header-section-number">13.1.9</span> Atención no significa conciencia</a></li>
-  <li><a href="#los-pesos-de-atenci%C3%B3n-no-son-una-explicaci%C3%B3n-completa" id="toc-los-pesos-de-atención-no-son-una-explicación-completa" class="nav-link" data-scroll-target="#los-pesos-de-atención-no-son-una-explicación-completa"><span class="header-section-number">13.1.10</span> Los pesos de atención no son una explicación completa</a></li>
-  <li><a href="#de-la-atenci%C3%B3n-al-transformer" id="toc-de-la-atención-al-transformer" class="nav-link" data-scroll-target="#de-la-atención-al-transformer"><span class="header-section-number">13.1.11</span> De la atención al Transformer</a></li>
+<li><a href="#qu%C3%A9-es-la-atenci%C3%B3n" id="toc-qué-es-la-atención" class="nav-link" data-scroll-target="#qué-es-la-atención"><span class="header-section-number">14.1.1</span> Qué es la atención</a></li>
+  <li><a href="#la-atenci%C3%B3n-depende-de-la-relaci%C3%B3n" id="toc-la-atención-depende-de-la-relación" class="nav-link" data-scroll-target="#la-atención-depende-de-la-relación"><span class="header-section-number">14.1.2</span> La atención depende de la relación</a></li>
+  <li><a href="#consultas-claves-y-valores" id="toc-consultas-claves-y-valores" class="nav-link" data-scroll-target="#consultas-claves-y-valores"><span class="header-section-number">14.1.3</span> Consultas, claves y valores</a></li>
+  <li><a href="#c%C3%A1lculo-de-la-atenci%C3%B3n" id="toc-cálculo-de-la-atención" class="nav-link" data-scroll-target="#cálculo-de-la-atención"><span class="header-section-number">14.1.4</span> Cálculo de la atención</a></li>
+  <li><a href="#autoatenci%C3%B3n" id="toc-autoatención" class="nav-link" data-scroll-target="#autoatención"><span class="header-section-number">14.1.5</span> Autoatención</a></li>
+  <li><a href="#atenci%C3%B3n-causal" id="toc-atención-causal" class="nav-link" data-scroll-target="#atención-causal"><span class="header-section-number">14.1.6</span> Atención causal</a></li>
+  <li><a href="#atenci%C3%B3n-m%C3%BAltiple" id="toc-atención-múltiple" class="nav-link" data-scroll-target="#atención-múltiple"><span class="header-section-number">14.1.7</span> Atención múltiple</a></li>
+  <li><a href="#atenci%C3%B3n-y-posici%C3%B3n" id="toc-atención-y-posición" class="nav-link" data-scroll-target="#atención-y-posición"><span class="header-section-number">14.1.8</span> Atención y posición</a></li>
+  <li><a href="#atenci%C3%B3n-no-significa-conciencia" id="toc-atención-no-significa-conciencia" class="nav-link" data-scroll-target="#atención-no-significa-conciencia"><span class="header-section-number">14.1.9</span> Atención no significa conciencia</a></li>
+  <li><a href="#los-pesos-de-atenci%C3%B3n-no-son-una-explicaci%C3%B3n-completa" id="toc-los-pesos-de-atención-no-son-una-explicación-completa" class="nav-link" data-scroll-target="#los-pesos-de-atención-no-son-una-explicación-completa"><span class="header-section-number">14.1.10</span> Los pesos de atención no son una explicación completa</a></li>
+  <li><a href="#de-la-atenci%C3%B3n-al-transformer" id="toc-de-la-atención-al-transformer" class="nav-link" data-scroll-target="#de-la-atención-al-transformer"><span class="header-section-number">14.1.11</span> De la atención al Transformer</a></li>
   </ul>
 </li>
   </ul></nav>
@@ -1892,7 +1902,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/12-conceptos/index.html">Conceptos de Sistemas Inteligentes y LLM</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/05-attention.html"><span class="chapter-number">13</span>  <span class="chapter-title">Attention</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/12-conceptos/05-attention.html"><span class="chapter-number">14</span>  <span class="chapter-title">Attention</span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
 <span class="chapter-number">5</span>  <span class="chapter-title">Attention</span>
@@ -1910,7 +1920,7 @@ window.Quarto = {
   
 
 
-</header><section id="atención-relacionar-cada-token-con-su-contexto" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="atención-relacionar-cada-token-con-su-contexto">
+</header><section id="atención-relacionar-cada-token-con-su-contexto" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="atención-relacionar-cada-token-con-su-contexto">
 <span class="header-section-number">5.1</span> Atención: relacionar cada token con su contexto</h2>
 <p>Los embeddings proporcionan una representación matemática inicial de cada token. Sin embargo, el significado que adquiere un elemento dentro de una frase no depende únicamente de su representación aislada.</p>
 <p>Para interpretar correctamente una secuencia, el modelo debe relacionar cada token con los demás tokens disponibles en el contexto.</p>
@@ -1920,7 +1930,7 @@ window.Quarto = {
 </blockquote>
 <p>Para interpretar la expresión <em>estaba apagado</em>, el modelo debe relacionarla principalmente con <em>servidor</em>. Otros elementos de la frase aportan información, pero no todos tienen la misma relevancia para resolver esa relación.</p>
 <p>El mecanismo que permite calcular dinámicamente qué partes de la secuencia resultan más relevantes para representar cada token recibe el nombre de <strong>atención</strong>.</p>
-<section id="qué-es-la-atención" class="level3" data-number="13.1.1"><h3 data-number="13.1.1" class="anchored" data-anchor-id="qué-es-la-atención">
+<section id="qué-es-la-atención" class="level3" data-number="14.1.1"><h3 data-number="14.1.1" class="anchored" data-anchor-id="qué-es-la-atención">
 <span class="header-section-number">5.1.1</span> Qué es la atención</h3>
 <p>La atención es un mecanismo que permite al modelo asignar distintos grados de importancia a los elementos de una secuencia.</p>
 <p>Para construir la representación contextual de un token, el modelo:</p>
@@ -1944,7 +1954,7 @@ window.Quarto = {
 <li>muy poca relevancia a otros elementos.</li>
 </ul>
 <p>Estos pesos no están definidos previamente mediante reglas lingüísticas. Se calculan para cada secuencia a partir de los parámetros aprendidos durante el entrenamiento.</p>
-</section><section id="la-atención-depende-de-la-relación" class="level3" data-number="13.1.2"><h3 data-number="13.1.2" class="anchored" data-anchor-id="la-atención-depende-de-la-relación">
+</section><section id="la-atención-depende-de-la-relación" class="level3" data-number="14.1.2"><h3 data-number="14.1.2" class="anchored" data-anchor-id="la-atención-depende-de-la-relación">
 <span class="header-section-number">5.1.2</span> La atención depende de la relación</h3>
 <p>Un token no tiene una importancia absoluta dentro del texto.</p>
 <p>Su relevancia depende de:</p>
@@ -1966,7 +1976,7 @@ window.Quarto = {
 <p>el mismo token se relaciona con <em>sentamos</em> y <em>parque</em>.</p>
 <p>El embedding inicial puede ser semejante en ambos casos, pero el mecanismo de atención produce representaciones contextuales diferentes.</p>
 <p>Por tanto, la atención permite que el significado operativo de un token se adapte a la secuencia en la que aparece.</p>
-</section><section id="consultas-claves-y-valores" class="level3" data-number="13.1.3"><h3 data-number="13.1.3" class="anchored" data-anchor-id="consultas-claves-y-valores">
+</section><section id="consultas-claves-y-valores" class="level3" data-number="14.1.3"><h3 data-number="14.1.3" class="anchored" data-anchor-id="consultas-claves-y-valores">
 <span class="header-section-number">5.1.3</span> Consultas, claves y valores</h3>
 <p>Para calcular la atención, el modelo genera tres representaciones diferentes a partir de cada token:</p>
 <ul>
@@ -1978,19 +1988,19 @@ window.Quarto = {
 <strong>valor</strong> o <em>value</em>.</li>
 </ul>
 <p>Estos tres conceptos suelen representarse mediante las letras <strong>Q</strong>, <strong>K</strong> y <strong>V</strong>.</p>
-<section id="consulta" class="level4" data-number="13.1.3.1"><h4 data-number="13.1.3.1" class="anchored" data-anchor-id="consulta">
-<span class="header-section-number">13.1.3.1</span> Consulta</h4>
+<section id="consulta" class="level4" data-number="14.1.3.1"><h4 data-number="14.1.3.1" class="anchored" data-anchor-id="consulta">
+<span class="header-section-number">14.1.3.1</span> Consulta</h4>
 <p>La consulta representa la información que el token necesita localizar en el contexto.</p>
 <p>Podemos interpretarla como una pregunta matemática:</p>
 <blockquote class="blockquote">
 <p>¿Qué información de los demás tokens resulta relevante para mí?</p>
 </blockquote>
-</section><section id="clave" class="level4" data-number="13.1.3.2"><h4 data-number="13.1.3.2" class="anchored" data-anchor-id="clave">
-<span class="header-section-number">13.1.3.2</span> Clave</h4>
+</section><section id="clave" class="level4" data-number="14.1.3.2"><h4 data-number="14.1.3.2" class="anchored" data-anchor-id="clave">
+<span class="header-section-number">14.1.3.2</span> Clave</h4>
 <p>La clave representa el tipo de información que cada token puede ofrecer.</p>
 <p>La consulta de un token se compara con las claves de los demás para calcular la intensidad de cada relación.</p>
-</section><section id="valor" class="level4" data-number="13.1.3.3"><h4 data-number="13.1.3.3" class="anchored" data-anchor-id="valor">
-<span class="header-section-number">13.1.3.3</span> Valor</h4>
+</section><section id="valor" class="level4" data-number="14.1.3.3"><h4 data-number="14.1.3.3" class="anchored" data-anchor-id="valor">
+<span class="header-section-number">14.1.3.3</span> Valor</h4>
 <p>El valor contiene la información que el token aportará si se considera relevante.</p>
 <p>La clave se utiliza para determinar cuánto atender al token. El valor proporciona la información que se incorporará al resultado.</p>
 <p>Podemos resumirlo así:</p>
@@ -1998,7 +2008,7 @@ window.Quarto = {
 <p>la consulta busca, la clave permite comparar y el valor aporta información</p>
 </blockquote>
 <p>Estas representaciones no se escriben manualmente. Se obtienen mediante transformaciones matemáticas cuyos parámetros se ajustan durante el entrenamiento.</p>
-</section></section><section id="cálculo-de-la-atención" class="level3" data-number="13.1.4"><h3 data-number="13.1.4" class="anchored" data-anchor-id="cálculo-de-la-atención">
+</section></section><section id="cálculo-de-la-atención" class="level3" data-number="14.1.4"><h3 data-number="14.1.4" class="anchored" data-anchor-id="cálculo-de-la-atención">
 <span class="header-section-number">5.1.4</span> Cálculo de la atención</h3>
 <p>El modelo compara cada consulta con las claves de los tokens disponibles.</p>
 <p>Cuanto mayor sea la compatibilidad entre una consulta y una clave, mayor será normalmente el peso asignado a esa relación.</p>
@@ -2021,7 +2031,7 @@ window.Quarto = {
 </ol>
 <p>No es necesario realizar manualmente estas operaciones para utilizar un modelo, pero comprender su función permite abandonar una visión vaga de la atención.</p>
 <p>La atención no es una intuición abstracta. Es un cálculo que produce una combinación ponderada de información.</p>
-</section><section id="autoatención" class="level3" data-number="13.1.5"><h3 data-number="13.1.5" class="anchored" data-anchor-id="autoatención">
+</section><section id="autoatención" class="level3" data-number="14.1.5"><h3 data-number="14.1.5" class="anchored" data-anchor-id="autoatención">
 <span class="header-section-number">5.1.5</span> Autoatención</h3>
 <p>Cuando las consultas, claves y valores proceden de la misma secuencia, hablamos de <strong>autoatención</strong> o <em>self-attention</em>.</p>
 <p>En una frase, cada token puede atender a los demás tokens de esa misma frase y construir su representación contextual.</p>
@@ -2040,7 +2050,7 @@ se generan representaciones contextuales</code></pre>
 </blockquote>
 <p>Para interpretar <em>fue aprobado</em>, el modelo debe conservar la relación con <em>informe</em>, aunque entre ambos aparezcan numerosos tokens.</p>
 <p>A diferencia de otros enfoques anteriores que procesaban el texto principalmente de forma secuencial, la autoatención permite calcular directamente relaciones entre distintas posiciones.</p>
-</section><section id="atención-causal" class="level3" data-number="13.1.6"><h3 data-number="13.1.6" class="anchored" data-anchor-id="atención-causal">
+</section><section id="atención-causal" class="level3" data-number="14.1.6"><h3 data-number="14.1.6" class="anchored" data-anchor-id="atención-causal">
 <span class="header-section-number">5.1.6</span> Atención causal</h3>
 <p>Un modelo destinado a generar texto no debe utilizar información que todavía no ha sido generada.</p>
 <p>Cuando predice el siguiente token, solo puede considerar los tokens anteriores.</p>
@@ -2066,7 +2076,7 @@ se generan representaciones contextuales</code></pre>
 <p>contexto disponible → siguiente token → nuevo contexto → siguiente token</p>
 </blockquote>
 <p>El proceso se repite hasta completar la respuesta.</p>
-</section><section id="atención-múltiple" class="level3" data-number="13.1.7"><h3 data-number="13.1.7" class="anchored" data-anchor-id="atención-múltiple">
+</section><section id="atención-múltiple" class="level3" data-number="14.1.7"><h3 data-number="14.1.7" class="anchored" data-anchor-id="atención-múltiple">
 <span class="header-section-number">5.1.7</span> Atención múltiple</h3>
 <p>Una única operación de atención puede concentrarse en un determinado tipo de relación.</p>
 <p>Sin embargo, una secuencia contiene simultáneamente relaciones diferentes:</p>
@@ -2090,7 +2100,7 @@ representaciones ├─ cabeza 2 ─ referencias entre elementos
                      resultado combinado</code></pre>
 <p>No existe una asignación fija que obligue a cada cabeza a especializarse en una función concreta. Las relaciones emergen durante el entrenamiento y no siempre resultan fáciles de interpretar.</p>
 <p>Los resultados de todas las cabezas se combinan para producir una nueva representación de cada posición.</p>
-</section><section id="atención-y-posición" class="level3" data-number="13.1.8"><h3 data-number="13.1.8" class="anchored" data-anchor-id="atención-y-posición">
+</section><section id="atención-y-posición" class="level3" data-number="14.1.8"><h3 data-number="14.1.8" class="anchored" data-anchor-id="atención-y-posición">
 <span class="header-section-number">5.1.8</span> Atención y posición</h3>
 <p>La autoatención compara los tokens de una secuencia, pero por sí sola no incorpora necesariamente su orden.</p>
 <p>Las frases:</p>
@@ -2110,7 +2120,7 @@ representaciones ├─ cabeza 2 ─ referencias entre elementos
 <li>el orden de los elementos dentro de la secuencia.</li>
 </ul>
 <p>La atención relaciona los elementos. La información posicional permite interpretar esas relaciones dentro de una secuencia ordenada.</p>
-</section><section id="atención-no-significa-conciencia" class="level3" data-number="13.1.9"><h3 data-number="13.1.9" class="anchored" data-anchor-id="atención-no-significa-conciencia">
+</section><section id="atención-no-significa-conciencia" class="level3" data-number="14.1.9"><h3 data-number="14.1.9" class="anchored" data-anchor-id="atención-no-significa-conciencia">
 <span class="header-section-number">5.1.9</span> Atención no significa conciencia</h3>
 <p>El término <em>atención</em> procede de una analogía con la capacidad humana de concentrarse en determinados elementos.</p>
 <p>Sin embargo, el mecanismo no implica:</p>
@@ -2123,7 +2133,7 @@ representaciones ├─ cabeza 2 ─ referencias entre elementos
 </ul>
 <p>Se trata de una operación matemática aprendida que distribuye pesos entre representaciones.</p>
 <p>El modelo no decide conscientemente prestar atención a una palabra. Calcula relaciones numéricas que han resultado útiles para reducir el error durante el entrenamiento.</p>
-</section><section id="los-pesos-de-atención-no-son-una-explicación-completa" class="level3" data-number="13.1.10"><h3 data-number="13.1.10" class="anchored" data-anchor-id="los-pesos-de-atención-no-son-una-explicación-completa">
+</section><section id="los-pesos-de-atención-no-son-una-explicación-completa" class="level3" data-number="14.1.10"><h3 data-number="14.1.10" class="anchored" data-anchor-id="los-pesos-de-atención-no-son-una-explicación-completa">
 <span class="header-section-number">5.1.10</span> Los pesos de atención no son una explicación completa</h3>
 <p>Los pesos de atención pueden ayudar a observar algunas relaciones internas del modelo, pero no deben considerarse automáticamente una explicación completa de su resultado.</p>
 <p>Una salida se produce mediante:</p>
@@ -2137,7 +2147,7 @@ representaciones ├─ cabeza 2 ─ referencias entre elementos
 </ul>
 <p>Que un token reciba un peso elevado en una cabeza concreta no demuestra por sí solo que sea la causa única de la respuesta.</p>
 <p>La atención aporta información sobre el procesamiento, pero no convierte automáticamente al modelo en un sistema transparente o completamente explicable.</p>
-</section><section id="de-la-atención-al-transformer" class="level3" data-number="13.1.11"><h3 data-number="13.1.11" class="anchored" data-anchor-id="de-la-atención-al-transformer">
+</section><section id="de-la-atención-al-transformer" class="level3" data-number="14.1.11"><h3 data-number="14.1.11" class="anchored" data-anchor-id="de-la-atención-al-transformer">
 <span class="header-section-number">5.1.11</span> De la atención al Transformer</h3>
 <p>Los mecanismos de atención ya se utilizaban antes de la aparición del Transformer, especialmente en sistemas de traducción automática<span class="citation" data-cites="bahdanau2015">(<a href="../../902-references.html#ref-bahdanau2015" role="doc-biblioref">Bahdanau et al. 2015</a>)</span>. Permitían seleccionar dinámicamente las partes de una secuencia de entrada más relevantes para generar cada elemento de la salida.</p>
 <p>En 2017, Vaswani y sus colaboradores presentaron el artículo <em>Attention Is All You Need</em><span class="citation" data-cites="vaswani2017">(<a href="../../902-references.html#ref-vaswani2017" role="doc-biblioref">Vaswani et al. 2017</a>)</span>. Su propuesta fue construir una arquitectura basada principalmente en mecanismos de atención, eliminando la necesidad de utilizar redes recurrentes o convolucionales como componentes centrales para procesar las secuencias.</p>
@@ -2559,12 +2569,12 @@ Vaswani, Ashish, Noam Shazeer, Niki Parmar, et al. 2017. <span>«Attention Is A
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../../chapters/12-conceptos/04-embeddings.html" class="pagination-link" aria-label="Embeddings">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>  <span class="chapter-title">Embeddings</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>  <span class="chapter-title">Embeddings</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/12-conceptos/06-transformers.html" class="pagination-link" aria-label="Transformers">
-        <span class="nav-page-text"><span class="chapter-number">14</span>  <span class="chapter-title">Transformers</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>  <span class="chapter-title">Transformers</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
