@@ -3,13 +3,14 @@ project:
 
 website:
   announcement:
-     content: |
-        ![](/resources/images/ants.png){.iasi-ants-image}
-     position: above-navbar
-     dismissable: false
-    
+    content: |
+      ![](/resources/images/ants.png){.iasi-ants-image}
+    position: above-navbar
+    dismissable: false
+
 book:
   llms-txt: true
+
   page-footer:
     left: "© 2026 Javier G. Grandez · IASI Rocks 🤘"
     center: '<span id="iasi-publish-date"></span>'
@@ -18,8 +19,8 @@ book:
         href: 903-licenses.qmd
 
   sidebar:
-     collapse-level: 1
-    
+    collapse-level: 1
+
   navbar:
     title: "IASI VOL. I"
     background: primary
@@ -28,31 +29,39 @@ book:
     left:
       - text: "Inicio"
         href: index.qmd
+
       - text: "Introducción"
         href: chapters/11-intro/index.qmd
+
       - text: "Conceptos"
         href: chapters/12-conceptos/index.qmd
+
       - text: "Foundations"
         href: chapters/13-foundations/index.qmd
+
       - text: "Conceptos LLM"
         href: chapters/14-marco/index.qmd
+
       - text: "Metodologias"
         href: chapters/20-methodologies/index.qmd
+
       - text: "Metodologias"
         href: chapters/25-organization/index.qmd
+
       - text: "Componentes"
         href: chapters/30-components/index.qmd
 
     right:
-      - icon: download 
+      - icon: download
         text: "Guardar ..."
-        menu: 
-           - text: "Guardar ..."
-             href: "#iasi-exports"    
+        menu:
+          - text: "Guardar ..."
+            href: "#iasi-exports"
+
       - icon: box-arrow-up-right
         href: "#iasi-open-external"
         aria-label: "Abrir en una pestaña nueva"
-        
+
   search:
     location: navbar
     type: overlay
@@ -61,10 +70,24 @@ format:
   html:
     pagetitle: "IASI Vol. I"
     title-prefix: ""
+
     include-in-header:
-      text: '<script src="resources/js/iasi.js"></script>'
-    theme: 
+      text: |
+        <script>
+          (() => {
+            const offset =
+              document.querySelector('meta[name="quarto:offset"]')?.content || "";
+
+            const script = document.createElement("script");
+            script.src = `${offset}resources/js/iasi.js`;
+            script.async = false;
+            document.head.appendChild(script);
+          })();
+        </script>
+
+    theme:
       - cosmo
       - resources/css/iasi.scss
       - resources/css/book.scss
+
     toc: true

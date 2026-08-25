@@ -57,7 +57,17 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
   }
-}</script><script src="resources/js/iasi.js"></script>
+}</script><script>
+  (() => {
+    const offset =
+      document.querySelector('meta[name="quarto:offset"]')?.content || "";
+
+    const script = document.createElement("script");
+    script.src = `${offset}resources/js/iasi.js`;
+    script.async = false;
+    document.head.appendChild(script);
+  })();
+</script>
 </head>
 <body class="nav-sidebar floating nav-fixed quarto-light">
 
