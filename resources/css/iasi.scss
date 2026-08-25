@@ -214,6 +214,10 @@ body {
   white-space: nowrap;
 }
 
+#title-block-header .subtitle {
+  text-align: center;
+}
+
 @media (max-width: 760px) {
   .navbar-brand::after {
     content: "🚧 WIP";

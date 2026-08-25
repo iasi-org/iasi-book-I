@@ -9,6 +9,7 @@ website:
      dismissable: false
     
 book:
+  llms-txt: true
   page-footer:
     left: "© 2026 Javier G. Grandez · IASI Rocks 🤘"
     center: '<span id="iasi-publish-date"></span>'
