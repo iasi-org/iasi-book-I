@@ -32,6 +32,7 @@ license: "CC BY"
 
 filters:
   - iasi-plantuml
+  - resources/lua/iasi-js.lua
 
 filter-options:
   plantuml:

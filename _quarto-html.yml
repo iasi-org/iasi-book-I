@@ -71,20 +71,6 @@ format:
     pagetitle: "IASI Vol. I"
     title-prefix: ""
 
-    include-in-header:
-      text: |
-        <script>
-          (() => {
-            const offset =
-              document.querySelector('meta[name="quarto:offset"]')?.content || "";
-
-            const script = document.createElement("script");
-            script.src = `${offset}resources/js/iasi.js`;
-            script.async = false;
-            document.head.appendChild(script);
-          })();
-        </script>
-
     theme:
       - cosmo
       - resources/css/iasi.scss
