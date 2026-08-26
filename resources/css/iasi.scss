@@ -35,6 +35,8 @@ body {
   --iasi-title-font-weight: 600;
   --iasi-title-line-height: 1.02;
   --iasi-title-letter-spacing: -0.025em;
+
+  --iasi-nav-brand-width: 240px;  
 }
 
 /* Keep Quarto's header flush with the page content below it. */
@@ -68,7 +70,7 @@ body {
 #title-block-header {
   width: 100% !important;
   max-width: none !important;
-  padding: 0 var(--iasi-page-pad) !important;
+  padding: 1.25rem var(--iasi-page-pad) !important;
   /* margin-top: -17px; */
 }
 
@@ -97,7 +99,7 @@ body {
   width: 100%;
   max-width: none;
   margin: 0 0 2.5rem !important;
-  padding: 0 var(--iasi-page-pad) !important;
+  padding: 1.25rem var(--iasi-page-pad) !important;
   text-align: center;
 }
 
@@ -175,6 +177,8 @@ body {
 /* Corporate IASI navigation. */
 #quarto-header .navbar {
   margin-bottom: 0 !important;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   border-bottom: 0 !important;
 }
 
@@ -196,6 +200,7 @@ body {
   gap: 0.65rem;
   font-weight: 800;
   letter-spacing: -0.04em;
+  min-width: var(--iasi-nav-brand-width);  
 }
 
 /* Site status is part of the corporate navbar identity. */
