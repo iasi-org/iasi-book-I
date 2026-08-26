@@ -1,12 +1,13 @@
 project:
   type: book
+  output-dir: _outputs
 
   resources:
     - LICENSES/*.txt
 
 profile:
   group:
-    - [html, pdf, epub]
+    - [html, pdf, pdfua, epub, docx, odt]
 
 metadata-files:
   - _book-structure.yml

@@ -4,7 +4,7 @@ title: "División del trabajo"
 
 ![](../../resources/images/under-construction.png)
 
-En este punto, hagamos una pausa para hablar de Adam Smith. Adam Smith fue un economista que publicó, entre otros, el famoso libro "La riqueza de las naciones" [@smith1776], el cual se considera como uno de los pilares de la economía moderna. 
+En este punto, hagamos una pausa para hablar de Adam Smith. Adam Smith fue un economista que publicó, entre otros, el famoso libro "La riqueza de las naciones" smith1776, el cual se considera como uno de los pilares de la economía moderna. 
 
 Nos centraremos aquí en una de sus ideas más conocidas: **la división del trabajo**.
 

@@ -440,6 +440,7 @@
     if logo-info != none { image(logo-info.path, alt: logo-info.at("alt", default: none)) }
   },
   outline-depth: 3,
+  supplement-chapter: "Capítulo",
 )
 
 
@@ -459,11 +460,99 @@
   it
 }
 
-#heading(level: 1, numbering: none)[Preface]
-<preface>
-This is a Quarto book.
+#heading(level: 1, numbering: none)[Presentación]
+<presentación>
+La Ingeniería del Software siempre ha evolucionado desplazando el lugar donde reside la complejidad.
 
-To learn more about Quarto books visit #link("https://quarto.org/docs/books").
+Primero aprendimos a expresar instrucciones. Después construimos lenguajes, abstracciones, bibliotecas, frameworks, plataformas y herramientas capaces de ocultar una parte creciente de esa complejidad, los sistemas inteligentes introducen un cambio distinto.
+
+Por primera vez podemos trabajar con sistemas capaces de interpretar una intención expresada en lenguaje natural, proponer soluciones, escribir código, analizar alternativas, ejecutar tareas, detectar errores y participar activamente en el proceso de construcción de software.
+
+Eso cambia muchas cosas, pero no cambia una fundamental:
+
+#quote(block: true)[
+#strong[La ingeniería sigue siendo responsabilidad del ingeniero.]
+]
+
+Este libro nace de esa distinción.
+
+#strong[Ingeniería Asistida por Sistemas Inteligentes (IASI)], no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
+
+- No como un buscador mejorado.
+- No como un generador ocasional de código.
+- No como una colección de herramientas a las que aprender a pedir cosas.
+
+Sino como sistemas capaces de colaborar durante el análisis, el diseño, la implementación, la verificación, la documentación y la evolución de un sistema software, integrándose en el equipo como un participante mas.
+
+#heading(level: 2, numbering: none)[Un cambio en el lugar donde ponemos el esfuerzo]
+<un-cambio-en-el-lugar-donde-ponemos-el-esfuerzo>
+Durante décadas, una parte enorme del coste de construir software estuvo asociada a transformar una idea en una implementación; había que escribirla, había que traducir decisiones humanas a lenguajes formales, configurar herramientas, crear estructuras repetitivas, consultar documentación, buscar errores y realizar manualmente innumerables tareas necesarias para convertir una solución pensada en una solución ejecutable.
+
+Los sistemas inteligentes reducen radicalmente parte de ese trabajo, y cuando cambia el coste de implementar, cambia también el valor relativo de todo lo que ocurre antes y después de la implementación.
+
++ Entender el problema.
++ Definir qué queremos conseguir.
++ Establecer restricciones.
++ Diseñar.
++ Evaluar alternativas.
++ Proporcionar contexto.
++ Distinguir una solución plausible de una solución correcta.
++ Verificar.
++ Decidir.
++ Asumir responsabilidad por lo construido.
+
+Por eso una de las ideas que recorrerá estas páginas es sencilla:
+
+#quote(block: true)[
+#strong[Si la implementación cada vez cuesta menos, el pensamiento cada vez vale más.]
+]
+
+#heading(level: 2, numbering: none)[Este no es un libro sobre herramientas de IA]
+<este-no-es-un-libro-sobre-herramientas-de-ia>
+Las herramientas actuales cambiarán. También lo harán los modelos, las interfaces, los proveedores y buena parte del vocabulario que utilizamos hoy, por eso este libro comienza por los fundamentos conceptuales y técnicos necesarios para comprender estos sistemas antes de abordar su aplicación a la Ingeniería del Software.
+
+Antes de preguntarnos cómo trabajar con sistemas inteligentes necesitamos comprender #strong[qué son], de dónde vienen, qué los diferencia del software tradicional, cómo representan la información, qué significa realmente contexto, qué papel desempeñan conceptos como tokens, embeddings, attention o transformers y, sobre todo, cuáles son sus capacidades y sus límites.
+
+El recorrido comienza deliberadamente antes de los LLM. Volvemos a la programación imperativa, funcional y declarativa; observamos la evolución de la inteligencia artificial, el aprendizaje automático y el aprendizaje profundo; y llegamos progresivamente a los modelos actuales.
+
+No buscamos acumular terminología, buscamos construir un modelo mental. Porque solo cuando comprendemos qué tenemos delante podemos empezar a preguntarnos cómo debe cambiar nuestra forma de hacer ingeniería.
+
+#heading(level: 2, numbering: none)[Ingeniería, no magia]
+<ingeniería-no-magia>
+Un sistema inteligente puede:
+
+- Producir una respuesta extraordinariamente convincente y estar equivocado.
+- Generar una implementación funcional sin comprender las consecuencias de una decisión.
+- Explorar cientos de alternativas sin saber cuál de ellas debemos elegir.
+- Ayudarnos a pensar.
+
+Pero no puede asumir nuestra responsabilidad profesional, esta relación constituye la base de IASI:
+
+#quote(block: true)[
+#strong[El sistema inteligente asiste. \ El ingeniero comprende, decide, verifica y responde.]
+]
+
+No es una diferencia semántica, es una frontera de responsabilidad, y buena parte de este libro consiste en aprender a trabajar precisamente sobre esa frontera.
+
+#heading(level: 2, numbering: none)[Un libro que forma parte de algo mayor]
+<un-libro-que-forma-parte-de-algo-mayor>
+Este volumen no pretende cerrar una metodología, es el comienzo de una construcción.
+
+IASI se desarrolla como un proyecto abierto en el que las ideas no solo se describen: se aplican, se discuten, se experimentan, se convierten en herramientas y artefactos y, cuando sobreviven al contacto con la realidad, pasan a formar parte de una forma de trabajo.
+
+Por eso estas páginas deben leerse con la misma actitud con la que fueron escritas:
+
++ cuestionando,
++ experimentando,
++ contrastando,
+
+Y cambiando aquello que no resista la prueba.
+
+El #strong[Manifiesto] que sigue establece esa posición.
+
+Los #strong[Principios] comienzan a convertirla en criterios de ingeniería.
+
+Y el resto del volumen construye los fundamentos necesarios para entender los sistemas con los que vamos a trabajar. No hace falta aceptar las ideas de este libro, hace falta comprenderlas lo suficiente como para poder discutirlas, ahí empieza la ingeniería.
 
 #heading(level: 1, numbering: none)[Manifiesto]
 <manifiesto>
@@ -661,7 +750,7 @@ Al finalizar este capítulo el lector será capaz de:
 
 = Programación imperativa
 <programación-imperativa>
-= El conocimiento reside en el programa
+== El conocimiento reside en el programa
 <el-conocimiento-reside-en-el-programa>
 Desde los primeros ordenadores hasta la actualidad, la inmensa mayoría del software se ha construido siguiendo un mismo principio fundamental.
 
@@ -695,7 +784,7 @@ En este ejemplo no existe ninguna interpretación posible.
 
 Si la condición se cumple, se ejecutarán exactamente las instrucciones del primer bloque. Si no se cumple, se ejecutará el segundo. El resultado será siempre el mismo para una misma entrada. La responsabilidad de decidir #strong[qué hacer], #strong[cuándo hacerlo], #strong[cómo hacerlo] y #strong[en qué orden hacerlo] recae completamente sobre el ingeniero de software. El ordenador no toma decisiones. Ejecuta las instrucciones que recibe.
 
-== Las fortalezas del modelo
+=== Las fortalezas del modelo
 <las-fortalezas-del-modelo>
 Este paradigma ha demostrado durante más de medio siglo ser extraordinariamente eficaz. Permite construir sistemas que son:
 
@@ -718,7 +807,7 @@ Gracias a ello se han desarrollado sistemas críticos como:
 
 Durante décadas, este modelo ha constituido la base de la Ingeniería del Software.
 
-== El requisito fundamental
+=== El requisito fundamental
 <el-requisito-fundamental>
 Sin embargo, este enfoque tiene un requisito imprescindible: #strong[El ingeniero debe conocer previamente el algoritmo que resuelve el problema.]. Antes de escribir una sola línea de código debe ser capaz de responder preguntas como:
 
@@ -737,7 +826,7 @@ En otras palabras:
 
 El ordenador simplemente ejecuta ese conocimiento.
 
-== Cuando el algoritmo no es evidente
+=== Cuando el algoritmo no es evidente
 <cuando-el-algoritmo-no-es-evidente>
 Existen, sin embargo, problemas para los que resulta extremadamente difícil escribir un algoritmo preciso.
 
@@ -758,7 +847,7 @@ Comprender este cambio de paradigma será el objetivo de los siguientes capítul
 
 = Programacion funcional
 <programacion-funcional>
-= Describiendo el problema, no el procedimiento
+== Describiendo el problema, no el procedimiento
 <describiendo-el-problema-no-el-procedimiento>
 Los lenguajes de tercera generación (3GL) supusieron un enorme avance en la construcción de software. El ingeniero describía, paso a paso, el algoritmo que debía ejecutar el ordenador, sin embargo, conforme los sistemas crecían en tamaño y complejidad, comenzó a surgir una pregunta cada vez más importante.
 
@@ -768,7 +857,7 @@ En muchos programas, una parte significativa del código no representa el proble
 
 La programación funcional propone un cambio de perspectiva: En lugar de describir detalladamente cómo realizar cada paso del algoritmo, el desarrollador expresa qué transformación desea aplicar sobre los datos, el interés deja de centrarse en el procedimiento y pasa a centrarse en el resultado de cada transformación.
 
-== Del estado a la transformación
+=== Del estado a la transformación
 <del-estado-a-la-transformación>
 En la programación imperativa el estado del programa cambia continuamente.
 
@@ -782,7 +871,7 @@ El algoritmo mantiene una variable cuyo valor cambia en cada iteración, desde e
 #Skylighting(([#NormalTok("total ");#OtherTok("<-");#NormalTok(" ");#FunctionTok("sum");#NormalTok("(ventas)");],));
 El desarrollador ya no explica cómo recorrer la colección si no que simplemente indica cuál es el resultado que desea obtener, es el propio lenguaje quien decide cómo ejecutar esa operación.
 
-== Composición de funciones
+=== Composición de funciones
 <composición-de-funciones>
 Una de las características más importantes de la programación funcional consiste en considerar las funciones como elementos que pueden componerse entre sí:
 
@@ -799,7 +888,7 @@ Por ejemplo, utilizando el ecosistema #strong[tidyverse] de R:
 [#NormalTok("    ");#FunctionTok("arrange");#NormalTok("(");#FunctionTok("desc");#NormalTok("(importe))");],));
 Cada línea representa una transformación independiente, no aparecen índices, no existen bucles explícitos, las variables temporales prácticamente desaparecen. El código deja de describir el recorrido y comienza a describir una secuencia lógica de transformaciones, esta forma de trabajar facilita enormemente la lectura del programa por que cada operación expresa claramente su intención.
 
-== Funciones puras
+=== Funciones puras
 <funciones-puras>
 Otro de los pilares fundamentales de la programación funcional son las funciones puras: Una función pura siempre produce el mismo resultado cuando recibe los mismos parámetros.
 
@@ -814,17 +903,17 @@ Por ejemplo:
 [#NormalTok("}");],));
 Su comportamiento es completamente predecible. Esta propiedad simplifica las pruebas, facilita la depuración y permite razonar sobre el software con mucha mayor facilidad.
 
-== Inmutabilidad
+=== Inmutabilidad
 <inmutabilidad>
 En programación funcional los datos tienden a considerarse inmutables, en lugar de modificar un objeto existente, se genera uno nuevo que representa el resultado de la transformación. Aunque internamente el lenguaje pueda optimizar este proceso, conceptualmente el programa deja de construirse mediante cambios continuos de estado y pasa a entenderse como una cadena de transformaciones sucesivas. Esta filosofía reduce numerosos errores relacionados con estados compartidos, concurrencia y efectos inesperados.
 
-== ¿Qué aporta realmente la programación funcional?
+=== ¿Qué aporta realmente la programación funcional?
 <qué-aporta-realmente-la-programación-funcional>
 La programación funcional no elimina la necesidad de diseñar algoritmos, el ingeniero continúa siendo responsable de definir la lógica que resuelve el problema sin embargo, desplaza parte de la responsabilidad desde el desarrollador hacia el propio lenguaje.
 
 El programador deja de describir numerosos mecanismos de bajo nivel y comienza a expresar transformaciones de un nivel mucho más cercano al problema que desea resolver, el resultado son programas más compactos, más expresivos y, en muchos casos, más fáciles de mantener.
 
-== Un nuevo nivel de abstracción
+=== Un nuevo nivel de abstracción
 <un-nuevo-nivel-de-abstracción>
 La evolución de los lenguajes de programación puede interpretarse como una búsqueda constante de niveles superiores de abstracción, en los lenguajes imperativos, el desarrollador describe cada paso del algoritmo, en la programación funcional, describe transformaciones sobre los datos y delega en el lenguaje muchos de los detalles de ejecución aunque el ordenador continúa ejecutando instrucciones.
 
@@ -836,13 +925,13 @@ En los capítulos siguientes veremos cómo esa tendencia continúa con los lengu
 
 = Progrmacion declarativa
 <progrmacion-declarativa>
-= Describiendo el resultado, no el procedimiento
+== Describiendo el resultado, no el procedimiento
 <describiendo-el-resultado-no-el-procedimiento>
 La programación declarativa representa un nuevo paso en la evolución de los niveles de abstracción del software, mientras que la programación imperativa obliga al desarrollador a describir paso a paso el algoritmo que debe ejecutar el ordenador, y la programación funcional centra la atención en las transformaciones aplicadas sobre los datos, la programación declarativa propone un enfoque completamente diferente: El desarrollador deja de indicar #strong[cómo] resolver un problema y comienza a describir #strong[qué] resultado desea obtener.
 
 La responsabilidad de encontrar el procedimiento adecuado pasa a formar parte del propio sistema.
 
-== Del algoritmo a la especificación
+=== Del algoritmo a la especificación
 <del-algoritmo-a-la-especificación>
 En un lenguaje imperativo, obtener una lista de clientes con saldo pendiente implica diseñar un algoritmo completo, será necesario recorrer estructuras de datos, evaluar condiciones, almacenar resultados y decidir el orden de ejecución de cada operación, en un lenguaje declarativo como SQL, el mismo problema puede expresarse de forma mucho más sencilla.
 
@@ -851,13 +940,13 @@ En un lenguaje imperativo, obtener una lista de clientes con saldo pendiente imp
 [#KeywordTok("WHERE");#NormalTok(" saldo ");#OperatorTok(">");#NormalTok(" ");#DecValTok("0");#NormalTok(";");],));
 La consulta no indica cómo recorrer la tabla, qué algoritmo utilizar ni qué índices emplear, simplemente especifica el resultado esperado. El sistema gestor de bases de datos (SGDB) analiza la consulta, estudia las estadísticas disponibles y selecciona automáticamente el plan de ejecución que considera más eficiente, por primera vez, el desarrollador comienza a delegar decisiones importantes en la propia plataforma.
 
-== El estado deseado
+=== El estado deseado
 <el-estado-deseado>
 Este mismo principio aparece hoy en numerosas tecnologías modernas, cuando utilizamos #emph[Terraform], #emph[Kubernetes] o #emph[Docker Compose] no describimos una secuencia de operaciones, describimos el estado final que deseamos alcanzar, no indicamos cómo crear una máquina virtual, desplegar un contenedor o configurar una red, simplemente declaramos cuál debe ser el resultado final y dejamos que la plataforma determine el procedimiento necesario para conseguirlo.
 
 La programación deja de ser una descripción detallada de acciones y se convierte en una especificación de objetivos.
 
-== Delegar decisiones
+=== Delegar decisiones
 <delegar-decisiones>
 La programación declarativa introduce un cambio conceptual muy importante: El desarrollador ya no controla todas las decisiones del proceso de ejecución, parte de esas decisiones se delegan en el propio sistema:
 
@@ -867,7 +956,7 @@ La programación declarativa introduce un cambio conceptual muy importante: El d
 
 El ingeniero continúa definiendo el problema, pero deja de ser responsable de todos los detalles de su resolución, esta idea constituye uno de los mayores avances en la historia de la Ingeniería del Software.
 
-== El puente hacia la Inteligencia Artificial
+=== El puente hacia la Inteligencia Artificial
 <el-puente-hacia-la-inteligencia-artificial>
 La programación declarativa también estableció un puente natural hacia los primeros sistemas de Inteligencia Artificial, lenguajes como Prolog permitían describir hechos y reglas lógicas sin implementar explícitamente el algoritmo de razonamiento, El programador escribía afirmaciones como:
 
@@ -882,7 +971,7 @@ El motor de inferencia era el encargado de encontrar automáticamente las respue
 
 Aunque aquellos sistemas demostraron importantes limitaciones, introdujeron un concepto que sigue siendo fundamental en la actualidad: el ingeniero no siempre necesita describir el procedimiento completo; en muchas ocasiones basta con representar correctamente el conocimiento y dejar que el sistema realice el resto del trabajo.
 
-== Una evolución continua
+=== Una evolución continua
 <una-evolución-continua>
 La programación declarativa no constituye el final de esta evolución, representa un nuevo escalón en un proceso de abstracción creciente, cada nuevo paradigma ha desplazado una parte mayor de la complejidad desde el desarrollador hacia las herramientas.
 
@@ -894,7 +983,7 @@ El siguiente paso consistirá en delegar no solo la estrategia de ejecución, si
 
 = IA Simbolica
 <ia-simbolica>
-= Representar el conocimiento
+== Representar el conocimiento
 <representar-el-conocimiento>
 Mientras la Ingeniería del Software evolucionaba hacia niveles crecientes de abstracción, otra disciplina comenzaba a plantearse una pregunta completamente diferente:
 
@@ -902,7 +991,7 @@ Mientras la Ingeniería del Software evolucionaba hacia niveles crecientes de ab
 
 Esta cuestión dio origen a la primera gran corriente de la Inteligencia Artificial, conocida hoy como #strong[Inteligencia Artificial simbólica] o #strong[Good Old-Fashioned Artificial Intelligence (GOFAI)], su objetivo no consistía en aprender a partir de datos, sino en construir sistemas capaces de razonar utilizando conocimiento representado explícitamente.
 
-== La inteligencia como conocimiento
+=== La inteligencia como conocimiento
 <la-inteligencia-como-conocimiento>
 Los investigadores de las décadas de 1950 y 1960 partían de una hipótesis aparentemente razonable:
 
@@ -914,7 +1003,7 @@ Si somos capaces de expresar ese conocimiento de forma estructurada, un ordenado
 
 El reto consistía en encontrar una forma adecuada de representar ese conocimiento.
 
-== Símbolos en lugar de números
+=== Símbolos en lugar de números
 <símbolos-en-lugar-de-números>
 Los ordenadores habían nacido para realizar cálculos numéricos, la Inteligencia Artificial simbólica propuso utilizar los ordenadores para manipular conceptos, en lugar de sumar o multiplicar, los programas trabajarían con conceptos como:
 
@@ -936,7 +1025,7 @@ Un sistema podía conocer afirmaciones como:
 
 A partir de estas afirmaciones era posible deducir nuevo conocimiento mediante reglas lógicas.
 
-== El razonamiento mediante reglas
+=== El razonamiento mediante reglas
 <el-razonamiento-mediante-reglas>
 La pieza fundamental de la IA simbólica era el motor de inferencia, el conocimiento se almacenaba mediante hechos y reglas.
 
@@ -951,7 +1040,7 @@ El sistema podía deducir automáticamente:
 
 Nadie había escrito explícitamente esa conclusión, había sido obtenida mediante razonamiento lógico. Por primera vez un ordenador parecía capaz de extraer conclusiones utilizando conocimiento previamente representado.
 
-== Los lenguajes de la Inteligencia Artificial
+=== Los lenguajes de la Inteligencia Artificial
 <los-lenguajes-de-la-inteligencia-artificial>
 La necesidad de representar conocimiento impulsó el desarrollo de nuevos lenguajes de programación:
 
@@ -960,7 +1049,7 @@ La necesidad de representar conocimiento impulsó el desarrollo de nuevos lengua
 
 Esta idea representaba una evolución muy interesante respecto a la programación declarativa, ya no solo se declaraba el resultado esperado, si no que también se declaraba el conocimiento sobre el que debía razonar el sistema.
 
-== Los sistemas expertos
+=== Los sistemas expertos
 <los-sistemas-expertos>
 Durante los años setenta y ochenta esta filosofía alcanzó su máximo desarrollo con los sistemas expertos.
 
@@ -977,7 +1066,7 @@ Los ingenieros del conocimiento entrevistaban a estos expertos y transformaban s
 
 Durante algún tiempo estos sistemas obtuvieron resultados extraordinarios y alimentaron la idea de que la Inteligencia Artificial estaba cerca de resolver el problema del razonamiento humano.
 
-== El cuello de botella del conocimiento
+=== El cuello de botella del conocimiento
 <el-cuello-de-botella-del-conocimiento>
 Sin embargo, muy pronto apareció una dificultad que nadie había previsto con suficiente claridad: El conocimiento humano no puede reducirse fácilmente a una colección de reglas. Cada nueva excepción obligaba a escribir nuevas reglas, las reglas comenzaban a entrar en conflicto entre sí y el mantenimiento se volvía cada vez más complejo. La incorporación de nuevos conocimientos exigía revisar miles de decisiones anteriores.
 
@@ -985,7 +1074,7 @@ Este problema llegó a conocerse como el #strong[cuello de botella del conocimie
 
 No era difícil construir un sistema experto, lo realmente difícil era mantenerlo actualizado durante años.
 
-== El límite de la Inteligencia Artificial simbólica
+=== El límite de la Inteligencia Artificial simbólica
 <el-límite-de-la-inteligencia-artificial-simbólica>
 La IA simbólica demostró que los ordenadores podían razonar, pero también puso de manifiesto una limitación fundamental: El conocimiento debía ser introducido manualmente.
 
@@ -996,7 +1085,7 @@ La IA simbólica demostró que los ordenadores podían razonar, pero también pu
 
 La inteligencia dependía directamente de la cantidad y calidad del conocimiento escrito por los expertos, el sistema nunca podía saber más de lo que alguien había representado previamente, en otras palabras, la inteligencia seguía dependiendo completamente del ser humano.
 
-== Una lección que sigue vigente
+=== Una lección que sigue vigente
 <una-lección-que-sigue-vigente>
 Aunque muchos sistemas expertos desaparecieron con el tiempo, la IA simbólica dejó un legado extraordinario introduciendo conceptos que siguen siendo fundamentales en la actualidad:
 
@@ -1009,7 +1098,7 @@ Aunque muchos sistemas expertos desaparecieron con el tiempo, la IA simbólica d
 
 Muchos sistemas modernos continúan utilizando estas técnicas allí donde resulta imprescindible trabajar con conocimiento explícito y completamente verificable.
 
-== El siguiente paso
+=== El siguiente paso
 <el-siguiente-paso>
 La IA simbólica intentó construir inteligencia escribiendo conocimiento, durante décadas fue el enfoque dominante sin embargo, a medida que los problemas crecían en complejidad comenzó a resultar evidente que representar manualmente todo el conocimiento humano era una tarea inabordable. Quizá el problema no consistía en escribir mejores reglas. Quizá el verdadero cambio debía consistir en dejar que las máquinas aprendieran esas reglas por sí mismas.
 
@@ -1017,7 +1106,7 @@ Esa idea marcaría el nacimiento de una nueva etapa en la historia de la Intelig
 
 = Machine Learning
 <machine-learning>
-= Cuando las reglas dejan de escribirse
+== Cuando las reglas dejan de escribirse
 <cuando-las-reglas-dejan-de-escribirse>
 La Inteligencia Artificial simbólica demostró que un ordenador podía razonar utilizando conocimiento representado mediante reglas. Fue un enorme avance respecto a todo lo que habíamos visto hasta ese momento, ya que por primera vez una máquina no solo ejecutaba instrucciones, sino que era capaz de utilizar conocimiento explícito para tomar decisiones y obtener nuevas conclusiones mediante procesos de inferencia. Sin embargo, aquel éxito también puso de manifiesto una limitación fundamental que acabaría condicionando toda la evolución posterior de la Inteligencia Artificial: alguien tenía que escribir ese conocimiento.
 
@@ -1031,7 +1120,7 @@ El mismo problema aparecía en muchos otros ámbitos. Reconocer la voz de una pe
 
 #strong[¿Y si las reglas no tuvieran que escribirse?]
 
-== El momento adecuado
+=== El momento adecuado
 <el-momento-adecuado>
 En ocasiones tendemos a pensar que las grandes revoluciones tecnológicas aparecen de forma repentina, como consecuencia de una idea brillante que cambia el mundo de un día para otro. Sin embargo, la historia de la ciencia y de la ingeniería demuestra que esto ocurre muy pocas veces. La mayoría de las ideas importantes aparecen mucho antes de que la tecnología sea capaz de aprovecharlas plenamente. Permanecen durante años, e incluso décadas, como propuestas prometedoras cuyo verdadero potencial todavía no puede demostrarse. Machine Learning constituye uno de los mejores ejemplos de este fenómeno.
 
@@ -1045,7 +1134,7 @@ La situación comenzó a cambiar con la expansión de Internet y la progresiva d
 
 Solo cuando coincidieron estas circunstancias, algoritmos suficientemente maduros, ordenadores con la potencia necesaria para ejecutarlos y cantidades masivas de datos sobre los que aprender, #emph[Machine Learning] pudo abandonar el ámbito de la investigación para convertirse en una tecnología capaz de resolver problemas reales. La revolución no fue consecuencia de un único descubrimiento, sino de la convergencia de varias revoluciones independientes que, finalmente, coincidieron en el momento adecuado.
 
-== ¿Que es aprender?
+=== ¿Que es aprender?
 <que-es-aprender>
 Para un ser humano, aprender significa adquirir conocimiento a partir de la experiencia, aprendemos a reconocer un rostro después de verlo varias veces, a conducir tras muchas horas de práctica o a distinguir una melodía simplemente porque la hemos escuchado antes. Nuestro cerebro trabaja con conceptos, recuerdos, sensaciones y significados. Un ordenador, sin embargo, no dispone de ninguno de esos elementos, no comprende qué es un gato, una carretera o una conversación, de hecho, ni siquiera sabe que existen, todo lo que recibe son números.
 
@@ -1055,7 +1144,7 @@ Esta idea resulta tan sencilla como trascendental. Una fotografía no es más qu
 
 Esta diferencia puede parecer una simple cuestión técnica, pero representa un cambio profundo en la forma de entender el software. Durante décadas, el conocimiento residía en las reglas escritas por el programador. Con #emph[Machine Learning], el conocimiento deja de describirse explícitamente y pasa a emerger del análisis de los datos. El ingeniero ya no intenta capturar directamente el conocimiento del experto; construye un sistema capaz de descubrir, mediante procedimientos matemáticos, las relaciones ocultas que existen en la información disponible; esa es, probablemente, la mayor transformación que ha vivido la Ingeniería del Software desde sus orígenes.
 
-== ¿De dónde y cómo aprender?
+=== ¿De dónde y cómo aprender?
 <de-dónde-y-cómo-aprender>
 Ningún ser vivo aprende de la nada y una máquina tampoco, todo aprendizaje requiere una fuente de experiencia sobre la que observar, comparar y extraer conclusiones. En los seres humanos esa experiencia procede de nuestros sentidos y de la interacción con el mundo, vemos, escuchamos, leemos, experimentamos y, poco a poco, construimos un conocimiento que nos permite comprender situaciones nuevas. Un ordenador, sin embargo, carece de ojos, oídos o intuición. Su única fuente de experiencia son los datos.
 
@@ -1067,7 +1156,7 @@ Ese proceso es lo que denominamos #strong[entrenamiento]. Durante el entrenamien
 
 Naturalmente, este proceso no ocurre de forma espontánea. Alguien debe diseñar el método que permita buscar esas relaciones matemáticas y decidir cómo modificar el modelo en cada iteración, ese método recibe el nombre de #strong[algoritmo de aprendizaje], y constituye el verdadero motor que hace posible el #emph[Machine Learning].
 
-=== Aprendizaje supervisado
+==== Aprendizaje supervisado
 <aprendizaje-supervisado>
 La forma más intuitiva de enseñar a una máquina consiste en mostrarle ejemplos junto con la respuesta correcta. Es el mismo método que utilizamos con frecuencia en el aprendizaje humano, un profesor plantea ejercicios y posteriormente corrige los errores del alumno, un padre enseña a un niño el nombre de los animales señalándolos uno a uno y un médico residente aprende contrastando sus diagnósticos con la opinión de un especialista. En todos estos casos existe una referencia que permite saber si la respuesta es correcta o incorrecta.
 
@@ -1075,7 +1164,7 @@ En Machine Learning este enfoque recibe el nombre de #strong[aprendizaje supervi
 
 El aprendizaje supervisado se ha convertido en uno de los paradigmas más utilizados de la Inteligencia Artificial moderna porque resulta especialmente eficaz cuando existen grandes volúmenes de datos etiquetados. Clasificar imágenes, reconocer voz, detectar fraude bancario o predecir el precio de una vivienda son solo algunos ejemplos de problemas que pueden abordarse mediante este enfoque.
 
-=== Aprendizaje no supervisado
+==== Aprendizaje no supervisado
 <aprendizaje-no-supervisado>
 No siempre es posible disponer de la respuesta correcta, en muchas ocasiones solo existen los datos y nadie sabe realmente qué estructuras esconden. Una empresa puede almacenar millones de operaciones de sus clientes sin conocer qué perfiles de comportamiento existen, un observatorio astronómico puede registrar enormes cantidades de información sin saber qué fenómenos contiene o un laboratorio puede acumular datos experimentales esperando descubrir relaciones desconocidas.
 
@@ -1083,7 +1172,7 @@ En estas situaciones se utiliza el #strong[aprendizaje no supervisado]. El objet
 
 Este tipo de aprendizaje ha resultado especialmente útil para segmentar clientes, detectar anomalías, reducir la complejidad de grandes volúmenes de información o descubrir conocimiento previamente desconocido, en cierto modo, representa la faceta más exploratoria del #emph[Machine Learning], aquella en la que el objetivo no es confirmar lo que ya sabemos, sino encontrar aquello que todavía ignoramos.
 
-=== Aprendizaje por refuerzo
+==== Aprendizaje por refuerzo
 <aprendizaje-por-refuerzo>
 Existe una tercera forma de aprender que se aproxima mucho más a la experiencia directa. En lugar de recibir respuestas correctas o limitarse a buscar patrones, el sistema interactúa con un entorno, toma decisiones y observa las consecuencias de sus acciones. Cada decisión puede producir un resultado favorable o desfavorable y esa información sirve para modificar su comportamiento futuro.
 
@@ -1091,7 +1180,7 @@ Este paradigma recibe el nombre de #strong[aprendizaje por refuerzo]. El algorit
 
 El aprendizaje por refuerzo ha demostrado una enorme capacidad para resolver problemas en los que es necesario tomar decisiones secuenciales. La planificación de rutas, la robótica, la conducción autónoma o los sistemas capaces de competir en videojuegos complejos son algunos de los campos donde este enfoque ha alcanzado resultados espectaculares, mostrando que una máquina también puede aprender a actuar cuando la experiencia es su único maestro.
 
-=== Aprendizaje autosupervisado
+==== Aprendizaje autosupervisado
 <aprendizaje-autosupervisado>
 Durante muchos años se pensó que entrenar un modelo requería enormes cantidades de datos etiquetados manualmente, sin embargo, etiquetar millones o miles de millones de ejemplos resulta costoso, lento y, en muchos casos, simplemente imposible. La evolución reciente de la Inteligencia Artificial ha demostrado que existe otra alternativa: utilizar los propios datos para generar automáticamente las tareas de aprendizaje.
 
@@ -1099,7 +1188,7 @@ En el #strong[aprendizaje autosupervisado] no es necesario que una persona indiq
 
 Este enfoque ha supuesto uno de los mayores avances de la Inteligencia Artificial en la última década. Gracias a él ha sido posible entrenar modelos utilizando cantidades masivas de texto, imágenes, audio o vídeo disponibles en Internet, sin necesidad de etiquetar manualmente cada ejemplo. Los grandes modelos fundacionales y los actuales sistemas de IA generativa son consecuencia directa de esta nueva forma de aprender.
 
-== Los algoritmos de aprendizaje
+=== Los algoritmos de aprendizaje
 <los-algoritmos-de-aprendizaje>
 Hemos visto que una máquina puede aprender a partir de los datos, pero ese aprendizaje no se produce de forma espontánea. Es necesario un procedimiento que analice la información disponible, descubra relaciones entre ella y modifique progresivamente el comportamiento del modelo. Ese procedimiento recibe el nombre de #strong[algoritmo de aprendizaje] y constituye el verdadero motor del #emph[Machine Learning].
 
@@ -1111,7 +1200,7 @@ Pero todos ellos compartían una característica común: cada algoritmo nacía p
 
 = Deep Learning
 <deep-learning>
-= Mas allá de los algoritmos
+== Mas allá de los algoritmos
 <mas-allá-de-los-algoritmos>
 Si cada algoritmo está diseñado para resolver una determinada familia de problemas y el número de problemas del mundo real es prácticamente ilimitado, parecería lógico pensar que también sería necesario desarrollar un número ilimitado de algoritmos, aquí aparecen las Redes Neuronales.
 
@@ -1129,7 +1218,7 @@ El #emph[Deep Learning] no eliminó los algoritmos clásicos de #emph[Machine Le
 
 Para comprender por qué esto fue posible es necesario conocer cómo está construida una red neuronal y cuál es el mecanismo que le permite aprender a partir de los datos.
 
-== ¿Qué es una red neuronal?
+=== ¿Qué es una red neuronal?
 <qué-es-una-red-neuronal>
 A pesar de su nombre, una red neuronal artificial está muy lejos de reproducir el funcionamiento del cerebro humano. El término #emph[neuronal] responde más a una inspiración biológica que a una copia de la realidad. Sus primeros investigadores observaron que el cerebro era capaz de aprender a partir de la experiencia y se preguntaron si sería posible construir modelos matemáticos que, de forma muy simplificada, presentaran un comportamiento similar.
 
@@ -1145,7 +1234,7 @@ La enorme ventaja de este enfoque es que la estructura general de la red apenas 
 
 Comprender esta idea resulta fundamental para entender la evolución reciente de la Inteligencia Artificial. Sin embargo, todavía queda una pregunta por responder. Si una red neuronal contiene millones o incluso miles de millones de pesos, ¿cómo consigue ajustarlos para aprender sin que un ingeniero tenga que modificarlos uno a uno?
 
-== ¿Cómo aprende una red neuronal?
+=== ¿Cómo aprende una red neuronal?
 <cómo-aprende-una-red-neuronal>
 Una red neuronal aprende mediante un proceso iterativo de prueba y error. Durante el entrenamiento recibe un gran número de ejemplos, genera una respuesta para cada uno de ellos y la compara con el resultado esperado. Si la respuesta es correcta, apenas realiza cambios. Si se ha equivocado, modifica ligeramente los pesos de sus conexiones para intentar reducir ese error en la siguiente ocasión.
 
@@ -1157,7 +1246,7 @@ Todo este proceso se realiza de forma automática mediante algoritmos de optimiz
 
 Este mecanismo de aprendizaje, combinado con grandes cantidades de datos y una enorme capacidad de cálculo, es el que ha convertido a las redes neuronales profundas en la base de la mayoría de los sistemas modernos de Inteligencia Artificial.
 
-== Siguiente paso
+=== Siguiente paso
 <siguiente-paso>
 A medida que las redes neuronales aumentaban de tamaño comenzaron a aparecer capacidades que antes parecían inalcanzables. Ya no solo reconocían imágenes o clasificaban datos. También empezaban a comprender relaciones complejas entre palabras, frases y documentos completos. Aquello abrió el camino hacia una nueva generación de modelos conocidos como Large Language Models (LLM).
 
@@ -1179,8 +1268,22 @@ Ese cambio de paradigma dio origen a una nueva generación de sistemas: los #str
 
 = Large Language Models
 <large-language-models>
-= Cuando el lenguaje se convirtió en conocimiento
+== Cuando el lenguaje se convirtió en conocimiento
 <cuando-el-lenguaje-se-convirtió-en-conocimiento>
+A lo largo de los capítulos anteriores hemos recorrido la evolución de la Inteligencia Artificial desde los primeros sistemas basados en reglas hasta las redes neuronales profundas. Cada etapa respondió a las limitaciones de la anterior y aportó nuevas capacidades, acercándonos progresivamente a sistemas cada vez más flexibles y capaces de aprender a partir de los datos.
+
+Ese recorrido nos conduce finalmente a los #strong[Large Language Models (LLM)], la tecnología que ha hecho posible una nueva generación de sistemas inteligentes y que constituye el punto de partida del resto de este trabajo.
+
+El objetivo de este libro no es estudiar los LLM como un fin en sí mismos, sino comprender cómo pueden utilizarse como elemento fundamental en la construcción de sistemas de Ingeniería y Arquitectura del Software asistidos por Inteligencia Artificial. Los modelos de lenguaje han dejado de ser simples generadores de texto para convertirse en el núcleo sobre el que se integran herramientas, conocimiento, procesos, agentes y servicios capaces de colaborar con las personas durante todo el ciclo de vida del software.
+
+Un #strong[Large Language Model] es una red neuronal entrenada con cantidades masivas de texto para aprender las regularidades, estructuras y relaciones presentes en el lenguaje. Gracias a ese aprendizaje, el modelo puede adaptarse a una enorme variedad de tareas sin haber sido programado específicamente para cada una de ellas. Esta capacidad de generalización es la que ha permitido que los LLM trasciendan el ámbito del procesamiento del lenguaje natural y se conviertan en componentes fundamentales de sistemas inteligentes cada vez más complejos.
+
+Comprender qué es un LLM y cuáles son sus capacidades resulta imprescindible para entender el resto de la obra. En los capítulos siguientes se analizarán los conceptos fundamentales que sustentan estos modelos y, posteriormente, cómo se integran dentro de arquitecturas modernas para diseñar, desarrollar y operar soluciones de Ingeniería del Software asistidas por sistemas inteligentes.
+
+= Large Language Models
+<large-language-models-1>
+== Cuando el lenguaje se convirtió en conocimiento
+<cuando-el-lenguaje-se-convirtió-en-conocimiento-1>
 A lo largo de los capítulos anteriores hemos recorrido la evolución de la Inteligencia Artificial desde los primeros sistemas basados en reglas hasta las redes neuronales profundas. Cada etapa respondió a las limitaciones de la anterior y aportó nuevas capacidades, acercándonos progresivamente a sistemas cada vez más flexibles y capaces de aprender a partir de los datos.
 
 Ese recorrido nos conduce finalmente a los #strong[Large Language Models (LLM)], la tecnología que ha hecho posible una nueva generación de sistemas inteligentes y que constituye el punto de partida del resto de este trabajo.
@@ -1233,7 +1336,7 @@ Comprender estos conceptos nos permitirá utilizar los modelos de lenguaje con m
 
 = Sistema Inteligente
 <sistema-inteligente>
-= ¿Qué es?
+== ¿Qué es?
 <qué-es>
 Cuando se habla actualmente de inteligencia artificial, suelen utilizarse expresiones como #emph[IA], #emph[IA generativa], #emph[modelo de lenguaje], #emph[agente] o #emph[asistente]. Estos términos describen tecnologías, capacidades o componentes concretos, pero no necesariamente la solución completa. A lo largo de este libro utilizaremos un concepto más amplio: #strong[sistema inteligente].
 
@@ -1266,7 +1369,7 @@ No obstante, el término #emph[inteligente] debe utilizarse con cierta precauci�
 
 En este contexto, la inteligencia no describe una cualidad humana, sino una #strong[capacidad funcional]: resolver determinados problemas, reconocer patrones, realizar predicciones, generar contenido o adaptar su comportamiento ante distintas entradas.
 
-= Diferentes grados de autonomía
+== Diferentes grados de autonomía
 <diferentes-grados-de-autonomía>
 No todos los sistemas inteligentes tienen el mismo nivel de autonomía.
 
@@ -1303,7 +1406,7 @@ También debemos preguntar:
 ¿Qué debe permitírsele hacer sin supervisión?
 ]
 
-= Un modelo no es un sistema completo
+== Un modelo no es un sistema completo
 <un-modelo-no-es-un-sistema-completo>
 Otro error frecuente consiste en identificar el modelo con el sistema entero. Un modelo puede recibir datos y generar una salida, pero una solución real suele necesitar muchos otros componentes:
 
@@ -1321,7 +1424,7 @@ Por ejemplo, un modelo de lenguaje puede redactar una respuesta para un cliente,
 
 El modelo aporta una capacidad. El sistema establece cómo, cuándo y bajo qué condiciones puede utilizarse.
 
-= Sistemas inteligentes e inteligencia artificial generativa
+== Sistemas inteligentes e inteligencia artificial generativa
 <sistemas-inteligentes-e-inteligencia-artificial-generativa>
 Tampoco todos los sistemas inteligentes son sistemas de inteligencia artificial generativa. Un detector de fraude, un clasificador de imágenes o un modelo de predicción de demanda pueden analizar información y producir resultados sin generar contenido nuevo.
 
@@ -1338,7 +1441,7 @@ Podemos establecer, por tanto, una primera distinción:
 
 Estas categorías no son equivalentes. Un LLM puede formar parte de un sistema inteligente, pero no todo sistema inteligente utiliza un LLM, ni un LLM aislado constituye necesariamente una solución completa.
 
-= Inteligencia y responsabilidad
+== Inteligencia y responsabilidad
 <inteligencia-y-responsabilidad>
 La utilización de un sistema inteligente no elimina la responsabilidad de quienes lo diseñan, integran, despliegan o utilizan. El sistema puede producir una clasificación, una recomendación o una propuesta. Sin embargo, alguien debe determinar:
 
@@ -1356,13 +1459,13 @@ En la siguiente sección examinaremos una diferencia fundamental para comprender
 
 = Conceptos fundamentales de los sistemas inteligente
 <conceptos-fundamentales-de-los-sistemas-inteligente>
-= Modelo, entrenamiento e inferencia
+== Modelo, entrenamiento e inferencia
 <modelo-entrenamiento-e-inferencia>
 Para comprender cómo funciona un sistema inteligente basado en aprendizaje automático, necesitamos distinguir tres conceptos fundamentales: #strong[modelo], #strong[entrenamiento] e #strong[inferencia].
 
 Estos términos aparecen constantemente al hablar de inteligencia artificial, pero con frecuencia se utilizan como si fueran equivalentes. No lo son. Cada uno describe una parte diferente del ciclo de construcción y utilización de un sistema.
 
-== Modelo
+=== Modelo
 <modelo>
 Un modelo es una representación matemática capaz de transformar unas entradas en un resultado.
 
@@ -1385,7 +1488,7 @@ Un modelo no es, por sí solo, un sistema inteligente completo. Es un componente
 
 El sistema completo debe encargarse además de proporcionar los datos, validar las entradas, interpretar los resultados, aplicar reglas, controlar las acciones y gestionar los posibles errores.
 
-== Parámetros
+=== Parámetros
 <parámetros>
 Los parámetros son los valores internos que determinan cómo transforma el modelo una entrada en un resultado.
 
@@ -1405,7 +1508,7 @@ Los parámetros no deben confundirse con la información que proporcionamos al u
 
 Esta diferencia será especialmente importante al estudiar los modelos de lenguaje.
 
-== Entrenamiento
+=== Entrenamiento
 <entrenamiento>
 El entrenamiento es el proceso mediante el cual se ajustan los parámetros del modelo.
 
@@ -1431,7 +1534,7 @@ El entrenamiento suele ser la fase más costosa del ciclo de vida de un modelo. 
 
 Una vez finalizado, el resultado es un modelo cuyos parámetros han quedado ajustados.
 
-== Inferencia
+=== Inferencia
 <inferencia>
 La inferencia es el proceso de utilizar un modelo ya entrenado para obtener un resultado.
 
@@ -1455,7 +1558,7 @@ Esta distinción es fundamental:
 
 Que un modelo recuerde información dentro de una conversación no significa que esa información se haya incorporado permanentemente a sus parámetros.
 
-== Entrenamiento e inferencia dentro del sistema
+=== Entrenamiento e inferencia dentro del sistema
 <entrenamiento-e-inferencia-dentro-del-sistema>
 En un sistema inteligente, el entrenamiento y la inferencia pueden producirse en entornos y momentos completamente distintos.
 
@@ -1475,7 +1578,7 @@ En ese caso, el ingeniero no controla necesariamente el entrenamiento original, 
 
 Utilizar un modelo entrenado por terceros no elimina las responsabilidades de diseño e integración.
 
-== Una distinción esencial
+=== Una distinción esencial
 <una-distinción-esencial>
 Podemos resumir estos conceptos de la siguiente forma:
 
@@ -1495,13 +1598,13 @@ Un modelo de lenguaje es un tipo particular de modelo. Sus entradas y resultados
 
 = Contextos
 <contextos>
-= Tokens, contexto y ventana de contexto
+== Tokens, contexto y ventana de contexto
 <tokens-contexto-y-ventana-de-contexto>
 Un modelo matemático no recibe palabras, frases o documentos de la misma manera que una persona los percibe. Para poder procesar lenguaje, el texto debe transformarse en una representación numérica.
 
 El primer paso de esa transformación consiste en dividir el contenido en unidades denominadas #strong[tokens].
 
-== Tokens
+=== Tokens
 <tokens>
 Un token es una unidad de texto que el modelo puede identificar y procesar.
 
@@ -1532,7 +1635,7 @@ El resultado exacto depende del vocabulario y del método de tokenización emple
 
 Los modelos suelen utilizar fragmentos frecuentes porque permiten representar un vocabulario muy amplio sin tener que almacenar cada palabra posible como una unidad independiente. De esta forma también pueden procesar palabras desconocidas, nombres propios, términos técnicos o variaciones lingüísticas dividiéndolos en componentes más pequeños.
 
-== Del texto a identificadores numéricos
+=== Del texto a identificadores numéricos
 <del-texto-a-identificadores-numéricos>
 Cada token está asociado a un identificador numérico dentro del vocabulario del modelo.
 
@@ -1547,7 +1650,7 @@ Posteriormente, cada identificador se transforma en una representación matemát
 
 Ese proceso se estudiará en la siguiente sección al introducir el concepto de #strong[embedding].
 
-== Por qué importan los tokens
+=== Por qué importan los tokens
 <por-qué-importan-los-tokens>
 Los tokens son relevantes no solo para comprender el funcionamiento interno del modelo. También tienen consecuencias prácticas.
 
@@ -1565,7 +1668,7 @@ Los términos frecuentes suelen representarse mediante pocos tokens. Las palabra
 
 Por esta razón, medir únicamente caracteres o palabras no permite conocer con exactitud cuánto espacio ocupará un contenido para el modelo.
 
-== Contexto
+=== Contexto
 <contexto>
 El #strong[contexto] es el conjunto de información disponible para el modelo durante una inferencia.
 
@@ -1599,7 +1702,7 @@ solo tiene sentido si el contexto contiene el texto o la respuesta a la que se r
 
 El contexto proporciona la información necesaria para interpretar referencias, mantener la continuidad de una interacción y adaptar la respuesta a una tarea concreta.
 
-== El contexto no modifica el modelo
+=== El contexto no modifica el modelo
 <el-contexto-no-modifica-el-modelo>
 Proporcionar información en el contexto no equivale a entrenar el modelo.
 
@@ -1615,7 +1718,7 @@ Esta distinción explica por qué un modelo puede utilizar información nueva si
 
 También explica por qué la información disponible durante una conversación puede dejar de estar accesible si ya no se incluye en el contexto de una petición posterior.
 
-== Ventana de contexto
+=== Ventana de contexto
 <ventana-de-contexto>
 La #strong[ventana de contexto] es la cantidad máxima de tokens que el modelo puede procesar conjuntamente en una inferencia.
 
@@ -1645,7 +1748,7 @@ Un modelo puede tener una ventana de contexto extensa y, aun así, no utilizar c
 
 Por tanto, no solo importa cuánto contexto se proporciona, sino también su calidad, estructura y relevancia.
 
-== Contexto y memoria
+=== Contexto y memoria
 <contexto-y-memoria>
 Contexto y memoria tampoco son equivalentes.
 
@@ -1664,7 +1767,7 @@ Cuando una aplicación parece recordar información de una interacción anterior
 
 El modelo no necesita conservar internamente toda la información. Necesita recibir la información adecuada en el momento en que debe utilizarla.
 
-== Una primera visión del procesamiento del lenguaje
+=== Una primera visión del procesamiento del lenguaje
 <una-primera-visión-del-procesamiento-del-lenguaje>
 Podemos representar de forma simplificada la entrada de información en un modelo de lenguaje:
 
@@ -1682,7 +1785,7 @@ Esa representación recibe el nombre de #strong[embedding].
 
 = Embeddings
 <embeddings>
-= Representar significado mediante números”
+== Representar significado mediante números"
 <representar-significado-mediante-números>
 Después de dividir el texto en tokens, cada uno de ellos se identifica mediante un número dentro del vocabulario del modelo.
 
@@ -1694,7 +1797,7 @@ Para que el modelo pueda trabajar con semejanzas, diferencias y relaciones, cada
 
 Esa representación recibe el nombre de #strong[embedding].
 
-== Qué es un embedding
+=== Qué es un embedding
 <qué-es-un-embedding>
 Un embedding es un conjunto de valores numéricos que representa las características aprendidas de un elemento.
 
@@ -1716,7 +1819,7 @@ Cada valor individual no suele corresponder a una característica fácilmente in
 
 El significado se encuentra distribuido entre muchas dimensiones y surge de la combinación de todos esos valores.
 
-== Un espacio de representaciones
+=== Un espacio de representaciones
 <un-espacio-de-representaciones>
 Los embeddings pueden interpretarse como posiciones dentro de un espacio matemático de muchas dimensiones.
 
@@ -1737,7 +1840,7 @@ Una idea fundamental de los modelos de lenguaje es que gran parte de la informac
 
 Las palabras que aparecen en contextos similares suelen desempeñar funciones o expresar conceptos relacionados.
 
-== Del identificador al embedding
+=== Del identificador al embedding
 <del-identificador-al-embedding>
 Cuando el modelo recibe un token, utiliza su identificador para recuperar una representación inicial desde una tabla de embeddings.
 
@@ -1761,7 +1864,7 @@ La tabla de embeddings forma parte de los parámetros del modelo y se ajusta dur
 
 Por tanto, el ingeniero no asigna manualmente los valores asociados a cada token. El modelo los aprende a partir de los datos y del objetivo de entrenamiento.
 
-== Similitud entre embeddings
+=== Similitud entre embeddings
 <similitud-entre-embeddings>
 Una de las propiedades más útiles de los embeddings es que permiten medir matemáticamente la proximidad entre representaciones.
 
@@ -1796,7 +1899,7 @@ La búsqueda tradicional suele depender en gran medida de la coincidencia entre 
 
 Por ello, puede encontrar relaciones que no serían evidentes mediante una búsqueda literal.
 
-== Similitud no significa identidad
+=== Similitud no significa identidad
 <similitud-no-significa-identidad>
 La proximidad entre embeddings debe interpretarse con precaución.
 
@@ -1816,7 +1919,7 @@ También pueden encontrarse próximos términos opuestos, como #emph[frío] y #e
 
 Por tanto, la cercanía matemática no constituye una definición exacta del significado. Es una señal aprendida sobre las relaciones presentes en los datos.
 
-== El significado depende del contexto
+=== El significado depende del contexto
 <el-significado-depende-del-contexto>
 Una palabra aislada puede tener varios significados.
 
@@ -1858,17 +1961,17 @@ El embedding inicial proporciona un punto de partida, pero después el modelo lo
 
 Así, la representación de #emph[banco] termina siendo diferente en cada uno de los ejemplos anteriores.
 
-== Embeddings iniciales y representaciones contextuales
+=== Embeddings iniciales y representaciones contextuales
 <embeddings-iniciales-y-representaciones-contextuales>
 Conviene distinguir dos momentos del procesamiento.
 
-=== Embedding inicial
+==== Embedding inicial
 <embedding-inicial>
 Es la representación que el modelo obtiene al identificar el token.
 
 En esta fase, el token todavía no ha sido interpretado completamente dentro de la frase.
 
-=== Representación contextual
+==== Representación contextual
 <representación-contextual>
 Es la representación resultante después de relacionar el token con los demás elementos del contexto.
 
@@ -1885,7 +1988,7 @@ Podemos expresarlo de forma simplificada:
 #Skylighting(([#NormalTok("embedding inicial + contexto → representación contextual");],));
 El modelo no trabaja únicamente con una colección de palabras aisladas. Construye representaciones que evolucionan a medida que la información atraviesa sus distintas capas.
 
-== Embeddings de frases y documentos
+=== Embeddings de frases y documentos
 <embeddings-de-frases-y-documentos>
 Los embeddings no se utilizan únicamente para representar tokens.
 
@@ -1913,7 +2016,7 @@ En estos casos, el embedding no pretende reproducir cada detalle del texto. Prod
 
 Esa condensación implica inevitablemente una pérdida de información. Por ello, un embedding resulta útil para encontrar o comparar contenidos, pero no sustituye al contenido original.
 
-== Embeddings dentro de un sistema inteligente
+=== Embeddings dentro de un sistema inteligente
 <embeddings-dentro-de-un-sistema-inteligente>
 Los embeddings son una capacidad matemática que puede integrarse en distintos componentes de un sistema inteligente.
 
@@ -1931,7 +2034,7 @@ El embedding no responde a la pregunta ni toma una decisión. Permite localizar 
 
 De nuevo, observamos la diferencia entre una capacidad concreta y el sistema completo que la utiliza.
 
-== Una representación aprendida, no una verdad objetiva
+=== Una representación aprendida, no una verdad objetiva
 <una-representación-aprendida-no-una-verdad-objetiva>
 Los embeddings se construyen a partir de los datos utilizados durante el entrenamiento.
 
@@ -1949,7 +2052,7 @@ Es una representación aprendida para cumplir un objetivo determinado.
 
 Su utilidad debe evaluarse dentro del sistema concreto, teniendo en cuenta los datos, el dominio, el idioma y las consecuencias de los posibles errores.
 
-== De representar a relacionar
+=== De representar a relacionar
 <de-representar-a-relacionar>
 Hasta ahora hemos recorrido el siguiente camino:
 
@@ -1971,7 +2074,7 @@ Ese mecanismo recibe precisamente el nombre de #strong[atención].
 
 = Attention
 <attention>
-= Atención: relacionar cada token con su contexto
+== Atención: relacionar cada token con su contexto
 <atención-relacionar-cada-token-con-su-contexto>
 Los embeddings proporcionan una representación matemática inicial de cada token. Sin embargo, el significado que adquiere un elemento dentro de una frase no depende únicamente de su representación aislada.
 
@@ -1987,7 +2090,7 @@ Para interpretar la expresión #emph[estaba apagado], el modelo debe relacionarl
 
 El mecanismo que permite calcular dinámicamente qué partes de la secuencia resultan más relevantes para representar cada token recibe el nombre de #strong[atención].
 
-== Qué es la atención
+=== Qué es la atención
 <qué-es-la-atención>
 La atención es un mecanismo que permite al modelo asignar distintos grados de importancia a los elementos de una secuencia.
 
@@ -2017,7 +2120,7 @@ Por ejemplo, al procesar #emph[apagado], podría asignar:
 
 Estos pesos no están definidos previamente mediante reglas lingüísticas. Se calculan para cada secuencia a partir de los parámetros aprendidos durante el entrenamiento.
 
-== La atención depende de la relación
+=== La atención depende de la relación
 <la-atención-depende-de-la-relación>
 Un token no tiene una importancia absoluta dentro del texto.
 
@@ -2048,7 +2151,7 @@ El embedding inicial puede ser semejante en ambos casos, pero el mecanismo de at
 
 Por tanto, la atención permite que el significado operativo de un token se adapte a la secuencia en la que aparece.
 
-== Consultas, claves y valores
+=== Consultas, claves y valores
 <consultas-claves-y-valores>
 Para calcular la atención, el modelo genera tres representaciones diferentes a partir de cada token:
 
@@ -2058,7 +2161,7 @@ Para calcular la atención, el modelo genera tres representaciones diferentes a 
 
 Estos tres conceptos suelen representarse mediante las letras #strong[Q], #strong[K] y #strong[V].
 
-=== Consulta
+==== Consulta
 <consulta>
 La consulta representa la información que el token necesita localizar en el contexto.
 
@@ -2068,13 +2171,13 @@ Podemos interpretarla como una pregunta matemática:
 ¿Qué información de los demás tokens resulta relevante para mí?
 ]
 
-=== Clave
+==== Clave
 <clave>
 La clave representa el tipo de información que cada token puede ofrecer.
 
 La consulta de un token se compara con las claves de los demás para calcular la intensidad de cada relación.
 
-=== Valor
+==== Valor
 <valor>
 El valor contiene la información que el token aportará si se considera relevante.
 
@@ -2088,7 +2191,7 @@ la consulta busca, la clave permite comparar y el valor aporta información
 
 Estas representaciones no se escriben manualmente. Se obtienen mediante transformaciones matemáticas cuyos parámetros se ajustan durante el entrenamiento.
 
-== Cálculo de la atención
+=== Cálculo de la atención
 <cálculo-de-la-atención>
 El modelo compara cada consulta con las claves de los tokens disponibles.
 
@@ -2096,7 +2199,7 @@ Cuanto mayor sea la compatibilidad entre una consulta y una clave, mayor será n
 
 En el mecanismo denominado #strong[atención por producto escalar escalado], el cálculo se expresa mediante:
 
-$ "Atención" \( Q \, K \, V \) = "softmax" (frac(Q K^T, sqrt(d_k))) V $
+$ "Atención"\(Q\,K\,V\)= "softmax" (frac(Q K^T, sqrt(d_k))) V $
 
 Esta expresión puede interpretarse en cuatro pasos:
 
@@ -2109,7 +2212,7 @@ No es necesario realizar manualmente estas operaciones para utilizar un modelo, 
 
 La atención no es una intuición abstracta. Es un cálculo que produce una combinación ponderada de información.
 
-== Autoatención
+=== Autoatención
 <autoatención>
 Cuando las consultas, claves y valores proceden de la misma secuencia, hablamos de #strong[autoatención] o #emph[self-attention].
 
@@ -2136,7 +2239,7 @@ Para interpretar #emph[fue aprobado], el modelo debe conservar la relación con 
 
 A diferencia de otros enfoques anteriores que procesaban el texto principalmente de forma secuencial, la autoatención permite calcular directamente relaciones entre distintas posiciones.
 
-== Atención causal
+=== Atención causal
 <atención-causal>
 Un modelo destinado a generar texto no debe utilizar información que todavía no ha sido generada.
 
@@ -2167,7 +2270,7 @@ contexto disponible → siguiente token → nuevo contexto → siguiente token
 
 El proceso se repite hasta completar la respuesta.
 
-== Atención múltiple
+=== Atención múltiple
 <atención-múltiple>
 Una única operación de atención puede concentrarse en un determinado tipo de relación.
 
@@ -2197,7 +2300,7 @@ No existe una asignación fija que obligue a cada cabeza a especializarse en una
 
 Los resultados de todas las cabezas se combinan para producir una nueva representación de cada posición.
 
-== Atención y posición
+=== Atención y posición
 <atención-y-posición>
 La autoatención compara los tokens de una secuencia, pero por sí sola no incorpora necesariamente su orden.
 
@@ -2224,7 +2327,7 @@ Por esta razón, el Transformer incorpora información posicional a las represen
 
 La atención relaciona los elementos. La información posicional permite interpretar esas relaciones dentro de una secuencia ordenada.
 
-== Atención no significa conciencia
+=== Atención no significa conciencia
 <atención-no-significa-conciencia>
 El término #emph[atención] procede de una analogía con la capacidad humana de concentrarse en determinados elementos.
 
@@ -2240,7 +2343,7 @@ Se trata de una operación matemática aprendida que distribuye pesos entre repr
 
 El modelo no decide conscientemente prestar atención a una palabra. Calcula relaciones numéricas que han resultado útiles para reducir el error durante el entrenamiento.
 
-== Los pesos de atención no son una explicación completa
+=== Los pesos de atención no son una explicación completa
 <los-pesos-de-atención-no-son-una-explicación-completa>
 Los pesos de atención pueden ayudar a observar algunas relaciones internas del modelo, pero no deben considerarse automáticamente una explicación completa de su resultado.
 
@@ -2257,7 +2360,7 @@ Que un token reciba un peso elevado en una cabeza concreta no demuestra por sí 
 
 La atención aporta información sobre el procesamiento, pero no convierte automáticamente al modelo en un sistema transparente o completamente explicable.
 
-== De la atención al Transformer
+=== De la atención al Transformer
 <de-la-atención-al-transformer>
 Los mecanismos de atención ya se utilizaban antes de la aparición del Transformer, especialmente en sistemas de traducción automática@bahdanau2015. Permitían seleccionar dinámicamente las partes de una secuencia de entrada más relevantes para generar cada elemento de la salida.
 
@@ -2277,7 +2380,7 @@ En la siguiente sección reuniremos estas piezas para comprender la arquitectura
 
 = Transformers
 <transformers>
-= Una arquitectura basada en atención
+== Una arquitectura basada en atención
 <una-arquitectura-basada-en-atención>
 En las secciones anteriores hemos presentado las piezas necesarias para representar y relacionar el lenguaje:
 
@@ -2291,7 +2394,7 @@ Fue presentado en 2017 por Vaswani y sus colaboradores en el artículo #emph[Att
 
 Esta arquitectura constituye la base de gran parte de los modelos de lenguaje modernos.
 
-== Antes del Transformer
+=== Antes del Transformer
 <antes-del-transformer>
 El lenguaje es una secuencia ordenada.
 
@@ -2319,7 +2422,7 @@ El Transformer propone una organización diferente.
 
 En lugar de recorrer necesariamente el texto token a token para relacionar sus elementos, permite comparar directamente múltiples posiciones mediante autoatención.
 
-== La idea fundamental
+=== La idea fundamental
 <la-idea-fundamental>
 En un Transformer, cada token construye su representación teniendo en cuenta los demás tokens disponibles en el contexto.
 
@@ -2342,7 +2445,7 @@ Por tanto, el Transformer no aplica una única operación de atención.
 
 Utiliza múltiples cabezas de atención, transformaciones neuronales y numerosas capas sucesivas.
 
-== Información posicional
+=== Información posicional
 <información-posicional>
 La atención permite relacionar tokens, pero necesita también conocer su posición dentro de la secuencia.
 
@@ -2376,7 +2479,7 @@ Esta información permite distinguir:
 
 La propuesta original utilizaba codificaciones posicionales basadas en funciones matemáticas @vaswani2017. Arquitecturas posteriores han desarrollado otros mecanismos para representar la posición y las distancias relativas entre tokens.
 
-== Bloques Transformer
+=== Bloques Transformer
 <bloques-transformer>
 Un Transformer se construye mediante la repetición de bloques.
 
@@ -2396,7 +2499,7 @@ De forma simplificada:
 [#NormalTok("representaciones de salida");],));
 A estos componentes se añaden conexiones residuales y mecanismos de normalización que facilitan el entrenamiento de redes profundas.
 
-== Atención multicabeza
+=== Atención multicabeza
 <atención-multicabeza>
 La atención multicabeza permite calcular varias relaciones en paralelo.
 
@@ -2414,7 +2517,7 @@ El proceso puede representarse así:
 [#NormalTok("                   └─ cabeza n ─┘");],));
 El resultado de todas las cabezas se combina y se transforma para obtener una nueva representación de cada token.
 
-== Redes feed-forward
+=== Redes feed-forward
 <redes-feed-forward>
 Después de la atención, cada posición atraviesa una pequeña red neuronal denominada normalmente #strong[feed-forward].
 
@@ -2429,7 +2532,7 @@ Podemos distinguir ambas funciones:
 
 Estas redes utilizan los mismos parámetros para todas las posiciones de la secuencia, aunque procesan una representación contextual diferente en cada una.
 
-== Conexiones residuales
+=== Conexiones residuales
 <conexiones-residuales>
 Los bloques Transformer incorporan conexiones residuales.
 
@@ -2449,7 +2552,7 @@ Estas conexiones ayudan a:
 - facilitar el flujo de la señal y del error;
 - reducir algunos problemas asociados a redes muy profundas.
 
-== Normalización
+=== Normalización
 <normalización>
 El Transformer también utiliza mecanismos de normalización para mantener valores internos en rangos adecuados y estabilizar el entrenamiento.
 
@@ -2464,14 +2567,14 @@ forma la unidad básica que se repite a lo largo de la arquitectura.
 
 Cada nueva capa recibe las representaciones producidas por la anterior y las refina.
 
-== Encoder y decoder
+=== Encoder y decoder
 <encoder-y-decoder>
 La arquitectura presentada originalmente estaba formada por dos grandes componentes:
 
 - #strong[encoder]\;
 - #strong[decoder].
 
-=== Encoder
+==== Encoder
 <encoder>
 El encoder recibe una secuencia de entrada y construye representaciones contextuales de sus elementos.
 
@@ -2479,7 +2582,7 @@ Cada posición puede relacionarse con todas las demás posiciones de la entrada.
 
 Por ejemplo, en un sistema de traducción, el encoder podría procesar la frase escrita en el idioma de origen.
 
-=== Decoder
+==== Decoder
 <decoder>
 El decoder genera una secuencia de salida.
 
@@ -2502,13 +2605,13 @@ De forma simplificada:
 [#NormalTok("      decoder");],
 [#NormalTok("        ↓");],
 [#NormalTok("secuencia de salida");],));
-== Variantes de la arquitectura
+=== Variantes de la arquitectura
 <variantes-de-la-arquitectura>
 No todos los modelos basados en Transformers utilizan simultáneamente encoder y decoder.
 
 A partir de la arquitectura original aparecieron varias familias.
 
-=== Modelos de tipo encoder
+==== Modelos de tipo encoder
 <modelos-de-tipo-encoder>
 Utilizan principalmente bloques encoder.
 
@@ -2520,7 +2623,7 @@ Están orientados a construir representaciones del texto y resultan adecuados pa
 - comparación semántica;
 - comprensión de documentos.
 
-=== Modelos de tipo decoder
+==== Modelos de tipo decoder
 <modelos-de-tipo-decoder>
 Utilizan bloques decoder con atención causal.
 
@@ -2528,7 +2631,7 @@ Generan el texto progresivamente, prediciendo cada token a partir de los anterio
 
 Son la base de muchos modelos generativos y asistentes conversacionales.
 
-=== Modelos encoder-decoder
+==== Modelos encoder-decoder
 <modelos-encoder-decoder>
 Mantienen ambos componentes.
 
@@ -2542,7 +2645,7 @@ Resultan especialmente adecuados cuando se transforma una secuencia de entrada e
 
 Estas categorías comparten los principios fundamentales del Transformer, pero organizan sus bloques de manera diferente según el objetivo.
 
-== Procesamiento en paralelo
+=== Procesamiento en paralelo
 <procesamiento-en-paralelo>
 Una ventaja importante del Transformer es que, durante el entrenamiento, puede procesar simultáneamente múltiples posiciones de una secuencia.
 
@@ -2562,7 +2665,7 @@ La capacidad de paralelización contribuyó a entrenar modelos con:
 
 El Transformer no es importante únicamente por representar mejor ciertas relaciones lingüísticas. También hizo viable escalar el entrenamiento de modelos de lenguaje.
 
-== Capas y representaciones
+=== Capas y representaciones
 <capas-y-representaciones>
 Las representaciones no permanecen iguales mientras atraviesan el Transformer.
 
@@ -2583,7 +2686,7 @@ El conocimiento y el comportamiento del modelo están distribuidos entre:
 
 Las capacidades del modelo emergen de la interacción conjunta de estos componentes.
 
-== Transformer y ventana de contexto
+=== Transformer y ventana de contexto
 <transformer-y-ventana-de-contexto>
 La atención se calcula sobre los tokens disponibles dentro de la ventana de contexto.
 
@@ -2603,7 +2706,7 @@ Las arquitecturas posteriores han introducido distintas optimizaciones para:
 
 La ventana de contexto no es, por tanto, un límite puramente arbitrario. Está relacionada también con el coste técnico de procesar las relaciones entre tokens.
 
-== El Transformer no es un LLM
+=== El Transformer no es un LLM
 <el-transformer-no-es-un-llm>
 Transformer y LLM tampoco son conceptos equivalentes.
 
@@ -2638,7 +2741,7 @@ Existen modelos basados en esta arquitectura para trabajar con:
 
 La arquitectura define cómo se procesa y relaciona la información. El entrenamiento y los datos determinan qué capacidad concreta desarrolla el modelo.
 
-== Una arquitectura dentro de un sistema inteligente
+=== Una arquitectura dentro de un sistema inteligente
 <una-arquitectura-dentro-de-un-sistema-inteligente>
 Un modelo basado en Transformers continúa siendo solo un componente.
 
@@ -2658,7 +2761,7 @@ La arquitectura aporta capacidad para representar, relacionar y generar informac
 
 El sistema inteligente determina cómo se utiliza esa capacidad.
 
-== Del Transformer al modelo de lenguaje
+=== Del Transformer al modelo de lenguaje
 <del-transformer-al-modelo-de-lenguaje>
 El recorrido conceptual queda ahora así:
 
@@ -2674,7 +2777,7 @@ En la siguiente sección estudiaremos qué es un #strong[modelo de lenguaje], qu
 
 = Modelos de lenguaje
 <modelos-de-lenguaje>
-= Modelos de lenguaje y LLM
+== Modelos de lenguaje y LLM
 <modelos-de-lenguaje-y-llm>
 Un Transformer es una arquitectura capaz de procesar secuencias y construir representaciones contextuales de sus elementos.
 
@@ -2702,7 +2805,7 @@ Calcula una distribución de probabilidad sobre los tokens de su vocabulario y u
 
 Esta tarea constituye la base de muchos modelos de lenguaje generativos.
 
-== Qué es un modelo de lenguaje
+=== Qué es un modelo de lenguaje
 <qué-es-un-modelo-de-lenguaje>
 Un #strong[modelo de lenguaje] es un modelo matemático que representa regularidades presentes en secuencias lingüísticas.
 
@@ -2732,7 +2835,7 @@ Estos patrones pueden incluir regularidades relacionadas con:
 
 El modelo aprende estas regularidades porque le ayudan a reducir el error al predecir tokens.
 
-== Predecir el siguiente token
+=== Predecir el siguiente token
 <predecir-el-siguiente-token>
 En un modelo autoregresivo, el objetivo consiste en predecir cada token utilizando los tokens anteriores como contexto.
 
@@ -2774,7 +2877,7 @@ De forma simplificada:
 [#NormalTok("ajuste de parámetros");],));
 El objetivo no consiste en memorizar cada frase, sino en desarrollar representaciones y patrones que permitan predecir correctamente secuencias nuevas.
 
-== Generación autoregresiva
+=== Generación autoregresiva
 <generación-autoregresiva>
 Una vez entrenado, el modelo puede generar texto aplicando repetidamente el mismo proceso.
 
@@ -2801,7 +2904,7 @@ La produce token a token, utilizando en cada paso tanto la información inicial 
 
 Esto explica por qué una respuesta puede comenzar correctamente y desviarse posteriormente. Cada nuevo token modifica el contexto utilizado para generar los siguientes.
 
-== Una tarea sencilla con consecuencias complejas
+=== Una tarea sencilla con consecuencias complejas
 <una-tarea-sencilla-con-consecuencias-complejas>
 Predecir el siguiente token puede parecer una tarea limitada.
 
@@ -2845,7 +2948,7 @@ La tarea de predicción obliga al modelo a construir representaciones útiles de
 
 Las capacidades observadas no se programan una por una. Aparecen como resultado del aprendizaje de patrones necesarios para mejorar la predicción.
 
-== Predicción no significa recuperación literal
+=== Predicción no significa recuperación literal
 <predicción-no-significa-recuperación-literal>
 Cuando el modelo genera una respuesta, no suele buscar una frase exacta almacenada en una base de datos interna.
 
@@ -2868,7 +2971,7 @@ El modelo puede producir una secuencia lingüísticamente coherente aunque su co
 
 Su objetivo básico es generar una continuación probable, no verificar automáticamente que cada afirmación corresponda con la realidad.
 
-== De modelo de lenguaje a gran modelo de lenguaje
+=== De modelo de lenguaje a gran modelo de lenguaje
 <de-modelo-de-lenguaje-a-gran-modelo-de-lenguaje>
 Las siglas #strong[LLM] corresponden a #emph[Large Language Model], o #strong[gran modelo de lenguaje].
 
@@ -2893,7 +2996,7 @@ Podemos establecer la siguiente relación:
 modelo → modelo de lenguaje → modelo de lenguaje basado en Transformer → gran modelo de lenguaje
 ]
 
-== Escala y capacidad
+=== Escala y capacidad
 <escala-y-capacidad>
 Al aumentar el tamaño del modelo, la cantidad de datos y el cálculo utilizado durante el entrenamiento, suele mejorar su capacidad para representar patrones complejos.
 
@@ -2922,7 +3025,7 @@ Dentro de un sistema inteligente, la elección del modelo debe depender de la ne
 
 Utilizar el modelo más grande disponible no constituye por sí mismo una decisión de ingeniería adecuada.
 
-== Preentrenamiento
+=== Preentrenamiento
 <preentrenamiento>
 Los LLM suelen comenzar con una fase denominada #strong[preentrenamiento].
 
@@ -2946,7 +3049,7 @@ El resultado recibe con frecuencia el nombre de #strong[modelo base] o #emph[bas
 
 Un modelo base puede continuar texto, pero no necesariamente seguir instrucciones de la forma esperada por un usuario.
 
-== Modelos fundacionales
+=== Modelos fundacionales
 <modelos-fundacionales>
 Un modelo preentrenado de gran escala puede utilizarse como base para múltiples tareas y sistemas posteriores.
 
@@ -2972,7 +3075,7 @@ De nuevo, debemos mantener la distinción central del curso:
 el modelo proporciona una capacidad general; el sistema inteligente determina cómo se utiliza.
 ]
 
-== Ajuste para seguir instrucciones
+=== Ajuste para seguir instrucciones
 <ajuste-para-seguir-instrucciones>
 Un modelo entrenado únicamente para continuar texto puede producir resultados plausibles, pero no necesariamente comportarse como un asistente.
 
@@ -3009,7 +3112,7 @@ El ajuste no sustituye al preentrenamiento.
 
 Parte de las capacidades generales adquiridas previamente y modifica el comportamiento para facilitar la interacción mediante instrucciones.
 
-== Alineamiento y preferencias humanas
+=== Alineamiento y preferencias humanas
 <alineamiento-y-preferencias-humanas>
 Además del ajuste mediante instrucciones, algunos modelos atraviesan procesos destinados a adaptar su comportamiento a preferencias y criterios humanos.
 
@@ -3038,7 +3141,7 @@ El término debe utilizarse con precaución. No significa que el modelo comprend
 
 Significa que ha sido optimizado para producir determinados comportamientos observables bajo las condiciones evaluadas durante el entrenamiento.
 
-== Modelos de propósito general
+=== Modelos de propósito general
 <modelos-de-propósito-general>
 Una de las características más relevantes de los LLM es que un mismo modelo puede utilizarse para tareas muy diferentes.
 
@@ -3065,7 +3168,7 @@ Sin embargo, la flexibilidad también reduce parte del determinismo habitual del
 
 Una instrucción puede ser ambigua, el resultado puede variar y el modelo puede interpretar la tarea de manera diferente a la esperada.
 
-== Aprendizaje en contexto
+=== Aprendizaje en contexto
 <aprendizaje-en-contexto>
 Un LLM puede adaptar temporalmente su comportamiento utilizando ejemplos incluidos en el contexto.
 
@@ -3093,7 +3196,7 @@ Por tanto:
 - el aprendizaje en contexto modifica temporalmente la forma de utilizarlo;
 - al desaparecer el contexto, desaparecen también esos ejemplos.
 
-== Capacidades emergentes
+=== Capacidades emergentes
 <capacidades-emergentes>
 Algunas capacidades se hacen más visibles al aumentar la escala del modelo, los datos y el entrenamiento.
 
@@ -3116,25 +3219,25 @@ En algunos casos, una mejora gradual del modelo puede producir un cambio aparent
 
 También puede ocurrir que la capacidad existiera parcialmente, pero solo resulte visible al utilizar una forma adecuada de evaluación o de instrucción.
 
-== Generación probabilística
+=== Generación probabilística
 <generación-probabilística>
 En cada paso, el modelo produce una distribución de probabilidad sobre los posibles tokens siguientes.
 
 La aplicación puede seleccionar el token utilizando diferentes estrategias.
 
-=== Selección determinista
+==== Selección determinista
 <selección-determinista>
 Se elige el token con mayor probabilidad.
 
 Este enfoque puede producir respuestas más estables, aunque no garantiza que sean siempre idénticas en todos los sistemas.
 
-=== Muestreo
+==== Muestreo
 <muestreo>
 Se selecciona un token teniendo en cuenta su probabilidad.
 
 Esto permite mayor variedad, pero también introduce más variabilidad.
 
-=== Temperatura
+==== Temperatura
 <temperatura>
 La #strong[temperatura] modifica la distribución utilizada durante la selección.
 
@@ -3152,7 +3255,7 @@ La temperatura no cambia los parámetros del modelo ni su conocimiento.
 
 Modifica la forma en que se seleccionan los tokens durante la generación.
 
-== La respuesta no estaba escrita de antemano
+=== La respuesta no estaba escrita de antemano
 <la-respuesta-no-estaba-escrita-de-antemano>
 La salida de un LLM se construye durante la inferencia.
 
@@ -3173,7 +3276,7 @@ También explica por qué pequeñas modificaciones en la entrada pueden alterar 
 
 El modelo trabaja con relaciones probabilísticas dentro de una secuencia, no con una función determinista diseñada manualmente para cada tarea.
 
-== Conocimiento aprendido y conocimiento verificable
+=== Conocimiento aprendido y conocimiento verificable
 <conocimiento-aprendido-y-conocimiento-verificable>
 Durante el entrenamiento, el modelo incorpora patrones relacionados con la información presente en los datos.
 
@@ -3202,7 +3305,7 @@ Cuando la precisión sea importante, el sistema inteligente debe complementar el
 - validaciones;
 - revisión humana.
 
-== Generar no es verificar
+=== Generar no es verificar
 <generar-no-es-verificar-1>
 Un LLM puede producir una respuesta bien redactada sin haber comprobado su contenido.
 
@@ -3224,7 +3327,7 @@ La fluidez de la respuesta no demuestra su corrección.
 
 Por ello, el diseño del sistema debe decidir qué resultados pueden utilizarse directamente y cuáles necesitan validación.
 
-== Un LLM no es un sistema inteligente completo
+=== Un LLM no es un sistema inteligente completo
 <un-llm-no-es-un-sistema-inteligente-completo>
 Un LLM puede aportar numerosas capacidades:
 
@@ -3267,7 +3370,7 @@ Podemos representar esta relación así:
 [#NormalTok("└── supervisión");],));
 El LLM es una pieza especialmente versátil, pero sigue siendo una pieza.
 
-== Una primera definición completa
+=== Una primera definición completa
 <una-primera-definición-completa>
 Podemos definir un LLM como:
 
@@ -3288,7 +3391,7 @@ Esta definición contiene los elementos estudiados hasta ahora:
 - produce texto de forma #strong[probabilística]\;
 - utiliza la información disponible en el #strong[contexto].
 
-== Del modelo al comportamiento
+=== Del modelo al comportamiento
 <del-modelo-al-comportamiento>
 Ya conocemos las piezas fundamentales que permiten construir un gran modelo de lenguaje.
 
@@ -3314,7 +3417,7 @@ Comprender estos límites será imprescindible antes de utilizar el modelo como 
 
 = Limites
 <limites>
-= Capacidades, límites y alucinaciones
+== Capacidades, límites y alucinaciones
 <capacidades-límites-y-alucinaciones>
 Los grandes modelos de lenguaje pueden realizar tareas muy diversas utilizando una misma arquitectura y una misma interfaz: el lenguaje natural.
 
@@ -3328,7 +3431,7 @@ Un LLM puede producir una respuesta clara, estructurada y convincente sin que es
 
 Para utilizarlo como componente de un sistema inteligente, debemos comprender tanto lo que puede hacer como las condiciones bajo las que puede fallar.
 
-== Capacidades generales
+=== Capacidades generales
 <capacidades-generales>
 Las capacidades de un LLM proceden de los patrones aprendidos durante el entrenamiento y de la información proporcionada durante la inferencia.
 
@@ -3352,7 +3455,7 @@ Estas capacidades no suelen corresponder a módulos independientes programados u
 
 Surgen de una misma capacidad general: predecir secuencias utilizando los patrones aprendidos y el contexto disponible.
 
-== Generalización
+=== Generalización
 <generalización>
 Un modelo generaliza cuando puede aplicar lo aprendido a casos diferentes de los utilizados durante el entrenamiento.
 
@@ -3380,7 +3483,7 @@ El modelo puede fallar cuando:
 
 Una capacidad observada en algunos ejemplos no garantiza el mismo comportamiento en cualquier situación.
 
-== Fluidez y corrección
+=== Fluidez y corrección
 <fluidez-y-corrección>
 Los LLM están optimizados para producir continuaciones plausibles.
 
@@ -3406,7 +3509,7 @@ El estilo no constituye una prueba de veracidad.
 
 Dentro de un sistema inteligente, la fluidez debe considerarse una capacidad de comunicación, no un mecanismo de validación.
 
-== Alucinaciones
+=== Alucinaciones
 <alucinaciones>
 Se denomina habitualmente #strong[alucinación] a la generación de información incorrecta, inexistente o no respaldada que el modelo presenta como si fuera válida.
 
@@ -3425,7 +3528,7 @@ Por ejemplo, si se solicita una referencia académica sobre un tema muy específ
 
 El resultado mantiene la forma esperada, pero no corresponde con la realidad.
 
-== Por qué se producen las alucinaciones
+=== Por qué se producen las alucinaciones
 <por-qué-se-producen-las-alucinaciones>
 Las alucinaciones no son una anomalía completamente separada del funcionamiento normal del modelo.
 
@@ -3452,41 +3555,41 @@ Por tanto, el problema no consiste únicamente en que el modelo desconozca un da
 
 También puede desconocer que lo desconoce.
 
-== Tipos de error
+=== Tipos de error
 <tipos-de-error>
 No todos los errores tienen el mismo origen.
 
-=== Error factual
+==== Error factual
 <error-factual>
 El modelo produce una afirmación que contradice la realidad.
 
 Por ejemplo, atribuye una fecha incorrecta a un acontecimiento.
 
-=== Error de contexto
+==== Error de contexto
 <error-de-contexto>
 El modelo interpreta incorrectamente la información proporcionada.
 
 Puede confundir personas, documentos, fechas o referencias dentro de una conversación extensa.
 
-=== Error de razonamiento
+==== Error de razonamiento
 <error-de-razonamiento>
 El modelo parte de datos correctos, pero establece relaciones incorrectas entre ellos.
 
 Puede cometer errores lógicos, matemáticos o causales.
 
-=== Error de instrucción
+==== Error de instrucción
 <error-de-instrucción>
 El modelo no sigue completamente la petición.
 
 Puede omitir restricciones, alterar el formato solicitado o responder a una interpretación distinta.
 
-=== Error de recuperación
+==== Error de recuperación
 <error-de-recuperación>
 El sistema proporciona al modelo información externa incorrecta, incompleta o poco relevante.
 
 En ese caso, el fallo no procede únicamente del modelo, sino del sistema que construyó el contexto.
 
-=== Error de ejecución
+==== Error de ejecución
 <error-de-ejecución>
 El modelo propone o selecciona una acción incorrecta al utilizar una herramienta.
 
@@ -3494,7 +3597,7 @@ Por ejemplo, puede construir una consulta equivocada, elegir una operación inad
 
 Esta clasificación es importante porque cada tipo de error requiere controles diferentes.
 
-== Incertidumbre
+=== Incertidumbre
 <incertidumbre>
 Un LLM produce probabilidades sobre tokens, pero esas probabilidades no equivalen directamente a una medida fiable de la certeza de una afirmación.
 
@@ -3520,7 +3623,7 @@ Estoy completamente seguro.
 
 es texto generado por el modelo. No constituye una garantía técnica.
 
-== Variabilidad
+=== Variabilidad
 <variabilidad>
 La salida de un LLM puede variar incluso cuando se utiliza una petición semejante.
 
@@ -3550,7 +3653,7 @@ También puede resultar problemática cuando se necesita:
 
 Un sistema inteligente debe decidir qué grado de variabilidad puede aceptar.
 
-== Sensibilidad a la formulación
+=== Sensibilidad a la formulación
 <sensibilidad-a-la-formulación>
 Pequeños cambios en una petición pueden producir resultados diferentes.
 
@@ -3589,7 +3692,7 @@ Las instrucciones deben complementarse con:
 
 El prompt forma parte del diseño, pero no sustituye a la arquitectura del sistema.
 
-== Conocimiento limitado y desactualizado
+=== Conocimiento limitado y desactualizado
 <conocimiento-limitado-y-desactualizado>
 Los parámetros del modelo reflejan los datos utilizados durante su entrenamiento.
 
@@ -3610,7 +3713,7 @@ Un LLM no debe utilizarse como fuente única cuando el resultado depende de info
 
 El sistema debe proporcionarle acceso controlado a fuentes externas cuando sea necesario.
 
-== Contexto limitado
+=== Contexto limitado
 <contexto-limitado>
 El modelo solo puede utilizar la información disponible dentro de su ventana de contexto.
 
@@ -3629,7 +3732,7 @@ Más contexto no significa automáticamente mejor contexto.
 
 El sistema debe seleccionar, ordenar y presentar la información de manera adecuada.
 
-== Razonamiento
+=== Razonamiento
 <razonamiento>
 Los LLM pueden producir secuencias que representan procesos de razonamiento.
 
@@ -3660,7 +3763,7 @@ Por tanto, debemos evaluar por separado:
 
 El razonamiento generado puede ser una herramienta útil para analizar un problema, pero no debe convertirse automáticamente en una prueba de validez.
 
-== Cálculo y precisión simbólica
+=== Cálculo y precisión simbólica
 <cálculo-y-precisión-simbólica>
 Un LLM trabaja principalmente mediante patrones lingüísticos.
 
@@ -3689,7 +3792,7 @@ Cuando una tarea exige precisión formal, el sistema puede delegar la ejecución
 
 El modelo puede interpretar la petición y preparar la operación. La herramienta debe realizar el cálculo o la ejecución verificable.
 
-== Sesgos
+=== Sesgos
 <sesgos>
 Los modelos aprenden a partir de datos producidos por personas, organizaciones y sistemas.
 
@@ -3719,7 +3822,7 @@ Por ello, la evaluación debe realizarse sobre:
 - las decisiones que utilizarán el resultado;
 - las consecuencias del error.
 
-== Explicabilidad
+=== Explicabilidad
 <explicabilidad>
 Los modelos de gran escala distribuyen su comportamiento entre enormes cantidades de parámetros.
 
@@ -3743,7 +3846,7 @@ La explicación generada es otra salida del modelo.
 
 Puede ser útil para comunicar una justificación, pero debe evaluarse como cualquier otro contenido generado.
 
-== Manipulación del contexto
+=== Manipulación del contexto
 <manipulación-del-contexto>
 Un modelo puede recibir instrucciones contradictorias o contenido diseñado para alterar su comportamiento.
 
@@ -3774,7 +3877,7 @@ El sistema debe establecer controles externos sobre:
 - separación de instrucciones y contenido;
 - confirmación de operaciones críticas.
 
-== El modelo no conoce el estado real del mundo
+=== El modelo no conoce el estado real del mundo
 <el-modelo-no-conoce-el-estado-real-del-mundo>
 Un LLM puede describir cómo debería funcionar un sistema, pero no sabe necesariamente cómo está funcionando en ese momento.
 
@@ -3793,7 +3896,7 @@ Debemos distinguir entre:
 
 Cada una de estas operaciones requiere capacidades diferentes dentro del sistema inteligente.
 
-== Diferentes riesgos para diferentes tareas
+=== Diferentes riesgos para diferentes tareas
 <diferentes-riesgos-para-diferentes-tareas>
 No todos los errores tienen el mismo impacto.
 
@@ -3814,7 +3917,7 @@ Por ello, el nivel de control debe depender de:
 
 La misma capacidad puede utilizarse de forma directa en un contexto y requerir múltiples controles en otro.
 
-== Validación
+=== Validación
 <validación>
 La validación consiste en comprobar que el resultado cumple los requisitos establecidos por el sistema.
 
@@ -3840,7 +3943,7 @@ Por ejemplo, si el modelo genera una estructura JSON, el sistema puede comprobar
 
 La validación convierte una salida generada en un elemento utilizable por otros componentes.
 
-== Verificación
+=== Verificación
 <verificación>
 La verificación busca confirmar que una afirmación o resultado corresponde con una fuente, una regla o una realidad observable.
 
@@ -3858,7 +3961,7 @@ Generar y verificar son funciones diferentes.
 
 Un modelo puede ayudar a localizar qué debe verificarse o cómo hacerlo, pero la comprobación debe apoyarse en mecanismos adecuados al tipo de información.
 
-== Supervisión humana
+=== Supervisión humana
 <supervisión-humana>
 La supervisión humana no consiste simplemente en colocar una persona al final del proceso.
 
@@ -3876,31 +3979,31 @@ Una revisión humana sin tiempo, información o autoridad suficiente puede conve
 
 El sistema debe determinar qué decisiones requieren intervención humana y qué información necesita la persona responsable.
 
-== Automatización proporcional
+=== Automatización proporcional
 <automatización-proporcional>
 El grado de automatización debe ser proporcional al riesgo.
 
 Podemos distinguir, de forma simplificada, varios niveles:
 
-=== Asistencia
+==== Asistencia
 <asistencia>
 El modelo proporciona información o propuestas.
 
 La persona toma la decisión.
 
-=== Recomendación
+==== Recomendación
 <recomendación>
 El sistema analiza la información y propone una opción, pero requiere aprobación.
 
-=== Ejecución supervisada
+==== Ejecución supervisada
 <ejecución-supervisada>
 El sistema prepara o inicia una acción y solicita confirmación antes de completarla.
 
-=== Ejecución automática controlada
+==== Ejecución automática controlada
 <ejecución-automática-controlada>
 El sistema actúa automáticamente dentro de límites definidos y registra la operación.
 
-=== Autonomía ampliada
+==== Autonomía ampliada
 <autonomía-ampliada>
 El sistema puede planificar y ejecutar varias acciones encadenadas.
 
@@ -3910,7 +4013,7 @@ No debe confundirse capacidad técnica con autorización.
 
 Que un modelo pueda proponer o ejecutar una acción no significa que deba tener permiso para hacerlo.
 
-== Diseñar para el fallo
+=== Diseñar para el fallo
 <diseñar-para-el-fallo>
 Un sistema inteligente debe diseñarse suponiendo que el modelo puede equivocarse.
 
@@ -3940,7 +4043,7 @@ Un sistema robusto define:
 - cómo registrar lo ocurrido;
 - cuándo escalar a una persona.
 
-== Evaluación
+=== Evaluación
 <evaluación>
 La evaluación de un LLM no puede reducirse a comprobar unos pocos ejemplos satisfactorios.
 
@@ -3962,7 +4065,7 @@ Una respuesta puede ser lingüísticamente excelente y operativamente inútil.
 
 La evaluación debe medir lo que realmente importa para el sistema.
 
-== El modelo como componente no determinista
+=== El modelo como componente no determinista
 <el-modelo-como-componente-no-determinista>
 En el software tradicional, un componente suele diseñarse para producir resultados previsibles ante entradas conocidas.
 
@@ -3991,7 +4094,7 @@ El resto del sistema debe aportar:
 - trazabilidad;
 - control.
 
-== Capacidad no equivale a autoridad
+=== Capacidad no equivale a autoridad
 <capacidad-no-equivale-a-autoridad-1>
 Un modelo puede ser capaz de analizar una situación y proponer una respuesta.
 
@@ -4020,7 +4123,7 @@ También debemos preguntar:
 - ¿quién asume la responsabilidad?;
 - ¿qué evidencia queda registrada?
 
-== Una capacidad poderosa, no una garantía
+=== Una capacidad poderosa, no una garantía
 <una-capacidad-poderosa-no-una-garantía>
 Los LLM proporcionan una capacidad general y flexible para trabajar con lenguaje.
 
@@ -4109,6 +4212,66 @@ Al finalizar este capítulo, el lector será capaz de:
 - utilizar estas foundations como criterio para analizar decisiones posteriores.
 
 El siguiente capítulo convertirá estos principios en una forma concreta de trabajo: el marco que utilizaremos para diseñar, construir, evaluar y mejorar sistemas inteligentes.
+
+= Foundation 01
+<foundation-01>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 02
+<foundation-02>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 03
+<foundation-03>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 04
+<foundation-04>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 05
+<foundation-05>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 06
+<foundation-06>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 07
+<foundation-07>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 08
+<foundation-08>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 09
+<foundation-09>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 10
+<foundation-10>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 11
+<foundation-11>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 12
+<foundation-12>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 13
+<foundation-13>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 14
+<foundation-14>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
+
+= Foundation 15
+<foundation-15>
+#box(image("chapters/13-foundations/../../resources/images/under-construction.png"))
 
 #part[Conceptos fundamentales]
 #heading(level: 2, numbering: none)[Introduccion]
@@ -4446,7 +4609,7 @@ Un texto con mil palabras no produce siempre el mismo número de tokens. La rela
 
 Como aproximación general podemos expresar:
 
-$ T approx f \( P \, I \, V \, F \) $
+$ T approx f\(P\,I\,V\,F\) $
 
 donde:
 
@@ -5074,7 +5237,7 @@ Los embeddings reales pueden contener cientos o miles de dimensiones.
 
 Un vector de dimensión (n) puede expresarse como:
 
-$ upright(bold(e)) = mat(delim: "[", e_1 \, e_2 \, e_3 \, dots.h \, e_n) $
+$ upright(bold(e)) = mat(delim: "[", e_1\,e_2\,e_3\,dots.h\,e_n) $
 
 Cada dimensión no tiene por qué corresponder a una característica reconocible como «color», «tamaño» o «formalidad».
 
@@ -5090,7 +5253,7 @@ Una medida habitual es la #strong[similitud del coseno].
 
 Dados dos vectores $upright(bold(a))$ y $upright(bold(b))$:
 
-$ "sim" \( upright(bold(a)) \, upright(bold(b)) \) = frac(upright(bold(a)) dot.op upright(bold(b)), lr(bar.v.double upright(bold(a)) bar.v.double) lr(bar.v.double upright(bold(b)) bar.v.double)) $
+$ "sim"\(upright(bold(a))\,upright(bold(b))\)= frac(upright(bold(a)) dot.op upright(bold(b)), lr(bar.v.double upright(bold(a)) bar.v.double) lr(bar.v.double upright(bold(b)) bar.v.double)) $
 
 El numerador representa el producto escalar de ambos vectores y el denominador normaliza el resultado utilizando sus magnitudes.
 
@@ -5206,8 +5369,8 @@ $ t_i arrow.r upright(bold(e))_i $
 
 donde:
 
-- $\( t_i \)$ es el token situado en la posición (i);
-- $\( upright(bold(e))_i \)$ es su representación vectorial.
+- $\(t_i\)$ es el token situado en la posición (i);
+- $\(upright(bold(e))_i\)$ es su representación vectorial.
 
 El modelo no procesa directamente el identificador del token. Trabaja con la representación numérica asociada.
 
@@ -5231,9 +5394,9 @@ $ upright(bold(x))_i = upright(bold(e))_i + upright(bold(p))_i $
 
 donde:
 
-- $\( upright(bold(e))_i \)$ representa el token;
-- $\( upright(bold(p))_i \)$ representa su posición;
-- $\( upright(bold(x))_i \)$ es la información que continúa hacia las siguientes capas del modelo.
+- $\(upright(bold(e))_i\)$ representa el token;
+- $\(upright(bold(p))_i\)$ representa su posición;
+- $\(upright(bold(x))_i\)$ es la información que continúa hacia las siguientes capas del modelo.
 
 La forma concreta de representar la posición depende de la arquitectura utilizada, pero la idea es la misma: el modelo necesita saber qué token aparece y dónde aparece.
 
@@ -5266,7 +5429,7 @@ Por ello conviene distinguir entre:
 
 De forma simplificada:
 
-$ upright(bold(h))_i = f \( upright(bold(x))_1 \, upright(bold(x))_2 \, dots.h \, upright(bold(x))_n \) $
+$ upright(bold(h))_i = f\(upright(bold(x))_1\,upright(bold(x))_2\,dots.h\,upright(bold(x))_n\) $
 
 La representación final del token situado en la posición (i) depende del conjunto de la secuencia, no únicamente del token aislado.
 
@@ -5332,7 +5495,7 @@ Si el vector de un usuario se encuentra próximo al de determinados productos, e
 
 De forma esquemática:
 
-$ upright("recomendación") = "elementos próximos" \( upright(bold(e))_(upright("usuario")) \) $
+$ upright("recomendación") = "elementos próximos"\(upright(bold(e))_(upright("usuario"))\) $
 
 La recomendación real suele incluir muchos otros factores, pero los embeddings permiten expresar semejanzas y afinidades.
 
@@ -5467,13 +5630,13 @@ Cada bloque recibe un conjunto de representaciones, las transforma y entrega el 
 
 Podemos expresar este proceso de forma general:
 
-$ upright(bold(H))^(\( l + 1 \)) = F^(\( l \)) (upright(bold(H))^(\( l \))) $
+$ upright(bold(H))^(\(l + 1\)) = F^(\(l\)) (upright(bold(H))^(\(l\))) $
 
 donde:
 
-- $upright(bold(H))^(\( l \))$ representa las entradas de la capa $l$\;
-- $F^(\( l \))$ representa las operaciones realizadas por esa capa;
-- $upright(bold(H))^(\( l + 1 \))$ es el resultado entregado a la siguiente.
+- $upright(bold(H))^(\(l\))$ representa las entradas de la capa $l$\;
+- $F^(\(l\))$ representa las operaciones realizadas por esa capa;
+- $upright(bold(H))^(\(l + 1\))$ es el resultado entregado a la siguiente.
 
 Las primeras capas pueden reconocer relaciones relativamente simples, como combinaciones frecuentes, estructuras gramaticales o patrones locales.
 
@@ -5532,7 +5695,7 @@ Cada posición pasa por una red denominada habitualmente #strong[red de alimenta
 
 De forma simplificada:
 
-$ "FFN" \( upright(bold(x)) \) = sigma (upright(bold(x)) W_1 + b_1) W_2 + b_2 $
+$ "FFN"\(upright(bold(x))\)= sigma (upright(bold(x)) W_1 + b_1) W_2 + b_2 $
 
 donde:
 
@@ -5555,7 +5718,7 @@ Los transformers utilizan también #strong[conexiones residuales].
 
 En lugar de sustituir completamente una representación por el resultado de una operación, se conserva parte de la entrada original:
 
-$ upright(bold(y)) = upright(bold(x)) + F \( upright(bold(x)) \) $
+$ upright(bold(y)) = upright(bold(x)) + F\(upright(bold(x))\) $
 
 Esto permite que la información atraviese muchas capas sin tener que reconstruirse por completo en cada una.
 
@@ -5702,7 +5865,7 @@ Un transformer generativo recibe una secuencia de tokens y calcula qué token po
 
 Dado:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 el modelo estima una distribución de probabilidad:
 
@@ -5710,7 +5873,7 @@ $ P (t_(n + 1) divides t_1 \, t_2 \, dots.h \, t_n) $
 
 Después selecciona uno de los posibles tokens y lo añade a la secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n \, t_(n + 1) $
+$ t_1\,t_2\,dots.h\,t_n\,t_(n + 1) $
 
 La nueva secuencia se utiliza para predecir el siguiente.
 
@@ -5853,19 +6016,19 @@ Un modelo generativo produce una distribución de probabilidad sobre los posible
 
 Dado un contexto:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 el modelo estima:
 
-$ P \( t_(n + 1) divides t_1 \, t_2 \, dots.h \, t_n \) $
+$ P\(t_(n + 1) divides t_1\,t_2\,dots.h\,t_n\) $
 
 Después selecciona un token y lo añade a la secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n \, t_(n + 1) $
+$ t_1\,t_2\,dots.h\,t_n\,t_(n + 1) $
 
 La nueva secuencia se utiliza para predecir el siguiente:
 
-$ P \( t_(n + 2) divides t_1 \, t_2 \, dots.h \, t_n \, t_(n + 1) \) $
+$ P\(t_(n + 2) divides t_1\,t_2\,dots.h\,t_n\,t_(n + 1)\) $
 
 El proceso se repite hasta completar la respuesta.
 
@@ -5918,7 +6081,7 @@ $ n^2 $
 
 Si duplicamos la longitud de la secuencia:
 
-$ \( 2 n \)^2 = 4 n^2 $
+$ \(2 n\)^2= 4 n^2 $
 
 El trabajo asociado puede multiplicarse considerablemente.
 
@@ -6100,7 +6263,7 @@ Cuando los tokens de una secuencia se relacionan con otros tokens de esa misma s
 
 Dada una secuencia:
 
-$ t_1 \, t_2 \, t_3 \, dots.h \, t_n $
+$ t_1\,t_2\,t_3\,dots.h\,t_n $
 
 cada posición puede utilizar información procedente de las demás:
 
@@ -6186,7 +6349,7 @@ El transformer utiliza la denominada #strong[atención por producto escalar esca
 
 Su expresión es:
 
-$ "Atención" \( Q \, K \, V \) = "softmax" (frac(Q K^T, sqrt(d_k))) V $
+$ "Atención"\(Q\,K\,V\)= "softmax" (frac(Q K^T, sqrt(d_k))) V $
 
 Esta fórmula reúne las operaciones principales del mecanismo.
 
@@ -6214,15 +6377,15 @@ La función #emph[softmax] transforma un conjunto de puntuaciones en valores pos
 
 Para una puntuación $s_i$:
 
-$ "softmax" \( s_i \) = frac(e^(s_i), sum_(j = 1)^n e^(s_j)) $
+$ "softmax"\(s_i\)= frac(e^(s_i), sum_(j = 1)^n e^(s_j)) $
 
 Supongamos que obtenemos estas puntuaciones:
 
-$ \[ 2.1 \, med 0.5 \, med 1.2 \, med - 0.3 \] $
+$ \[2.1\,med 0.5\,med 1.2\,med - 0.3\] $
 
 Después de aplicar #emph[softmax], podríamos obtener aproximadamente:
 
-$ \[ 0.60 \, med 0.12 \, med 0.25 \, med 0.03 \] $
+$ \[0.60\,med 0.12\,med 0.25\,med 0.03\] $
 
 La suma de los pesos es:
 
@@ -6291,7 +6454,7 @@ Otra podría detectar estructuras propias del código fuente.
 
 Los resultados de las cabezas se concatenan:
 
-$ "MultiHead" \( Q \, K \, V \) = "Concat" ("cabeza"_1 \, dots.h \, "cabeza"_m) W_O $
+$ "MultiHead"\(Q\,K\,V\)= "Concat" ("cabeza"_1 \, dots.h \, "cabeza"_m) W_O $
 
 donde:
 
@@ -6388,7 +6551,7 @@ De forma simplificada:
 
 $ Q = upright("salida en construcción") $
 
-$ K \, V = upright("representación de la entrada") $
+$ K\,V = upright("representación de la entrada") $
 
 Esto permite que la salida se apoye en el contenido recibido.
 
@@ -6408,7 +6571,7 @@ Cada bloque realiza sus propias operaciones y recibe representaciones ya transfo
 
 Podemos expresarlo así:
 
-$ H^(\( l + 1 \)) = "Atención"^(\( l \)) (H^(\( l \))) $
+$ H^(\(l + 1\)) = "Atención"^(\(l\)) (H^(\(l\))) $
 
 En las primeras capas, las relaciones pueden estar más próximas a los patrones locales del texto.
 
@@ -6422,7 +6585,7 @@ Un modelo generativo produce la respuesta token a token.
 
 Dada una secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 estima la probabilidad del siguiente token:
 
@@ -6432,7 +6595,7 @@ La atención causal permite relacionar cada posición con los tokens anteriores 
 
 Una vez seleccionado el token $t_(n + 1)$, se incorpora a la secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n \, t_(n + 1) $
+$ t_1\,t_2\,dots.h\,t_n\,t_(n + 1) $
 
 El proceso se repite para producir el siguiente.
 
@@ -6475,7 +6638,7 @@ posibles comparaciones.
 
 Si duplicamos la longitud:
 
-$ \( 2 n \)^2 = 4 n^2 $
+$ \(2 n\)^2= 4 n^2 $
 
 el número de relaciones se multiplica por cuatro.
 
@@ -6483,7 +6646,7 @@ Esto ayuda a explicar por qué las ventanas de contexto extensas requieren más 
 
 La complejidad temporal y espacial de la atención convencional crece aproximadamente de forma cuadrática respecto a la longitud de la secuencia:
 
-$ O \( n^2 \) $
+$ O\(n^2\) $
 
 Los modelos modernos utilizan optimizaciones, atención dispersa, ventanas locales, agrupaciones y otros mecanismos para reducir este coste.
 
@@ -6691,7 +6854,7 @@ Puede almacenar esa decisión y recuperarla cuando deba generar código para ese
 
 De forma simplificada:
 
-$ upright("respuesta") = f \( upright("modelo") \, upright("contexto") \, upright("memoria recuperada") \) $
+$ upright("respuesta") = f\(upright("modelo")\,upright("contexto")\,upright("memoria recuperada")\) $
 
 La memoria complementa al modelo. No sustituye su conocimiento ni altera necesariamente lo aprendido durante el entrenamiento.
 
@@ -6838,7 +7001,7 @@ Algunos detalles se conservan y otros desaparecen. Una decisión aparentemente s
 
 Podemos representar esta pérdida de información así:
 
-$ S = g \( H \) $
+$ S = g\(H\) $
 
 donde:
 
@@ -6848,7 +7011,7 @@ donde:
 
 En general:
 
-$ \| S \| < \| H \| $
+$ \|S\|<\|H\| $
 
 El resumen ocupa menos espacio, pero no contiene toda la información original.
 
@@ -6981,17 +7144,17 @@ Antes de escribir un recuerdo conviene evaluar:
 
 Podemos representar una decisión simplificada de escritura:
 
-$ "guardar" \( x \) = cases(delim: "{", 1 \, & upright("si ") R \( x \) > tau, 0 \, & upright("en otro caso")) $
+$ "guardar"\(x\)= cases(delim: "{", 1\, & upright("si ") R\(x\)> tau, 0\, & upright("en otro caso")) $
 
 donde:
 
 - $x$ es la información candidata;
-- $R \( x \)$ representa su relevancia futura;
+- $R\(x\)$ representa su relevancia futura;
 - $tau$ es el umbral mínimo para conservarla.
 
 En un sistema real, esta decisión puede considerar muchos factores adicionales:
 
-$ R \( x \) = f \( upright("utilidad") \, upright("duración") \, upright("confianza") \, upright("sensibilidad") \, upright("novedad") \) $
+$ R\(x\)= f\(upright("utilidad")\,upright("duración")\,upright("confianza")\,upright("sensibilidad")\,upright("novedad")\) $
 
 Estas expresiones no describen una fórmula universal. Muestran que guardar información debería ser una decisión evaluada, no una acumulación automática.
 
@@ -7014,15 +7177,15 @@ La recuperación puede utilizar:
 
 Una puntuación conceptual de recuperación podría expresarse así:
 
-$ P \( m \, q \) = alpha S \( m \, q \) + beta A \( m \) + gamma C \( m \) $
+$ P\(m\,q\)= alpha S\(m\,q\)+ beta A\(m\)+ gamma C\(m\) $
 
 donde:
 
 - $m$ es un recuerdo;
 - $q$ es la consulta actual;
-- $S \( m \, q \)$ representa la similitud entre ambos;
-- $A \( m \)$ representa la actualidad del recuerdo;
-- $C \( m \)$ representa su nivel de confianza;
+- $S\(m\,q\)$ representa la similitud entre ambos;
+- $A\(m\)$ representa la actualidad del recuerdo;
+- $C\(m\)$ representa su nivel de confianza;
 - $alpha$, $beta$ y $gamma$ determinan la importancia de cada factor.
 
 Los recuerdos con mayor puntuación pueden incorporarse al contexto.
@@ -7039,11 +7202,11 @@ El estado de una incidencia puede quedar obsoleto en minutos.
 
 Un sistema puede reducir la prioridad de un recuerdo a medida que envejece:
 
-$ A \( t \) = e^(- lambda t) $
+$ A\(t\)= e^(- lambda t) $
 
 donde:
 
-- $A \( t \)$ representa la relevancia temporal;
+- $A\(t\)$ representa la relevancia temporal;
 - $t$ es el tiempo transcurrido;
 - $lambda$ controla la velocidad de pérdida.
 
@@ -7202,7 +7365,7 @@ El proceso general sería:
 [#NormalTok("búsqueda de recuerdos próximos");],));
 La similitud puede calcularse mediante el coseno:
 
-$ "sim" \( q \, m \) = frac(q dot.op m, lr(bar.v.double q bar.v.double) lr(bar.v.double m bar.v.double)) $
+$ "sim"\(q\,m\)= frac(q dot.op m, lr(bar.v.double q bar.v.double) lr(bar.v.double m bar.v.double)) $
 
 Esta técnica permite recuperar recuerdos relacionados aunque no utilicen exactamente las mismas palabras.
 
@@ -7498,7 +7661,7 @@ Un modelo es una estructura matemática capaz de transformar una entrada en una 
 
 De forma general:
 
-$ hat(y) = f_theta \( x \) $
+$ hat(y) = f_theta\(x\) $
 
 donde:
 
@@ -7635,12 +7798,12 @@ El tamaño de un modelo suele expresarse mediante el número de parámetros.
 
 Podemos representar esta cantidad como:
 
-$ N_theta = sum_(l = 1)^L N_theta^(\( l \)) $
+$ N_theta = sum_(l = 1)^L N_theta^(\(l\)) $
 
 donde:
 
 - $L$ es el número de capas;
-- $N_theta^(\( l \))$ es el número de parámetros de la capa $l$\;
+- $N_theta^(\(l\))$ es el número de parámetros de la capa $l$\;
 - $N_theta$ es el número total de parámetros.
 
 Un modelo con más parámetros dispone de mayor capacidad para representar patrones complejos.
@@ -7714,7 +7877,7 @@ El modelo produce una distribución de probabilidad sobre los posibles tokens si
 
 Dada una secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 calcula:
 
@@ -7734,7 +7897,7 @@ Su tarea fundamental consiste en asignar probabilidades a secuencias de tokens.
 
 Podemos expresar la probabilidad de una secuencia completa como:
 
-$ P \( t_1 \, t_2 \, dots.h \, t_n \) = product_(i = 1)^n P (t_i divides t_1 \, dots.h \, t_(i - 1)) $
+$ P\(t_1\,t_2\,dots.h\,t_n\)= product_(i = 1)^n P (t_i divides t_1 \, dots.h \, t_(i - 1)) $
 
 Cada token se evalúa teniendo en cuenta los anteriores.
 
@@ -7862,7 +8025,7 @@ Un modelo discriminativo intenta determinar una salida a partir de una entrada.
 
 Por ejemplo:
 
-$ P \( y divides x \) $
+$ P\(y divides x\) $
 
 Puede utilizarse para decidir si un mensaje pertenece a una categoría.
 
@@ -7870,7 +8033,7 @@ Un modelo generativo intenta representar cómo se producen los datos o calcular 
 
 Por ejemplo:
 
-$ P \( x \) $
+$ P\(x\) $
 
 o, en un modelo de lenguaje:
 
@@ -8094,7 +8257,7 @@ Puede producir respuestas extensas, pero estar configurado para contestar brevem
 
 Podemos expresar esta relación de forma conceptual:
 
-$ upright("comportamiento") = f \( upright("modelo") \, upright("contexto") \, upright("instrucciones") \, upright("herramientas") \, upright("configuración") \) $
+$ upright("comportamiento") = f\(upright("modelo")\,upright("contexto")\,upright("instrucciones")\,upright("herramientas")\,upright("configuración")\) $
 
 El modelo condiciona lo que el sistema puede hacer.
 
@@ -8310,7 +8473,7 @@ En un modelo de lenguaje generativo, el objetivo principal suele ser predecir el
 
 Dada una secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 el modelo intenta estimar:
 
@@ -8338,22 +8501,22 @@ La #strong[función de pérdida] mide el error del modelo.
 
 Podemos representarla de forma general:
 
-$ L \( theta \) = "error" (f_theta \( x \) \, y) $
+$ L\(theta\)= "error" (f_theta \( x \) \, y) $
 
 donde:
 
 - $x$ es la entrada;
 - $y$ es el resultado esperado;
-- $f_theta \( x \)$ es la predicción;
-- $L \( theta \)$ es la pérdida obtenida.
+- $f_theta\(x\)$ es la predicción;
+- $L\(theta\)$ es la pérdida obtenida.
 
 El objetivo del entrenamiento consiste en encontrar unos parámetros que reduzcan esa pérdida:
 
-$ theta^(*) = arg min_theta L \( theta \) $
+$ theta^(*) = arg min_theta L\(theta\) $
 
 En un modelo de lenguaje, una función habitual penaliza al modelo cuando asigna poca probabilidad al token correcto:
 
-$ L \( theta \) = - sum_(i = 1)^n log P_theta (t_i divides t_1 \, dots.h \, t_(i - 1)) $
+$ L\(theta\)= - sum_(i = 1)^n log P_theta (t_i divides t_1 \, dots.h \, t_(i - 1)) $
 
 Si el modelo asigna una probabilidad alta al token correcto, la pérdida es menor.
 
@@ -8369,13 +8532,13 @@ El sistema debe determinar qué parámetros contribuyeron a producirlo y cómo d
 
 Para ello se calcula el #strong[gradiente] de la pérdida:
 
-$ nabla_theta L \( theta \) $
+$ nabla_theta L\(theta\) $
 
 El gradiente indica cómo cambia la pérdida cuando se modifican los parámetros.
 
 Una actualización simplificada puede expresarse así:
 
-$ theta_(k + 1) = theta_k - eta nabla_theta L \( theta_k \) $
+$ theta_(k + 1) = theta_k - eta nabla_theta L\(theta_k\) $
 
 donde:
 
@@ -9088,7 +9251,7 @@ Durante la inferencia, el sistema proporciona una entrada al modelo, este realiz
 
 De forma general:
 
-$ hat(y) = f_theta \( x \) $
+$ hat(y) = f_theta\(x\) $
 
 donde:
 
@@ -9187,7 +9350,7 @@ Aunque hablamos de introducir texto, el modelo trabaja con números.
 
 El texto se convierte primero en tokens:
 
-$ x arrow.r \( t_1 \, t_2 \, dots.h \, t_n \) $
+$ x arrow.r\(t_1\,t_2\,dots.h\,t_n\) $
 
 Cada token se transforma después en una representación vectorial:
 
@@ -9260,7 +9423,7 @@ El código puede ser el mismo, pero la tarea cambia.
 
 Podemos expresar esta relación así:
 
-$ f_theta \( x_1 \) eq.not f_theta \( x_2 \) $
+$ f_theta\(x_1\)eq.not f_theta\(x_2\) $
 
 aunque:
 
@@ -9452,7 +9615,7 @@ En un modelo generativo, la inferencia se repite para producir cada nuevo token.
 
 Dada una secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 el modelo calcula una distribución de probabilidad:
 
@@ -9464,7 +9627,7 @@ $ t_(n + 1) $
 
 y se incorpora a la secuencia:
 
-$ t_1 \, t_2 \, dots.h \, t_n \, t_(n + 1) $
+$ t_1\,t_2\,dots.h\,t_n\,t_(n + 1) $
 
 El proceso vuelve a ejecutarse para calcular el siguiente token:
 
@@ -10032,7 +10195,7 @@ La aplicación reúne esa información y la presenta durante la inferencia.
 
 El resultado depende de:
 
-$ upright("resultado") = f \( upright("modelo") \, upright("contexto") \, upright("memoria") \, upright("documentos") \, upright("configuración") \) $
+$ upright("resultado") = f\(upright("modelo")\,upright("contexto")\,upright("memoria")\,upright("documentos")\,upright("configuración")\) $
 
 == Idea clave
 <idea-clave-10>
@@ -10062,7 +10225,7 @@ En cada paso, el modelo no produce directamente una palabra definitiva. Calcula 
 
 Dado un contexto:
 
-$ t_1 \, t_2 \, dots.h \, t_n $
+$ t_1\,t_2\,dots.h\,t_n $
 
 el modelo estima:
 
@@ -10126,7 +10289,7 @@ Estas puntuaciones se denominan habitualmente #strong[logits].
 
 Podemos representarlas como:
 
-$ upright(bold(z)) = \[ z_1 \, z_2 \, dots.h \, z_V \] $
+$ upright(bold(z)) =\[z_1\,z_2\,dots.h\,z_V\] $
 
 donde:
 
@@ -10139,15 +10302,15 @@ Pueden ser positivos, negativos y no tienen por qué sumar uno.
 
 Para convertirlos en una distribución de probabilidad se utiliza normalmente la función #emph[softmax]:
 
-$ P \( t_i \) = frac(e^(z_i), sum_(j = 1)^V e^(z_j)) $
+$ P\(t_i\)= frac(e^(z_i), sum_(j = 1)^V e^(z_j)) $
 
 El resultado cumple:
 
-$ 0 lt.eq P \( t_i \) lt.eq 1 $
+$ 0 lt.eq P\(t_i\)lt.eq 1 $
 
 y:
 
-$ sum_(i = 1)^V P \( t_i \) = 1 $
+$ sum_(i = 1)^V P\(t_i\)= 1 $
 
 Cada token recibe así una probabilidad relativa dentro del vocabulario.
 
@@ -10189,7 +10352,7 @@ Elegir siempre la opción más probable en cada paso no implica obtener la secue
 
 La probabilidad de una secuencia puede expresarse como:
 
-$ P \( t_1 \, t_2 \, dots.h \, t_n \) = product_(i = 1)^n P (t_i divides t_1 \, dots.h \, t_(i - 1)) $
+$ P\(t_1\,t_2\,dots.h\,t_n\)= product_(i = 1)^n P (t_i divides t_1 \, dots.h \, t_(i - 1)) $
 
 Cada decisión condiciona las siguientes.
 
@@ -10226,7 +10389,7 @@ La #strong[temperatura] modifica la distribución de probabilidades antes de sel
 
 Puede expresarse como:
 
-$ P_T \( t_i \) = frac(e^(z_i \/ T), sum_(j = 1)^V e^(z_j \/ T)) $
+$ P_T\(t_i\)= frac(e^(z_i\/T), sum_(j = 1)^V e^(z_j\/T)) $
 
 donde $T$ representa la temperatura.
 
@@ -10331,7 +10494,7 @@ La estrategia #strong[top-p], también denominada muestreo por núcleo o #emph[n
 
 Por ejemplo, si:
 
-$ p = 0 \, 90 $
+$ p = 0\,90 $
 
 y tenemos:
 
@@ -10495,7 +10658,7 @@ No responde necesariamente a:
 
 Podemos expresar esta diferencia conceptualmente:
 
-$ P \( upright("texto plausible") \) eq.not P \( upright("afirmación verdadera") \) $
+$ P\(upright("texto plausible")\)eq.not P\(upright("afirmación verdadera")\) $
 
 La calidad lingüística y la exactitud factual son dimensiones diferentes.
 
@@ -11074,7 +11237,7 @@ El modelo recibe una entrada representada mediante tokens y calcula una salida u
 
 De forma general:
 
-$ hat(y) = f_theta \( x \) $
+$ hat(y) = f_theta\(x\) $
 
 Sus capacidades proceden principalmente de:
 
@@ -11514,7 +11677,7 @@ Un mismo modelo puede comportarse de formas muy diferentes según el sistema.
 
 Podemos expresar el comportamiento observado como:
 
-$ B = f \( M \, C \, I \, T \, V \) $
+$ B = f\(M\,C\,I\,T\,V\) $
 
 donde:
 
@@ -12016,7 +12179,7 @@ El sistema selecciona información, conecta herramientas, controla permisos, val
 <una-respuesta-no-depende-solo-del-modelo>
 Podemos representar el comportamiento observado de forma conceptual:
 
-$ R = f \( M \, C \, I \, D \, E \, H \, G \) $
+$ R = f\(M\,C\,I\,D\,E\,H\,G\) $
 
 donde:
 
@@ -12217,7 +12380,1642 @@ Ya no observamos una respuesta aislada.
 
 Empezamos a ver el sistema que la produce.
 
-#part[Introduccion]
+#part[Acerca de esta parte]
+En esta parte abordamos la evolución de las metodologías de ingeniería de software, algunas de las ideas y circunstancias que dieron lugar a ellas y los problemas que pretendían resolver. Revisaremos enfoques clásicos y modernos, junto con casos reales, para analizar qué sigue siendo válido, qué se ha perdido por el camino y qué cambia cuando los Sistemas Inteligentes pasan a participar directamente en el proceso de desarrollo.
+
+El objetivo no es encontrar una metodología universal ni sustituir automáticamente lo anterior por algo nuevo. Partiremos siempre del problema y de su contexto para determinar qué prácticas, metodologías y herramientas resultan adecuadas, y utilizaremos este recorrido para entender por qué la incorporación de los IISS exige revisar algunos de los supuestos sobre los que se construyeron las formas actuales de desarrollar software.
+
+#strong[#text(fill: red)[BORRADOR: completar esta introducción cuando esté definida la estructura definitiva de la parte, describiendo brevemente el recorrido y los capítulos que la componen.]]
+
+= Arquitectura en capas
+<arquitectura-en-capas>
+El diseño en capas no empezó con las capas, al menos no con el nombre con el que hoy lo conocemos. En determinados momentos de la evolución de la ingeniería de software aparecen conceptos que se presentan como una ruptura con todo lo anterior. Uno de los ejemplos más conocidos es precisamente la arquitectura en capas. La explicación habitual resulta familiar: las aplicaciones antiguas eran grandes sistemas monolíticos en los que presentación, lógica de negocio y acceso a datos aparecían mezclados; posteriormente aprendimos a separar responsabilidades y comenzaron a surgir arquitecturas y patrones como #emph[Model-View-Controller] (MVC) y muchas de sus variantes. La explicación es sencilla, resulta didáctica y contiene una parte de verdad, pero el problema aparece cuando esa simplificación termina convirtiéndose en una descripción histórica. Cualquiera que hubiera trabajado años antes en determinados entornos corporativos reconocería inmediatamente buena parte de esas ideas.
+
+La explicación es sencilla, resulta didáctica y contiene una parte de verdad. El problema aparece cuando esa simplificación termina convirtiéndose en una descripción histórica. Porque cualquiera que hubiera trabajado años antes en determinados entornos corporativos reconocería inmediatamente buena parte de esas ideas.
+
+Tomemos como ejemplo los sistemas construidos sobre IBM CICS#footnote[CICS es una marca de IBM.], utilizando lenguajes como COBOL o PL/I. CICS permitía técnicamente construir una transacción de muchas maneras, incluida la posibilidad de concentrar diferentes responsabilidades dentro del mismo programa. Pero una cosa es lo que una plataforma permite y otra muy distinta cómo se utilizaba profesionalmente dentro de organizaciones con estándares de ingeniería establecidos.
+
+En muchos de aquellos entornos corporativos, una transacción se estructuraba mediante módulos claramente diferenciados. Había un módulo encargado de gestionar la interacción con el terminal y las pantallas, otro que contenía la lógica de negocio y otro responsable del acceso a bases de datos, ficheros u otros mecanismos de persistencia. Podían existir más módulos y la arquitectura concreta variaba según la organización y el sistema, pero esas responsabilidades no se mezclaban arbitrariamente.
+
+Y no se trataba simplemente de una recomendación incluida en algún manual que cada programador pudiera decidir seguir o ignorar. Formaba parte de los estándares de desarrollo. El código era revisado y se comprobaba que respetara esas separaciones antes de autorizar su promoción hacia determinados entornos. Una aplicación que incumplía las normas arquitectónicas podía no ser aprobada para continuar hacia integración, pruebas o producción.
+
+Con la terminología actual resulta difícil no reconocer las tres responsabilidades clásicas:
+
+- presentación;
+- lógica de negocio;
+- persistencia.
+
+Entonces no necesitábamos necesariamente llamarlas «capa de presentación», «capa de negocio» y «capa de persistencia». Lo importante era que sabíamos que eran responsabilidades diferentes, que no debían acoplarse innecesariamente y que esa separación debía mantenerse durante la evolución del sistema.
+
+Algo parecido ocurría con los datos que circulaban por la aplicación. En CICS existía la #NormalTok("COMMAREA");, un área de comunicación que permitía conservar y transmitir información entre programas o entre diferentes pasos de una conversación transaccional. No existe una equivalencia exacta con los mecanismos actuales, pero conceptualmente podemos reconocer en ella parte de lo que hoy trataríamos como contexto o estado de una interacción.
+
+Independientemente de ese contexto, los módulos intercambiaban también estructuras de datos específicamente diseñadas para transmitir la información necesaria entre unas partes del sistema y otras. Hoy probablemente las identificaríamos con bastante naturalidad como objetos de transferencia de datos, los conocidos #emph[Data Transfer Objects] o #emph[DTO].
+
+La separación tampoco terminaba en esas grandes responsabilidades arquitectónicas. Dentro de cada una de ellas se aplicaba además una idea que hoy reconoceríamos inmediatamente como el #emph[Single Responsibility Principle]: un módulo debía hacer una cosa, y hacerla bien. Puede que no se utilizara todavía ese nombre, o que la formulación variara entre organizaciones, pero como #emph[best practice] era perfectamente conocida por quienes trabajaban en aquellos entornos.
+
+Si una aplicación necesitaba validar un DNI, lo razonable no era programar nuevamente el algoritmo de validación dentro de la transacción. Se llamaba a la rutina encargada de validar DNIs, que posiblemente formaba parte de una biblioteca corporativa y era utilizada por muchas aplicaciones.
+
+Si había que calcular un interés, ocurría algo parecido. Se invocaba la rutina corporativa responsable de ese cálculo. En muchos casos ni siquiera era código desarrollado por el equipo del proyecto, sino una funcionalidad común proporcionada y mantenida para toda la organización.
+
+La razón tampoco era especialmente misteriosa. Ya se conocían perfectamente los problemas derivados de tener decenas de programas implementando de maneras ligeramente diferentes una misma regla funcional. Aparecían resultados distintos, correcciones que había que repetir en múltiples lugares, versiones divergentes de una misma lógica y dificultades para garantizar que un cambio normativo o de negocio se aplicara de forma consistente en todos los sistemas.
+
+Por eso se intentaba reutilizar lo que ya existía y evitar tanto la duplicación de trabajo como la reinvención innecesaria de soluciones. La lógica común se concentraba en módulos o rutinas compartidas que podían ser mantenidas y validadas de forma centralizada. Si cambiaba la forma de calcular un determinado interés, el objetivo era modificar la implementación responsable de ese cálculo, no localizar todas las aplicaciones de la organización que hubieran decidido implementarlo por su cuenta.
+
+Visto con terminología actual, encontramos aquí varios principios que posteriormente adquirirían nombres propios y serían presentados como elementos centrales del diseño moderno: responsabilidad única, reutilización, reducción de duplicación, separación de responsabilidades y centralización de reglas de negocio compartidas. Naturalmente, las implementaciones de entonces tenían sus propias limitaciones y problemas, pero las cuestiones de ingeniería que intentaban resolver eran perfectamente conocidas.
+
+Esto no significa que aquellas aplicaciones fueran equivalentes a las arquitecturas actuales. Evidentemente no lo eran. Los terminales, protocolos, bases de datos, lenguajes, mecanismos de comunicación y restricciones operativas pertenecían a otro contexto tecnológico. Tampoco significa que todas las aplicaciones desarrolladas en aquella época siguieran buenas prácticas. Había sistemas bien diseñados y sistemas desastrosos, exactamente igual que ahora.
+
+Lo que resulta difícil sostener es que la separación de responsabilidades apareciera cuando comenzamos a utilizar una terminología nueva para describirla.
+
+La historia de MVC, además, tiene su propio recorrido. El patrón surgió en el entorno de #emph[Smalltalk] y Xerox PARC y no debe presentarse como una evolución directa de las arquitecturas CICS. Lo interesante es precisamente que distintos entornos tecnológicos, enfrentados a problemas diferentes, llegaron a soluciones que compartían un mismo principio de ingeniería: separar responsabilidades para reducir el acoplamiento y permitir que distintas partes del sistema evolucionaran con mayor independencia.
+
+Este ejemplo ilustra un fenómeno que encontraremos repetidamente al recorrer la historia de las metodologías, arquitecturas y prácticas de desarrollo. Cuando aparece un concepto nuevo, resulta tentador construir una narrativa en la que todo lo anterior representa el problema y la nueva propuesta representa la solución. Pero muchas veces el problema ya había sido identificado décadas antes y también existían soluciones maduras para abordarlo.
+
+En algunos casos incluso ocurre algo más curioso: al redescubrir una práctica conservamos su idea esencial pero perdemos parte de la disciplina que la acompañaba. La separación entre presentación, negocio y persistencia no era únicamente una recomendación arquitectónica. En determinadas organizaciones estaba acompañada por estándares, revisiones, controles y mecanismos de aprobación que verificaban que el diseño se respetara antes de permitir que el software avanzara hacia producción.
+
+Lo mismo ocurría con la reutilización. No se trataba únicamente de evitar unas cuantas líneas repetidas de código, sino de impedir que una misma regla funcional terminara teniendo múltiples implementaciones independientes dentro de una organización. La preocupación no era estética. Era una cuestión de consistencia, mantenimiento, calidad y riesgo.
+
+Por eso, cuando una nueva arquitectura, metodología o herramienta afirma resolver un problema que aparentemente nadie había resuelto antes, conviene hacer una pregunta previa: ¿es realmente nuevo el problema?
+
+Con frecuencia descubriremos que no lo es. Lo nuevo puede ser la tecnología, el contexto, la terminología o la forma concreta de implementar la solución. Y eso puede justificar perfectamente una nueva aproximación. Pero reconocer lo que ya sabemos nos permite avanzar desde décadas de experiencia acumulada en lugar de comenzar, una vez más, desde cero.
+
+= Project Apollo
+<project-apollo>
+Hay proyectos que resultan especialmente útiles para estudiar la historia de la ingeniería porque obligan a separar las modas de los problemas reales. #emph[Project Apollo] es uno de ellos. Cuando, en 1961, Estados Unidos asumió el objetivo de llevar seres humanos a la Luna y traerlos de vuelta con seguridad antes de terminar la década, no existía una metodología de desarrollo de #emph[software] preparada para explicar cómo debía hacerse algo semejante. Buena parte de la propia disciplina que hoy llamamos ingeniería de #emph[software] estaba todavía formándose. Pero tampoco existía el #emph[hardware] que necesitaban. El problema era extraordinariamente complejo y buena parte de las tecnologías necesarias para resolverlo tendrían que diseñarse al mismo tiempo que la propia solución, y además tenía una característica poco negociable: #strong[debía funcionar a la primera].
+
+El #emph[software] era solo una parte de un programa gigantesco, pero una parte cada vez más importante. El MIT Instrumentation Laboratory recibió el encargo de desarrollar el sistema de guiado de Apollo, incluido el #emph[Apollo Guidance Computer] (AGC), su #emph[hardware] y el #emph[software] embarcado que utilizarían tanto el módulo de mando como el módulo lunar. Margaret Hamilton acabaría dirigiendo la división responsable del #emph[software] de vuelo. El equipo no estaba seleccionando simplemente un ordenador disponible en el mercado, instalando un sistema operativo y comenzando a programar. El ordenador, buena parte de su electrónica, sus interfaces, el sistema operativo y las aplicaciones que debían controlar la navegación y el vuelo formaban parte del mismo problema de ingeniería.
+
+Las limitaciones técnicas eran enormes vistas desde nuestra perspectiva actual. El AGC debía ocupar poco espacio, pesar poco, consumir muy poca energía y funcionar con una cantidad de memoria que hoy resultaría insignificante. Parte del programa terminado quedaba incorporado físicamente en una memoria de núcleos cableados, por lo que modificar el #emph[software] no consistía simplemente en desplegar una nueva versión. Una decisión tomada en el diseño del #emph[software] podía terminar afectando a fabricación, integración, pruebas, planificación y, en último término, a componentes físicos de la nave.
+
+Ese contexto ayuda a entender la forma de trabajo que fue apareciendo. Existían reglas de diseño explícitas, responsabilidades diferenciadas, control sobre los cambios, integración progresiva y pruebas sistemáticas. NASA incrementó además su control sobre el contenido del #emph[software] durante el programa y llegó a establecer un #emph[Software Control Board] encargado de controlar qué modificaciones podían incorporarse al sistema. La capacidad de cambiar algo no significaba que pudiera cambiarse sin evaluar sus consecuencias.
+
+También se establecieron principios de diseño que iban mucho más allá de escribir correctamente un programa. Las denominadas #emph[General Apollo Design Ground Rules] expresaban decisiones sobre el comportamiento del sistema completo. La nave debía poder completar funciones fundamentales sin depender permanentemente de ayuda desde tierra, debía aprovechar la participación humana cuando esta mejorara o simplificara la operación y debía contemplar situaciones degradadas en las que parte del sistema o de la tripulación no estuviera disponible. Antes de decidir cómo programar una función se estaba definiendo qué relación debía existir entre personas, automatización y sistema.
+
+El proceso de pruebas respondía a la misma lógica. El #emph[software] embarcado pasaba por distintos niveles de verificación en los que progresivamente se integraban más componentes hasta llegar a probar el comportamiento del sistema completo. No se trataba únicamente de ejecutar un programa y comprobar que produjera el resultado esperado. Había que verificar su comportamiento junto con el ordenador, las interfaces, otros subsistemas de la nave y finalmente dentro de escenarios cada vez más próximos a las condiciones reales de una misión.
+
+Apollo 11 proporcionó quizá la demostración más conocida de que aquellas decisiones importaban. Durante el descenso del módulo lunar #emph[Eagle], el ordenador comenzó a mostrar las alarmas 1201 y 1202. El AGC estaba recibiendo más trabajo del que podía procesar, pero había sido diseñado para priorizar las tareas esenciales y abandonar o reiniciar aquellas de menor prioridad. El sistema no necesitaba continuar ejecutándolo todo; necesitaba continuar ejecutando lo importante. El aterrizaje pudo seguir adelante.
+
+Ese episodio suele contarse como una historia sobre la sorprendente capacidad de un ordenador extremadamente limitado. Desde el punto de vista de la ingeniería resulta más interesante leerlo de otra manera. El comportamiento que permitió continuar el descenso no apareció accidentalmente cuando surgió el problema. Era consecuencia de decisiones tomadas mucho antes sobre prioridades, recuperación ante errores, interacción con los astronautas y funcionamiento del #emph[software] bajo condiciones anómalas. La respuesta ante una situación que no podía predecirse exactamente había sido preparada mediante el diseño del sistema.
+
+#emph[Project Apollo] tampoco fue un proyecto sin errores, tensiones o decisiones discutibles, ni necesitamos convertirlo retrospectivamente en una metodología ideal. Sus ingenieros trabajaban con tecnologías inmaduras, restricciones extremas y problemas para los que con frecuencia no existían precedentes directos. Muchas prácticas fueron evolucionando durante el propio programa y los mecanismos de control aumentaron a medida que se comprendía mejor la importancia que estaba adquiriendo el #emph[software].
+
+Pero precisamente por eso Apollo permite observar con bastante claridad algo que se pierde cuando discutimos metodologías fuera de su contexto: hay problemas para los que una aproximación fuertemente planificada, secuencial y basada en hitos no solo tiene sentido, sino que puede resultar necesaria.
+
+== Cuando #emph[Waterfall] tiene sentido
+<cuando-waterfall-tiene-sentido>
+Con frecuencia se presenta #emph[Waterfall] como el ejemplo de una metodología antigua que fue necesario abandonar porque pretendía decidirlo todo al principio, avanzaba mediante fases rígidas y dificultaba responder a los cambios. Esa crítica puede ser perfectamente válida en determinados tipos de proyecto, especialmente cuando el problema todavía está siendo descubierto, el coste de modificar una solución es pequeño y podemos obtener información nueva mediante entregas frecuentes. Pero convertir esa crítica en una regla universal conduce de nuevo al mismo error: evaluar una metodología independientemente del problema que debe resolver.
+
+Apollo tenía dependencias físicas. Había componentes que debían diseñarse antes de poder fabricar otros, interfaces que debían estabilizarse para permitir trabajar a equipos diferentes, dispositivos que tenían que construirse, integrarse y probarse, y decisiones cuyo coste de modificación aumentaba enormemente conforme avanzaba el proyecto. No era posible mantener indefinidamente todas las alternativas abiertas esperando descubrir al final cuál funcionaba mejor.
+
+Naturalmente hubo iteraciones, prototipos, pruebas, cambios y aprendizaje. Un proyecto de aquella complejidad no podía desarrollarse mediante una secuencia perfecta en la que cada fase terminara definitivamente antes de comenzar la siguiente. Pero reconocer que existía iteración no elimina la necesidad de planificación, fases, dependencias, hitos y momentos a partir de los cuales determinadas decisiones tenían que considerarse suficientemente estables para que el resto del sistema pudiera avanzar.
+
+Si un componente electrónico depende de una interfaz definida por otro equipo, llega un momento en que esa interfaz debe estabilizarse. Si un ordenador va a integrarse físicamente en una nave, su tamaño, consumo, conexiones y comportamiento no pueden permanecer abiertos indefinidamente. Si una versión del #emph[software] va a ser incorporada a una memoria física, probada junto con el resto del sistema y utilizada para certificar determinada configuración, cambiarla tiene consecuencias mucho mayores que recompilar un programa.
+
+En ese contexto, avanzar mediante estados progresivamente más estables no es necesariamente burocracia. Es una consecuencia de las dependencias existentes y del coste del cambio. #emph[Waterfall], o al menos muchas de las ideas que posteriormente hemos asociado con los procesos secuenciales, puede tener perfectamente sentido cuando el problema presenta esas características.
+
+Esto no convierte a #emph[Waterfall] en la metodología correcta para cualquier proyecto, del mismo modo que sus limitaciones en otros contextos tampoco la convierten en una metodología incorrecta por definición. Nos devuelve a la cuestión que recorre esta parte del libro: el problema determina qué forma de trabajo resulta adecuada.
+
+== Congelar también es una decisión de ingeniería
+<congelar-también-es-una-decisión-de-ingeniería>
+Apollo permite observar otra práctica que a veces se interpreta erróneamente como resistencia al cambio: la congelación progresiva de tecnologías, componentes, interfaces y versiones.
+
+En un proyecto de este tipo no tendría sentido sustituir continuamente una tecnología crítica simplemente porque hubiera aparecido otra más reciente. Cuando un componente ha sido diseñado, integrado con otros, sometido a pruebas y utilizado como base para decisiones posteriores, cambiarlo deja de ser una modificación local. Puede obligar a revisar interfaces, repetir análisis, modificar otros componentes, reconstruir elementos físicos, ejecutar nuevamente pruebas y reconsiderar conclusiones que ya se habían dado por válidas.
+
+La aparición de una versión nueva tampoco invalida automáticamente la anterior. Puede ofrecer mejores prestaciones o incorporar capacidades interesantes y, aun así, resultar una mala decisión incorporarla a un proyecto en un momento determinado. La pregunta relevante no es si existe algo más nuevo, sino qué consecuencias tiene introducirlo.
+
+En Apollo esto resulta especialmente visible porque #emph[hardware] y #emph[software] estaban profundamente integrados y muchas modificaciones tenían consecuencias físicas. Pero el principio continúa siendo válido en proyectos actuales. Actualizar una versión mayor de Java, sustituir una biblioteca fundamental, cambiar una plataforma de ejecución o introducir una nueva herramienta durante un proyecto puede afectar a dependencias, compatibilidad, arquitectura, pruebas, despliegue, planificación e incluso certificaciones. El cambio puede estar justificado, pero debe estar justificado por el problema, no simplemente por la existencia de una versión posterior.
+
+Congelar una tecnología durante una fase del proyecto no significa declarar que esa tecnología será utilizada para siempre. Significa establecer una referencia estable sobre la que puedan trabajar los demás componentes del sistema. Habrá momentos apropiados para reconsiderarla y otros en los que el valor de la estabilidad será superior al beneficio potencial de una actualización.
+
+Esta idea resulta especialmente importante en un momento en el que las herramientas, modelos y plataformas vinculadas a los Sistemas Inteligentes evolucionan a una velocidad extraordinaria. Si cada nueva versión disponible provoca automáticamente una modificación de la plataforma utilizada por un proyecto, la propia evolución tecnológica puede terminar impidiendo alcanzar un estado estable sobre el que diseñar, verificar y construir.
+
+#emph[Project Apollo] no demuestra que debamos desarrollar hoy como se hacía en los años sesenta. Tampoco demuestra que debamos adoptar #emph[Waterfall] ni congelar permanentemente nuestras tecnologías. Demuestra algo bastante más útil: que planificación, iteración, control del cambio, estabilidad tecnológica y capacidad de adaptación no son principios que puedan declararse buenos o malos fuera de contexto.
+
+Apollo partió de un objetivo, unas restricciones y unos riesgos extraordinariamente concretos. A partir de ellos se fueron desarrollando las prácticas, controles, herramientas y formas de organización necesarias para resolver el problema. En algunos momentos fue necesario experimentar; en otros, iterar; en otros, controlar estrictamente los cambios; y en otros, congelar una decisión para que el resto del sistema pudiera continuar avanzando.
+
+Ese es precisamente el punto que nos interesa. La ingeniería no consiste en aplicar siempre la práctica más reciente ni en conservar indefinidamente la anterior. Consiste en entender suficientemente bien el problema como para saber cuándo necesitamos cambiar y cuándo, por el contrario, necesitamos dejar de cambiar.
+
+= Basilea III
+<basilea-iii>
+Hay proyectos en los que una parte fundamental de aquello que debe construirse no puede negociarse, reinterpretarse libremente ni modificarse porque el equipo haya encontrado una solución que considera mejor. El origen del requisito está fuera del proyecto y, en ocasiones, fuera incluso de la propia organización. La regulación bancaria proporciona algunos de los ejemplos más claros.
+
+Basilea III es un conjunto de estándares internacionales desarrollados por el #emph[Basel Committee on Banking Supervision] (BCBS). En la Unión Europea esos estándares se incorporan al marco regulatorio principalmente mediante el #emph[Capital Requirements Regulation] (CRR) y la #emph[Capital Requirements Directive] (CRD), acompañados por normas técnicas, directrices y mecanismos de supervisión. Para un banco, toda esa cadena institucional termina convirtiéndose en algo mucho más concreto: a partir de una fecha determinada tendrá que calcular, informar, conservar, controlar o ejecutar determinadas cosas de una manera compatible con la normativa aplicable.
+
+Desde la perspectiva del proyecto tecnológico, el problema puede expresarse de una forma aparentemente sencilla: hay que implementar un nuevo cálculo, modificar un proceso, obtener información que antes no existía, conservar datos adicionales o generar unos informes con una estructura determinada, y todo ello debe estar operativo antes de una fecha que la organización tampoco ha elegido.
+
+En este tipo de proyecto aparece una limitación especialmente importante para cualquier metodología: las especificaciones regulatorias no pertenecen al equipo de desarrollo.
+
+El equipo puede descubrir que un requisito es difícil de implementar. Puede considerar que determinado cálculo podría simplificarse. Puede encontrar una estructura de datos más cómoda o pensar que cierta información aporta poco valor. Puede incluso estar convencido de que existe una solución técnicamente mejor. Nada de eso le autoriza a modificar unilateralmente aquello que exige la regulación.
+
+Esto introduce una diferencia importante respecto a determinados proyectos de producto. En ellos puede tener mucho sentido comenzar con una necesidad incompletamente definida, construir una primera solución, enseñársela al usuario, aprender de su reacción y modificar los requisitos. En un proyecto regulatorio también existirá aprendizaje, pero una parte del resultado esperado permanece fuera de ese ciclo. Si la norma establece cómo debe calcularse un valor, qué información debe conservarse o qué debe comunicarse al supervisor, el proceso de desarrollo no puede decidir que después de varios #emph[sprints] ha descubierto una solución diferente que proporciona más valor al usuario.
+
+El usuario tampoco puede hacerlo.
+
+Un responsable de negocio del banco puede participar en la interpretación, resolver ambigüedades, decidir cómo integrar el nuevo proceso con los sistemas existentes y priorizar determinadas tareas de implementación. Pero no puede aprobar que la organización deje de cumplir una obligación externa simplemente porque el equipo prefiera otra solución. En ese sentido, parte de la especificación está por encima del propio proyecto.
+
+Esto no convierte automáticamente el desarrollo en #emph[Waterfall]. La distinción es importante.
+
+Que el resultado normativo esté fijado no determina necesariamente cómo debemos construirlo. Un banco puede organizar el proyecto mediante iteraciones, equipos multidisciplinares, entregas incrementales, pruebas continuas y muchas de las prácticas que asociamos con #emph[Agile]. Puede dividir el problema en partes, construir primero los mecanismos de obtención de datos, después implementar los cálculos, incorporar progresivamente controles y preparar los informes mediante sucesivas versiones. Puede descubrir problemas técnicos durante el proceso y modificar la arquitectura tantas veces como resulte razonable.
+
+Lo que no puede hacer es utilizar esa capacidad de adaptación para alterar la obligación que debe satisfacer.
+
+Podríamos decir que existen dos espacios diferentes. Uno permanece relativamente cerrado: qué debe cumplir la entidad y cuándo debe hacerlo. El otro puede permanecer abierto durante buena parte del proyecto: cómo vamos a conseguirlo.
+
+Esta separación resulta especialmente útil porque muestra por qué discutir si un proyecto es #emph[Agile] o #emph[Waterfall] puede ser una pregunta demasiado pobre. Un mismo proyecto puede contener requisitos externos completamente rígidos y, al mismo tiempo, utilizar un proceso de implementación altamente iterativo. La estabilidad de las especificaciones y la flexibilidad del proceso de construcción no son necesariamente contradictorias.
+
+Hay además otra característica que modifica profundamente la forma de trabajar: no basta con que el sistema produzca aparentemente el resultado correcto. En un entorno regulado debe ser posible demostrar por qué ese resultado es correcto.
+
+Esto introduce necesidades de trazabilidad, documentación, control de versiones, conservación de evidencias, validación y auditoría que pueden resultar excesivas en otros tipos de proyecto pero que aquí forman parte del problema. Si una determinada cifra termina formando parte de una información regulatoria, puede ser necesario conocer de qué datos procede, qué reglas fueron aplicadas, qué versión del proceso realizó el cálculo y qué controles permitieron aceptar el resultado.
+
+La documentación deja entonces de ser una actividad administrativa añadida al desarrollo. Forma parte del sistema de control.
+
+También cambia la naturaleza de la fecha de entrega. En muchos productos una fecha puede negociarse en función del alcance. Si no llegamos con todas las funcionalidades previstas, reducimos el contenido de una versión y entregamos primero aquello que proporciona mayor valor. En determinados proyectos regulatorios esa estrategia tiene límites evidentes. Si la obligación entra en vigor el 1 de enero, disponer ese día del ochenta por ciento de lo necesario puede equivaler sencillamente a no cumplirla.
+
+Esto no significa que no podamos priorizar. Significa que la priorización tiene que producirse dentro del espacio que permite alcanzar el cumplimiento completo en la fecha requerida. Podemos decidir qué construir primero, qué riesgos atacar antes, qué componentes necesitan prototipos o dónde conviene concentrar inicialmente las pruebas. Lo que no podemos hacer es convertir una obligación legal en una lista opcional de funcionalidades y esperar que el regulador seleccione las que considera más valiosas.
+
+En proyectos de este tipo incluso el concepto de #emph[Minimum Viable Product] necesita ser utilizado con cuidado. Puede existir una primera versión técnicamente viable, una arquitectura mínima sobre la que seguir trabajando o una implementación inicial que permita probar determinadas hipótesis, pero el producto mínimo que satisface finalmente una obligación regulatoria está definido, en buena medida, por el propio cumplimiento. Lo que queda fuera puede no ser una funcionalidad futura; puede ser precisamente aquello que hace que la solución sea insuficiente.
+
+Basilea III nos proporciona así otro ejemplo de por qué una metodología no puede elegirse independientemente del problema. Aquí no necesitamos necesariamente un proceso secuencial como consecuencia de dependencias físicas, como ocurría en #emph[Project Apollo]. Tampoco necesitamos renunciar a prácticas iterativas. Lo que necesitamos reconocer es que existen restricciones externas que la metodología debe respetar.
+
+Podemos ser #emph[Agile] en la implementación sin ser ágiles con la regulación.
+
+Y esta diferencia importa. Si interpretamos #emph[Agile] como capacidad para aprender durante el desarrollo, entregar incrementalmente, colaborar estrechamente y modificar nuestra solución cuando obtenemos nueva información, muchas de sus prácticas pueden resultar extremadamente útiles. Si lo interpretamos como capacidad para mantener permanentemente abiertos los requisitos o decidir que la documentación y la trazabilidad constituyen burocracia prescindible, el problema regulatorio establece rápidamente los límites de esa interpretación.
+
+Una vez más, no es la metodología la que decide qué clase de problema tenemos delante. Es el problema el que determina qué partes de una metodología podemos utilizar, cuáles debemos adaptar y qué controles adicionales necesitamos incorporar.
+
+En un proyecto regulatorio podemos discutir durante meses cómo construir la solución. Lo que no podemos discutir durante meses es si el 1 de enero queremos cumplir la regulación.
+
+El regulador ya tomó esa decisión por nosotros.
+
+= Google
+<google>
+A finales de los años noventa y comienzos de los dos mil, Google empezó a encontrarse con problemas que muy pocas empresas habían tenido que resolver antes en condiciones reales. La Web crecía a una velocidad extraordinaria y un buscador debía recorrerla, almacenar enormes cantidades de información, construir índices sobre ella y responder después a millones de consultas con tiempos aceptables. Muchos de los problemas técnicos implicados no eran completamente nuevos desde el punto de vista académico: la computación distribuida, el procesamiento paralelo, la tolerancia a fallos o la partición de datos llevaban años siendo estudiados. Lo novedoso era tener que resolverlos todos simultáneamente, de forma continua y a una escala que hasta entonces apenas había salido del terreno teórico o de determinados centros de investigación.
+
+Aumentar simplemente la potencia de una máquina dejó pronto de ser una respuesta suficiente. Google optó por construir buena parte de su infraestructura mediante grandes cantidades de ordenadores relativamente convencionales trabajando conjuntamente. Aquello permitía aumentar capacidad incorporando nuevas máquinas, pero cambiaba algunas de las reglas habituales del diseño. Cuando un sistema está formado por miles de ordenadores, discos, redes y otros componentes, los fallos dejan de ser acontecimientos excepcionales. En algún punto del sistema siempre habrá algo que no funciona correctamente. La arquitectura ya no podía construirse suponiendo que todos sus componentes estarían disponibles, sino precisamente aceptando que algunos de ellos fallarían y que el conjunto debía continuar funcionando a pesar de ello.
+
+De esas necesidades surgieron algunas de las aportaciones técnicas más influyentes de Google. En 2003 la compañía publicó #emph[The Google File System] (GFS), donde describía un sistema de ficheros distribuido diseñado para almacenar enormes cantidades de información sobre grandes conjuntos de máquinas y continuar funcionando aun cuando algunas de ellas fallaran. Un año después publicó #emph[MapReduce], un modelo que permitía distribuir grandes procesos de cálculo entre muchas máquinas ocultando al programador buena parte de la complejidad relacionada con la partición del trabajo, su distribución, la coordinación entre nodos y la recuperación frente a errores. Google no había comenzado buscando un lugar donde utilizar un sistema de ficheros distribuido o #emph[MapReduce]. Había comenzado con un problema de escala para el que las soluciones habituales estaban dejando de funcionar, y las herramientas aparecieron como consecuencia de ese problema.
+
+Las publicaciones tuvieron un enorme impacto fuera de la compañía. Doug Cutting y Mike Cafarella, que trabajaban en Nutch, un buscador de código abierto, encontraron en aquellas ideas una respuesta a algunos de los problemas que ellos mismos estaban intentando resolver. De ese trabajo surgiría Hadoop, que permitió trasladar a un entorno abierto muchas de las ideas relacionadas con almacenamiento y procesamiento distribuido. Hadoop resolvía un problema real y permitió que organizaciones que no disponían de la infraestructura o los recursos de Google pudieran construir sistemas capaces de almacenar y procesar cantidades de información que anteriormente habrían resultado difíciles de manejar.
+
+Pero entonces ocurrió algo muy habitual en nuestra industria. Una solución creada para resolver un problema comenzó a convertirse en una tecnología que parecía necesario utilizar independientemente de que ese problema existiera. Durante algunos años #emph[Big Data], Hadoop y #emph[MapReduce] adquirieron una enorme visibilidad y muchas organizaciones empezaron a desplegar clústeres, crear equipos especializados y rediseñar aplicaciones alrededor de ellos. En bastantes casos existían realmente volúmenes de información y necesidades de procesamiento que justificaban esa complejidad. En otros, sin embargo, el razonamiento parecía haberse invertido: ya no partíamos del problema para buscar una solución, sino de la solución para intentar encontrar un problema que justificara utilizarla.
+
+Y la complejidad no desaparece por distribuir un sistema. Hay que particionar datos, replicarlos, coordinar máquinas, distribuir procesos, gestionar fallos, monitorizar nodos, desplegar infraestructura y comprender comportamientos que sencillamente no aparecen en una aplicación mucho más pequeña. Todo ese coste tiene sentido cuando permite resolver un problema mayor. Si una base de datos convencional y uno o unos pocos servidores pueden manejar perfectamente el volumen de información de una organización, incorporar una arquitectura diseñada para funcionar sobre cientos o miles de máquinas puede significar únicamente que hemos introducido un conjunto de problemas que antes no teníamos.
+
+El caso de Google resulta especialmente útil porque permite observar los dos extremos del mismo fenómeno. En Google, la innovación fue consecuencia de encontrarse con problemas que las herramientas existentes ya no podían resolver adecuadamente. Hadoop permitió después que otras organizaciones utilizaran soluciones similares cuando comenzaron a enfrentarse a problemas comparables. El error no estaba en ninguna de esas tecnologías, sino en convertir su éxito en una recomendación universal. Una arquitectura puede ser extraordinaria para el problema que la originó y completamente innecesaria para otro proyecto.
+
+Por eso, antes de adoptar una tecnología porque Google la utiliza, conviene recordar algo bastante evidente: nuestra empresa probablemente no sea Google. Puede tener otros problemas, otros volúmenes, otras restricciones y otras necesidades. La pregunta relevante no es si Hadoop, #emph[MapReduce] o cualquier otra tecnología son buenas herramientas, sino si resuelven mejor el problema concreto que tenemos delante.
+
+Muchas organizaciones se entregaron durante años a construir soluciones con Hadoop y #emph[MapReduce]. Pero quizá antes de desplegar el clúster, formar equipos especializados y transformar toda la arquitectura habría sido razonable hacerse una pregunta mucho más sencilla: ¿realmente manejamos el volumen de información y tenemos los problemas de escala que llevaron a Google a construir aquellas soluciones?
+
+Y si la respuesta era no, quedaba todavía otra pregunta bastante más incómoda: ¿para qué necesitábamos Hadoop?
+
+= Netflix
+<netflix>
+Si #emph[Project Apollo] nos sirve para entender por qué un proyecto puede necesitar planificación, estabilización progresiva y congelación de determinadas decisiones, Netflix permite observar casi el extremo contrario. Aquí encontramos un sistema cuyo valor depende en buena medida de su capacidad para cambiar continuamente, probar ideas, observar cómo responden los usuarios y volver a cambiar. En ese contexto, muchas de las ideas asociadas con #emph[Agile], #emph[DevOps], entrega continua y autonomía de los equipos dejan de ser principios abstractos y aparecen como respuestas bastante naturales al problema que la empresa necesita resolver.
+
+Netflix no nació con la arquitectura por la que posteriormente se hizo conocida. Su transición hacia la nube comenzó después de un grave problema en 2008 que afectó durante varios días a su capacidad de operar el negocio de DVD. A partir de ahí inició la migración hacia AWS y, progresivamente, desde una aplicación Java monolítica ejecutada en sus propios centros de datos hacia una arquitectura basada en servicios distribuidos.
+
+Ese cambio no perseguía simplemente desarrollar software más deprisa. Netflix necesitaba permitir que muchas partes diferentes de un producto enorme evolucionaran sin obligar a coordinar cada modificación mediante una gran versión conjunta. El sistema de recomendaciones podía evolucionar sin esperar necesariamente a un cambio en el sistema de reproducción; una modificación relacionada con la presentación de determinados contenidos podía probarse sin reconstruir toda la plataforma; un servicio interno podía desplegar una nueva versión sin exigir que todos los demás servicios cambiaran simultáneamente. La separación mediante microservicios no eliminaba las dependencias, pero intentaba reducirlas y establecer contratos suficientemente claros para que cada servicio pudiera mantener su propio ciclo de vida.
+
+En un entorno así, esperar varios meses para acumular cambios y realizar una gran entrega conjunta puede resultar más arriesgado que desplegar pequeñas modificaciones continuamente. Un cambio pequeño afecta a menos código, resulta más sencillo de revisar y, si está adecuadamente aislado, reduce el número de cosas que pueden salir mal simultáneamente. Además, cuanto antes llega el cambio a un entorno real, antes podemos conocer su comportamiento.
+
+Pero sería un error quedarse únicamente con la velocidad. Netflix no puede desplegar frecuentemente porque haya decidido que desplegar frecuentemente es moderno. Puede hacerlo porque ha construido una enorme cantidad de ingeniería alrededor de esa posibilidad.
+
+Los procesos de construcción y despliegue están fuertemente automatizados. Los cambios pasan por repositorios de código, construcción automática, pruebas, creación de artefactos reproducibles y #emph[pipelines] de despliegue. Pueden utilizarse estrategias #emph[canary], despliegues progresivos, despliegues por regiones y mecanismos capaces de limitar inicialmente el alcance de una nueva versión. La modificación manual de servidores en ejecución pierde sentido porque el objetivo es que un despliegue pueda reproducirse a partir del código y de una configuración conocida.
+
+La producción tampoco constituye el final del proceso. Los servicios generan métricas, registros y señales que permiten observar continuamente su comportamiento. Una nueva versión puede desplegarse inicialmente sobre una parte limitada de la infraestructura, compararse con la versión anterior y detenerse o revertirse si las métricas empiezan a desviarse. La frecuencia de los cambios, por tanto, no sustituye al control. Exige automatizar una parte mucho mayor de ese control.
+
+Esta diferencia es esencial cuando hablamos de #emph[DevOps]. Reducirlo a que los desarrolladores pueden desplegar a producción elimina precisamente la parte que hace posible que esa práctica sea razonable. Para desplegar con mucha frecuencia necesitamos construir, probar, empaquetar, distribuir, observar y recuperar automáticamente. Cuanto más reducimos el tiempo entre una modificación y su llegada a producción, menos podemos depender de procedimientos manuales que necesiten horas o días para validar cada cambio. La velocidad solo es sostenible porque buena parte de la seguridad que antes proporcionaban procesos humanos relativamente lentos ha sido trasladada a herramientas, automatizaciones y arquitectura.
+
+Netflix llevó incluso esa filosofía al comportamiento frente a los fallos. En lugar de limitarse a diseñar sistemas que teóricamente deberían resistir la pérdida de una máquina o una degradación de la red, desarrolló herramientas como #emph[Chaos Monkey] para provocar deliberadamente determinados fallos y comprobar que los sistemas continuaban funcionando. La resiliencia dejaba así de ser exclusivamente una propiedad escrita en una especificación para convertirse en algo que podía probarse sobre el sistema real.
+
+La misma lógica aparece en la evolución funcional del producto. Netflix utiliza extensamente experimentos A/B para comprobar modificaciones antes de convertirlas en la experiencia general de sus usuarios. Una idea puede implementarse, ofrecerse inicialmente a un grupo reducido, medir su efecto y descartarse si los resultados no son los esperados. Muchas decisiones sobre interfaces, recomendaciones, presentación de contenidos o comportamiento del producto no pueden determinarse completamente por adelantado porque parte de la información necesaria solo aparece cuando usuarios reales interactúan con la solución.
+
+En este contexto, #emph[Agile] tiene bastante sentido. No conocemos de antemano cuál será la mejor portada para presentar una película, qué modificación de una interfaz ayudará más a encontrar contenido o cómo reaccionarán millones de personas ante una nueva forma de organizar la pantalla inicial. Podemos formular hipótesis, implementarlas, probarlas sobre una población controlada, medir los resultados y decidir a partir de ellos. Pretender especificar con un año de antelación cada detalle de la experiencia que tendrá el usuario sería poco razonable porque parte del conocimiento necesario para tomar esas decisiones solamente aparece después de observar el comportamiento real del producto.
+
+También adquiere sentido que el equipo responsable de una capacidad tenga una autonomía considerable. Si para modificar un servicio hubiera que convocar a numerosos departamentos, obtener aprobaciones sucesivas y coordinar una gran versión corporativa, gran parte de la capacidad de experimentación desaparecería. La arquitectura, la organización y las herramientas tienen que estar alineadas: servicios relativamente independientes, equipos responsables de ellos, automatización suficiente para proporcionar seguridad y capacidad para observar rápidamente el resultado de los cambios.
+
+Pero eso no significa que toda Netflix tenga que trabajar exactamente así.
+
+Una empresa no constituye un único problema de ingeniería. Dentro de la misma organización pueden coexistir sistemas con necesidades radicalmente diferentes. El servicio que decide qué imagen mostrar para una película puede beneficiarse enormemente de ciclos rápidos de experimentación. Un cambio puede probarse sobre una fracción de los usuarios, medirse y eliminarse si no funciona. El coste de equivocarse está relativamente controlado y existe una forma rápida de obtener información que permite corregir la decisión.
+
+No tenemos por qué suponer que el sistema de facturación o la contabilidad corporativa de Netflix deban evolucionar con el mismo ritmo, ni que una modificación de sus procesos financieros tenga que desplegarse varias veces al día simplemente porque otros equipos de la compañía pueden hacerlo. Sus restricciones, riesgos, dependencias y necesidades de control son diferentes. Tampoco todos los servicios de la propia plataforma tienen el mismo impacto. Una modificación sobre una recomendación puede degradar temporalmente una experiencia; un fallo en un servicio crítico de reproducción, autenticación o facturación puede tener consecuencias completamente distintas.
+
+Este punto suele perderse cuando intentamos convertir las prácticas de empresas tecnológicas conocidas en recetas universales. «Netflix despliega continuamente» puede convertirse con facilidad en «nosotros también debemos desplegar continuamente». Pero falta la pregunta fundamental: ¿tenemos el problema que llevó a Netflix a hacerlo?
+
+Un sistema contable, un proceso regulatorio, una aplicación industrial o una plataforma que solo cambia unas pocas veces al año pueden no obtener ningún beneficio real de poder realizar decenas de despliegues diarios. Construir toda la infraestructura necesaria para conseguirlo puede ser técnicamente interesante y metodológicamente impecable, pero también puede constituir una inversión enorme destinada a resolver un problema que la organización sencillamente no tiene.
+
+Incluso dentro de Netflix, la frecuencia de despliegue no debería entenderse como el objetivo. El objetivo es poder cambiar cada parte del sistema con la velocidad y la seguridad que esa parte necesita. La arquitectura permite que equipos diferentes puedan evolucionar a ritmos diferentes sin obligar a toda la organización a compartir el mismo ciclo de entrega.
+
+Esto también matiza una interpretación frecuente de #emph[Agile] y #emph[DevOps]. La autonomía funciona cuando existen límites claros sobre aquello que un equipo controla, interfaces suficientemente estables con el resto del sistema y mecanismos capaces de detectar rápidamente los efectos no deseados. La independencia no consiste en que cada equipo pueda hacer cualquier cosa. Consiste en diseñar el sistema y la organización de manera que las decisiones locales puedan permanecer locales siempre que sea posible.
+
+Por eso Netflix constituye un buen contrapunto a los otros casos que estamos observando. En #emph[Project Apollo], el coste creciente del cambio, la integración física y las dependencias entre componentes justificaban estabilizar progresivamente las decisiones. En un proyecto regulatorio como Basilea III, una parte de las especificaciones y la fecha de cumplimiento vienen impuestas desde fuera, aunque la implementación pueda organizarse iterativamente. En Netflix encontramos muchas áreas donde ocurre justamente lo contrario: el cambio es frecuente, puede realizarse de forma relativamente localizada, existe información real que permite evaluar rápidamente sus efectos y el sistema ha sido diseñado deliberadamente para reducir el coste de introducirlo.
+
+En esas condiciones, #emph[Agile], #emph[DevOps], microservicios, automatización intensiva, experimentación y despliegue continuo no son modas independientes que casualmente coinciden en una misma empresa. Forman un conjunto coherente porque responden a características concretas del problema.
+
+Y esa es probablemente la lección más importante del caso Netflix. No deberíamos copiar la velocidad de Netflix, ni sus microservicios, ni su arquitectura organizativa, ni siquiera sus prácticas de #emph[DevOps] simplemente porque han demostrado funcionar extraordinariamente bien allí. Deberíamos copiar algo anterior a todo eso: la decisión de construir una forma de trabajar adecuada al problema que realmente tenemos.
+
+Si nuestro negocio necesita experimentar continuamente, si podemos aislar suficientemente los cambios, si obtenemos información útil inmediatamente después de desplegarlos y si somos capaces de automatizar los controles necesarios para mantener el riesgo dentro de límites aceptables, desplegar muchas veces al día puede ser una magnífica decisión de ingeniería.
+
+Si no se cumplen esas condiciones, desplegar muchas veces al día quizá solo consiga que hagamos más deprisa algo que no necesitábamos hacer.
+
+= Amazon
+<amazon>
+Un sistema de comercio electrónico permite observar con bastante claridad por qué los microservicios pueden ser una buena solución en determinados problemas y, al mismo tiempo, por qué no deberían convertirse en una regla arquitectónica universal. Amazon resulta especialmente útil como ejemplo porque detrás de una operación aparentemente sencilla, comprar un producto, existen numerosos procesos con requisitos de disponibilidad, consistencia y tiempo completamente diferentes.
+
+Desde el punto de vista del cliente, todo parece formar parte de una misma aplicación. Entramos en Amazon, buscamos un producto, consultamos sus características, vemos recomendaciones, comparamos precios, leemos opiniones, añadimos artículos a una cesta, realizamos el pago y, algún tiempo después, recibimos el pedido. Para el usuario existe una experiencia más o menos continua. Desde el punto de vista de la ingeniería, sin embargo, no existe ninguna razón para que todas esas funciones tengan que comportarse como una única unidad.
+
+Mientras navegamos por la tienda pueden ocurrir muchas cosas sin que necesariamente debamos impedir que el usuario continúe. El sistema de recomendaciones podría estar temporalmente indisponible y seguiríamos queriendo mostrar los productos. Podrían faltar algunas valoraciones, una promoción podría no calcularse inmediatamente o determinada información secundaria podría estar desactualizada durante unos segundos. Incluso algunos datos relacionados con disponibilidad o fecha estimada de entrega pueden modificarse entre el momento en que consultamos un producto y el momento en que finalmente decidimos comprarlo. Una degradación parcial de esas capacidades puede afectar a la calidad de la experiencia, pero no necesariamente destruye la función principal del sistema.
+
+Esta característica resulta fundamental. Hay partes del sistema que deberían poder continuar funcionando aunque otras no estén disponibles. Cuando eso ocurre, la independencia deja de ser únicamente una cuestión de organización del código y empieza a tener un valor operacional.
+
+No es una idea completamente nueva. Como hemos visto al hablar de CICS, mucho antes de que apareciera el término microservicio ya existían sistemas construidos mediante módulos especializados, rutinas corporativas reutilizables y componentes con responsabilidades claramente delimitadas. Una rutina destinada a validar un DNI podía ser utilizada por numerosas aplicaciones y no tenía ninguna razón para incorporar además las reglas de cálculo de intereses. La separación de responsabilidades, por tanto, no nació con los microservicios.
+
+La diferencia importante aparece cuando añadimos otra clase de independencia. Un microservicio no pretende solamente que una función esté separada lógicamente de otra. Pretende, cuando el problema lo permite, que pueda desplegarse, evolucionar, escalar y, especialmente, fallar de manera relativamente independiente. La pregunta deja de ser únicamente «¿hace este componente una sola cosa?» y pasa a ser también «¿puede esa cosa seguir funcionando aunque otras partes del sistema no estén disponibles?».
+
+Amazon permite ver con claridad por qué esta segunda pregunta importa.
+
+Supongamos que un usuario ha elegido un producto y llega al momento en que quiere comprarlo. En ese instante cambia la naturaleza del problema. Ya no estamos simplemente mostrando información. Estamos intentando crear un hecho de negocio: un pedido.
+
+El negocio deberá decidir exactamente qué condiciones hacen que ese pedido pueda considerarse aceptado. Para simplificar el ejemplo, podemos suponer que existen dos invariantes fundamentales: el pago debe haber sido autorizado y el pedido debe haber quedado registrado de forma duradera. No sería aceptable comunicar al cliente que su pedido ha sido realizado si el pago ha sido rechazado, del mismo modo que sería difícilmente aceptable cobrar una operación y perder posteriormente toda constancia del pedido que originó ese cobro.
+
+Desde el punto de vista del negocio, esas operaciones forman parte del núcleo transaccional de la compra. Esto no significa necesariamente que todos los sistemas implicados participen en una única transacción ACID distribuida. En un sistema real puede ser necesario utilizar transacciones locales, identificadores únicos, idempotencia, reintentos y mecanismos de compensación. Lo importante es la invariante que queremos preservar: al finalizar el proceso debemos poder determinar inequívocamente si existe o no un pedido aceptado.
+
+Una vez que ese hecho ha quedado registrado, sin embargo, buena parte de lo que sucede después puede tener una naturaleza completamente distinta.
+
+Habrá que reservar físicamente el producto, preparar una orden para el almacén, comprobar si es necesario solicitar mercancía a un proveedor, planificar la expedición, generar determinados documentos, contabilizar la operación, actualizar sistemas analíticos, enviar notificaciones y realizar numerosas actividades adicionales. Algunas deberán ejecutarse inmediatamente y otras podrán esperar. Algunas podrán completarse en segundos y otras necesitarán horas o días. Y, sobre todo, no todas necesitan estar disponibles simultáneamente para que la compra pueda existir.
+
+Si el sistema contable está temporalmente fuera de servicio, no existe necesariamente ninguna razón de negocio para impedir que miles de clientes continúen realizando pedidos. El hecho «pedido aceptado» puede conservarse de forma duradera y la contabilización puede producirse posteriormente cuando el sistema vuelva a estar disponible. Lo mismo puede ocurrir con otros procesos secundarios. El sistema no necesita fingir que todos sus componentes están permanentemente sincronizados. Necesita garantizar que aquello que queda pendiente no se pierde y que finalmente será procesado correctamente.
+
+Entramos así en el terreno de la #emph[eventual consistency]. Durante un intervalo determinado diferentes partes de la organización pueden mantener visiones distintas del estado global. El sistema de pedidos ya sabe que existe una compra mientras que contabilidad todavía no la ha procesado. El almacén puede haber recibido la orden mientras que otro sistema aún no conoce el cambio. Esa diferencia temporal no constituye necesariamente un error. Puede ser una propiedad deliberada de la arquitectura siempre que existan mecanismos que garanticen que el sistema terminará alcanzando un estado coherente.
+
+Para conseguirlo aparecen eventos, colas de mensajes, reintentos, operaciones idempotentes, patrones como #emph[transactional outbox] y, cuando un proceso necesita coordinar varias transacciones independientes, las denominadas #emph[sagas]. Una #emph[saga] representa precisamente una realidad que ya conocíamos mucho antes de utilizar ese nombre: un proceso de negocio puede estar formado por varias operaciones independientes, ejecutadas en distintos momentos y sobre diferentes sistemas, y debemos establecer qué hacer cuando alguna de ellas no puede completarse. Podemos continuar posteriormente, repetir una operación o ejecutar una acción compensatoria que revierta desde el punto de vista del negocio aquello que ya había sucedido.
+
+Nada de esto significa que debamos utilizar una #emph[saga] para cualquier operación. AWS advierte expresamente de que este patrón introduce complejidad, necesita transacciones compensatorias, carece del aislamiento de una transacción ACID convencional y exige tratar cuestiones como idempotencia y observabilidad. Su utilidad aparece precisamente cuando necesitamos coordinar procesos de larga duración sin mantener bloqueados todos los sistemas participantes.
+
+En realidad estamos redescubriendo, con arquitecturas y herramientas diferentes, problemas que durante décadas se estudiaron mediante procesos, #emph[workflow] y #emph[Business Process Management] (BPM). Una compra no es simplemente una llamada a una función. Es un proceso de negocio que atraviesa distintos estados y en el que participan diferentes capacidades de la organización. Los microservicios no inventaron ese proceso. Lo que pueden proporcionar es una forma de distribuir su ejecución manteniendo determinadas capacidades operacionalmente independientes.
+
+Esa independencia modifica profundamente el comportamiento ante los fallos. Si contabilidad está temporalmente caída, el sistema de pedidos puede continuar aceptando compras. Si el sistema de recomendaciones no responde, el catálogo puede seguir funcionando. Si una plataforma analítica no está disponible, los eventos pueden acumularse hasta que pueda procesarlos. Cada parte puede tener diferentes necesidades de disponibilidad y diferentes ritmos de evolución.
+
+Pero esta ventaja solo existe cuando la independencia es real.
+
+Si para realizar cualquier operación el microservicio A necesita que responda B, B necesita obligatoriamente a C, C llama a D y el fallo de cualquiera de ellos impide siempre que A haga su trabajo, hemos creado servicios físicamente separados sin haber conseguido independencia operacional. Tenemos ahora más comunicaciones de red, más #emph[timeouts], más posibilidades de fallo parcial, más despliegues, más observabilidad necesaria y más complejidad, pero seguimos teniendo una única unidad desde el punto de vista del negocio. Es lo que suele describirse, acertadamente, como un monolito distribuido.
+
+Por eso el tamaño de un componente no proporciona una buena frontera para decidir si debe convertirse en un microservicio. Tampoco lo hace exclusivamente el principio de responsabilidad única. Podemos tener módulos muy pequeños y perfectamente diseñados dentro de una única aplicación. La cuestión relevante es qué capacidades poseen suficiente autonomía funcional y operacional para beneficiarse de poder evolucionar y fallar independientemente.
+
+El proceso de compra permite además observar que las fronteras pueden aparecer dentro de un mismo proceso. Antes de aceptar el pedido existen determinadas invariantes que debemos garantizar. Después de aceptarlo podemos permitir que numerosas actividades progresen de forma asíncrona. No todo necesita el mismo modelo de consistencia, ni la misma disponibilidad, ni la misma latencia.
+
+Eso conduce a una pregunta arquitectónica mucho más útil que «¿debemos utilizar microservicios?».
+
+¿Qué cosas tienen que funcionar juntas y qué cosas deberían poder continuar aunque las demás estén caídas?
+
+La respuesta pertenece en primer lugar al negocio. Si una operación puede aplazarse sin invalidar aquello que ya hemos hecho, tenemos una candidata natural para el desacoplamiento. Si puede procesarse a otro ritmo, recuperarse posteriormente o consumir un hecho ya registrado sin participar en su creación, probablemente exista una frontera interesante. Si, por el contrario, dos operaciones tienen que completarse siempre conjuntamente para que el resultado tenga sentido, separarlas físicamente necesita una justificación mucho más fuerte.
+
+Esta forma de razonar evita convertir los microservicios en otra moda tecnológica. Amazon no resulta interesante porque podamos dibujar cientos de pequeñas cajas conectadas mediante flechas. Resulta interesante porque un sistema de comercio electrónico contiene de forma natural capacidades con ritmos, dependencias y requisitos de disponibilidad diferentes. En ese problema, poder aislar unas de otras puede proporcionar un enorme valor.
+
+Y esa es precisamente la idea que debería preceder siempre a la elección de la arquitectura. No comenzamos dividiendo el sistema en microservicios y buscamos después qué responsabilidad entregar a cada uno. Comenzamos estudiando el proceso, sus invariantes, sus dependencias, sus límites temporales y las consecuencias de cada fallo. Solo entonces decidimos qué cosas necesitan permanecer juntas y cuáles tienen sentido como unidades operacionalmente independientes.
+
+En Amazon, que el sistema de contabilidad esté temporalmente indisponible no debería necesariamente impedir que un cliente compre.
+
+En el siguiente caso veremos qué ocurre cuando esa posibilidad desaparece.
+
+= Visa
+<visa>
+Visa es necesariamente una red distribuida. Una autorización de pago puede atravesar comercios, adquirentes, la propia red Visa, bancos emisores, centros de proceso y sistemas redundantes situados en lugares diferentes. El caso que nos interesa, por tanto, no pretende defender que un sistema de esta naturaleza deba ejecutarse como una única aplicación en una única máquina. La cuestión es otra: dentro del camino crítico de una autorización existen operaciones que, desde el punto de vista del negocio, forman una unidad y deben completarse dentro de un tiempo muy reducido. Fragmentar artificialmente esa unidad en numerosos servicios remotos puede empeorar precisamente aquello que más importa: la latencia, la disponibilidad y la capacidad de completar correctamente la operación.
+
+Cada nueva frontera física introduce una comunicación. Cada comunicación introduce latencia, serialización, #emph[timeouts], reintentos y una nueva posibilidad de fallo. Si para autorizar una operación necesitamos que respondan ocho componentes diferentes y los ocho son imprescindibles, desplegarlos independientemente no elimina su dependencia. Podemos haber conseguido una separación lógica impecable y, al mismo tiempo, haber construido un sistema operacionalmente más frágil.
+
+Esto no significa que la escalabilidad proporcionada por sistemas distribuidos o por la nube no pueda resultar valiosa para una infraestructura como Visa. Puede ser fundamental para absorber picos de carga, distribuir capacidad, proporcionar redundancia o mantener disponibilidad a escala mundial. Pero ese es otro problema. Aquí no estamos analizando escalabilidad, sino una decisión arquitectónica que con frecuencia se ha convertido en moda: asumir que una aplicación moderna debe descomponerse necesariamente en microservicios.
+
+Una autorización de pago permite observar con bastante claridad los límites de esa idea.
+
+Cuando un cliente presenta una tarjeta para realizar una compra se inicia una operación cuyo objetivo es muy concreto: determinar si esa transacción puede ser autorizada. El comercio genera una solicitud que llega a través del adquirente, #emph[acquirer], a la red de pagos. Se realizan las validaciones y controles correspondientes, la operación se dirige hacia el banco emisor, #emph[issuer], y este debe producir una decisión. La respuesta, autorización o rechazo, recorre después el camino inverso hasta llegar de nuevo al comercio.
+
+Desde el punto de vista del cliente todo ocurre en unos instantes. Presenta la tarjeta, espera unos segundos y recibe una respuesta. Pero esa sencillez aparente es precisamente una de las exigencias fundamentales del sistema. El comercio está esperando. El terminal está esperando. El cliente está esperando. La operación se encuentra dentro de un camino síncrono y existe un presupuesto temporal limitado para completarlo.
+
+Además, desde el punto de vista del negocio, una autorización incompleta no tiene utilidad. No podemos responder al comercio que la operación ha sido autorizada y decidir unas horas después si realmente debía haberlo sido. Si determinadas comprobaciones son necesarias para producir la autorización, esas comprobaciones tienen que formar parte del proceso que conduce a la respuesta. La operación posee así una forma de atomicidad desde la perspectiva del negocio, aunque no debamos confundirla con una única transacción ACID distribuida ejecutándose sobre toda la red.
+
+La autorización o existe o no existe.
+
+Podemos modularizar internamente todas las responsabilidades implicadas. Podemos disponer de componentes especializados en validación, seguridad, detección de fraude, enrutamiento o comunicaciones con los emisores. Cada componente puede tener una responsabilidad claramente delimitada y el código puede estar perfectamente organizado alrededor de ellas. Pero de esa separación lógica no se deduce que cada una deba convertirse también en un proceso independiente situado detrás de una llamada de red.
+
+Esta distinción resulta especialmente importante porque durante años una parte de la industria terminó asociando modernidad arquitectónica con microservicios. Una aplicación monolítica comenzó a considerarse algo que necesariamente debía abandonarse, mientras que dividirla en numerosos servicios desplegables de forma independiente parecía constituir una evolución natural. La separación de responsabilidades, una buena práctica de ingeniería mucho más antigua, empezó a confundirse en ocasiones con la necesidad de separación física.
+
+Pero no son la misma cosa.
+
+Un módulo puede tener una única responsabilidad sin necesitar su propia máquina, su propio contenedor, su propia API y una comunicación remota para utilizarlo. Como hemos visto en otros entornos corporativos, mucho antes de que apareciera el término microservicio ya existían módulos especializados, rutinas compartidas y funciones corporativas reutilizadas por múltiples aplicaciones. La modularidad intenta controlar la complejidad interna del software. La distribución introduce además problemas operacionales que solamente están justificados cuando proporciona alguna ventaja que necesitamos.
+
+Supongamos que dividimos el camino de autorización en numerosos microservicios. Uno comprueba la estructura de la petición, otro realiza determinadas validaciones de seguridad, otro consulta reglas de fraude, otro decide el enrutamiento, otro establece la comunicación con el emisor y otros realizan operaciones adicionales. Desde el punto de vista del diseño puede resultar atractivo: cada servicio hace una sola cosa y cada equipo puede mantenerlo independientemente.
+
+Pero la pregunta realmente importante aparece durante la ejecución.
+
+¿Puede alguno de esos servicios completar su función sin que respondan los demás?
+
+Si todos ellos son imprescindibles para autorizar una operación, la respuesta será no. El primer servicio necesita al segundo, el segundo necesita al tercero y así sucesivamente hasta obtener finalmente una decisión. Podemos desplegarlos de manera independiente, pero la operación continúa dependiendo de todos ellos. La independencia de despliegue no se ha convertido en independencia operacional.
+
+Y cada frontera introducida tiene un coste. Una llamada local que antes ocurría dentro de un proceso se convierte ahora en una comunicación remota. Tenemos que serializar información, transmitirla, deserializarla, controlar la conectividad, establecer un #emph[timeout], decidir si podemos reintentar y determinar qué ocurre si no sabemos con certeza si el servicio remoto llegó a ejecutar la operación. Necesitamos además observabilidad distribuida para reconstruir posteriormente qué sucedió durante una petición que atravesó numerosos componentes.
+
+El problema no es únicamente el tiempo consumido por cada comunicación. También estamos multiplicando los puntos en los que la operación puede fracasar.
+
+Si una operación necesita ocho servicios y cualquiera de ellos puede impedir que termine, hemos transformado un único camino crítico en una cadena formada por ocho elementos cuya disponibilidad conjunta determina la disponibilidad efectiva del proceso. Podemos replicar cada uno de ellos, proporcionar redundancia, balancear carga y diseñar mecanismos muy sofisticados para mantenerlos disponibles, pero seguimos teniendo una dependencia que pertenece al propio negocio: todos los pasos necesarios para producir la autorización tienen que completarse.
+
+En estos casos podemos terminar construyendo lo que habitualmente se denomina un #emph[distributed monolith]. Los componentes están físicamente separados, quizá incluso desarrollados por equipos diferentes y desplegados mediante #emph[pipelines] independientes, pero durante la ejecución siguen comportándose como una única aplicación porque ninguno posee verdadera autonomía frente a los demás.
+
+Hemos comprado buena parte de la complejidad de los sistemas distribuidos sin obtener necesariamente la independencia que justificaba asumirla.
+
+Esto no significa que Visa no deba utilizar servicios distribuidos ni que conozcamos o pretendamos describir su arquitectura interna. Una infraestructura de pagos de alcance mundial contiene necesariamente numerosos sistemas, redes y mecanismos de redundancia. El ejemplo sirve para estudiar algo más general: existen operaciones cuyo propio significado establece una frontera natural que no podemos eliminar simplemente aplicando un patrón arquitectónico.
+
+La arquitectura puede eliminar dependencias accidentales. Puede separar capacidades que no necesitan evolucionar juntas, aislar fallos, distribuir carga o permitir que determinados procesos continúen aunque otros estén temporalmente indisponibles. Lo que no puede hacer es eliminar una dependencia que pertenece a la semántica del negocio.
+
+Si para autorizar una operación necesitamos una determinada comprobación, alguien tiene que realizarla antes de devolver la autorización. Si necesitamos una decisión del emisor, o el mecanismo previsto para actuar cuando ese emisor no puede responder, esa decisión tiene que producirse dentro del proceso que determina el resultado. No podemos resolver el problema declarando que el sistema será eventualmente consistente y completando mañana aquello que necesitábamos saber hoy.
+
+Esta característica diferencia claramente el caso de Visa de un proceso de comercio electrónico como el que analizábamos en Amazon. En Amazon, una vez creado correctamente el pedido, numerosas actividades pueden ejecutarse posteriormente. El sistema contable puede estar temporalmente indisponible, una notificación puede retrasarse, la orden al almacén puede quedar pendiente o determinado proceso analítico puede ejecutarse más tarde. El pedido ya existe y aquellas actividades forman parte de un proceso de negocio que puede continuar durante horas o días.
+
+En una autorización de tarjeta sucede algo distinto. Si todavía no hemos obtenido aquello que necesitamos para decidir si la operación puede ser autorizada, no existe un resultado que podamos completar posteriormente. No tenemos una autorización pendiente de contabilizar. Tenemos una autorización que todavía no ha podido producirse.
+
+Sin embargo, resulta especialmente interesante observar que esta necesidad de sincronía desaparece en cuanto atravesamos determinada frontera del proceso.
+
+La autorización no es el final de toda la actividad financiera asociada a una compra. Después aparecen procesos de #emph[clearing], conciliación, #emph[settlement], contabilización, informes y transferencias entre las entidades participantes. Las operaciones individuales deben conservarse y procesarse correctamente, pero ya no todo tiene que ocurrir mientras el cliente espera delante del terminal.
+
+Aquí vuelve a aparecer la posibilidad de desacoplar.
+
+Una red de pagos no necesita transferir dinero físicamente entre entidades cada vez que alguien compra un café. Las transacciones pueden acumularse, conciliarse y utilizarse posteriormente para determinar las posiciones económicas de los participantes. El #emph[settlement] puede trabajar sobre posiciones netas, #emph[netting], en lugar de convertir cada compra individual en una transferencia financiera independiente entre bancos en tiempo real.
+
+La diferencia arquitectónica resulta reveladora. Durante la autorización existe un camino crítico síncrono sometido a una fuerte restricción temporal. Después de la autorización aparecen procesos que pueden admitir procesamiento diferido, acumulación, conciliación, reintentos y compensación.
+
+El mismo negocio contiene problemas distintos y, por tanto, puede necesitar soluciones arquitectónicas distintas.
+
+Esta observación resulta mucho más útil que intentar imponer una arquitectura uniforme a toda la organización. No existe ninguna razón para que aquello que funciona bien en el procesamiento posterior tenga que utilizarse también dentro del camino crítico de autorización, ni para que la arquitectura optimizada para responder en unos instantes tenga que utilizarse en procesos que pueden ejecutarse posteriormente.
+
+Es precisamente aquí donde las modas arquitectónicas pueden resultar peligrosas. Una tecnología o un patrón comienza resolviendo correctamente determinado tipo de problema y, después de demostrar su utilidad, termina convertido en una recomendación general. De «los microservicios permiten que determinadas capacidades evolucionen y fallen independientemente» podemos pasar fácilmente a «una arquitectura moderna debe estar formada por microservicios».
+
+Pero esa conclusión elimina la condición que hacía valiosa la primera afirmación: la independencia.
+
+Los microservicios proporcionan una ventaja importante cuando existe una frontera en la que una capacidad puede desplegarse, evolucionar, escalar o fallar sin obligar necesariamente a detener las demás. Amazon proporciona muchos ejemplos naturales de esa situación. Un sistema de recomendaciones puede fallar mientras el usuario continúa comprando. Un proceso contable puede retrasarse mientras el pedido sigue avanzando. Distintas capacidades pueden trabajar a ritmos diferentes porque no necesitan encontrarse permanentemente en el mismo estado.
+
+Cuando esa independencia no existe, dividir físicamente puede aportar mucho menos.
+
+Si A necesita siempre a B, B necesita siempre a C y los tres deben terminar correctamente dentro de la misma ventana temporal para producir una única respuesta, quizá existan buenas razones para mantenerlos próximos operacionalmente, aunque internamente estén perfectamente modularizados. No porque los monolitos sean mejores que los microservicios, sino porque el problema presenta una cohesión que la arquitectura debería respetar.
+
+Esto permite formular una distinción especialmente útil: no toda separación lógica debe convertirse en una separación física.
+
+Podemos organizar el software alrededor de responsabilidades claras, módulos pequeños, interfaces explícitas y componentes reutilizables sin convertir necesariamente cada uno en un servicio remoto. La ingeniería modular y los microservicios no son sinónimos. La primera intenta separar responsabilidades. Los segundos añaden independencia operacional y distribución. Si no necesitamos esa independencia, debemos preguntarnos qué estamos obteniendo a cambio de asumir la distribución.
+
+La frontera correcta tampoco se encuentra contando líneas de código, funciones o clases. Hay que buscarla en el comportamiento del negocio.
+
+- ¿Qué cosas pueden continuar si otras están caídas?
+- ¿Qué actividades pueden aplazarse?
+- ¿Qué estados pueden ser eventualmente consistentes?
+- ¿Qué operaciones necesitan completarse conjuntamente?
+- ¿Qué restricciones de latencia existen?
+- ¿Qué ocurriría si uno de los componentes no respondiera durante varios segundos?
+- ¿Qué dependencias son accidentales y cuáles pertenecen al propio significado de la operación?
+
+Estas preguntas ayudan mucho más a encontrar una arquitectura adecuada que comenzar el diseño preguntando cuántos microservicios necesitamos.
+
+Visa resulta especialmente útil porque hace visible el límite. Una operación de autorización está sometida a una restricción temporal, posee un resultado que únicamente tiene sentido cuando se han completado determinadas actividades y contiene dependencias que no podemos eliminar sin modificar la propia naturaleza de la operación. Introducir indiscriminadamente nuevas fronteras de red en ese camino puede añadir latencia y puntos de fallo sin proporcionar verdadera independencia operacional.
+
+Después de esa frontera, en cambio, aparecen otras actividades que pueden tratarse de manera completamente diferente. #emph[Clearing], #emph[settlement], conciliación, contabilidad y otros procesos posteriores pueden organizarse alrededor de sus propias necesidades y utilizar procesamiento asíncrono, lotes, eventos o cualquier otra solución que resulte apropiada.
+
+Y eso nos devuelve nuevamente al propósito de estos casos.
+
+No intentamos establecer que los microservicios sean buenos o malos, del mismo modo que no pretendíamos demostrar que #emph[Waterfall] fuera bueno o malo, que Hadoop fuera una mala tecnología o que #emph[DevOps] debiera utilizarse en todas las organizaciones. Intentamos observar qué ocurre cuando una solución adecuada para determinado problema se transforma en una receta aplicable a cualquier problema.
+
+La arquitectura no debería comenzar con la solución.
+
+Debe comenzar con las restricciones, las dependencias, el comportamiento esperado y las consecuencias del fallo.
+
+En ocasiones descubriremos que necesitamos distribuir, desacoplar y permitir consistencia eventual.
+
+En otras encontraremos capacidades que deben evolucionar independientemente y para las que los microservicios proporcionan una solución excelente.
+
+Y también encontraremos operaciones que, por su propia naturaleza, pertenecen juntas y tienen que completarse dentro de una misma ventana temporal.
+
+Separarlas porque podemos hacerlo no constituye necesariamente mejor ingeniería.
+
+Porque distribuir una transacción que debe comportarse como una unidad no elimina sus dependencias.
+
+Solo distribuye sus posibilidades de fallo.
+
+#part[Organización y estructuración]
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Organización
+<organización>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Organizaciones
+<organizaciones>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+Antes de hablar de equipos, títulos, roles o responsabilidades, necesitamos hablar de la organización en la que aparecen.
+
+Este primer bloque parte de la organización como sistema y de la forma en que divide, estructura y coordina el trabajo.
+
+= La organización como fractal
+<la-organización-como-fractal>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+Para aquellos no muy puestos en matemáticas, y de manera informal, podemos decir que un fractal presenta #strong[autosimilitud].
+
+¿Qué significa #emph[autosimilitud]? Que, independientemente del nivel de detalle que usemos, la estructura es similar; dicho de otro modo, que siempre presenta un patrón similar, que no igual.
+
+Los fractales se suelen asociar a la denominada #emph[matemática del caos], pero tienen mucho de estructura y organización. Cambios muy pequeños en la estructura pueden tener un impacto muy grande en la globalidad.
+
+#box(image("chapters/25-organization/../../resources/images/organization/sierpinski.png"))
+
+== La organización fractal
+<la-organización-fractal>
+Si estamos hablando de organizaciones, ¿qué estamos viendo? Una estructura que, al cambiar de escala, vuelve a presentar patrones reconocibles.
+
+Antes de que alguien objete que existen estructuras matriciales, cúbicas o de más dimensiones, podemos tratarlas como distintos ejes o vistas de una misma organización. Al descomponerlas para hacerlas manejables reaparecen estructuras menores que conservan patrones semejantes.
+
+=== El patrón organizativo
+<el-patrón-organizativo>
+#figure([
+#box(image("chapters/25-organization/../../resources/images/organization/organizacion.png"))
+], caption: figure.caption(
+position: bottom, 
+[
+Patrón base
+]), 
+kind: "quarto-float-fig", 
+supplement: "Figura", 
+)
+
+
+Si seguimos subiendo en la organización, volvemos a encontrarnos básicamente con el mismo patrón, aunque cambien los nombres:
+
+#figure([
+#box(image("chapters/25-organization/../../resources/images/organization/organizacion_2.png"))
+], caption: figure.caption(
+position: bottom, 
+[
+Dirección
+]), 
+kind: "quarto-float-fig", 
+supplement: "Figura", 
+)
+
+
+- CEO: #emph[Chief Executive Officer].
+- CFO: #emph[Chief Financial Officer], responsable de gestionar los recursos económicos que permiten el negocio.
+- CIO: #emph[Chief Information Officer], responsable de las capacidades tecnológicas que permiten el negocio.
+- CxO: responsables de otras áreas productivas y no productivas necesarias para la organización.
+
+La idea que nos interesa no es que todas las organizaciones tengan exactamente esta forma, sino que determinadas funciones y responsabilidades reaparecen en distintos niveles de la estructura.
+
+= División del trabajo
+<división-del-trabajo>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+En este punto, hagamos una pausa para hablar de Adam Smith. Adam Smith fue un economista que publicó, entre otros, el famoso libro "La riqueza de las naciones" smith1776, el cual se considera como uno de los pilares de la economía moderna.
+
+Nos centraremos aquí en una de sus ideas más conocidas: #strong[la división del trabajo].
+
+== La división del trabajo
+<la-división-del-trabajo>
+Smith planteaba el supuesto de una empresa de fabricación de alfileres, la cual vamos a modelar de la siguiente manera:
+
++ Tenemos una empresa que fabrica alfileres
++ La empresa esta compuesta por 5 practicioners
++ Todos los practicioners están capacitados para realizar todas las tareas asociadas al negocio
++ El tiempo de trabajo se mide en Unidades de Trabajo -ut-, asignando 800 ut/dia
++ El coste (en Unidades Monetarias -um-), por simplicidad, lo asimilaremos a las ut con una relación 1-1; es decir, consideramos despreciable el coste del insumo alambre con respecto al coste del insumo Mano de Obra.
+
+Por otro lado, el proceso de fabricación consta de tres fases que se ejecutan en secuencia por cada practicioner:
+
++ Se corta un trozo de alambre de la medida adecuada
++ Se le pone una cabeza
++ Se ajusta la punta
+
+Y por último:
+
+#block[
+#set enum(numbering: "A)", start: 1)
++ Cada una de estas fases requiere una cierta cantidad de tiempo (medida en UTs)
++ Además hay que considerar que cada fase requiere de:
+  + Unas herramientas diferentes
+  + Un "enfoque mental" diferente
+]
+
+Esto último, el proceso de dejar unas herramientas, recoger otras, prepararse para la nueva tarea, también consume tiempo, aunque no sea un proceso productivo. Es lo que llamamos "#strong[cambio de contexto]"\; un proceso o tarea implícito denominado "#strong[coste oculto]", el cual coste suele ignorarse en los modelos.
+
+Dicho esto, nuestro modelo es tan simple como este diagrama:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_proceso.png"))
+
+A partir de un rollo de alambre, realizamos un cierto proceso que genera un cierto valor añadido, y obtenemos unos alfileres que son nuestro producto
+
+#heading(level: 2, outlined: false)[Paso 1: Identificación de procesos]
+<paso-1-identificación-de-procesos>
+De acuerdo con la teoría de Smith, analizamos el proceso global e identificamos fases o subprocesos:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_0.png"))
+
+Ya tenemos nuestro proceso dividido en tres procesos secuenciales, también, aunque no sea muy intuitivo en el diagrama se han "autodefinido" los límites de cada uno:
+
+#table(
+  columns: (34.62%, 34.62%, 30.77%),
+  align: (auto,auto,auto,),
+  table.header([Proceso], [Entrada], [Salida],),
+  table.hline(),
+  [Cut], [Rollo de alambre], [Una pieza de alambre recta de cierta longitud],
+  [Head], [Una pieza de alambre recta], [La misma pieza con una cabeza redonda en una punta],
+  [Tail], [Una pieza alambre con una cabeza en una punta], [La misma pieza con la otra punta afilada],
+)
+Esto, implícitamente, nos permite incrementar la calidad del producto identificando errores o disfunciones, por ejemplo:
+
+- Cut: El alfiler es demasiado largo o corto
+- Head: No tiene cabeza o esta mal
+- Tail: No tiene punta
+
+Y tenemos una secuencia de acciones definidas y documentadas:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_2.png"))
+
+#table(
+  columns: 2,
+  align: (auto,auto,),
+  table.header([Seq.], [Accion],),
+  table.hline(),
+  [1], [Practicioner se prepara para la fase de corte],
+  [2], [Realiza el corte. Es una operación sencilla que consume 1 ut],
+  [3], [Practicioner se prepara para poner la cabeza al alfiler],
+  [4], [Inicia el proceso. Este consume 2 ut],
+  [5], [Finaliza el proceso de la cabeza],
+  [6], [Practicioner se prepara para preparar la punta],
+  [7], [Inicia el proceso. Este consume 2 ut],
+  [8], [Finaliza el proceso],
+  [9], [Se ha creado un alfiler. Reinicia el proceso],
+)
+Este proceso es el que realiza cada uno de de los practicioners de manera repetitiva a lo largo de su jornada.
+
+De acuerdo con esto y los supuestos del ejemplo:
+
+- Crear un único alfiler cuesta 8 ut.
+- Como tenemos 5 practicioners trabajando "en paralelo", generamos 5 alfileres (outputs) cada 8 ut
+- Si la jornada se divide en 800 ut.
+
+$ p r o d_(u t) & = frac(1 #h(0em) i t e m, 8 #h(0em) u t) med = med 0.125 med frac(i t e m, u t)\
+p r o d_(p r a c t) & = P r o d_(u t) * med 800 frac(u t, d i a) = 100 frac(i t e m, p r a c t)\
+p r o d med d i a r i a_1 & = P r o d med p r a c t i c i o n e r *\(5 #h(0em) p r a c t .\)= m o d u l u s\(frac(500, i t e m)\)\
+ $
+
+#Skylighting(([#NormalTok("Capacidad_{dia} &= Prod_{pract} \\: * \\: \\sum practicioner \\: &= \\: 100 \\: * \\: 5 \\: = 500 \\\\");],
+[#NormalTok("Coste\\:marginal &= \\frac{1}{Proc_ut} \\: =\\: 8");],));
+Este proceso se aplica para cada uno de los practicioners de la empresa: 5
+
+= Especialización y reutilización
+<especialización-y-reutilización>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+== División de procesos y especialización
+<división-de-procesos-y-especialización>
+Siguiendo su teoría, separamos los procesos, además, como se ha mencionado, tenemos perfectamente delimitados los límites de cada uno:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_subproceso.png"))
+
+Las fases del proceso pasaban a verse simbolicamente de la siguiente manera:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_3.png"))
+
+Como se puede observar el ciclo ha pasado de costar 8 ut. a 5 ut. Pero resulta mas ilustrativo si mostramos el trabajo conjunto en función del tiempo:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_4.png"))
+
++ El número de practicioners no ha cambiado, luego mi organización es la misma
++ Ya no existe un único ciclo, si no tres ciclos diferentes
++ A partir de un determinado instante de tiempo ($u t = n_i$), al que llamaremos período de arranque:
+  #block[
+  #set enum(numbering: "a.", start: 1)
+  + Cada practicioner esta realizando alguna tarea; es decir, no hay períodos de inactividad
+  + Cada $u t > n_i$ se genera un nuevo producto
+  ]
+
+Respecto a las fases del proceso:
+
+#block[
+#set enum(numbering: "A)", start: 1)
++ #strong[Cut]: Genera un trozo de alambre cada ut
++ #strong[Head]: Al tener dos particioners, se genera un #emph[output] cada ut
++ #strong[Tail]: Sigue necesitando dos ut por alfiler, pero dado el paralelismo de tareas, se genera un producto/output cada ut de manera alternativa
+]
+
+Es decir:
+
+#Skylighting(([#NormalTok("\\forall j > i \\: &| \\: i = periodo\\_arranque\\\\");],
+[#NormalTok("Coste_{cut}  &= 1  \\\\");],
+[#NormalTok("Coste_{head} &= 2 \\\\");],
+[#NormalTok("Coste_{tail} &= 2 \\\\");],
+[#NormalTok("Prod_{ut} &= 1 * \\frac{item}{ut}  \\\\");],
+[#NormalTok("Prod\\:diaria_2 &= Prod\\:unitaria\\:*\\:800 \\; ut = 800\\;item \\\\");],
+[#NormalTok("Prod_{ut} &= 1 * \\frac{item}{ut}  \\\\");],
+[#NormalTok("Capacidad_{dia} &= Prod_{ut} \\: * \\: \\sum ut_{dia} \\: - \\: periodo\\_arranque &\\thickapprox 800 \\\\");],
+[#NormalTok("Coste\\:marginal &= \\sum coste_i\\: =\\: 5 ");],));
+Y las variaciones respecto al proceso original:
+
+#Skylighting(([#NormalTok("\\Delta Capacidad &= \\frac{Capacidad_2}{Capascidad_1} \\: -1 \\: * \\: 100 \\: = \\: 30 \\% \\\\");],
+[#NormalTok("\\Delta Productividad &= \\frac{Prod\\:diaria_2}{Prod\\:diaria_1} \\: -1 \\: * \\: 100 \\: = \\: 60 \\% \\\\");],
+[#NormalTok("\\Delta Coste\\_marginal &= (1 - \\frac {Coste\\_marginal_1}{Coste\\_marginal_2}) * 100 &= 37.5\\%");],));
+Es decir, sin modificar mi estructura organizativa, ni realizar cambios "significativos": Seguimos siendo los mismos en cantidad y calidad:
+
+#block[
+#set enum(numbering: "a)", start: 1)
++ Hemos incrementado la #strong[capacidad] de la empresa en un #strong[30%]\; fabricamos un 30% mas de productos
++ Hemos incrementado la #strong[productividad] de los practicioners un #strong[60%], sin modificar sus trabajos
++ Hemos reducido el coste marginal (incrementado el beneficio que nos llevamos por cada item) en un #strong[37.5%]
+]
+
+#heading(level: 2, outlined: false)[Paso 3: Diversificacion y reutilización]
+<paso-3-diversificacion-y-reutilización>
+Siguiendo con nuestro ejemplo, supongamos ahora que la empresa quiere fabricar agujas hipodérmicas en lugar de alfileres. El proceso sería:
+
++ Cut: Cortar el acero a la longitud deseada
++ Bore: Hacer el agujero dentro del acero
++ Tail: Crear la punta de la aguja
+
+Si analizamos los procesos anteriores:
+
+- Cut: El proceso es similar, unicamente cambiaremos la longitud del alambre
+- Tail: Tambien es similar, crear una punta afilada
+
+El único proceso que cambia es #emph[Head] por #emph[Bore], ahora necesitamos realizar una tarea diferente y mas complicada. Asumiremos que el coste de esa fase es 3 ut.
+
+Formamos a los practicioners de esa fase, o adquirimos otra máquina (los practicioners tienen que seguir siendo formados), y obtenemos el siguiente flujo del proceso:
+
+#box(image("chapters/25-organization/../../resources/images/organization/smith_5.png")) Notese que hemos incluido un nuevo practicioner en la fase #emph[bore] para adecuar los tiempos y evitar cuellos de botella.
+
+- Al igual que antes, se genera un producto/output por cada ut, manteniendo la capacidad productiva en 800.
+- Unicamente he contratado un nuevo practicioner y formado a otros dos, el resto de la empresa no ha cambiado
+
+Ahora, sin embargo, somos capaces de fabricar dos productos diferentes en función de la demanda.
+
+#table(
+  columns: (34.62%, 34.62%, 30.77%),
+  align: (auto,auto,auto,),
+  table.header([Proceso], [Entrada], [Salida],),
+  table.hline(),
+  [Cut], [Rollo de alambre], [Una pieza de alambre recta de cierta longitud],
+  [Head], [Una pieza de alambre recta], [La misma pieza con una cabeza redonda en una punta],
+  [Tail], [Una pieza alambre con una cabeza en una punta], [La misma pieza con la otra punta afilada],
+)
+su teoría, separamos los procesos, además, como se ha mencionado, tenemos perfectamente delimitados los límites de cada uno:
+
+= Estructura organizativa
+<estructura-organizativa>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Estructuración
+<estructuración>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= La organización como fractal
+<la-organización-como-fractal-1>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Equipos
+<equipos>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Roles
+<roles>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Capacidades
+<capacidades>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Responsabilidades y autoridad
+<responsabilidades-y-autoridad>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Roles dinámicos
+<roles-dinámicos>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Evolución profesional
+<evolución-profesional>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Humanos y Sistemas Inteligentes
+<humanos-y-sistemas-inteligentes>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+= Síntesis
+<síntesis>
+#box(image("chapters/25-organization/../../resources/images/under-construction.png"))
+
+#part[Componentes de los IISS]
+#heading(level: 2, numbering: none)[Introducción]
+<introducción-4>
+En los capítulos anteriores hemos separado el modelo del sistema y hemos visto que un modelo de lenguaje, por capaz que sea, no constituye por sí solo una solución completa. El modelo puede interpretar instrucciones, relacionar información y generar una salida, pero necesita que otros componentes le proporcionen conocimiento actualizado, mecanismos de actuación, memoria, reglas, controles y una forma de integrarse con el resto del sistema. Cuando estas piezas se combinan de forma coherente aparece algo distinto del modelo aislado: un sistema inteligente capaz de trabajar sobre un problema real.
+
+Esta parte estudia esas piezas. No pretende describir la interfaz concreta de un producto ni adoptar como universales los nombres utilizados por un agente determinado. Las implementaciones cambian con rapidez, y dos productos que resuelven la misma necesidad pueden utilizar terminologías diferentes. Uno puede hablar de #emph[commands], otro de acciones; uno puede proporcionar #emph[skills], otro paquetes de instrucciones; uno puede exponer herramientas mediante MCP y otro mediante una interfaz propia. Sin embargo, por debajo de esas diferencias siguen existiendo necesidades arquitectónicas reconocibles.
+
+Por esa razón utilizaremos una taxonomía conceptual propia. Daremos nombre a los componentes por la función que cumplen dentro de un IISS y no por la etiqueta que haya elegido un proveedor. Más adelante, cuando una metodología o una plataforma necesite utilizar estos componentes sobre tecnologías concretas, los #emph[adapters] se encargarán de traducir el modelo conceptual a cada implementación. Esta separación permite razonar sobre la arquitectura sin convertirla en una fotografía de las herramientas disponibles en un momento determinado.
+
+#heading(level: 2, numbering: none)[Del modelo a una arquitectura de capacidades]
+<del-modelo-a-una-arquitectura-de-capacidades>
+Un IISS necesita responder, como mínimo, a varias preguntas. Debe saber qué instrucciones gobiernan su comportamiento, qué información conoce para la tarea actual, qué representaciones estructuradas describen el problema, qué operaciones puede solicitar, qué herramientas puede ejecutar, cómo accede a recursos externos, qué procedimientos reutilizables conoce, cómo conserva estado, cómo encadena actividades y cómo comprueba que el resultado es aceptable. También necesita decidir qué puede hacer de forma autónoma, qué requiere autorización y cómo se adapta a las capacidades reales del entorno en el que se ejecuta.
+
+Estas preguntas no son independientes. Una #emph[definition] puede indicar qué debe construirse; un #emph[command] puede solicitar una operación sobre esa #emph[definition]\; una #emph[skill] puede explicar cómo realizarla; un #emph[workflow] puede ordenar los pasos; una herramienta puede ejecutar una modificación; una validación puede comprobar el resultado; una automatización puede volver a ejecutar el proceso cuando se produzca un evento. El valor del sistema no procede únicamente de disponer de muchas piezas, sino de que cada una tenga una responsabilidad clara y pueda colaborar con las demás.
+
+También conviene distinguir entre componentes que contienen conocimiento, componentes que expresan intención, componentes que aportan capacidad de actuación y componentes que gobiernan el proceso. Las fronteras no siempre son perfectas y una implementación puede combinar varias funciones en un mismo artefacto, pero mantener la distinción conceptual evita que la arquitectura dependa de detalles accidentales.
+
+#heading(level: 2, numbering: none)[Una taxonomía estable sobre implementaciones cambiantes]
+<una-taxonomía-estable-sobre-implementaciones-cambiantes>
+A lo largo de esta parte utilizaremos términos como #emph[definitions], #emph[commands], #emph[tools], #emph[skills], #emph[templates], #emph[workflows] y #emph[adapters]. Algunos coinciden con nombres utilizados actualmente por productos concretos y otros se emplean con significados diferentes según el entorno. Aquí no los adoptamos porque una plataforma los haya popularizado, sino porque necesitamos nombrar funciones que aparecen de forma recurrente cuando un IISS deja de limitarse a conversar y comienza a trabajar.
+
+El criterio será siempre funcional. Si mañana una plataforma elimina la palabra #emph[skill] y la sustituye por otra, el concepto seguirá siendo necesario si continúa existiendo una pieza reutilizable que encapsula conocimiento operativo. Si un agente deja de hablar de #emph[commands] y utiliza botones, acciones o peticiones estructuradas, seguirá siendo necesario representar una intención invocable con parámetros y un resultado esperado. Si una plataforma no soporta MCP, seguirá necesitando algún mecanismo para conectar el sistema con herramientas y recursos externos.
+
+Los #emph[adapters] ocupan por ello una posición especial. Son la frontera que protege al modelo conceptual de las particularidades de cada tecnología. No intentan fingir que todas las plataformas son iguales, sino expresar de forma explícita qué equivalencias existen, qué capacidades faltan y qué degradaciones son necesarias cuando una implementación no puede representar exactamente el componente canónico.
+
+#heading(level: 2, numbering: none)[Descripción de la parte]
+<descripción-de-la-parte>
+Comenzaremos examinando la arquitectura general que convierte un modelo en un sistema operativo. Después estudiaremos las instrucciones y las #emph[definitions], porque ambas determinan qué debe entender y respetar el sistema. Continuaremos con los #emph[commands] y las herramientas, que introducen intención y capacidad de actuación, y con MCP y los recursos, que permiten conectar esas capacidades con el exterior.
+
+A continuación analizaremos las #emph[skills], las #emph[templates], la configuración y las reglas. Estas piezas permiten reutilizar conocimiento operativo, mantener estructuras consistentes y gobernar comportamientos sin tener que reconstruirlos en cada conversación. Después estudiaremos el contexto, el estado y la memoria, que permiten conservar continuidad más allá de una inferencia aislada.
+
+Los capítulos posteriores se dedicarán a los #emph[workflows], los agentes, las validaciones y las automatizaciones. Finalmente estudiaremos los #emph[adapters] como mecanismo de desacoplamiento entre el modelo conceptual y las implementaciones concretas, y cerraremos la parte con una síntesis de cómo se relacionan todos los componentes.
+
+#heading(level: 2, numbering: none)[Objetivos]
+<objetivos-3>
+Al finalizar esta parte, el lector será capaz de reconocer las principales necesidades arquitectónicas que aparecen al construir IISS alrededor de modelos generativos, diferenciar componentes que a menudo se presentan mezclados por las herramientas comerciales y comprender la función de cada uno dentro del sistema. También podrá distinguir entre una capacidad conceptual y la forma concreta en que un producto decide exponerla, y entender por qué una arquitectura basada en #emph[adapters] permite conservar un modelo estable aunque cambien los agentes, los modelos o los proveedores.
+
+El objetivo no es memorizar una colección de nombres. Lo importante es disponer de un mapa suficientemente preciso para analizar cualquier plataforma y preguntar qué componentes ofrece, qué responsabilidades asume cada uno, qué piezas faltan y cómo pueden componerse para construir un sistema controlable, verificable y adaptable.
+
+= Del modelo al sistema
+<del-modelo-al-sistema>
+== El modelo aporta capacidad, el sistema organiza el trabajo
+<el-modelo-aporta-capacidad-el-sistema-organiza-el-trabajo>
+Un modelo generativo puede producir resultados que parecen abarcar gran parte del proceso intelectual: interpreta una petición, propone un plan, escribe código, resume documentación o explica una decisión. Esa amplitud puede llevar a pensar que basta con conectar una interfaz al modelo para obtener un sistema completo. En realidad, gran parte de lo que percibimos como comportamiento del modelo procede de la aplicación que lo rodea y de los componentes que preparan la interacción antes y después de cada inferencia.
+
+El modelo recibe una representación del contexto disponible y genera una salida. No decide por sí solo qué documentos deben recuperarse, qué repositorio está autorizado a modificar, qué versión de una especificación es válida, qué credenciales puede utilizar, qué operaciones requieren confirmación o qué resultado debe considerarse correcto. Esas decisiones pertenecen a la arquitectura del sistema.
+
+Por ello conviene imaginar el IISS como una composición de capacidades. El modelo aporta interpretación y generación; las instrucciones establecen criterios de comportamiento; las #emph[definitions] representan de forma estructurada aquello sobre lo que se trabaja; los #emph[commands] expresan operaciones intencionadas; las herramientas permiten actuar; los recursos aportan información; las #emph[skills] conservan conocimiento operativo; los #emph[workflows] ordenan actividades; las validaciones comprueban condiciones; las automatizaciones reaccionan ante eventos; y los #emph[adapters] traducen estas piezas a las posibilidades concretas de cada plataforma.
+
+== Capacidad, intención y ejecución
+<capacidad-intención-y-ejecución>
+Una distinción útil consiste en separar tres niveles que suelen aparecer mezclados. El primero es la capacidad: algo que el sistema podría hacer si dispusiera de una petición adecuada. El segundo es la intención: la expresión de qué operación queremos realizar ahora y con qué parámetros. El tercero es la ejecución: la interacción efectiva con el entorno para producir un cambio o recuperar información.
+
+Una herramienta representa principalmente capacidad de ejecución. Puede leer un archivo, consultar un servicio, crear una incidencia o lanzar una compilación. Un #emph[command] representa intención. Puede expresar «validar el proyecto», «publicar el libro» o «generar las #emph[definitions]». Una #emph[skill] puede contener el conocimiento necesario para decidir cómo ejecutar correctamente esa intención utilizando varias herramientas. Un #emph[workflow] puede establecer el orden y las condiciones bajo las que deben combinarse varias operaciones.
+
+Esta separación evita que el sistema dependa de una correspondencia uno a uno entre petición y herramienta. Una operación significativa para el usuario puede requerir varias acciones técnicas, y una misma herramienta puede utilizarse en numerosos procesos diferentes. El modelo conceptual debe describir la operación en términos del problema, mientras que la implementación decide cómo materializarla.
+
+== Componentes declarativos y componentes operativos
+<componentes-declarativos-y-componentes-operativos>
+También podemos distinguir entre piezas que describen y piezas que actúan. Las #emph[definitions], la configuración, las reglas y las #emph[templates] son predominantemente declarativas. Expresan estado, estructura, restricciones o formas esperadas sin necesidad de ejecutar una acción en el momento en que se leen. Los #emph[commands], las herramientas, los #emph[workflows] y las automatizaciones son predominantemente operativos, porque desencadenan o coordinan actividad.
+
+La frontera no es absoluta. Una #emph[definition] puede contener información suficiente para generar artefactos; una regla puede activar una validación; una #emph[template] puede transformarse en un documento durante un #emph[workflow]. Sin embargo, la distinción ayuda a responder una pregunta esencial: ¿estamos describiendo cómo debe ser el sistema o estamos pidiendo que haga algo?
+
+Cuando ambos niveles se mezclan sin control, las conversaciones terminan convirtiéndose en el único lugar donde existe la intención del proyecto. Una instrucción dada una vez puede desaparecer de la ventana de contexto, una decisión puede quedar enterrada en el historial y una operación puede depender de que el usuario recuerde exactamente cómo se realizó la vez anterior. Convertir conocimiento y decisiones relevantes en componentes persistentes reduce esa fragilidad.
+
+== Componentes canónicos e implementaciones
+<componentes-canónicos-e-implementaciones>
+No todas las plataformas ofrecerán todos los componentes de la misma manera. Algunas permitirán definir instrucciones persistentes a nivel de repositorio; otras exigirán incluirlas en cada petición. Algunas dispondrán de #emph[skills] como artefactos reconocibles; otras requerirán combinar documentos, #emph[prompts] y herramientas. Algunas soportarán MCP de forma nativa; otras utilizarán integraciones propias. El modelo conceptual no debe romperse por esas diferencias.
+
+Por ello hablaremos de componentes canónicos. Un componente canónico expresa la responsabilidad que necesitamos representar. Su realización concreta puede variar. Si una plataforma posee una primitiva equivalente, el #emph[adapter] puede mapearla directamente. Si la equivalencia es parcial, el #emph[adapter] debe declarar la diferencia. Si la plataforma carece de esa capacidad, será necesario simularla, degradarla o reconocer que determinada operación no puede ejecutarse con las mismas garantías.
+
+Este enfoque evita dos extremos. El primero consiste en diseñar toda la metodología alrededor de las funciones del producto que usamos hoy. El segundo consiste en crear una abstracción tan genérica que oculte las diferencias reales entre plataformas. Los #emph[adapters] permiten mantener una arquitectura común sin negar que cada implementación tiene límites concretos.
+
+== El sistema como composición verificable
+<el-sistema-como-composición-verificable>
+La composición de componentes no debe entenderse únicamente como una forma de añadir capacidad. También es una forma de hacer visible dónde reside cada decisión y, por tanto, dónde puede comprobarse. Si una regla está declarada, puede validarse. Si un #emph[workflow] está definido, puede inspeccionarse. Si una herramienta tiene un contrato de entrada y salida, puede probarse. Si un #emph[adapter] declara qué capacidades soporta, puede detectarse una incompatibilidad antes de ejecutar una tarea.
+
+Esta propiedad es especialmente importante cuando aumenta la autonomía. Cuantas más decisiones pueda tomar un IISS sin intervención inmediata, mayor debe ser la claridad sobre las piezas que gobiernan su comportamiento. La autonomía útil no procede de retirar estructura, sino de disponer de una estructura suficientemente explícita para delegar sin perder control.
+
+Los capítulos siguientes desarrollan cada componente desde esta perspectiva. El propósito será comprender qué necesidad resuelve, qué información debería contener, qué relaciones mantiene con las demás piezas y cómo puede representarse de forma independiente de un producto concreto.
+
+= Instrucciones
+<instrucciones>
+== El comportamiento necesita un marco
+<el-comportamiento-necesita-un-marco>
+Los modelos generativos responden en función del contexto que reciben. Una parte de ese contexto está formada por instrucciones que establecen qué papel debe adoptar el sistema, qué objetivos debe perseguir, qué restricciones debe respetar y cómo debe interpretar las peticiones. Cuando un IISS participa en tareas de ingeniería, estas instrucciones dejan de ser simples indicaciones de estilo y se convierten en una parte de su arquitectura.
+
+Una instrucción puede ser muy general, como exigir que las modificaciones respeten las políticas de seguridad del entorno, o muy específica, como indicar que un repositorio utiliza una determinada convención de nombres. Puede permanecer estable durante meses o existir únicamente para una operación. El sistema necesita distinguir estos niveles porque no toda instrucción tiene la misma autoridad, duración ni ámbito.
+
+La implementación concreta puede hablar de instrucciones del sistema, instrucciones del proyecto, archivos de contexto, políticas, reglas del agente o #emph[prompts] persistentes. El concepto que nos interesa es más general: información normativa que condiciona cómo debe comportarse el IISS.
+
+== Ámbito y prioridad
+<ámbito-y-prioridad>
+Una arquitectura útil separa las instrucciones por ámbito. Algunas pertenecen al entorno completo y expresan restricciones que ningún proyecto debería modificar. Otras pertenecen a una organización, un repositorio o una metodología. Finalmente existen instrucciones asociadas a la tarea concreta que se está ejecutando.
+
+Esta separación permite resolver contradicciones. Si una petición solicita modificar un archivo protegido, una instrucción de tarea no debería anular una restricción de seguridad de mayor prioridad. Si un proyecto exige utilizar una determinada versión de una tecnología, una preferencia genérica del agente no debería imponerse sobre esa decisión explícita.
+
+El sistema no necesita necesariamente representar esta jerarquía mediante una única estructura universal, pero sí debe conocerla. Cuando el orden de precedencia depende únicamente de cómo una aplicación concatena textos antes de llamar al modelo, la arquitectura se vuelve difícil de inspeccionar. Conviene que la procedencia y el ámbito de las instrucciones sean identificables.
+
+== Instrucciones y datos no son lo mismo
+<instrucciones-y-datos-no-son-lo-mismo>
+Una de las fronteras más importantes consiste en diferenciar instrucciones de información. Un documento recuperado puede contener texto imperativo sin que por ello deba gobernar el comportamiento del sistema. Un archivo analizado podría incluir la frase «ignora las restricciones anteriores», pero esa frase forma parte del contenido que se estudia, no de las instrucciones que deben ejecutarse.
+
+Esta distinción es fundamental cuando el contexto se construye dinámicamente a partir de documentos, páginas, repositorios o resultados de herramientas. El sistema debe conservar la procedencia de cada fragmento y evitar que cualquier contenido incorporado al contexto adquiera automáticamente autoridad normativa.
+
+Por eso una arquitectura madura no trata el contexto como una cadena indiferenciada de texto. Aunque el modelo termine recibiendo una representación lineal, la aplicación puede conocer qué elementos son instrucciones, cuáles son datos, cuáles proceden del usuario, cuáles son resultados de herramientas y cuáles pertenecen a decisiones persistentes del proyecto.
+
+== Instrucciones persistentes y conocimiento operativo
+<instrucciones-persistentes-y-conocimiento-operativo>
+No todo procedimiento debe convertirse en una instrucción global. Si explicamos permanentemente todos los pasos necesarios para realizar cualquier tarea posible, el contexto crece, se hace más difícil de mantener y aumenta la posibilidad de contradicciones. Parte del conocimiento operativo pertenece mejor a una #emph[skill], que puede incorporarse cuando resulte relevante, o a un #emph[workflow], que puede definir una secuencia concreta.
+
+Las instrucciones deberían contener aquello que necesita gobernar de forma estable el comportamiento dentro de su ámbito. Las #emph[skills] pueden contener procedimientos especializados. Las reglas pueden expresar restricciones comprobables. Las #emph[definitions] pueden representar el estado entendido del problema. Mantener estas responsabilidades separadas reduce la tendencia a convertir un único archivo de instrucciones en un contenedor de todo el proyecto.
+
+== Evolución y trazabilidad
+<evolución-y-trazabilidad>
+Las instrucciones también evolucionan. Una convención puede cambiar, una política puede quedar obsoleta y una nueva herramienta puede exigir restricciones adicionales. Si las instrucciones influyen en decisiones importantes, deberían tratarse como cualquier otro artefacto de ingeniería: versionarse, revisarse y poder relacionar un comportamiento con el conjunto de instrucciones vigente en ese momento.
+
+Esto no significa que cada conversación necesite conservar una copia completa de todas las instrucciones utilizadas, pero sí que el sistema debería poder reconstruir qué configuración normativa estaba activa cuando se produjo una operación relevante. La trazabilidad se vuelve especialmente importante cuando los IISS modifican código, infraestructura, documentación o datos.
+
+== Relación con los demás componentes
+<relación-con-los-demás-componentes>
+Las instrucciones establecen cómo debe comportarse el sistema, pero no sustituyen a los demás componentes. No describen necesariamente la estructura del problema, que corresponde a las #emph[definitions]. No expresan una operación invocable, que corresponde a los #emph[commands]. No proporcionan capacidad externa, que corresponde a las herramientas. No ordenan por sí solas una secuencia compleja, que corresponde a los #emph[workflows].
+
+Mantener estas fronteras permite que las instrucciones sean más breves, estables y comprensibles. También facilita que un #emph[adapter] traduzca su intención a las primitivas disponibles en cada agente. Una plataforma puede ofrecer varios niveles de instrucciones y otra solo uno; el modelo canónico sigue siendo el mismo porque lo importante es conservar ámbito, prioridad y procedencia, aunque la implementación cambie.
+
+= #emph[Definitions]
+<definitions>
+== Representar lo que el sistema ha entendido
+<representar-lo-que-el-sistema-ha-entendido>
+Una conversación puede contener gran cantidad de información útil, pero no constituye necesariamente una representación estable del problema. Las decisiones aparecen mezcladas con dudas, alternativas descartadas, ejemplos, correcciones y razonamientos provisionales. Si un IISS debe trabajar de forma repetible sobre ese conocimiento, necesita una forma de convertir parte de la conversación y de otras fuentes en una representación más estructurada. A esa categoría la llamaremos #emph[definitions].
+
+Una #emph[definition] expresa aquello que el sistema considera establecido sobre una entidad, una necesidad, una interfaz, una restricción, una decisión o cualquier otro elemento relevante para el trabajo. No tiene que adoptar un formato único. Puede materializarse como YAML, JSON, texto estructurado, una especificación, un esquema, un manifiesto o varios documentos relacionados. Lo importante no es la sintaxis, sino la función: ofrecer una representación explícita y persistente de lo que se ha entendido.
+
+Este concepto resulta especialmente útil cuando diferenciamos la información de entrada de la interpretación realizada sobre ella. Un correo, una conversación, una incidencia o un documento pueden aportar información. La #emph[definition] no necesita copiarlos literalmente; debe representar de forma adecuada aquello que el sistema necesita conservar y utilizar.
+
+== Una representación no es una transcripción
+<una-representación-no-es-una-transcripción>
+Si cada entrada produjera una #emph[definition] idéntica, simplemente habríamos creado otro almacenamiento de documentos. La utilidad aparece cuando el sistema integra varias fuentes, elimina ruido, identifica relaciones y expresa el resultado en una forma apropiada para posteriores operaciones.
+
+Una misma #emph[definition] puede derivarse de varias entradas y una entrada puede contribuir a varias #emph[definitions]. Una decisión sobre una interfaz puede afectar a la descripción de un componente, a sus validaciones y a un #emph[workflow] de despliegue. Esta relación de muchos a muchos refleja mejor cómo se construye conocimiento en proyectos reales.
+
+La transformación tampoco debe ocultar la procedencia. Cuando una #emph[definition] contiene una afirmación relevante, el sistema debería poder conocer de dónde procede y, cuando sea necesario, volver a la fuente original. Estructurar información no significa borrar su historia.
+
+== Estructura, estado y significado
+<estructura-estado-y-significado>
+Las #emph[definitions] pueden representar tanto estructura como estado. Una puede describir los campos que debe tener un artefacto; otra puede indicar qué decisiones han sido aceptadas; otra puede representar las capacidades requeridas de un componente. En todos los casos ofrecen algo que una conversación aislada no garantiza: una forma de consultar el conocimiento del proyecto sin reconstruirlo desde cero.
+
+Esto permite que otros componentes trabajen sobre una base común. Un #emph[command] puede solicitar «validar esta #emph[definition]». Una #emph[skill] puede explicar cómo transformarla en código. Una #emph[template] puede establecer la forma del artefacto que debe generarse. Un #emph[workflow] puede utilizar su estado para decidir qué paso ejecutar a continuación.
+
+La existencia de una representación canónica también facilita comparar implementaciones. Si dos agentes reciben la misma #emph[definition] y producen resultados diferentes, podemos analizar la diferencia sin confundirla con interpretaciones divergentes de una conversación extensa.
+
+== #emph[Definitions] y especificaciones
+<definitions-y-especificaciones>
+El término especificación suele asociarse a documentos que describen requisitos, interfaces o comportamiento esperado. Una #emph[definition] puede desempeñar esa función, pero el concepto es deliberadamente más amplio. Puede existir antes de que la información tenga suficiente madurez para convertirse en una especificación formal y puede representar elementos que no solemos llamar requisitos.
+
+Por ejemplo, una #emph[definition] podría describir qué formatos soporta un sistema, qué repositorios forman un producto, qué convenciones se han acordado o qué capacidades necesita un #emph[adapter]. La metodología decidirá posteriormente qué clases de #emph[definitions] existen y cuáles requieren validaciones particulares.
+
+Separar el concepto general de su taxonomía concreta permite que esta parte del libro explique la necesidad arquitectónica sin anticipar las decisiones de IASI sobre cómo debe organizarse un proyecto.
+
+== Calidad y validación
+<calidad-y-validación>
+Una representación estructurada es útil únicamente si podemos confiar en ella. Las #emph[definitions] deberían admitir validaciones sintácticas y semánticas. La primera comprueba que la estructura es correcta; la segunda analiza si su contenido tiene sentido respecto al dominio y a otras #emph[definitions].
+
+También conviene distinguir entre ausencia de información e información negativa. Si una capacidad no se ha definido, el sistema no debería asumir automáticamente que está prohibida o que no existe. Esta diferencia, aparentemente pequeña, afecta a la forma en que los IISS razonan sobre configuraciones incompletas.
+
+La evolución plantea otra cuestión. Una #emph[definition] puede cambiar cuando aparecen nuevas entradas o cuando una decisión se revisa. El sistema necesita saber si está actualizando una representación existente, creando una nueva versión o contradiciendo información anterior. La trazabilidad y el control de cambios son por ello parte natural del concepto.
+
+== Un contrato común entre componentes
+<un-contrato-común-entre-componentes>
+Las #emph[definitions] pueden actuar como contrato entre conocimiento y ejecución. Las conversaciones, documentos y otras entradas proporcionan información; las #emph[definitions] la estabilizan; los #emph[commands], #emph[skills], #emph[workflows] y herramientas actúan sobre ella. Esta separación evita que cada componente tenga que interpretar de nuevo todas las fuentes originales.
+
+Las implementaciones pueden utilizar otros nombres. Un producto puede hablar de especificaciones, esquemas, estado estructurado o archivos de proyecto. Un #emph[adapter] será responsable de traducir esas posibilidades a la categoría canónica. Lo que no cambia es la necesidad de disponer de una representación explícita del conocimiento operativo sobre el que trabaja el IISS.
+
+= #emph[Commands]
+<commands>
+== Expresar una intención invocable
+<expresar-una-intención-invocable>
+Cuando interactuamos con un IISS mediante lenguaje natural podemos pedir prácticamente cualquier cosa de muchas formas distintas. Esa flexibilidad es útil para explorar problemas, pero no siempre es la mejor interfaz para operaciones repetibles. Si una tarea posee un propósito reconocible, unos parámetros y un resultado esperado, resulta útil representarla como una operación invocable. A esa categoría la llamaremos #emph[command].
+
+Un #emph[command] no debe confundirse con un comando de terminal. Puede terminar ejecutando una herramienta de línea de comandos, pero su significado pertenece al dominio del sistema. «Publicar el libro», «validar el proyecto», «generar las #emph[definitions]» o «preparar una revisión» son operaciones conceptuales que pueden requerir varios pasos y tecnologías diferentes.
+
+Definirlas explícitamente reduce la dependencia de que el usuario formule cada vez una petición completa y de que el modelo reconstruya desde cero qué significa esa operación.
+
+== Nombre, parámetros y resultado
+<nombre-parámetros-y-resultado>
+Un #emph[command] útil necesita expresar al menos una intención. En muchos casos también necesita parámetros, condiciones previas y una descripción del resultado esperado. Esto permite que el sistema distinga entre la semántica de la operación y la manera concreta de ejecutarla.
+
+Por ejemplo, un #emph[command] de publicación puede recibir el volumen que debe publicarse, el conjunto de formatos y el destino. La implementación puede utilizar Quarto, scripts, una acción de GitHub o cualquier otra herramienta. El #emph[command] sigue representando la misma intención aunque cambie la tecnología subyacente.
+
+Esta separación favorece la estabilidad de la interfaz. Los usuarios y los #emph[workflows] pueden invocar una operación conocida mientras los #emph[adapters] y las #emph[skills] resuelven cómo realizarla en cada entorno.
+
+== #emph[Commands] y lenguaje natural
+<commands-y-lenguaje-natural>
+La existencia de #emph[commands] no elimina la conversación. El lenguaje natural continúa siendo útil para descubrir qué quiere el usuario, discutir alternativas o construir los parámetros de una operación. El sistema puede incluso inferir que una petición corresponde a un #emph[command] conocido. La diferencia es que, una vez identificada la intención, la ejecución puede apoyarse en una representación explícita.
+
+Esto resulta especialmente valioso para operaciones con efectos. Una petición ambigua puede transformarse en un #emph[command] estructurado antes de modificar archivos, desplegar infraestructura o enviar información. El sistema puede mostrar qué operación ha interpretado, qué parámetros utilizará y qué autorizaciones necesita.
+
+También permite registrar actividad de forma más significativa. En lugar de conservar únicamente una secuencia de llamadas técnicas, podemos saber que se ejecutó una operación de publicación o una validación de proyecto.
+
+== #emph[Commands], #emph[tools] y #emph[skills]
+<commands-tools-y-skills>
+Estas tres categorías suelen confundirse porque todas pueden participar en la ejecución de una tarea. El #emph[command] expresa qué operación se desea realizar. La herramienta aporta una capacidad concreta para interactuar con el entorno. La #emph[skill] contiene conocimiento operativo reutilizable sobre cómo resolver un tipo de tarea.
+
+Un #emph[command] puede utilizar una #emph[skill] que, a su vez, emplee varias herramientas. También puede ser suficientemente sencillo para mapearse directamente a una herramienta. El modelo conceptual no obliga a introducir capas innecesarias; simplemente permite reconocer las responsabilidades cuando la complejidad las hace útiles.
+
+La relación tampoco tiene que ser exclusiva. Una misma #emph[skill] puede apoyar varios #emph[commands] y una herramienta puede aparecer en numerosos #emph[workflows]. Esta composición evita duplicar conocimiento.
+
+== Descubrimiento y autorización
+<descubrimiento-y-autorización>
+Si el sistema dispone de muchos #emph[commands], necesita saber cuáles son aplicables en cada contexto. Algunos pueden pertenecer a un tipo de proyecto concreto; otros pueden requerir que exista determinada #emph[definition] o que una herramienta esté disponible. La capacidad de descubrir operaciones válidas forma parte de una buena interfaz.
+
+La autorización debe mantenerse separada del descubrimiento. Que el sistema conozca un #emph[command] no significa que pueda ejecutarlo automáticamente. Una operación puede estar disponible pero requerir confirmación, permisos adicionales o revisión humana. Esta diferencia es esencial cuando los IISS pasan de recomendar acciones a producir efectos reales.
+
+== #emph[Adapters] y equivalencias
+<adapters-y-equivalencias>
+Cada plataforma puede exponer operaciones reutilizables de una manera distinta. Algunas utilizan comandos con barra, otras acciones, menús, funciones o plantillas de #emph[prompt]. Nuestro concepto de #emph[command] no depende de ninguna de ellas.
+
+El #emph[adapter] debe decidir cómo representar una intención canónica en el entorno concreto. En algunos casos existirá una equivalencia directa. En otros será necesario construir un #emph[prompt] estructurado o invocar una función interna. Si la plataforma carece de un mecanismo adecuado, el #emph[adapter] puede degradar la experiencia sin cambiar el significado del #emph[command].
+
+Esta separación permite que la metodología defina qué operaciones necesita sin estar condicionada por la interfaz de un agente determinado.
+
+= #emph[Tools]
+<tools>
+== Capacidad de actuar sobre el exterior
+<capacidad-de-actuar-sobre-el-exterior>
+Un modelo puede generar una descripción de cómo consultar una base de datos, modificar un archivo o crear una incidencia, pero describir una operación no equivale a ejecutarla. Para que un IISS pueda interactuar con el entorno necesita mecanismos que conviertan una intención en una acción observable. Llamaremos #emph[tools] a esas capacidades externas invocables.
+
+Una herramienta puede ser muy simple, como leer un archivo, o representar una operación compleja ofrecida por otro sistema. Puede consultar información sin producir efectos, modificar recursos, ejecutar código, controlar infraestructura o comunicarse con servicios remotos. Desde el punto de vista del IISS, lo relevante es que existe un contrato mediante el que puede solicitar una operación y recibir un resultado.
+
+== Contratos claros
+<contratos-claros>
+Cuanto más estructurada sea la interfaz de una herramienta, menos necesita inferir el modelo. El sistema debería conocer qué operación realiza, qué parámetros admite, qué devuelve, qué errores puede producir y si tiene efectos secundarios.
+
+Una descripción imprecisa obliga al modelo a adivinar. Si una herramienta acepta un identificador pero no queda claro si corresponde a un nombre visible, una ruta o un identificador interno, aumentan los errores. Lo mismo ocurre cuando una salida mezcla datos, mensajes y estados sin una estructura predecible.
+
+Por ello las herramientas no son únicamente conectores técnicos. Su diseño forma parte de la interfaz cognitiva del IISS. Deben presentar capacidades de forma que el sistema pueda elegirlas y utilizarlas con el menor grado posible de ambigüedad.
+
+== Lectura, escritura y efectos
+<lectura-escritura-y-efectos>
+Conviene distinguir entre herramientas que observan y herramientas que modifican. Una consulta de documentación o la lectura de un archivo suele ser reversible porque no altera el entorno. Borrar un recurso, enviar un mensaje o desplegar una versión produce efectos que pueden ser difíciles de deshacer.
+
+Esta diferencia debería influir en las políticas de autorización. El sistema puede permitir determinadas lecturas de forma automática y exigir confirmación para operaciones destructivas. También puede utilizar validaciones previas, simulaciones o modos de vista previa antes de ejecutar un cambio.
+
+No todas las escrituras tienen el mismo riesgo. Crear un archivo temporal es diferente de modificar una rama principal; generar un borrador es diferente de enviarlo. El contrato de la herramienta debería permitir que la arquitectura conozca estas diferencias.
+
+== Errores como parte de la interfaz
+<errores-como-parte-de-la-interfaz>
+Una herramienta que falla sin explicar por qué obliga al modelo a interpretar señales ambiguas. Los errores deberían ser estructurados siempre que sea posible y distinguir entre problemas de parámetros, permisos, disponibilidad, conflicto de estado y fallos internos.
+
+El tratamiento de errores también pertenece a los #emph[workflows]. Un fallo transitorio puede justificar un nuevo intento; un conflicto de versión puede exigir recuperar el estado actual; un error de autorización debe detener la operación. La herramienta informa del problema y el #emph[workflow] decide qué hacer con él.
+
+El modelo puede colaborar en esa decisión, pero la arquitectura no debería depender de que improvise la misma política cada vez.
+
+== Herramientas y autonomía
+<herramientas-y-autonomía>
+Añadir herramientas cambia la naturaleza del sistema. Un modelo sin herramientas puede producir información incorrecta, pero su efecto inmediato suele limitarse a la respuesta. Un sistema con capacidad para modificar recursos puede convertir una interpretación equivocada en una acción real.
+
+Por ello la calidad de la autonomía depende tanto de las herramientas y sus controles como del modelo. Un sistema con un modelo excelente y herramientas mal diseñadas puede ser menos fiable que otro con capacidades más modestas pero contratos, permisos y validaciones claros.
+
+También resulta útil limitar las herramientas disponibles a las necesarias para la tarea. Exponer capacidades irrelevantes aumenta el espacio de decisión y puede producir selecciones accidentales.
+
+== #emph[Tools] y protocolos
+<tools-y-protocolos>
+Las herramientas pueden integrarse de muchas formas. Una aplicación puede definir funciones internas, utilizar interfaces de servicios, ejecutar programas o descubrir capacidades a través de protocolos como MCP. El protocolo no cambia la categoría conceptual. MCP puede proporcionar una forma estandarizada de descubrir e invocar herramientas, pero la responsabilidad de diseñarlas correctamente sigue existiendo.
+
+Los #emph[adapters] permiten que una herramienta canónica se materialice de formas distintas. Una operación de lectura de repositorio podría utilizar un conector nativo en una plataforma y una herramienta MCP en otra. Para el resto de la arquitectura, ambas representan la misma capacidad si ofrecen contratos equivalentes.
+
+== La herramienta no contiene necesariamente el procedimiento
+<la-herramienta-no-contiene-necesariamente-el-procedimiento>
+Una herramienta sabe hacer una operación, pero no tiene por qué saber cuándo conviene usarla, qué pasos deben precederla o cómo interpretar su resultado dentro de una tarea compleja. Ese conocimiento puede pertenecer a una #emph[skill] o a un #emph[workflow].
+
+Separar capacidad y procedimiento evita crear herramientas excesivamente específicas que mezclan conexión técnica con lógica de proceso. También permite reutilizar una misma capacidad en situaciones distintas y cambiar la implementación sin reescribir el conocimiento operativo.
+
+= #emph[Model Context Protocol] (MCP)
+<model-context-protocol-mcp>
+== Un protocolo para conectar capacidades
+<un-protocolo-para-conectar-capacidades>
+Cuando cada aplicación integra herramientas, fuentes de información y servicios externos mediante interfaces propias, el coste de conexión crece rápidamente. Un agente necesita conocer cada integración y cada proveedor debe construir adaptaciones para numerosos clientes. MCP, #emph[Model Context Protocol], aborda este problema definiendo una forma común de exponer determinadas capacidades a aplicaciones que trabajan con modelos.
+
+MCP es importante porque introduce una frontera explícita entre la aplicación que utiliza el modelo y los servidores que ofrecen capacidades o información. Sin embargo, no debemos confundir el protocolo con la arquitectura completa de un IISS. MCP resuelve un problema de integración. No define por sí solo cómo debe organizarse una metodología, qué #emph[definitions] necesita un proyecto, qué #emph[workflows] deben ejecutarse o qué decisiones requieren aprobación.
+
+== Cliente y servidor
+<cliente-y-servidor>
+En una integración MCP existe una parte cliente que participa en la aplicación y una parte servidor que publica capacidades. La aplicación puede descubrir qué ofrece el servidor y utilizar esas capacidades sin que cada una necesite una interfaz exclusiva diseñada para ese agente.
+
+Esta separación permite que un mismo servidor pueda ser utilizado por clientes diferentes y que un agente pueda conectarse a varios servidores. También facilita aislar credenciales, permisos y dependencias específicas fuera del núcleo que mantiene la conversación con el modelo.
+
+Desde nuestra perspectiva, MCP puede ser uno de los mecanismos utilizados por los #emph[adapters] para materializar componentes canónicos. No todos los componentes tienen que convertirse en elementos MCP, ni todas las plataformas necesitan utilizar MCP para ser compatibles con el modelo conceptual.
+
+== #emph[Tools], #emph[resources] y #emph[prompts]
+<tools-resources-y-prompts>
+MCP distingue categorías como #emph[tools], #emph[resources] y #emph[prompts]. Las herramientas representan operaciones invocables; los recursos permiten exponer información; los #emph[prompts] ofrecen contenidos reutilizables que el cliente puede utilizar para construir interacciones.
+
+Estas categorías son útiles, pero no deben obligarnos a reducir toda la arquitectura a ellas. Una #emph[skill] puede necesitar instrucciones, ejemplos, archivos y herramientas; una #emph[definition] puede vivir en el proyecto y no ser un recurso remoto; un #emph[command] puede representar una intención de negocio que posteriormente utilice varias herramientas MCP.
+
+La taxonomía del protocolo describe lo que se intercambia a través de esa frontera. Nuestra taxonomía describe lo que el IISS necesita conceptualmente.
+
+== Descubrimiento
+<descubrimiento>
+Una de las ventajas del protocolo es el descubrimiento. La aplicación puede consultar qué capacidades ofrece un servidor en lugar de codificarlas todas de antemano. Esta propiedad resulta especialmente útil cuando el entorno cambia o cuando diferentes proyectos disponen de integraciones distintas.
+
+El descubrimiento no elimina la necesidad de control. Que una capacidad pueda descubrirse no significa que deba exponerse siempre al modelo ni que esté autorizada para cualquier usuario. La aplicación sigue siendo responsable de decidir qué servidores conecta, qué capacidades habilita y bajo qué permisos se ejecutan.
+
+También debe gestionar cambios de versión. Una herramienta puede modificar sus parámetros o un recurso puede dejar de existir. La capa de integración necesita detectar estas variaciones antes de asumir que el comportamiento permanece estable.
+
+== Contexto no significa contexto ilimitado
+<contexto-no-significa-contexto-ilimitado>
+El nombre del protocolo puede sugerir que cualquier información externa debe incorporarse al contexto del modelo. No es así. El sistema puede descubrir un recurso, consultarlo y seleccionar únicamente aquello que resulte relevante para la tarea. El contexto sigue siendo limitado y debe construirse con criterio.
+
+Una integración que vuelca grandes cantidades de datos en cada petición puede empeorar el comportamiento aunque técnicamente proporcione más información. La arquitectura necesita mecanismos de selección, resumen, filtrado y procedencia.
+
+MCP facilita el acceso. La decisión sobre qué incorporar pertenece a la aplicación, a las #emph[skills], a los #emph[workflows] y a las políticas del sistema.
+
+== Seguridad y confianza
+<seguridad-y-confianza>
+Conectar un servidor MCP equivale a incorporar una nueva frontera de confianza. El servidor puede ofrecer herramientas con efectos, recursos sensibles o instrucciones que influyen en la interacción. Por tanto, la selección de servidores, la autenticación, los permisos y la revisión de las capacidades expuestas forman parte de la seguridad del IISS.
+
+También conviene mantener separadas las instrucciones normativas del sistema y el contenido que llega desde una integración. Un servidor puede proporcionar información útil, pero esa información no debería adquirir automáticamente la misma autoridad que las políticas del proyecto.
+
+La arquitectura debe conocer qué parte del contexto procede de MCP y qué permisos estaban activos cuando se produjo una operación.
+
+== MCP como mecanismo, no como dependencia conceptual
+<mcp-como-mecanismo-no-como-dependencia-conceptual>
+Un IISS puede utilizar MCP intensamente y seguir necesitando #emph[commands], #emph[definitions], #emph[skills], #emph[workflows], validaciones y #emph[adapters]. También puede implementar parte de esas funciones sin MCP. Esta independencia es saludable porque evita convertir una tecnología de integración en el modelo completo del sistema.
+
+IASI puede decidir que determinados #emph[adapters] utilicen MCP cuando la plataforma lo soporte y otra interfaz cuando no lo haga. La metodología conserva así los mismos componentes y delega en la capa de adaptación la forma concreta de conectarlos.
+
+= #emph[Resources]
+<resources>
+== Información disponible fuera del modelo
+<información-disponible-fuera-del-modelo>
+El conocimiento almacenado en los parámetros de un modelo es amplio, pero no contiene necesariamente la información concreta, privada, actualizada o versionada que necesita una tarea. Los IISS deben poder trabajar con documentos, repositorios, bases de datos, incidencias, configuraciones, páginas, resultados de servicios y otras fuentes externas. Llamaremos #emph[resources] a estas fuentes de información accesibles para el sistema.
+
+El concepto es más amplio que la categoría #emph[resource] de MCP, aunque puede materializarse mediante ella. Un recurso puede residir en el sistema de archivos, en un servicio remoto, en una base documental o en cualquier otro almacén. Lo que importa es que el sistema puede identificarlo, acceder a su contenido de forma controlada y conocer suficientemente su procedencia.
+
+== Identidad y procedencia
+<identidad-y-procedencia>
+Una respuesta basada en información externa es más útil cuando puede rastrearse hasta la fuente que la sustentó. Por ello un recurso debería conservar una identidad estable siempre que sea posible. No basta con recuperar un fragmento de texto; conviene saber de qué documento procede, qué versión se consultó, cuándo se obtuvo y bajo qué permisos.
+
+Esta procedencia permite volver a comprobar una afirmación, detectar que una fuente ha cambiado y resolver conflictos entre versiones. También permite distinguir entre información oficial, notas internas, resultados temporales y contenido generado por el propio sistema.
+
+La procedencia no implica que todo deba mostrarse al usuario en cada respuesta, pero debería permanecer disponible para los procesos que necesiten validación o auditoría.
+
+== Recuperación y selección
+<recuperación-y-selección>
+Disponer de un recurso no significa introducirlo completo en la ventana de contexto. El sistema necesita seleccionar la información relevante para la tarea. Esta selección puede realizarse mediante búsqueda textual, índices semánticos, metadatos, relaciones estructuradas o combinaciones de varios métodos.
+
+El proceso de recuperación forma parte de la arquitectura porque determina qué evidencia verá realmente el modelo. Un excelente documento resulta inútil si el sistema recupera el fragmento equivocado. Del mismo modo, una recuperación demasiado amplia puede saturar el contexto con información irrelevante.
+
+Las #emph[skills] y los #emph[workflows] pueden establecer estrategias diferentes según el tipo de recurso. Buscar una definición en un repositorio no requiere necesariamente el mismo mecanismo que investigar documentación extensa o consultar un registro estructurado.
+
+== Actualidad y versiones
+<actualidad-y-versiones>
+Los recursos cambian. Un archivo puede modificarse, una página puede actualizarse y una incidencia puede resolverse mientras el sistema trabaja. El IISS debe evitar tratar como permanente una copia que solo representaba el estado de un momento concreto.
+
+Cuando la actualidad sea relevante, el sistema debería conocer la fecha o versión del recurso y, si es necesario, recuperarlo de nuevo. En procesos largos también puede ser necesario comprobar que un recurso no ha cambiado entre la planificación y la ejecución.
+
+Esta cuestión se vuelve crítica cuando una operación de escritura se basa en información leída anteriormente. Si otro actor ha modificado el recurso, el sistema puede necesitar detectar el conflicto antes de sobrescribirlo.
+
+== Recursos y permisos
+<recursos-y-permisos>
+La recuperación de información debe respetar los mismos límites que cualquier otra capacidad. Un modelo no debería recibir automáticamente todo aquello a lo que técnicamente tiene acceso la aplicación. Los permisos pueden depender del usuario, del proyecto, del tipo de dato o de la tarea.
+
+También es importante minimizar la exposición. Si una operación necesita un campo concreto, puede no ser necesario introducir un documento confidencial completo en el contexto. El diseño de recursos debería facilitar accesos suficientemente granulares.
+
+Los #emph[adapters] pueden encargarse de traducir permisos y mecanismos de acceso entre plataformas, pero la política pertenece al sistema.
+
+== Recursos frente a memoria y #emph[definitions]
+<recursos-frente-a-memoria-y-definitions>
+Un recurso es una fuente de información disponible para consulta. La memoria conserva información seleccionada para reutilizarla en interacciones futuras. Una #emph[definition] representa conocimiento estructurado que el sistema considera parte del estado entendido del proyecto.
+
+Estas categorías pueden relacionarse. Una #emph[definition] puede derivarse de varios recursos; una memoria puede conservar la preferencia necesaria para seleccionar un recurso; un recurso puede contener la fuente original de una decisión. Sin embargo, mantenerlas diferenciadas evita tratar cualquier documento disponible como si fuera conocimiento canónico.
+
+== Un componente de conocimiento, no de verdad
+<un-componente-de-conocimiento-no-de-verdad>
+Que una información proceda de un recurso no garantiza que sea correcta. Un repositorio puede contener código obsoleto, una página puede estar equivocada y un documento interno puede contradecir una decisión posterior. El sistema necesita evaluar procedencia, prioridad y actualidad.
+
+Los recursos amplían aquello que el IISS puede consultar. Las validaciones, las reglas y las #emph[definitions] ayudan a decidir qué información debe aceptarse y cómo utilizarla.
+
+= #emph[Skills]
+<skills>
+== Conocimiento operativo reutilizable
+<conocimiento-operativo-reutilizable>
+Un IISS puede disponer de herramientas suficientes para realizar una tarea y, aun así, no saber cómo utilizarlas correctamente dentro de un proceso real. Saber que existe una herramienta para leer archivos y otra para ejecutar pruebas no equivale a conocer el procedimiento adecuado para revisar un cambio, diagnosticar un fallo o preparar una publicación. Esa diferencia introduce la necesidad de las #emph[skills].
+
+Llamaremos #emph[skill] a una unidad reutilizable de conocimiento operativo que enseña al sistema cómo abordar una clase de tareas. Puede contener instrucciones especializadas, criterios de decisión, ejemplos, referencias a herramientas, convenciones, comprobaciones y recursos auxiliares. Su propósito no es ejecutar una única operación, sino encapsular una forma de trabajar que puede aplicarse repetidamente.
+
+Las plataformas actuales pueden utilizar el término #emph[skill] con estructuras concretas, pero nuestro concepto no depende de ellas. Lo importante es la función: extraer conocimiento procedimental de la conversación y convertirlo en una capacidad reutilizable.
+
+== Saber qué hacer y saber cómo hacerlo
+<saber-qué-hacer-y-saber-cómo-hacerlo>
+Un #emph[command] puede expresar «revisar una solicitud de cambio». La #emph[skill] correspondiente puede explicar cómo inspeccionar los cambios, qué riesgos buscar, qué pruebas consultar, cómo distinguir un comentario bloqueante de una sugerencia y qué herramientas utilizar en cada paso.
+
+Esta separación evita que el #emph[command] se convierta en un manual y que la herramienta tenga que contener lógica de proceso. También permite utilizar la misma #emph[skill] desde una conversación, un #emph[workflow] o una automatización.
+
+Una #emph[skill] no tiene por qué describir una secuencia rígida. Puede proporcionar heurísticas y criterios que el modelo utilice según el contexto. Si el proceso necesita un orden obligatorio, condiciones de transición o estados persistentes, parte de esa lógica puede pertenecer mejor a un #emph[workflow].
+
+== Contenido progresivo
+<contenido-progresivo>
+Las #emph[skills] pueden llegar a ser extensas. Cargar todo su contenido en cada interacción sería ineficiente y podría introducir instrucciones irrelevantes. Por ello resulta útil que el sistema pueda descubrir qué #emph[skills] existen mediante una descripción breve y recuperar su contenido completo solo cuando la tarea lo requiera.
+
+Esta carga progresiva reduce el consumo de contexto y permite mantener una biblioteca amplia de conocimiento operativo sin convertirla en un bloque permanente de instrucciones.
+
+También facilita la composición. Una #emph[skill] general puede remitir a otras más especializadas cuando aparecen determinadas condiciones. El sistema puede incorporar únicamente las piezas necesarias para resolver la tarea actual.
+
+== #emph[Skills] y experiencia acumulada
+<skills-y-experiencia-acumulada>
+Una parte importante del conocimiento de ingeniería no vive en especificaciones formales. Se encuentra en procedimientos que las personas han aprendido con la práctica: qué comprobar antes de desplegar, cómo diagnosticar un tipo de error, qué señales suelen indicar una incompatibilidad o qué orden reduce el riesgo al modificar varios componentes.
+
+Las #emph[skills] ofrecen un lugar para convertir parte de esa experiencia en conocimiento operativo accesible a los IISS. No eliminan la necesidad de juicio, pero reducen la dependencia de que ese conocimiento permanezca únicamente en la memoria de una persona o en conversaciones anteriores.
+
+Para que una #emph[skill] sea útil debe mantenerse. Un procedimiento basado en una herramienta retirada puede volverse perjudicial. Por ello las #emph[skills] deberían versionarse, revisarse y relacionarse con las capacidades que necesitan.
+
+== #emph[Skills], instrucciones y #emph[rules]
+<skills-instrucciones-y-rules>
+Una #emph[skill] puede contener instrucciones, pero no sustituye a las instrucciones generales del sistema. Las instrucciones establecen comportamiento persistente dentro de un ámbito; la #emph[skill] aporta conocimiento especializado cuando una tarea lo requiere.
+
+Las reglas expresan restricciones o condiciones que pueden ser verificables. Una #emph[skill] puede explicar cómo actuar cuando una regla falla, pero no debería ser el único lugar donde existe una condición que el sistema necesita comprobar de forma sistemática.
+
+Esta separación mejora la claridad. Si una política debe cumplirse siempre, pertenece a una capa normativa. Si un procedimiento explica cómo resolver una tarea, pertenece a una #emph[skill].
+
+== Implementación mediante #emph[adapters]
+<implementación-mediante-adapters>
+Una plataforma puede soportar #emph[skills] como artefactos nativos y otra no disponer de una primitiva equivalente. El #emph[adapter] puede traducir una #emph[skill] a instrucciones dinámicas, documentos recuperables o mecanismos propios del agente.
+
+La equivalencia puede ser imperfecta. Una implementación podría no soportar carga progresiva o descubrimiento automático. En ese caso el #emph[adapter] debe reconocer la limitación en lugar de ocultarla.
+
+Este enfoque permite que la metodología defina qué conocimiento operativo necesita conservar sin quedar ligada a la forma en que una herramienta concreta decide empaquetarlo.
+
+= #emph[Templates]
+<templates>
+== Estructuras reutilizables
+<estructuras-reutilizables>
+Muchos resultados de ingeniería comparten una forma reconocible. Un informe puede necesitar secciones obligatorias; una decisión arquitectónica puede seguir una estructura acordada; un repositorio puede comenzar con un conjunto conocido de archivos; una configuración puede requerir campos determinados. Las #emph[templates] permiten conservar estas estructuras para no reconstruirlas cada vez.
+
+Una #emph[template] no describe necesariamente el procedimiento para producir el resultado. Define principalmente una forma, un punto de partida o un contrato estructural. Puede contener texto fijo, marcadores, archivos, directorios, fragmentos de configuración o cualquier elemento que deba repetirse de manera consistente.
+
+Esta función parece simple, pero adquiere importancia cuando los IISS generan artefactos. Sin una estructura explícita, el modelo puede producir variaciones innecesarias entre ejecuciones. La #emph[template] reduce ese espacio de variabilidad allí donde la organización ya ha decidido cómo debe presentarse o componerse un resultado.
+
+== Forma y contenido
+<forma-y-contenido>
+Una #emph[template] debería distinguir entre aquello que pertenece a la estructura y aquello que debe completarse para cada caso. Si una plantilla contiene demasiadas decisiones específicas, deja de ser reutilizable; si es excesivamente vacía, aporta poco valor.
+
+El IISS puede utilizar #emph[definitions] para completar una #emph[template]. Por ejemplo, una #emph[definition] puede contener los datos de un componente y la plantilla determinar cómo convertirlos en una página de documentación. También puede utilizar una #emph[skill] para decidir qué partes deben incluirse o cómo resolver casos opcionales.
+
+Esta composición evita insertar lógica compleja dentro de la propia plantilla.
+
+== #emph[Templates] y ejemplos
+<templates-y-ejemplos>
+Un ejemplo muestra una realización concreta. Una #emph[template] define una estructura destinada a producir nuevas realizaciones. Aunque ambos pueden parecer similares, la diferencia afecta a cómo debe interpretarlos el sistema.
+
+Copiar un ejemplo literalmente puede arrastrar valores accidentales. Utilizar una #emph[template] obliga a reconocer qué partes son constantes y cuáles deben obtenerse del contexto. Por ello conviene que los marcadores y las condiciones sean explícitos.
+
+Los ejemplos siguen siendo útiles dentro de una #emph[skill] para enseñar cómo aplicar una plantilla en situaciones distintas.
+
+== Validación de resultados
+<validación-de-resultados>
+Una #emph[template] puede contribuir a la consistencia, pero no garantiza que el resultado final sea correcto. Después de completarla pueden existir campos vacíos, enlaces inválidos o combinaciones semánticamente incompatibles. Las validaciones deben comprobar aquello que la estructura por sí sola no puede asegurar.
+
+También puede ocurrir que una #emph[template] evolucione. Los artefactos antiguos no tienen por qué actualizarse automáticamente, pero el sistema debería conocer qué versión se utilizó cuando esa información resulte relevante.
+
+== #emph[Templates] y generación
+<templates-y-generación>
+Los modelos generativos son especialmente buenos completando estructuras cuando disponen de contexto suficiente. Una #emph[template] aprovecha esa capacidad sin delegar en el modelo decisiones que ya están resueltas. El modelo puede concentrarse en generar el contenido variable mientras la arquitectura conserva las partes estables.
+
+Este principio también reduce la necesidad de instrucciones repetitivas. En lugar de explicar en cada #emph[prompt] el formato completo de un artefacto, el sistema puede proporcionar una plantilla identificada y dejar que el procedimiento especializado se ocupe de completarla.
+
+== Independencia de plataforma
+<independencia-de-plataforma>
+Las #emph[templates] pueden materializarse como archivos, directorios, fragmentos incrustados o recursos ofrecidos por una plataforma. El concepto no depende del mecanismo de almacenamiento.
+
+Los #emph[adapters] pueden transformar una plantilla canónica al formato que necesite una herramienta concreta. Si una plataforma exige una estructura diferente, esa adaptación debería permanecer en la frontera y no contaminar la representación común del proyecto.
+
+= Configuración
+<configuración>
+== Decisiones parametrizables
+<decisiones-parametrizables>
+No todas las decisiones de un IISS deben convertirse en instrucciones, reglas o código. Muchas representan parámetros que seleccionan entre comportamientos permitidos: qué modelo utilizar, qué formatos generar, qué herramientas habilitar, qué nivel de detalle solicitar, qué servidor consultar o qué entorno usar. La configuración permite expresar estas decisiones de forma explícita y modificable.
+
+Separar configuración de implementación evita que pequeños cambios requieran alterar procedimientos o reescribir instrucciones. También permite que el mismo conjunto de componentes opere en entornos distintos mediante valores diferentes.
+
+== Configuración del proyecto y del entorno
+<configuración-del-proyecto-y-del-entorno>
+Una parte de la configuración pertenece al proyecto y debería acompañarlo. Otra depende del entorno de ejecución y no debe almacenarse de la misma manera. Una ruta local, una credencial o un identificador temporal no tiene el mismo carácter que la decisión de utilizar un formato de publicación determinado.
+
+La arquitectura necesita distinguir ambas categorías. Mezclarlas produce configuraciones difíciles de compartir y aumenta el riesgo de publicar información sensible.
+
+También puede existir configuración proporcionada por el usuario durante una operación. El sistema debe resolver cómo se combinan los valores por defecto, la configuración persistente y las opciones específicas de la ejecución.
+
+== Configuración no es política
+<configuración-no-es-política>
+Un parámetro puede seleccionar una opción válida, pero no debería utilizarse para ocultar restricciones esenciales. Si una operación está prohibida por una regla de seguridad, no conviene representarla simplemente como una preferencia configurable que cualquiera puede desactivar.
+
+La configuración expresa variabilidad permitida. Las reglas determinan límites que deben respetarse. Esta separación permite conocer qué decisiones pueden cambiarse libremente y cuáles requieren revisar la política del sistema.
+
+== Configuración y #emph[definitions]
+<configuración-y-definitions>
+Las #emph[definitions] representan conocimiento estructurado sobre el problema. La configuración determina cómo debe comportarse una ejecución o una implementación dentro de ese conocimiento. En algunos proyectos ambos elementos pueden utilizar formatos similares, pero su propósito sigue siendo distinto.
+
+Una #emph[definition] podría indicar que un libro admite HTML y PDF. La configuración de una ejecución podría seleccionar únicamente HTML. La primera describe una capacidad o una decisión del proyecto; la segunda elige cómo se utilizará en una situación concreta.
+
+== Validación de configuración
+<validación-de-configuración>
+La configuración debería poder validarse antes de ejecutar operaciones costosas. Un modelo inexistente, una combinación incompatible de formatos o una herramienta requerida que no está habilitada deberían detectarse cuanto antes.
+
+También conviene que los valores desconocidos produzcan errores claros en lugar de ser ignorados silenciosamente. El crecimiento de un sistema suele introducir configuraciones obsoletas y, sin validación, pueden permanecer durante mucho tiempo dando una falsa impresión de control.
+
+== #emph[Adapters] y diferencias de plataforma
+<adapters-y-diferencias-de-plataforma>
+La configuración es uno de los lugares donde aparecen con mayor claridad las diferencias entre agentes y modelos. Una plataforma puede permitir seleccionar ciertos parámetros y otra no exponerlos. Un #emph[adapter] debe traducir las opciones canónicas a las disponibles y declarar cuáles no pueden representarse.
+
+La metodología puede así definir qué aspectos considera configurables sin depender de la interfaz concreta de un proveedor.
+
+= Reglas
+<reglas>
+== Restricciones explícitas
+<restricciones-explícitas>
+Un IISS necesita libertad suficiente para resolver problemas, pero esa libertad debe operar dentro de límites conocidos. Las reglas expresan condiciones que el sistema debe respetar y que, siempre que sea posible, pueden comprobarse de forma independiente de la generación del modelo.
+
+Una regla puede indicar que determinados archivos no deben modificarse, que una publicación requiere ciertas validaciones, que un artefacto debe contener metadatos obligatorios o que una operación destructiva necesita autorización. A diferencia de una recomendación dentro de una #emph[skill], la regla representa una condición normativa.
+
+== Declarar antes que recordar
+<declarar-antes-que-recordar>
+Si una restricción importante existe únicamente en una conversación, su cumplimiento depende de que permanezca visible y de que el modelo la interprete correctamente. Declararla como regla permite que otros componentes la conozcan y que una validación pueda comprobarla.
+
+Esto no significa que todas las reglas deban ser ejecutables automáticamente. Algunas expresan condiciones semánticas que requieren razonamiento. Aun así, convertirlas en artefactos explícitos mejora la trazabilidad y permite distinguirlas de decisiones informales.
+
+== #emph[Rules] e instrucciones
+<rules-e-instrucciones>
+Las instrucciones pueden incluir restricciones de comportamiento y, por tanto, existe una zona de solapamiento. La diferencia útil reside en el tratamiento. Una instrucción orienta al modelo durante la inferencia; una regla representa una condición del sistema que debería poder consultarse y, cuando sea posible, verificarse.
+
+Una misma política puede tener ambas representaciones. La instrucción puede advertir al agente antes de actuar y la regla puede comprobar el resultado después. Esta duplicación no es necesariamente redundante si cada mecanismo cumple una función diferente.
+
+== #emph[Rules] y validaciones
+<rules-y-validaciones>
+La regla declara qué debe cumplirse. La validación determina si se cumple en un estado concreto. Mantenerlas separadas permite reutilizar la misma regla en distintos validadores o aplicar diferentes niveles de comprobación según el entorno.
+
+También permite distinguir entre reglas bloqueantes y reglas informativas. Una infracción puede detener un #emph[workflow], solicitar revisión humana o simplemente generar una advertencia.
+
+== Conflictos y prioridad
+<conflictos-y-prioridad>
+A medida que crece el sistema pueden aparecer reglas en varios ámbitos. Una organización puede imponer condiciones generales y un proyecto añadir otras más específicas. La arquitectura debe definir cómo se resuelven conflictos y evitar que una regla local reduzca accidentalmente una protección global.
+
+Las reglas deberían incluir suficiente contexto para conocer su ámbito, su propósito y, cuando resulte útil, la razón que llevó a establecerlas. Una lista de prohibiciones sin contexto puede volverse difícil de mantener.
+
+== Reglas como conocimiento duradero
+<reglas-como-conocimiento-duradero>
+Muchas decisiones que empiezan como correcciones puntuales terminan revelando una regla general. Cuando el equipo descubre repetidamente el mismo problema, convertir la solución en una regla evita depender de la memoria humana o del comportamiento probabilístico del modelo.
+
+Los IISS pueden incluso ayudar a proponer nuevas reglas a partir de fallos observados, pero su incorporación debería seguir siendo una decisión controlada. Una regla modifica el espacio de acciones permitidas y puede afectar a procesos futuros.
+
+== #emph[Adapters]
+<adapters>
+La implementación de una regla puede variar. Algunas plataformas permiten políticas nativas; otras necesitan instrucciones, validadores o controles alrededor de las herramientas. El #emph[adapter] traduce el mecanismo, pero la regla canónica conserva su significado independientemente del agente que ejecute la tarea.
+
+= Contexto, estado y memoria
+<contexto-estado-y-memoria>
+== Continuidad más allá de una inferencia
+<continuidad-más-allá-de-una-inferencia>
+Cada llamada a un modelo trabaja con un contexto finito. El sistema puede incluir instrucciones, mensajes anteriores, documentos, #emph[definitions], resultados de herramientas y cualquier otra información relevante, pero todo aquello que no se incorpora a esa interacción no participa directamente en la inferencia. Esta limitación obliga a distinguir entre contexto, estado y memoria.
+
+El contexto es la información disponible para la inferencia actual. El estado representa la situación de un proceso o de una entidad en un momento determinado. La memoria conserva información que puede recuperarse en interacciones futuras. Las tres categorías se relacionan, pero no son equivalentes.
+
+== Contexto construido
+<contexto-construido>
+El contexto no debería considerarse simplemente el historial completo de una conversación. Un IISS puede construirlo seleccionando solo aquello que resulte necesario para la tarea. Puede incluir instrucciones permanentes, una #emph[definition] relevante, el resultado de una herramienta y un resumen de decisiones anteriores sin incorporar miles de mensajes previos.
+
+Esta selección es una responsabilidad de la aplicación. Cuanto más largo sea el proceso, menos viable resulta enviar todo lo ocurrido anteriormente. El sistema necesita mecanismos de resumen, recuperación y priorización.
+
+También debe conservar la procedencia de la información. El modelo puede recibir texto, pero la arquitectura debería saber qué parte pertenece a una instrucción, qué parte procede de un recurso y qué parte fue generada en un paso previo.
+
+== Estado del proceso
+<estado-del-proceso>
+Un #emph[workflow] puede encontrarse esperando una validación, haber completado una fase o necesitar una autorización. Ese estado no debería deducirse cada vez leyendo la conversación. Conviene representarlo explícitamente para que el proceso pueda reanudarse, inspeccionarse y recuperarse después de un fallo.
+
+El estado también puede pertenecer a un artefacto. Una #emph[definition] puede estar en borrador, validada o sustituida. Un #emph[command] puede encontrarse pendiente, en ejecución o completado.
+
+Esta información permite que el IISS conozca dónde está sin confundir continuidad operativa con memoria conversacional.
+
+== Memoria
+<memoria-1>
+La memoria conserva información que puede resultar útil en el futuro y la recupera cuando el contexto lo necesita. Puede almacenar preferencias, decisiones, hechos del proyecto, resúmenes o referencias a recursos.
+
+No toda información merece convertirse en memoria. Guardar indiscriminadamente cada detalle genera ruido y puede reintroducir datos obsoletos. La arquitectura necesita criterios sobre qué se conserva, durante cuánto tiempo, con qué ámbito y cómo se actualiza.
+
+También debe distinguir entre recordar una afirmación y verificar que sigue siendo válida. Una memoria puede indicar qué decisión se tomó, pero un recurso actual puede mostrar que posteriormente fue modificada.
+
+== Memoria y #emph[definitions]
+<memoria-y-definitions>
+Las #emph[definitions] representan conocimiento canónico del proyecto y deberían consultarse directamente cuando exista una representación estructurada adecuada. La memoria resulta más útil para información que ayuda a contextualizar interacciones pero no pertenece necesariamente al modelo formal del proyecto.
+
+Si el sistema utiliza memoria para almacenar aquello que debería vivir en una #emph[definition], el conocimiento puede volverse difícil de inspeccionar y validar. Por el contrario, convertir cada preferencia conversacional en una #emph[definition] introduciría una formalidad innecesaria.
+
+La arquitectura necesita ambos mecanismos porque resuelven problemas diferentes.
+
+== Compresión y pérdida
+<compresión-y-pérdida>
+Resumir conversaciones o estados reduce el volumen de contexto, pero toda compresión puede perder matices. El sistema debería elegir qué información necesita conservar literalmente y qué puede representarse mediante un resumen.
+
+Las decisiones relevantes, los contratos y los valores estructurados suelen merecer artefactos explícitos. Las discusiones exploratorias pueden resumirse siempre que se mantenga la posibilidad de volver a las fuentes cuando sea necesario.
+
+Esta estrategia permite mantener procesos largos sin fingir que el modelo posee una memoria humana continua.
+
+== #emph[Adapters] y persistencia
+<adapters-y-persistencia>
+Cada plataforma ofrece capacidades distintas de historial y memoria. Algunas mantienen conversaciones persistentes; otras trabajan principalmente sobre archivos o sesiones. El #emph[adapter] debe aprovechar esas funciones cuando resulten útiles, pero la arquitectura no debería asumir que una memoria proporcionada por un producto sustituye al estado canónico del proyecto.
+
+La continuidad del IISS debe poder explicarse mediante componentes controlables, no depender únicamente de una función opaca del agente utilizado.
+
+= #emph[Workflows]
+<workflows>
+== Organizar un proceso
+<organizar-un-proceso>
+Muchas tareas relevantes no consisten en una única operación. Requieren comprender una entrada, preparar información, ejecutar acciones, comprobar resultados y decidir qué hacer a continuación. Un #emph[workflow] representa esa organización del trabajo.
+
+A diferencia de una #emph[skill], que puede contener conocimiento procedimental flexible, un #emph[workflow] hace explícita la estructura de un proceso. Puede definir pasos, condiciones, dependencias, puntos de control, estados y resultados intermedios. No tiene que ser completamente automático; puede incluir decisiones humanas y actividades ejecutadas por distintos agentes o herramientas.
+
+== Secuencia y condiciones
+<secuencia-y-condiciones>
+El caso más simple es una secuencia de pasos. Sin embargo, los procesos reales suelen necesitar bifurcaciones. Si una validación falla, el sistema puede volver a una fase anterior. Si falta una autorización, debe detenerse. Si una herramienta no está disponible, puede utilizar una alternativa o declarar que no puede continuar.
+
+Representar estas condiciones explícitamente reduce la improvisación y permite inspeccionar el proceso antes de ejecutarlo.
+
+También facilita la reanudación. Si el estado del #emph[workflow] está persistido, un fallo no obliga a empezar desde cero ni a reconstruir manualmente qué pasos ya se completaron.
+
+== #emph[Workflows] y #emph[commands]
+<workflows-y-commands>
+Un #emph[command] puede iniciar un #emph[workflow]. La operación «publicar» puede activar una secuencia que valida el proyecto, genera formatos, prepara el artefacto, registra la publicación y despliega el resultado. Desde el punto de vista del usuario sigue siendo una intención reconocible, mientras que el #emph[workflow] organiza su realización.
+
+Un paso del #emph[workflow] también puede invocar otros #emph[commands]. Esta composición permite construir procesos complejos a partir de operaciones más pequeñas y verificables.
+
+== #emph[Workflows] y #emph[skills]
+<workflows-y-skills>
+Una #emph[skill] puede enseñar cómo resolver una actividad dentro del proceso. El #emph[workflow] no necesita contener todos los detalles del conocimiento operativo. Puede indicar «revisar el cambio» y delegar en una #emph[skill] la estrategia concreta de revisión.
+
+Esta separación evita que cada proceso duplique los mismos procedimientos. También permite actualizar una #emph[skill] y mejorar todos los #emph[workflows] que la utilizan.
+
+== Determinismo y razonamiento
+<determinismo-y-razonamiento>
+No todos los pasos deben estar fijados de antemano. Un #emph[workflow] puede delegar determinadas decisiones al modelo cuando el problema requiere interpretación. La arquitectura debería distinguir entre transiciones deterministas y decisiones abiertas.
+
+Por ejemplo, comprobar si un archivo existe puede resolverse de forma determinista. Decidir qué documentación adicional necesita una tarea puede requerir razonamiento. Mezclar ambos tipos sin distinguirlos dificulta comprender qué partes del proceso son reproducibles y cuáles dependen del modelo.
+
+Una buena arquitectura utiliza determinismo donde el problema ya está resuelto y reserva el razonamiento para aquello que realmente lo necesita.
+
+== Puntos de control humanos
+<puntos-de-control-humanos>
+Los #emph[workflows] permiten insertar revisión humana en lugares concretos. En vez de exigir confirmación para cada acción o conceder autonomía completa, el sistema puede agrupar trabajo y detenerse cuando aparece una decisión de riesgo, una ambigüedad o un cambio irreversible.
+
+Esto hace posible ajustar la autonomía según el proceso. Un #emph[workflow] de documentación puede ejecutarse casi por completo de forma automática, mientras que otro que modifica infraestructura puede incluir aprobaciones obligatorias.
+
+== Observabilidad
+<observabilidad-1>
+Un proceso explícito puede informar de su estado, duración, errores y resultados. Esta observabilidad es esencial cuando los IISS ejecutan tareas largas o en segundo plano.
+
+El sistema debería poder responder qué está haciendo, qué ha completado, por qué se detuvo y qué necesita para continuar. Sin esta información, la automatización se convierte en una caja negra difícil de operar.
+
+== #emph[Workflows] como parte de la metodología
+<workflows-como-parte-de-la-metodología>
+Una metodología puede definir #emph[workflows] para actividades recurrentes, pero el concepto existe con independencia de una metodología concreta. Esta parte del libro estudia la necesidad arquitectónica. Más adelante será posible decidir qué procesos merece la pena formalizar, cuáles deben permanecer flexibles y cómo se representan de manera canónica.
+
+= Agentes
+<agentes>
+== Un modo de organizar autonomía
+<un-modo-de-organizar-autonomía>
+El término agente se utiliza con significados muy diferentes. Puede describir una aplicación conversacional con herramientas, un proceso capaz de planificar y ejecutar varios pasos, un rol especializado dentro de un sistema o una entidad que coopera con otros agentes. Para evitar que el nombre sustituya al análisis, conviene describir un agente por las capacidades y responsabilidades que realmente posee.
+
+Desde nuestra perspectiva, un agente no introduce necesariamente una nueva clase de conocimiento. Es una forma de combinar modelo, instrucciones, contexto, herramientas, memoria, #emph[skills], #emph[workflows] y controles para perseguir un objetivo con cierto grado de autonomía.
+
+== Objetivo y bucle de decisión
+<objetivo-y-bucle-de-decisión>
+Un agente suele operar mediante ciclos. Observa el estado disponible, decide una acción, utiliza una capacidad, interpreta el resultado y vuelve a decidir. La cantidad de pasos y la libertad de elección pueden variar considerablemente.
+
+En un extremo, el agente ejecuta una secuencia casi fija y solo utiliza el modelo para completar ciertos pasos. En el otro, puede planificar dinámicamente, seleccionar herramientas y revisar su propio trabajo. Ambos casos pueden llamarse agentes, pero sus riesgos y requisitos de control son distintos.
+
+Por ello resulta más útil preguntar qué decisiones puede tomar que limitarse a clasificarlo como «agente».
+
+== Planificación y ejecución
+<planificación-y-ejecución>
+Separar planificación y ejecución puede mejorar el control. El sistema puede permitir que el modelo proponga un plan amplio y exigir validación antes de ejecutar acciones con efectos. También puede revisar el plan a medida que aparecen nuevos resultados.
+
+No siempre es necesario crear dos componentes distintos. Lo importante es que la arquitectura pueda distinguir la intención prevista de las acciones realmente ejecutadas.
+
+Esta distinción facilita auditar cambios y detectar desviaciones. Si el sistema planeaba modificar tres archivos y terminó alterando veinte, existe una señal clara que merece revisión.
+
+== Agentes especializados
+<agentes-especializados>
+Un sistema puede disponer de agentes con responsabilidades diferentes. Uno puede analizar documentación, otro trabajar sobre código y otro validar resultados. Esta especialización puede reducir el conjunto de herramientas e instrucciones que cada agente necesita.
+
+Sin embargo, multiplicar agentes no resuelve automáticamente la complejidad. Introduce coordinación, transferencia de contexto y posibles contradicciones. Si dos agentes mantienen representaciones diferentes del estado del proyecto, el sistema necesita una fuente canónica que evite que cada uno actúe sobre una realidad distinta.
+
+Las #emph[definitions] y el estado compartido pueden desempeñar este papel.
+
+== Multiagente y comunicación
+<multiagente-y-comunicación>
+Cuando varios agentes colaboran, la comunicación entre ellos debería tratarse como una interfaz del sistema. No basta con permitir que intercambien texto libre sin límites. Conviene conocer qué información se transfiere, qué decisiones puede tomar cada rol y quién posee autoridad sobre el estado compartido.
+
+Algunas tareas pueden beneficiarse de una revisión independiente, porque un agente evalúa el trabajo producido por otro. Otras no justifican el coste y la complejidad de mantener varias entidades.
+
+La arquitectura debería utilizar múltiples agentes cuando la separación de responsabilidades aporte valor, no porque el término resulte atractivo.
+
+== Autonomía graduada
+<autonomía-graduada>
+La autonomía no es binaria. Un agente puede leer libremente pero necesitar aprobación para escribir; puede modificar una rama temporal pero no desplegar; puede ejecutar un #emph[workflow] completo salvo cuando una validación detecta una excepción.
+
+Esta graduación depende de herramientas, reglas, permisos y puntos de control. Por ello la seguridad de un agente no puede evaluarse observando únicamente el modelo.
+
+La arquitectura más útil es aquella que permite aumentar autonomía allí donde existen contratos y validaciones suficientes, y conservar supervisión humana donde el impacto o la incertidumbre lo exigen.
+
+== #emph[Agent] como implementación
+<agent-como-implementación>
+Algunas plataformas denominan agente a todo el entorno que rodea al modelo. Otras reservan el término para procesos autónomos. Nuestro modelo conceptual no necesita imponer una definición comercial.
+
+Los #emph[adapters] pueden mapear agentes canónicos o roles a las primitivas disponibles. Lo importante será describir qué componentes recibe cada agente, qué capacidades posee, qué estado comparte y qué límites gobiernan su comportamiento.
+
+= Validaciones
+<validaciones>
+== Comprobar antes de confiar
+<comprobar-antes-de-confiar>
+Los modelos generativos producen resultados plausibles, no garantías. Las herramientas pueden fallar, los recursos pueden estar desactualizados y un #emph[workflow] puede llegar a un estado inesperado. Por ello un IISS necesita mecanismos de validación que comprueben condiciones relevantes antes de aceptar un resultado o continuar con una acción.
+
+Una validación transforma una expectativa en una comprobación. Puede verificar estructura, consistencia, existencia de recursos, cumplimiento de reglas, resultados de pruebas o cualquier otra condición observable. Algunas pueden automatizarse completamente y otras necesitarán revisión humana.
+
+== Validaciones previas y posteriores
+<validaciones-previas-y-posteriores>
+Antes de ejecutar una operación conviene comprobar sus condiciones previas. Si un #emph[command] necesita un archivo de configuración o una herramienta concreta, el sistema debería detectarlo antes de iniciar un proceso largo.
+
+Después de ejecutar la operación deben comprobarse sus resultados. Crear un archivo no significa que el contenido sea válido; completar una compilación no garantiza que una publicación contenga todos los formatos esperados.
+
+Separar validaciones previas y posteriores permite saber si un fallo procede del estado inicial o del resultado producido.
+
+== Sintaxis y semántica
+<sintaxis-y-semántica>
+Las comprobaciones sintácticas son deterministas y suelen ser baratas. Pueden verificar que un archivo tiene una estructura válida, que existe un campo obligatorio o que una ruta respeta un patrón.
+
+Las validaciones semánticas analizan si el contenido tiene sentido. Una #emph[definition] puede ser sintácticamente correcta y, sin embargo, contradecir otra decisión del proyecto. Un documento puede contener todas las secciones requeridas y no responder al objetivo que debía cubrir.
+
+Los IISS pueden ayudar a realizar comprobaciones semánticas, pero esas validaciones deben reconocer el componente probabilístico del modelo. Cuando sea posible, conviene combinar razonamiento con evidencias y criterios explícitos.
+
+== Validación y reglas
+<validación-y-reglas>
+Las reglas declaran condiciones que deben cumplirse. Las validaciones implementan mecanismos para comprobarlas. Una regla puede tener varias validaciones asociadas según el formato o el entorno.
+
+Esta separación facilita reutilizar políticas y permite mejorar el validador sin cambiar el significado de la regla. También permite indicar qué reglas todavía no pueden verificarse automáticamente y requieren revisión.
+
+== Validación humana
+<validación-humana>
+La revisión humana no debe tratarse como un recurso de emergencia que aparece únicamente cuando el sistema no sabe qué hacer. Puede formar parte explícita del diseño.
+
+Un #emph[workflow] puede generar un artefacto, ejecutar todas las validaciones automáticas y presentar al humano únicamente los puntos que necesitan juicio. Esta estrategia reduce carga sin fingir que toda decisión puede automatizarse.
+
+El sistema debería proporcionar a la persona suficiente información para revisar el resultado: qué cambió, qué pruebas se ejecutaron, qué advertencias existen y qué fuentes sustentan las decisiones relevantes.
+
+== Fallar de forma informativa
+<fallar-de-forma-informativa>
+Una validación útil no se limita a devolver verdadero o falso. Cuando falla debería explicar qué condición no se cumplió y, si es posible, indicar qué información necesita el sistema para corregirla.
+
+Esta salida puede alimentar una #emph[skill] de resolución o una transición del #emph[workflow]. Un error suficientemente estructurado permite que el IISS actúe sobre el problema sin tener que interpretar mensajes ambiguos.
+
+== Validación como límite de autonomía
+<validación-como-límite-de-autonomía>
+Cuanto mejores sean las validaciones, más tareas pueden delegarse con seguridad. Si el sistema puede comprobar de manera fiable que un cambio respeta contratos, pasa pruebas y no altera recursos prohibidos, puede ejecutar más trabajo antes de solicitar intervención.
+
+Esto no convierte la validación en una garantía absoluta, pero desplaza la autonomía desde la confianza subjetiva en el modelo hacia controles explícitos. La ingeniería del IISS reside precisamente en esa combinación.
+
+= Automatizaciones
+<automatizaciones>
+== Trabajo que no comienza con una conversación
+<trabajo-que-no-comienza-con-una-conversación>
+Hasta ahora hemos descrito componentes que suelen participar en una interacción iniciada por un usuario. Sin embargo, muchos procesos deben ejecutarse cuando llega una hora, cambia un recurso, se publica una versión o aparece una condición determinada. Las automatizaciones permiten que el sistema inicie trabajo sin depender de una petición conversacional inmediata.
+
+Una automatización combina un disparador con una operación. El disparador puede ser temporal, un evento, un cambio de estado o una condición detectada periódicamente. La operación puede invocar un #emph[command], iniciar un #emph[workflow] o ejecutar una comprobación.
+
+== #emph[Triggers] y condiciones
+<triggers-y-condiciones>
+El disparador debe estar definido con suficiente precisión. «Cuando cambie algo importante» puede ser una intención útil para una persona, pero el sistema necesita un mecanismo que determine qué cambios observa y cómo decide que cumplen la condición.
+
+Algunas plataformas ofrecen eventos nativos; otras requieren comprobaciones periódicas. Los #emph[adapters] pueden traducir la automatización canónica al mecanismo disponible.
+
+También conviene distinguir entre detectar una condición y notificar. Un proceso puede comprobar cada hora si existe un cambio, pero solo producir una comunicación cuando la condición se cumple. Mezclar ambos conceptos genera ruido y dificulta ajustar la frecuencia de observación.
+
+== Automatización y #emph[workflow]
+<automatización-y-workflow>
+La automatización decide cuándo empieza el trabajo. El #emph[workflow] describe cómo se realiza. Mantener esta separación permite reutilizar el mismo proceso desde una conversación, un #emph[command] manual o un disparador automático.
+
+Por ejemplo, un #emph[workflow] de publicación puede ejecutarse manualmente durante desarrollo y activarse automáticamente cuando se crea una etiqueta determinada. No necesitamos mantener dos procesos diferentes.
+
+== Idempotencia
+<idempotencia>
+Las automatizaciones pueden ejecutarse más de una vez, especialmente cuando existen reintentos o eventos duplicados. Por ello conviene diseñar operaciones idempotentes cuando sea posible: repetirlas con el mismo estado inicial no debería producir efectos acumulativos indeseados.
+
+Si una operación no puede ser idempotente, el sistema necesita mecanismos para identificar ejecuciones anteriores y evitar duplicados. Enviar dos veces una comunicación o crear dos despliegues idénticos puede ser más problemático que repetir una lectura.
+
+== Reintentos y errores
+<reintentos-y-errores>
+Un servicio externo puede fallar de forma temporal. Una automatización necesita saber cuándo reintentar y cuándo detenerse. Repetir indefinidamente una operación que falla por falta de permisos no resolverá el problema y puede generar carga o efectos inesperados.
+
+Los errores deberían propagarse de forma observable y permitir que una persona conozca qué automatización falló, en qué paso y con qué estado.
+
+== Autonomía diferida
+<autonomía-diferida>
+Una automatización puede ejecutar trabajo cuando nadie está observando directamente. Esto aumenta la importancia de permisos, validaciones y límites de efectos. Una operación aceptable durante una sesión supervisada puede necesitar controles adicionales cuando se ejecuta de madrugada de forma autónoma.
+
+La arquitectura puede limitar qué #emph[commands] son automatizables o exigir que determinados #emph[workflows] se detengan antes de pasos de alto impacto.
+
+== Automatización y aprendizaje operativo
+<automatización-y-aprendizaje-operativo>
+Los procesos recurrentes revelan patrones. Si una persona repite cada semana la misma secuencia de recuperación, análisis y publicación, existe un candidato natural para automatización. Sin embargo, automatizar demasiado pronto puede congelar un procedimiento que todavía estamos aprendiendo.
+
+Conviene comprender primero el proceso, convertir sus pasos estables en componentes y automatizar aquello que ya tiene contratos y validaciones suficientes. La automatización debería ser la consecuencia de una ingeniería más explícita, no un sustituto de ella.
+
+= #emph[Adapters]
+<adapters-1>
+== Una frontera entre el modelo y los productos
+<una-frontera-entre-el-modelo-y-los-productos>
+Los agentes, modelos y plataformas cambian con rapidez. Cada uno decide qué nombres utiliza, qué archivos reconoce, qué herramientas puede invocar, cómo mantiene contexto y qué mecanismos ofrece para extender su comportamiento. Si una metodología se construye directamente sobre esas primitivas, termina heredando sus límites y necesita rediseñarse cada vez que cambia el proveedor.
+
+Los #emph[adapters] permiten separar ambas capas. El modelo canónico define qué componentes necesita el IISS y qué significado tiene cada uno. El #emph[adapter] conoce una implementación concreta y traduce esos componentes a las capacidades disponibles.
+
+Esta separación no busca ocultar las diferencias. Precisamente permite hacerlas explícitas sin propagarlas al resto de la arquitectura.
+
+== Traducción semántica
+<traducción-semántica>
+Un #emph[adapter] no debería limitarse a copiar archivos de un formato a otro. Necesita conservar el significado del componente. Si una #emph[skill] canónica contiene conocimiento operativo que una plataforma representa mediante un archivo especial, la adaptación puede ser directa. Si otra plataforma no posee #emph[skills], quizá sea necesario traducirla a instrucciones recuperables y recursos auxiliares.
+
+La pregunta relevante no es si ambos productos utilizan el mismo nombre, sino si pueden representar la misma responsabilidad con garantías equivalentes.
+
+Esta perspectiva permite que IASI defina sus propios nombres. No necesitamos adoptar la taxonomía de un agente para parecer compatibles con él. Definimos qué componentes necesitamos y describimos cómo cada implementación los soporta.
+
+== Capacidades y degradación
+<capacidades-y-degradación>
+No todos los #emph[adapters] podrán ofrecer todas las capacidades. Una plataforma puede no soportar herramientas con ciertos tipos de salida, no disponer de memoria persistente o carecer de un mecanismo para cargar #emph[skills] dinámicamente.
+
+El #emph[adapter] debería declarar estas limitaciones. La ausencia de una capacidad puede provocar un error temprano, seleccionar una estrategia alternativa o reducir la autonomía del proceso. Lo importante es evitar que el sistema finja una equivalencia inexistente.
+
+Esta transparencia permite construir una matriz de capacidades. Un #emph[workflow] puede conocer qué requisitos tiene y comprobar si el #emph[adapter] activo puede satisfacerlos antes de comenzar.
+
+== Entradas y salidas canónicas
+<entradas-y-salidas-canónicas>
+Cuando sea posible, el resto del sistema debería trabajar con representaciones canónicas. El #emph[adapter] convierte esas representaciones al formato nativo antes de interactuar con la plataforma y transforma los resultados de vuelta al modelo común.
+
+Esto reduce la propagación de detalles específicos. Una #emph[definition] no debería llenarse de campos de un proveedor únicamente porque un agente los necesita. Esos campos pertenecen a la capa de adaptación.
+
+También facilita las pruebas. Podemos comprobar que distintos #emph[adapters] producen resultados equivalentes para el mismo componente canónico sin exigir que utilicen internamente las mismas técnicas.
+
+== #emph[Adapters] y MCP
+<adapters-y-mcp>
+MCP puede reducir parte del trabajo de adaptación para herramientas y recursos, porque ofrece una interfaz común soportada por diferentes clientes. Sin embargo, no elimina la necesidad de #emph[adapters].
+
+La plataforma puede tener diferencias en instrucciones, memoria, #emph[skills], permisos, automatizaciones o comportamiento de agentes que MCP no pretende normalizar. Además, incluso cuando dos clientes soportan el protocolo, pueden exponer sus capacidades de forma distinta.
+
+El #emph[adapter] puede utilizar MCP como una de sus estrategias, pero sigue siendo responsable de la compatibilidad global.
+
+== Evolución
+<evolución>
+Los #emph[adapters] absorben cambios de proveedores. Cuando una plataforma modifica su formato o introduce una nueva capacidad, idealmente actualizamos el #emph[adapter] sin cambiar las #emph[definitions], #emph[commands] o #emph[workflows] canónicos.
+
+Esta propiedad convierte los cambios tecnológicos en un problema localizado. También permite adoptar nuevas capacidades de forma progresiva. Un #emph[adapter] puede empezar con una implementación mínima y mejorar posteriormente sin alterar el modelo conceptual.
+
+== Un contrato de independencia
+<un-contrato-de-independencia>
+La existencia de #emph[adapters] establece una disciplina arquitectónica. Antes de incorporar al núcleo una característica específica de una plataforma, debemos preguntar si representa una necesidad conceptual general o un detalle de implementación.
+
+Si la necesidad es general, merece un componente canónico. Si solo pertenece al proveedor, debe permanecer en el #emph[adapter]. Esta frontera evita que la metodología se convierta en una colección de excepciones y mantiene la posibilidad real de trabajar con distintos IISS.
+
+La independencia no significa que todas las plataformas vayan a comportarse igual. Significa que podemos explicar de forma precisa qué espera el sistema y cómo cada plataforma satisface, aproxima o no puede satisfacer esa expectativa.
+
+= Síntesis
+<síntesis-1>
+== Un sistema formado por responsabilidades
+<un-sistema-formado-por-responsabilidades>
+A lo largo de esta parte hemos separado una serie de responsabilidades que suelen aparecer mezcladas cuando observamos un agente desde fuera. La aplicación puede presentarlas detrás de una única conversación, pero la ingeniería necesita reconocerlas porque cada una cambia de manera distinta, tiene riesgos diferentes y requiere mecanismos propios de validación.
+
+Las instrucciones gobiernan el comportamiento. Las #emph[definitions] representan de forma estructurada aquello que el sistema ha entendido y necesita conservar como conocimiento operativo. Los #emph[commands] expresan intenciones invocables. Las #emph[tools] aportan capacidad de actuación sobre el exterior. MCP ofrece un protocolo para conectar determinadas herramientas, recursos y contenidos reutilizables. Los #emph[resources] proporcionan información externa y trazable. Las #emph[skills] conservan conocimiento procedimental. Las #emph[templates] mantienen estructuras repetibles. La configuración selecciona comportamientos permitidos y las reglas establecen restricciones.
+
+El contexto reúne la información necesaria para la inferencia actual, el estado permite conocer dónde se encuentra un proceso y la memoria conserva información recuperable para interacciones futuras. Los #emph[workflows] organizan actividades y decisiones. Los agentes combinan estos componentes para perseguir objetivos con distintos grados de autonomía. Las validaciones comprueban condiciones y resultados. Las automatizaciones deciden cuándo iniciar procesos sin una petición conversacional inmediata. Finalmente, los #emph[adapters] protegen todo este modelo conceptual frente a las diferencias entre productos y proveedores.
+
+== Componentes que se combinan
+<componentes-que-se-combinan>
+Estas piezas no forman una cadena rígida. Un mismo proceso puede utilizar solo algunas y otro necesitar casi todas. Una tarea sencilla puede resolverse con instrucciones, un recurso y una herramienta. Un proceso de ingeniería más complejo puede comenzar con entradas no estructuradas, construir #emph[definitions], ejecutar un #emph[command] que activa un #emph[workflow], cargar una #emph[skill], utilizar varias herramientas, validar los resultados y terminar actualizando el estado del proyecto.
+
+La arquitectura debe permitir esta composición sin obligar a introducir componentes que no aportan valor. El objetivo de la taxonomía no es aumentar el número de artefactos, sino disponer de nombres y responsabilidades cuando aparecen necesidades reales.
+
+También permite detectar diseños confusos. Si un archivo de instrucciones contiene procedimientos, estado, configuración y reglas, sabemos que varias responsabilidades están mezcladas. Puede seguir funcionando, pero será más difícil de mantener, validar y adaptar a otra plataforma.
+
+== El concepto antes que el nombre del producto
+<el-concepto-antes-que-el-nombre-del-producto>
+Los términos elegidos en esta parte constituyen un vocabulario conceptual. Algunos coinciden con nombres utilizados por herramientas actuales, pero su significado aquí depende de la responsabilidad que hemos definido.
+
+Esta decisión resulta especialmente importante para IASI. La metodología puede definir qué componentes necesita sin preguntar primero qué ofrece un agente concreto. Después, los #emph[adapters] resolverán la traducción a cada entorno. Si una plataforma utiliza nombres diferentes, no necesitamos cambiar el modelo. Si incorpora una capacidad nueva, podemos evaluar si representa realmente un componente conceptual adicional o una forma distinta de implementar uno existente.
+
+Así evitamos que la arquitectura nazca de una enumeración de funciones comerciales.
+
+== Del diálogo al sistema
+<del-diálogo-al-sistema>
+La conversación continúa siendo una interfaz fundamental. Permite explorar, discutir alternativas, corregir interpretaciones y formular necesidades que todavía no tienen una estructura estable. Sin embargo, un proyecto no puede depender exclusivamente de conversaciones si quiere conservar conocimiento y ejecutar procesos de forma repetible.
+
+Los componentes descritos en esta parte muestran cómo puede producirse esa transición. Parte de lo hablado se convierte en #emph[definitions]\; los procedimientos recurrentes pueden convertirse en #emph[skills]\; las operaciones frecuentes pueden exponerse como #emph[commands]\; las secuencias estables pueden formalizarse como #emph[workflows]\; las restricciones pueden expresarse como reglas y validaciones; aquello que se repite en el tiempo puede automatizarse.
+
+No todo debe formalizarse inmediatamente. La ingeniería consiste también en decidir qué necesita estructura y qué conviene mantener flexible mientras seguimos aprendiendo.
+
+== Una base para la metodología
+<una-base-para-la-metodología>
+Esta parte no define todavía cómo IASI organiza cada componente dentro de un proyecto ni qué formatos concretos utiliza. Su objetivo era construir el vocabulario necesario para poder hacerlo después sin introducir conceptos nuevos a mitad de la metodología.
+
+Cuando lleguemos a esa formalización podremos decidir qué #emph[definitions] existen, qué #emph[commands] ofrece el sistema, cómo se organizan las #emph[skills], qué #emph[workflows] forman parte del proceso y qué responsabilidades corresponden a los #emph[adapters]. Esas decisiones pertenecerán a la metodología.
+
+La base conceptual queda, sin embargo, establecida: un IISS útil no es únicamente un modelo que genera respuestas. Es una arquitectura que combina conocimiento, intención, capacidad, estado, procedimiento y control, y que debe poder mantener esas responsabilidades aunque cambie la tecnología concreta con la que se implementa.
+
+#part[Saco]
 Aqui es donde guardamos los borradores, ideas y cosas que miraremos en un futuro
 
 = Construcción del laboratorio
@@ -12344,7 +14142,7 @@ No pretende ser un manual de Linux ni una guía de instalación de herramientas.
 
 #horizontalrule
 
-= Filosofía
+== Filosofía
 <filosofía-1>
 Todos los laboratorios del libro parten del siguiente supuesto:
 
@@ -12360,7 +14158,7 @@ Por ello, este documento es independiente de los Labs. De esta forma:
 
 #horizontalrule
 
-= Plataforma de referencia
+== Plataforma de referencia
 <plataforma-de-referencia>
 - Sistema Operativo: Kubuntu 24.04 LTS
 - Arquitectura: x86\_64
@@ -12371,16 +14169,16 @@ Aunque muchos laboratorios pueden realizarse desde Windows o macOS, la plataform
 
 #horizontalrule
 
-= Requisitos recomendados
+== Requisitos recomendados
 <requisitos-recomendados>
-== Hardware mínimo
+=== Hardware mínimo
 <hardware-mínimo>
 - CPU de 64 bits
 - 16 GB de memoria RAM
 - 100 GB libres en SSD
 - Conexión a Internet
 
-== Hardware recomendado
+=== Hardware recomendado
 <hardware-recomendado>
 - Procesador multinúcleo moderno
 - 32 GB RAM
@@ -12393,7 +14191,7 @@ Todos los laboratorios pueden realizarse utilizando únicamente la CPU.
 
 #horizontalrule
 
-= Filosofía de instalación
+== Filosofía de instalación
 <filosofía-de-instalación>
 Siempre que sea posible:
 
@@ -12406,7 +14204,7 @@ El objetivo es que cualquier lector pueda reconstruir exactamente el mismo entor
 
 #horizontalrule
 
-= Componentes del entorno
+== Componentes del entorno
 <componentes-del-entorno>
 Los siguientes componentes se instalarán durante esta guía.
 
@@ -12435,7 +14233,7 @@ Los siguientes componentes se instalarán durante esta guía.
 
 #horizontalrule
 
-= Versiones utilizadas
+== Versiones utilizadas
 <versiones-utilizadas-1>
 Este documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.
 
@@ -12464,7 +14262,7 @@ Este documento mantiene la relación exacta de versiones utilizadas durante la e
 
 #horizontalrule
 
-= Orden de instalación
+== Orden de instalación
 <orden-de-instalación>
 + Actualización del sistema
 + Herramientas básicas
@@ -12484,7 +14282,7 @@ Este documento mantiene la relación exacta de versiones utilizadas durante la e
 
 #horizontalrule
 
-= Lista de comprobación
+== Lista de comprobación
 <lista-de-comprobación>
 Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.
 
@@ -12504,7 +14302,7 @@ Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condi
 
 #horizontalrule
 
-= Próximo paso
+== Próximo paso
 <próximo-paso>
 Una vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.
 
@@ -12794,7 +14592,7 @@ Los laboratorios podrán actualizarse; los principios permanecerán.
 
 = Instalando VirtualBox
 <instalando-virtualbox>
-https:\/\/cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso
+https:/\/cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso
 
 = Documentos, autores, reponsables y colaboradores
 <documentos-autores-reponsables-y-colaboradores>
@@ -12827,7 +14625,7 @@ Creando el primer lab han salido una serie de documentacion #strong[minima] para
   [#NormalTok("Labs");], [Cualquier miembro del equipo], [Revisores técnicos],
   [#NormalTok("OpenSpec");], [Arquitecto / Equipo de ingeniería], [Todos los responsables anteriores],
 )
-=== Observación
+== Observación
 <observación>
 Un proyecto no necesita necesariamente una persona distinta para cada documento.
 
@@ -12867,16 +14665,6 @@ Eso enseña una disciplina muy útil para cualquier ingeniero: mantener un entor
 <guest-additions>
 Como hacemos instalacion minima, en necesario instalar gcc, make y perl antes de instalar las guest additions
 
-= Summary
-<summary>
-In summary, this book has no content whatsoever.
-
-#block[
-#Skylighting(([#DecValTok("1");#NormalTok(" ");#SpecialCharTok("+");#NormalTok(" ");#DecValTok("1");],));
-#block[
-#Skylighting(([#NormalTok("[1] 2");],));
-]
-]
 #heading(level: 1, numbering: none)[References]
 <references>
 #block[

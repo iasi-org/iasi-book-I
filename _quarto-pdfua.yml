@@ -1,0 +1,4 @@
+format:
+  typst:
+    pdf-standard: ua-1
+    toc: false
