@@ -7,7 +7,7 @@ project:
 
 profile:
   group:
-    - [html, pdf, pdfua, epub, docx, odt]
+    - [html, pdf, epub, docx, odt]
 
 metadata-files:
   - _book-structure.yml
