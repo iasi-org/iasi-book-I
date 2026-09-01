@@ -6357,399 +6357,459 @@
     ]
   },
   {
-    "objectID": "chapters/99-saco/01-entorno.html",
-    "href": "chapters/99-saco/01-entorno.html",
-    "title": "88  Preparación del Entorno",
+    "objectID": "chapters/99-saco/01-determinismo-vs-probabilistico.html",
+    "href": "chapters/99-saco/01-determinismo-vs-probabilistico.html",
+    "title": "88  Determinismo vs. probabilístico",
     "section": "",
-    "text": "88.1 Ingeniería de Sistemas Inteligentes",
+    "text": "88.1 Determinismo, probabilidad y reproducibilidad\nLa ciencia y la ingeniería se apoyan en una idea fundamental: la reproducibilidad.\nCuando observamos un fenómeno, formulamos una hipótesis o diseñamos un experimento, esperamos que otras personas puedan repetirlo bajo las mismas condiciones y obtener resultados compatibles. La reproducibilidad es una de las formas fundamentales de distinguir un resultado verificable de una observación aislada.\nPero reproducibilidad no significa necesariamente obtener siempre el mismo resultado.\nEn muchas disciplinas científicas esto es evidente.\nEn física podemos estudiar fenómenos cuyo comportamiento es esencialmente determinista. En estadística, biología, meteorología, mecánica cuántica o teoría de probabilidades trabajamos habitualmente con fenómenos en los que la variabilidad forma parte del propio objeto de estudio.\nAmbos pueden estudiarse científicamente, lo que cambia es qué esperamos reproducir.\nEn un proceso determinista, conocidas las condiciones iniciales y las reglas que gobiernan el proceso, unas mismas condiciones y unas mismas entradas conducen al mismo resultado. Si repetimos el proceso en las mismas condiciones, esperamos reproducir el mismo resultado.\nEn un proceso probabilístico, por el contrario, mantener las mismas condiciones y las mismas entradas no garantiza obtener el mismo resultado en cada ejecución. Distintas ejecuciones pueden producir resultados diferentes y, dependiendo del proceso, es perfectamente esperable que no obtengamos el mismo resultado.\nEsto no significa que el proceso carezca de reglas, precisamente al contrario: lo que puede ser perfectamente reproducible es su comportamiento probabilístico.\nAl lanzar una moneda equilibrada no podemos predecir si el siguiente lanzamiento será cara o cruz. Sin embargo, si realizamos un número suficientemente grande de lanzamientos, esperamos que la proporción de ambos resultados se aproxime al comportamiento previsto.\nCada ejecución concreta puede ser diferente, pero el fenómeno sigue siendo reproducible. La diferencia fundamental está, por tanto, en dónde situamos nuestra expectativa de reproducibilidad:\nLo que debe mantenerse es su comportamiento: las probabilidades asociadas a los distintos resultados, su distribución, sus límites o las propiedades que hayamos definido para considerarlo válido, en ambos casos existe rigor: Lo que cambia es qué debe reproducirse.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Determinismo vs. probabilístico</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/99-saco/01-determinismo-vs-probabilistico.html#determinismo-probabilidad-y-reproducibilidad",
+    "href": "chapters/99-saco/01-determinismo-vs-probabilistico.html#determinismo-probabilidad-y-reproducibilidad",
+    "title": "88  Determinismo vs. probabilístico",
+    "section": "",
+    "text": "En un proceso determinista esperamos reproducir el mismo resultado.\nEn un proceso probabilístico esperamos reproducir las propiedades del proceso y de la distribución de sus resultados, precisamente porque cada ejecución, aun partiendo de las mismas condiciones y las mismas entradas, puede no producir el mismo resultado.",
+    "crumbs": [
+      "Inicio",
+      "Saco",
+      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Determinismo vs. probabilístico</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-de-información",
+    "href": "chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-de-información",
+    "title": "88  Determinismo vs. probabilístico",
+    "section": "88.2 Sistemas de Información",
+    "text": "88.2 Sistemas de Información\nLa mayoría de los Sistemas de Información que diseñamos son, en esencia, deterministas y reproducibles.\nDadas unas mismas condiciones, unas mismas entradas y unas mismas acciones, esperamos obtener siempre el mismo resultado, esta propiedad es precisamente una de las que hacen posible la automatización.\nCuando automatizamos un proceso estamos sustituyendo, total o parcialmente, una actividad que antes debía realizar una persona por un sistema capaz de ejecutar unas reglas previamente definidas. Para poder hacerlo necesitamos confiar en que, ante las mismas condiciones, el sistema producirá el mismo resultado, independientemente de cuándo, donde, o quien lo ejecute, de cuántas veces se repita o de quién haya construido correctamente su implementación.\nUna transferencia bancaria, el cálculo de una nómina, la aplicación de una regla fiscal, la ejecución de una consulta o un algoritmo de ordenación pueden ser enormemente complejos internamente, pero esperamos de ellos ese comportamiento: las mismas entradas y las mismas reglas deben producir el mismo resultado.\nSobre este principio hemos construido buena parte de la ingeniería de software: especificaciones, algoritmos, pruebas, validaciones y automatización de procesos.\nPero esto no significa que la informática haya sido exclusivamente determinista, los métodos probabilísticos forman parte de la computación prácticamente desde sus orígenes. Mucho antes de la aparición de los actuales Sistemas Inteligentes ya utilizábamos probabilidad, estadística y aleatoriedad para resolver problemas que resultaban difíciles, costosos o incluso impracticables mediante procedimientos puramente deterministas.\n\nLos métodos de Monte Carlo, desarrollados durante los primeros años de la computación electrónica, utilizan muestreo aleatorio y repetición para aproximar soluciones numéricas. En lugar de calcular directamente una solución mediante una secuencia completamente determinada de operaciones, realizan numerosas ejecuciones cuyos valores individuales pueden variar y obtienen conocimiento a partir de su comportamiento conjunto.\nLas cadenas de Markov permiten representar procesos en los que el siguiente estado no queda determinado de forma única, sino mediante probabilidades asociadas a los posibles estados siguientes. Sus fundamentos matemáticos son anteriores incluso a los ordenadores y posteriormente encontraron aplicaciones en simulación, comunicaciones, reconocimiento, predicción y numerosos problemas computacionales.\nLa inferencia bayesiana permite actualizar la probabilidad de una hipótesis a medida que aparece nueva evidencia. También se incorporó a sistemas informáticos para trabajar con información incompleta o incierta, sustituyendo la certeza absoluta por grados de probabilidad.\nLos sistemas expertos incorporaron igualmente mecanismos para representar incertidumbre. No siempre era posible establecer simplemente que una afirmación fuese verdadera o falsa: podían existir factores de certeza, probabilidades o evidencias parciales sobre las que el sistema debía razonar.\n\nCon el tiempo aparecieron también lenguajes y modelos de programación probabilística, en los que las distribuciones de probabilidad no son únicamente una herramienta matemática utilizada por un algoritmo, sino parte explícita del propio modelo computacional, por tanto, la computación probabilística no aparece con la actual Inteligencia Artificial, llevamos décadas construyendo sistemas que utilizan el azar, la probabilidad y la incertidumbre de manera deliberada y rigurosa.\nLa diferencia está en que, tradicionalmente, estos elementos probabilísticos se encontraban dentro de sistemas cuyo proceso de construcción seguía siendo esencialmente determinista.",
+    "crumbs": [
+      "Inicio",
+      "Saco",
+      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Determinismo vs. probabilístico</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/99-saco/01-determinismo-vs-probabilistico.html#el-número-π",
+    "href": "chapters/99-saco/01-determinismo-vs-probabilistico.html#el-número-π",
+    "title": "88  Determinismo vs. probabilístico",
+    "section": "88.3 El número π",
+    "text": "88.3 El número π\nTodo el mundo conoce el número π. Es una de las constantes fundamentales de las matemáticas y probablemente una de las pocas que forman parte de la cultura general. Aparece en geometría, física, ingeniería y, naturalmente, en informática. La mayoría de los lenguajes y bibliotecas de programación proporcionan incluso una representación de π como constante predefinida.\nπ es un número irracional y trascendente, cuyo valor está completamente determinado aunque su representación decimal sea infinita, pero no existe incertidumbre alguna acerca de cuál es su valor.\nAl ser irracional, su representación decimal contiene infinitos dígitos y no presenta una secuencia periódica. Esto significa que nunca podemos escribirlo completamente ni almacenarlo completamente en un ordenador, no existe un último decimal de π.\nLo que hacemos, por tanto, es calcular aproximaciones de π con la precisión que necesitamos.\n3,14\n3,14159\n3,141592653589793\nTodas ellas representan el mismo número, pero con diferentes niveles de precisión.\nA lo largo de la historia se han desarrollado numerosos métodos para calcular cada vez más cifras de π y, con la aparición de los ordenadores, se han dedicado enormes recursos computacionales a ampliar esa precisión. Existen algoritmos extremadamente eficientes. El algoritmo de Chudnovsky, por ejemplo, permite obtener aproximadamente catorce nuevos dígitos correctos de π por término y constituye la base de muchos cálculos de π a gran escala.\nPero hay una característica especialmente interesante para nuestro propósito: El valor que buscamos está completamente determinado, mientras que el procedimiento que utilizamos para aproximarnos a él no tiene por qué ser determinista.\n\n88.3.1 Los números primos\nAlgo parecido ocurre en otro terreno fundamental de las matemáticas y de la informática: los números primos, sabemos perfectamente qué significa que un número sea primo. Para cualquier número concreto existe una respuesta determinada: es primo o no lo es.\nDisponemos de métodos deterministas para comprobar la primalidad. Sin embargo, algunos de los algoritmos más utilizados en la práctica para trabajar con números grandes son probabilísticos, porque permiten obtener respuestas con enorme rapidez y con una probabilidad de error que puede reducirse tanto como sea necesario mediante sucesivas comprobaciones.\nMiller-Rabin es uno de los ejemplos más conocidos. De nuevo aparece la misma idea: podemos utilizar deliberadamente un procedimiento probabilístico para responder a una pregunta cuya respuesta está completamente determinada, la dificultad más profunda no está en definir qué es un número primo, sino en comprender cómo se distribuyen los números primos entre los números naturales.\nEsa distribución está relacionada con uno de los grandes problemas todavía abiertos de las matemáticas: la hipótesis de Riemann y el comportamiento de la función Zeta de Riemann.\n\n\n88.3.2 El experimento de Buffon\nEn el siglo XVIII, Georges-Louis Leclerc, conde de Buffon, planteó un experimento extraordinariamente sencillo:\n\nSe dibujan líneas paralelas separadas regularmente sobre una superficie y se lanzan alfileres al azar.\nAlgunos alfileres cruzarán alguna de las líneas.\nOtros no.\n\nSi conocemos la longitud de los alfileres, la separación entre las líneas, el número total de lanzamientos y cuántos alfileres han cruzado una línea, podemos utilizar la proporción obtenida para estimar π.\n\nEl resultado de cada lanzamiento es aleatorio, dos personas pueden realizar el mismo experimento, con los mismos alfileres, las mismas líneas y el mismo número de lanzamientos, y obtener resultados diferentes, incluso la misma persona puede repetir inmediatamente el experimento y obtener otro valor.\nUna ejecución puede producir:\nπ ≈ 3,08\notra:\nπ ≈ 3,19\ny otra:\nπ ≈ 3,13\nNinguna de esas ejecuciones reproduce necesariamente el mismo resultado.\nSin embargo, cuando aumentamos el número de lanzamientos, las estimaciones tienden a aproximarse al valor de π.\n\nEl azar no impide obtener conocimiento, forma parte del procedimiento utilizado para obtenerlo, y aquí aparece una diferencia fundamental respecto a nuestra intuición habitual sobre los algoritmos:\n\nPodemos utilizar un proceso probabilístico para aproximarnos a un valor completamente determinado.\n\n\n\n88.3.3 ¿Qué algoritmo es mejor?\nSupongamos ahora que necesitamos calcular π, podemos utilizar un algoritmo determinista extremadamente eficiente, como Chudnovsky. También podemos lanzar puntos aleatoriamente sobre un cuadrado y un círculo, utilizar el experimento de Buffon o recurrir a otros métodos de Monte Carlo para obtener una estimación, desde el punto de vista de la precisión, la comparación parece absurda.\nChudnovsky converge extraordinariamente rápido, Monte Carlo converge lentamente y, además, distintas ejecuciones pueden no producir el mismo resultado, pero eso no significa que el segundo algoritmo sea incorrecto, significa que tenemos que preguntar algo diferente:\n\n¿Qué precisión necesita el problema?\n\nSi una aplicación solo necesita π con tres decimales, un procedimiento probabilístico que proporcione esa precisión con suficiente confianza puede ser perfectamente válido, si necesitamos mucha más precisión, ese mismo procedimiento puede ser completamente inadecuado.\nNASA/JPL, por ejemplo, utiliza 3.141592653589793 para cálculos de navegación interplanetaria de máxima precisión. Unas quince cifras decimales proporcionan ya una precisión muy superior a la necesaria incluso a escalas astronómicas, por tanto, un algoritmo no puede evaluarse únicamente preguntando si reproduce exactamente el valor matemático ideal, tenemos que conocer los requisitos del problema.\nLa pregunta deja de ser únicamente:\n\n¿Produce el mismo resultado?\n\nY pasa a incluir:\n\n¿Produce un resultado suficientemente preciso, con una probabilidad suficientemente alta y con un coste adecuado para el problema que queremos resolver?\n\nEl valor matemático continúa estando completamente determinado, lo que hemos cambiado es el procedimiento utilizado para llegar hasta él.",
+    "crumbs": [
+      "Inicio",
+      "Saco",
+      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Determinismo vs. probabilístico</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-inteligentes-generativos",
+    "href": "chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-inteligentes-generativos",
+    "title": "88  Determinismo vs. probabilístico",
+    "section": "88.4 Sistemas Inteligentes generativos",
+    "text": "88.4 Sistemas Inteligentes generativos\nHasta ahora hemos hablado de sistemas que pueden incorporar métodos probabilísticos en su funcionamiento, pero cuyo proceso de construcción sigue siendo esencialmente determinista.\nPodemos diseñar un algoritmo de Monte Carlo, implementar una cadena de Markov o utilizar Miller-Rabin. El comportamiento de alguna parte del sistema puede ser probabilístico, pero los ingenieros siguen definiendo de forma determinista el algoritmo, su estructura, sus reglas, sus entradas, sus límites y los criterios con los que se valida.\nEl código fuente que implementa el algoritmo es el mismo cada vez que se ejecuta.\nLa probabilidad está dentro del sistema que hemos construido.\nCon los Sistemas Inteligentes generativos aparece una diferencia fundamental:\n\nLa probabilidad entra también en el proceso de construcción del sistema.\n\nPodemos proporcionar las mismas instrucciones, el mismo contexto, los mismos requisitos y las mismas restricciones a un Sistema Inteligente generativo y no obtener necesariamente la misma solución.\nUna ejecución puede proponer una determinada estructura.\nOtra puede organizar los componentes de manera diferente.\nOtra puede elegir una estrategia distinta.\nOtra puede interpretar de forma diferente algún aspecto intermedio del problema y llegar, por otro camino, a una solución igualmente válida.\nIncluso cuando todas ellas satisfacen correctamente los mismos requisitos, no existe necesariamente una única materialización posible ni podemos esperar que sucesivas ejecuciones produzcan el mismo resultado.\nEsto introduce una diferencia profunda respecto al proceso de ingeniería al que estamos acostumbrados.\nEn la ingeniería de software tradicional podemos admitir que dos programadores escriban código diferente para resolver un mismo problema, pero una vez construida y fijada una implementación, esperamos que esa implementación permanezca estable y que, ante las mismas entradas y condiciones, produzca el mismo resultado.\nCon un Sistema Inteligente generativo, la variabilidad puede aparecer antes de que exista siquiera esa implementación.\nYa no afecta únicamente a la ejecución de un algoritmo probabilístico.\nPuede afectar a la forma en que se interpreta el problema, se propone una solución, se estructura el sistema, se seleccionan determinadas alternativas y finalmente se materializa el artefacto que vamos a ejecutar.\nPor tanto, aparecen dos niveles diferentes de variabilidad:\n\nVariabilidad en la ejecución, cuando un sistema ya construido incorpora comportamiento probabilístico.\nVariabilidad en la construcción, cuando el propio proceso utilizado para producir el sistema puede generar materializaciones diferentes a partir de las mismas entradas.\n\nLa segunda es especialmente relevante para la ingeniería asistida por Sistemas Inteligentes.\nPorque si no podemos exigir que una nueva ejecución del proceso de construcción produzca exactamente el mismo resultado, la reproducibilidad ya no puede depender exclusivamente de reproducir el artefacto generado.\nTenemos que desplazar nuevamente la pregunta:\n\n¿Qué es exactamente lo que necesitamos reproducir?",
+    "crumbs": [
+      "Inicio",
+      "Saco",
+      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Determinismo vs. probabilístico</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/99-saco/01-entorno.html",
+    "href": "chapters/99-saco/01-entorno.html",
+    "title": "89  Preparación del Entorno",
+    "section": "",
+    "text": "89.1 Ingeniería de Sistemas Inteligentes",
+    "crumbs": [
+      "Inicio",
+      "Saco",
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#ingeniería-de-sistemas-inteligentes",
     "href": "chapters/99-saco/01-entorno.html#ingeniería-de-sistemas-inteligentes",
-    "title": "88  Preparación del Entorno",
+    "title": "89  Preparación del Entorno",
     "section": "",
-    "text": "88.1.1 Objetivo\nEste documento describe la preparación del entorno de trabajo utilizado a lo largo de todos los laboratorios del libro.\nSu finalidad es disponer de un entorno homogéneo, reproducible y sencillo de mantener.\nNo pretende ser un manual de Linux ni una guía de instalación de herramientas. Es, simplemente, la preparación del puesto de trabajo de un Ingeniero de Sistemas Inteligentes.",
+    "text": "89.1.1 Objetivo\nEste documento describe la preparación del entorno de trabajo utilizado a lo largo de todos los laboratorios del libro.\nSu finalidad es disponer de un entorno homogéneo, reproducible y sencillo de mantener.\nNo pretende ser un manual de Linux ni una guía de instalación de herramientas. Es, simplemente, la preparación del puesto de trabajo de un Ingeniero de Sistemas Inteligentes.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#filosofía",
     "href": "chapters/99-saco/01-entorno.html#filosofía",
-    "title": "88  Preparación del Entorno",
-    "section": "88.2 Filosofía",
-    "text": "88.2 Filosofía\nTodos los laboratorios del libro parten del siguiente supuesto:\n\nEl entorno ya está preparado.\n\nPor ello, este documento es independiente de los Labs. De esta forma:\n\nLos laboratorios permanecen centrados en el aprendizaje.\nLas actualizaciones de versiones afectan únicamente a este documento.\nEs posible reproducir exactamente el entorno utilizado durante la escritura del libro.",
+    "title": "89  Preparación del Entorno",
+    "section": "89.2 Filosofía",
+    "text": "89.2 Filosofía\nTodos los laboratorios del libro parten del siguiente supuesto:\n\nEl entorno ya está preparado.\n\nPor ello, este documento es independiente de los Labs. De esta forma:\n\nLos laboratorios permanecen centrados en el aprendizaje.\nLas actualizaciones de versiones afectan únicamente a este documento.\nEs posible reproducir exactamente el entorno utilizado durante la escritura del libro.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#plataforma-de-referencia",
     "href": "chapters/99-saco/01-entorno.html#plataforma-de-referencia",
-    "title": "88  Preparación del Entorno",
-    "section": "88.3 Plataforma de referencia",
-    "text": "88.3 Plataforma de referencia\n\nSistema Operativo: Kubuntu 24.04 LTS\nArquitectura: x86_64\n\n\nAunque muchos laboratorios pueden realizarse desde Windows o macOS, la plataforma oficial del curso será Kubuntu 24.04 LTS.",
+    "title": "89  Preparación del Entorno",
+    "section": "89.3 Plataforma de referencia",
+    "text": "89.3 Plataforma de referencia\n\nSistema Operativo: Kubuntu 24.04 LTS\nArquitectura: x86_64\n\n\nAunque muchos laboratorios pueden realizarse desde Windows o macOS, la plataforma oficial del curso será Kubuntu 24.04 LTS.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#requisitos-recomendados",
     "href": "chapters/99-saco/01-entorno.html#requisitos-recomendados",
-    "title": "88  Preparación del Entorno",
-    "section": "88.4 Requisitos recomendados",
-    "text": "88.4 Requisitos recomendados\n\n88.4.1 Hardware mínimo\n\nCPU de 64 bits\n16 GB de memoria RAM\n100 GB libres en SSD\nConexión a Internet\n\n\n\n88.4.2 Hardware recomendado\n\nProcesador multinúcleo moderno\n32 GB RAM\nSSD NVMe\nGPU NVIDIA (opcional)\n\n\nTodos los laboratorios pueden realizarse utilizando únicamente la CPU.",
+    "title": "89  Preparación del Entorno",
+    "section": "89.4 Requisitos recomendados",
+    "text": "89.4 Requisitos recomendados\n\n89.4.1 Hardware mínimo\n\nCPU de 64 bits\n16 GB de memoria RAM\n100 GB libres en SSD\nConexión a Internet\n\n\n\n89.4.2 Hardware recomendado\n\nProcesador multinúcleo moderno\n32 GB RAM\nSSD NVMe\nGPU NVIDIA (opcional)\n\n\nTodos los laboratorios pueden realizarse utilizando únicamente la CPU.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#filosofía-de-instalación",
     "href": "chapters/99-saco/01-entorno.html#filosofía-de-instalación",
-    "title": "88  Preparación del Entorno",
-    "section": "88.5 Filosofía de instalación",
-    "text": "88.5 Filosofía de instalación\nSiempre que sea posible:\n\nutilizar paquetes oficiales;\nutilizar repositorios oficiales;\nutilizar instalación mediante línea de comandos;\nevitar instaladores gráficos cuando exista una alternativa reproducible.\n\nEl objetivo es que cualquier lector pueda reconstruir exactamente el mismo entorno.",
+    "title": "89  Preparación del Entorno",
+    "section": "89.5 Filosofía de instalación",
+    "text": "89.5 Filosofía de instalación\nSiempre que sea posible:\n\nutilizar paquetes oficiales;\nutilizar repositorios oficiales;\nutilizar instalación mediante línea de comandos;\nevitar instaladores gráficos cuando exista una alternativa reproducible.\n\nEl objetivo es que cualquier lector pueda reconstruir exactamente el mismo entorno.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#componentes-del-entorno",
     "href": "chapters/99-saco/01-entorno.html#componentes-del-entorno",
-    "title": "88  Preparación del Entorno",
-    "section": "88.6 Componentes del entorno",
-    "text": "88.6 Componentes del entorno\nLos siguientes componentes se instalarán durante esta guía.\n\n\n\nComponente\nEstado\nVersión\n\n\n\n\nGit\n☐\n\n\n\nCurl\n☐\n\n\n\nDocker Engine\n☐\n\n\n\nDocker Compose\n☐\n\n\n\nOllama\n☐\n\n\n\nVisual Studio Code\n☐\n\n\n\nGitHub Copilot\n☐\n\n\n\nContinue\n☐\n\n\n\nPython\n☐\n\n\n\nJava JDK\n☐\n\n\n\nMaven\n☐\n\n\n\nQuarto\n☐\n\n\n\nR\n☐\n\n\n\nTinyTeX\n☐\n\n\n\nDBeaver\n☐\n\n\n\nMCP Inspector\n☐",
+    "title": "89  Preparación del Entorno",
+    "section": "89.6 Componentes del entorno",
+    "text": "89.6 Componentes del entorno\nLos siguientes componentes se instalarán durante esta guía.\n\n\n\nComponente\nEstado\nVersión\n\n\n\n\nGit\n☐\n\n\n\nCurl\n☐\n\n\n\nDocker Engine\n☐\n\n\n\nDocker Compose\n☐\n\n\n\nOllama\n☐\n\n\n\nVisual Studio Code\n☐\n\n\n\nGitHub Copilot\n☐\n\n\n\nContinue\n☐\n\n\n\nPython\n☐\n\n\n\nJava JDK\n☐\n\n\n\nMaven\n☐\n\n\n\nQuarto\n☐\n\n\n\nR\n☐\n\n\n\nTinyTeX\n☐\n\n\n\nDBeaver\n☐\n\n\n\nMCP Inspector\n☐",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#versiones-utilizadas",
     "href": "chapters/99-saco/01-entorno.html#versiones-utilizadas",
-    "title": "88  Preparación del Entorno",
-    "section": "88.7 Versiones utilizadas",
-    "text": "88.7 Versiones utilizadas\nEste documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.\n\n\n\nSoftware\nVersión utilizada\nObservaciones\n\n\n\n\nKubuntu\n\n\n\n\nKernel Linux\n\n\n\n\nDocker\n\n\n\n\nOllama\n\n\n\n\nModelo LLM principal\n\n\n\n\nVisual Studio Code\n\n\n\n\nContinue\n\n\n\n\nGitHub Copilot\n\n\n\n\nPython\n\n\n\n\nJava\n\n\n\n\nMaven\n\n\n\n\nGit\n\n\n\n\nQuarto\n\n\n\n\nR\n\n\n\n\nTinyTeX\n\n\n\n\nDBeaver",
+    "title": "89  Preparación del Entorno",
+    "section": "89.7 Versiones utilizadas",
+    "text": "89.7 Versiones utilizadas\nEste documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.\n\n\n\nSoftware\nVersión utilizada\nObservaciones\n\n\n\n\nKubuntu\n\n\n\n\nKernel Linux\n\n\n\n\nDocker\n\n\n\n\nOllama\n\n\n\n\nModelo LLM principal\n\n\n\n\nVisual Studio Code\n\n\n\n\nContinue\n\n\n\n\nGitHub Copilot\n\n\n\n\nPython\n\n\n\n\nJava\n\n\n\n\nMaven\n\n\n\n\nGit\n\n\n\n\nQuarto\n\n\n\n\nR\n\n\n\n\nTinyTeX\n\n\n\n\nDBeaver",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#orden-de-instalación",
     "href": "chapters/99-saco/01-entorno.html#orden-de-instalación",
-    "title": "88  Preparación del Entorno",
-    "section": "88.8 Orden de instalación",
-    "text": "88.8 Orden de instalación\n\nActualización del sistema\nHerramientas básicas\nGit\nDocker\nOllama\nVisual Studio Code\nPython\nJava\nMaven\nQuarto\nR\nTinyTeX\nDBeaver\nMCP Inspector\nVerificación del entorno",
+    "title": "89  Preparación del Entorno",
+    "section": "89.8 Orden de instalación",
+    "text": "89.8 Orden de instalación\n\nActualización del sistema\nHerramientas básicas\nGit\nDocker\nOllama\nVisual Studio Code\nPython\nJava\nMaven\nQuarto\nR\nTinyTeX\nDBeaver\nMCP Inspector\nVerificación del entorno",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#lista-de-comprobación",
     "href": "chapters/99-saco/01-entorno.html#lista-de-comprobación",
-    "title": "88  Preparación del Entorno",
-    "section": "88.9 Lista de comprobación",
-    "text": "88.9 Lista de comprobación\nAntes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.\n\nEl sistema está actualizado.\nGit funciona correctamente.\nDocker funciona correctamente.\nOllama responde correctamente.\nVisual Studio Code está operativo.\nPython está instalado.\nJava está instalado.\nMaven funciona.\nQuarto genera HTML.\nQuarto genera PDF.\nR funciona correctamente.\nDBeaver puede conectarse a una base de datos.\nMCP Inspector está disponible.",
+    "title": "89  Preparación del Entorno",
+    "section": "89.9 Lista de comprobación",
+    "text": "89.9 Lista de comprobación\nAntes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.\n\nEl sistema está actualizado.\nGit funciona correctamente.\nDocker funciona correctamente.\nOllama responde correctamente.\nVisual Studio Code está operativo.\nPython está instalado.\nJava está instalado.\nMaven funciona.\nQuarto genera HTML.\nQuarto genera PDF.\nR funciona correctamente.\nDBeaver puede conectarse a una base de datos.\nMCP Inspector está disponible.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/01-entorno.html#próximo-paso",
     "href": "chapters/99-saco/01-entorno.html#próximo-paso",
-    "title": "88  Preparación del Entorno",
-    "section": "88.10 Próximo paso",
-    "text": "88.10 Próximo paso\nUna vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.\nEl primer laboratorio será:\n\nLab 1. Tu primer modelo local",
+    "title": "89  Preparación del Entorno",
+    "section": "89.10 Próximo paso",
+    "text": "89.10 Próximo paso\nUna vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.\nEl primer laboratorio será:\n\nLab 1. Tu primer modelo local",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>88</span>  <span class='chapter-title'>Preparación del Entorno</span>"
+      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Preparación del Entorno</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html",
     "href": "chapters/99-saco/02-prerequisitos.html",
-    "title": "89  Prerequisitos",
+    "title": "90  Prerequisitos",
     "section": "",
-    "text": "89.1 Filosofía\nAntes de comenzar los laboratorios es necesario preparar el entorno de trabajo.\nEl objetivo de este capítulo no es aprender nuevas tecnologías ni instalar aplicaciones sin criterio. Su finalidad es construir un laboratorio reproducible, aislado y fácilmente recuperable que utilizaremos durante todo el libro.\nA lo largo de los siguientes capítulos prepararemos paso a paso este laboratorio. Una vez completado, no volveremos a preocuparnos por el entorno y podremos centrarnos exclusivamente en aprender Ingeniería de Sistemas Inteligentes.\nNuestro entorno de trabajo se basa en cuatro principios fundamentales:\nLa plataforma de referencia utilizada durante el libro es:\nTodo el desarrollo se realizará dentro de la máquina virtual.\nEste enfoque presenta varias ventajas:",
+    "text": "90.1 Filosofía\nAntes de comenzar los laboratorios es necesario preparar el entorno de trabajo.\nEl objetivo de este capítulo no es aprender nuevas tecnologías ni instalar aplicaciones sin criterio. Su finalidad es construir un laboratorio reproducible, aislado y fácilmente recuperable que utilizaremos durante todo el libro.\nA lo largo de los siguientes capítulos prepararemos paso a paso este laboratorio. Una vez completado, no volveremos a preocuparnos por el entorno y podremos centrarnos exclusivamente en aprender Ingeniería de Sistemas Inteligentes.\nNuestro entorno de trabajo se basa en cuatro principios fundamentales:\nLa plataforma de referencia utilizada durante el libro es:\nTodo el desarrollo se realizará dentro de la máquina virtual.\nEste enfoque presenta varias ventajas:",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#filosofía",
     "href": "chapters/99-saco/02-prerequisitos.html#filosofía",
-    "title": "89  Prerequisitos",
+    "title": "90  Prerequisitos",
     "section": "",
     "text": "El sistema operativo principal no debe modificarse innecesariamente.\nTodos los laboratorios deben ser reproducibles.\nDebemos poder volver atrás en cualquier momento.\nTodas las instalaciones y versiones deben quedar documentadas.\n\n\n\nSistema operativo anfitrión: Windows 11\nVirtualización: Oracle VirtualBox\nSistema operativo invitado: Kubuntu 24.04 LTS\n\n\n\n\nEl sistema principal permanece intacto.\nEl laboratorio puede eliminarse o recrearse cuando sea necesario.\nEs posible utilizar instantáneas (snapshots) para volver a un estado anterior en pocos segundos.\nTodos los lectores trabajan sobre un entorno prácticamente idéntico.\nEl libro resulta mucho más sencillo de mantener y reproducir.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#arquitectura-del-laboratorio",
     "href": "chapters/99-saco/02-prerequisitos.html#arquitectura-del-laboratorio",
-    "title": "89  Prerequisitos",
-    "section": "89.2 Arquitectura del laboratorio",
-    "text": "89.2 Arquitectura del laboratorio\nWindows 11\n    │\n    ▼\nVirtualBox\n    │\n    ▼\nKubuntu 24.04 LTS\n    │\n    ▼\nDocker\n    │\n    ▼\nOllama\n    │\n    ▼\nHerramientas de desarrollo\nNo estamos instalando herramientas sobre nuestro equipo principal.\nEstamos construyendo un laboratorio completo donde podremos experimentar, equivocarnos, romper configuraciones y restaurarlas sin afectar al sistema operativo anfitrión.",
+    "title": "90  Prerequisitos",
+    "section": "90.2 Arquitectura del laboratorio",
+    "text": "90.2 Arquitectura del laboratorio\nWindows 11\n    │\n    ▼\nVirtualBox\n    │\n    ▼\nKubuntu 24.04 LTS\n    │\n    ▼\nDocker\n    │\n    ▼\nOllama\n    │\n    ▼\nHerramientas de desarrollo\nNo estamos instalando herramientas sobre nuestro equipo principal.\nEstamos construyendo un laboratorio completo donde podremos experimentar, equivocarnos, romper configuraciones y restaurarlas sin afectar al sistema operativo anfitrión.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#requisitos-del-equipo-anfitrión",
     "href": "chapters/99-saco/02-prerequisitos.html#requisitos-del-equipo-anfitrión",
-    "title": "89  Prerequisitos",
-    "section": "89.3 Requisitos del equipo anfitrión",
-    "text": "89.3 Requisitos del equipo anfitrión\nNo es necesario disponer de un ordenador de altas prestaciones, pero una configuración adecuada hará que la experiencia sea mucho más fluida.\n\n89.3.1 Requisitos mínimos\n\n\n\nRecurso\nMínimo\n\n\n\n\nProcesador\n4 núcleos con soporte Intel VT-x o AMD-V\n\n\nMemoria RAM\n16 GB\n\n\nAlmacenamiento libre\n100 GB SSD\n\n\nConexión a Internet\nRecomendada\n\n\n\n\n\n89.3.2 Configuración recomendada\n\n\n\nRecurso\nRecomendado\n\n\n\n\nProcesador\n8 núcleos o superior\n\n\nMemoria RAM\n32 GB\n\n\nAlmacenamiento\nSSD NVMe\n\n\nGPU\nOpcional\n\n\n\n\nNota\nTodos los laboratorios del libro pueden realizarse utilizando únicamente la CPU. Una GPU mejora el rendimiento de algunos modelos, pero no es un requisito.",
+    "title": "90  Prerequisitos",
+    "section": "90.3 Requisitos del equipo anfitrión",
+    "text": "90.3 Requisitos del equipo anfitrión\nNo es necesario disponer de un ordenador de altas prestaciones, pero una configuración adecuada hará que la experiencia sea mucho más fluida.\n\n90.3.1 Requisitos mínimos\n\n\n\nRecurso\nMínimo\n\n\n\n\nProcesador\n4 núcleos con soporte Intel VT-x o AMD-V\n\n\nMemoria RAM\n16 GB\n\n\nAlmacenamiento libre\n100 GB SSD\n\n\nConexión a Internet\nRecomendada\n\n\n\n\n\n90.3.2 Configuración recomendada\n\n\n\nRecurso\nRecomendado\n\n\n\n\nProcesador\n8 núcleos o superior\n\n\nMemoria RAM\n32 GB\n\n\nAlmacenamiento\nSSD NVMe\n\n\nGPU\nOpcional\n\n\n\n\nNota\nTodos los laboratorios del libro pueden realizarse utilizando únicamente la CPU. Una GPU mejora el rendimiento de algunos modelos, pero no es un requisito.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#configuración-de-la-máquina-virtual",
     "href": "chapters/99-saco/02-prerequisitos.html#configuración-de-la-máquina-virtual",
-    "title": "89  Prerequisitos",
-    "section": "89.4 Configuración de la máquina virtual",
-    "text": "89.4 Configuración de la máquina virtual\nLa configuración inicial recomendada para VirtualBox es la siguiente:\n\n\n\nParámetro\nValor recomendado\n\n\n\n\nSistema operativo\nKubuntu 24.04 LTS\n\n\nMemoria RAM\n8 GB\n\n\nProcesadores virtuales\n4\n\n\nDisco virtual\n80 GB (dinámico)\n\n\nMemoria de vídeo\n128 MB\n\n\nRed\nNAT\n\n\nPortapapeles\nBidireccional\n\n\nArrastrar y soltar\nBidireccional\n\n\n\nSi el equipo dispone de 32 GB o más de memoria RAM, puede asignarse 16 GB a la máquina virtual para mejorar el rendimiento de los modelos locales.",
+    "title": "90  Prerequisitos",
+    "section": "90.4 Configuración de la máquina virtual",
+    "text": "90.4 Configuración de la máquina virtual\nLa configuración inicial recomendada para VirtualBox es la siguiente:\n\n\n\nParámetro\nValor recomendado\n\n\n\n\nSistema operativo\nKubuntu 24.04 LTS\n\n\nMemoria RAM\n8 GB\n\n\nProcesadores virtuales\n4\n\n\nDisco virtual\n80 GB (dinámico)\n\n\nMemoria de vídeo\n128 MB\n\n\nRed\nNAT\n\n\nPortapapeles\nBidireccional\n\n\nArrastrar y soltar\nBidireccional\n\n\n\nSi el equipo dispone de 32 GB o más de memoria RAM, puede asignarse 16 GB a la máquina virtual para mejorar el rendimiento de los modelos locales.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#espacio-en-disco",
     "href": "chapters/99-saco/02-prerequisitos.html#espacio-en-disco",
-    "title": "89  Prerequisitos",
-    "section": "89.5 Espacio en disco",
-    "text": "89.5 Espacio en disco\nDurante el curso instalaremos distintos modelos de lenguaje, herramientas de desarrollo y contenedores Docker.\nAunque la máquina virtual puede comenzar con un disco dinámico de 80 GB, es recomendable disponer de espacio adicional en el equipo anfitrión para futuras ampliaciones.",
+    "title": "90  Prerequisitos",
+    "section": "90.5 Espacio en disco",
+    "text": "90.5 Espacio en disco\nDurante el curso instalaremos distintos modelos de lenguaje, herramientas de desarrollo y contenedores Docker.\nAunque la máquina virtual puede comenzar con un disco dinámico de 80 GB, es recomendable disponer de espacio adicional en el equipo anfitrión para futuras ampliaciones.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#virtualización",
     "href": "chapters/99-saco/02-prerequisitos.html#virtualización",
-    "title": "89  Prerequisitos",
-    "section": "89.6 Virtualización",
-    "text": "89.6 Virtualización\nAntes de comenzar conviene comprobar que la virtualización por hardware está habilitada en la BIOS o UEFI del equipo.\nSin esta característica VirtualBox no podrá ejecutar máquinas virtuales con un rendimiento adecuado.",
+    "title": "90  Prerequisitos",
+    "section": "90.6 Virtualización",
+    "text": "90.6 Virtualización\nAntes de comenzar conviene comprobar que la virtualización por hardware está habilitada en la BIOS o UEFI del equipo.\nSin esta característica VirtualBox no podrá ejecutar máquinas virtuales con un rendimiento adecuado.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#estado-del-laboratorio",
     "href": "chapters/99-saco/02-prerequisitos.html#estado-del-laboratorio",
-    "title": "89  Prerequisitos",
-    "section": "89.7 Estado del laboratorio",
-    "text": "89.7 Estado del laboratorio\nA medida que avancemos en esta guía iremos completando el siguiente estado del entorno:\n\n\n\nComponente\nEstado\n\n\n\n\nWindows 11\n☐\n\n\nVirtualBox\n☐\n\n\nKubuntu 24.04 LTS\n☐\n\n\nGuest Additions\n☐\n\n\nDocker\n☐\n\n\nOllama\n☐\n\n\nVisual Studio Code\n☐\n\n\nGit\n☐\n\n\nPython\n☐\n\n\nJava\n☐\n\n\nMaven\n☐\n\n\nQuarto\n☐",
+    "title": "90  Prerequisitos",
+    "section": "90.7 Estado del laboratorio",
+    "text": "90.7 Estado del laboratorio\nA medida que avancemos en esta guía iremos completando el siguiente estado del entorno:\n\n\n\nComponente\nEstado\n\n\n\n\nWindows 11\n☐\n\n\nVirtualBox\n☐\n\n\nKubuntu 24.04 LTS\n☐\n\n\nGuest Additions\n☐\n\n\nDocker\n☐\n\n\nOllama\n☐\n\n\nVisual Studio Code\n☐\n\n\nGit\n☐\n\n\nPython\n☐\n\n\nJava\n☐\n\n\nMaven\n☐\n\n\nQuarto\n☐",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#versiones-utilizadas",
     "href": "chapters/99-saco/02-prerequisitos.html#versiones-utilizadas",
-    "title": "89  Prerequisitos",
-    "section": "89.8 Versiones utilizadas",
-    "text": "89.8 Versiones utilizadas\nCon el fin de garantizar la reproducibilidad, mantendremos actualizada la relación de versiones empleadas durante la elaboración del libro.\n\n\n\nSoftware\nVersión\n\n\n\n\nWindows\n\n\n\nVirtualBox\n\n\n\nKubuntu\n\n\n\nKernel Linux\n\n\n\nDocker\n\n\n\nOllama\n\n\n\nModelo LLM\n\n\n\nVisual Studio Code\n\n\n\nGit\n\n\n\nPython\n\n\n\nJava\n\n\n\nMaven\n\n\n\nQuarto",
+    "title": "90  Prerequisitos",
+    "section": "90.8 Versiones utilizadas",
+    "text": "90.8 Versiones utilizadas\nCon el fin de garantizar la reproducibilidad, mantendremos actualizada la relación de versiones empleadas durante la elaboración del libro.\n\n\n\nSoftware\nVersión\n\n\n\n\nWindows\n\n\n\nVirtualBox\n\n\n\nKubuntu\n\n\n\nKernel Linux\n\n\n\nDocker\n\n\n\nOllama\n\n\n\nModelo LLM\n\n\n\nVisual Studio Code\n\n\n\nGit\n\n\n\nPython\n\n\n\nJava\n\n\n\nMaven\n\n\n\nQuarto",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#política-de-versiones",
     "href": "chapters/99-saco/02-prerequisitos.html#política-de-versiones",
-    "title": "89  Prerequisitos",
-    "section": "89.9 Política de versiones",
-    "text": "89.9 Política de versiones\nLa tecnología evoluciona constantemente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.\nPara garantizar la reproducibilidad de los laboratorios, este libro adopta una política de versiones sencilla y estable.\nSiempre que sea posible se utilizarán:\n\nVersiones LTS (Long Term Support) para sistemas operativos y herramientas que las ofrezcan.\nLa última versión estable cuando no exista una versión LTS.\nVersiones oficiales distribuidas por sus respectivos fabricantes o proyectos.\n\nTodas las capturas, ejemplos y laboratorios han sido desarrollados y verificados utilizando las versiones indicadas en este documento.\nAunque muchas herramientas funcionan correctamente con versiones anteriores o posteriores, se recomienda seguir esta guía para obtener una experiencia idéntica a la descrita en el libro.\nLa siguiente tabla recoge las versiones de referencia utilizadas durante la elaboración de esta obra y se actualizará conforme evolucione el proyecto.",
+    "title": "90  Prerequisitos",
+    "section": "90.9 Política de versiones",
+    "text": "90.9 Política de versiones\nLa tecnología evoluciona constantemente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.\nPara garantizar la reproducibilidad de los laboratorios, este libro adopta una política de versiones sencilla y estable.\nSiempre que sea posible se utilizarán:\n\nVersiones LTS (Long Term Support) para sistemas operativos y herramientas que las ofrezcan.\nLa última versión estable cuando no exista una versión LTS.\nVersiones oficiales distribuidas por sus respectivos fabricantes o proyectos.\n\nTodas las capturas, ejemplos y laboratorios han sido desarrollados y verificados utilizando las versiones indicadas en este documento.\nAunque muchas herramientas funcionan correctamente con versiones anteriores o posteriores, se recomienda seguir esta guía para obtener una experiencia idéntica a la descrita en el libro.\nLa siguiente tabla recoge las versiones de referencia utilizadas durante la elaboración de esta obra y se actualizará conforme evolucione el proyecto.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/02-prerequisitos.html#próximo-paso",
     "href": "chapters/99-saco/02-prerequisitos.html#próximo-paso",
-    "title": "89  Prerequisitos",
-    "section": "89.10 Próximo paso",
-    "text": "89.10 Próximo paso\nUna vez comprobados los requisitos, construiremos nuestro laboratorio.\nComenzaremos instalando Oracle VirtualBox y creando una máquina virtual con Kubuntu 24.04 LTS, que será el entorno de referencia para todos los laboratorios del libro.",
+    "title": "90  Prerequisitos",
+    "section": "90.10 Próximo paso",
+    "text": "90.10 Próximo paso\nUna vez comprobados los requisitos, construiremos nuestro laboratorio.\nComenzaremos instalando Oracle VirtualBox y creando una máquina virtual con Kubuntu 24.04 LTS, que será el entorno de referencia para todos los laboratorios del libro.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>89</span>  <span class='chapter-title'>Prerequisitos</span>"
+      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Prerequisitos</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html",
     "href": "chapters/99-saco/05-politicas.html",
-    "title": "90  Políticas",
+    "title": "91  Políticas",
     "section": "",
-    "text": "90.1 Política de versiones\nEste documento recoge las políticas y criterios utilizados durante el desarrollo de Ingeniería de Sistemas Inteligentes.\nSu objetivo es garantizar la coherencia, la reproducibilidad y la mantenibilidad del entorno de trabajo y de todos los laboratorios del libro.\nLas políticas aquí definidas prevalecen sobre decisiones puntuales y servirán como referencia cuando existan varias alternativas técnicamente válidas.\nLa tecnología evoluciona continuamente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.\nPara garantizar la reproducibilidad de los laboratorios, este proyecto adopta una política de versiones sencilla y estable.\nSiempre que sea posible se utilizarán:\nTodas las capturas, ejemplos y laboratorios se desarrollarán y verificarán utilizando las versiones indicadas en la documentación del proyecto.",
+    "text": "91.1 Política de versiones\nEste documento recoge las políticas y criterios utilizados durante el desarrollo de Ingeniería de Sistemas Inteligentes.\nSu objetivo es garantizar la coherencia, la reproducibilidad y la mantenibilidad del entorno de trabajo y de todos los laboratorios del libro.\nLas políticas aquí definidas prevalecen sobre decisiones puntuales y servirán como referencia cuando existan varias alternativas técnicamente válidas.\nLa tecnología evoluciona continuamente. Nuevas versiones aparecen con frecuencia, corrigen errores, incorporan funcionalidades y, en ocasiones, modifican el comportamiento de las herramientas.\nPara garantizar la reproducibilidad de los laboratorios, este proyecto adopta una política de versiones sencilla y estable.\nSiempre que sea posible se utilizarán:\nTodas las capturas, ejemplos y laboratorios se desarrollarán y verificarán utilizando las versiones indicadas en la documentación del proyecto.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-de-versiones",
     "href": "chapters/99-saco/05-politicas.html#política-de-versiones",
-    "title": "90  Políticas",
+    "title": "91  Políticas",
     "section": "",
     "text": "Versiones LTS (Long Term Support) para sistemas operativos y herramientas que las ofrezcan.\nLa última versión estable cuando no exista una versión LTS.\nVersiones oficiales distribuidas por sus respectivos fabricantes o proyectos.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-de-instalación",
     "href": "chapters/99-saco/05-politicas.html#política-de-instalación",
-    "title": "90  Políticas",
-    "section": "90.2 Política de instalación",
-    "text": "90.2 Política de instalación\nCada herramienta tendrá un único procedimiento oficial de instalación.\nSiempre que sea posible se utilizará el método recomendado por el propio fabricante o proyecto.\nCon el fin de mantener un entorno homogéneo y fácilmente reproducible, se seguirá el siguiente orden de preferencia:\n\nRepositorio oficial del proyecto o fabricante.\nGestor de paquetes del sistema operativo cuando el paquete sea oficial y esté adecuadamente mantenido.\nInstalador oficial proporcionado por el proyecto.\nOtros métodos únicamente cuando exista una justificación técnica documentada.\n\nSe evitará mezclar diferentes métodos de instalación para una misma herramienta.\nAsimismo:\n\nToda instalación deberá quedar documentada.\nToda herramienta tendrá asociada una versión concreta.\nCualquier cambio de versión deberá reflejarse en la documentación.",
+    "title": "91  Políticas",
+    "section": "91.2 Política de instalación",
+    "text": "91.2 Política de instalación\nCada herramienta tendrá un único procedimiento oficial de instalación.\nSiempre que sea posible se utilizará el método recomendado por el propio fabricante o proyecto.\nCon el fin de mantener un entorno homogéneo y fácilmente reproducible, se seguirá el siguiente orden de preferencia:\n\nRepositorio oficial del proyecto o fabricante.\nGestor de paquetes del sistema operativo cuando el paquete sea oficial y esté adecuadamente mantenido.\nInstalador oficial proporcionado por el proyecto.\nOtros métodos únicamente cuando exista una justificación técnica documentada.\n\nSe evitará mezclar diferentes métodos de instalación para una misma herramienta.\nAsimismo:\n\nToda instalación deberá quedar documentada.\nToda herramienta tendrá asociada una versión concreta.\nCualquier cambio de versión deberá reflejarse en la documentación.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-del-laboratorio",
     "href": "chapters/99-saco/05-politicas.html#política-del-laboratorio",
-    "title": "90  Políticas",
-    "section": "90.3 Política del laboratorio",
-    "text": "90.3 Política del laboratorio\nTodo el desarrollo del libro se realizará dentro de un laboratorio aislado.\nLa plataforma de referencia será:\n\nSistema operativo anfitrión: Windows 11\nVirtualización: Oracle VirtualBox\nSistema operativo invitado: Kubuntu 26.04 LTS\n\nEl sistema operativo anfitrión no deberá modificarse innecesariamente.\nSiempre que sea posible, los cambios se realizarán exclusivamente dentro de la máquina virtual.\nAntes de realizar modificaciones importantes se recomienda crear una instantánea (snapshot) que permita recuperar el estado anterior del laboratorio.",
+    "title": "91  Políticas",
+    "section": "91.3 Política del laboratorio",
+    "text": "91.3 Política del laboratorio\nTodo el desarrollo del libro se realizará dentro de un laboratorio aislado.\nLa plataforma de referencia será:\n\nSistema operativo anfitrión: Windows 11\nVirtualización: Oracle VirtualBox\nSistema operativo invitado: Kubuntu 26.04 LTS\n\nEl sistema operativo anfitrión no deberá modificarse innecesariamente.\nSiempre que sea posible, los cambios se realizarán exclusivamente dentro de la máquina virtual.\nAntes de realizar modificaciones importantes se recomienda crear una instantánea (snapshot) que permita recuperar el estado anterior del laboratorio.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-de-reproducibilidad",
     "href": "chapters/99-saco/05-politicas.html#política-de-reproducibilidad",
-    "title": "90  Políticas",
-    "section": "90.4 Política de reproducibilidad",
-    "text": "90.4 Política de reproducibilidad\nCualquier lector deberá poder reconstruir el laboratorio completo siguiendo únicamente la documentación del proyecto.\nPara ello:\n\nTodas las herramientas utilizadas deberán estar documentadas.\nTodas las versiones deberán registrarse.\nTodos los laboratorios deberán poder repetirse obteniendo resultados equivalentes.\nLas decisiones de diseño deberán estar justificadas cuando existan varias alternativas razonables.\n\nLa reproducibilidad es un objetivo prioritario del proyecto.",
+    "title": "91  Políticas",
+    "section": "91.4 Política de reproducibilidad",
+    "text": "91.4 Política de reproducibilidad\nCualquier lector deberá poder reconstruir el laboratorio completo siguiendo únicamente la documentación del proyecto.\nPara ello:\n\nTodas las herramientas utilizadas deberán estar documentadas.\nTodas las versiones deberán registrarse.\nTodos los laboratorios deberán poder repetirse obteniendo resultados equivalentes.\nLas decisiones de diseño deberán estar justificadas cuando existan varias alternativas razonables.\n\nLa reproducibilidad es un objetivo prioritario del proyecto.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-de-simplicidad",
     "href": "chapters/99-saco/05-politicas.html#política-de-simplicidad",
-    "title": "90  Políticas",
-    "section": "90.5 Política de simplicidad",
-    "text": "90.5 Política de simplicidad\nCuando existan varias soluciones técnicamente correctas, se elegirá la más sencilla de comprender, instalar, mantener y reproducir.\nNo se introducirán herramientas, dependencias o configuraciones cuya complejidad no aporte un beneficio claro al aprendizaje.\nLa finalidad del laboratorio es aprender Ingeniería de Sistemas Inteligentes, no administrar sistemas operativos.",
+    "title": "91  Políticas",
+    "section": "91.5 Política de simplicidad",
+    "text": "91.5 Política de simplicidad\nCuando existan varias soluciones técnicamente correctas, se elegirá la más sencilla de comprender, instalar, mantener y reproducir.\nNo se introducirán herramientas, dependencias o configuraciones cuya complejidad no aporte un beneficio claro al aprendizaje.\nLa finalidad del laboratorio es aprender Ingeniería de Sistemas Inteligentes, no administrar sistemas operativos.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/05-politicas.html#política-de-evolución",
     "href": "chapters/99-saco/05-politicas.html#política-de-evolución",
-    "title": "90  Políticas",
-    "section": "90.6 Política de evolución",
-    "text": "90.6 Política de evolución\nEste proyecto evolucionará con el tiempo.\nLas herramientas podrán cambiar y aparecerán nuevas versiones, pero las políticas y principios definidos en este documento deberán mantenerse estables siempre que continúen siendo válidos.\nLos laboratorios podrán actualizarse; los principios permanecerán.",
+    "title": "91  Políticas",
+    "section": "91.6 Política de evolución",
+    "text": "91.6 Política de evolución\nEste proyecto evolucionará con el tiempo.\nLas herramientas podrán cambiar y aparecerán nuevas versiones, pero las políticas y principios definidos en este documento deberán mantenerse estables siempre que continúen siendo válidos.\nLos laboratorios podrán actualizarse; los principios permanecerán.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>90</span>  <span class='chapter-title'>Políticas</span>"
+      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Políticas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/10-virtualbox.html",
     "href": "chapters/99-saco/10-virtualbox.html",
-    "title": "91  Instalando VirtualBox",
+    "title": "92  Instalando VirtualBox",
     "section": "",
     "text": "https://cdimage.ubuntu.com/kubuntu/releases/26.04/release/kubuntu-26.04-desktop-amd64.iso",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>91</span>  <span class='chapter-title'>Instalando VirtualBox</span>"
+      "<span class='chapter-number'>92</span>  <span class='chapter-title'>Instalando VirtualBox</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/11-documentos.html",
     "href": "chapters/99-saco/11-documentos.html",
-    "title": "92  Documentos, autores, reponsables y colaboradores",
+    "title": "93  Documentos, autores, reponsables y colaboradores",
     "section": "",
-    "text": "92.1 Observación\nCreando el primer lab han salido una serie de documentacion minima para casi cualquier proyecto. Cada uno de esos documentos tiene un responsable principal y un conjunto de colaboradores habituales, que pueden variar según el proyecto y el equipo. preo definemos un conjunto de documentos y roles que pueden servir como referencia para cualquier proyecto.\nUn proyecto no necesita necesariamente una persona distinta para cada documento.\nLo que sí necesita es que cada responsabilidad esté representada.\nUna misma persona puede asumir varios roles, especialmente en equipos pequeños o proyectos personales. La IA puede asistir en todos ellos, pero la responsabilidad sobre las decisiones sigue perteneciendo al equipo de ingeniería.",
+    "text": "93.1 Observación\nCreando el primer lab han salido una serie de documentacion minima para casi cualquier proyecto. Cada uno de esos documentos tiene un responsable principal y un conjunto de colaboradores habituales, que pueden variar según el proyecto y el equipo. preo definemos un conjunto de documentos y roles que pueden servir como referencia para cualquier proyecto.\nUn proyecto no necesita necesariamente una persona distinta para cada documento.\nLo que sí necesita es que cada responsabilidad esté representada.\nUna misma persona puede asumir varios roles, especialmente en equipos pequeños o proyectos personales. La IA puede asistir en todos ellos, pero la responsabilidad sobre las decisiones sigue perteneciendo al equipo de ingeniería.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>92</span>  <span class='chapter-title'>Documentos, autores, reponsables y colaboradores</span>"
+      "<span class='chapter-number'>93</span>  <span class='chapter-title'>Documentos, autores, reponsables y colaboradores</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/99-notes.html",
     "href": "chapters/99-saco/99-notes.html",
-    "title": "93  Notas",
+    "title": "94  Notas",
     "section": "",
-    "text": "93.1 Sobre la instalacion\nEso encaja perfectamente con la filosofía que ya hemos definido.\nIncluso cambiaría una frase del libro\nEn vez de decir:\nInstalaremos Kubuntu.\nDiría:\nConstruiremos un entorno de ingeniería sobre una instalación mínima de Kubuntu.\nEs mucho más representativo de lo que vamos a hacer.\nY otra ventaja que me encanta.\nCuando lleguemos a Docker, Git, Ollama, Quarto…\nEl lector sabrá que todo lo que hay en su sistema está ahí porque lo ha instalado conscientemente.\nNo porque venía en la ISO.\nEso enseña una disciplina muy útil para cualquier ingeniero: mantener un entorno limpio, entender cada componente y evitar dependencias innecesarias.",
+    "text": "94.1 Sobre la instalacion\nEso encaja perfectamente con la filosofía que ya hemos definido.\nIncluso cambiaría una frase del libro\nEn vez de decir:\nInstalaremos Kubuntu.\nDiría:\nConstruiremos un entorno de ingeniería sobre una instalación mínima de Kubuntu.\nEs mucho más representativo de lo que vamos a hacer.\nY otra ventaja que me encanta.\nCuando lleguemos a Docker, Git, Ollama, Quarto…\nEl lector sabrá que todo lo que hay en su sistema está ahí porque lo ha instalado conscientemente.\nNo porque venía en la ISO.\nEso enseña una disciplina muy útil para cualquier ingeniero: mantener un entorno limpio, entender cada componente y evitar dependencias innecesarias.",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>93</span>  <span class='chapter-title'>Notas</span>"
+      "<span class='chapter-number'>94</span>  <span class='chapter-title'>Notas</span>"
     ]
   },
   {
     "objectID": "chapters/99-saco/99-notes.html#guest-additions",
     "href": "chapters/99-saco/99-notes.html#guest-additions",
-    "title": "93  Notas",
-    "section": "93.2 Guest additions",
-    "text": "93.2 Guest additions\nComo hacemos instalacion minima, en necesario instalar gcc, make y perl antes de instalar las guest additions",
+    "title": "94  Notas",
+    "section": "94.2 Guest additions",
+    "text": "94.2 Guest additions\nComo hacemos instalacion minima, en necesario instalar gcc, make y perl antes de instalar las guest additions",
     "crumbs": [
       "Inicio",
       "Saco",
-      "<span class='chapter-number'>93</span>  <span class='chapter-title'>Notas</span>"
+      "<span class='chapter-number'>94</span>  <span class='chapter-title'>Notas</span>"
     ]
   },
   {

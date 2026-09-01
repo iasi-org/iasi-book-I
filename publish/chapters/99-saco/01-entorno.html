@@ -27,7 +27,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script><script src="../../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../../site_libs/quarto-search/fuse.min.js"></script><script src="../../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../../">
 <link href="../../chapters/99-saco/02-prerequisitos.html" rel="next">
-<link href="../../chapters/99-saco/00-construccion.html" rel="prev">
+<link href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script><script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
@@ -197,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Saco</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">88</span>  <span class="chapter-title">Preparación del Entorno</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">89</span>  <span class="chapter-title">Preparación del Entorno</span></a></li>
 </ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1774,102 +1774,123 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
+  <a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Determinismo vs. probabilístico</span></span></a>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#determinismo-probabilidad-y-reproducibilidad" id="toc-determinismo-probabilidad-y-reproducibilidad" class="nav-link active" data-scroll-target="#determinismo-probabilidad-y-reproducibilidad"><span class="header-section-number">2.1</span> Determinismo, probabilidad y reproducibilidad</a></li>
+  <li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-de-informaci%C3%B3n" id="toc-sistemas-de-información" class="nav-link" data-scroll-target="#sistemas-de-información"><span class="header-section-number">2.2</span> Sistemas de Información</a></li>
+  <li class="sidebar-item-section">
+<a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#el-n%C3%BAmero-%CF%80" id="toc-el-número-π" class="nav-link" data-scroll-target="#el-número-π"><span class="header-section-number">2.3</span> El número π</a>
+  <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html-3">
+<li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#los-n%C3%BAmeros-primos" id="toc-los-números-primos" class="nav-link" data-scroll-target="#los-números-primos"><span class="header-section-number">2.3.1</span> Los números primos</a></li>
+  <li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#el-experimento-de-buffon" id="toc-el-experimento-de-buffon" class="nav-link" data-scroll-target="#el-experimento-de-buffon"><span class="header-section-number">2.3.2</span> El experimento de Buffon</a></li>
+  <li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#qu%C3%A9-algoritmo-es-mejor" id="toc-qué-algoritmo-es-mejor" class="nav-link" data-scroll-target="#qué-algoritmo-es-mejor"><span class="header-section-number">2.3.3</span> ¿Qué algoritmo es mejor?</a></li>
+  </ul>
+<a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html-3" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-01-determinismo-vs-probabilistico-html-3" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</li>
+  <li><a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html#sistemas-inteligentes-generativos" id="toc-sistemas-inteligentes-generativos" class="nav-link" data-scroll-target="#sistemas-inteligentes-generativos"><span class="header-section-number">2.4</span> Sistemas Inteligentes generativos</a></li>
+  </ul>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+  <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/01-entorno.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Preparación del Entorno</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Preparación del Entorno</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-01-entorno-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-01-entorno-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--chapters-99-saco-01-entorno-html" class="collapse list-unstyled sidebar-section depth2">
 <li class="sidebar-item-section">
-<a href="../../chapters/99-saco/01-entorno.html#ingenier%C3%ADa-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">2.1</span> Ingeniería de Sistemas Inteligentes</a>
+<a href="../../chapters/99-saco/01-entorno.html#ingenier%C3%ADa-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">3.1</span> Ingeniería de Sistemas Inteligentes</a>
   <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-99-saco-01-entorno-html-1">
-<li><a href="../../chapters/99-saco/01-entorno.html#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">2.1.1</span> Objetivo</a></li>
+<li><a href="../../chapters/99-saco/01-entorno.html#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">3.1.1</span> Objetivo</a></li>
   </ul>
 <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-01-entorno-html-1" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-01-entorno-html-1" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#filosof%C3%ADa" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">2.2</span> Filosofía</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">2.3</span> Plataforma de referencia</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#filosof%C3%ADa" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">3.2</span> Filosofía</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">3.3</span> Plataforma de referencia</a></li>
   <li class="sidebar-item-section">
-<a href="../../chapters/99-saco/01-entorno.html#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">2.4</span> Requisitos recomendados</a>
+<a href="../../chapters/99-saco/01-entorno.html#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">3.4</span> Requisitos recomendados</a>
   <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-99-saco-01-entorno-html-4">
-<li><a href="../../chapters/99-saco/01-entorno.html#hardware-m%C3%ADnimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">2.4.1</span> Hardware mínimo</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">2.4.2</span> Hardware recomendado</a></li>
+<li><a href="../../chapters/99-saco/01-entorno.html#hardware-m%C3%ADnimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">3.4.1</span> Hardware mínimo</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">3.4.2</span> Hardware recomendado</a></li>
   </ul>
 <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-01-entorno-html-4" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-01-entorno-html-4" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#filosof%C3%ADa-de-instalaci%C3%B3n" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">2.5</span> Filosofía de instalación</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">2.6</span> Componentes del entorno</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">2.7</span> Versiones utilizadas</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#orden-de-instalaci%C3%B3n" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">2.8</span> Orden de instalación</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#lista-de-comprobaci%C3%B3n" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">2.9</span> Lista de comprobación</a></li>
-  <li><a href="../../chapters/99-saco/01-entorno.html#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">2.10</span> Próximo paso</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#filosof%C3%ADa-de-instalaci%C3%B3n" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">3.5</span> Filosofía de instalación</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">3.6</span> Componentes del entorno</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">3.7</span> Versiones utilizadas</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#orden-de-instalaci%C3%B3n" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">3.8</span> Orden de instalación</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#lista-de-comprobaci%C3%B3n" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">3.9</span> Lista de comprobación</a></li>
+  <li><a href="../../chapters/99-saco/01-entorno.html#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">3.10</span> Próximo paso</a></li>
   </ul>
 </li>
           <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/02-prerequisitos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Prerequisitos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Prerequisitos</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-02-prerequisitos-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-02-prerequisitos-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--chapters-99-saco-02-prerequisitos-html" class="collapse list-unstyled sidebar-section depth2">
-<li><a href="../../chapters/99-saco/02-prerequisitos.html#filosof%C3%ADa" id="toc-filosofía" class="nav-link active" data-scroll-target="#filosofía"><span class="header-section-number">3.1</span> Filosofía</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#arquitectura-del-laboratorio" id="toc-arquitectura-del-laboratorio" class="nav-link" data-scroll-target="#arquitectura-del-laboratorio"><span class="header-section-number">3.2</span> Arquitectura del laboratorio</a></li>
+<li><a href="../../chapters/99-saco/02-prerequisitos.html#filosof%C3%ADa" id="toc-filosofía" class="nav-link active" data-scroll-target="#filosofía"><span class="header-section-number">4.1</span> Filosofía</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#arquitectura-del-laboratorio" id="toc-arquitectura-del-laboratorio" class="nav-link" data-scroll-target="#arquitectura-del-laboratorio"><span class="header-section-number">4.2</span> Arquitectura del laboratorio</a></li>
   <li class="sidebar-item-section">
-<a href="../../chapters/99-saco/02-prerequisitos.html#requisitos-del-equipo-anfitri%C3%B3n" id="toc-requisitos-del-equipo-anfitrión" class="nav-link" data-scroll-target="#requisitos-del-equipo-anfitrión"><span class="header-section-number">3.3</span> Requisitos del equipo anfitrión</a>
+<a href="../../chapters/99-saco/02-prerequisitos.html#requisitos-del-equipo-anfitri%C3%B3n" id="toc-requisitos-del-equipo-anfitrión" class="nav-link" data-scroll-target="#requisitos-del-equipo-anfitrión"><span class="header-section-number">4.3</span> Requisitos del equipo anfitrión</a>
   <ul class="collapse list-unstyled sidebar-section depth3" id="iasi-sidebar--chapters-99-saco-02-prerequisitos-html-3">
-<li><a href="../../chapters/99-saco/02-prerequisitos.html#requisitos-m%C3%ADnimos" id="toc-requisitos-mínimos" class="nav-link" data-scroll-target="#requisitos-mínimos"><span class="header-section-number">3.3.1</span> Requisitos mínimos</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#configuraci%C3%B3n-recomendada" id="toc-configuración-recomendada" class="nav-link" data-scroll-target="#configuración-recomendada"><span class="header-section-number">3.3.2</span> Configuración recomendada</a></li>
+<li><a href="../../chapters/99-saco/02-prerequisitos.html#requisitos-m%C3%ADnimos" id="toc-requisitos-mínimos" class="nav-link" data-scroll-target="#requisitos-mínimos"><span class="header-section-number">4.3.1</span> Requisitos mínimos</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#configuraci%C3%B3n-recomendada" id="toc-configuración-recomendada" class="nav-link" data-scroll-target="#configuración-recomendada"><span class="header-section-number">4.3.2</span> Configuración recomendada</a></li>
   </ul>
 <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-02-prerequisitos-html-3" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-02-prerequisitos-html-3" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#configuraci%C3%B3n-de-la-m%C3%A1quina-virtual" id="toc-configuración-de-la-máquina-virtual" class="nav-link" data-scroll-target="#configuración-de-la-máquina-virtual"><span class="header-section-number">3.4</span> Configuración de la máquina virtual</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#espacio-en-disco" id="toc-espacio-en-disco" class="nav-link" data-scroll-target="#espacio-en-disco"><span class="header-section-number">3.5</span> Espacio en disco</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#virtualizaci%C3%B3n" id="toc-virtualización" class="nav-link" data-scroll-target="#virtualización"><span class="header-section-number">3.6</span> Virtualización</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#estado-del-laboratorio" id="toc-estado-del-laboratorio" class="nav-link" data-scroll-target="#estado-del-laboratorio"><span class="header-section-number">3.7</span> Estado del laboratorio</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">3.8</span> Versiones utilizadas</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#pol%C3%ADtica-de-versiones" id="toc-política-de-versiones" class="nav-link" data-scroll-target="#política-de-versiones"><span class="header-section-number">3.9</span> Política de versiones</a></li>
-  <li><a href="../../chapters/99-saco/02-prerequisitos.html#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">3.10</span> Próximo paso</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#configuraci%C3%B3n-de-la-m%C3%A1quina-virtual" id="toc-configuración-de-la-máquina-virtual" class="nav-link" data-scroll-target="#configuración-de-la-máquina-virtual"><span class="header-section-number">4.4</span> Configuración de la máquina virtual</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#espacio-en-disco" id="toc-espacio-en-disco" class="nav-link" data-scroll-target="#espacio-en-disco"><span class="header-section-number">4.5</span> Espacio en disco</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#virtualizaci%C3%B3n" id="toc-virtualización" class="nav-link" data-scroll-target="#virtualización"><span class="header-section-number">4.6</span> Virtualización</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#estado-del-laboratorio" id="toc-estado-del-laboratorio" class="nav-link" data-scroll-target="#estado-del-laboratorio"><span class="header-section-number">4.7</span> Estado del laboratorio</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">4.8</span> Versiones utilizadas</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#pol%C3%ADtica-de-versiones" id="toc-política-de-versiones" class="nav-link" data-scroll-target="#política-de-versiones"><span class="header-section-number">4.9</span> Política de versiones</a></li>
+  <li><a href="../../chapters/99-saco/02-prerequisitos.html#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">4.10</span> Próximo paso</a></li>
   </ul>
 </li>
           <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Políticas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">Políticas</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-05-politicas-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-05-politicas-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--chapters-99-saco-05-politicas-html" class="collapse list-unstyled sidebar-section depth2">
-<li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-versiones" id="toc-política-de-versiones" class="nav-link active" data-scroll-target="#política-de-versiones"><span class="header-section-number">4.1</span> Política de versiones</a></li>
-  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-instalaci%C3%B3n" id="toc-política-de-instalación" class="nav-link" data-scroll-target="#política-de-instalación"><span class="header-section-number">4.2</span> Política de instalación</a></li>
-  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-del-laboratorio" id="toc-política-del-laboratorio" class="nav-link" data-scroll-target="#política-del-laboratorio"><span class="header-section-number">4.3</span> Política del laboratorio</a></li>
-  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-reproducibilidad" id="toc-política-de-reproducibilidad" class="nav-link" data-scroll-target="#política-de-reproducibilidad"><span class="header-section-number">4.4</span> Política de reproducibilidad</a></li>
-  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-simplicidad" id="toc-política-de-simplicidad" class="nav-link" data-scroll-target="#política-de-simplicidad"><span class="header-section-number">4.5</span> Política de simplicidad</a></li>
-  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-evoluci%C3%B3n" id="toc-política-de-evolución" class="nav-link" data-scroll-target="#política-de-evolución"><span class="header-section-number">4.6</span> Política de evolución</a></li>
+<li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-versiones" id="toc-política-de-versiones" class="nav-link active" data-scroll-target="#política-de-versiones"><span class="header-section-number">5.1</span> Política de versiones</a></li>
+  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-instalaci%C3%B3n" id="toc-política-de-instalación" class="nav-link" data-scroll-target="#política-de-instalación"><span class="header-section-number">5.2</span> Política de instalación</a></li>
+  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-del-laboratorio" id="toc-política-del-laboratorio" class="nav-link" data-scroll-target="#política-del-laboratorio"><span class="header-section-number">5.3</span> Política del laboratorio</a></li>
+  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-reproducibilidad" id="toc-política-de-reproducibilidad" class="nav-link" data-scroll-target="#política-de-reproducibilidad"><span class="header-section-number">5.4</span> Política de reproducibilidad</a></li>
+  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-simplicidad" id="toc-política-de-simplicidad" class="nav-link" data-scroll-target="#política-de-simplicidad"><span class="header-section-number">5.5</span> Política de simplicidad</a></li>
+  <li><a href="../../chapters/99-saco/05-politicas.html#pol%C3%ADtica-de-evoluci%C3%B3n" id="toc-política-de-evolución" class="nav-link" data-scroll-target="#política-de-evolución"><span class="header-section-number">5.6</span> Política de evolución</a></li>
   </ul>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/10-virtualbox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">Instalando VirtualBox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">Instalando VirtualBox</span></span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/11-documentos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">Documentos, autores, reponsables y colaboradores</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-11-documentos-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-11-documentos-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--chapters-99-saco-11-documentos-html" class="collapse list-unstyled sidebar-section depth2">
-<li><a href="../../chapters/99-saco/11-documentos.html#observaci%C3%B3n" id="toc-observación" class="nav-link active" data-scroll-target="#observación"><span class="header-section-number">6.1</span> Observación</a></li>
+<li><a href="../../chapters/99-saco/11-documentos.html#observaci%C3%B3n" id="toc-observación" class="nav-link active" data-scroll-target="#observación"><span class="header-section-number">7.1</span> Observación</a></li>
   </ul>
 </li>
           <li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../../chapters/99-saco/99-notes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">Notas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Notas</span></span></a>
   <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--chapters-99-saco-99-notes-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--chapters-99-saco-99-notes-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
 </div>
 <ul id="iasi-sidebar--chapters-99-saco-99-notes-html" class="collapse list-unstyled sidebar-section depth2">
-<li><a href="../../chapters/99-saco/99-notes.html#sobre-la-instalacion" id="toc-sobre-la-instalacion" class="nav-link active" data-scroll-target="#sobre-la-instalacion"><span class="header-section-number">7.1</span> Sobre la instalacion</a></li>
-  <li><a href="../../chapters/99-saco/99-notes.html#guest-additions" id="toc-guest-additions" class="nav-link" data-scroll-target="#guest-additions"><span class="header-section-number">7.2</span> Guest additions</a></li>
+<li><a href="../../chapters/99-saco/99-notes.html#sobre-la-instalacion" id="toc-sobre-la-instalacion" class="nav-link active" data-scroll-target="#sobre-la-instalacion"><span class="header-section-number">8.1</span> Sobre la instalacion</a></li>
+  <li><a href="../../chapters/99-saco/99-notes.html#guest-additions" id="toc-guest-additions" class="nav-link" data-scroll-target="#guest-additions"><span class="header-section-number">8.2</span> Guest additions</a></li>
   </ul>
 </li>
       </ul>
@@ -1895,35 +1916,35 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
 <li>
-<a href="#ingenier%C3%ADa-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">88.1</span> Ingeniería de Sistemas Inteligentes</a>
+<a href="#ingenier%C3%ADa-de-sistemas-inteligentes" id="toc-ingeniería-de-sistemas-inteligentes" class="nav-link active" data-scroll-target="#ingeniería-de-sistemas-inteligentes"><span class="header-section-number">89.1</span> Ingeniería de Sistemas Inteligentes</a>
   <ul class="collapse">
-<li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">88.1.1</span> Objetivo</a></li>
+<li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo"><span class="header-section-number">89.1.1</span> Objetivo</a></li>
   </ul>
 </li>
-  <li><a href="#filosof%C3%ADa" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">88.2</span> Filosofía</a></li>
-  <li><a href="#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">88.3</span> Plataforma de referencia</a></li>
+  <li><a href="#filosof%C3%ADa" id="toc-filosofía" class="nav-link" data-scroll-target="#filosofía"><span class="header-section-number">89.2</span> Filosofía</a></li>
+  <li><a href="#plataforma-de-referencia" id="toc-plataforma-de-referencia" class="nav-link" data-scroll-target="#plataforma-de-referencia"><span class="header-section-number">89.3</span> Plataforma de referencia</a></li>
   <li>
-<a href="#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">88.4</span> Requisitos recomendados</a>
+<a href="#requisitos-recomendados" id="toc-requisitos-recomendados" class="nav-link" data-scroll-target="#requisitos-recomendados"><span class="header-section-number">89.4</span> Requisitos recomendados</a>
   <ul class="collapse">
-<li><a href="#hardware-m%C3%ADnimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">88.4.1</span> Hardware mínimo</a></li>
-  <li><a href="#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">88.4.2</span> Hardware recomendado</a></li>
+<li><a href="#hardware-m%C3%ADnimo" id="toc-hardware-mínimo" class="nav-link" data-scroll-target="#hardware-mínimo"><span class="header-section-number">89.4.1</span> Hardware mínimo</a></li>
+  <li><a href="#hardware-recomendado" id="toc-hardware-recomendado" class="nav-link" data-scroll-target="#hardware-recomendado"><span class="header-section-number">89.4.2</span> Hardware recomendado</a></li>
   </ul>
 </li>
-  <li><a href="#filosof%C3%ADa-de-instalaci%C3%B3n" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">88.5</span> Filosofía de instalación</a></li>
-  <li><a href="#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">88.6</span> Componentes del entorno</a></li>
-  <li><a href="#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">88.7</span> Versiones utilizadas</a></li>
-  <li><a href="#orden-de-instalaci%C3%B3n" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">88.8</span> Orden de instalación</a></li>
-  <li><a href="#lista-de-comprobaci%C3%B3n" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">88.9</span> Lista de comprobación</a></li>
-  <li><a href="#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">88.10</span> Próximo paso</a></li>
+  <li><a href="#filosof%C3%ADa-de-instalaci%C3%B3n" id="toc-filosofía-de-instalación" class="nav-link" data-scroll-target="#filosofía-de-instalación"><span class="header-section-number">89.5</span> Filosofía de instalación</a></li>
+  <li><a href="#componentes-del-entorno" id="toc-componentes-del-entorno" class="nav-link" data-scroll-target="#componentes-del-entorno"><span class="header-section-number">89.6</span> Componentes del entorno</a></li>
+  <li><a href="#versiones-utilizadas" id="toc-versiones-utilizadas" class="nav-link" data-scroll-target="#versiones-utilizadas"><span class="header-section-number">89.7</span> Versiones utilizadas</a></li>
+  <li><a href="#orden-de-instalaci%C3%B3n" id="toc-orden-de-instalación" class="nav-link" data-scroll-target="#orden-de-instalación"><span class="header-section-number">89.8</span> Orden de instalación</a></li>
+  <li><a href="#lista-de-comprobaci%C3%B3n" id="toc-lista-de-comprobación" class="nav-link" data-scroll-target="#lista-de-comprobación"><span class="header-section-number">89.9</span> Lista de comprobación</a></li>
+  <li><a href="#pr%C3%B3ximo-paso" id="toc-próximo-paso" class="nav-link" data-scroll-target="#próximo-paso"><span class="header-section-number">89.10</span> Próximo paso</a></li>
   </ul></nav>
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../chapters/99-saco/index.html">Saco</a></li>
-<li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">88</span>  <span class="chapter-title">Preparación del Entorno</span></a></li>
+<li class="breadcrumb-item"><a href="../../chapters/99-saco/01-entorno.html"><span class="chapter-number">89</span>  <span class="chapter-title">Preparación del Entorno</span></a></li>
 </ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">2</span>  <span class="chapter-title">Preparación del Entorno</span>
+<span class="chapter-number">3</span>  <span class="chapter-title">Preparación del Entorno</span>
 </h1>
 </div>
 
@@ -1938,15 +1959,15 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="ingeniería-de-sistemas-inteligentes" class="level2" data-number="88.1"><h2 data-number="88.1" class="anchored" data-anchor-id="ingeniería-de-sistemas-inteligentes">
-<span class="header-section-number">2.1</span> Ingeniería de Sistemas Inteligentes</h2>
-<section id="objetivo" class="level3" data-number="88.1.1"><h3 data-number="88.1.1" class="anchored" data-anchor-id="objetivo">
-<span class="header-section-number">2.1.1</span> Objetivo</h3>
+</header><section id="ingeniería-de-sistemas-inteligentes" class="level2" data-number="89.1"><h2 data-number="89.1" class="anchored" data-anchor-id="ingeniería-de-sistemas-inteligentes">
+<span class="header-section-number">3.1</span> Ingeniería de Sistemas Inteligentes</h2>
+<section id="objetivo" class="level3" data-number="89.1.1"><h3 data-number="89.1.1" class="anchored" data-anchor-id="objetivo">
+<span class="header-section-number">3.1.1</span> Objetivo</h3>
 <p>Este documento describe la preparación del entorno de trabajo utilizado a lo largo de todos los laboratorios del libro.</p>
 <p>Su finalidad es disponer de un entorno homogéneo, reproducible y sencillo de mantener.</p>
 <p>No pretende ser un manual de Linux ni una guía de instalación de herramientas. Es, simplemente, la preparación del puesto de trabajo de un Ingeniero de Sistemas Inteligentes.</p>
-<hr></section></section><section id="filosofía" class="level2" data-number="88.2"><h2 data-number="88.2" class="anchored" data-anchor-id="filosofía">
-<span class="header-section-number">2.2</span> Filosofía</h2>
+<hr></section></section><section id="filosofía" class="level2" data-number="89.2"><h2 data-number="89.2" class="anchored" data-anchor-id="filosofía">
+<span class="header-section-number">3.2</span> Filosofía</h2>
 <p>Todos los laboratorios del libro parten del siguiente supuesto:</p>
 <blockquote class="blockquote">
 <p>El entorno ya está preparado.</p>
@@ -1957,8 +1978,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Las actualizaciones de versiones afectan únicamente a este documento.</li>
 <li>Es posible reproducir exactamente el entorno utilizado durante la escritura del libro.</li>
 </ul>
-<hr></section><section id="plataforma-de-referencia" class="level2" data-number="88.3"><h2 data-number="88.3" class="anchored" data-anchor-id="plataforma-de-referencia">
-<span class="header-section-number">2.3</span> Plataforma de referencia</h2>
+<hr></section><section id="plataforma-de-referencia" class="level2" data-number="89.3"><h2 data-number="89.3" class="anchored" data-anchor-id="plataforma-de-referencia">
+<span class="header-section-number">3.3</span> Plataforma de referencia</h2>
 <ul>
 <li>Sistema Operativo: Kubuntu 24.04 LTS</li>
 <li>Arquitectura: x86_64</li>
@@ -1966,17 +1987,17 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>Aunque muchos laboratorios pueden realizarse desde Windows o macOS, la plataforma oficial del curso será Kubuntu 24.04 LTS.</p>
 </blockquote>
-<hr></section><section id="requisitos-recomendados" class="level2" data-number="88.4"><h2 data-number="88.4" class="anchored" data-anchor-id="requisitos-recomendados">
-<span class="header-section-number">2.4</span> Requisitos recomendados</h2>
-<section id="hardware-mínimo" class="level3" data-number="88.4.1"><h3 data-number="88.4.1" class="anchored" data-anchor-id="hardware-mínimo">
-<span class="header-section-number">2.4.1</span> Hardware mínimo</h3>
+<hr></section><section id="requisitos-recomendados" class="level2" data-number="89.4"><h2 data-number="89.4" class="anchored" data-anchor-id="requisitos-recomendados">
+<span class="header-section-number">3.4</span> Requisitos recomendados</h2>
+<section id="hardware-mínimo" class="level3" data-number="89.4.1"><h3 data-number="89.4.1" class="anchored" data-anchor-id="hardware-mínimo">
+<span class="header-section-number">3.4.1</span> Hardware mínimo</h3>
 <ul>
 <li>CPU de 64 bits</li>
 <li>16 GB de memoria RAM</li>
 <li>100 GB libres en SSD</li>
 <li>Conexión a Internet</li>
-</ul></section><section id="hardware-recomendado" class="level3" data-number="88.4.2"><h3 data-number="88.4.2" class="anchored" data-anchor-id="hardware-recomendado">
-<span class="header-section-number">2.4.2</span> Hardware recomendado</h3>
+</ul></section><section id="hardware-recomendado" class="level3" data-number="89.4.2"><h3 data-number="89.4.2" class="anchored" data-anchor-id="hardware-recomendado">
+<span class="header-section-number">3.4.2</span> Hardware recomendado</h3>
 <ul>
 <li>Procesador multinúcleo moderno</li>
 <li>32 GB RAM</li>
@@ -1986,8 +2007,8 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>Todos los laboratorios pueden realizarse utilizando únicamente la CPU.</p>
 </blockquote>
-<hr></section></section><section id="filosofía-de-instalación" class="level2" data-number="88.5"><h2 data-number="88.5" class="anchored" data-anchor-id="filosofía-de-instalación">
-<span class="header-section-number">2.5</span> Filosofía de instalación</h2>
+<hr></section></section><section id="filosofía-de-instalación" class="level2" data-number="89.5"><h2 data-number="89.5" class="anchored" data-anchor-id="filosofía-de-instalación">
+<span class="header-section-number">3.5</span> Filosofía de instalación</h2>
 <p>Siempre que sea posible:</p>
 <ul>
 <li>utilizar paquetes oficiales;</li>
@@ -1996,8 +2017,8 @@ ul.task-list li input[type="checkbox"] {
 <li>evitar instaladores gráficos cuando exista una alternativa reproducible.</li>
 </ul>
 <p>El objetivo es que cualquier lector pueda reconstruir exactamente el mismo entorno.</p>
-<hr></section><section id="componentes-del-entorno" class="level2" data-number="88.6"><h2 data-number="88.6" class="anchored" data-anchor-id="componentes-del-entorno">
-<span class="header-section-number">2.6</span> Componentes del entorno</h2>
+<hr></section><section id="componentes-del-entorno" class="level2" data-number="89.6"><h2 data-number="89.6" class="anchored" data-anchor-id="componentes-del-entorno">
+<span class="header-section-number">3.6</span> Componentes del entorno</h2>
 <p>Los siguientes componentes se instalarán durante esta guía.</p>
 <table class="caption-top table">
 <thead><tr class="header">
@@ -2088,8 +2109,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<hr></section><section id="versiones-utilizadas" class="level2" data-number="88.7"><h2 data-number="88.7" class="anchored" data-anchor-id="versiones-utilizadas">
-<span class="header-section-number">2.7</span> Versiones utilizadas</h2>
+<hr></section><section id="versiones-utilizadas" class="level2" data-number="89.7"><h2 data-number="89.7" class="anchored" data-anchor-id="versiones-utilizadas">
+<span class="header-section-number">3.7</span> Versiones utilizadas</h2>
 <p>Este documento mantiene la relación exacta de versiones utilizadas durante la elaboración del libro.</p>
 <table class="caption-top table">
 <thead><tr class="header">
@@ -2180,8 +2201,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<hr></section><section id="orden-de-instalación" class="level2" data-number="88.8"><h2 data-number="88.8" class="anchored" data-anchor-id="orden-de-instalación">
-<span class="header-section-number">2.8</span> Orden de instalación</h2>
+<hr></section><section id="orden-de-instalación" class="level2" data-number="89.8"><h2 data-number="89.8" class="anchored" data-anchor-id="orden-de-instalación">
+<span class="header-section-number">3.8</span> Orden de instalación</h2>
 <ol type="1">
 <li>Actualización del sistema</li>
 <li>Herramientas básicas</li>
@@ -2199,8 +2220,8 @@ ul.task-list li input[type="checkbox"] {
 <li>MCP Inspector</li>
 <li>Verificación del entorno</li>
 </ol>
-<hr></section><section id="lista-de-comprobación" class="level2" data-number="88.9"><h2 data-number="88.9" class="anchored" data-anchor-id="lista-de-comprobación">
-<span class="header-section-number">2.9</span> Lista de comprobación</h2>
+<hr></section><section id="lista-de-comprobación" class="level2" data-number="89.9"><h2 data-number="89.9" class="anchored" data-anchor-id="lista-de-comprobación">
+<span class="header-section-number">3.9</span> Lista de comprobación</h2>
 <p>Antes de comenzar los laboratorios deberán cumplirse todas las siguientes condiciones.</p>
 <ul class="task-list">
 <li><label><input type="checkbox">El sistema está actualizado.</label></li>
@@ -2217,8 +2238,8 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">DBeaver puede conectarse a una base de datos.</label></li>
 <li><label><input type="checkbox">MCP Inspector está disponible.</label></li>
 </ul>
-<hr></section><section id="próximo-paso" class="level2" data-number="88.10"><h2 data-number="88.10" class="anchored" data-anchor-id="próximo-paso">
-<span class="header-section-number">2.10</span> Próximo paso</h2>
+<hr></section><section id="próximo-paso" class="level2" data-number="89.10"><h2 data-number="89.10" class="anchored" data-anchor-id="próximo-paso">
+<span class="header-section-number">3.10</span> Próximo paso</h2>
 <p>Una vez completada esta guía, el entorno estará preparado para comenzar los laboratorios del libro.</p>
 <p>El primer laboratorio será:</p>
 <blockquote class="blockquote">
@@ -2626,13 +2647,13 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../chapters/99-saco/00-construccion.html" class="pagination-link" aria-label="Construcción del laboratorio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">87</span>  <span class="chapter-title">Construcción del laboratorio</span></span>
+      <a href="../../chapters/99-saco/01-determinismo-vs-probabilistico.html" class="pagination-link" aria-label="Determinismo vs. probabilístico">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">88</span>  <span class="chapter-title">Determinismo vs. probabilístico</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../chapters/99-saco/02-prerequisitos.html" class="pagination-link" aria-label="Prerequisitos">
-        <span class="nav-page-text"><span class="chapter-number">89</span>  <span class="chapter-title">Prerequisitos</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">90</span>  <span class="chapter-title">Prerequisitos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2642,7 +2663,7 @@ ul.task-list li input[type="checkbox"] {
 <p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
 </div>   
     <div class="nav-footer-center">
-<p><span id="iasi-publish-date">v0.2.1 · Publicado: 27/08/2026</span></p>
+<p><span id="iasi-publish-date">v0.2.1 · Publicado: 01/09/2026</span></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">

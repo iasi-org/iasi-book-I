@@ -106,6 +106,7 @@ book:
     - part: "chapters/99-saco/index.qmd"
       chapters:
         - "chapters/99-saco/00-construccion.qmd"
+        - "chapters/99-saco/01-determinismo-vs-probabilistico.qmd"
         - "chapters/99-saco/01-entorno.qmd"
         - "chapters/99-saco/02-prerequisitos.qmd"
         - "chapters/99-saco/05-politicas.qmd"
