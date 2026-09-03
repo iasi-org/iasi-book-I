@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IASI Vol. I</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../chapters/30-part-III/02-components/index.html" rel="next">
+<link href="../../../chapters/30-part-III/01-marco/12-system.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-d79854359188c22ebe9446a9ac85c6a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/iasi-1.0.0/iasi.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="731ab31f0159d8ac7d86f204fcae734c" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p><img src="images/ants.png" class="iasi-ants-image img-fluid"></p>
+</div></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">IASI VOL. I</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters/10-part-I/01-intro/index.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/01-intro/index.html">
+ <span class="dropdown-text">Introducción</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/02-conceptos/index.html">
+ <span class="dropdown-text">Conceptos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/03-foundations/index.html">
+ <span class="dropdown-text">Foundations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ingenieria" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ingenieria</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ingenieria">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/01-organization/index.html">
+ <span class="dropdown-text">Organizacion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/02-engineering/index.html">
+ <span class="dropdown-text">Ingenieria</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/03-methodologies/index.html">
+ <span class="dropdown-text">Metodologias</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ssii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SSII</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ssii">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/30-part-III/01-marco/index.html">
+ <span class="dropdown-text">Marco</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/30-part-III/02-components/index.html">
+ <span class="dropdown-text">Componentes</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
+ <span class="menu-text">Guardar …</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
+        <li>
+    <a class="dropdown-item" href="../../../#iasi-exports">
+ <span class="dropdown-text">Guardar …</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../#iasi-open-external"> <i class="bi bi-box-arrow-up-right" role="img" aria-label="Abrir en una pestaña nueva">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/index.html">Sistemas Inteligentes</a></li><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/01-marco/13-syntesis.html"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../01-manifesto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manifiesto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../02-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principios</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../03-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../04-semantic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contrato Semántico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../05-gates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">La ya está aquí. Las decisiones que tomemos ahora son críticas.</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/10-part-I/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/01-imperativa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Programación imperativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/02-funcional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programacion funcional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/03-declarativa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Progrmacion declarativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/04-ia_simbolica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">IA Simbolica</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/05-ml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/06-dl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/07-watson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Antes de los LLM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/08-llm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Language Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/09-basura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Language Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conceptos de Sistemas Inteligentes y LLM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/01-sistema_inteligente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sistema Inteligente</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/02-modelo_entrenamiento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conceptos fundamentales de los sistemas inteligente</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/03-contexto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Contextos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/04-embeddings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Embeddings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/05-attention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Attention</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/06-transformers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/07-modelos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Modelos de lenguaje</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/08-limites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Limites</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/03-foundations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Foundations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/03-foundations/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">IASI Foundations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/20-part-II/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ingenieria</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Organización y estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/01-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Organización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0101-organizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Organizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0102-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0103-division-of-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">División del trabajo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0104-specialization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Especialización y reutilización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0105-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Estructura organizativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/02-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/03-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/04-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Equipos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/05-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Roles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/06-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Capacidades</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/07-responsibilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Responsabilidades y autoridad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/08-dynamic-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Roles dinámicos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/09-career.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Evolución profesional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/10-human-iiss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Humanos y Sistemas Inteligentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/11-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/02-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Ingeniería</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/02-engineering/01-determinismo-vs-probabilistico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Determinismo vs.&nbsp;probabilístico</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Acerca de esta parte</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/14-google.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Google</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/15-netflix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Netflix</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/16-amazon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Amazon</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/17-visa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Visa</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/30-part-III/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sistemas Inteligentes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/01-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">El contexto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/02-tokens.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Tokens</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/03-window.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">La ventana de contexto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/04-embeddings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Embeddings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/05-transformers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Transformers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/06-attention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Attention</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/07-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Memoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/08-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Modelo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/09-training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Entrenamiento</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/10-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Inferencia</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/11-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">Generación probabilística</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/12-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Modelo y Sistema</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/13-syntesis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Componentes de los IISS</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">64</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">65</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">66</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">67</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">68</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">69</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">70</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">71</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">72</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">73</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">74</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">75</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">76</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">77</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">78</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">79</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">80</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">81</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">82</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../902-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../903-licenses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#las-piezas-principales" id="toc-las-piezas-principales" class="nav-link active" data-scroll-target="#las-piezas-principales"><span class="header-section-number">62.1</span> Las piezas principales</a></li>
+  <li><a href="#diferencias-que-conviene-conservar" id="toc-diferencias-que-conviene-conservar" class="nav-link" data-scroll-target="#diferencias-que-conviene-conservar"><span class="header-section-number">62.2</span> Diferencias que conviene conservar</a>
+  <ul class="collapse">
+  <li><a href="#conocimiento-y-contexto" id="toc-conocimiento-y-contexto" class="nav-link" data-scroll-target="#conocimiento-y-contexto"><span class="header-section-number">62.2.1</span> Conocimiento y contexto</a></li>
+  <li><a href="#contexto-y-ventana-de-contexto" id="toc-contexto-y-ventana-de-contexto" class="nav-link" data-scroll-target="#contexto-y-ventana-de-contexto"><span class="header-section-number">62.2.2</span> Contexto y ventana de contexto</a></li>
+  <li><a href="#contexto-y-memoria" id="toc-contexto-y-memoria" class="nav-link" data-scroll-target="#contexto-y-memoria"><span class="header-section-number">62.2.3</span> Contexto y memoria</a></li>
+  <li><a href="#memoria-y-entrenamiento" id="toc-memoria-y-entrenamiento" class="nav-link" data-scroll-target="#memoria-y-entrenamiento"><span class="header-section-number">62.2.4</span> Memoria y entrenamiento</a></li>
+  <li><a href="#inferencia-y-generación" id="toc-inferencia-y-generación" class="nav-link" data-scroll-target="#inferencia-y-generación"><span class="header-section-number">62.2.5</span> Inferencia y generación</a></li>
+  <li><a href="#modelo-y-sistema" id="toc-modelo-y-sistema" class="nav-link" data-scroll-target="#modelo-y-sistema"><span class="header-section-number">62.2.6</span> Modelo y sistema</a></li>
+  </ul></li>
+  <li><a href="#una-respuesta-no-depende-solo-del-modelo" id="toc-una-respuesta-no-depende-solo-del-modelo" class="nav-link" data-scroll-target="#una-respuesta-no-depende-solo-del-modelo"><span class="header-section-number">62.3</span> Una respuesta no depende solo del modelo</a></li>
+  <li><a href="#no-es-una-base-de-datos" id="toc-no-es-una-base-de-datos" class="nav-link" data-scroll-target="#no-es-una-base-de-datos"><span class="header-section-number">62.4</span> No es una base de datos</a></li>
+  <li><a href="#no-es-una-memoria-permanente" id="toc-no-es-una-memoria-permanente" class="nav-link" data-scroll-target="#no-es-una-memoria-permanente"><span class="header-section-number">62.5</span> No es una memoria permanente</a></li>
+  <li><a href="#no-aprende-normalmente-durante-la-conversación" id="toc-no-aprende-normalmente-durante-la-conversación" class="nav-link" data-scroll-target="#no-aprende-normalmente-durante-la-conversación"><span class="header-section-number">62.6</span> No aprende normalmente durante la conversación</a></li>
+  <li><a href="#no-verifica-automáticamente-la-verdad" id="toc-no-verifica-automáticamente-la-verdad" class="nav-link" data-scroll-target="#no-verifica-automáticamente-la-verdad"><span class="header-section-number">62.7</span> No verifica automáticamente la verdad</a></li>
+  <li><a href="#qué-debe-preguntar-un-ingeniero" id="toc-qué-debe-preguntar-un-ingeniero" class="nav-link" data-scroll-target="#qué-debe-preguntar-un-ingeniero"><span class="header-section-number">62.8</span> Qué debe preguntar un ingeniero</a></li>
+  <li><a href="#un-ejemplo-de-extremo-a-extremo" id="toc-un-ejemplo-de-extremo-a-extremo" class="nav-link" data-scroll-target="#un-ejemplo-de-extremo-a-extremo"><span class="header-section-number">62.9</span> Un ejemplo de extremo a extremo</a></li>
+  <li><a href="#del-concepto-a-la-ingeniería" id="toc-del-concepto-a-la-ingeniería" class="nav-link" data-scroll-target="#del-concepto-a-la-ingeniería"><span class="header-section-number">62.10</span> Del concepto a la ingeniería</a></li>
+  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">62.11</span> Ideas clave</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/index.html">Sistemas Inteligentes</a></li><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/01-marco/13-syntesis.html"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A lo largo de este capítulo hemos presentado los principales conceptos que aparecen cuando trabajamos con modelos de lenguaje y sistemas inteligentes.</p>
+<p>No hemos estudiado cada mecanismo con la profundidad necesaria para construir un modelo desde cero. El propósito era disponer de un mapa: reconocer las piezas, comprender su función y evitar confundirlas cuando aparezcan en los siguientes capítulos.</p>
+<p>Podemos resumir el recorrido completo de esta forma:</p>
+<pre class="text"><code>texto
+  ↓
+tokens
+  ↓
+embeddings
+  ↓
+transformer
+  ↓
+atención
+  ↓
+representaciones dependientes del contexto
+  ↓
+probabilidades
+  ↓
+generación de nuevos tokens</code></pre>
+<p>Este proceso ocurre dentro de una ventana de contexto limitada y utilizando los parámetros aprendidos durante el entrenamiento.</p>
+<p>Pero el modelo no trabaja aislado.</p>
+<pre class="text"><code>Sistema inteligente
+├── modelo
+├── instrucciones
+├── contexto
+├── memoria
+├── documentos
+├── herramientas
+├── permisos
+├── validaciones
+└── aplicación</code></pre>
+<p>El comportamiento que observa el usuario surge de la combinación de todos estos elementos.</p>
+<section id="las-piezas-principales" class="level2" data-number="62.1">
+<h2 data-number="62.1" class="anchored" data-anchor-id="las-piezas-principales"><span class="header-section-number">62.1</span> Las piezas principales</h2>
+<p>El <strong>modelo</strong> es una estructura matemática formada por una arquitectura y unos parámetros aprendidos.</p>
+<p>El <strong>entrenamiento</strong> modifica esos parámetros a partir de datos y ejemplos.</p>
+<p>La <strong>inferencia</strong> utiliza el modelo ya entrenado para procesar entradas nuevas.</p>
+<p>Los <strong>tokens</strong> son las unidades con las que el modelo recibe y genera contenido.</p>
+<p>Los <strong>embeddings</strong> transforman esos elementos en representaciones numéricas capaces de expresar relaciones.</p>
+<p>Los <strong>transformers</strong> procesan las secuencias mediante capas sucesivas.</p>
+<p>La <strong>atención</strong> permite relacionar unos tokens con otros y construir representaciones dependientes del contexto.</p>
+<p>El <strong>contexto</strong> contiene la información disponible para resolver la tarea actual.</p>
+<p>La <strong>ventana de contexto</strong> limita cuánta información puede procesarse simultáneamente.</p>
+<p>La <strong>memoria</strong> conserva información fuera de esa ventana y permite recuperarla posteriormente.</p>
+<p>La <strong>generación probabilística</strong> construye la respuesta seleccionando sucesivamente entre distintas continuaciones posibles.</p>
+<p>Finalmente, el <strong>sistema</strong> coordina el modelo con instrucciones, documentos, memoria, herramientas, controles y acciones.</p>
+</section>
+<section id="diferencias-que-conviene-conservar" class="level2" data-number="62.2">
+<h2 data-number="62.2" class="anchored" data-anchor-id="diferencias-que-conviene-conservar"><span class="header-section-number">62.2</span> Diferencias que conviene conservar</h2>
+<p>Algunos conceptos pueden parecer similares desde el punto de vista del usuario, pero representan mecanismos distintos.</p>
+<section id="conocimiento-y-contexto" class="level3" data-number="62.2.1">
+<h3 data-number="62.2.1" class="anchored" data-anchor-id="conocimiento-y-contexto"><span class="header-section-number">62.2.1</span> Conocimiento y contexto</h3>
+<p>El conocimiento procede principalmente de los patrones aprendidos durante el entrenamiento.</p>
+<p>El contexto contiene la información disponible para la tarea actual.</p>
+<p>Un modelo puede conocer una tecnología y no disponer del código concreto que debe analizar.</p>
+</section>
+<section id="contexto-y-ventana-de-contexto" class="level3" data-number="62.2.2">
+<h3 data-number="62.2.2" class="anchored" data-anchor-id="contexto-y-ventana-de-contexto"><span class="header-section-number">62.2.2</span> Contexto y ventana de contexto</h3>
+<p>El contexto es la información que se proporciona al modelo.</p>
+<p>La ventana de contexto es el espacio limitado en el que esa información debe caber.</p>
+</section>
+<section id="contexto-y-memoria" class="level3" data-number="62.2.3">
+<h3 data-number="62.2.3" class="anchored" data-anchor-id="contexto-y-memoria"><span class="header-section-number">62.2.3</span> Contexto y memoria</h3>
+<p>El contexto presenta información durante una interacción.</p>
+<p>La memoria la conserva para poder recuperarla en el futuro.</p>
+</section>
+<section id="memoria-y-entrenamiento" class="level3" data-number="62.2.4">
+<h3 data-number="62.2.4" class="anchored" data-anchor-id="memoria-y-entrenamiento"><span class="header-section-number">62.2.4</span> Memoria y entrenamiento</h3>
+<p>La memoria almacena datos sin modificar necesariamente el modelo.</p>
+<p>El entrenamiento cambia sus parámetros.</p>
+</section>
+<section id="inferencia-y-generación" class="level3" data-number="62.2.5">
+<h3 data-number="62.2.5" class="anchored" data-anchor-id="inferencia-y-generación"><span class="header-section-number">62.2.5</span> Inferencia y generación</h3>
+<p>La inferencia es el proceso completo de utilizar el modelo entrenado.</p>
+<p>La generación es la construcción progresiva de una salida, normalmente token a token.</p>
+</section>
+<section id="modelo-y-sistema" class="level3" data-number="62.2.6">
+<h3 data-number="62.2.6" class="anchored" data-anchor-id="modelo-y-sistema"><span class="header-section-number">62.2.6</span> Modelo y sistema</h3>
+<p>El modelo interpreta y genera.</p>
+<p>El sistema selecciona información, conecta herramientas, controla permisos, valida resultados y ejecuta acciones.</p>
+</section>
+</section>
+<section id="una-respuesta-no-depende-solo-del-modelo" class="level2" data-number="62.3">
+<h2 data-number="62.3" class="anchored" data-anchor-id="una-respuesta-no-depende-solo-del-modelo"><span class="header-section-number">62.3</span> Una respuesta no depende solo del modelo</h2>
+<p>Podemos representar el comportamiento observado de forma conceptual:</p>
+<p><span class="math display">\[
+R =
+f(
+M,
+C,
+I,
+D,
+E,
+H,
+G
+)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(R\)</span> es la respuesta;</li>
+<li><span class="math inline">\(M\)</span> es el modelo;</li>
+<li><span class="math inline">\(C\)</span> es el contexto;</li>
+<li><span class="math inline">\(I\)</span> son las instrucciones;</li>
+<li><span class="math inline">\(D\)</span> son los documentos;</li>
+<li><span class="math inline">\(E\)</span> son las herramientas externas;</li>
+<li><span class="math inline">\(H\)</span> representa el historial y la memoria;</li>
+<li><span class="math inline">\(G\)</span> es la configuración de generación.</li>
+</ul>
+<p>Esta expresión no pretende describir una fórmula ejecutable.</p>
+<p>Sirve para recordar que una respuesta no puede evaluarse observando únicamente el nombre del modelo.</p>
+<p>Dos sistemas pueden utilizar el mismo modelo y comportarse de formas muy diferentes.</p>
+<p>También pueden producir respuestas distintas porque han recuperado documentos diferentes, aplicado otras instrucciones o utilizado configuraciones de generación distintas.</p>
+</section>
+<section id="no-es-una-base-de-datos" class="level2" data-number="62.4">
+<h2 data-number="62.4" class="anchored" data-anchor-id="no-es-una-base-de-datos"><span class="header-section-number">62.4</span> No es una base de datos</h2>
+<p>Un modelo de lenguaje no recupera necesariamente una respuesta exacta de un almacén interno.</p>
+<p>Genera una continuación a partir de:</p>
+<ul>
+<li>sus parámetros;</li>
+<li>el contexto;</li>
+<li>los tokens anteriores;</li>
+<li>las probabilidades calculadas.</li>
+</ul>
+<p>Por eso puede:</p>
+<ul>
+<li>reformular una idea;</li>
+<li>combinar conceptos;</li>
+<li>generar ejemplos nuevos;</li>
+<li>responder de varias maneras;</li>
+<li>producir información plausible pero incorrecta.</li>
+</ul>
+<p>Cuando necesitamos exactitud, actualidad o trazabilidad, debemos complementar el modelo con fuentes y herramientas adecuadas.</p>
+</section>
+<section id="no-es-una-memoria-permanente" class="level2" data-number="62.5">
+<h2 data-number="62.5" class="anchored" data-anchor-id="no-es-una-memoria-permanente"><span class="header-section-number">62.5</span> No es una memoria permanente</h2>
+<p>El modelo tampoco conserva automáticamente todas las conversaciones.</p>
+<p>La continuidad puede proceder de:</p>
+<ul>
+<li>mensajes anteriores incluidos en el contexto;</li>
+<li>resúmenes;</li>
+<li>documentos;</li>
+<li>memoria persistente;</li>
+<li>estados almacenados por la aplicación.</li>
+</ul>
+<p>Para que un recuerdo influya en una respuesta, debe volver a incorporarse al contexto.</p>
+</section>
+<section id="no-aprende-normalmente-durante-la-conversación" class="level2" data-number="62.6">
+<h2 data-number="62.6" class="anchored" data-anchor-id="no-aprende-normalmente-durante-la-conversación"><span class="header-section-number">62.6</span> No aprende normalmente durante la conversación</h2>
+<p>Una corrección realizada por el usuario puede modificar las respuestas posteriores sin alterar los parámetros del modelo.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>Usuario:
+En este proyecto utilizamos Java 21.
+
+Sistema:
+guarda o conserva la información.
+
+Nueva petición:
+la información se incorpora al contexto.
+
+Modelo:
+responde teniendo en cuenta Java 21.</code></pre>
+<p>Desde fuera parece aprendizaje.</p>
+<p>Técnicamente puede ser contexto o memoria.</p>
+<p>El entrenamiento es un proceso diferente que modifica los parámetros.</p>
+</section>
+<section id="no-verifica-automáticamente-la-verdad" class="level2" data-number="62.7">
+<h2 data-number="62.7" class="anchored" data-anchor-id="no-verifica-automáticamente-la-verdad"><span class="header-section-number">62.7</span> No verifica automáticamente la verdad</h2>
+<p>El modelo calcula continuaciones probables.</p>
+<p>Una frase bien escrita puede ser falsa.</p>
+<p>Una cita puede parecer auténtica y no existir.</p>
+<p>Una función puede tener un nombre razonable y no formar parte de ninguna biblioteca.</p>
+<p>Un cálculo puede parecer correcto y contener un error.</p>
+<p>Por ello, la calidad lingüística no debe confundirse con la veracidad.</p>
+<pre class="text"><code>Fluidez
+no implica
+exactitud.</code></pre>
+<p>La verificación debe apoyarse en documentos, herramientas, pruebas y fuentes fiables.</p>
+</section>
+<section id="qué-debe-preguntar-un-ingeniero" class="level2" data-number="62.8">
+<h2 data-number="62.8" class="anchored" data-anchor-id="qué-debe-preguntar-un-ingeniero"><span class="header-section-number">62.8</span> Qué debe preguntar un ingeniero</h2>
+<p>Ante el comportamiento de un sistema inteligente, resulta útil formular preguntas como:</p>
+<ul>
+<li>¿qué modelo se está utilizando?;</li>
+<li>¿qué información recibió?;</li>
+<li>¿qué instrucciones condicionaron la respuesta?;</li>
+<li>¿qué documentos se recuperaron?;</li>
+<li>¿qué memoria se incorporó?;</li>
+<li>¿qué herramientas se ejecutaron?;</li>
+<li>¿qué versión de los datos estaba vigente?;</li>
+<li>¿qué validaciones se aplicaron?;</li>
+<li>¿qué acción se realizó realmente?;</li>
+<li>¿puede reconstruirse el proceso?</li>
+</ul>
+<p>Estas preguntas permiten pasar de la impresión superficial a una evaluación técnica.</p>
+</section>
+<section id="un-ejemplo-de-extremo-a-extremo" class="level2" data-number="62.9">
+<h2 data-number="62.9" class="anchored" data-anchor-id="un-ejemplo-de-extremo-a-extremo"><span class="header-section-number">62.9</span> Un ejemplo de extremo a extremo</h2>
+<p>Supongamos que un usuario solicita:</p>
+<blockquote class="blockquote">
+<p>Analiza el código y propón una corrección.</p>
+</blockquote>
+<p>El sistema podría realizar los siguientes pasos:</p>
+<ol type="1">
+<li>identificar el proyecto;</li>
+<li>recuperar sus reglas y decisiones;</li>
+<li>localizar los archivos relacionados;</li>
+<li>construir el contexto;</li>
+<li>transformar el contenido en tokens;</li>
+<li>procesarlo mediante el modelo;</li>
+<li>generar una propuesta;</li>
+<li>modificar temporalmente el código;</li>
+<li>ejecutar las pruebas;</li>
+<li>mostrar las diferencias;</li>
+<li>solicitar aprobación;</li>
+<li>registrar la decisión.</li>
+</ol>
+<p>En este proceso intervienen distintas piezas:</p>
+<pre class="text"><code>Contexto
+    contiene el código y las reglas.
+
+Memoria
+    conserva decisiones del proyecto.
+
+Modelo
+    interpreta y propone.
+
+Generación
+    produce la modificación.
+
+Herramientas
+    editan y ejecutan pruebas.
+
+Validación
+    comprueba el resultado.
+
+Usuario
+    aprueba la acción.</code></pre>
+<p>La solución no reside en una única pieza.</p>
+<p>Surge de la coordinación entre todas ellas.</p>
+</section>
+<section id="del-concepto-a-la-ingeniería" class="level2" data-number="62.10">
+<h2 data-number="62.10" class="anchored" data-anchor-id="del-concepto-a-la-ingeniería"><span class="header-section-number">62.10</span> Del concepto a la ingeniería</h2>
+<p>Comprender estos elementos no nos convierte en especialistas en entrenamiento de modelos ni en investigadores de arquitecturas neuronales.</p>
+<p>Tampoco era ese el objetivo.</p>
+<p>Ahora disponemos de una base suficiente para comprender qué ocurre cuando un sistema:</p>
+<ul>
+<li>recibe instrucciones;</li>
+<li>recupera información;</li>
+<li>recuerda decisiones;</li>
+<li>utiliza herramientas;</li>
+<li>genera respuestas;</li>
+<li>ejecuta tareas;</li>
+<li>coordina varios componentes.</li>
+</ul>
+<p>En los siguientes capítulos dejaremos de observar cada pieza de forma aislada.</p>
+<p>Comenzaremos a estudiar cómo se combinan para construir sistemas inteligentes capaces de participar en procesos reales.</p>
+</section>
+<section id="ideas-clave" class="level2" data-number="62.11">
+<h2 data-number="62.11" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">62.11</span> Ideas clave</h2>
+<ul>
+<li>Un modelo es una pieza matemática con parámetros aprendidos.</li>
+<li>El entrenamiento modifica esos parámetros.</li>
+<li>La inferencia utiliza el modelo sin modificarlo normalmente.</li>
+<li>El texto se procesa mediante tokens y representaciones numéricas.</li>
+<li>Los transformers y la atención construyen relaciones dependientes del contexto.</li>
+<li>La ventana de contexto limita la información disponible.</li>
+<li>La memoria conserva información fuera de esa ventana.</li>
+<li>La generación es probabilística y puede producir errores plausibles.</li>
+<li>Las herramientas aportan capacidades externas y verificables.</li>
+<li>El sistema completo, no solo el modelo, determina el comportamiento final.</li>
+</ul>
+<p>Ya no observamos una respuesta aislada.</p>
+<p>Empezamos a ver el sistema que la produce.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../chapters/30-part-III/01-marco/12-system.html" class="pagination-link" aria-label="Modelo y Sistema">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Modelo y Sistema</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../chapters/30-part-III/02-components/index.html" class="pagination-link" aria-label="Componentes de los IISS">
+        <span class="nav-page-text"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Componentes de los IISS</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
+</div>   
+    <div class="nav-footer-center">
+<p><span id="iasi-publish-date">v0.2.1 · Publicado: 03/09/2026</span></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../../903-licenses.html">
+<p>Licencias</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

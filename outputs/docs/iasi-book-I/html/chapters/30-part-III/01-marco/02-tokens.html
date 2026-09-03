@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IASI Vol. I</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../chapters/30-part-III/01-marco/03-window.html" rel="next">
+<link href="../../../chapters/30-part-III/01-marco/01-context.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-d79854359188c22ebe9446a9ac85c6a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/iasi-1.0.0/iasi.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="731ab31f0159d8ac7d86f204fcae734c" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p><img src="images/ants.png" class="iasi-ants-image img-fluid"></p>
+</div></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">IASI VOL. I</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters/10-part-I/01-intro/index.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/01-intro/index.html">
+ <span class="dropdown-text">Introducción</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/02-conceptos/index.html">
+ <span class="dropdown-text">Conceptos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/10-part-I/03-foundations/index.html">
+ <span class="dropdown-text">Foundations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ingenieria" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ingenieria</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ingenieria">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/01-organization/index.html">
+ <span class="dropdown-text">Organizacion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/02-engineering/index.html">
+ <span class="dropdown-text">Ingenieria</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/20-part-II/03-methodologies/index.html">
+ <span class="dropdown-text">Metodologias</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ssii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">SSII</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ssii">    
+        <li>
+    <a class="dropdown-item" href="../../../chapters/30-part-III/01-marco/index.html">
+ <span class="dropdown-text">Marco</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../chapters/30-part-III/02-components/index.html">
+ <span class="dropdown-text">Componentes</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-guardar-..." role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-download" role="img">
+</i> 
+ <span class="menu-text">Guardar …</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-guardar-...">    
+        <li>
+    <a class="dropdown-item" href="../../../#iasi-exports">
+ <span class="dropdown-text">Guardar …</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../../#iasi-open-external"> <i class="bi bi-box-arrow-up-right" role="img" aria-label="Abrir en una pestaña nueva">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/index.html">Sistemas Inteligentes</a></li><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/01-marco/02-tokens.html"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Tokens</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../01-manifesto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manifiesto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../02-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principios</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../03-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../04-semantic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contrato Semántico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../05-gates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">La ya está aquí. Las decisiones que tomemos ahora son críticas.</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/10-part-I/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamentos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/01-imperativa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Programación imperativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/02-funcional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programacion funcional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/03-declarativa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Progrmacion declarativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/04-ia_simbolica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">IA Simbolica</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/05-ml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/06-dl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Deep Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/07-watson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Antes de los LLM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/08-llm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Large Language Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/01-intro/09-basura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Large Language Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Conceptos de Sistemas Inteligentes y LLM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/01-sistema_inteligente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sistema Inteligente</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/02-modelo_entrenamiento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conceptos fundamentales de los sistemas inteligente</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/03-contexto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Contextos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/04-embeddings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Embeddings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/05-attention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Attention</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/06-transformers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/07-modelos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Modelos de lenguaje</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/02-conceptos/08-limites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Limites</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/03-foundations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Foundations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/10-part-I/03-foundations/01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">IASI Foundations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/20-part-II/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ingenieria</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Organización y estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/01-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Organización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0101-organizations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Organizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0102-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0103-division-of-work.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">División del trabajo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0104-specialization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Especialización y reutilización</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/0105-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Estructura organizativa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/02-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Estructuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/03-fractal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">La organización como fractal</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/04-teams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Equipos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/05-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Roles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/06-capabilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Capacidades</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/07-responsibilities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Responsabilidades y autoridad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/08-dynamic-roles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Roles dinámicos</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/09-career.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Evolución profesional</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/10-human-iiss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Humanos y Sistemas Inteligentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/01-organization/11-synthesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/02-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Ingeniería</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/02-engineering/01-determinismo-vs-probabilistico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Determinismo vs.&nbsp;probabilístico</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Acerca de esta parte</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/11-capas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Arquitectura en capas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/12-apollo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Project Apollo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/13-basilea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Basilea III</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/14-google.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Google</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/15-netflix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Netflix</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/16-amazon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Amazon</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/20-part-II/03-methodologies/17-visa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Visa</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/30-part-III/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sistemas Inteligentes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/01-context.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">El contexto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/02-tokens.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Tokens</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/03-window.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">La ventana de contexto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/04-embeddings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Embeddings</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/05-transformers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Transformers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/06-attention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Attention</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/07-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Memoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/08-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Modelo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/09-training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Entrenamiento</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/10-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Inferencia</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/11-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">Generación probabilística</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/12-system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">Modelo y Sistema</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/01-marco/13-syntesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">Una visión de conjunto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">Componentes de los IISS</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/01-arquitectura.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">64</span>&nbsp; <span class="chapter-title">Del modelo al sistema</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/02-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">65</span>&nbsp; <span class="chapter-title">Instrucciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/03-definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">66</span>&nbsp; <span class="chapter-title"><em>Definitions</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/04-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">67</span>&nbsp; <span class="chapter-title"><em>Commands</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/05-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">68</span>&nbsp; <span class="chapter-title"><em>Tools</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/06-mcp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">69</span>&nbsp; <span class="chapter-title"><em>Model Context Protocol</em> (MCP)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/07-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">70</span>&nbsp; <span class="chapter-title"><em>Resources</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/08-skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">71</span>&nbsp; <span class="chapter-title"><em>Skills</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/09-templates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">72</span>&nbsp; <span class="chapter-title"><em>Templates</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/10-configuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">73</span>&nbsp; <span class="chapter-title">Configuración</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/11-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">74</span>&nbsp; <span class="chapter-title">Reglas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/12-context-memory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">75</span>&nbsp; <span class="chapter-title">Contexto, estado y memoria</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/13-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">76</span>&nbsp; <span class="chapter-title"><em>Workflows</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/14-agents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">77</span>&nbsp; <span class="chapter-title">Agentes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/15-validations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">78</span>&nbsp; <span class="chapter-title">Validaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/16-automations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">79</span>&nbsp; <span class="chapter-title">Automatizaciones</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/17-adapters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">80</span>&nbsp; <span class="chapter-title"><em>Adapters</em></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/30-part-III/02-components/18-sintesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">81</span>&nbsp; <span class="chapter-title">Síntesis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../chapters/99-saco/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Saco</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../chapters/99-saco/05-politicas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">82</span>&nbsp; <span class="chapter-title">Políticas</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../902-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../903-licenses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#por-qué-se-utilizan-tokens" id="toc-por-qué-se-utilizan-tokens" class="nav-link active" data-scroll-target="#por-qué-se-utilizan-tokens"><span class="header-section-number">51.1</span> Por qué se utilizan tokens</a></li>
+  <li><a href="#el-tokenizador" id="toc-el-tokenizador" class="nav-link" data-scroll-target="#el-tokenizador"><span class="header-section-number">51.2</span> El tokenizador</a></li>
+  <li><a href="#palabras-caracteres-y-tokens" id="toc-palabras-caracteres-y-tokens" class="nav-link" data-scroll-target="#palabras-caracteres-y-tokens"><span class="header-section-number">51.3</span> Palabras, caracteres y tokens</a></li>
+  <li><a href="#los-idiomas-no-ocupan-lo-mismo" id="toc-los-idiomas-no-ocupan-lo-mismo" class="nav-link" data-scroll-target="#los-idiomas-no-ocupan-lo-mismo"><span class="header-section-number">51.4</span> Los idiomas no ocupan lo mismo</a></li>
+  <li><a href="#los-espacios-y-la-puntuación-también-importan" id="toc-los-espacios-y-la-puntuación-también-importan" class="nav-link" data-scroll-target="#los-espacios-y-la-puntuación-también-importan"><span class="header-section-number">51.5</span> Los espacios y la puntuación también importan</a></li>
+  <li><a href="#los-números" id="toc-los-números" class="nav-link" data-scroll-target="#los-números"><span class="header-section-number">51.6</span> Los números</a></li>
+  <li><a href="#código-fuente" id="toc-código-fuente" class="nav-link" data-scroll-target="#código-fuente"><span class="header-section-number">51.7</span> Código fuente</a></li>
+  <li><a href="#tokenización-y-significado" id="toc-tokenización-y-significado" class="nav-link" data-scroll-target="#tokenización-y-significado"><span class="header-section-number">51.8</span> Tokenización y significado</a></li>
+  <li><a href="#tokens-de-entrada-y-de-salida" id="toc-tokens-de-entrada-y-de-salida" class="nav-link" data-scroll-target="#tokens-de-entrada-y-de-salida"><span class="header-section-number">51.9</span> Tokens de entrada y de salida</a></li>
+  <li><a href="#tokens-y-ventana-de-contexto" id="toc-tokens-y-ventana-de-contexto" class="nav-link" data-scroll-target="#tokens-y-ventana-de-contexto"><span class="header-section-number">51.10</span> Tokens y ventana de contexto</a></li>
+  <li><a href="#tokens-y-coste" id="toc-tokens-y-coste" class="nav-link" data-scroll-target="#tokens-y-coste"><span class="header-section-number">51.11</span> Tokens y coste</a></li>
+  <li><a href="#tokens-y-rendimiento" id="toc-tokens-y-rendimiento" class="nav-link" data-scroll-target="#tokens-y-rendimiento"><span class="header-section-number">51.12</span> Tokens y rendimiento</a></li>
+  <li><a href="#tokens-especiales" id="toc-tokens-especiales" class="nav-link" data-scroll-target="#tokens-especiales"><span class="header-section-number">51.13</span> Tokens especiales</a></li>
+  <li><a href="#no-todos-los-tokens-tienen-la-misma-importancia" id="toc-no-todos-los-tokens-tienen-la-misma-importancia" class="nav-link" data-scroll-target="#no-todos-los-tokens-tienen-la-misma-importancia"><span class="header-section-number">51.14</span> No todos los tokens tienen la misma importancia</a></li>
+  <li><a href="#una-aproximación-no-una-medida-visual" id="toc-una-aproximación-no-una-medida-visual" class="nav-link" data-scroll-target="#una-aproximación-no-una-medida-visual"><span class="header-section-number">51.15</span> Una aproximación, no una medida visual</a></li>
+  <li><a href="#un-ejemplo-completo" id="toc-un-ejemplo-completo" class="nav-link" data-scroll-target="#un-ejemplo-completo"><span class="header-section-number">51.16</span> Un ejemplo completo</a></li>
+  <li><a href="#idea-clave" id="toc-idea-clave" class="nav-link" data-scroll-target="#idea-clave"><span class="header-section-number">51.17</span> Idea clave</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/index.html">Sistemas Inteligentes</a></li><li class="breadcrumb-item"><a href="../../../chapters/30-part-III/01-marco/02-tokens.html"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Tokens</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Tokens</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Los modelos de lenguaje no procesan directamente palabras, frases o párrafos tal como los vemos las personas.</p>
+<p>Antes de que un texto pueda llegar al modelo, debe dividirse en unidades más pequeñas llamadas <strong>tokens</strong>.</p>
+<p>Un token puede representar una palabra completa, una parte de una palabra, un signo de puntuación, un número o incluso una combinación frecuente de caracteres. La división concreta depende del <strong>tokenizador</strong> utilizado por cada modelo.</p>
+<p>Por ejemplo, una frase como:</p>
+<blockquote class="blockquote">
+<p>Los sistemas inteligentes aprenden patrones.</p>
+</blockquote>
+<p>podría dividirse conceptualmente de esta forma:</p>
+<pre class="text"><code>Los | sistemas | inteligentes | aprenden | patrones | .</code></pre>
+<p>Pero también podría dividirse así:</p>
+<pre class="text"><code>Los | sistema | s | inteligente | s | aprenden | patrón | es | .</code></pre>
+<p>Ambas representaciones son posibles. El resultado depende del vocabulario y de las reglas del tokenizador.</p>
+<p>Por tanto, un token no es necesariamente una palabra.</p>
+<section id="por-qué-se-utilizan-tokens" class="level2" data-number="51.1">
+<h2 data-number="51.1" class="anchored" data-anchor-id="por-qué-se-utilizan-tokens"><span class="header-section-number">51.1</span> Por qué se utilizan tokens</h2>
+<p>Un modelo no puede trabajar directamente con texto.</p>
+<p>Necesita transformar el contenido en números que puedan procesarse mediante operaciones matemáticas. La tokenización es el primer paso de esa transformación.</p>
+<p>De forma simplificada, el recorrido es el siguiente:</p>
+<pre class="text"><code>texto → tokens → identificadores numéricos → representaciones internas</code></pre>
+<p>Cada token se asocia con un identificador numérico.</p>
+<p>Un ejemplo puramente ilustrativo podría ser:</p>
+<pre class="text"><code>"Los"          → 1452
+"sistemas"     → 7821
+"inteligentes" → 16438
+"."            → 13</code></pre>
+<p>Estos números no contienen por sí mismos el significado de las palabras. Funcionan como referencias dentro del vocabulario que utiliza el modelo.</p>
+<p>Más adelante veremos cómo esos identificadores se transforman en <strong>embeddings</strong>, representaciones numéricas que permiten al modelo trabajar con relaciones y semejanzas.</p>
+</section>
+<section id="el-tokenizador" class="level2" data-number="51.2">
+<h2 data-number="51.2" class="anchored" data-anchor-id="el-tokenizador"><span class="header-section-number">51.2</span> El tokenizador</h2>
+<p>El componente encargado de dividir el texto se denomina <strong>tokenizador</strong>.</p>
+<p>Cada familia de modelos puede utilizar un tokenizador diferente. Por ello, un mismo texto puede producir cantidades distintas de tokens según el modelo elegido.</p>
+<p>El tokenizador dispone de un vocabulario formado por palabras completas, fragmentos frecuentes, signos y otras secuencias de caracteres.</p>
+<p>Las expresiones comunes suelen necesitar pocos tokens. Las palabras poco frecuentes, los nombres propios, los términos técnicos o determinadas combinaciones de símbolos pueden dividirse en varias unidades.</p>
+<p>Por ejemplo, una palabra frecuente como:</p>
+<pre class="text"><code>casa</code></pre>
+<p>podría representarse mediante un único token.</p>
+<p>Una palabra menos habitual como:</p>
+<pre class="text"><code>hiperautomatización</code></pre>
+<p>podría dividirse conceptualmente en:</p>
+<pre class="text"><code>hiper | automatización</code></pre>
+<p>o incluso en fragmentos más pequeños.</p>
+<p>La división exacta no debe suponerse. Solo puede conocerse utilizando el tokenizador concreto del modelo.</p>
+</section>
+<section id="palabras-caracteres-y-tokens" class="level2" data-number="51.3">
+<h2 data-number="51.3" class="anchored" data-anchor-id="palabras-caracteres-y-tokens"><span class="header-section-number">51.3</span> Palabras, caracteres y tokens</h2>
+<p>No existe una equivalencia universal entre palabras y tokens.</p>
+<p>Un texto con mil palabras no produce siempre el mismo número de tokens. La relación depende de varios factores:</p>
+<ul>
+<li>el idioma;</li>
+<li>la frecuencia de las palabras;</li>
+<li>la longitud de los términos;</li>
+<li>el uso de números y símbolos;</li>
+<li>el formato;</li>
+<li>el código fuente;</li>
+<li>el tokenizador empleado.</li>
+</ul>
+<p>Como aproximación general podemos expresar:</p>
+<p><span class="math display">\[
+T \approx f(P, I, V, F)
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><ol start="20" type="A">
+<li>es el número de tokens;</li>
+</ol></li>
+<li><ol start="16" type="A">
+<li>representa las palabras del texto;</li>
+</ol></li>
+<li><ol type="I">
+<li>es el idioma;</li>
+</ol></li>
+<li><ol start="22" type="A">
+<li>representa el vocabulario utilizado;</li>
+</ol></li>
+<li><ol start="6" type="A">
+<li>incluye el formato, los símbolos y otros elementos.</li>
+</ol></li>
+</ul>
+<p>No se trata de una fórmula para calcular tokens, sino de una forma de recordar que su cantidad depende de varios factores y no únicamente del número de palabras.</p>
+</section>
+<section id="los-idiomas-no-ocupan-lo-mismo" class="level2" data-number="51.4">
+<h2 data-number="51.4" class="anchored" data-anchor-id="los-idiomas-no-ocupan-lo-mismo"><span class="header-section-number">51.4</span> Los idiomas no ocupan lo mismo</h2>
+<p>La eficiencia de la tokenización varía entre idiomas.</p>
+<p>Un vocabulario puede contener muchas palabras o fragmentos frecuentes de un idioma y representar peor otros. Como consecuencia, una misma idea expresada en dos lenguas diferentes puede ocupar cantidades distintas de tokens.</p>
+<p>También influyen las formas flexionadas. En castellano, por ejemplo, una misma raíz puede aparecer en numerosas variantes:</p>
+<pre class="text"><code>programar
+programa
+programador
+programadores
+programaremos
+programación</code></pre>
+<p>El tokenizador puede reconocer algunas como unidades completas y dividir otras en raíz y terminación.</p>
+<p>Esto tiene consecuencias prácticas. Dos textos con una longitud visual parecida pueden consumir cantidades diferentes de ventana de contexto y tener un coste distinto.</p>
+</section>
+<section id="los-espacios-y-la-puntuación-también-importan" class="level2" data-number="51.5">
+<h2 data-number="51.5" class="anchored" data-anchor-id="los-espacios-y-la-puntuación-también-importan"><span class="header-section-number">51.5</span> Los espacios y la puntuación también importan</h2>
+<p>Los tokens no representan únicamente palabras.</p>
+<p>Los espacios, saltos de línea, signos de puntuación, comillas y otros elementos pueden formar parte de la tokenización.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>Hola</code></pre>
+<p>y:</p>
+<pre class="text"><code> Hola</code></pre>
+<p>podrían no producir exactamente la misma secuencia de tokens, porque el espacio inicial puede quedar asociado al texto posterior.</p>
+<p>Del mismo modo, estas expresiones pueden tokenizarse de forma diferente:</p>
+<pre class="text"><code>sistema-inteligente
+sistema inteligente
+sistema_inteligente
+SistemaInteligente</code></pre>
+<p>Para una persona, todas ellas guardan una relación evidente. Para el tokenizador son secuencias de caracteres distintas.</p>
+</section>
+<section id="los-números" class="level2" data-number="51.6">
+<h2 data-number="51.6" class="anchored" data-anchor-id="los-números"><span class="header-section-number">51.6</span> Los números</h2>
+<p>Los números tampoco se convierten necesariamente en un único token.</p>
+<p>Una cifra como:</p>
+<pre class="text"><code>2026</code></pre>
+<p>puede representarse mediante un token o dividirse en varios fragmentos, dependiendo del vocabulario.</p>
+<p>Lo mismo ocurre con fechas, cantidades, identificadores y códigos:</p>
+<pre class="text"><code>31/07/2026
+1.250.000
+ES-2026-00481</code></pre>
+<p>Este detalle ayuda a comprender por qué los modelos pueden presentar dificultades con operaciones numéricas exactas o con secuencias largas de dígitos.</p>
+<p>El modelo procesa patrones de tokens. No utiliza necesariamente una representación numérica equivalente a la de una calculadora.</p>
+</section>
+<section id="código-fuente" class="level2" data-number="51.7">
+<h2 data-number="51.7" class="anchored" data-anchor-id="código-fuente"><span class="header-section-number">51.7</span> Código fuente</h2>
+<p>El código también se transforma en tokens.</p>
+<p>En este caso intervienen palabras reservadas, nombres de variables, operadores, espacios, tabulaciones, llaves y signos de puntuación.</p>
+<p>Por ejemplo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> precio <span class="op">*</span> cantidad</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>podría dividirse conceptualmente como:</p>
+<pre class="text"><code>total | = | precio | * | cantidad</code></pre>
+<p>Sin embargo, un identificador largo como:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>calcularImporteTotalPendiente</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>podría convertirse en varios tokens:</p>
+<pre class="text"><code>calcular | Importe | Total | Pendiente</code></pre>
+<p>El código suele contener muchos símbolos y nombres poco frecuentes. Por eso puede consumir una cantidad considerable de tokens, especialmente cuando se incluyen archivos completos, registros de ejecución o grandes fragmentos repetidos.</p>
+</section>
+<section id="tokenización-y-significado" class="level2" data-number="51.8">
+<h2 data-number="51.8" class="anchored" data-anchor-id="tokenización-y-significado"><span class="header-section-number">51.8</span> Tokenización y significado</h2>
+<p>El tokenizador divide el contenido, pero no lo comprende.</p>
+<p>Su función es representar el texto mediante unidades pertenecientes a un vocabulario. El significado emerge posteriormente, cuando el modelo procesa las relaciones entre los tokens y sus representaciones internas.</p>
+<p>Esto permite que fragmentos diferentes participen en construcciones relacionadas.</p>
+<p>Por ejemplo, los tokens correspondientes a:</p>
+<pre class="text"><code>programar
+programador
+programación</code></pre>
+<p>pueden ser distintos, pero el modelo puede aprender que aparecen en contextos relacionados.</p>
+<p>La tokenización es una operación técnica previa al razonamiento del modelo. No debe confundirse con la comprensión del lenguaje.</p>
+</section>
+<section id="tokens-de-entrada-y-de-salida" class="level2" data-number="51.9">
+<h2 data-number="51.9" class="anchored" data-anchor-id="tokens-de-entrada-y-de-salida"><span class="header-section-number">51.9</span> Tokens de entrada y de salida</h2>
+<p>En una interacción con un modelo podemos distinguir dos grandes grupos.</p>
+<p>Los <strong>tokens de entrada</strong> son aquellos que el sistema entrega al modelo:</p>
+<ul>
+<li>instrucciones;</li>
+<li>pregunta del usuario;</li>
+<li>historial de conversación;</li>
+<li>documentos;</li>
+<li>resultados de herramientas;</li>
+<li>ejemplos;</li>
+<li>recuerdos recuperados.</li>
+</ul>
+<p>Los <strong>tokens de salida</strong> son los que el modelo genera para construir la respuesta.</p>
+<p>Podemos expresar el consumo total de una interacción de forma sencilla:</p>
+<p><span class="math display">\[
+T_{\text{total}} = T_{\text{entrada}} + T_{\text{salida}}
+\]</span></p>
+<p>Esta relación será importante cuando estudiemos la ventana de contexto, porque tanto la entrada como la salida deben caber dentro del límite disponible.</p>
+</section>
+<section id="tokens-y-ventana-de-contexto" class="level2" data-number="51.10">
+<h2 data-number="51.10" class="anchored" data-anchor-id="tokens-y-ventana-de-contexto"><span class="header-section-number">51.10</span> Tokens y ventana de contexto</h2>
+<p>La ventana de contexto se mide habitualmente en tokens.</p>
+<p>Si un modelo admite una ventana máxima de (W) tokens, la suma del contexto recibido y la respuesta generada no debe superar ese límite:</p>
+<p><span class="math display">\[
+T_{\text{entrada}} + T_{\text{salida}} \leq W
+\]</span></p>
+<p>Por ejemplo, si una petición ocupa casi toda la ventana, quedará poco espacio para generar la respuesta.</p>
+<p>Por este motivo, los sistemas suelen reservar una parte de la capacidad para la salida:</p>
+<p><span class="math display">\[
+T_{\text{entrada máximo}} = W - T_{\text{salida reservada}}
+\]</span></p>
+<p>La cantidad reservada depende de la aplicación y de la longitud esperada de la respuesta.</p>
+<p>Esta es una de las razones por las que no conviene llenar la ventana con información sin seleccionar.</p>
+</section>
+<section id="tokens-y-coste" class="level2" data-number="51.11">
+<h2 data-number="51.11" class="anchored" data-anchor-id="tokens-y-coste"><span class="header-section-number">51.11</span> Tokens y coste</h2>
+<p>En muchos servicios comerciales, el uso del modelo se factura según el número de tokens procesados.</p>
+<p>De forma simplificada, el coste puede calcularse como:</p>
+<p><span class="math display">\[
+C =
+T_{\text{entrada}} \cdot P_{\text{entrada}}
++
+T_{\text{salida}} \cdot P_{\text{salida}}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><ol start="3" type="A">
+<li>es el coste total;</li>
+</ol></li>
+<li>(T_{}) es el número de tokens recibidos;</li>
+<li>(P_{}) es el precio por token de entrada;</li>
+<li>(T_{}) es el número de tokens generados;</li>
+<li>(P_{}) es el precio por token de salida.</li>
+</ul>
+<p>En la práctica, los precios suelen publicarse por miles o millones de tokens, pero el principio es el mismo.</p>
+<p>Un contexto mayor puede mejorar una respuesta si incorpora información relevante, pero también aumenta el coste y el tiempo de procesamiento.</p>
+</section>
+<section id="tokens-y-rendimiento" class="level2" data-number="51.12">
+<h2 data-number="51.12" class="anchored" data-anchor-id="tokens-y-rendimiento"><span class="header-section-number">51.12</span> Tokens y rendimiento</h2>
+<p>La cantidad de tokens influye también en el rendimiento del sistema.</p>
+<p>Un contexto más largo puede requerir:</p>
+<ul>
+<li>más memoria de cálculo;</li>
+<li>más tiempo de procesamiento;</li>
+<li>mayor coste;</li>
+<li>más esfuerzo para localizar la información relevante;</li>
+<li>más trabajo para mantener la coherencia.</li>
+</ul>
+<p>Esto no significa que debamos reducir siempre el contexto al mínimo. Un contexto insuficiente también produce respuestas pobres.</p>
+<p>El objetivo es utilizar los tokens necesarios, no el mayor número posible.</p>
+</section>
+<section id="tokens-especiales" class="level2" data-number="51.13">
+<h2 data-number="51.13" class="anchored" data-anchor-id="tokens-especiales"><span class="header-section-number">51.13</span> Tokens especiales</h2>
+<p>Además de los tokens derivados del texto, algunos sistemas utilizan <strong>tokens especiales</strong>.</p>
+<p>Estos pueden señalar:</p>
+<ul>
+<li>el inicio o el final de un mensaje;</li>
+<li>el papel de quien interviene;</li>
+<li>la separación entre instrucciones y datos;</li>
+<li>el inicio de una respuesta;</li>
+<li>llamadas a herramientas;</li>
+<li>fragmentos que deben recibir un tratamiento específico.</li>
+</ul>
+<p>Estos tokens no suelen ser visibles para el usuario, pero ayudan al sistema a estructurar la conversación.</p>
+<p>Por ejemplo, internamente podría existir una organización conceptual como:</p>
+<pre class="text"><code>[instrucción del sistema]
+[mensaje del usuario]
+[respuesta del asistente]</code></pre>
+<p>La representación real depende de cada modelo y de cada aplicación.</p>
+</section>
+<section id="no-todos-los-tokens-tienen-la-misma-importancia" class="level2" data-number="51.14">
+<h2 data-number="51.14" class="anchored" data-anchor-id="no-todos-los-tokens-tienen-la-misma-importancia"><span class="header-section-number">51.14</span> No todos los tokens tienen la misma importancia</h2>
+<p>Todos los tokens ocupan espacio, pero no todos influyen de igual manera en la respuesta.</p>
+<p>Una instrucción breve puede resultar más importante que cientos de líneas de documentación. Un dato situado cerca de la pregunta puede destacar más que otro enterrado en una conversación extensa. Un fragmento irrelevante puede consumir capacidad sin aportar valor.</p>
+<p>Por eso, contar tokens solo resuelve una parte del problema.</p>
+<p>También debemos decidir:</p>
+<ul>
+<li>qué información incluir;</li>
+<li>cómo ordenarla;</li>
+<li>qué elementos resumir;</li>
+<li>qué fragmentos recuperar;</li>
+<li>qué información eliminar;</li>
+<li>qué espacio reservar para la respuesta.</li>
+</ul>
+<p>La gestión de tokens forma parte de la gestión del contexto.</p>
+</section>
+<section id="una-aproximación-no-una-medida-visual" class="level2" data-number="51.15">
+<h2 data-number="51.15" class="anchored" data-anchor-id="una-aproximación-no-una-medida-visual"><span class="header-section-number">51.15</span> Una aproximación, no una medida visual</h2>
+<p>Podemos estimar visualmente la longitud de un texto, pero no conocer su número exacto de tokens sin utilizar el tokenizador correspondiente.</p>
+<p>Por ello, expresiones como «una página», «mil palabras» o «diez mil caracteres» solo ofrecen aproximaciones.</p>
+<p>Cuando el límite es importante, debe medirse con la herramienta adecuada.</p>
+<p>Esto ocurre especialmente en:</p>
+<ul>
+<li>documentos extensos;</li>
+<li>conversaciones prolongadas;</li>
+<li>análisis de código;</li>
+<li>procesamiento de registros;</li>
+<li>sistemas que recuperan múltiples fuentes;</li>
+<li>aplicaciones con costes elevados;</li>
+<li>tareas que requieren respuestas largas.</li>
+</ul>
+</section>
+<section id="un-ejemplo-completo" class="level2" data-number="51.16">
+<h2 data-number="51.16" class="anchored" data-anchor-id="un-ejemplo-completo"><span class="header-section-number">51.16</span> Un ejemplo completo</h2>
+<p>Supongamos que un sistema recibe:</p>
+<ul>
+<li>500 tokens de instrucciones;</li>
+<li>2.000 tokens de conversación;</li>
+<li>4.000 tokens de documentos;</li>
+<li>1.000 tokens procedentes de herramientas.</li>
+</ul>
+<p>La entrada total sería:</p>
+<p><span class="math display">\[
+T_{\text{entrada}} = 500 + 2.000 + 4.000 + 1.000 = 7.500
+\]</span></p>
+<p>Si el sistema reserva 2.500 tokens para la respuesta, la operación completa necesitaría una ventana mínima de:</p>
+<p><span class="math display">\[
+W = 7.500 + 2.500 = 10.000
+\]</span></p>
+<p>Este ejemplo muestra que el mensaje visible del usuario puede representar solo una pequeña parte de la información que realmente llega al modelo.</p>
+</section>
+<section id="idea-clave" class="level2" data-number="51.17">
+<h2 data-number="51.17" class="anchored" data-anchor-id="idea-clave"><span class="header-section-number">51.17</span> Idea clave</h2>
+<p>Los tokens son las unidades con las que el modelo recibe y genera contenido.</p>
+<p>No equivalen necesariamente a palabras, y su cantidad depende del idioma, del vocabulario, del formato y del tokenizador utilizado.</p>
+<p>Las instrucciones, la conversación, los documentos y la respuesta consumen tokens. Todos ellos deben caber dentro de la ventana de contexto.</p>
+<p>Ahora que conocemos la unidad con la que se mide ese espacio, podemos estudiar con mayor precisión la <strong>ventana de contexto</strong>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../chapters/30-part-III/01-marco/01-context.html" class="pagination-link" aria-label="El contexto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">El contexto</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../chapters/30-part-III/01-marco/03-window.html" class="pagination-link" aria-label="La ventana de contexto">
+        <span class="nav-page-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">La ventana de contexto</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Javier G. Grandez · IASI Rocks 🤘</p>
+</div>   
+    <div class="nav-footer-center">
+<p><span id="iasi-publish-date"></span></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../../903-licenses.html">
+<p>Licencias</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

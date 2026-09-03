@@ -1,0 +1,106 @@
+---
+title: "Especialización y reutilización"
+---
+
+![](/resources/images/under-construction.png)
+
+## División de procesos y especialización
+
+
+
+Siguiendo su teoría, separamos los procesos, además, como se ha mencionado, tenemos perfectamente 
+delimitados los límites de cada uno:
+
+![](/resources/images/organization/smith_subproceso.png)
+
+
+Las fases del proceso pasaban a verse simbolicamente de la siguiente manera:
+
+
+![](/resources/images/organization/smith_3.png)
+
+Como se puede observar el ciclo ha pasado de costar 8 ut. a 5 ut. Pero resulta mas ilustrativo si mostramos el trabajo conjunto en función del tiempo:
+
+![](/resources/images/organization/smith_4.png)
+
+
+1. El número de practicioners no ha cambiado, luego mi organización es la misma
+2. Ya no existe un único ciclo, si no tres ciclos diferentes
+3. A partir de un determinado instante de tiempo ($ut = n_i$), al que llamaremos período de arranque:
+   a. Cada practicioner esta realizando alguna tarea; es decir, no hay períodos de inactividad
+   b. Cada $ut > n_i$ se genera un nuevo producto
+
+Respecto a las fases del proceso:
+
+A) **Cut**: Genera un trozo de alambre cada ut
+B) **Head**: Al tener dos particioners, se genera un _output_ cada ut
+C) **Tail**: Sigue necesitando dos ut por alfiler, pero dado el paralelismo de tareas, se genera un producto/output cada ut de manera alternativa
+
+Es decir:
+
+
+    \forall j > i \: &| \: i = periodo\_arranque\\
+    Coste_{cut}  &= 1  \\
+    Coste_{head} &= 2 \\
+    Coste_{tail} &= 2 \\
+    Prod_{ut} &= 1 * \frac{item}{ut}  \\
+    Prod\:diaria_2 &= Prod\:unitaria\:*\:800 \; ut = 800\;item \\
+    Prod_{ut} &= 1 * \frac{item}{ut}  \\
+    Capacidad_{dia} &= Prod_{ut} \: * \: \sum ut_{dia} \: - \: periodo\_arranque &\thickapprox 800 \\
+    Coste\:marginal &= \sum coste_i\: =\: 5 
+
+
+Y las variaciones respecto al proceso original:
+
+    \Delta Capacidad &= \frac{Capacidad_2}{Capascidad_1} \: -1 \: * \: 100 \: = \: 30 \% \\
+    \Delta Productividad &= \frac{Prod\:diaria_2}{Prod\:diaria_1} \: -1 \: * \: 100 \: = \: 60 \% \\
+    \Delta Coste\_marginal &= (1 - \frac {Coste\_marginal_1}{Coste\_marginal_2}) * 100 &= 37.5\%
+
+
+
+Es decir, sin modificar mi estructura organizativa, ni realizar cambios "significativos": 
+Seguimos siendo los mismos en cantidad y calidad:
+
+a) Hemos incrementado la **capacidad** de la empresa en un **30%**; fabricamos un 30% mas de productos
+b) Hemos incrementado la **productividad** de los practicioners un **60%**, sin modificar sus trabajos
+c) Hemos reducido el coste marginal (incrementado el beneficio que nos llevamos por cada item) en un **37.5%**
+
+
+## Paso 3: Diversificacion y reutilización {.unlisted}
+
+Siguiendo con nuestro ejemplo, supongamos ahora que la empresa quiere fabricar agujas hipodérmicas en lugar de alfileres.
+El proceso sería:
+
+1. Cut: Cortar el acero a la longitud deseada
+2. Bore: Hacer el agujero dentro del acero
+3. Tail: Crear la punta de la aguja
+
+Si analizamos los procesos anteriores:
+
+- Cut: El proceso es similar, unicamente cambiaremos la longitud del alambre
+- Tail: Tambien es similar, crear una punta afilada
+
+El único proceso que cambia es _Head_ por _Bore_, ahora necesitamos realizar una tarea diferente y mas complicada.
+Asumiremos que el coste de esa fase es 3 ut.
+
+Formamos a los practicioners de esa fase, o adquirimos otra máquina (los practicioners tienen que seguir siendo formados),
+y obtenemos el siguiente flujo del proceso:
+
+![](/resources/images/organization/smith_5.png)
+Notese que hemos incluido un nuevo practicioner en la fase _bore_ para adecuar los tiempos y evitar
+cuellos de botella.
+
+- Al igual que antes, se genera un producto/output por cada ut, manteniendo la capacidad productiva en 800.
+- Unicamente he contratado un nuevo practicioner y formado a otros dos, el resto de la empresa no ha cambiado
+
+Ahora, sin embargo, somos capaces de fabricar dos productos diferentes en función de la demanda.
+
+| Proceso | Entrada | Salida |
+|---------|---------|--------|
+| Cut  | Rollo de alambre | Una pieza de alambre recta de cierta longitud |
+| Head | Una pieza de alambre recta | La misma pieza con una cabeza redonda en una punta |
+| Tail | Una pieza alambre con una cabeza en una punta | La misma pieza con la otra punta afilada | 
+
+
+su teoría, separamos los procesos, además, como se ha mencionado, tenemos perfectamente 
+delimitados los límites de cada uno:

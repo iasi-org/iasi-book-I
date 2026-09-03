@@ -1,5 +1,0 @@
----
-title: "Síntesis"
----
-
-![](../../resources/images/under-construction.png)

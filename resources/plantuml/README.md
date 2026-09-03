@@ -1,6 +1,6 @@
 # Librería PlantUML de IASI
 
-Esta carpeta contiene el lenguaje visual común de **Ingeniería Asistida por Sistemas Inteligentes (IASI)**.
+Esta carpeta contiene el lenguaje visual común de **Ingeniería Aumentada por Sistemas Inteligentes (IASI)**.
 
 ## Estructura
 

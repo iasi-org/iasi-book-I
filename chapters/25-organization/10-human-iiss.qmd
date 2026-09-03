@@ -1,5 +1,0 @@
----
-title: "Humanos y Sistemas Inteligentes"
----
-
-![](../../resources/images/under-construction.png)

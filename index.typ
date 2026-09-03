@@ -431,7 +431,7 @@
 #import "@preview/orange-book:0.7.1": book, part, chapter, appendices
 
 #show: book.with(
-  title: [Ingeniería asistida por sistemas inteligentes],
+  title: [Ingeniería aumentada por sistemas inteligentes],
   author: "Javier G. Grandez",
   lang: "es",
   main-color: brand-color.at("primary", default: blue),
@@ -476,7 +476,7 @@ Eso cambia muchas cosas, pero no cambia una fundamental:
 
 Este libro nace de esa distinción.
 
-#strong[Ingeniería Asistida por Sistemas Inteligentes (IASI)], no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
+#strong[Ingeniería Aumentada por Sistemas Inteligentes (IASI)], no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
 
 - No como un buscador mejorado.
 - No como un generador ocasional de código.
@@ -627,7 +627,7 @@ El ingeniero comprende, decide, verifica y responde.
 Por eso hablamos de:
 
 #quote(block: true)[
-#strong[Ingeniería asistida por sistemas inteligentes.]
+#strong[Ingeniería aumentada por sistemas inteligentes.]
 ]
 
 El #strong[por] establece la relación.
@@ -14697,7 +14697,7 @@ Identificador SPDX: #NormalTok("MIT");.
 
 #heading(level: 2, numbering: none)[Contenido editorial]
 <contenido-editorial>
-Los textos, capítulos, diagramas, tablas e imágenes originales de la obra #strong[Ingeniería asistida por sistemas inteligentes] se distribuyen bajo la licencia #strong[Creative Commons Attribution 4.0 International], salvo que se indique expresamente otra licencia.
+Los textos, capítulos, diagramas, tablas e imágenes originales de la obra #strong[Ingeniería aumentada por sistemas inteligentes] se distribuyen bajo la licencia #strong[Creative Commons Attribution 4.0 International], salvo que se indique expresamente otra licencia.
 
 Esto incluye, entre otros:
 
@@ -14719,7 +14719,7 @@ Identificador SPDX: #NormalTok("CC-BY-4.0");.
 Para reutilizar el contenido editorial, se recomienda utilizar una atribución semejante a la siguiente:
 
 #quote(block: true)[
-Javier G. Grandez, #emph[Ingeniería asistida por sistemas inteligentes], 2026. Licencia CC BY 4.0.
+Javier G. Grandez, #emph[Ingeniería aumentada por sistemas inteligentes], 2026. Licencia CC BY 4.0.
 ]
 
 Cuando el contenido haya sido modificado, deberá indicarse de forma razonable que se han realizado cambios.

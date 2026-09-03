@@ -1,0 +1,127 @@
+# Sobre ingeniería {.unnumbered}
+
+IASI utiliza la palabra **ingeniería** de forma deliberada.
+
+No la utiliza como una etiqueta destinada a distinguir o ennoblecer una actividad, ni como sinónimo de desarrollo de software, programación o dominio tecnológico. La utiliza porque el proceso que pretende describir comparte características que distintas instituciones de referencia reconocen como propias de la ingeniería y, sobre todo, porque presupone una determinada **forma de enfrentarse a los problemas**.
+
+La formación y la práctica de la ingeniería no consisten únicamente en adquirir conocimientos de una especialidad. Matemáticas, física, algoritmia, estructuras, electrónica, software, materiales o sistemas proporcionan conocimientos y capacidades necesarias para trabajar en determinados dominios. Pero, al mismo tiempo, sirven para entrenar una forma de razonar.
+
+Un ingeniero no se caracteriza únicamente por aquello que sabe, sino también por **cómo aborda un problema cuando todavía no conoce la solución**.
+
+Los conocimientos condicionan en gran medida qué problemas puede abordar una persona. La forma de pensar condiciona cómo los aborda.
+
+## Pensar como un ingeniero
+
+La idea de que existe una forma reconocible de pensar propia de la ingeniería no es únicamente una intuición profesional.
+
+La **Royal Academy of Engineering**, en el informe *Thinking like an Engineer: Implications for the Education System*, estudia precisamente cómo piensan y actúan los ingenieros cuando se enfrentan a problemas difíciles. El informe identifica seis *Engineering Habits of Mind* que considera esenciales: identificación del problema, visualización, mejora, resolución creativa de problemas, pensamiento sistémico y adaptabilidad.
+
+Estas capacidades no describen una tecnología ni una disciplina concreta. Describen hábitos de pensamiento que pueden manifestarse en especialidades de ingeniería muy diferentes.
+
+La identificación del problema exige aclarar necesidades, investigar el contexto, comprobar soluciones existentes y verificar qué problema se está intentando resolver realmente. El pensamiento sistémico obliga a observar tanto el conjunto como sus partes, sus relaciones, dependencias y patrones. La resolución creativa requiere generar alternativas y someterlas a crítica. La adaptabilidad implica analizar resultados, reconsiderar hipótesis y modificar la solución cuando la evidencia lo exige. La mejora introduce una actitud iterativa: experimentar, probar, diseñar, prototipar y volver a intentarlo.
+
+Esta perspectiva es especialmente relevante para IASI porque desplaza el centro de atención desde el conocimiento acumulado hacia **la manera de utilizar el conocimiento para razonar sobre un problema**.
+
+Una persona puede conocer profundamente una tecnología y no necesariamente enfrentarse a los problemas de esta manera. Del mismo modo, dos ingenieros de especialidades muy diferentes pueden compartir patrones de razonamiento aunque sus conocimientos técnicos apenas se solapen.
+
+La especialidad determina el dominio. La ingeniería proporciona una forma de enfrentarse a él.
+
+## Ingeniería, conocimiento y juicio
+
+El **Engineering Council** británico expresa esta idea desde la competencia profesional. Su estándar UK-SPEC organiza la competencia de ingeniería en cinco grandes áreas: conocimiento y comprensión; diseño, desarrollo y resolución de problemas de ingeniería; responsabilidad, gestión y liderazgo; comunicación; y compromiso profesional.
+
+Esta estructura resulta significativa porque el conocimiento aparece como una parte necesaria, pero no suficiente, de la competencia del ingeniero. Junto a él aparecen la capacidad para diseñar y resolver problemas, asumir responsabilidad, ejercer juicio profesional y mantener un compromiso ético con la práctica.
+
+En formulaciones desarrolladas conjuntamente por la **Royal Academy of Engineering** y el **Engineering Council**, la ingeniería se describe como un proceso creativo que aplica conocimiento y experiencia para buscar soluciones técnicas a una necesidad o problema y utiliza después **juicio informado** para escoger e implementar la solución que mejor satisface las restricciones existentes.
+
+El ingeniero, por tanto, no se limita a aplicar procedimientos conocidos. Debe interpretar una situación, construir una representación útil del problema, plantear alternativas y decidir entre ellas bajo restricciones que pueden ser técnicas, económicas, temporales, legales, humanas, sociales o ambientales.
+
+La existencia de restricciones es fundamental. En ingeniería rara vez existe una solución óptima en todas las dimensiones. Existen compromisos. Decidir implica comprenderlos y asumir las consecuencias de la decisión.
+
+## Abstracción y materialización
+
+La **National Society of Professional Engineers (NSPE)** caracteriza la ingeniería como la capacidad de tomar ideas abstractas y aplicar ciencia y matemáticas para diseñar soluciones que satisfagan necesidades humanas.
+
+La formulación resulta especialmente útil para IASI porque pone en relación dos movimientos esenciales de la ingeniería.
+
+Por una parte, el ingeniero **abstrae**: separa lo esencial de lo accidental, identifica variables, relaciones, límites y restricciones, y construye modelos sobre los que puede razonar.
+
+Por otra, **materializa**: transforma esas abstracciones en soluciones que deben funcionar en el mundo real.
+
+Entre ambos movimientos existe un proceso continuo de análisis, síntesis, decisión y validación. El modelo permite razonar sobre la realidad, pero la realidad termina poniendo a prueba el modelo.
+
+La NSPE añade además elementos inseparables del ejercicio profesional: trabajar dentro del ámbito de competencia, mantener objetividad, proteger la seguridad y el bienestar públicos y asumir responsabilidad personal por las actividades profesionales.
+
+La ingeniería no termina cuando aparece una solución técnicamente posible. Incluye también responder por las decisiones tomadas y por sus consecuencias.
+
+## Diseñar es decidir
+
+Los criterios de **ABET** describen el diseño de ingeniería como un proceso iterativo, creativo y de toma de decisiones destinado a satisfacer necesidades y especificaciones dentro de restricciones.
+
+Ese proceso incluye identificar oportunidades, desarrollar requisitos, analizar y sintetizar información, generar múltiples soluciones, evaluarlas frente a los requisitos, considerar riesgos y realizar compromisos entre alternativas.
+
+ABET exige además que la formación de ingeniería desarrolle capacidades para identificar, formular y resolver problemas complejos; diseñar soluciones teniendo en cuenta múltiples restricciones; experimentar y analizar evidencia; adquirir nuevo conocimiento cuando sea necesario; y realizar juicios informados considerando responsabilidades éticas y profesionales.
+
+De nuevo, el patrón es más amplio que el dominio de una tecnología concreta.
+
+El ingeniero no recibe necesariamente un problema perfectamente definido y aplica sobre él una técnica conocida. Parte de su trabajo consiste precisamente en descubrir **cuál es el problema**, construir una representación suficientemente buena de él y decidir qué solución merece ser materializada.
+
+## Una forma de enfrentarse a los problemas
+
+IASI no pretende establecer una definición universal de ingeniería ni reducir décadas de formación y práctica profesional a una lista de verbos.
+
+Necesita, sin embargo, hacer explícito el concepto de ingeniería sobre el que construye su modelo.
+
+La síntesis que utiliza IASI puede expresarse mediante las siguientes capacidades:
+
+**comprender → abstraer → modelar → plantear alternativas → evaluar restricciones → decidir → validar → responsabilizarse**
+
+No constituyen una secuencia rígida ni un proceso metodológico. Son una aproximación a una forma de pensar y ejercer la ingeniería.
+
+**Comprender** significa no aceptar automáticamente la formulación inicial del problema. Implica investigar el contexto, distinguir hechos de supuestos y descubrir qué necesidad existe realmente.
+
+**Abstraer** significa separar lo esencial de lo accesorio para poder razonar sobre el problema sin quedar atrapado por su manifestación concreta.
+
+**Modelar** significa construir representaciones suficientemente precisas para analizar relaciones, comportamiento, límites y consecuencias.
+
+**Plantear alternativas** significa no confundir la primera solución posible con la solución. La ingeniería explora posibilidades.
+
+**Evaluar restricciones** significa reconocer que toda solución existe dentro de límites y compromisos: coste, tiempo, seguridad, rendimiento, mantenibilidad, regulación, recursos, conocimiento disponible y muchos otros.
+
+**Decidir** significa ejercer juicio. Los datos informan la decisión, pero rara vez eliminan por completo la necesidad de elegir entre alternativas imperfectas.
+
+**Validar** significa buscar evidencia de que aquello que se ha decidido y materializado satisface realmente la necesidad que originó el trabajo.
+
+**Responsabilizarse** significa que la ingeniería no se agota en producir un resultado. Alguien debe responder por las decisiones adoptadas, por los criterios utilizados y por las consecuencias previsibles de la solución.
+
+Esta forma de pensar puede reconocerse en ingenierías muy distintas porque no depende de una tecnología concreta. Cambian los conocimientos, las herramientas, los materiales y los dominios; permanecen muchos de los patrones con los que se razona sobre ellos.
+
+## Conocimiento y especialización
+
+La especialización tecnológica forma parte de la ingeniería, pero no la sustituye.
+
+Conocer profundamente un lenguaje, una plataforma, una herramienta, un material o una disciplina proporciona capacidades importantes. Un especialista puede poseer un conocimiento que otro ingeniero no tiene y resultar imprescindible para determinadas decisiones.
+
+Pero saber mucho de una tecnología no contiene por sí solo todo aquello que IASI entiende por ejercer ingeniería.
+
+Un curso puede proporcionar conocimiento o una capacidad concreta. La experiencia puede desarrollar una especialización extraordinaria. Ninguna de esas cosas debe despreciarse. Simplemente responden a una cuestión distinta.
+
+IASI separa deliberadamente **qué sabe una persona** de **cómo ejerce la ingeniería con aquello que sabe y con el conocimiento al que puede acceder**.
+
+Esta separación adquirirá una importancia especial cuando intervengan Sistemas Inteligentes, porque el acceso a conocimiento y la capacidad de ejecutar tareas dejan de estar necesariamente limitados por lo que el humano conoce o puede materializar personalmente.
+
+Pero esa consecuencia pertenece a capítulos posteriores.
+
+Aquí basta con establecer el punto de partida:
+
+**la ingeniería no es únicamente un conjunto de conocimientos. Es también una forma de pensar, decidir y asumir responsabilidad ante problemas que deben resolverse bajo restricciones.**
+
+## Referencias
+
+- Royal Academy of Engineering. *Thinking like an Engineer: Implications for the Education System*. https://www.raeng.org.uk/media/brjjknt3/thinking-like-an-engineer-full-report.pdf
+- Engineering Council. *UK Standard for Professional Engineering Competence and Commitment (UK-SPEC)*. https://www.engc.org.uk/ukspec.aspx
+- Royal Academy of Engineering / Engineering Council. Formulación del proceso de ingeniería reproducida por The Open University en *Systems engineering: Challenging complexity*. https://www.open.edu/openlearn/science-maths-technology/systems-engineering-challenging-complexity/content-section-2.2
+- Engineering Council / Royal Academy of Engineering. *Statement of Ethical Principles*. https://www.engc.org.uk/resources-and-guidance/guidance-for-the-profession/ethical-principles
+- National Society of Professional Engineers. *Things to Know About Engineering*. https://www.nspe.org/media-inquiries/things-know-about-engineering
+- National Society of Professional Engineers. *NSPE Code of Ethics for Engineers*. https://www.nspe.org/career-growth/ethics/nspe-code-ethics-engineers
+- ABET. *Criteria for Accrediting Engineering Programs, 2026–2027*. https://www.abet.org/accreditation/accreditation-criteria/criteria-for-accrediting-engineering-programs-2026-2027/

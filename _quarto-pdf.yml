@@ -1,5 +1,5 @@
 project:
-  output-dir: _outputs/pdf
+  output-dir: outputs/docs/pdf
 
 #book:
 #  output-file: "IASI Vol-I"
@@ -7,6 +7,9 @@ project:
 format:
   pdf:
     documentclass: scrreprt
+    classoption:
+      - twoside
+      - open=right    
     papersize: a4
     toc: true
     number-sections: true
@@ -15,9 +18,19 @@ format:
     urlcolor: blue
     citecolor: blue      
 
+    geometry:
+      - top=22mm
+      - bottom=22mm
+      - left=25mm
+      - right=25mm
+      - headheight=15pt
+      - headsep=8mm
+      - footskip=10mm
+      
     template-partials:
       - resources/pdf/before-body.tex
 
     include-in-header:
-      text: |
-        \usepackage{eso-pic}
+      - text: |
+           \usepackage{eso-pic}
+      - resources/pdf/header-footer.tex

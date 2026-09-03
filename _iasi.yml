@@ -1,5 +1,11 @@
 publication:
   version: 0.2.1
-  strategy: structured
+  strategy: parted
   content-dir: chapters
   numbered: true
+
+paths:
+  inputs: inputs
+  orchestration: orchestration
+  outputs: outputs
+  releases: releases

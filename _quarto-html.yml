@@ -1,10 +1,10 @@
 project:
-  output-dir: _outputs/html
+  output-dir: outputs/docs/html
 
 website:
   announcement:
     content: |
-      ![](/resources/images/ants.png){.iasi-ants-image}
+      ![](images/ants.png){.iasi-ants-image}
     position: above-navbar
     dismissable: false
 
@@ -30,43 +30,29 @@ book:
       - text: "Inicio"
         href: index.qmd
       - text: "Introducción"
-        href: chapters/000-general/index.qmd
-      - text: "Components"
+        href: chapters/10-part-I/01-intro/index.qmd
+      - text: "Fundamentos"
         menu:
-          - text: "Inputs"
-            href: "chapters/010-inputs/index.qmd"
-          - text: "Definitions"
-            href: "chapters/020-definitions/index.qmd"
-          - text: "Rules"
-            href: "chapters/030-rules/index.qmd"
-          - text: "Configuration"
-            href: "chapters/040-configurations/index.qmd"
-      - text: "Specifications"
-        href: chapters/050-specifications/index.qmd
-      - text: "Tasks"
-        href: chapters/060-tasks/index.qmd
-      - text: "No lo se"
+          - text: "Introducción"
+            href: "chapters/10-part-I/01-intro/index.qmd"
+          - text: "Conceptos"
+            href: "chapters/10-part-I/02-conceptos/index.qmd"
+          - text: "Foundations"
+            href: "chapters/10-part-I/03-foundations/index.qmd"
+      - text: "Ingenieria"
         menu:
-          - text: "Tasks"
-            href: "chapters/060-tasks/index.qmd"
-          - text: "Validations"
-            href: "chapters/070-validations/index.qmd"
-          - text: "States"
-            href: "chapters/080-states/index.qmd"
-          - text: "Automations"
-            href: "chapters/090-automations/index.qmd"
-      - text: "Transversal"
+          - text: "Organizacion"
+            href: "chapters/20-part-II/01-organization/index.qmd"
+          - text: "Ingenieria"
+            href: "chapters/20-part-II/02-engineering/index.qmd"
+          - text: "Metodologias"
+            href: "chapters/20-part-II/03-methodologies/index.qmd"
+      - text: "SSII"
         menu:
-          - text: "Skills"
-            href: "chapters/100-skills/index.qmd"
-          - text: "Commands"
-            href: "chapters/110-commands/index.qmd"
-          - text: "Templates"
-            href: "chapters/120-templates/index.qmd"
-          - text: "Workflows"
-            href: "chapters/130-workflows/index.qmd"
-      - text: "Adapters"
-        href: chapters/200-adapters/index.qmd
+          - text: "Marco"
+            href: "chapters/30-part-III/01-marco/index.qmd"
+          - text: "Componentes"
+            href: "chapters/30-part-III/02-components/index.qmd"
 
     right:
       - icon: download

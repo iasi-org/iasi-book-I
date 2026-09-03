@@ -26,7 +26,7 @@ Identificador SPDX: `MIT`.
 
 ## Contenido editorial
 
-Los textos, capítulos, diagramas, tablas e imágenes originales de la obra **Ingeniería asistida por sistemas inteligentes** se distribuyen bajo la licencia **Creative Commons Attribution 4.0 International**, salvo que se indique expresamente otra licencia.
+Los textos, capítulos, diagramas, tablas e imágenes originales de la obra **Ingeniería aumentada por sistemas inteligentes** se distribuyen bajo la licencia **Creative Commons Attribution 4.0 International**, salvo que se indique expresamente otra licencia.
 
 Esto incluye, entre otros:
 
@@ -47,7 +47,7 @@ Identificador SPDX: `CC-BY-4.0`.
 
 Para reutilizar el contenido editorial, se recomienda utilizar una atribución semejante a la siguiente:
 
-> Javier G. Grandez, *Ingeniería asistida por sistemas inteligentes*, 2026. Licencia CC BY 4.0.
+> Javier G. Grandez, *Ingeniería aumentada por sistemas inteligentes*, 2026. Licencia CC BY 4.0.
 
 Cuando el contenido haya sido modificado, deberá indicarse de forma razonable que se han realizado cambios.
 

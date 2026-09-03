@@ -1,19 +1,22 @@
 project:
   type: book
-  output-dir: _outputs
+  output-dir: outputs/docs
 
   resources:
     - LICENSES/*.txt
 
 profile:
   group:
-    - [html, pdf, epub, docx, odt]
+    - [html, pdf]
 
 metadata-files:
   - _book-structure.yml
 
 lang: es
 
+resource-path:
+  - resources
+  
 bibliography:
   - references/historia-ia.bib
   - references/inteligencia-artificial.bib
@@ -21,7 +24,7 @@ bibliography:
   - references/ingenieria-software.bib
 
 book:
-  title: "Ingeniería asistida por sistemas inteligentes"
+  title: "Ingeniería aumentada por sistemas inteligentes"
   author: "Javier G. Grandez"
   output-file: "IASI_Vol_I"
 
@@ -38,7 +41,7 @@ filters:
 filter-options:
   plantuml:
     enabled: true
-    server: http://localhost:10025
+    server: http://iasi-docker:10025
     cache: true
     styles:
       - resources/plantuml/iasi.puml

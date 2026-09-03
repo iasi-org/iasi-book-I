@@ -1,5 +1,0 @@
----
-title: "Foundation 07"
----
-
-![](../../resources/images/under-construction.png)

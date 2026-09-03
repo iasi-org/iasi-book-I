@@ -12,7 +12,7 @@ Eso cambia muchas cosas, pero no cambia una fundamental:
 
 Este libro nace de esa distinción.
 
-**Ingeniería Asistida por Sistemas Inteligentes (IASI)**, no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
+**Ingeniería Aumentada por Sistemas Inteligentes (IASI)**, no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
 
 - No como un buscador mejorado.
 - No como un generador ocasional de código.

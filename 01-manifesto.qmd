@@ -70,7 +70,7 @@ El ingeniero comprende, decide, verifica y responde.
 
 Por eso hablamos de:
 
-> **Ingeniería asistida por sistemas inteligentes.**
+> **Ingeniería aumentada por sistemas inteligentes.**
 
 El **por** establece la relación.
 

@@ -1,5 +1,5 @@
 project:
-  output-dir: _outputs/epub
+  output-dir: outputs/docs/epub
 
 format:
   epub: default

@@ -1,5 +1,0 @@
----
-title: "Evolución profesional"
----
-
-![](../../resources/images/under-construction.png)
