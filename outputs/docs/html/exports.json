@@ -1,5 +1,0 @@
-{
-  "exports": [
-    {"profile": "pdf", "text": "PDF", "icon": "file-earmark-pdf", "href": "../pdf/IASI_Vol_I.pdf"}
-  ]
-}

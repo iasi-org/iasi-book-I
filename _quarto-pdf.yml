@@ -1,5 +1,5 @@
 project:
-  output-dir: outputs/docs/pdf
+  output-dir: outputs/pdf
 
 #book:
 #  output-file: "IASI Vol-I"

@@ -1,5 +1,5 @@
 project:
-  output-dir: outputs/docs/html
+  output-dir: outputs/html
 
 website:
   announcement:

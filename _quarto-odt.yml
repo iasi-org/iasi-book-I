@@ -1,0 +1,7 @@
+project:
+  output-dir: outputs/odt
+
+pandoc:
+  reference-doc: iasi-book.ott
+  toc: true
+  number-sections: true

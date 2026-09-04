@@ -1,0 +1,6 @@
+project:
+  output-dir: outputs/docx
+
+pandoc:
+  toc: true
+  number-sections: true
