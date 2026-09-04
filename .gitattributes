@@ -1,13 +1,16 @@
-# IASI text files
-*.qmd   text eol=lf
-*.yml   text eol=lf
-*.yaml  text eol=lf
-*.R     text eol=lf
-*.lua   text eol=lf
-*.scss  text eol=lf
-*.css   text eol=lf
-*.js    text eol=lf
-*.html  text eol=lf
-*.md    text eol=lf
-*.sh    text eol=lf
-*.tex   text eol=lf
+# Default text files
+* text=auto eol=lf
+
+# Windows scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.exe binary
