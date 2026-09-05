@@ -28,10 +28,23 @@ format:
       - footskip=10mm
       
     template-partials:
-      - resources/pdf/before-body.tex
+      - resources/latex/before-body.tex
 
     include-in-header:
       - text: |
            \usepackage{eso-pic}
-      - resources/pdf/header-footer.tex
-      - resources/pdf/part-numbering.tex
+      - resources/latex/header-footer.tex
+      - resources/latex/part-numbering.tex
+      - text: |
+           % Nombre de la parte actual en el pie interior de páginas pares e impares.
+           \renewcommand{\partmark}[1]{\markboth{#1}{}}
+           \fancyfoot[LO,RE]{\footnotesize\nouppercase{\leftmark}}
+
+           % Compactar títulos de capítulo y sección para una composición más editorial.
+           \RedeclareSectionCommand[
+             afterskip=.2\baselineskip
+           ]{chapter}
+           \RedeclareSectionCommand[
+             beforeskip=.35\baselineskip,
+             afterskip=.2\baselineskip
+           ]{section}

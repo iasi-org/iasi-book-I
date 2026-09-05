@@ -4,6 +4,8 @@ publication:
   version: 0.2.1
   strategy: parted
   content-dir: chapters
+  front-matter: front-matter
+  back-matter: back-matter
   numbered: true
 
 paths:
@@ -11,3 +13,6 @@ paths:
   orchestration: orchestration
   outputs: outputs
   releases: releases
+  
+exclude:
+  - includes

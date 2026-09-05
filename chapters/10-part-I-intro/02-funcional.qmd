@@ -1,5 +1,5 @@
 ---
-title: "Programacion funcional"
+title: "Programación funcional"
 ---
 
 ## Describiendo el problema, no el procedimiento

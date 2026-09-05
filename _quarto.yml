@@ -18,10 +18,10 @@ resource-path:
   - resources
   
 bibliography:
-  - references/historia-ia.bib
-  - references/inteligencia-artificial.bib
-  - references/historia-software.bib
-  - references/ingenieria-software.bib
+  - includes/references/historia-ia.bib
+  - includes/references/inteligencia-artificial.bib
+  - includes/references/historia-software.bib
+  - includes/references/ingenieria-software.bib
 
 book:
   title: "Ingeniería aumentada con sistemas inteligentes"

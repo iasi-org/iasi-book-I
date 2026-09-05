@@ -16,7 +16,7 @@ book:
     center: '<span id="iasi-publish-date"></span>'
     right:
       - text: "Licencias"
-        href: 903-licenses.qmd
+        href: back-matter/903-licenses.qmd
 
   sidebar:
     collapse-level: 1

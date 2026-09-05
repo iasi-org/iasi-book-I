@@ -1,8 +1,9 @@
 ---
-title: "IA Simbolica"
+title: "IA Simbólica"
 ---
 
 ## Representar el conocimiento
+
 Mientras la Ingeniería del Software evolucionaba hacia niveles crecientes de abstracción, otra disciplina comenzaba a plantearse una pregunta completamente diferente:
 
 **¿Es posible representar el conocimiento humano dentro de un ordenador?**
@@ -11,6 +12,7 @@ Esta cuestión dio origen a la primera gran corriente de la Inteligencia Artific
 su objetivo no consistía en aprender a partir de datos, sino en construir sistemas capaces de razonar utilizando conocimiento representado explícitamente.
 
 ### La inteligencia como conocimiento
+
 Los investigadores de las décadas de 1950 y 1960 partían de una hipótesis aparentemente razonable:
 
 > Cuando una persona resuelve un problema, utiliza conocimientos, reglas y razonamientos.
@@ -21,6 +23,7 @@ debía escribirse.
 El reto consistía en encontrar una forma adecuada de representar ese conocimiento.
 
 ### Símbolos en lugar de números
+
 Los ordenadores habían nacido para realizar cálculos numéricos, la Inteligencia Artificial simbólica propuso utilizar los ordenadores para manipular conceptos, en lugar de sumar o multiplicar, los programas trabajarían con conceptos como:
 
 * Personas.
@@ -42,6 +45,7 @@ Un sistema podía conocer afirmaciones como:
 A partir de estas afirmaciones era posible deducir nuevo conocimiento mediante reglas lógicas.
 
 ### El razonamiento mediante reglas
+
 La pieza fundamental de la IA simbólica era el motor de inferencia, el conocimiento se almacenaba mediante hechos y reglas.
 
 Por ejemplo:
@@ -56,6 +60,7 @@ El sistema podía deducir automáticamente:
 Nadie había escrito explícitamente esa conclusión, había sido obtenida mediante razonamiento lógico. Por primera vez un ordenador parecía capaz de extraer conclusiones utilizando conocimiento previamente representado.
 
 ### Los lenguajes de la Inteligencia Artificial
+
 La necesidad de representar conocimiento impulsó el desarrollo de nuevos lenguajes de programación:
 
 - Lisp permitió manipular símbolos, listas y expresiones de forma extremadamente flexible, su capacidad para tratar programas como datos convirtió a Lisp en el lenguaje predominante de la investigación en Inteligencia Artificial durante varias décadas.
@@ -64,6 +69,7 @@ La necesidad de representar conocimiento impulsó el desarrollo de nuevos lengua
 Esta idea representaba una evolución muy interesante respecto a la programación declarativa, ya no solo se declaraba el resultado esperado, si no que también se declaraba el conocimiento sobre el que debía razonar el sistema.
 
 ### Los sistemas expertos
+
 Durante los años setenta y ochenta esta filosofía alcanzó su máximo desarrollo con los sistemas expertos.
 
 La idea era tan sencilla como ambiciosa: Si un especialista podía explicar cómo tomaba decisiones, ese conocimiento podría almacenarse en un ordenador.
@@ -80,6 +86,7 @@ Los ingenieros del conocimiento entrevistaban a estos expertos y transformaban s
 Durante algún tiempo estos sistemas obtuvieron resultados extraordinarios y alimentaron la idea de que la Inteligencia Artificial estaba cerca de resolver el problema del razonamiento humano.
 
 ### El cuello de botella del conocimiento
+
 Sin embargo, muy pronto apareció una dificultad que nadie había previsto con suficiente claridad: El conocimiento humano no puede reducirse fácilmente a una colección de reglas. Cada nueva excepción obligaba a escribir nuevas reglas, las reglas comenzaban a entrar en conflicto entre sí y el mantenimiento se volvía cada vez más complejo. La incorporación de nuevos conocimientos exigía revisar miles de decisiones anteriores.
 
 Este problema llegó a conocerse como el **cuello de botella del conocimiento** (*Knowledge Acquisition Bottleneck*).
@@ -87,6 +94,7 @@ Este problema llegó a conocerse como el **cuello de botella del conocimiento** 
 No era difícil construir un sistema experto, lo realmente difícil era mantenerlo actualizado durante años.
 
 ### El límite de la Inteligencia Artificial simbólica
+
 La IA simbólica demostró que los ordenadores podían razonar, pero también puso de manifiesto una limitación fundamental: El conocimiento debía ser introducido manualmente.
 
 - Cada regla.
@@ -97,6 +105,7 @@ La IA simbólica demostró que los ordenadores podían razonar, pero también pu
 La inteligencia dependía directamente de la cantidad y calidad del conocimiento escrito por los expertos, el sistema nunca podía saber más de lo que alguien había representado previamente, en otras palabras, la inteligencia seguía dependiendo completamente del ser humano.
 
 ### Una lección que sigue vigente
+
 Aunque muchos sistemas expertos desaparecieron con el tiempo, la IA simbólica dejó un legado extraordinario introduciendo conceptos que siguen siendo fundamentales en la actualidad:
 
 * La representación del conocimiento.
@@ -109,6 +118,7 @@ Aunque muchos sistemas expertos desaparecieron con el tiempo, la IA simbólica d
 Muchos sistemas modernos continúan utilizando estas técnicas allí donde resulta imprescindible trabajar con conocimiento explícito y completamente verificable.
 
 ### El siguiente paso
+
 La IA simbólica intentó construir inteligencia escribiendo conocimiento, durante décadas fue el enfoque dominante sin embargo, a medida que los problemas crecían en complejidad comenzó a resultar evidente que representar manualmente todo el conocimiento humano era una tarea inabordable. Quizá el problema no consistía en escribir mejores reglas. Quizá el verdadero cambio debía consistir en dejar que las máquinas aprendieran esas reglas por sí mismas.
 
 Esa idea marcaría el nacimiento de una nueva etapa en la historia de la Inteligencia Artificial: el aprendizaje automático.

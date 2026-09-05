@@ -1,5 +1,5 @@
 ---
-title: "Progrmacion declarativa"
+title: "Programación declarativa"
 ---
 
 ## Describiendo el resultado, no el procedimiento
