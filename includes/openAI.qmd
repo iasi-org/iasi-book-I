@@ -1,0 +1,97 @@
+## _OpenAI_
+
+El 3 de septiembre de 2026, _OpenAI_  presentó **GPT-6 Astra**, su nueva generación de modelos, y comenzó un despliegue inicialmente limitado que, según la compañía, se extenderá progresivamente a usuarios de _ChatGPT_ Plus, Pro, Business y Enterprise, además de la API de _OpenAI_  y servicios de Microsoft Azure y AWS.
+
+Como suele ocurrir con cada nueva generación, _OpenAI_  acompaña el anuncio de mejoras en razonamiento, programación, investigación y diferentes pruebas de rendimiento. Sin embargo, hay otro aspecto del anuncio que resulta especialmente significativo para comprender hacia dónde está evolucionando _ChatGPT_.
+
+_OpenAI_ no presenta _Astra_ únicamente como un modelo capaz de **responder mejor**, sino como un sistema preparado para **realizar trabajo**.
+
+### De responder preguntas a completar trabajo {.unlisted}
+
+En sus notas de lanzamiento, _OpenAI_  destaca mejoras en programación, investigación, uso del ordenador y ejecución de tareas complejas compuestas por múltiples pasos. La compañía describe _Astra_ como un modelo diseñado para abordar trabajo de principio a fin, combinando razonamiento, herramientas, contexto y ejecución hasta producir un resultado terminado.
+
+La página de presentación utiliza una expresión especialmente reveladora: ***“a step change in professional work”***, un cambio significativo en el trabajo profesional.
+
+OpenAI explica que _Astra_ combina capacidades de uso del ordenador con entrenamiento específico para entornos profesionales, permitiéndole ejecutar flujos de trabajo de varios pasos y producir documentos, hojas de cálculo, presentaciones y análisis terminados.
+
+No se trata únicamente de generar el texto que podría contener uno de esos documentos.
+
+OpenAI afirma que _Astra_ ha sido entrenado para trabajar con **plantillas existentes**, respetar estilos visuales y de escritura, seleccionar el contexto relevante y producir artefactos más directamente utilizables dentro del entorno de una organización.
+
+La diferencia puede parecer pequeña, pero describe una forma distinta de utilizar el sistema, durante años, una interacción habitual con _ChatGPT_ podía consistir en pedir:
+
+**«Escribe el contenido de una presentación sobre este tema.»**
+
+La dirección que describe ahora _OpenAI_  permite formular una petición diferente:
+
+**«Utiliza esta presentación como plantilla, conserva su estructura y su estilo, utiliza estos documentos como material de partida y genera la nueva presentación.»**
+
+La segunda petición no solicita únicamente información, solicita un **resultado de trabajo**.
+
+### Documentos, hojas de cálculo y presentaciones como objetos de trabajo {.unlisted}
+
+Esta dirección no aparece solamente con Astra, durante 2026, _OpenAI_  ha ido incorporando a _ChatGPT_ capacidades orientadas al trabajo con artefactos reales.
+
+_ChatGPT_ Work puede crear y editar documentos, hojas de cálculo, presentaciones, informes y análisis a partir de instrucciones, material de origen o archivos existentes. El usuario puede indicar qué elementos deben conservarse, incluyendo fórmulas, estructura, diseño, tono, identidad de marca, orden de las diapositivas o estructura de las tablas.
+
+OpenAI describe además la posibilidad de utilizar archivos de referencia y plantillas reutilizables. Una plantilla puede combinar un archivo existente con instrucciones y un resultado esperado, permitiendo repetir un mismo flujo de trabajo en informes, modelos financieros, presentaciones u otros documentos.
+
+El material de origen deja así de estar necesariamente contenido en el mensaje que escribe el usuario, puede encontrarse en documentos, archivos conectados, aplicaciones, conversaciones anteriores o recursos existentes dentro de la organización. El prompt continúa existiendo, pero deja de ser necesariamente el contenedor principal del problema.
+
+### Trabajar dentro del entorno del usuario {.unlisted}
+
+En julio de 2026, _OpenAI_  ya había presentado _ChatGPT_ Work como un agente para tareas más largas y complejas.
+
+La compañía explica que Work puede investigar y analizar información, trabajar con archivos y aplicaciones conectadas y producir documentos, hojas de cálculo, presentaciones, informes y sitios terminados. Durante la ejecución, el usuario puede seguir el progreso, responder preguntas, cambiar la dirección del trabajo y aprobar determinadas acciones.
+
+Esta descripción introduce otro cambio relevante, la interacción deja de consistir necesariamente en:
+
+**pregunta → respuesta**
+
+Puede prolongarse durante una tarea.
+
+1. El usuario plantea un objetivo.
+2. El sistema comienza a trabajar.
+
+Durante ese trabajo puede consultar información, utilizar herramientas, crear o modificar artefactos y encontrarse con situaciones en las que necesite nuevas instrucciones.
+
+El usuario puede entonces intervenir, corregir la dirección o aprobar una acción antes de que el sistema continúe.
+
+OpenAI incorpora incluso mecanismos para modificar las instrucciones mientras una tarea está todavía ejecutándose. En Astra, la compañía denomina a esta capacidad *mid-turn steering*: nuevas indicaciones pueden incorporarse mientras el trabajo está en curso, permitiendo corregir o cambiar requisitos sin comenzar necesariamente desde cero.
+
+### El alcance de las instrucciones {.unlisted}
+
+La posibilidad de actuar introduce también problemas que apenas existían cuando el resultado de _ChatGPT_ era únicamente texto.
+
+OpenAI dedica una parte importante de la presentación de _Astra_ a la capacidad del modelo para comprender mejor la intención del usuario y respetar el alcance de una tarea.
+
+La compañía señala que ha trabajado específicamente en situaciones en las que un modelo podría intentar resolver un problema yendo más allá de aquello que el usuario había autorizado.
+
+Las notas de lanzamiento describen además mecanismos adicionales de supervisión que buscan detectar posibles interpretaciones incorrectas de las instrucciones durante el trabajo de un agente. Cuando se detecta una situación potencialmente problemática, la conversación puede detenerse para que el usuario revise lo ocurrido y decida cómo continuar.
+
+De nuevo, el lenguaje resulta significativo, el problema ya no consiste únicamente en determinar si una respuesta es correcta.
+
+También importa determinar si el sistema ha entendido **qué debía hacer**, **hasta dónde podía llegar** y **cuándo debía detenerse y devolver la decisión al usuario**.
+
+### Una nueva generación, pero también otro tipo de sistema {.unlisted}
+
+OpenAI denomina a _GPT-6 Astra_ una nueva generación de inteligencia.
+
+Los avances del modelo pueden medirse mediante benchmarks, comparaciones de rendimiento, capacidad de razonamiento o velocidad.
+
+Pero los propios materiales de _OpenAI_  muestran simultáneamente otra evolución, _ChatGPT_ está ampliando el tipo de relación que mantiene con el usuario:
+
+- Puede recibir instrucciones y material de origen.
+- Puede trabajar con archivos existentes.
+- Puede utilizar aplicaciones y herramientas.
+- Puede mantener una tarea durante múltiples pasos.
+- Puede crear y modificar artefactos.
+- Puede adaptarse cuando cambian los requisitos.
+- Puede detenerse cuando necesita una decisión.
+- Y puede entregar no solamente una explicación de cómo realizar un trabajo, sino el propio resultado de ese trabajo.
+
+En septiembre de 2026, por tanto, la noticia no es solamente que _OpenAI_  haya presentado otro modelo más potente.
+
+La propia compañía está describiendo una evolución más amplia de _ChatGPT_: desde un sistema fundamentalmente conversacional hacia un sistema capaz de **participar directamente en la realización de trabajo intelectual y profesional**.
+
+Todavía estamos al comienzo de esa transición, pero la dirección ya resulta difícil de ignorar.

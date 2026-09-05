@@ -1,6 +1,6 @@
 # Manifiesto {.unnumbered}
 
-## Escribo en castellano {.unlisted}
+## Escribo en castellano
 
 Este libro está escrito conscientemente en castellano.
 
@@ -10,7 +10,7 @@ Y en ingeniería, los matices importan.
 
 Las traducciones podrán venir después. El pensamiento original, no.
 
-## No enseñamos a usar herramientas. Enseñamos a trabajar {.unlisted}
+## No enseñamos a usar herramientas. Enseñamos a trabajar
 
 ChatGPT, Copilot, Claude, Gemini, Cursor y las herramientas que todavía no existen son instrumentos.
 
@@ -22,7 +22,7 @@ Las herramientas cambian.
 
 El criterio permanece.
 
-## Cuestiónalo todo {.unlisted}
+## Cuestiónalo todo
 
 No aceptes una afirmación por la autoridad de quien la pronuncia, ni siquiera por la mía.
 
@@ -32,7 +32,7 @@ No aceptes una respuesta porque resulte convincente, porque aparezca impresa o p
 
 La ingeniería avanza mediante preguntas, pruebas, evidencias y argumentos.
 
-## No memorices. Comprende {.unlisted}
+## No memorices. Comprende
 
 Los modelos, las APIs, los lenguajes y las plataformas cambian.
 
@@ -42,7 +42,7 @@ No buscamos acumular respuestas.
 
 Buscamos aprender a formular preguntas, analizar problemas, evaluar alternativas y justificar decisiones.
 
-## Experimenta {.unlisted}
+## Experimenta
 
 Una idea no se convierte en conocimiento porque suene razonable. **Hay que probarla**.
 
@@ -50,7 +50,7 @@ Los laboratorios de este libro no son ejercicios añadidos después de la teorí
 
 Fallamos para descubrir aquello que todavía no habíamos entendido.
 
-## La ingeniería manda {.unlisted}
+## La ingeniería manda
 
 Los sistemas inteligentes pueden proponer, generar, analizar, explicar y ejecutar, pero no poseen autoridad profesional ni asumen responsabilidad por las consecuencias.
 
@@ -61,5 +61,4 @@ Por eso hablamos de:
 > **Ingeniería aumentada con sistemas inteligentes.**
 
 El **con** establece la relación. La ingeniería manda.
-
 

@@ -1,0 +1,88 @@
+# Presentación {.unnumbered}
+
+La Ingeniería del Software siempre ha evolucionado desplazando el lugar donde reside la complejidad.
+
+Primero aprendimos a expresar instrucciones. Después construimos lenguajes, abstracciones, bibliotecas, frameworks, plataformas y herramientas capaces de ocultar una parte creciente de esa complejidad, los sistemas inteligentes introducen un cambio distinto.
+
+Por primera vez podemos trabajar con sistemas capaces de interpretar una intención expresada en lenguaje natural, proponer soluciones, escribir código, analizar alternativas, ejecutar tareas, detectar errores y participar activamente en el proceso de construcción de software.
+
+Eso cambia muchas cosas, pero no cambia una fundamental:
+
+> **La ingeniería sigue siendo responsabilidad del ingeniero.**
+
+Este libro nace de esa distinción.
+
+**Ingeniería Aumentada por Sistemas Inteligentes (IASI)**, no propone sustituir la ingeniería por inteligencia artificial. Propone estudiar cómo cambia la ingeniería cuando incorporamos sistemas inteligentes como participantes reales del proceso de trabajo.
+
+- No como un buscador mejorado.
+- No como un generador ocasional de código.
+- No como una colección de herramientas a las que aprender a pedir cosas.
+
+Sino como sistemas capaces de colaborar durante el análisis, el diseño, la implementación, la verificación, la documentación y la evolución de un sistema software, integrándose en el equipo como un participante mas.
+
+## Un cambio en el lugar donde ponemos el esfuerzo
+
+Durante décadas, una parte enorme del coste de construir software estuvo asociada a transformar una idea en una implementación; había que escribirla, había que traducir decisiones humanas a lenguajes formales, configurar herramientas, crear estructuras repetitivas, consultar documentación, buscar errores y realizar manualmente innumerables tareas necesarias para convertir una solución pensada en una solución ejecutable.
+
+Los sistemas inteligentes reducen radicalmente parte de ese trabajo, y cuando cambia el coste de implementar, cambia también el valor relativo de todo lo que ocurre antes y después de la implementación.
+
+1.  Entender el problema.
+2.  Definir qué queremos conseguir.
+3.  Establecer restricciones.
+4.  Diseñar.
+5.  Evaluar alternativas.
+6.  Proporcionar contexto.
+7.  Distinguir una solución plausible de una solución correcta.
+8.  Verificar.
+9.  Decidir.
+10. Asumir responsabilidad por lo construido.
+
+Por eso una de las ideas que recorrerá estas páginas es sencilla:
+
+> **Si la implementación cada vez cuesta menos, el pensamiento cada vez vale más.**
+
+## Este no es un libro sobre herramientas de IA
+
+Las herramientas actuales cambiarán. También lo harán los modelos, las interfaces, los proveedores y buena parte del vocabulario que utilizamos hoy, por eso este libro comienza por los fundamentos conceptuales y técnicos necesarios para comprender estos sistemas antes de abordar su aplicación a la Ingeniería del Software.
+
+Antes de preguntarnos cómo trabajar con sistemas inteligentes necesitamos comprender **qué son**, de dónde vienen, qué los diferencia del software tradicional, cómo representan la información, qué significa realmente contexto, qué papel desempeñan conceptos como tokens, embeddings, attention o transformers y, sobre todo, cuáles son sus capacidades y sus límites.
+
+El recorrido comienza deliberadamente antes de los LLM. Volvemos a la programación imperativa, funcional y declarativa; observamos la evolución de la inteligencia artificial, el aprendizaje automático y el aprendizaje profundo; y llegamos progresivamente a los modelos actuales.
+
+No buscamos acumular terminología, buscamos construir un modelo mental. Porque solo cuando comprendemos qué tenemos delante podemos empezar a preguntarnos cómo debe cambiar nuestra forma de hacer ingeniería.
+
+## Ingeniería, no magia
+
+Un sistema inteligente puede:
+
+- Producir una respuesta extraordinariamente convincente y estar equivocado.
+- Generar una implementación funcional sin comprender las consecuencias de una decisión.
+- Explorar cientos de alternativas sin saber cuál de ellas debemos elegir.
+- Ayudarnos a pensar.
+
+Pero no puede asumir nuestra responsabilidad profesional, esta relación constituye la base de IASI:
+
+> **El sistema inteligente asiste.\
+> El ingeniero comprende, decide, verifica y responde.**
+
+No es una diferencia semántica, es una frontera de responsabilidad, y buena parte de este libro consiste en aprender a trabajar precisamente sobre esa frontera.
+
+## Un libro que forma parte de algo mayor
+
+Este volumen no pretende cerrar una metodología, es el comienzo de una construcción.
+
+IASI se desarrolla como un proyecto abierto en el que las ideas no solo se describen: se aplican, se discuten, se experimentan, se convierten en herramientas y artefactos y, cuando sobreviven al contacto con la realidad, pasan a formar parte de una forma de trabajo.
+
+Por eso estas páginas deben leerse con la misma actitud con la que fueron escritas:
+
+1.  cuestionando,
+2.  experimentando,
+3.  contrastando,
+
+Y cambiando aquello que no resista la prueba.
+
+El **Manifiesto** que sigue establece esa posición.
+
+Los **Principios** comienzan a convertirla en criterios de ingeniería.
+
+Y el resto del volumen construye los fundamentos necesarios para entender los sistemas con los que vamos a trabajar. No hace falta aceptar las ideas de este libro, hace falta comprenderlas lo suficiente como para poder discutirlas, ahí empieza la ingeniería.

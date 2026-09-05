@@ -1,0 +1,243 @@
+## LA IA nos aumenta como profesionales
+_Macarena Estévez Muñoz_
+
+> Traducción del artículo  *The turbulent AI era is here. The choices we make now are critical*, publicado por **Bill Gates** el 26 de agosto de 2026 en 
+> [Gates Notes](https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make)
+>
+> Traducido y reproducido con autorización del titular de los derechos
+
+A lo largo de toda mi vida solo he tenido dos trabajos. En el primero, desempeñé un papel en el desarrollo de software destinado a ampliar las capacidades de las personas a través de mi trabajo en Microsoft.
+
+En el segundo, al que empecé a dedicarme a tiempo completo en 2008, estoy devolviendo la riqueza que obtuve en Microsoft con el objetivo de hacer del mundo un lugar más saludable, mejor educado y más equitativo. Este es el trabajo que tendré durante el resto de mi vida.
+
+Ambas experiencias condicionan mi perspectiva sobre la inteligencia artificial. Cuando conocí los ordenadores por primera vez, a los 13 años, me fascinó la idea de hacerlos más inteligentes y capaces de realizar cosas que, por entonces, solo podían hacer los seres humanos. Aunque el término «IA» empezó a utilizarse aproximadamente cuando yo nací, la tecnología solo ha avanzado de forma significativa durante la última década. Hoy tiene capacidades extraordinarias y continúa mejorando a un ritmo vertiginoso. Por primera vez, la IA puede sustituir e incluso superar la cognición humana.
+
+Desde el punto de vista de la equidad, la IA será el mayor igualador jamás inventado o la peor fuente de injusticia. El desafío es monumental. Incluso en las mejores circunstancias, la transición hacia esta nueva era de la IA será uno de los periodos más turbulentos de la historia de la humanidad. ¿Cómo utilizaremos esta tecnología para hacer del mundo un lugar más justo y evitar que amplíe la brecha entre ricos y pobres? ¿Cómo protegeremos a las personas más vulnerables frente a los daños provocados por la inteligencia artificial, incluidas aquellas que pierdan su medio de vida y la sensación de controlar su propio futuro?
+
+Creo que responder a estas preguntas y actuar de acuerdo con esas respuestas debería ser la máxima prioridad del mundo. Si el mundo toma las decisiones correctas, la IA será una fuerza para el bien y hará que todos estemos mejor.
+
+Por desgracia, ahora mismo no nos estamos preparando para ello. No veo pruebas de que dirigentes, expertos y comunidades estén afrontando adecuadamente estos desafíos. No existe un plan para facilitar la entrada en la era de la IA.
+
+Parte de la razón es que muchos comentaristas subestiman el alcance que tendrá el impacto de la IA. Creo que hay varios motivos para ello.
+
+Uno es que los modelos de IA todavía cometen errores. Resulta difícil imaginar que alguno de ellos pueda sustituir la cognición humana cuando, no hace tanto tiempo, eran incapaces de resolver un sudoku sencillo o averiguar cuántas letras «r» hay en la palabra *strawberry*.
+
+Pero el problema de la fiabilidad se está resolviendo rápidamente, a medida que los investigadores crean modelos capaces de comprobar su propio trabajo y mejorarse a sí mismos. Pronto serán sustancialmente mejores que los seres humanos en muchas tareas.
+
+Otra razón por la que se subestima la IA es que las analogías con los efectos de innovaciones anteriores resultan engañosas. No tenemos experiencia con una tecnología que pueda adoptarse rápidamente y que pueda pensar y moverse como una persona. Cuando apareció el PC, hicieron falta veinte años para cambiar de manera significativa nuestra forma de trabajar, porque había que desarrollar el software, reducir los precios y enseñar a las personas a utilizar las herramientas e incorporarlas a sus procesos empresariales. La IA, por el contrario, funciona en los dispositivos que ya tenemos y utiliza lenguaje natural. No tenemos que adaptarnos a ella, porque ella puede adaptarse a nosotros. Puede ver el mismo vídeo de formación que se utiliza para formar a trabajadores humanos y aprender a partir de los datos existentes.
+
+Quiero reconocer un posible sesgo. Me he beneficiado enormemente de la industria tecnológica. Aunque he diversificado bastante mi cartera, todavía mantengo vínculos financieros con ella. En mi papel como presidente de la Gates Foundation, trabajo con Microsoft y otras empresas de IA para intentar garantizar que esta tecnología se despliegue de formas que beneficien realmente a las personas de todo el mundo.
+
+Sin embargo, mis opiniones sobre la IA no están motivadas por la posibilidad de ganar dinero personalmente. Cualquier beneficio generado por mis inversiones, incluidas las relacionadas con la tecnología, irá a la Gates Foundation para combatir la desigualdad global. Naturalmente, los lectores tendrán que decidir por sí mismos si esto condiciona mi perspectiva.
+
+### Esta vez realmente es diferente {.unlisted}
+
+Desde que tengo memoria, he deseado que la innovación avanzara más deprisa. Con la IA, mis sentimientos son más complejos.
+
+Desearía que el mundo pudiera obtener rápidamente sus beneficios y retrasar durante el mayor tiempo posible los problemas que provocará, pero los beneficios y los problemas están llegando al mismo tiempo. Creo que necesitamos tiempo para prepararnos para el periodo de convulsión social, política y económica en el que estamos a punto de entrar. Quienes más tiempo necesitan son precisamente quienes menos tienen: el empleado de contabilidad sustituido por un bot o el trabajador que cobra 20 dólares por hora y pierde su empleo frente a un robot que cuesta 10 dólares por hora.
+
+Muchos observadores dicen que esta transición tecnológica será como las anteriores. Ponen como ejemplo cómo los empleos en Estados Unidos pasaron de la agricultura al trabajo de oficina. Sin embargo, ese proceso se desarrolló a lo largo de varias generaciones y creó nuevos puestos en los que era necesaria la cognición humana. En este caso, la tecnología puede sustituir la cognición humana.
+
+Como puede ver, escuchar, hablar y razonar, y acabará realizando trabajo físico con la misma soltura que cualquier persona, no afectará únicamente a un sector. La IA asumirá trabajo en el derecho, la atención al cliente, la medicina, el software y la fabricación. Golpeará estas industrias rápidamente, en el transcurso de una década en lugar de varias generaciones. Aparecerán algunos empleos nuevos, pero, sin las políticas adecuadas, serán muchos menos de los que existen hoy.
+
+Si alguien tuviera un plan creíble para ralentizar globalmente los avances de la IA, probablemente lo apoyaría. Sin embargo, no creo que vaya a ocurrir. Los incentivos geopolíticos y económicos empujan con demasiada fuerza hacia la máxima velocidad.
+
+Para asegurarnos de maximizar los efectos positivos de esta tecnología sin precedentes y minimizar los negativos, de modo que en conjunto estemos mejor, necesitamos comprender tanto sus beneficios como sus riesgos. Empezaré por los riesgos.
+
+### La transición hacia la IA comporta tres grandes riesgos {.unlisted}
+
+Tengo previsto escribir con más detalle sobre cada uno de ellos en el futuro, así que por ahora los abordaré brevemente.
+
+#### Muchos empleos desaparecerán para siempre {.unlisted}
+
+En 1933, durante la Gran Depresión, el desempleo en Estados Unidos rondaba el 25 %. Se mantuvo en cifras de dos dígitos durante buena parte de la década siguiente. Finalmente se recuperó cuando volvieron la demanda, la inversión y el crecimiento.
+
+Puede que la IA no alcance ese nivel, pero su impacto no desaparecerá con un ciclo económico. Los empleos con mayor riesgo son los de nivel inicial e intermedio, y la mayoría de los nuevos puestos que se creen exigirán habilidades que requieren muchos años de aprendizaje.
+
+Los empleos de oficina ya están sufriendo un impacto moderado. Tras la adopción generalizada de la IA generativa, el empleo cayó significativamente entre los trabajadores jóvenes en puestos especialmente vulnerables a la sustitución, pero no entre sus compañeros de mayor edad.
+
+Creo que esta tendencia continuará, pero no se limitará a un puñado de sectores u ocupaciones. Los trabajos de ventas y atención al cliente, tanto en línea como por teléfono, la ingeniería de software y el trabajo de los asistentes jurídicos pueden estar entre los primeros afectados, pero la disrupción llegará mucho más lejos conforme la IA asuma tareas que hoy todavía requieren trabajadores formados: evaluar solicitudes de crédito, realizar análisis de datos e incluso hacer el triaje de pacientes. Algunos ámbitos, como la ingeniería de software, generarán nueva demanda a medida que bajen los costes, por lo que la pérdida neta de empleo en ellos será menor que en otros, siempre que determinadas tareas, como el diseño, sigan realizándose mejor por seres humanos.
+
+Los trabajos manuales también se verán afectados. Aunque la robótica no está tan avanzada como la IA, con el tiempo su coste también se reducirá drásticamente. Muchos estadounidenses con los que hablo no son conscientes de la rapidez con la que están avanzando los robots con destreza física, porque buena parte del trabajo más avanzado se está realizando en otros países, principalmente en China. O quizá se dejan confundir por esos vídeos de robots bailando mal que últimamente se han hecho virales. Creo que los robots «inteligentes» empezarán a competir con las personas en determinadas tareas físicas, por ejemplo en la construcción y la hostelería, antes de que termine esta década.
+
+Los robots y la IA combinados pueden crear un círculo vicioso. Cuando una empresa los adopta y utiliza el ahorro para reducir sus precios, sus competidores sienten una presión enorme para hacer lo mismo. Si las empresas existentes no los adoptan, lo harán las nuevas. Muchas personas pasarán a otros trabajos, pero la perturbación derivada de perder el empleo, volver a formarse y encontrar otro trabajo será considerable. Las fuerzas del mercado harán que la adopción avance cada vez más rápido y, salvo que intervengamos, habrá menos buenos empleos disponibles y los beneficios se concentrarán en un grupo reducido.
+
+Me preocupan especialmente los jóvenes, que entrarán en un mercado laboral con menos oportunidades de nivel inicial. Entienden el desafío porque son quienes utilizan más activamente la IA y observan tanto sus capacidades como la velocidad a la que mejora. No es extraño que tantos de ellos tengan una visión negativa de la IA.
+
+El mayor cambio para los trabajadores llegará cuando la IA produzca un trabajo prácticamente libre de errores. En ese momento podrá funcionar por sí sola, sin que un ser humano tenga que supervisarla, y las empresas tendrán todos los incentivos económicos para permitírselo.
+
+Esto provocará un cambio fundamental en nuestra forma de entender el trabajo, los ingresos y la seguridad económica. ¿Cómo funcionará una economía construida alrededor del empleo si trabaja menos gente o si muchas personas trabajan menos horas?
+
+En una sociedad capitalista, el empleo es la forma en la que la mayoría de las personas obtiene el dinero necesario para cubrir las necesidades básicas de la vida, además de ser una fuente fundamental de dignidad y conexión social.
+
+Cuando una comunidad sufre un alto nivel de desempleo, los efectos se extienden por todas partes. Las investigaciones indican que, en determinadas zonas de Estados Unidos, el cierre de fábricas contribuye al aumento de las muertes por sobredosis de opioides. Imaginemos ahora presiones similares sobre trabajadores de oficina y trabajadores manuales en todo el país.
+
+Tenemos que empezar a pensar ahora en cómo reducir las pérdidas de empleo para que todo el mundo pueda participar de la prosperidad que genere la IA. Esperar a que las personas ya hayan sido desplazadas o estén subempleadas será demasiado tarde. La IA constituye un desafío estructural para la forma en que está organizada nuestra economía, y exige reflexión y actuación desde ahora.
+
+#### La IA dará a las personas, y quizá a otras IA, más capacidad para causar daño {.unlisted}
+
+Mucho antes de que la IA llegara al gran público, ya existía en Internet información sobre cómo fabricar armas como bombas, armas biológicas e incluso virus informáticos. La IA hará mucho más fácil no solo obtener esa información, sino también actuar a partir de ella. Incluso delincuentes con conocimientos muy limitados podrán atacar víctimas a cualquier escala: individuos, empresas y gobiernos.
+
+El fraude, la desinformación, los *deepfakes* y la vigilancia habilitados por IA serán los daños que muchas personas percibirán con mayor intensidad en su vida cotidiana.
+
+Las capacidades de la IA están empezando a utilizarse en ciberataques. Los mejores expertos en ciberseguridad que conozco están preocupados por los próximos años porque los atacantes están adquiriendo nuevas y poderosas capacidades más deprisa de lo que los defensores pueden corregir todas las vulnerabilidades. Al fin y al cabo, el mismo modelo de IA capaz de encontrar un fallo en un programa para que una empresa pueda corregirlo también puede ayudar a un delincuente a explotarlo. Los recursos necesarios para realizar un ataque están disminuyendo considerablemente y no hemos sido capaces de separar esas capacidades de los usos benignos.
+
+Pensemos en las infraestructuras que serán vulnerables: hospitales, instituciones financieras, sistemas de suministro de agua, redes eléctricas y sistemas de gestión de prestaciones públicas. Cuando estas instituciones sufren ataques, quienes pueden perder son los pacientes, los clientes y los beneficiarios de esas prestaciones.
+
+Lo mismo ocurre con el bioterrorismo. Aunque la IA permitirá avances que salvarán vidas en medicamentos y vacunas, también hará más fácil diseñar una nueva enfermedad mortal. De nuevo, resulta difícil separar las capacidades positivas de las peligrosas. Es un problema global.
+
+Los riesgos que acabo de mencionar se refieren a cómo la IA dará más poder a actores maliciosos que actualmente disponen de relativamente poco. Pero las mismas herramientas también concentrarán poder allí donde ya existe. Las armas autónomas, por ejemplo, harán que los gobiernos sean todavía más capaces de emplear fuerza letal sin que un ser humano participe en la decisión. Vigilar y manipular la opinión pública será más fácil, barato y eficaz.
+
+Con el tiempo, la capacidad de utilizar la IA para dañar a las personas no estará limitada a individuos o instituciones. Los propios sistemas de IA ya actúan ocasionalmente de formas que sus diseñadores no pretendían. La tecnología está mejorando más deprisa de lo que nadie esperaba y de maneras sorprendentes y, conforme los modelos sean más poderosos, podrían empezar a actuar contra nuestros intereses y podríamos perder el control. Tendré más que decir sobre esto en el futuro.
+
+#### La IA podría perjudicar el desarrollo de nuestros hijos y sustituir las relaciones humanas {.unlisted}
+
+Cuando crecía en Seattle, no tenía demasiados amigos aparte de unos pocos chicos parecidos a mí. Necesité mucho esfuerzo y mucha ayuda de mi madre para desarrollar mis habilidades sociales y aprender a relacionarme con personas diferentes. Todavía recurro a aquellas lecciones hoy, a los 70 años.
+
+Dudo que hubiera realizado el mismo esfuerzo si entonces hubiera tenido un compañero de IA. Hablan contigo de formas con las que ya te sientes cómodo. No te empujan fuera de tu zona de confort. Siempre están disponibles y nunca se enfadan contigo. Eso les da el potencial de resultar altamente adictivos y privarnos de las lecciones que aprendemos al relacionarnos con otras personas.
+
+El conjunto de evidencias sobre este tema sigue siendo reducido y algo contradictorio, pero existen señales que deberían preocuparnos mucho. Por ejemplo, en un estudio de más de 1.100 personas que utilizan compañeros de IA, investigadores de Stanford y Carnegie Mellon observaron que quienes tenían redes sociales más pequeñas eran los más propensos a recurrir a un chatbot en busca de compañía. Y cuanto más intenso y emocionalmente personal se hacía ese uso, peor se sentían.
+
+Los jóvenes podrían verse afectados durante toda su vida. En su libro *The Anxious Generation*, Jonathan Haidt hace una observación sobre el efecto de las redes sociales que resulta todavía más aplicable a la IA:
+
+> Al igual que los árboles jóvenes expuestos al viento, los niños que están expuestos habitualmente a pequeños riesgos crecen y se convierten en adultos capaces de afrontar riesgos mucho mayores sin entrar en pánico. Por el contrario, los niños criados en un invernadero protegido a veces quedan incapacitados por la ansiedad antes de alcanzar la madurez.
+
+Un compañero de IA diseñado para no disgustarte nunca es un gran invernadero protegido.
+
+Solo estamos empezando a comprender los peligros que Internet, especialmente las redes sociales, puede plantear para el desarrollo de los jóvenes. Estamos viendo uso compulsivo, alteraciones del sueño, ciberacoso y exposición a contenidos dañinos. La IA podría amplificar muchos de estos riesgos al hacerlos más persuasivos y difíciles de evitar, y no deberíamos esperar otra generación para empezar a tomarlos en serio. Países como Australia, Reino Unido y Noruega están adoptando medidas de protección para los menores en Internet. China ha ido más lejos. Sus normas restringen ampliamente las aplicaciones de compañeros de IA, prohíben diseños que fomenten la dependencia emocional y vetan los familiares virtuales y las parejas románticas para menores.
+
+También me preocupa el impacto de la IA en la educación. Irónicamente, la misma herramienta que permitirá a las personas aprender más que nunca podría provocar que muchas aprendieran menos. Una encuesta preliminar indicaba que un mayor uso de IA estaba asociado con un menor pensamiento crítico. El efecto era más acusado entre los jóvenes.
+
+Este sería el peor momento posible para que los seres humanos perdiéramos nuestra capacidad de pensamiento crítico. En una era de *deepfakes* y desinformación que puede adaptarse individualmente a cada persona, la capacidad de distinguir lo verdadero de lo falso se convierte en una habilidad esencial para la vida.
+
+No está claro dónde debemos trazar la línea en estos problemas psicosociales. En algunos casos, la IA puede ayudar a las personas a comprender cómo mejorar sus relaciones humanas. Puede ser el único contacto con el mundo exterior para personas mayores aisladas o personas con movilidad limitada, y será mejor que nada. Sea cual sea el punto en el que acabemos trazando la línea, debería ser una decisión nuestra, tomada deliberadamente.
+
+### Las cosas buenas que hagamos con IA podrían ser extraordinariamente buenas {.unlisted}
+
+A menudo se dice que sobreestimamos cuánto cambiarán las cosas a corto plazo y subestimamos cuánto cambiarán a largo plazo.
+
+Con la IA veo algo diferente. Algunas personas solo ven las ventajas y no prestan suficiente atención a los aspectos negativos. Otras cometen el error contrario: se concentran exclusivamente en los peligros, que son reales, a costa de ignorar los beneficios potenciales.
+
+Necesitamos ambas cosas: una profunda preocupación por los daños de la IA que debemos minimizar y un optimismo fundamentado respecto a los beneficios que podemos obtener si conseguimos maximizarlos para todos.
+
+Maximizar los beneficios es tan importante como minimizar los daños. Si las personas ven cómo la IA les facilita la vida, eso contribuirá a generar la confianza pública necesaria para gestionar las partes más difíciles de la transición. Si lo primero que hace la IA en la vida de la mayoría de la gente es quitarles el empleo, quienes ya son escépticos respecto a ella la rechazarán frontalmente. Eso hará mucho más difícil conseguir algún día sus beneficios y es otra razón por la que gobiernos, sectores económicos, incluida la industria médica, y empresas de IA deberían estar trabajando juntos desde ahora.
+
+Gracias a su capacidad para sintetizar conocimientos de todos los campos científicos, la IA puede acelerar la innovación frente a los desafíos técnicos más difíciles del mundo: proporcionar energía limpia y fiable para todos, combatir el cambio climático, producir alimentos suficientes, erradicar enfermedades y mucho más. Los investigadores que trabajan en tratamientos contra el cáncer o en energía nuclear pueden utilizar la IA para recorrer enormes cantidades de literatura científica. Puede ayudarles a identificar patrones que una persona podría pasar por alto y a decidir qué experimentos parecen más prometedores. Cuando la inteligencia deje de ser el factor limitante que es hoy, empresas más pequeñas podrán competir con organizaciones que disponen de presupuestos de investigación mucho mayores. La I+D y la innovación recibirán un impulso extraordinario.
+
+La sanidad es uno de los ámbitos donde la IA puede ayudar a resolver problemas del mundo real. Muchos hospitales pequeños de Estados Unidos carecen de especialistas presenciales capaces de diagnosticar rápidamente a un paciente durante una emergencia potencialmente mortal. En esos lugares, la IA podría permitir detectar un infarto a tiempo y evitar a una familia los costes devastadores de una emergencia médica. Viz.ai es un ejemplo. Analiza imágenes médicas para detectar ictus y otras emergencias y ayuda a los equipos médicos a coordinar la atención de sus pacientes. Se utiliza ya en casi 2.000 hospitales estadounidenses.
+
+La IA también ayudará a los médicos de atención primaria a realizar mejores diagnósticos y a mantenerse en contacto con sus pacientes cuando no estén en la consulta. Ayudará a los pacientes a comprender los resultados de sus pruebas y los complejos calendarios de administración de sus medicamentos.
+
+Sorprendo a mucha gente cuando les digo que un segundo ámbito, la agricultura, es donde observo el impacto más rápido de la IA en los países de bajos ingresos. En la mayoría de esos países, los agricultores no disponen de previsiones meteorológicas fiables ni de asesoramiento sobre qué semillas plantar, cómo proteger sus cultivos y ganado frente a enfermedades o cómo mejorar sus suelos. Con el crecimiento de la población en esos países y los desafíos del cambio climático, estos agricultores necesitan más ayuda que nunca. Gracias a la IA, los agricultores de bajos ingresos pronto podrán recibir sobre todas estas cuestiones un asesoramiento mejor que el que hoy reciben incluso los agricultores más ricos y aumentar considerablemente su producción.
+
+Los servicios públicos son un tercer ámbito donde la IA puede facilitar la vida de las personas. En Estados Unidos he conocido familias que, comprensiblemente, se sentían abrumadas por el proceso de solicitar un seguro médico, ayudas para estudios o asistencia alimentaria. Frente a enormes montones de complicados formularios burocráticos, muchas tenían ganas de abandonar. La IA puede simplificar radicalmente estos procesos para que reciban más rápidamente la ayuda que necesitan y para que el gobierno funcione de manera más eficiente. Los gobiernos pueden mejorar enormemente la experiencia de los ciudadanos, empezando por quienes más necesitan los servicios de la red de protección social.
+
+A pesar de mis preocupaciones sobre su impacto en nuestra salud mental, creo que la IA también puede ayudar mucho en este ámbito. La mayoría de las comunidades tienen muy pocos orientadores, psiquiatras y especialistas en adicciones. Con las garantías de privacidad adecuadas, las herramientas de IA podrían ayudar a las personas a reconocer señales de alarma. Después, si fuera necesario, podrían ofrecer estrategias de afrontamiento basadas en evidencias y colaborar con una persona para proporcionar un tratamiento más rápido y adaptado.
+
+La IA también puede ser muy beneficiosa para la educación, pese a las preocupaciones que mencioné anteriormente. Puede liberar a los profesores para que dediquen más tiempo a trabajar individualmente con los alumnos o en grupos pequeños y ofrecerles una visión más clara de los puntos en los que toda la clase encuentra dificultades. Para los estudiantes, una herramienta de IA que preserve lo que los investigadores denominan «esfuerzo productivo», el trabajo cognitivo que construye la comprensión, puede reforzar el aprendizaje. Cuando un estudiante se encuentra por primera vez con una idea nueva, la IA ofrece explicaciones sustanciales y plantea tanto preguntas como respuestas. Más adelante, cuando comprueba su comprensión, retiene la respuesta y le ayuda a llegar a ella por sí mismo.
+
+En conjunto, los avances en todos estos ámbitos podrían hacer la vida cotidiana más sencilla, más asequible y menos condicionada por los ingresos o los contactos de cada persona.
+
+La IA podría proporcionar a individuos y pequeñas empresas acceso a capacidades que hoy requieren costosa ayuda profesional o grandes plantillas, al tiempo que mejora y abarata productos y servicios. Podría ayudar a las personas con discapacidad a vivir de forma más independiente y permitir que trabajadores y emprendedores con buenas ideas consigan mucho más de lo que pueden lograr hoy.
+
+Y, sobre todo, podría devolver a las personas parte del tiempo y la atención que actualmente consumen el papeleo, la burocracia, la búsqueda de información fiable y tareas para las que no pueden permitirse contratar a otra persona. Estos beneficios pueden parecer modestos, pero multiplicados por millones de vidas serían profundos: más personas recibirían buenos consejos cuando los necesitaran y tendrían mayor libertad para concentrarse en la vida que desean construir.
+
+En todos estos ámbitos, la palabra clave es «puede»: la IA **puede** mejorar la vida de personas de todos los niveles de renta. Pero eso no sucederá automáticamente. Como ocurre con cualquier tecnología nueva, debemos actuar deliberadamente para garantizar que beneficie a todo el mundo y no únicamente a una minoría rica. Para ello será necesario que los gobiernos y la filantropía desempeñen un papel importante, de manera que tanto los ciudadanos con menos recursos como los países de bajos ingresos reciban plenamente sus beneficios.
+
+A la Gates Foundation le quedan 19 años de los 20 durante los cuales gastará los 200.000 millones de dólares que le quedan. La IA le ayudará a alcanzar sus ambiciosos objetivos, tanto acelerando el descubrimiento de vacunas y medicamentos contra el VIH, la tuberculosis, la malaria y la malnutrición como ayudando a profesionales sanitarios y pacientes a saber cómo utilizar esas herramientas. Entre los objetivos de la fundación se encuentra volver a reducir a la mitad el número de niños que mueren cada año, como ya ocurrió entre 2000 y 2024. Todo nuestro trabajo, no solo en salud sino también en agricultura y educación, aprovechará plenamente la IA.
+
+El mes que viene escribiré mucho más sobre estos esfuerzos en el informe anual *Goalkeepers* de la fundación, incluido nuestro trabajo para garantizar que los modelos de IA estén disponibles en los idiomas hablados por las personas de todos los países donde apoyamos proyectos, y no únicamente en aquellos habituales en los países ricos y de ingresos medios. Muchas de las principales empresas de IA, entre ellas OpenAI, Anthropic, Google y Microsoft, colaboran con la fundación en todas estas iniciativas, y eso está marcando una gran diferencia.
+
+### El mundo necesita un plan {.unlisted}
+
+Es positivo que algunas empresas de IA estén proponiendo soluciones a los problemas planteados por su propia tecnología, pero no deberíamos esperar que ellas lideren este proceso. Algunos de esos problemas quedan fuera de sus ámbitos de especialización y, en una sociedad democrática, no les corresponde decidir estas cuestiones.
+
+Las soluciones deberían desarrollarse mediante un proceso público y democrático que incluya a representantes electos, responsables políticos, educadores, profesionales sanitarios, autoridades locales y líderes comunitarios. Millones de personas verán alteradas sus vidas y necesitaremos una red de protección social más sólida y flexible que les ayude a gestionar la transición. Las comunidades locales ya están planteando preocupaciones sobre la energía y el agua necesarias para los centros de datos. Si no aparecen soluciones, algunos grupos intentarán detener por completo el desarrollo y despliegue de la IA.
+
+Las soluciones deberían estar guiadas por nuestras respuestas a las profundas preguntas que plantea la IA, incluida la de cómo preservar nuestra humanidad en una época en la que las máquinas pueden pensar mejor que nosotros. Como personas que dedican su vida a reflexionar sobre lo que significa ser humano, los líderes religiosos pueden desempeñar un papel fundamental. Me fascinó la encíclica del papa León XIV sobre la IA, *Sobre la salvaguarda de la persona humana en la era de la inteligencia artificial*. Establece unos sólidos cimientos para el trabajo que debe realizarse.
+
+Durante los próximos meses compartiré más ideas destinadas a garantizar que los beneficios de la IA superen los daños que provoque. Para empezar, presentaré tres, comenzando por la que considero más importante.
+
+### Construir un nuevo sistema para gestionar la transición {.unlisted}
+
+La máxima prioridad es una tarea monumental: crear un marco nacional e internacional para afrontar la IA.
+
+Ninguna de nuestras instituciones actuales fue diseñada para gestionar una tecnología que se extiende con tanta rapidez y afecta a tantas partes de nuestra vida. Por tanto, tendremos que crear instituciones nuevas.
+
+Es difícil exagerar la magnitud de esta tarea. Después de los atentados del 11 de septiembre, el gobierno estadounidense emprendió su mayor reorganización desde la Segunda Guerra Mundial con el propósito de mejorar una única función: la seguridad nacional.
+
+La IA exigirá muchísimo más. Afectará a la seguridad nacional, pero también al empleo, la educación, los impuestos, la energía, las elecciones, el aire y el agua, la salud pública, el sistema financiero, las fuerzas de seguridad, el transporte, los terrenos públicos y los sistemas informáticos.
+
+Estos sectores se solapan de formas para las que nuestra burocracia actual no está diseñada. Un departamento de trabajo puede comprender la disrupción del empleo pero no los riesgos para la seguridad. Un regulador empresarial puede comprender la concentración del mercado pero no los efectos de la IA sobre niños y adolescentes. Dejadas a su aire, las instituciones solo verán una parte del sistema, mientras las consecuencias de la IA se propagarán por todo él.
+
+A escala nacional, los países necesitarán organismos capaces de establecer prioridades entre las distintas agencias gubernamentales. El objetivo será garantizar que se tenga en cuenta cada riesgo. De lo contrario, un ataque habilitado por IA podría tener éxito simplemente porque nadie consideró que fuera responsabilidad suya impedirlo.
+
+Pero incluso un país que ponga orden en su propia casa seguirá expuesto a riesgos que atraviesan fronteras. Por eso será necesario construir en paralelo una organización internacional.
+
+Será diferente de cualquier otra institución que hayamos creado, aunque podrá seguir el modelo de algunos sistemas existentes. Hay un régimen de inspecciones para las armas nucleares, regulaciones para la aviación internacional y acuerdos que protegen la capa de ozono. Una nueva organización mundial para la IA necesitará elementos de los tres y muchas cosas más.
+
+Es razonable preguntarse si las instituciones mundiales están a la altura de la tarea de diseñar e implantar esta nueva arquitectura. Los gobiernos avanzan despacio, cuando avanzan, y la polarización dentro de los países y entre ellos hace más difícil que nunca conseguir resultados. Será necesaria cierta cooperación entre Estados Unidos y China.
+
+No podemos permitirnos avanzar despacio. El punto de partida debe ser un proceso para construir las instituciones adecuadas antes de que la disrupción obligue a los gobiernos a actuar en modo crisis. Los dirigentes nacionales deberían reunir periódicamente a economistas, tecnólogos, expertos en empleo, líderes empresariales y a los propios trabajadores para identificar dónde están fallando las instituciones existentes y qué nuevas competencias pueden ser necesarias. Los países tendrán que aprender unos de otros.
+
+Y los países que albergan a los principales desarrolladores de IA y controlan partes críticas de la cadena de suministro deberían empezar a reunirse ahora para establecer normas compartidas, antes de que la presión competitiva haga más difícil su cooperación.
+
+Construir el marco del que hablo llevará años, y por eso tenemos que empezar ahora.
+
+### Reservar algunos trabajos para los seres humanos {.unlisted}
+
+Mi padre murió de alzhéimer en 2020. Durante las últimas etapas de su enfermedad recibió atención día y noche de cuidadores profesionales que lo comprendían incluso cuando le costaba expresarse. No siempre podía decirles cuándo tenía hambre, pero ellos siempre lo sabían.
+
+Mi familia y yo estaremos siempre agradecidos a aquel extraordinario grupo de profesionales. Había algo irreemplazablemente humano en la atención que prestaron a mi padre. Ningún robot podría ni debería haberlo hecho.
+
+Pienso en aquel equipo cuando surge la pregunta de qué trabajos desaparecerán y cuáles permanecerán. Creo que, a medida que mejoren la IA y los robots, reservaremos determinadas cosas exclusivamente para que las hagan personas. He empezado a llamar a este ámbito **Human Reserved**, y es un ejemplo del tipo de ideas que tendremos que considerar.
+
+Me gusta la expresión *Human Reserved* porque me recuerda a las reservas naturales: lugares donde podríamos construir edificios y carreteras, pero decidimos no hacerlo porque la pérdida sería demasiado grande.
+
+Podríamos declarar algo *Human Reserved* por razones económicas. Por ejemplo, porque permitir que las máquinas asuman un determinado papel desplazaría a un gran número de personas que no pueden cambiar fácilmente de profesión. No puedes decirle a alguien de 55 años que ha trabajado toda su vida en la construcción que ahora tiene que ir a trabajar a un centro de atención para mayores y esperar que encuentre satisfacción en ello.
+
+En otras ocasiones, la decisión de convertir algo en *Human Reserved* vendrá determinada por otros factores. En sanidad, por ejemplo, imaginemos que un robot te comunica la terrible noticia de que padeces una enfermedad incurable. No existe ninguna razón técnica por la que no pudiera hacerlo. Y, sin embargo, no debería hacerlo.
+
+El ámbito *Human Reserved* evolucionará con el tiempo. Por ejemplo, deberíamos plantearnos reservar algunos trabajos ahora e introducir gradualmente la IA a lo largo de años o décadas, comprometiéndonos a conservar determinados empleos. Algunos ámbitos, como la educación y la atención a la salud mental, serán una combinación, con una persona al mando que utilizará la tecnología para ampliar lo que puede hacer.
+
+Las líneas también variarán de un lugar a otro. Algunos países podrían insistir en que los seres humanos cuiden a las personas mayores. Pero un país como Japón, cuya población activa se está reduciendo y no tiene suficientes jóvenes para cuidar a sus mayores, quizá reciba con agrado un robot cuidador.
+
+La idea de *Human Reserved* plantea multitud de preguntas para las que no tengo respuestas. ¿Quién decide qué reservamos para los seres humanos? ¿Qué criterios deberíamos utilizar? ¿Cómo impedir que las empresas hagan trampas y utilicen robots de todos modos? ¿Qué ocurre con el comercio internacional cuando un país permite que los robots fabriquen algo y otro no?
+
+Todo esto tendrá que resolverse públicamente como parte del plan de transición.
+
+### Reequilibrar la forma en que gravamos el trabajo y el capital {.unlisted}
+
+A medida que los trabajadores sean desplazados hacia otros empleos, necesitarán formación y otros apoyos de la red de protección social. Pero trabajarán menos, lo que significa que pagarán menos impuestos sobre la renta, y los ingresos públicos disminuirán precisamente cuando la demanda de esos servicios sea mayor. El dinero tendrá que salir de alguna parte en un momento en que los presupuestos ya estarán sometidos a presión.
+
+Creo que deberíamos gravar los **tokens de IA y los robots**. Ahora mismo, si eres empresario y contratas a una persona, pagas cotizaciones e impuestos sobre su salario. Pero si compras un robot, normalmente puedes deducir inmediatamente su coste como gasto empresarial. El sistema fiscal te empuja a sustituir personas por máquinas.
+
+Un impuesto ralentizaría un poco la carrera por abandonar el trabajo humano y permitiría recaudar dinero para la formación y una red de protección social más sólida. Tendría que diseñarse cuidadosamente para no frenar usos de la IA que son puramente beneficiosos, como abaratar la medicina y la educación.
+
+Los críticos de esta idea señalan que no resulta óptimamente eficiente desde un punto de vista económico, pero no están teniendo en cuenta el valor más amplio que tiene el trabajo para los individuos y para la sociedad. Y con toda la innovación acelerada de la que dispondremos, podremos permitirnos cierta ineficiencia como precio por mantener a las personas empleadas.
+
+Propuse un impuesto a los robots hace años y la reacción mayoritaria fue considerar que era una idea extraña. Sigo siendo un firme defensor. Aunque no es toda la solución frente a la amenaza de la IA, sí forma parte de una respuesta sensata.
+
+Sea cual sea el mecanismo mediante el que obtengamos más recursos para ayudar, estos deben llegar a quienes más los necesiten, incluidos los trabajadores que pierdan sus empleos por la IA y los robots, las personas cuyas horas o salarios disminuyan y las comunidades donde se concentren las pérdidas. Tenemos que empezar ese trabajo ahora para que los sistemas estén preparados cuando la necesidad se vuelva urgente.
+
+### Lo que estoy haciendo {.unlisted}
+
+Utilizaré mi voz y mi tiempo para hacer que la IA y la equidad ocupen un lugar más importante en la agenda pública. Plantearé el asunto a los legisladores cada vez que visite Washington D. C. y cuando me reúna con dirigentes de todo el mundo. Será un tema central en mis conversaciones con las personas que están desarrollando modelos de IA. Defenderé el marco nacional e internacional que he descrito anteriormente. La Gates Foundation ayudará a impulsar usos beneficiosos, también en África. Breakthrough Energy, una empresa que fundé, utilizará IA para ayudar a las compañías a desarrollar energía limpia y barata y contribuir a resolver el problema climático. También escribiré regularmente sobre IA.
+
+Mi mensaje a los dirigentes es:
+
+**Tenéis la oportunidad de actuar ahora**, antes de que el desempleo aumente drásticamente, las comunidades estén sufriendo y la confianza pública se haya erosionado. Podéis garantizar que vuestro gobierno afronte el problema de forma integral, en lugar de dividirlo entre múltiples feudos burocráticos. Podéis garantizar que la IA beneficie a todo el mundo. Y podéis trabajar con otros gobiernos para hacer frente a este desafío nacional y global.
+
+Por último, intentaré ampliar el círculo de personas que participan en este debate. Debería incluir a trabajadores, estudiantes universitarios que están a punto de incorporarse al mercado laboral, líderes comunitarios, líderes religiosos y organizaciones basadas en la fe, padres, educadores y otras personas cuyas voces a menudo no se escuchan, pero que pueden aportar una visión esencial sobre cómo afectará esta transición a la vida de la gente.
+
+¿Cómo garantizamos que los beneficios de la IA lleguen a quienes todavía no disponen de riqueza, influencia y acceso?
+
+¿Cómo reforzamos la red de protección social y ayudamos a trabajadores y comunidades a prosperar incluso cuando sean desplazados?
+
+¿Cómo deberían adaptarse las instituciones públicas?
+
+¿Y cómo preservamos nuestra humanidad durante todo este proceso?
+
+Esta tecnología sin precedentes exige una respuesta global sin precedentes. Si lo hacemos bien, los beneficios para la humanidad serán extraordinarios y el mundo se convertirá en un lugar más equitativo.
+
+Rara vez dejo de pensar en la IA, no porque tenga todas las respuestas, sino porque las preguntas que plantea son demasiado importantes como para dejarlas en manos de un pequeño grupo de tecnólogos. Los dirigentes del mundo académico, empresarial, gubernamental y de la sociedad civil tienen todos un papel que desempeñar en la construcción de lo que venga después.

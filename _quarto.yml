@@ -7,7 +7,7 @@ project:
 
 profile:
   group:
-    - [html, odt, docx]
+    - [html, pdf]
 
 metadata-files:
   - _book-structure.yml
@@ -24,7 +24,7 @@ bibliography:
   - references/ingenieria-software.bib
 
 book:
-  title: "Ingeniería aumentada por sistemas inteligentes"
+  title: "Ingeniería aumentada con sistemas inteligentes"
   author: "Javier G. Grandez"
   output-file: "IASI_Vol_I"
 

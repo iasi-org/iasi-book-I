@@ -1,11 +1,8 @@
 book:
   chapters:
     - "index.qmd"
-    - "01-manifesto.qmd"
-    - "02-principles.qmd"
-    - "03-engineering.qmd"
-    - "04-semantic.qmd"
-    - "05-gates.qmd"
+    - "01-preambulo.qmd"
+    - "02-fundamentos.qmd"
     - part: "chapters/10-part-I/index.qmd"
       chapters:
         - "chapters/10-part-I/01-intro/index.qmd"

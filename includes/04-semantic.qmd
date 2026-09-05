@@ -1,0 +1,215 @@
+## Contrato Semántico {.unnumbered}
+
+### Conceptos, no etiquetas {.unlisted}
+
+**IASI se basa en conceptos, no en etiquetas.**
+
+Los conceptos son abstracciones que pueden hacerse explícitas, razonarse y describirse con precisión. Las etiquetas, por el contrario, están sujetas a interpretación: su significado puede variar entre organizaciones, metodologías, tecnologías, épocas e incluso entre personas dentro de una misma organización.
+
+Una misma etiqueta puede representar conceptos diferentes y un mismo concepto puede aparecer bajo etiquetas distintas.
+
+Por esta razón, IASI no construye su modelo a partir de las etiquetas existentes ni intenta proporcionar nuevas definiciones para ellas. Cuando utiliza determinados términos, explica qué conceptos pretende expresar con ellos y por qué utiliza esas expresiones.
+
+Del mismo modo, el lector no encontrará necesariamente en IASI muchas de las etiquetas habituales de la industria del software. Su ausencia no supone su rechazo, ni impide que puedan utilizarse en una organización o proyecto que adopte IASI. Simplemente significa que **IASI no las necesita para expresar su modelo**.
+
+IASI pretende describir ideas y conceptos independientemente de los nombres comerciales, organizativos o metodológicos que puedan recibir en cada contexto.
+
+Las etiquetas cambian. Los nombres se reinventan. En ocasiones, incluso se presenta bajo un nombre nuevo algo que conceptualmente ya existía.
+
+**IASI intenta quedarse con el concepto, no con el nombre que tenga la rueda esta vez.**
+
+------------------------------------------------------------------------
+
+### ¿Por qué un Contrato Semántico? {.unlisted}
+
+La ingeniería trabaja con conceptos, pero comunicamos esos conceptos mediante palabras.
+
+Las palabras son útiles, pero no son neutras. Acumulan significados procedentes de la historia, la industria, las metodologías, las organizaciones, las tecnologías y el uso cotidiano. Una misma palabra puede representar conceptos diferentes según el contexto, mientras que palabras distintas pueden estar describiendo conceptos esencialmente iguales.
+
+El problema se hace especialmente relevante cuando el propio contexto está cambiando.
+
+Términos como *Inteligencia Artificial*, *agente*, *desarrollador*, *programador*, *arquitecto*, *senior*, *Product Owner*, *automatización* o *asistencia* arrastran ya presupuestos sobre responsabilidades, capacidades, estructuras organizativas y formas de trabajar. IASI no da por supuestos esos significados.
+
+Tampoco pretende redefinir el vocabulario de la industria del software. En su lugar, IASI establece su propio **Contrato Semántico**: hace explícitos los conceptos a los que se refiere cuando utiliza determinados términos, explica por qué utiliza esas expresiones y señala qué etiquetas habituales no necesita para construir su modelo.
+
+Este contrato también explica términos que IASI deliberadamente no necesita.
+
+Su ausencia no implica rechazo.
+
+Una organización que utilice IASI puede tener arquitectos, Product Owners, Scrum Masters, proyectos en Jira, sprints, épicas o cualquier otro rol, herramienta o práctica que considere conveniente. IASI no necesita esos elementos para definir su modelo de ingeniería.
+
+**Un término no forma parte del modelo de IASI simplemente porque sea habitual en el desarrollo de software.**
+
+IASI parte de los conceptos necesarios para describir la ingeniería y hace explícito qué entiende cuando utiliza determinados términos.
+
+El propósito de este contrato, por tanto, no es establecer cómo debe hablar la industria, sino hacer explícito **cómo habla IASI y por qué**.
+
+------------------------------------------------------------------------
+
+### Sobre ingeniería {.unlisted}
+
+IASI no utiliza la palabra **ingeniería** como una etiqueta destinada a distinguir o ennoblecer una actividad. La utiliza porque el proceso que pretende describir pertenece a la esencia de lo que reconocemos como ingeniería.
+
+No buscamos una definición única. Nos interesa algo más fundamental: **cómo piensa y actúa un ingeniero cuando se enfrenta a un problema**.
+
+#### Pensar como un ingeniero {.unlisted}
+
+La **Royal Academy of Engineering**, en *Thinking like an Engineer*, parte precisamente de esa pregunta: cómo piensan y actúan los ingenieros, especialmente cuando resuelven problemas difíciles. El estudio encontró un alto grado de consenso entre ingenieros y educadores de ingeniería e identificó seis *Engineering Habits of Mind*: **pensamiento sistémico, adaptación, identificación de problemas, resolución creativa de problemas, visualización y mejora**.
+
+La conclusión educativa es especialmente significativa para IASI: formar ingenieros no consiste únicamente en transmitir contenidos técnicos. La educación debe cultivar esas formas características de pensar y actuar. La propia Academy continúa utilizando este enfoque para distinguir entre las capacidades técnicas y las capacidades de pensamiento propias de la ingeniería.
+
+Esto coincide con una experiencia reconocible entre disciplinas de ingeniería muy diferentes. Los conocimientos cambian con la especialidad; la forma de enfrentarse a los problemas conserva rasgos comunes. Un ingeniero informático, industrial, electrónico o de caminos puede trabajar con dominios y conocimientos radicalmente distintos y, sin embargo, reconocer en otro ingeniero una manera familiar de abordar un problema.
+
+Los conocimientos determinan en gran medida **qué problemas puede abordar** un ingeniero. Su forma de pensar determina **cómo los aborda**.
+
+#### Según la Royal Academy of Engineering y el Engineering Council {.unlisted}
+
+Una formulación conjunta de la **Royal Academy of Engineering** y el **Engineering Council** describió el proceso de ingeniería como un proceso creativo que aplica conocimiento y experiencia para buscar soluciones técnicas a una necesidad o problema y ejercer después **juicio informado** para escoger e implementar la solución que mejor satisface las restricciones existentes.
+
+Aparecen así elementos que van mucho más allá de la ejecución de una técnica: conocimiento, experiencia, alternativas, restricciones y juicio.
+
+El actual **UK Standard for Professional Engineering Competence and Commitment (UK-SPEC)** mantiene esa concepción desde la perspectiva de la competencia profesional. Organiza la competencia alrededor de conocimiento y comprensión; diseño, desarrollo y resolución de problemas; responsabilidad, gestión y liderazgo; comunicación; y compromiso profesional. Incluye además el juicio profesional y la conciencia de los límites del propio conocimiento.
+
+#### Según la National Society of Professional Engineers
+
+La **National Society of Professional Engineers (NSPE)** aporta una perspectiva complementaria. Explica que los ingenieros toman **ideas abstractas** y aplican conocimiento científico y matemático para diseñar soluciones destinadas a satisfacer necesidades humanas.
+
+Cuando pasa del concepto general al ejercicio profesional, incorpora explícitamente otros elementos esenciales para IASI: **competencia, ética y responsabilidad**. Su código exige que los ingenieros actúen dentro de sus áreas de competencia, sitúen la seguridad y el bienestar público como prioridad y asuman responsabilidad por sus actividades profesionales.
+
+La ingeniería aparece así no solo como capacidad para producir una solución, sino como una actividad en la que conocimiento y capacidad están unidos al juicio y a la responsabilidad.
+
+#### Según ABET {.unlisted}
+
+Los criterios de **ABET** para la acreditación de programas de ingeniería proporcionan otra perspectiva especialmente útil. Presentan el diseño de ingeniería como un proceso **iterativo, creativo y de toma de decisiones** orientado a satisfacer necesidades y especificaciones dentro de restricciones.
+
+Ese proceso incluye identificar y formular problemas, desarrollar requisitos, analizar y sintetizar, generar y evaluar soluciones, considerar riesgos y realizar compromisos (*trade-offs*). Entre los resultados esperados de la formación aparecen además la experimentación, el análisis de evidencias, la adquisición de nuevo conocimiento y el juicio informado considerando responsabilidades profesionales y éticas.
+
+De nuevo, la ingeniería no queda caracterizada por el dominio de una tecnología concreta, sino por una manera de utilizar conocimiento para enfrentarse a problemas.
+
+#### La interpretación de IASI {.unlisted}
+
+IASI se reconoce en estas concepciones.
+
+Una ingeniería proporciona conocimientos de una especialidad, pero su formación persigue algo más profundo: desarrollar una manera de **pensar y actuar como ingeniero**. Los conocimientos concretos pueden ampliarse, quedar obsoletos, especializarse, consultarse o adquirirse posteriormente. La forma de abordar los problemas constituye una capacidad más fundamental.
+
+Sin pretender reducirla a una secuencia rígida, IASI expresa esa forma de pensar mediante estas capacidades:
+
+**comprender → abstraer → modelar → plantear alternativas → evaluar restricciones → decidir → validar → responsabilizarse**
+
+No son simplemente tareas que el ingeniero ejecuta una detrás de otra. Describen una forma de enfrentarse a los problemas: separar el problema de su apariencia inmediata, identificar qué se sabe y qué se supone, construir modelos sobre los que razonar, explorar alternativas, reconocer restricciones y compromisos, tomar decisiones justificadas, comprobar sus resultados y responder por ellos.
+
+Por eso, conocer profundamente Java, una plataforma cloud, una herramienta o cualquier otra tecnología puede convertir a una persona en un especialista extraordinariamente valioso, pero ese conocimiento **no constituye por sí solo la ingeniería**. Del mismo modo, *arquitecto* puede describir una especialización, una responsabilidad o un rol dentro de la ingeniería; la etiqueta no crea una categoría conceptual distinta de ella.
+
+IASI no llama ingeniero a una persona por el nombre de su puesto ni por una tecnología que domina. La llama ingeniero cuando habla de una persona que **ejerce ingeniería** en este sentido.
+
+Esta distinción se vuelve especialmente importante con los Sistemas Inteligentes. Un SI puede proporcionar conocimiento, recordar APIs, explorar tecnologías, proponer algoritmos, generar artefactos, realizar cálculos o materializar partes de una solución. Puede ampliar enormemente aquello que un profesional es capaz de hacer sin poseer personalmente todo el conocimiento especializado involucrado.
+
+Pero disponer de más conocimiento o de mayor capacidad de ejecución no convierte automáticamente esa actividad en ingeniería.
+
+**La Ingeniería Aumentada pretende aumentar precisamente la capacidad de comprender, abstraer, modelar, explorar alternativas, evaluar restricciones, decidir, validar y responsabilizarse del resultado.**
+
+Por eso IASI habla de **ingeniería**, de **ingenieros** y, finalmente, de **ingenieros aumentados**.
+
+------------------------------------------------------------------------
+
+## Ingeniero {.unlisted}
+
+IASI utiliza **ingeniero** para referirse a la persona que ejerce la actividad de ingeniería descrita anteriormente.
+
+No lo hace por el nombre de su puesto de trabajo ni para establecer una nueva categoría profesional. Lo hace por la forma en que esa persona se enfrenta a los problemas y por la naturaleza de la actividad que ejerce.
+
+El ingeniero aplica una forma de pensamiento de ingeniería para comprender problemas, abstraer y modelar, utilizar conocimiento, plantear y evaluar alternativas, trabajar bajo restricciones, tomar decisiones, validar sus resultados y responder por ellas.
+
+Producir código fuente puede formar parte de ese trabajo, pero no lo define. Del mismo modo, el dominio profundo de una tecnología concreta constituye una especialización valiosa, pero no sustituye por sí solo al conjunto de capacidades y responsabilidades propias de la ingeniería.
+
+Términos como *programador*, *desarrollador* o *arquitecto* pueden describir correctamente puestos de trabajo, actividades, especializaciones o roles dentro de una organización. IASI no necesita utilizarlos como unidad fundamental de su modelo.
+
+Esta distinción adquiere especial importancia en la Ingeniería Aumentada, donde la capacidad para materializar una solución ya no está necesariamente ligada a la capacidad del humano para ejecutar personalmente cada una de las tareas necesarias para construirla.
+
+El ingeniero sigue siendo responsable de la ingeniería aunque delegue parte de su ejecución en un Sistema Inteligente.
+
+------------------------------------------------------------------------
+
+## Sistema Inteligente {.unlisted}
+
+IASI utiliza **Sistema Inteligente (SI)** en lugar de utilizar *Inteligencia Artificial (IA)* como término principal.
+
+*Inteligencia Artificial* denomina un campo tecnológico amplio cuyo significado, alcance y tecnologías han cambiado históricamente y seguirán haciéndolo.
+
+IASI está interesado en algo diferente: el papel que desempeña un sistema con determinadas capacidades dentro del proceso de ingeniería.
+
+El término describe, por tanto, al sistema por su función dentro del modelo y no por pertenecer a una generación concreta de tecnologías.
+
+Los Sistemas Inteligentes actuales pueden estar construidos mediante tecnologías que hoy denominamos Inteligencia Artificial. Los futuros podrían estar construidos de otra manera.
+
+El modelo de IASI no debería depender de esa distinción.
+
+------------------------------------------------------------------------
+
+## Ingeniería Aumentada {.unlisted}
+
+IASI utiliza **Ingeniería Aumentada** en lugar de *Ingeniería Asistida por IA* o expresiones equivalentes.
+
+La asistencia describe un sistema que ayuda a una persona a realizar una actividad.
+
+El aumento describe una modificación de las capacidades efectivas de la persona que la realiza.
+
+En IASI, el Sistema Inteligente no es simplemente una herramienta externa a la que el ingeniero consulta ocasionalmente. Puede participar de forma continua en actividades de exploración, análisis, especificación, materialización, verificación y otras actividades de ingeniería.
+
+La unidad resultante es, por tanto, el **ingeniero aumentado**.
+
+El Sistema Inteligente aumenta al ingeniero.
+
+Esto no transfiere la responsabilidad de ingeniería al Sistema Inteligente. El aumento amplía lo que el ingeniero puede hacer de manera efectiva, pero no elimina al ingeniero del proceso ni su responsabilidad sobre las decisiones y sus resultados.
+
+------------------------------------------------------------------------
+
+## Roles y etiquetas {.unlisted}
+
+IASI no utiliza los títulos, cargos o etiquetas organizativas convencionales como conceptos fundamentales de ingeniería salvo cuando el concepto subyacente los requiera.
+
+Términos como:
+
+- Arquitecto
+- Desarrollador
+- Programador
+- Senior
+- Junior
+- Product Owner
+- Scrum Master
+
+pueden ser perfectamente válidos dentro de una organización.
+
+IASI no los rechaza, simplemente no presupone que una etiqueta determine de forma fiable una capacidad, una responsabilidad o una autoridad.
+
+Una persona puede ejercer una responsabilidad arquitectónica sin ocupar un puesto denominado *Architect*. Un especialista con enorme experiencia puede intervenir únicamente en una parte muy concreta de un proyecto. Un ingeniero aumentado por un Sistema Inteligente puede realizar trabajo que anteriormente habría requerido varias categorías profesionales convencionales.
+
+IASI utilizará **roles** para describir conjuntos de **capacidades, responsabilidades y decisiones** necesarias en un contexto determinado, en lugar de inferirlos a partir de cargos o etiquetas organizativas.
+
+------------------------------------------------------------------------
+
+## Herramientas y metodologías {.unlisted}
+
+IASI no define la ingeniería a partir de herramientas o metodologías concretas.
+
+Nombres como Jira, GitHub, Scrum, Kanban o cualquier otra tecnología o práctica actual pueden aparecer en implementaciones de IASI, pero no forman parte intrínseca de su modelo conceptual.
+
+Un proyecto necesita representar el trabajo: Eso no implica Jira.
+
+Un proyecto necesita coordinación: Eso no implica Scrum.
+
+Un proyecto necesita artefactos versionados: Eso no implica una plataforma de repositorios determinada.
+
+IASI identifica primero **la necesidad de ingeniería**. Las herramientas y metodologías son posibles formas de satisfacer esa necesidad.
+
+Pertenecen a la materialización del entorno de ingeniería, no necesariamente a su definición.
+
+------------------------------------------------------------------------
+
+## Cómo leer IASI {.unlisted}
+
+La terminología utilizada por IASI debe interpretarse de acuerdo con este contrato y no a partir de presupuestos procedentes de una empresa, metodología, tecnología o periodo concreto de la historia del desarrollo de software.
+
+Cuando IASI utiliza un término, lo hace deliberadamente; cuando un término habitual en la industria no aparece, su ausencia también puede ser deliberada.
+
+**IASI se apoya en los conceptos que necesita y evita convertir en elementos de su modelo aquellas etiquetas que no necesita para explicarlo.**

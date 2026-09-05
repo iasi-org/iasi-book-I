@@ -200,7 +200,7 @@ Por tanto, aparecen dos niveles diferentes de variabilidad:
 
 2. **Variabilidad en la construcción**, cuando el propio proceso utilizado para producir el sistema puede generar materializaciones diferentes a partir de las mismas entradas.
 
-La segunda es especialmente relevante para la ingeniería aumentada por Sistemas Inteligentes.
+La segunda es especialmente relevante para la ingeniería aumentada con Sistemas Inteligentes.
 
 Porque si no podemos exigir que una nueva ejecución del proceso de construcción produzca exactamente el **mismo resultado**, la reproducibilidad ya no puede depender exclusivamente de reproducir el artefacto generado.
 

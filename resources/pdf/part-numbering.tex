@@ -1,0 +1,11 @@
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother
+
+\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+
+\RedeclareSectionCommand[
+  tocindent=2em,
+  tocnumwidth=4em,
+  tocbeforeskip=0.25em
+]{chapter}

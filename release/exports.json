@@ -1,6 +1,0 @@
-{
-  "exports": [
-    {"profile": "odt", "text": "ODT", "icon": "file-earmark-text", "href": "odt/IASI_Vol_I.odt"},
-    {"profile": "docx", "text": "DOCX", "icon": "file-earmark-word", "href": "docx/IASI_Vol_I.docx"}
-  ]
-}

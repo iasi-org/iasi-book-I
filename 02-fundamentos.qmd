@@ -1,0 +1,6 @@
+# Fundamentos {.unnumbered}
+
+{{< include includes/02-principles.qmd >}}
+{{< include includes/03-engineering.qmd >}}
+{{< include includes/04-semantic.qmd >}}
+

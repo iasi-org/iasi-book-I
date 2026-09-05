@@ -3,7 +3,6 @@ project:
 
 #book:
 #  output-file: "IASI Vol-I"
-  
 format:
   pdf:
     documentclass: scrreprt
@@ -12,6 +11,7 @@ format:
       - open=right    
     papersize: a4
     toc: true
+    toc-depth: 1      
     number-sections: true
     colorlinks: true
     linkcolor: black
@@ -34,3 +34,4 @@ format:
       - text: |
            \usepackage{eso-pic}
       - resources/pdf/header-footer.tex
+      - resources/pdf/part-numbering.tex
