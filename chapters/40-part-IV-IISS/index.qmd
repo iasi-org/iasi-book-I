@@ -1,0 +1,4 @@
+---
+title: "Sistemas Inteligentes"
+navbar-title: "Sistemas Inteligentes"
+---

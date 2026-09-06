@@ -1,5 +1,0 @@
----
-title: "Organización"
----
-
-![](/resources/images/under-construction.png)

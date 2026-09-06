@@ -1,0 +1,39 @@
+---
+title: "Del modelo al sistema"
+navbar-title: "Del modelo al sistema"
+---
+
+## El modelo aporta capacidad, el sistema organiza el trabajo
+Un modelo generativo puede producir resultados que parecen abarcar gran parte del proceso intelectual: interpreta una petición, propone un plan, escribe código, resume documentación o explica una decisión. Esa amplitud puede llevar a pensar que basta con conectar una interfaz al modelo para obtener un sistema completo. En realidad, gran parte de lo que percibimos como comportamiento del modelo procede de la aplicación que lo rodea y de los componentes que preparan la interacción antes y después de cada inferencia.
+
+El modelo recibe una representación del contexto disponible y genera una salida. No decide por sí solo qué documentos deben recuperarse, qué repositorio está autorizado a modificar, qué versión de una especificación es válida, qué credenciales puede utilizar, qué operaciones requieren confirmación o qué resultado debe considerarse correcto. Esas decisiones pertenecen a la arquitectura del sistema.
+
+Por ello conviene imaginar el IISS como una composición de capacidades. El modelo aporta interpretación y generación; las instrucciones establecen criterios de comportamiento; las *definitions* representan de forma estructurada aquello sobre lo que se trabaja; los *commands* expresan operaciones intencionadas; las herramientas permiten actuar; los recursos aportan información; las *skills* conservan conocimiento operativo; los *workflows* ordenan actividades; las validaciones comprueban condiciones; las automatizaciones reaccionan ante eventos; y los *adapters* traducen estas piezas a las posibilidades concretas de cada plataforma.
+
+## Capacidad, intención y ejecución
+Una distinción útil consiste en separar tres niveles que suelen aparecer mezclados. El primero es la capacidad: algo que el sistema podría hacer si dispusiera de una petición adecuada. El segundo es la intención: la expresión de qué operación queremos realizar ahora y con qué parámetros. El tercero es la ejecución: la interacción efectiva con el entorno para producir un cambio o recuperar información.
+
+Una herramienta representa principalmente capacidad de ejecución. Puede leer un archivo, consultar un servicio, crear una incidencia o lanzar una compilación. Un *command* representa intención. Puede expresar «validar el proyecto», «publicar el libro» o «generar las *definitions*». Una *skill* puede contener el conocimiento necesario para decidir cómo ejecutar correctamente esa intención utilizando varias herramientas. Un *workflow* puede establecer el orden y las condiciones bajo las que deben combinarse varias operaciones.
+
+Esta separación evita que el sistema dependa de una correspondencia uno a uno entre petición y herramienta. Una operación significativa para el usuario puede requerir varias acciones técnicas, y una misma herramienta puede utilizarse en numerosos procesos diferentes. El modelo conceptual debe describir la operación en términos del problema, mientras que la implementación decide cómo materializarla.
+
+## Componentes declarativos y componentes operativos
+También podemos distinguir entre piezas que describen y piezas que actúan. Las *definitions*, la configuración, las reglas y las *templates* son predominantemente declarativas. Expresan estado, estructura, restricciones o formas esperadas sin necesidad de ejecutar una acción en el momento en que se leen. Los *commands*, las herramientas, los *workflows* y las automatizaciones son predominantemente operativos, porque desencadenan o coordinan actividad.
+
+La frontera no es absoluta. Una *definition* puede contener información suficiente para generar artefactos; una regla puede activar una validación; una *template* puede transformarse en un documento durante un *workflow*. Sin embargo, la distinción ayuda a responder una pregunta esencial: ¿estamos describiendo cómo debe ser el sistema o estamos pidiendo que haga algo?
+
+Cuando ambos niveles se mezclan sin control, las conversaciones terminan convirtiéndose en el único lugar donde existe la intención del proyecto. Una instrucción dada una vez puede desaparecer de la ventana de contexto, una decisión puede quedar enterrada en el historial y una operación puede depender de que el usuario recuerde exactamente cómo se realizó la vez anterior. Convertir conocimiento y decisiones relevantes en componentes persistentes reduce esa fragilidad.
+
+## Componentes canónicos e implementaciones
+No todas las plataformas ofrecerán todos los componentes de la misma manera. Algunas permitirán definir instrucciones persistentes a nivel de repositorio; otras exigirán incluirlas en cada petición. Algunas dispondrán de *skills* como artefactos reconocibles; otras requerirán combinar documentos, *prompts* y herramientas. Algunas soportarán MCP de forma nativa; otras utilizarán integraciones propias. El modelo conceptual no debe romperse por esas diferencias.
+
+Por ello hablaremos de componentes canónicos. Un componente canónico expresa la responsabilidad que necesitamos representar. Su realización concreta puede variar. Si una plataforma posee una primitiva equivalente, el *adapter* puede mapearla directamente. Si la equivalencia es parcial, el *adapter* debe declarar la diferencia. Si la plataforma carece de esa capacidad, será necesario simularla, degradarla o reconocer que determinada operación no puede ejecutarse con las mismas garantías.
+
+Este enfoque evita dos extremos. El primero consiste en diseñar toda la metodología alrededor de las funciones del producto que usamos hoy. El segundo consiste en crear una abstracción tan genérica que oculte las diferencias reales entre plataformas. Los *adapters* permiten mantener una arquitectura común sin negar que cada implementación tiene límites concretos.
+
+## El sistema como composición verificable
+La composición de componentes no debe entenderse únicamente como una forma de añadir capacidad. También es una forma de hacer visible dónde reside cada decisión y, por tanto, dónde puede comprobarse. Si una regla está declarada, puede validarse. Si un *workflow* está definido, puede inspeccionarse. Si una herramienta tiene un contrato de entrada y salida, puede probarse. Si un *adapter* declara qué capacidades soporta, puede detectarse una incompatibilidad antes de ejecutar una tarea.
+
+Esta propiedad es especialmente importante cuando aumenta la autonomía. Cuantas más decisiones pueda tomar un IISS sin intervención inmediata, mayor debe ser la claridad sobre las piezas que gobiernan su comportamiento. La autonomía útil no procede de retirar estructura, sino de disponer de una estructura suficientemente explícita para delegar sin perder control.
+
+Los capítulos siguientes desarrollan cada componente desde esta perspectiva. El propósito será comprender qué necesidad resuelve, qué información debería contener, qué relaciones mantiene con las demás piezas y cómo puede representarse de forma independiente de un producto concreto.

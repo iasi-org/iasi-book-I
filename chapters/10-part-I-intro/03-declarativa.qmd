@@ -1,5 +1,6 @@
 ---
 title: "Programación declarativa"
+navbar-title: "Declarativa"
 ---
 
 ## Describiendo el resultado, no el procedimiento

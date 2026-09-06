@@ -1,0 +1,46 @@
+---
+title: "*Skills*"
+navbar-title: "Skills"
+---
+
+## Conocimiento operativo reutilizable
+Un IISS puede disponer de herramientas suficientes para realizar una tarea y, aun así, no saber cómo utilizarlas correctamente dentro de un proceso real. Saber que existe una herramienta para leer archivos y otra para ejecutar pruebas no equivale a conocer el procedimiento adecuado para revisar un cambio, diagnosticar un fallo o preparar una publicación. Esa diferencia introduce la necesidad de las *skills*.
+
+Llamaremos *skill* a una unidad reutilizable de conocimiento operativo que enseña al sistema cómo abordar una clase de tareas. Puede contener instrucciones especializadas, criterios de decisión, ejemplos, referencias a herramientas, convenciones, comprobaciones y recursos auxiliares. Su propósito no es ejecutar una única operación, sino encapsular una forma de trabajar que puede aplicarse repetidamente.
+
+Las plataformas actuales pueden utilizar el término *skill* con estructuras concretas, pero nuestro concepto no depende de ellas. Lo importante es la función: extraer conocimiento procedimental de la conversación y convertirlo en una capacidad reutilizable.
+
+## Saber qué hacer y saber cómo hacerlo
+Un *command* puede expresar «revisar una solicitud de cambio». La *skill* correspondiente puede explicar cómo inspeccionar los cambios, qué riesgos buscar, qué pruebas consultar, cómo distinguir un comentario bloqueante de una sugerencia y qué herramientas utilizar en cada paso.
+
+Esta separación evita que el *command* se convierta en un manual y que la herramienta tenga que contener lógica de proceso. También permite utilizar la misma *skill* desde una conversación, un *workflow* o una automatización.
+
+Una *skill* no tiene por qué describir una secuencia rígida. Puede proporcionar heurísticas y criterios que el modelo utilice según el contexto. Si el proceso necesita un orden obligatorio, condiciones de transición o estados persistentes, parte de esa lógica puede pertenecer mejor a un *workflow*.
+
+## Contenido progresivo
+Las *skills* pueden llegar a ser extensas. Cargar todo su contenido en cada interacción sería ineficiente y podría introducir instrucciones irrelevantes. Por ello resulta útil que el sistema pueda descubrir qué *skills* existen mediante una descripción breve y recuperar su contenido completo solo cuando la tarea lo requiera.
+
+Esta carga progresiva reduce el consumo de contexto y permite mantener una biblioteca amplia de conocimiento operativo sin convertirla en un bloque permanente de instrucciones.
+
+También facilita la composición. Una *skill* general puede remitir a otras más especializadas cuando aparecen determinadas condiciones. El sistema puede incorporar únicamente las piezas necesarias para resolver la tarea actual.
+
+## *Skills* y experiencia acumulada
+Una parte importante del conocimiento de ingeniería no vive en especificaciones formales. Se encuentra en procedimientos que las personas han aprendido con la práctica: qué comprobar antes de desplegar, cómo diagnosticar un tipo de error, qué señales suelen indicar una incompatibilidad o qué orden reduce el riesgo al modificar varios componentes.
+
+Las *skills* ofrecen un lugar para convertir parte de esa experiencia en conocimiento operativo accesible a los IISS. No eliminan la necesidad de juicio, pero reducen la dependencia de que ese conocimiento permanezca únicamente en la memoria de una persona o en conversaciones anteriores.
+
+Para que una *skill* sea útil debe mantenerse. Un procedimiento basado en una herramienta retirada puede volverse perjudicial. Por ello las *skills* deberían versionarse, revisarse y relacionarse con las capacidades que necesitan.
+
+## *Skills*, instrucciones y *rules*
+Una *skill* puede contener instrucciones, pero no sustituye a las instrucciones generales del sistema. Las instrucciones establecen comportamiento persistente dentro de un ámbito; la *skill* aporta conocimiento especializado cuando una tarea lo requiere.
+
+Las reglas expresan restricciones o condiciones que pueden ser verificables. Una *skill* puede explicar cómo actuar cuando una regla falla, pero no debería ser el único lugar donde existe una condición que el sistema necesita comprobar de forma sistemática.
+
+Esta separación mejora la claridad. Si una política debe cumplirse siempre, pertenece a una capa normativa. Si un procedimiento explica cómo resolver una tarea, pertenece a una *skill*.
+
+## Implementación mediante *adapters*
+Una plataforma puede soportar *skills* como artefactos nativos y otra no disponer de una primitiva equivalente. El *adapter* puede traducir una *skill* a instrucciones dinámicas, documentos recuperables o mecanismos propios del agente.
+
+La equivalencia puede ser imperfecta. Una implementación podría no soportar carga progresiva o descubrimiento automático. En ese caso el *adapter* debe reconocer la limitación en lugar de ocultarla.
+
+Este enfoque permite que la metodología defina qué conocimiento operativo necesita conservar sin quedar ligada a la forma en que una herramienta concreta decide empaquetarlo.

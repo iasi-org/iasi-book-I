@@ -1,5 +1,6 @@
 ---
 title: "IA Simbólica"
+navbar-title: "IA simbólica"
 ---
 
 ## Representar el conocimiento

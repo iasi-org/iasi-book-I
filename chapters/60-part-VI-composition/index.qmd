@@ -1,0 +1,28 @@
+---
+title: "Composición y orquestación"
+navbar-title: "Composición"
+---
+
+Los componentes de un Sistema Inteligente adquieren valor cuando dejan de funcionar como piezas aisladas y empiezan a **coordinarse para alcanzar un objetivo**.
+
+Instrucciones, herramientas, recursos, memoria, reglas, configuración y otros mecanismos proporcionan capacidades. Pero disponer de capacidades no determina todavía cómo se combinan, en qué orden intervienen, qué decisiones pueden tomar, cómo se coordinan entre sí ni cómo se comprueba el resultado de su actuación.
+
+Esta parte estudia precisamente ese nivel.
+
+Nos interesa comprender cómo un Sistema Inteligente **organiza y coordina sus capacidades** mediante workflows, agentes, validaciones, automatizaciones y mecanismos de adaptación. El foco deja de estar en qué componentes existen y pasa a estar en **cómo colaboran, cómo se encadenan y cómo se gobierna su actuación**.
+
+La distinción es importante:
+
+```text
+componentes
+    ↓
+capacidades disponibles
+
+composición y orquestación
+    ↓
+comportamiento coordinado
+```
+
+Un sistema no se vuelve más capaz simplemente por acumular componentes. Su capacidad efectiva depende también de cómo esos componentes se relacionan, qué contexto comparten, qué restricciones respetan y qué mecanismos existen para dirigir, validar y corregir su actuación.
+
+En esta parte abordaremos ese tránsito desde las piezas individuales hacia el **comportamiento coordinado del sistema**.

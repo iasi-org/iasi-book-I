@@ -1,5 +1,6 @@
 ---
 title: "Deep Learning"
+navbar-title: "Deep Learning"
 ---
 
 ## Mas allá de los algoritmos

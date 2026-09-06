@@ -1,0 +1,49 @@
+---
+title: "Contexto, estado y memoria"
+navbar-title: "Contexto, estado y memoria"
+---
+
+## Continuidad más allá de una inferencia
+Cada llamada a un modelo trabaja con un contexto finito. El sistema puede incluir instrucciones, mensajes anteriores, documentos, *definitions*, resultados de herramientas y cualquier otra información relevante, pero todo aquello que no se incorpora a esa interacción no participa directamente en la inferencia. Esta limitación obliga a distinguir entre contexto, estado y memoria.
+
+El contexto es la información disponible para la inferencia actual. El estado representa la situación de un proceso o de una entidad en un momento determinado. La memoria conserva información que puede recuperarse en interacciones futuras. Las tres categorías se relacionan, pero no son equivalentes.
+
+## Contexto construido
+El contexto no debería considerarse simplemente el historial completo de una conversación. Un IISS puede construirlo seleccionando solo aquello que resulte necesario para la tarea. Puede incluir instrucciones permanentes, una *definition* relevante, el resultado de una herramienta y un resumen de decisiones anteriores sin incorporar miles de mensajes previos.
+
+Esta selección es una responsabilidad de la aplicación. Cuanto más largo sea el proceso, menos viable resulta enviar todo lo ocurrido anteriormente. El sistema necesita mecanismos de resumen, recuperación y priorización.
+
+También debe conservar la procedencia de la información. El modelo puede recibir texto, pero la arquitectura debería saber qué parte pertenece a una instrucción, qué parte procede de un recurso y qué parte fue generada en un paso previo.
+
+## Estado del proceso
+Un *workflow* puede encontrarse esperando una validación, haber completado una fase o necesitar una autorización. Ese estado no debería deducirse cada vez leyendo la conversación. Conviene representarlo explícitamente para que el proceso pueda reanudarse, inspeccionarse y recuperarse después de un fallo.
+
+El estado también puede pertenecer a un artefacto. Una *definition* puede estar en borrador, validada o sustituida. Un *command* puede encontrarse pendiente, en ejecución o completado.
+
+Esta información permite que el IISS conozca dónde está sin confundir continuidad operativa con memoria conversacional.
+
+## Memoria
+La memoria conserva información que puede resultar útil en el futuro y la recupera cuando el contexto lo necesita. Puede almacenar preferencias, decisiones, hechos del proyecto, resúmenes o referencias a recursos.
+
+No toda información merece convertirse en memoria. Guardar indiscriminadamente cada detalle genera ruido y puede reintroducir datos obsoletos. La arquitectura necesita criterios sobre qué se conserva, durante cuánto tiempo, con qué ámbito y cómo se actualiza.
+
+También debe distinguir entre recordar una afirmación y verificar que sigue siendo válida. Una memoria puede indicar qué decisión se tomó, pero un recurso actual puede mostrar que posteriormente fue modificada.
+
+## Memoria y *definitions*
+Las *definitions* representan conocimiento canónico del proyecto y deberían consultarse directamente cuando exista una representación estructurada adecuada. La memoria resulta más útil para información que ayuda a contextualizar interacciones pero no pertenece necesariamente al modelo formal del proyecto.
+
+Si el sistema utiliza memoria para almacenar aquello que debería vivir en una *definition*, el conocimiento puede volverse difícil de inspeccionar y validar. Por el contrario, convertir cada preferencia conversacional en una *definition* introduciría una formalidad innecesaria.
+
+La arquitectura necesita ambos mecanismos porque resuelven problemas diferentes.
+
+## Compresión y pérdida
+Resumir conversaciones o estados reduce el volumen de contexto, pero toda compresión puede perder matices. El sistema debería elegir qué información necesita conservar literalmente y qué puede representarse mediante un resumen.
+
+Las decisiones relevantes, los contratos y los valores estructurados suelen merecer artefactos explícitos. Las discusiones exploratorias pueden resumirse siempre que se mantenga la posibilidad de volver a las fuentes cuando sea necesario.
+
+Esta estrategia permite mantener procesos largos sin fingir que el modelo posee una memoria humana continua.
+
+## *Adapters* y persistencia
+Cada plataforma ofrece capacidades distintas de historial y memoria. Algunas mantienen conversaciones persistentes; otras trabajan principalmente sobre archivos o sesiones. El *adapter* debe aprovechar esas funciones cuando resulten útiles, pero la arquitectura no debería asumir que una memoria proporcionada por un producto sustituye al estado canónico del proyecto.
+
+La continuidad del IISS debe poder explicarse mediante componentes controlables, no depender únicamente de una función opaca del agente utilizado.

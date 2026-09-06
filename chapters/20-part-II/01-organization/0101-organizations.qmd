@@ -1,9 +1,0 @@
----
-title: "Organizaciones"
----
-
-![](/resources/images/under-construction.png)
-
-Antes de hablar de equipos, títulos, roles o responsabilidades, necesitamos hablar de la organización en la que aparecen.
-
-Este primer bloque parte de la organización como sistema y de la forma en que divide, estructura y coordina el trabajo.

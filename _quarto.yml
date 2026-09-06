@@ -22,6 +22,7 @@ bibliography:
   - includes/references/inteligencia-artificial.bib
   - includes/references/historia-software.bib
   - includes/references/ingenieria-software.bib
+  - includes/references/references.bib
 
 book:
   title: "Ingeniería aumentada con sistemas inteligentes"

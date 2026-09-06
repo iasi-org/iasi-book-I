@@ -1,5 +1,6 @@
 ---
 title: "Antes de los LLM"
+navbar-title: "Antes de los LLM"
 ---
 
 ## De Watson a los LLM

@@ -1,0 +1,1098 @@
+---
+title: "Inferencia"
+navbar-title: "Inferencia"
+---
+
+En el apartado anterior vimos cómo el entrenamiento modifica los parámetros de un modelo a partir de datos.
+
+Una vez finalizado ese proceso, el modelo puede utilizarse para trabajar con entradas nuevas.
+
+Ese uso recibe el nombre de **inferencia**.
+
+Durante la inferencia, el sistema proporciona una entrada al modelo, este realiza sus operaciones internas y calcula una salida utilizando los parámetros aprendidos.
+
+De forma general:
+
+$$
+\hat{y}=f_{\theta}(x)
+$$
+
+donde:
+
+* $x$ es la entrada;
+* $\theta$ representa los parámetros aprendidos;
+* $f_{\theta}$ es el modelo;
+* $\hat{y}$ es el resultado calculado.
+
+Durante la inferencia, los parámetros permanecen normalmente fijos.
+
+El modelo utiliza lo aprendido, pero no ejecuta el ciclo completo de cálculo de pérdida, retropropagación y actualización que vimos durante el entrenamiento.
+
+## Entrenamiento e inferencia
+
+La diferencia fundamental puede resumirse así:
+
+```text
+Entrenamiento:
+utiliza ejemplos para modificar los parámetros.
+
+Inferencia:
+utiliza los parámetros para procesar nuevas entradas.
+```
+
+Durante el entrenamiento:
+
+1. el modelo recibe ejemplos;
+2. realiza una predicción;
+3. se calcula el error;
+4. se obtienen los gradientes;
+5. se actualizan los parámetros.
+
+Durante la inferencia:
+
+1. el modelo recibe una entrada;
+2. realiza sus operaciones;
+3. calcula una salida.
+
+```text
+Entrenamiento
+entrada
+  ↓
+predicción
+  ↓
+pérdida
+  ↓
+gradientes
+  ↓
+actualización
+```
+
+```text
+Inferencia
+entrada
+  ↓
+modelo entrenado
+  ↓
+salida
+```
+
+La inferencia utiliza el resultado del entrenamiento.
+
+No necesita conocer cuál habría sido la respuesta correcta ni calcular cómo debería modificar el modelo.
+
+## Preparar la entrada
+
+Antes de llegar al modelo, la petición debe transformarse en una representación adecuada.
+
+En un modelo de lenguaje, el proceso puede incluir:
+
+* instrucciones del sistema;
+* mensaje del usuario;
+* historial de conversación;
+* documentos recuperados;
+* recuerdos relevantes;
+* resultados de herramientas;
+* reglas de formato.
+
+Todo ese contenido se organiza dentro del contexto y después se tokeniza.
+
+De forma simplificada:
+
+```text
+instrucciones
+      +
+pregunta
+      +
+historial
+      +
+documentos
+      +
+memoria
+      ↓
+contexto
+      ↓
+tokens
+      ↓
+modelo
+```
+
+Por tanto, la inferencia no comienza únicamente con la frase visible que acaba de escribir el usuario.
+
+La aplicación puede construir una entrada mucho más amplia antes de llamar al modelo.
+
+## El modelo no recibe texto
+
+Aunque hablamos de introducir texto, el modelo trabaja con números.
+
+El texto se convierte primero en tokens:
+
+$$
+x
+\longrightarrow
+(t_1,t_2,\ldots,t_n)
+$$
+
+Cada token se transforma después en una representación vectorial:
+
+$$
+t_i
+\longrightarrow
+\mathbf{e}_i
+$$
+
+A esas representaciones se incorpora información sobre su posición y se procesan mediante las capas del transformer.
+
+Podemos representar el recorrido general:
+
+```text
+texto
+  ↓
+tokenización
+  ↓
+identificadores
+  ↓
+embeddings
+  ↓
+capas del transformer
+  ↓
+representaciones finales
+  ↓
+salida
+```
+
+La inferencia incluye todas estas operaciones.
+
+## Los parámetros permanecen fijos
+
+Durante una inferencia ordinaria, los parámetros no cambian.
+
+Podemos expresarlo como:
+
+$$
+\theta_{\text{antes}}
+=
+\theta_{\text{después}}
+$$
+
+El modelo procesa una entrada, pero no modifica lo que aprendió durante el entrenamiento.
+
+Esto explica por qué corregir al modelo durante una conversación no implica necesariamente que se haya reentrenado.
+
+Supongamos que el usuario indica:
+
+> En este proyecto utilizamos Java 21, no Java 17.
+
+El sistema puede utilizar esa corrección durante el resto de la conversación porque forma parte del contexto.
+
+También puede guardarla en una memoria externa para recuperarla más adelante.
+
+Sin embargo, los parámetros del modelo pueden continuar exactamente iguales.
+
+Lo que ha cambiado es la información recibida durante la inferencia.
+
+## Cambiar la entrada cambia el resultado
+
+Aunque el modelo permanezca fijo, pequeñas variaciones en la entrada pueden producir resultados diferentes.
+
+Por ejemplo:
+
+> Explica qué hace esta función.
+
+> Explica qué hace esta función para una persona que empieza a programar.
+
+> Explica qué hace esta función e identifica posibles errores.
+
+El código puede ser el mismo, pero la tarea cambia.
+
+Podemos expresar esta relación así:
+
+$$
+f_{\theta}(x_1)
+\neq
+f_{\theta}(x_2)
+$$
+
+aunque:
+
+$$
+\theta_1=\theta_2
+$$
+
+El modelo es el mismo.
+
+La entrada es diferente.
+
+También pueden cambiar los documentos recuperados, la memoria disponible, las instrucciones o el historial de conversación.
+
+Por eso, analizar una respuesta exige conocer no solo qué modelo se utilizó, sino también qué contexto recibió.
+
+## Aprendizaje en contexto
+
+Un modelo puede adaptar su comportamiento a ejemplos incluidos en la propia petición.
+
+Este fenómeno se denomina habitualmente **aprendizaje en contexto** o *in-context learning*.
+
+Supongamos que proporcionamos:
+
+```text
+Entrada: perro
+Salida: animal
+
+Entrada: martillo
+Salida: herramienta
+
+Entrada: roble
+Salida:
+```
+
+El modelo puede inferir el patrón y responder:
+
+```text
+árbol
+```
+
+No hemos modificado sus parámetros.
+
+Los ejemplos se encuentran dentro del contexto y orientan la inferencia.
+
+Podemos distinguir:
+
+```text
+Entrenamiento:
+cambia los parámetros.
+
+Aprendizaje en contexto:
+cambia la tarea presentada al modelo.
+```
+
+La palabra aprendizaje puede resultar engañosa en este caso.
+
+El modelo se adapta temporalmente a los ejemplos disponibles, pero no conserva necesariamente ese patrón cuando termina la interacción.
+
+## Inferencia con instrucciones
+
+Las instrucciones también forman parte de la entrada.
+
+Pueden indicar:
+
+* qué tarea realizar;
+* qué formato utilizar;
+* qué información priorizar;
+* qué restricciones respetar;
+* qué estilo adoptar;
+* qué herramientas están disponibles.
+
+Por ejemplo:
+
+```text
+Responde únicamente con JSON.
+
+No inventes datos ausentes.
+
+Utiliza las fechas en formato ISO.
+
+Explica el razonamiento de forma breve.
+```
+
+Estas instrucciones no cambian el modelo.
+
+Condicionan el comportamiento observado durante la inferencia.
+
+Una aplicación puede aplicar instrucciones generales en todas las peticiones y añadir otras específicas según la tarea.
+
+## Inferencia con documentos
+
+Un modelo puede utilizar información que no estaba presente durante su entrenamiento.
+
+Para ello, la aplicación recupera documentos y los incorpora al contexto.
+
+El proceso general puede ser:
+
+```text
+pregunta
+   ↓
+búsqueda documental
+   ↓
+selección de fragmentos
+   ↓
+incorporación al contexto
+   ↓
+inferencia
+   ↓
+respuesta
+```
+
+El modelo no ha aprendido permanentemente esos documentos.
+
+Los utiliza como parte de la entrada actual.
+
+Esta diferencia permite actualizar la información sin volver a entrenar el modelo.
+
+Si cambia una política interna, puede sustituirse el documento almacenado y recuperarse la nueva versión en la siguiente consulta.
+
+## Inferencia con memoria
+
+La memoria funciona de una forma semejante.
+
+Supongamos que el sistema conserva:
+
+```text
+El proyecto genera la documentación con Quarto.
+```
+
+Cuando el usuario pregunta:
+
+> ¿Cómo publico el libro?
+
+la aplicación puede recuperar ese recuerdo e incluirlo en el contexto.
+
+La entrada real podría contener:
+
+```text
+Recuerdo relevante:
+El proyecto genera la documentación con Quarto.
+
+Pregunta:
+¿Cómo publico el libro?
+```
+
+El modelo responde teniendo en cuenta esa información.
+
+No recuerda espontáneamente el proyecto.
+
+El sistema ha recuperado el dato y lo ha vuelto a presentar durante la inferencia.
+
+## Inferencia con herramientas
+
+La inferencia puede formar parte de un proceso más amplio en el que el modelo utiliza herramientas.
+
+Por ejemplo:
+
+1. el usuario realiza una pregunta;
+2. el modelo propone consultar una fuente;
+3. la aplicación ejecuta una herramienta;
+4. el resultado se incorpora al contexto;
+5. el modelo realiza una nueva inferencia;
+6. genera la respuesta final.
+
+```text
+pregunta
+  ↓
+inferencia
+  ↓
+solicitud de herramienta
+  ↓
+ejecución externa
+  ↓
+resultado
+  ↓
+nueva inferencia
+  ↓
+respuesta
+```
+
+El modelo no ejecuta necesariamente la operación por sí mismo.
+
+Puede producir una instrucción estructurada que la aplicación interpreta y ejecuta.
+
+Después recibe el resultado dentro de una nueva petición.
+
+## Una inferencia puede contener varias llamadas
+
+Desde el punto de vista del usuario, una respuesta puede parecer una única operación.
+
+Internamente, el sistema puede realizar varias inferencias.
+
+Por ejemplo:
+
+```text
+Inferencia 1:
+interpretar la tarea.
+
+Inferencia 2:
+seleccionar una herramienta.
+
+Inferencia 3:
+analizar el resultado.
+
+Inferencia 4:
+redactar la respuesta final.
+```
+
+Esto ocurre especialmente en agentes, flujos de trabajo y sistemas que utilizan varias fuentes.
+
+Por tanto, una interacción no equivale necesariamente a una única ejecución del modelo.
+
+## Inferencia en modelos generativos
+
+En un modelo generativo, la inferencia se repite para producir cada nuevo token.
+
+Dada una secuencia:
+
+$$
+t_1,t_2,\ldots,t_n
+$$
+
+el modelo calcula una distribución de probabilidad:
+
+$$
+P_{\theta}
+\left(
+t_{n+1}
+\mid
+t_1,t_2,\ldots,t_n
+\right)
+$$
+
+Después se selecciona un token:
+
+$$
+t_{n+1}
+$$
+
+y se incorpora a la secuencia:
+
+$$
+t_1,t_2,\ldots,t_n,t_{n+1}
+$$
+
+El proceso vuelve a ejecutarse para calcular el siguiente token:
+
+$$
+P_{\theta}
+\left(
+t_{n+2}
+\mid
+t_1,t_2,\ldots,t_n,t_{n+1}
+\right)
+$$
+
+La respuesta se construye progresivamente.
+
+No aparece completa de una sola vez dentro del modelo.
+
+## Procesamiento inicial y generación
+
+En una petición generativa pueden distinguirse conceptualmente dos fases.
+
+### Procesamiento del contexto
+
+El modelo procesa todos los tokens de entrada:
+
+```text
+instrucciones
++
+historial
++
+documentos
++
+pregunta
+```
+
+Esta fase permite construir las representaciones necesarias para comenzar la respuesta.
+
+### Generación
+
+Después se producen nuevos tokens uno a uno.
+
+```text
+token 1
+  ↓
+token 2
+  ↓
+token 3
+  ↓
+...
+```
+
+Procesar un contexto muy largo puede requerir bastante cálculo antes de generar el primer token.
+
+Generar una respuesta larga añade después numerosas operaciones sucesivas.
+
+## Caché de claves y valores
+
+Durante la generación, muchos cálculos relacionados con los tokens anteriores se reutilizan.
+
+Para evitar recalcularlos completamente en cada paso, los sistemas pueden conservar una **caché de claves y valores**, conocida habitualmente como *KV cache*.
+
+De forma conceptual:
+
+```text
+contexto ya procesado
+        ↓
+claves y valores almacenados
+        ↓
+nuevo token
+        ↓
+solo se calculan las partes necesarias
+```
+
+Sin esta caché, al generar cada token habría que repetir gran parte del procesamiento de todos los tokens anteriores.
+
+La caché acelera la generación, pero consume memoria.
+
+Cuanto mayor es la secuencia, mayor puede ser el espacio necesario para conservar esos valores.
+
+## Latencia
+
+La **latencia** es el tiempo que transcurre entre la petición y la obtención del resultado.
+
+En sistemas generativos conviene distinguir varias medidas.
+
+### Tiempo hasta el primer token
+
+Mide cuánto tarda el sistema en comenzar a responder.
+
+Depende, entre otros factores, de:
+
+* la longitud del contexto;
+* el tamaño del modelo;
+* la carga del sistema;
+* el hardware;
+* la preparación de documentos;
+* las herramientas utilizadas.
+
+### Velocidad de generación
+
+Mide cuántos tokens se producen por unidad de tiempo.
+
+Puede expresarse como:
+
+$$
+V=
+\frac{T_{\text{generados}}}
+{\Delta t}
+$$
+
+donde:
+
+* $T_{\text{generados}}$ es el número de tokens producidos;
+* $\Delta t$ es el tiempo empleado.
+
+Una aplicación puede comenzar a mostrar la respuesta mientras continúa generándola. Esta técnica se denomina habitualmente *streaming*.
+
+## Rendimiento
+
+El rendimiento de un sistema de inferencia puede medirse mediante distintas variables:
+
+* peticiones por segundo;
+* tokens por segundo;
+* tiempo hasta el primer token;
+* tiempo total de respuesta;
+* número de usuarios simultáneos;
+* memoria utilizada;
+* coste por petición.
+
+Mejorar una medida puede empeorar otra.
+
+Por ejemplo, procesar varias peticiones juntas puede aumentar el rendimiento total, pero también retrasar una petición individual mientras espera a formar parte de un lote.
+
+El diseño debe equilibrar capacidad, coste y experiencia de uso.
+
+## Inferencia por lotes
+
+Igual que durante el entrenamiento, varias entradas pueden agruparse en un lote.
+
+```text
+petición 1 ┐
+petición 2 ├── lote → modelo
+petición 3 ┘
+```
+
+La inferencia por lotes permite aprovechar mejor el hardware.
+
+Puede resultar útil cuando:
+
+* se procesan documentos de forma masiva;
+* no se necesita una respuesta inmediata;
+* se clasifican grandes cantidades de registros;
+* se generan resultados fuera de una interacción en tiempo real.
+
+En una conversación, el sistema suele priorizar la latencia.
+
+En un proceso nocturno, puede priorizar la cantidad total procesada.
+
+## Inferencia interactiva y diferida
+
+Podemos distinguir dos formas generales de uso.
+
+### Inferencia interactiva
+
+El usuario espera una respuesta inmediata.
+
+Ejemplos:
+
+* asistentes;
+* búsquedas;
+* generación de código;
+* análisis de documentos;
+* interfaces conversacionales.
+
+Aquí importan especialmente la latencia y la velocidad de generación.
+
+### Inferencia diferida
+
+Las tareas se ejecutan sin que una persona espere frente a la pantalla.
+
+Ejemplos:
+
+* clasificación nocturna;
+* generación masiva de resúmenes;
+* análisis de registros;
+* preparación de informes;
+* procesamiento de archivos.
+
+Aquí puede priorizarse el coste y el rendimiento total.
+
+## El tamaño del modelo
+
+Los modelos grandes suelen requerir más memoria y cálculo durante la inferencia.
+
+El espacio necesario para almacenar los parámetros puede aproximarse mediante:
+
+$$
+M_{\theta}
+=
+N_{\theta}\cdot B
+$$
+
+donde:
+
+* $M_{\theta}$ es la memoria necesaria;
+* $N_{\theta}$ es el número de parámetros;
+* $B$ es el número de bytes utilizado para representar cada parámetro.
+
+Si un modelo contiene miles de millones de parámetros, pequeñas diferencias en la precisión numérica pueden producir grandes diferencias de memoria.
+
+Además de los parámetros, el sistema necesita espacio para:
+
+* activaciones;
+* caché;
+* entradas;
+* resultados intermedios;
+* operaciones del entorno de ejecución.
+
+## Cuantización
+
+La **cuantización** reduce la precisión utilizada para representar determinados valores.
+
+Por ejemplo, en lugar de almacenar cada parámetro con una representación de alta precisión, puede utilizarse otra más compacta.
+
+De forma conceptual:
+
+```text
+más precisión
+    ↓
+más memoria y cálculo
+
+menos precisión
+    ↓
+menos memoria y, a menudo, más velocidad
+```
+
+La cuantización puede permitir:
+
+* ejecutar modelos en dispositivos más pequeños;
+* reducir el coste;
+* aumentar la velocidad;
+* disminuir el consumo de memoria.
+
+Sin embargo, una reducción excesiva puede degradar los resultados.
+
+El equilibrio depende del modelo, la técnica y la tarea.
+
+## Modelos locales y servicios remotos
+
+La inferencia puede ejecutarse localmente o mediante un servicio remoto.
+
+### Inferencia local
+
+El modelo se ejecuta en la infraestructura propia.
+
+Puede ofrecer:
+
+* mayor control;
+* protección de determinados datos;
+* funcionamiento sin conexión;
+* personalización del entorno;
+* costes previsibles en algunos escenarios.
+
+También exige:
+
+* hardware;
+* instalación;
+* mantenimiento;
+* actualizaciones;
+* optimización;
+* supervisión.
+
+### Inferencia remota
+
+La aplicación envía la petición a un proveedor mediante una API.
+
+Puede ofrecer:
+
+* acceso a modelos grandes;
+* menor necesidad de infraestructura propia;
+* escalado administrado;
+* actualizaciones automáticas.
+
+También introduce cuestiones sobre:
+
+* privacidad;
+* dependencia del proveedor;
+* coste por uso;
+* disponibilidad;
+* latencia de red;
+* cambios de versión.
+
+La elección forma parte de la arquitectura del sistema.
+
+## Distribución entre dispositivos
+
+Un modelo grande puede no caber en un único dispositivo.
+
+En ese caso, sus parámetros y operaciones pueden distribuirse.
+
+```text
+dispositivo 1:
+primeras capas
+
+dispositivo 2:
+capas intermedias
+
+dispositivo 3:
+capas finales
+```
+
+También pueden utilizarse varias copias del modelo para atender peticiones en paralelo.
+
+Distribuir la inferencia permite aumentar la capacidad, pero introduce costes de comunicación y coordinación.
+
+La arquitectura física afecta al tiempo de respuesta.
+
+## Uso de CPU, GPU y otros aceleradores
+
+La inferencia puede ejecutarse sobre diferentes tipos de hardware.
+
+Las CPU son flexibles y están disponibles en casi todos los sistemas.
+
+Las GPU y otros aceleradores están diseñados para ejecutar en paralelo muchas de las operaciones matriciales utilizadas por los modelos.
+
+La elección depende de:
+
+* tamaño del modelo;
+* volumen de peticiones;
+* latencia requerida;
+* presupuesto;
+* consumo energético;
+* disponibilidad de hardware.
+
+Un modelo pequeño puede funcionar correctamente en una CPU.
+
+Un modelo grande con muchos usuarios puede requerir varios aceleradores especializados.
+
+## Concurrencia
+
+Un servicio puede recibir peticiones de muchos usuarios simultáneamente.
+
+El sistema debe decidir cómo compartir los recursos.
+
+Puede:
+
+* poner peticiones en cola;
+* agruparlas;
+* ejecutar varias copias del modelo;
+* limitar la longitud de las respuestas;
+* priorizar determinados usuarios;
+* rechazar peticiones cuando se supera la capacidad.
+
+La concurrencia transforma la inferencia en un problema de operación.
+
+No basta con que el modelo produzca una buena respuesta en una prueba aislada. Debe mantener un comportamiento aceptable bajo carga.
+
+## Coste de inferencia
+
+El coste puede depender de:
+
+* número de tokens de entrada;
+* número de tokens generados;
+* tamaño del modelo;
+* hardware;
+* tiempo de uso;
+* memoria;
+* llamadas a herramientas;
+* almacenamiento;
+* transferencia de datos.
+
+Una aproximación habitual en servicios comerciales es:
+
+$$
+C
+=
+
+T_{\text{entrada}}P_{\text{entrada}}
++
+T_{\text{salida}}P_{\text{salida}}
+$$
+
+donde:
+
+* $C$ es el coste;
+* $T_{\text{entrada}}$ son los tokens recibidos;
+* $T_{\text{salida}}$ son los tokens generados;
+* $P_{\text{entrada}}$ y $P_{\text{salida}}$ son los precios correspondientes.
+
+En infraestructura propia, el coste puede calcularse mediante tiempo de hardware, energía, mantenimiento y capacidad reservada.
+
+## Optimizar el contexto
+
+La longitud del contexto influye directamente en la inferencia.
+
+Un contexto mayor puede aportar más información, pero también:
+
+* aumenta el coste;
+* incrementa el tiempo inicial;
+* consume más memoria;
+* dificulta seleccionar lo relevante;
+* reduce el espacio disponible para la salida.
+
+Optimizar el contexto no significa simplemente acortarlo.
+
+Significa conservar la información necesaria y eliminar el ruido.
+
+Algunas estrategias son:
+
+* resumir mensajes antiguos;
+* recuperar solo fragmentos relevantes;
+* evitar documentos duplicados;
+* separar tareas grandes;
+* conservar decisiones importantes de forma estructurada;
+* limitar resultados de herramientas.
+
+## Inferencia determinista y variable
+
+Un modelo puede producir siempre la opción más probable o seleccionar entre varias posibilidades.
+
+La estrategia utilizada durante la generación afecta al resultado.
+
+Podemos distinguir conceptualmente:
+
+```text
+Selección más estricta:
+resultados más estables.
+
+Selección más abierta:
+resultados más variados.
+```
+
+Los parámetros del modelo pueden ser los mismos y, aun así, obtener respuestas diferentes.
+
+Esto no significa que el modelo haya cambiado.
+
+Ha cambiado la forma de seleccionar la salida entre las probabilidades calculadas.
+
+La generación probabilística se estudiará con más detalle en el siguiente apartado.
+
+## Reproducibilidad
+
+Repetir una petición no siempre produce exactamente la misma respuesta.
+
+El resultado puede depender de:
+
+* configuración de generación;
+* versión del modelo;
+* orden del contexto;
+* documentos recuperados;
+* herramientas;
+* valores aleatorios;
+* infraestructura;
+* cambios realizados por el proveedor.
+
+Para mejorar la reproducibilidad conviene registrar:
+
+* modelo y versión;
+* instrucciones;
+* contexto;
+* parámetros de generación;
+* herramientas utilizadas;
+* resultados externos;
+* fecha de ejecución.
+
+Incluso así, determinados entornos no garantizan una reproducción idéntica.
+
+## Validación de la salida
+
+La inferencia produce una salida, pero la aplicación no tiene por qué aceptarla sin más.
+
+Puede aplicar validaciones.
+
+Por ejemplo:
+
+* comprobar un esquema JSON;
+* verificar tipos;
+* validar fechas;
+* ejecutar pruebas;
+* contrastar datos con una fuente;
+* revisar permisos;
+* filtrar contenido;
+* pedir al modelo que corrija el formato.
+
+```text
+modelo
+  ↓
+salida
+  ↓
+validación
+  ↓
+aceptación o corrección
+```
+
+Este paso resulta especialmente importante cuando la respuesta se utilizará para ejecutar acciones.
+
+## Inferencia y acciones
+
+Un sistema puede utilizar la salida del modelo para decidir una acción:
+
+* llamar a una API;
+* enviar un mensaje;
+* modificar un archivo;
+* crear una cita;
+* ejecutar código;
+* actualizar una base de datos.
+
+En estos casos, el resultado de la inferencia deja de ser únicamente texto.
+
+Se convierte en una propuesta de actuación.
+
+El sistema debe aplicar controles como:
+
+* validación de parámetros;
+* permisos;
+* límites;
+* confirmación humana;
+* registro de auditoría;
+* manejo de errores.
+
+La capacidad de generar una acción no implica que deba ejecutarse automáticamente.
+
+## Errores durante la inferencia
+
+La inferencia puede fallar por distintas causas.
+
+### Error del modelo
+
+La salida puede ser incorrecta, incoherente o inventada.
+
+### Contexto insuficiente
+
+Puede faltar información necesaria.
+
+### Contexto incorrecto
+
+La aplicación puede recuperar un documento equivocado o un recuerdo obsoleto.
+
+### Error de herramienta
+
+Una fuente externa puede fallar o devolver datos incompletos.
+
+### Error de infraestructura
+
+Puede producirse falta de memoria, saturación o caída del servicio.
+
+### Error de integración
+
+La aplicación puede interpretar incorrectamente la salida del modelo.
+
+Por ello, no todos los fallos deben atribuirse al modelo.
+
+La inferencia forma parte de una cadena completa.
+
+## Observar la inferencia
+
+Para operar un sistema inteligente conviene registrar información sobre sus ejecuciones.
+
+Puede incluir:
+
+* petición;
+* modelo;
+* versión;
+* tokens de entrada;
+* tokens de salida;
+* duración;
+* herramientas utilizadas;
+* errores;
+* validaciones;
+* coste;
+* resultado final.
+
+Esta observabilidad permite detectar:
+
+* aumentos de latencia;
+* cambios de coste;
+* errores frecuentes;
+* documentos recuperados incorrectamente;
+* degradaciones entre versiones;
+* patrones de uso.
+
+La inferencia no es solo una operación matemática. En producción es también un servicio que debe supervisarse.
+
+## Un ejemplo completo
+
+Supongamos que un usuario pregunta:
+
+> Resume los riesgos principales del proyecto.
+
+La aplicación realiza los siguientes pasos:
+
+1. identifica el proyecto;
+2. recupera sus documentos de arquitectura;
+3. recupera decisiones recientes de la memoria;
+4. construye las instrucciones;
+5. incorpora la pregunta;
+6. tokeniza el contexto;
+7. ejecuta el modelo;
+8. genera la respuesta token a token;
+9. valida el formato;
+10. registra la operación.
+
+El modelo no contiene necesariamente los documentos del proyecto en sus parámetros.
+
+Tampoco recuerda por sí solo las decisiones anteriores.
+
+La aplicación reúne esa información y la presenta durante la inferencia.
+
+El resultado depende de:
+
+$$
+\text{resultado}
+=
+f(
+\text{modelo},
+\text{contexto},
+\text{memoria},
+\text{documentos},
+\text{configuración}
+)
+$$
+
+## Idea clave
+
+La inferencia es el proceso mediante el cual utilizamos un modelo ya entrenado para obtener un resultado.
+
+Durante una inferencia ordinaria, los parámetros permanecen fijos.
+
+El comportamiento puede cambiar porque cambian las instrucciones, el contexto, la memoria, los documentos, las herramientas o la configuración de generación.
+
+En los modelos generativos, la inferencia se repite para producir la respuesta token a token.
+
+El entrenamiento determina lo que el modelo ha aprendido.
+
+La inferencia determina cómo utiliza ese aprendizaje ante una entrada concreta.
+
+Pero el modelo no elige siempre una continuación única.
+
+Calcula una distribución de probabilidades entre distintas posibilidades.
+
+El siguiente apartado estará dedicado a la **generación probabilística**.
+

@@ -1,5 +1,0 @@
----
-title: "Capacidades"
----
-
-![](/resources/images/under-construction.png)

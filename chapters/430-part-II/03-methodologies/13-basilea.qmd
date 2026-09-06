@@ -1,0 +1,54 @@
+---
+title: "Basilea III"
+navbar-title: "Basilea III"
+---
+
+Hay proyectos en los que una parte fundamental de aquello que debe construirse no puede negociarse, reinterpretarse libremente ni modificarse porque el equipo haya encontrado una solución que considera mejor. El origen del requisito está fuera del proyecto y, en ocasiones, fuera incluso de la propia organización. La regulación bancaria proporciona algunos de los ejemplos más claros.
+
+Basilea III es un conjunto de estándares internacionales desarrollados por el *Basel Committee on Banking Supervision* (BCBS). En la Unión Europea esos estándares se incorporan al marco regulatorio principalmente mediante el *Capital Requirements Regulation* (CRR) y la *Capital Requirements Directive* (CRD), acompañados por normas técnicas, directrices y mecanismos de supervisión. Para un banco, toda esa cadena institucional termina convirtiéndose en algo mucho más concreto: a partir de una fecha determinada tendrá que calcular, informar, conservar, controlar o ejecutar determinadas cosas de una manera compatible con la normativa aplicable.
+
+Desde la perspectiva del proyecto tecnológico, el problema puede expresarse de una forma aparentemente sencilla: hay que implementar un nuevo cálculo, modificar un proceso, obtener información que antes no existía, conservar datos adicionales o generar unos informes con una estructura determinada, y todo ello debe estar operativo antes de una fecha que la organización tampoco ha elegido.
+
+En este tipo de proyecto aparece una limitación especialmente importante para cualquier metodología: las especificaciones regulatorias no pertenecen al equipo de desarrollo.
+
+El equipo puede descubrir que un requisito es difícil de implementar. Puede considerar que determinado cálculo podría simplificarse. Puede encontrar una estructura de datos más cómoda o pensar que cierta información aporta poco valor. Puede incluso estar convencido de que existe una solución técnicamente mejor. Nada de eso le autoriza a modificar unilateralmente aquello que exige la regulación.
+
+Esto introduce una diferencia importante respecto a determinados proyectos de producto. En ellos puede tener mucho sentido comenzar con una necesidad incompletamente definida, construir una primera solución, enseñársela al usuario, aprender de su reacción y modificar los requisitos. En un proyecto regulatorio también existirá aprendizaje, pero una parte del resultado esperado permanece fuera de ese ciclo. Si la norma establece cómo debe calcularse un valor, qué información debe conservarse o qué debe comunicarse al supervisor, el proceso de desarrollo no puede decidir que después de varios *sprints* ha descubierto una solución diferente que proporciona más valor al usuario.
+
+El usuario tampoco puede hacerlo.
+
+Un responsable de negocio del banco puede participar en la interpretación, resolver ambigüedades, decidir cómo integrar el nuevo proceso con los sistemas existentes y priorizar determinadas tareas de implementación. Pero no puede aprobar que la organización deje de cumplir una obligación externa simplemente porque el equipo prefiera otra solución. En ese sentido, parte de la especificación está por encima del propio proyecto.
+
+Esto no convierte automáticamente el desarrollo en *Waterfall*. La distinción es importante.
+
+Que el resultado normativo esté fijado no determina necesariamente cómo debemos construirlo. Un banco puede organizar el proyecto mediante iteraciones, equipos multidisciplinares, entregas incrementales, pruebas continuas y muchas de las prácticas que asociamos con *Agile*. Puede dividir el problema en partes, construir primero los mecanismos de obtención de datos, después implementar los cálculos, incorporar progresivamente controles y preparar los informes mediante sucesivas versiones. Puede descubrir problemas técnicos durante el proceso y modificar la arquitectura tantas veces como resulte razonable.
+
+Lo que no puede hacer es utilizar esa capacidad de adaptación para alterar la obligación que debe satisfacer.
+
+Podríamos decir que existen dos espacios diferentes. Uno permanece relativamente cerrado: qué debe cumplir la entidad y cuándo debe hacerlo. El otro puede permanecer abierto durante buena parte del proyecto: cómo vamos a conseguirlo.
+
+Esta separación resulta especialmente útil porque muestra por qué discutir si un proyecto es *Agile* o *Waterfall* puede ser una pregunta demasiado pobre. Un mismo proyecto puede contener requisitos externos completamente rígidos y, al mismo tiempo, utilizar un proceso de implementación altamente iterativo. La estabilidad de las especificaciones y la flexibilidad del proceso de construcción no son necesariamente contradictorias.
+
+Hay además otra característica que modifica profundamente la forma de trabajar: no basta con que el sistema produzca aparentemente el resultado correcto. En un entorno regulado debe ser posible demostrar por qué ese resultado es correcto.
+
+Esto introduce necesidades de trazabilidad, documentación, control de versiones, conservación de evidencias, validación y auditoría que pueden resultar excesivas en otros tipos de proyecto pero que aquí forman parte del problema. Si una determinada cifra termina formando parte de una información regulatoria, puede ser necesario conocer de qué datos procede, qué reglas fueron aplicadas, qué versión del proceso realizó el cálculo y qué controles permitieron aceptar el resultado.
+
+La documentación deja entonces de ser una actividad administrativa añadida al desarrollo. Forma parte del sistema de control.
+
+También cambia la naturaleza de la fecha de entrega. En muchos productos una fecha puede negociarse en función del alcance. Si no llegamos con todas las funcionalidades previstas, reducimos el contenido de una versión y entregamos primero aquello que proporciona mayor valor. En determinados proyectos regulatorios esa estrategia tiene límites evidentes. Si la obligación entra en vigor el 1 de enero, disponer ese día del ochenta por ciento de lo necesario puede equivaler sencillamente a no cumplirla.
+
+Esto no significa que no podamos priorizar. Significa que la priorización tiene que producirse dentro del espacio que permite alcanzar el cumplimiento completo en la fecha requerida. Podemos decidir qué construir primero, qué riesgos atacar antes, qué componentes necesitan prototipos o dónde conviene concentrar inicialmente las pruebas. Lo que no podemos hacer es convertir una obligación legal en una lista opcional de funcionalidades y esperar que el regulador seleccione las que considera más valiosas.
+
+En proyectos de este tipo incluso el concepto de *Minimum Viable Product* necesita ser utilizado con cuidado. Puede existir una primera versión técnicamente viable, una arquitectura mínima sobre la que seguir trabajando o una implementación inicial que permita probar determinadas hipótesis, pero el producto mínimo que satisface finalmente una obligación regulatoria está definido, en buena medida, por el propio cumplimiento. Lo que queda fuera puede no ser una funcionalidad futura; puede ser precisamente aquello que hace que la solución sea insuficiente.
+
+Basilea III nos proporciona así otro ejemplo de por qué una metodología no puede elegirse independientemente del problema. Aquí no necesitamos necesariamente un proceso secuencial como consecuencia de dependencias físicas, como ocurría en *Project Apollo*. Tampoco necesitamos renunciar a prácticas iterativas. Lo que necesitamos reconocer es que existen restricciones externas que la metodología debe respetar.
+
+Podemos ser *Agile* en la implementación sin ser ágiles con la regulación.
+
+Y esta diferencia importa. Si interpretamos *Agile* como capacidad para aprender durante el desarrollo, entregar incrementalmente, colaborar estrechamente y modificar nuestra solución cuando obtenemos nueva información, muchas de sus prácticas pueden resultar extremadamente útiles. Si lo interpretamos como capacidad para mantener permanentemente abiertos los requisitos o decidir que la documentación y la trazabilidad constituyen burocracia prescindible, el problema regulatorio establece rápidamente los límites de esa interpretación.
+
+Una vez más, no es la metodología la que decide qué clase de problema tenemos delante. Es el problema el que determina qué partes de una metodología podemos utilizar, cuáles debemos adaptar y qué controles adicionales necesitamos incorporar.
+
+En un proyecto regulatorio podemos discutir durante meses cómo construir la solución. Lo que no podemos discutir durante meses es si el 1 de enero queremos cumplir la regulación.
+
+El regulador ya tomó esa decisión por nosotros.

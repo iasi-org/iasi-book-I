@@ -1,5 +1,6 @@
 ---
 title: "Programación imperativa"
+navbar-title: "Imperativa"
 ---
 
 ## El conocimiento reside en el programa

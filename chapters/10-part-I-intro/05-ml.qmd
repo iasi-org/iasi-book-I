@@ -1,5 +1,6 @@
 ---
 title: "Machine Learning"
+navbar-title: "Machine Learning"
 ---
 
 ## Cuando las reglas dejan de escribirse

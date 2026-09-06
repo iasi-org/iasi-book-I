@@ -1,5 +1,6 @@
 ---
 title: "De la programación a los Sistemas Inteligentes"
+navbar-title: "De la programación"
 ---
 
 > *"Toda revolución tecnológica nace porque el paradigma anterior encuentra sus límites."*

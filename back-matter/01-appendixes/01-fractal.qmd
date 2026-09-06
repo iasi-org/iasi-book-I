@@ -1,0 +1,79 @@
+# Fractales y autosimilitud {#sec-fractales}
+
+En el cuerpo del libro utilizamos la idea de **fractal** como recurso para describir ciertos patrones organizativos que reaparecen cuando cambiamos de escala.
+
+La geometría fractal fue sistematizada y popularizada por Benoît Mandelbrot, quien acuñó el término fractal en 1975 [@mandelbrot1975objets; @mandelbrot1982fractal], a partir de sus investigaciones sobre formas irregulares, escalado y autosimilitud en fenómenos matemáticos y naturales. Este campo quedó estrechamente relacionado con el estudio de los sistemas dinámicos no lineales y la teoría del caos, donde aparecen con frecuencia estructuras fractales y comportamientos sensibles a pequeñas variaciones.
+
+La idea subyacente a este concepto es, que muchas formas naturales e incluso "artificiales", presentan patrones semejantes a distintas escalas. Mandelbrot utilizó ejemplos como las costas, las montañas o las nubes para mostrar que la geometría de la naturaleza rara vez responde a formas euclídeas simples. Una costa no es una línea regular, una montaña no es un cono y una nube no es una esfera. La geometría fractal proporciona una forma de describir esa irregularidad y la recurrencia de patrones a distintas escalas.
+
+Tambien introdujo la propiedad de **Autosimilitud**: Que se podria definir informalmente com aquella por la que una estructura mantiene o reproduce patrones reconocibles cuando cambia la escala de observación. Estos patrones no tienen por qué ser copias exactas; pueden ser semejantes de forma aproximada o estadística.
+
+De ese territorio matemático nos interesan aquí tres ideas:
+
+1. Complejidad estructurada
+2. Autosimilitud entre escalas
+3. La capacidad de que pequeños cambios locales producen efectos globales significativos.
+
+No pretendemos trasladar literalmente estas propiedades matemáticas a una organización. Las utilizamos como una forma de observar estructuras complejas en las que ciertos patrones reaparecen a distintas escalas y en las que una modificación local puede propagarse mucho más allá del punto donde se originó.
+
+## Triangulo de _Sierpinski_
+
+Un ejemplo clásico de autosimilitud es el triángulo de Sierpiński [@sierpinski1915courbe], cuya función se muestra a continuación:
+
+$$
+N_n = 3^n
+\qquad
+s_n = \left(\frac{1}{2}\right)^n
+\qquad
+N_n = \left(\frac{1}{s_n}\right)^D
+\qquad
+3 = 2^D
+\qquad
+D = \frac{\log 3}{\log 2}
+$$
+
+
+Un posible resultado de esta función:
+
+```{r sierpinski, echo=F} 
+{
+sierpinski = function(x, y, size, depth, max_depth) {
+    color <- colorRampPalette(c("#56728F", "#C9A66B"))(max_depth + 1)[depth + 1]
+    
+    polygon(
+      x = c(x, x + size / 2, x - size / 2),
+      y = c(y, y - size * sqrt(3)/2, y - size * sqrt(3)/2),
+      col = color,
+      border = NA
+    )
+   if (depth > 0) {   
+    sierpinski(x, y, size / 2, depth - 1, max_depth)
+    sierpinski(x - size / 4, y - size * sqrt(3)/4, size / 2, depth - 1, max_depth)
+    sierpinski(x + size / 4, y - size * sqrt(3)/4, size / 2, depth - 1, max_depth)
+  }
+}
+
+# Crear lienzo
+plot(NA, xlim = c(-1, 1), ylim = c(-1.7, 0), asp = 1, xaxt = "n", yaxt = "n", xlab = "", ylab = "", bty = "n")
+
+max_depth = 6
+sierpinski(0, 0, 2, max_depth, max_depth)
+}
+
+``` 
+
+Si estamos hablando de organizaciones, ¿Qué estamos viendo? ***El típico triangulo de una estructura jerárquica empresarial***
+
+Antes de que alguien comente acerca de la existencia de estructuras matriciales, cúbicas e hipercúbicas en las organizaciones modernas, permításeme recordarle que esas estructuras se llaman **EJES**, diferentes visiones de la misma información. Siguiendo con los símiles matemáticos, un cuadrado es una estructura de dos dimensiones/ejes, un cubo en un conjunto de cuadrados que tiene tres dimensiones, un hipercubo en un conjunto de cubos que tiene cuatro dimensiones, y asi sucesivamente, de un hipercubo obtenemos cubos y de un cubo obtenemos cuadrados, de manera que la estructura sea manejable (principio divide y vencerás).
+
+
+No pretendemos desarrollar aquí una teoría matemática de los fractales. Para nuestro propósito basta con una propiedad especialmente útil: la **autosimilitud**, es decir, la aparición de estructuras o patrones semejantes a distintos niveles de observación.
+
+
+
+En este libro nos interesa precisamente esa idea: la repetición aproximada de patrones cuando cambia la escala de observación.
+Este apéndice amplía brevemente esa idea y muestra algunos ejemplos clásicos que ayudan a comprender la metáfora utilizada posteriormente al hablar de organizaciones.
+
+Lo importante no es que una organización sea, en sentido matemático, un fractal.
+
+Lo que nos interesa es algo más modesto: **que al cambiar de escala pueden reaparecer patrones semejantes de estructura, funciones y responsabilidades**.

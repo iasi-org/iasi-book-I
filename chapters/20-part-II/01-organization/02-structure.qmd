@@ -1,5 +1,0 @@
----
-title: "Estructuración"
----
-
-![](/resources/images/under-construction.png)

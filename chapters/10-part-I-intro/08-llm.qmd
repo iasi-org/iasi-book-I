@@ -1,5 +1,6 @@
 ---
 title: "Large Language Models"
+navbar-title: "LLM"
 ---
 
 ## Cuando el lenguaje se convirtió en conocimiento

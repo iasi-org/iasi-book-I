@@ -1,0 +1,42 @@
+---
+title: "División del trabajo"
+navbar-title: "División del trabajo"
+---
+
+Una organización dispone de recursos limitados y necesita utilizarlos de forma que contribuyan a alcanzar sus objetivos.
+
+A medida que una actividad crece en tamaño y complejidad, resulta cada vez más difícil que una sola persona pueda conocer, decidir y ejecutar todo lo necesario para llevarla a cabo. Y llega un punto en el que tampoco basta con reunir más personas si su participación no está estructurada.
+
+Incrementar el número de participantes sin dividir responsabilidades introduce nuevos problemas: coordinación, comunicación, duplicidad de esfuerzos, decisiones contradictorias, dependencias y pérdida de contexto.
+
+La organización responde a este problema **descomponiendo el trabajo y estructurando su ejecución**. Se identifican actividades diferenciadas, se establecen límites entre ellas, se distribuyen responsabilidades y se crean mecanismos de coordinación y, cuando resulta necesario, niveles de autoridad.
+
+La división del trabajo no aparece, por tanto, únicamente para hacer más rápido un proceso. Aparece también porque **la complejidad deja de ser manejable como un todo indivisible**.
+
+Una de las formas más antiguas de aumentar la capacidad de una organización consiste precisamente en **dividir una actividad compleja en actividades más pequeñas que puedan ejecutarse y coordinarse de forma independiente**.
+
+Adam Smith analizó este principio en *La riqueza de las naciones* mediante su conocido ejemplo de la fabricación de alfileres [@smith1776]. Observó que un grupo de personas podía producir mucho más cuando el proceso se dividía en operaciones diferenciadas y cada persona concentraba su actividad en una parte del proceso.
+
+La mejora no procede únicamente de que varias actividades puedan realizarse simultáneamente. La división reduce también determinados costes asociados al cambio entre tareas. Cada actividad puede requerir conocimientos, herramientas, preparación y un enfoque mental diferente. Cambiar continuamente de una a otra consume tiempo y capacidad aunque ese coste no aparezca explícitamente como parte del producto.
+
+La división del trabajo transforma así una actividad:
+
+$$
+Proceso
+$$
+
+en un conjunto coordinado de actividades:
+
+$$
+Proceso = P_1 + P_2 + \dots + P_n
+$$
+
+Cada una de ellas puede tener entradas y salidas propias, límites reconocibles y criterios específicos de calidad, pero ninguna pierde su relación con el proceso global del que forma parte.
+
+Esta descomposición tiene varias consecuencias importantes. Permite ejecutar actividades en paralelo, identificar con mayor precisión dónde se producen errores, asignar capacidades diferentes a cada actividad y reutilizar partes del proceso cuando aparecen necesidades semejantes.
+
+Para un desarrollo más detallado del ejemplo de Smith y del modelo utilizado, véase @sec-smith-division-trabajo.
+
+Pero aparece además una consecuencia especialmente importante para nosotros. Cuando una persona, equipo o unidad concentra de forma continuada su actividad en una parte concreta del proceso, empieza a acumular conocimiento, experiencia y capacidades específicas sobre ella.
+
+**La división del trabajo hace posible la especialización.**

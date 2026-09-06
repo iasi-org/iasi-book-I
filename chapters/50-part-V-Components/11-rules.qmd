@@ -1,0 +1,37 @@
+---
+title: "Reglas"
+navbar-title: "Reglas"
+---
+
+## Restricciones explícitas
+Un IISS necesita libertad suficiente para resolver problemas, pero esa libertad debe operar dentro de límites conocidos. Las reglas expresan condiciones que el sistema debe respetar y que, siempre que sea posible, pueden comprobarse de forma independiente de la generación del modelo.
+
+Una regla puede indicar que determinados archivos no deben modificarse, que una publicación requiere ciertas validaciones, que un artefacto debe contener metadatos obligatorios o que una operación destructiva necesita autorización. A diferencia de una recomendación dentro de una *skill*, la regla representa una condición normativa.
+
+## Declarar antes que recordar
+Si una restricción importante existe únicamente en una conversación, su cumplimiento depende de que permanezca visible y de que el modelo la interprete correctamente. Declararla como regla permite que otros componentes la conozcan y que una validación pueda comprobarla.
+
+Esto no significa que todas las reglas deban ser ejecutables automáticamente. Algunas expresan condiciones semánticas que requieren razonamiento. Aun así, convertirlas en artefactos explícitos mejora la trazabilidad y permite distinguirlas de decisiones informales.
+
+## *Rules* e instrucciones
+Las instrucciones pueden incluir restricciones de comportamiento y, por tanto, existe una zona de solapamiento. La diferencia útil reside en el tratamiento. Una instrucción orienta al modelo durante la inferencia; una regla representa una condición del sistema que debería poder consultarse y, cuando sea posible, verificarse.
+
+Una misma política puede tener ambas representaciones. La instrucción puede advertir al agente antes de actuar y la regla puede comprobar el resultado después. Esta duplicación no es necesariamente redundante si cada mecanismo cumple una función diferente.
+
+## *Rules* y validaciones
+La regla declara qué debe cumplirse. La validación determina si se cumple en un estado concreto. Mantenerlas separadas permite reutilizar la misma regla en distintos validadores o aplicar diferentes niveles de comprobación según el entorno.
+
+También permite distinguir entre reglas bloqueantes y reglas informativas. Una infracción puede detener un *workflow*, solicitar revisión humana o simplemente generar una advertencia.
+
+## Conflictos y prioridad
+A medida que crece el sistema pueden aparecer reglas en varios ámbitos. Una organización puede imponer condiciones generales y un proyecto añadir otras más específicas. La arquitectura debe definir cómo se resuelven conflictos y evitar que una regla local reduzca accidentalmente una protección global.
+
+Las reglas deberían incluir suficiente contexto para conocer su ámbito, su propósito y, cuando resulte útil, la razón que llevó a establecerlas. Una lista de prohibiciones sin contexto puede volverse difícil de mantener.
+
+## Reglas como conocimiento duradero
+Muchas decisiones que empiezan como correcciones puntuales terminan revelando una regla general. Cuando el equipo descubre repetidamente el mismo problema, convertir la solución en una regla evita depender de la memoria humana o del comportamiento probabilístico del modelo.
+
+Los IISS pueden incluso ayudar a proponer nuevas reglas a partir de fallos observados, pero su incorporación debería seguir siendo una decisión controlada. Una regla modifica el espacio de acciones permitidas y puede afectar a procesos futuros.
+
+## *Adapters*
+La implementación de una regla puede variar. Algunas plataformas permiten políticas nativas; otras necesitan instrucciones, validadores o controles alrededor de las herramientas. El *adapter* traduce el mecanismo, pero la regla canónica conserva su significado independientemente del agente que ejecute la tarea.
