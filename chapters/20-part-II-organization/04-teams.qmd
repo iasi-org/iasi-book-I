@@ -1,0 +1,237 @@
+---
+title: "Equipos"
+navbar-title: "Equipos"
+---
+
+La división del trabajo y la especialización permiten distribuir conocimiento y capacidades dentro de una organización. Pero esas capacidades no producen resultados por el mero hecho de existir. Para resolver una necesidad concreta deben combinarse, coordinarse y actuar de forma coherente.
+
+Ahí aparece el **equipo**.
+
+## Un equipo es una unidad
+
+Un equipo **no es un conjunto de personas**.
+
+Asignar varias personas al mismo proyecto puede crear una agrupación administrativa, pero no crea necesariamente un equipo. Para que exista un equipo debe aparecer algo más: un objetivo común, una comprensión compartida de ese objetivo, conocimiento mutuo, contribuciones reconocidas y mecanismos de coordinación que permitan actuar colectivamente.
+
+Un equipo es una **unidad autocoordinada** formada por personas que comparten un objetivo común y comprenden cuál es su contribución al conjunto, cómo se relaciona con la de los demás y qué responsabilidades asumen para alcanzar ese objetivo.
+
+Esta diferencia es fundamental.
+
+Cinco personas pueden estar asignadas al mismo proyecto y, sin embargo, que solo cuatro lleguen a trabajar realmente como una unidad. La quinta puede realizar tareas, aportar resultados e incluso ser técnicamente competente, pero no integrarse en la dinámica colectiva, no compartir suficientemente el objetivo o mantener una forma de trabajo esencialmente independiente.
+
+Por tanto:
+
+**La asignación reúne personas. El trabajo compartido forma equipos.**
+
+Y, todavía más importante:
+
+**Un equipo no se asigna. Se forma.**
+
+## El equipo se forma
+
+Un equipo se construye mediante el trabajo, las interacciones y el conocimiento progresivo que sus miembros desarrollan unos de otros.
+
+Al principio puede existir poco más que un conjunto de personas. Algunas se conocerán previamente; otras trabajarán juntas por primera vez. Cada una llega con su experiencia, especializaciones, expectativas, fortalezas, limitaciones y formas de trabajar.
+
+A medida que colaboran, empiezan a descubrir qué aporta cada persona, qué problemas resuelve mejor, dónde necesita apoyo, cómo toma decisiones, cómo comunica y cómo reacciona ante situaciones diferentes.
+
+Ese conocimiento modifica progresivamente la forma en que trabajan juntos.
+
+Las consultas dejan de distribuirse únicamente por categorías formales. Aparecen expresiones naturales como «esto debería verlo ella», «él conoce mejor esta parte» o «para esta decisión necesitamos también a...». El reparto real del trabajo empieza a ajustarse a las capacidades efectivas de las personas y no solo a aquello que figuraba inicialmente en una planificación.
+
+Con el tiempo, el equipo desarrolla confianza, hábitos de colaboración y mecanismos propios de coordinación.
+
+En ocasiones, incluso **emerge de manera natural**. Nadie declara formalmente el momento en que un grupo de personas se convierte en equipo. Simplemente llega un punto en el que empiezan a comportarse como una unidad.
+
+## Crear equipo
+
+Si un equipo se forma, una responsabilidad importante de quienes ejercen funciones de dirección o liderazgo consiste en **crear las condiciones para que esa formación sea posible**.
+
+Al comenzar un proyecto nuevo, un responsable puede encontrarse simplemente con varias personas que todavía no han trabajado juntas. En otras ocasiones puede ocurrir lo contrario: incorporarse a un equipo ya consolidado y ser él quien deba aprender cómo funciona esa unidad.
+
+Crear equipo no significa imponer artificialmente una relación entre sus miembros ni diseñar desde fuera cada interacción.
+
+Significa facilitar un objetivo común comprensible, proporcionar contexto, favorecer que las personas conozcan las capacidades y contribuciones de los demás, hacer visibles responsabilidades y dependencias, resolver fricciones, proporcionar autonomía suficiente y ajustar la composición cuando cambian las necesidades.
+
+El trabajo compartido hará una parte esencial del resto.
+
+Por eso, una de las tareas fundamentales de un Project Manager, un responsable técnico o cualquier otra persona que ejerza funciones de liderazgo puede expresarse de forma sencilla:
+
+**crear equipo.**
+
+No asignar personas. No mantener ocupado a un conjunto de recursos. Ayudar a que esas personas aprendan a funcionar como una unidad.
+
+## Una capacidad colectiva
+
+Cuando un equipo se ha formado, su capacidad no puede entenderse simplemente como la suma de las capacidades individuales de sus miembros.
+
+Cada persona aporta conocimiento y especializaciones propias, pero la interacción genera además conocimiento compartido, confianza, coordinación y capacidad de anticipación.
+
+El equipo aprende no solo sobre el problema que está resolviendo, sino también **sobre sí mismo**.
+
+Sus miembros empiezan a saber quién conoce mejor cada ámbito, quién necesita participar en determinadas decisiones, quién puede proporcionar una segunda opinión, quién necesita apoyo y cómo responderán probablemente los demás ante determinadas situaciones.
+
+En disciplinas donde la coordinación bajo presión es crítica, esta capacidad se entrena deliberadamente. Determinadas unidades militares de alta especialización constituyen un ejemplo especialmente visible: sus miembros no solo desarrollan capacidades individuales, sino que entrenan juntos hasta adquirir modelos compartidos de actuación, conocimiento mutuo y formas de coordinación que permiten comportarse como una unidad con una cantidad sorprendentemente pequeña de comunicación explícita.
+
+La comparación que nos interesa no es militar, sino organizativa.
+
+Un equipo maduro puede llegar a comportarse como una **unidad compuesta por varios especialistas**.
+
+Cada miembro conserva su individualidad y su especialización, pero la unidad es capaz de actuar de forma coherente porque sus miembros comprenden qué saben los demás, qué contribución corresponde a cada uno y cómo deben coordinarse.
+
+## Especialización y complementariedad
+
+Un equipo no necesita que todos sus miembros sepan hacer exactamente lo mismo.
+
+De hecho, una de sus principales fuentes de capacidad es precisamente la **complementariedad**.
+
+Puede existir una persona con conocimiento profundo en un determinado ámbito mientras otros miembros poseen conocimiento suficiente para comprender su trabajo, colaborar con ella, detectar cuándo debe intervenir y proporcionar cierta continuidad cuando sea necesario.
+
+No es imprescindible duplicar completamente cada especialización.
+
+La redundancia puede ser útil en determinadas capacidades críticas, pero multiplicar especialistas equivalentes no aumenta necesariamente de forma proporcional la capacidad del equipo y puede introducir nuevos costes de coordinación.
+
+Lo importante es que el conjunto disponga de las capacidades necesarias y que exista suficiente conocimiento compartido para integrarlas.
+
+Cuando el equipo está bien formado, muchas decisiones sobre quién debe intervenir dejan de requerir una asignación explícita. Ante una necesidad determinada, sus miembros reconocen quién posee la capacidad más adecuada y ajustan de forma natural sus contribuciones.
+
+La distribución del trabajo puede llegar así a ser parcialmente implícita:
+
+**qué necesitamos → quién dispone de la capacidad → quién actúa → quién apoya → quién valida**
+
+La especialización diferencia a los miembros.
+
+**El conocimiento compartido y la coordinación los convierten en una unidad.**
+
+## Diferentes niveles de experiencia
+
+La complementariedad tampoco se limita a especializaciones diferentes. Incluye distintos niveles de experiencia y profundidad.
+
+Un equipo no necesita estar formado exclusivamente por los profesionales más experimentados disponibles.
+
+En determinados ámbitos puede ser suficiente disponer de una persona con conocimiento profundo, acompañada por otras capaces de comprender su actividad, colaborar con ella y aprender progresivamente.
+
+Las personas con menor experiencia no constituyen necesariamente una debilidad del equipo. Realizan trabajo necesario y, al mismo tiempo, desarrollan nuevas capacidades mediante exposición a problemas reales, decisiones y especialistas más experimentados.
+
+De este modo, el equipo no solo consume capacidades existentes.
+
+**También crea capacidades nuevas.**
+
+El conocimiento se transmite, la experiencia se comparte y quienes hoy necesitan apoyo pueden asumir mañana responsabilidades mayores y, más adelante, ayudar a formar a otros.
+
+Por ello, un equipo puede ser simultáneamente una **unidad de producción** y una **unidad de aprendizaje**.
+
+## Las personas no son intercambiables
+
+Dos personas pueden ocupar el mismo puesto, pertenecer a la misma categoría profesional o compartir una especialización principal y, sin embargo, aportar cosas profundamente diferentes.
+
+Cada persona incorpora su propia combinación de conocimientos, experiencia, especializaciones, maneras de pensar, fortalezas, limitaciones y formas de relacionarse con los demás.
+
+Un equipo eficaz no intenta borrar esas diferencias.
+
+**Las conoce y las integra.**
+
+Con el tiempo puede descubrir, por ejemplo, que una persona es especialmente buena detectando determinados riesgos, otra posee una capacidad poco visible inicialmente para comprender al cliente, otra necesita contraste antes de decidir y otra funciona extraordinariamente bien revisando resultados.
+
+Ese conocimiento raramente aparece completo en una descripción de puesto.
+
+Se construye trabajando juntos.
+
+Por eso la capacidad real del equipo depende también del conocimiento que sus miembros desarrollan sobre las fortalezas, limitaciones y formas de trabajo de los demás.
+
+## Autocoordinación
+
+Un equipo formado es capaz de coordinar una parte importante de su actividad desde dentro.
+
+Esto no significa ausencia de dirección, autoridad, responsabilidad o mecanismos de gobierno.
+
+Significa que no resulta necesario imponer externamente cada decisión operativa sobre quién debe intervenir, a quién debe consultar alguien o cómo debe repartirse una actividad concreta.
+
+El equipo conoce el estado real del trabajo y conoce progresivamente sus propias capacidades.
+
+Ese conocimiento permite realizar ajustes locales con rapidez: pedir ayuda, ofrecerla, redistribuir esfuerzo, detectar una capacidad ausente o modificar temporalmente la contribución de alguno de sus miembros.
+
+La estructura formal proporciona un marco.
+
+**La coordinación efectiva emerge, en buena medida, dentro del propio equipo.**
+
+## El equipo no es estático
+
+Un proyecto y las necesidades que debe resolver **no son estáticos ni están completamente definidos de antemano**. Cambian, se concretan y evolucionan a medida que avanza el trabajo.
+
+Por tanto, la composición del equipo tampoco debería considerarse fija. Debe poder **adaptarse dinámicamente a las capacidades que el proyecto necesita en cada momento**.
+
+Algunas contribuciones pueden mantenerse durante prácticamente todo el ciclo. Otras aparecerán solo durante determinadas fases, crecerán temporalmente o dejarán de ser necesarias cuando su trabajo haya quedado materializado.
+
+**La composición del equipo debe evolucionar con las necesidades del proyecto.**
+
+Parte de otra pregunta:
+
+**¿Qué capacidades necesitamos ahora?**
+
+Al comienzo de un proyecto puede ser suficiente disponer de una función transversal de dirección o coordinación, junto con capacidad funcional y técnica.
+
+Más adelante puede aparecer material suficiente para empezar a construir, por ejemplo, una presencia web. En ese momento pueden incorporarse capacidades de diseño gráfico y desarrollo web.
+
+Cuando el trabajo principal de diseño termina, esa capacidad puede dejar de ser necesaria de forma continuada. La persona puede abandonar el equipo y volver puntualmente cuando aparezca una nueva necesidad.
+
+El especialista web puede, a su vez, descubrir que una fase concreta exige temporalmente más capacidad de ejecución y solicitar la incorporación de otras personas. Cuando esa carga desaparezca, esas incorporaciones dejarán de ser necesarias.
+
+La composición del equipo es, por tanto, una función del estado y de las necesidades del proyecto:
+
+$$Equipo(t) = f(Necesidades(t))$$
+
+Algunas contribuciones pueden mantenerse durante prácticamente todo el ciclo. Otras aparecerán, crecerán, disminuirán o desaparecerán.
+
+**No se forma primero un equipo fijo y después se busca trabajo para mantenerlo ocupado. Las necesidades determinan qué capacidades deben estar presentes en cada momento.**
+
+## Incorporaciones y salidas
+
+La entrada o salida de una persona tampoco es un acontecimiento puramente administrativo.
+
+Cada cambio altera una unidad que ya posee conocimiento interno, relaciones y mecanismos de coordinación.
+
+Cuando alguien se incorpora, no necesita únicamente conocer el proyecto. Debe integrarse progresivamente en el modelo compartido del equipo y permitir que los demás conozcan también sus capacidades, especializaciones y forma de trabajar.
+
+Cuando alguien abandona el equipo, parte del conocimiento y de las relaciones construidas puede desaparecer con esa persona.
+
+Por eso los equipos dinámicos necesitan mecanismos para incorporar y liberar capacidades sin destruir continuamente la unidad que han construido.
+
+La estabilidad relevante no consiste necesariamente en mantener siempre a las mismas personas.
+
+Consiste en conservar **suficiente continuidad de objetivo, conocimiento y coordinación** mientras cambia la composición.
+
+## Equipos y organización
+
+El equipo tampoco coincide necesariamente con una unidad del organigrama.
+
+Puede reunir personas procedentes de distintas áreas, incorporar especialistas temporalmente, compartir miembros con otros equipos o utilizar capacidades externas cuando sea necesario.
+
+El organigrama puede indicar dónde se encuentran administrativamente las personas.
+
+El equipo expresa **cómo se combinan sus capacidades para alcanzar un objetivo concreto**.
+
+Una persona puede pertenecer formalmente a una unidad organizativa y participar simultáneamente en varios equipos, con grados de dedicación distintos y durante periodos diferentes.
+
+La pertenencia administrativa y la pertenencia efectiva a un equipo son, por tanto, conceptos distintos.
+
+## Del equipo a los roles
+
+Saber quién forma parte de un equipo todavía no explica completamente cómo funciona.
+
+Dentro de esa unidad siguen existiendo preguntas fundamentales:
+
+- ¿qué contribución realiza cada persona?
+- ¿qué función está ejerciendo?
+- ¿qué decisiones puede tomar?
+- ¿de qué es responsable?
+- ¿qué capacidades necesita para ejercer esa función?
+- ¿puede una misma persona ejercer funciones diferentes en momentos distintos?
+
+La composición del equipo nos dice **quién participa**.
+
+La contribución empieza a explicar **cómo participa**.
+
+Para formalizar esa relación entre función, capacidad, responsabilidad y decisión necesitamos introducir otro concepto.
+
+**El rol.**

@@ -1,0 +1,6 @@
+# Preambulo {.unnumbered}
+
+{{< include includes/openai.qmd >}}
+{{< include includes/gates.qmd >}}
+{{< include includes/preguntas.qmd >}}
+

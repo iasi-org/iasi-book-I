@@ -1,0 +1,244 @@
+---
+title: "Roles y capacidades"
+navbar-title: "Roles"
+---
+
+La organización distribuye el trabajo, la especialización desarrolla capacidades y los equipos reúnen esas capacidades alrededor de un objetivo común.
+
+Pero todavía falta una pieza.
+
+Saber quién forma parte de un equipo no explica por sí solo **qué contribución debe realizar cada persona, qué decisiones puede tomar, de qué responde ni qué capacidades necesita para hacerlo**.
+
+Para describir esa relación, IASI utiliza dos conceptos fundamentales:
+
+**roles** y **capacidades**.
+
+## El rol expresa una necesidad
+
+Un rol no describe a una persona.
+
+Describe una **contribución necesaria dentro de un contexto determinado**.
+
+Un rol expresa qué función debe ejercerse, qué responsabilidades existen, qué decisiones corresponden a esa función y, cuando sea necesario, qué autoridad lleva asociada.
+
+Por tanto, el punto de partida no es la persona disponible ni el título que figura en su puesto.
+
+El punto de partida es la necesidad.
+
+``` text
+necesidad
+   ↓
+rol necesario
+   ↓
+capacidades requeridas
+   ↓
+persona capaz de ejercerlo
+```
+
+Esta dirección es importante.
+
+No partimos de «tenemos un arquitecto, veamos qué debe hacer». Partimos de «existe una necesidad arquitectónica, ¿qué función debe ejercerse y qué capacidades requiere?».
+
+**El rol expresa lo que el sistema necesita.**
+
+## La capacidad expresa lo que una persona puede aportar
+
+Una capacidad describe aquello que una persona puede hacer de manera efectiva.
+
+Puede apoyarse en conocimiento, experiencia, especialización, formación, métodos, criterio, habilidades o en la combinación de todos ellos.
+
+Las capacidades no coinciden necesariamente con una única especialización y tampoco permanecen estáticas. Se desarrollan, se amplían, se combinan y pueden perder actualidad con el tiempo.
+
+Por ello, dos personas con el mismo puesto o categoría profesional pueden disponer de capacidades muy diferentes.
+
+Del mismo modo, una persona puede poseer capacidades que nunca aparecen reflejadas en el nombre de su puesto.
+
+**La capacidad expresa lo que una persona puede aportar.**
+
+## La asignación conecta rol y capacidad
+
+Un rol existe porque una necesidad debe ser cubierta.
+
+Una persona puede ejercerlo cuando dispone de las capacidades suficientes para hacerlo dentro del contexto concreto en el que aparece.
+
+La asignación vincula temporalmente ambas cosas:
+
+``` text
+rol requerido
+      +
+capacidades disponibles
+      ↓
+asignación
+```
+
+La asignación es contingente.
+
+La necesidad puede permanecer mientras cambia la persona que la cubre. También puede desaparecer el rol cuando desaparece la necesidad que lo originó.
+
+Esta distinción conduce a uno de los principios que utilizaremos a lo largo de IASI:
+
+[**Los roles son necesarios; los puestos y los recursos son contingentes.**]{.principle}
+
+## Por qué no utilizamos títulos ni etiquetas como unidad fundamental
+
+Las organizaciones necesitan clasificar y gestionar a sus miembros.
+
+Para ello utilizan puestos, categorías, niveles, títulos profesionales, familias de carrera y otras etiquetas. Pueden resultar útiles para contratación, remuneración, desarrollo profesional, organización administrativa o comunicación interna.
+
+IASI no rechaza esas categorías.
+
+Simplemente **no las utiliza como unidad fundamental para describir la ingeniería**.
+
+Términos como *arquitecto*, *desarrollador*, *programador*, *senior*, *junior*, *Product Owner* o *Scrum Master* pueden tener significados perfectamente válidos dentro de una organización, pero no permiten inferir de forma fiable una capacidad, una responsabilidad o una autoridad concreta.
+
+Dos personas denominadas *Senior Developer* pueden poseer conocimientos y capacidades muy diferentes.
+
+Una persona cuyo puesto sea *Developer* puede ejercer una responsabilidad arquitectónica en un contexto determinado.
+
+Y una persona cuyo título sea *Architect* puede no ser la más adecuada para una decisión concreta si otra dispone de mayor conocimiento sobre ese ámbito.
+
+Por eso IASI separa deliberadamente:
+
+``` text
+persona
+puesto o categoría
+capacidades
+rol
+```
+
+Están relacionados, pero no son equivalentes.
+
+## Una persona puede ejercer varios roles
+
+Persona y rol no mantienen una relación uno a uno.
+
+Una misma persona puede ejercer varios roles durante un proyecto.
+
+Puede, por ejemplo, participar en una decisión como responsable técnico, intervenir después como especialista en una tecnología concreta y asumir en otro momento una función de coordinación.
+
+Pero poder ejercer varios roles no significa ejercerlos indistintamente.
+
+Una persona debe ser consciente de **desde qué rol está actuando en cada momento**, especialmente cuando toma decisiones, ejerce autoridad o asume responsabilidad.
+
+Una analogía útil procede del método *Six Thinking Hats* de Edward de Bono [@debono1985six]. De Bono propone separar deliberadamente distintas formas de abordar un problema mediante seis sombreros simbólicos: uno orientado a hechos e información, otro a emociones e intuiciones, otro a riesgos y cautelas, otro a beneficios y posibilidades, otro a creatividad y alternativas, y otro a ordenar y conducir el propio proceso de pensamiento.
+
+La idea relevante para nosotros no es hacer corresponder esos seis sombreros con nuestros roles. Es otra: **una misma persona puede adoptar distintas perspectivas, pero debe ser consciente de cuál está utilizando en cada momento**. Cambiar de sombrero es deliberado; mezclar varios sin saber desde cuál se está pensando destruye precisamente la claridad que busca el método.
+
+Con los roles ocurre algo semejante.
+
+**La persona permanece. El rol cambia.**
+
+Tener varios roles significa poder cambiar de uno a otro siendo consciente de cuál se está ejerciendo. Mezclarlos de forma inconsciente puede producir decisiones ambiguas, conflictos de responsabilidad o actuaciones en las que no quede claro desde qué autoridad se está hablando.
+
+## Un rol tiene un ámbito
+
+Que varias personas puedan ejercer una misma clase de rol tampoco significa que deban ejercer simultáneamente la misma responsabilidad sobre el mismo ámbito.
+
+Es posible disponer de varias personas realizando funciones equivalentes cuando el trabajo puede particionarse.
+
+Por ejemplo, tres personas pueden ejercer funciones de desarrollo al mismo tiempo porque cada una trabaja sobre tareas, componentes o ámbitos diferentes.
+
+También pueden existir varios roles arquitectónicos especializados:
+
+``` text
+Arquitectura
+├── Datos
+├── Infraestructura
+├── Seguridad
+└── Aplicaciones
+```
+
+Cada uno puede tener una persona distinta responsable de su ámbito.
+
+El problema aparece cuando dos personas comparten simultáneamente **la misma responsabilidad final sobre el mismo ámbito**.
+
+Si ambas disponen de la misma autoridad para tomar una decisión y discrepan, el sistema deja de definir quién decide.
+
+Por ello conviene distinguir entre una **clase de rol**, que puede repetirse, y una **instancia concreta del rol dentro de un ámbito**, cuya responsabilidad debe estar claramente asignada.
+
+Cuando un rol concentra responsabilidad, coordinación o autoridad última sobre un ámbito determinado, su asignación debe ser única mientras esa responsabilidad esté activa.
+
+Puede cambiar de persona a lo largo del tiempo.
+
+No debe ser ambigua en un mismo momento.
+
+## Roles ejecutivos y roles de coordinación
+
+No todos los roles tienen la misma naturaleza.
+
+Algunas funciones pueden dividirse con facilidad entre varias personas. El trabajo se reparte y cada una asume una parte suficientemente delimitada.
+
+Otras funciones existen precisamente para integrar, coordinar o proporcionar un punto único de decisión.
+
+Podemos tener varios arquitectos especializados, pero si el proyecto necesita una función responsable de mantener la coherencia arquitectónica global, debe existir un punto claro de entrada para esa responsabilidad.
+
+Lo mismo ocurre con otras funciones de dirección, coordinación o decisión final.
+
+La unicidad no procede del título.
+
+Procede de la **necesidad de evitar ambigüedad en la responsabilidad y la autoridad**.
+
+## Roles, capacidades y equipos
+
+Dentro de un equipo maduro, los roles no aparecen necesariamente como una tabla rígida asignada una vez al inicio del proyecto.
+
+El equipo conoce progresivamente las capacidades de sus miembros y puede ajustar quién ejerce determinadas funciones cuando cambian las necesidades.
+
+Una persona puede dejar de ejercer un rol y otra asumirlo.
+
+Una nueva necesidad puede crear un rol que antes no existía.
+
+Una contribución inicialmente pequeña puede adquirir suficiente entidad como para necesitar una responsabilidad propia.
+
+Lo importante es que el equipo pueda responder en todo momento a cuatro preguntas:
+
+- ¿qué función necesita ejercerse?
+- ¿qué responsabilidad y autoridad lleva asociadas?
+- ¿qué capacidades requiere?
+- ¿quién la está ejerciendo ahora?
+
+Cuando estas preguntas tienen respuesta, la organización real del trabajo puede ser dinámica sin volverse ambigua.
+
+## De las capacidades a la responsabilidad
+
+Una persona puede poseer capacidad suficiente para realizar una actividad y, sin embargo, no tener asignada la responsabilidad de ejercerla en ese momento.
+
+Esta distinción es importante.
+
+**Poder hacer algo no significa estar autorizado ni ser responsable de hacerlo.**
+
+La capacidad habilita.
+
+El rol asigna función, responsabilidad y, cuando corresponde, autoridad.
+
+Por eso la ingeniería no puede organizarse únicamente mediante inventarios de habilidades o especialistas disponibles. También necesita definir con claridad quién responde de cada decisión y desde qué función actúa.
+
+## Síntesis
+
+Podemos resumir la relación de esta forma:
+
+``` text
+necesidad
+   ↓
+rol
+   ↓
+capacidades requeridas
+   ↓
+persona
+   ↓
+asignación
+```
+
+El rol expresa **qué necesita el proyecto**.
+
+La capacidad expresa **qué puede aportar una persona**.
+
+La asignación expresa **quién ejerce ese rol, en ese ámbito y en ese momento**.
+
+El puesto o la categoría pueden seguir existiendo y cumplir funciones organizativas importantes, pero no sustituyen ninguno de estos conceptos.
+
+**La persona no es el rol.\
+El puesto no es el rol.\
+La capacidad no es el rol.**
+
+El rol es la función necesaria que alguien debe ejercer dentro de un contexto determinado.

@@ -1,0 +1,33 @@
+## Y entonces ... la ingeniería
+
+OpenAI observa esta transformación desde la evolución de sus propios sistemas. Bill Gates lo hace desde sus posibles consecuencias sobre el trabajo, las organizaciones y la sociedad.
+
+Nuestro recorrido, sin embargo, empezó antes. Este proyecto no nació como consecuencia de estas declaraciones ni de estos anuncios. Habíamos llegado desde otro lugar: desde los problemas que fueron apareciendo al intentar incorporar Sistemas Inteligentes de forma real al trabajo de ingeniería.
+
+No observamos esta transformación desde fuera, formamos parte de quienes están intentando comprenderla y construir dentro de ella, y precisamente por eso resulta significativo que: Partiendo de caminos, intereses y perspectivas ditintas, incluso por caminos independientes, OpenAI, Gates y nosotros empezamos a llegar a observaciones y conclusiones sorprendentemente próximas. Precisamente por eso resulta significativa la convergencia y se ha decidido incluirlo como preambulo al proceso.
+
+Los Sistemas Inteligentes están dejando de ser únicamente herramientas a las que formulamos preguntas. Cada vez pueden recibir contexto, interpretar restricciones, consultar documentos, utilizar herramientas, producir artefactos, modificar sistemas y ejecutar parte del trabajo que antes realizaban exclusivamente las personas. Si esa dirección es correcta, aunque no sepamos todavía hasta dónde llegará ni con qué velocidad, entonces para quienes construimos sistemas aparece inevitablemente la ingeniería.
+
+Porque el ingeniero se pregunta:
+
+- ¿Cuáles son las fuentes de verdad?
+- ¿Qué ocurre cuando existen instrucciones contradictorias?
+- ¿Qué puede modificar un Sistema Inteligente y quién decide esos límites?
+- ¿Cómo conservamos la trazabilidad de lo que ha ocurrido?
+- ¿Cómo verificamos un artefacto cuyo proceso de construcción puede variar?
+- ¿Qué significa reproducibilidad cuando una parte del proceso es probabilística?
+- ¿Qué conocimiento debe quedar en una conversación y cuál debe persistirse en documentos y artefactos?
+- ¿Dónde termina la asistencia y comienza la responsabilidad?
+- ¿Cómo cambia nuestro trabajo cuando los Sistemas Inteligentes participan también en la construcción?
+
+Y detrás de todas ellas empieza a aparecer una pregunta mayor:
+
+**¿Cómo hacemos ingeniería cuando los Sistemas Inteligentes participan en la propia ingeniería?**
+
+No sabemos todavía todas las respuestas. Probablemente algunas de las preguntas tampoco estén formuladas aún; pero hay algo significativo en que, partiendo de lugares diferentes, OpenAI, Gates y nosotros estemos observando aspectos de una misma transformación.
+
+**Cada uno ha llegado por su propio camino.**
+
+Estos libros nacen del nuestro. No pretenden anticipar qué producto aparecerá mañana ni convertir predicciones en certezas. Pretenden explorar qué cambia cuando humanos y Sistemas Inteligentes construyen sistemas conjuntamente y qué principios, prácticas y mecanismos necesitamos para hacerlo con rigor.
+
+**Por eso hemos escrito estos libros.**

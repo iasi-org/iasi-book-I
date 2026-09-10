@@ -1,0 +1,24 @@
+@startuml IASI-Knowledge-Flow
+
+!include ../iasi.puml
+
+title IASI - Flujo del conocimiento
+
+IASI_KNOWLEDGE(Ideas, "Ideas")
+IASI_KNOWLEDGE(Inputs, "Inputs\n(Conocimiento estructurado)")
+IASI_PROCESS(OpenSpec, "OpenSpec\n(Compilador de conocimiento)")
+IASI_KNOWLEDGE(Model, "Modelo de conocimiento")
+IASI_IMPLEMENTATION(Implementation, "Implementaciones")
+IASI_VERIFICATION(Verification, "Verificación")
+IASI_EVIDENCE(Evidence, "Evidencias")
+
+IASI_FLOW(Ideas, Inputs)
+IASI_FLOW(Inputs, OpenSpec)
+IASI_FLOW(OpenSpec, Model)
+IASI_FLOW(Model, Implementation)
+IASI_FLOW(Implementation, Verification)
+IASI_FLOW(Verification, Evidence)
+
+IASI_FEEDBACK_LABELED(Evidence, Inputs, "Retroalimentación")
+
+@enduml

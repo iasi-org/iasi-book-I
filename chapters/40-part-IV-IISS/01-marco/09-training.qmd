@@ -1,0 +1,1021 @@
+---
+title: "Entrenamiento"
+navbar-title: "Entrenamiento"
+---
+
+En el apartado anterior definimos el modelo como una estructura matemática formada por una arquitectura y unos parámetros.
+
+La arquitectura establece cómo se organiza el modelo.
+
+Los parámetros determinan el comportamiento que ha aprendido.
+
+El **entrenamiento** es el proceso mediante el cual se ajustan esos parámetros a partir de datos.
+
+Durante el entrenamiento, el modelo recibe ejemplos, produce resultados, mide sus errores y modifica sus parámetros para intentar reducirlos. Este ciclo se repite muchas veces hasta obtener un comportamiento suficientemente adecuado para la tarea prevista.
+
+De forma simplificada:
+
+```text
+datos
+  ↓
+predicción
+  ↓
+comparación con el resultado esperado
+  ↓
+cálculo del error
+  ↓
+ajuste de parámetros
+  ↓
+nueva predicción
+```
+
+Entrenar no consiste en introducir documentos dentro del contexto ni en conservar recuerdos de una conversación.
+
+Entrenar significa **modificar el modelo**.
+
+## Aprender a partir de ejemplos
+
+En la programación tradicional, quien desarrolla el sistema define explícitamente las reglas que deben aplicarse.
+
+Por ejemplo:
+
+```python
+if importe > limite:
+    resultado = "requiere aprobación"
+else:
+    resultado = "aprobación automática"
+```
+
+En el aprendizaje automático, no siempre se escriben todas las reglas.
+
+Se proporcionan ejemplos y se ajusta el modelo para que aprenda relaciones entre entradas y resultados.
+
+Supongamos que queremos clasificar mensajes como urgentes o no urgentes.
+
+Los datos podrían contener ejemplos como:
+
+```text
+"El sistema de pagos está detenido" → urgente
+
+"Adjunto el informe mensual" → no urgente
+
+"El cliente no puede acceder a su cuenta" → urgente
+```
+
+El modelo intenta descubrir patrones que le permitan clasificar mensajes nuevos.
+
+No recibe necesariamente una regla explícita que indique qué palabras debe buscar. Ajusta sus parámetros a partir de las regularidades presentes en los ejemplos.
+
+## Datos de entrenamiento
+
+El entrenamiento comienza con los datos.
+
+En un modelo de lenguaje pueden incluir:
+
+* libros;
+* artículos;
+* páginas web;
+* documentación;
+* conversaciones;
+* código fuente;
+* ejemplos preparados;
+* datos sintéticos;
+* evaluaciones humanas.
+
+La cantidad de datos es importante, pero no suficiente.
+
+También importan:
+
+* la calidad;
+* la diversidad;
+* la procedencia;
+* la actualidad;
+* las licencias;
+* las repeticiones;
+* los errores;
+* los sesgos;
+* la presencia de información sensible;
+* la representación de distintos idiomas y dominios.
+
+El modelo aprende patrones presentes en los datos.
+
+Si los datos contienen errores, puede aprenderlos.
+
+Si un ámbito aparece poco representado, puede rendir peor en él.
+
+Si determinadas asociaciones se repiten de forma sesgada, el modelo puede reproducirlas.
+
+El entrenamiento no transforma automáticamente los datos en conocimiento verdadero. Transforma sus regularidades en parámetros.
+
+## Preparación de los datos
+
+Antes de entrenar, los datos suelen atravesar un proceso de preparación.
+
+Este proceso puede incluir:
+
+* recopilación;
+* limpieza;
+* eliminación de duplicados;
+* filtrado de contenido;
+* normalización de formatos;
+* separación por idiomas;
+* eliminación o protección de datos personales;
+* evaluación de calidad;
+* tokenización.
+
+En un modelo de lenguaje, el contenido debe convertirse en secuencias de tokens.
+
+De forma simplificada:
+
+```text
+documentos
+   ↓
+limpieza y selección
+   ↓
+tokenización
+   ↓
+secuencias de entrenamiento
+```
+
+La preparación de los datos influye directamente en el comportamiento posterior del modelo.
+
+Una enorme colección mal seleccionada puede resultar menos útil que un conjunto menor, más limpio y representativo.
+
+## El objetivo de entrenamiento
+
+Para ajustar el modelo necesitamos definir qué debe aprender.
+
+Ese propósito se expresa mediante un **objetivo de entrenamiento**.
+
+En un clasificador, el objetivo podría consistir en asignar la categoría correcta.
+
+En un modelo de lenguaje generativo, el objetivo principal suele ser predecir el siguiente token.
+
+Dada una secuencia:
+
+$$
+t_1,t_2,\ldots,t_n
+$$
+
+el modelo intenta estimar:
+
+$$
+P_{\theta}
+\left(
+t_i
+\mid
+t_1,t_2,\ldots,t_{i-1}
+\right)
+$$
+
+Es decir, la probabilidad del token situado en la posición $i$, teniendo en cuenta los tokens anteriores.
+
+Por ejemplo, ante:
+
+> El sistema utiliza una base de...
+
+podrían aparecer continuaciones como:
+
+```text
+datos
+conocimiento
+reglas
+información
+```
+
+Durante el entrenamiento se conoce el token que realmente aparecía en el texto original. El modelo puede comparar su predicción con ese resultado.
+
+## La función de pérdida
+
+La **función de pérdida** mide el error del modelo.
+
+Podemos representarla de forma general:
+
+$$
+L(\theta)
+=
+\operatorname{error}
+\left(
+f_{\theta}(x),y
+\right)
+$$
+
+donde:
+
+* $x$ es la entrada;
+* $y$ es el resultado esperado;
+* $f_{\theta}(x)$ es la predicción;
+* $L(\theta)$ es la pérdida obtenida.
+
+El objetivo del entrenamiento consiste en encontrar unos parámetros que reduzcan esa pérdida:
+
+$$
+\theta^{*}
+=
+\arg\min_{\theta}L(\theta)
+$$
+
+En un modelo de lenguaje, una función habitual penaliza al modelo cuando asigna poca probabilidad al token correcto:
+
+$$
+L(\theta)
+=
+-\sum_{i=1}^{n}
+\log
+P_{\theta}
+\left(
+t_i
+\mid
+t_1,\ldots,t_{i-1}
+\right)
+$$
+
+Si el modelo asigna una probabilidad alta al token correcto, la pérdida es menor.
+
+Si asigna una probabilidad baja, la pérdida aumenta.
+
+La función de pérdida convierte la calidad de la predicción en un valor matemático que puede utilizarse para ajustar el modelo.
+
+## Del error al ajuste
+
+Calcular el error no basta.
+
+El sistema debe determinar qué parámetros contribuyeron a producirlo y cómo deberían modificarse.
+
+Para ello se calcula el **gradiente** de la pérdida:
+
+$$
+\nabla_{\theta}L(\theta)
+$$
+
+El gradiente indica cómo cambia la pérdida cuando se modifican los parámetros.
+
+Una actualización simplificada puede expresarse así:
+
+$$
+\theta_{k+1}
+=
+\theta_k
+-
+\eta
+\nabla_{\theta}L(\theta_k)
+$$
+
+donde:
+
+* $\theta_k$ contiene los parámetros actuales;
+* $\theta_{k+1}$ contiene los parámetros actualizados;
+* $\eta$ es la velocidad de aprendizaje;
+* $\nabla_{\theta}L$ indica la dirección del cambio.
+
+El sistema modifica los parámetros en la dirección que debería reducir el error.
+
+Este proceso se repite sobre una gran cantidad de ejemplos.
+
+## Retropropagación
+
+El mecanismo utilizado para calcular cómo ha contribuido cada parámetro al error se denomina **retropropagación** o *backpropagation*.
+
+Durante la predicción, la información avanza a través de las capas:
+
+```text
+entrada
+  ↓
+capa 1
+  ↓
+capa 2
+  ↓
+capa 3
+  ↓
+salida
+```
+
+Después de calcular la pérdida, la retropropagación recorre matemáticamente ese camino en sentido contrario para obtener los gradientes:
+
+```text
+error
+  ↑
+gradientes de la capa 3
+  ↑
+gradientes de la capa 2
+  ↑
+gradientes de la capa 1
+```
+
+No significa que el modelo razone sobre su equivocación.
+
+Es un procedimiento matemático para calcular cómo deben ajustarse los parámetros.
+
+## La velocidad de aprendizaje
+
+La velocidad de aprendizaje, representada habitualmente por $\eta$, controla la magnitud de cada actualización.
+
+Un valor demasiado grande puede provocar cambios excesivos:
+
+```text
+el modelo salta alrededor de la solución
+```
+
+Un valor demasiado pequeño puede hacer que el entrenamiento avance muy lentamente:
+
+```text
+el modelo mejora, pero a pasos diminutos
+```
+
+Durante el entrenamiento pueden utilizarse estrategias que cambian la velocidad de aprendizaje según la fase del proceso.
+
+Al principio puede permitirse un avance mayor.
+
+Más adelante pueden realizarse ajustes más pequeños y precisos.
+
+No necesitamos entrar en los distintos algoritmos de optimización. Basta con comprender que la forma de actualizar los parámetros influye tanto como los propios datos.
+
+## Lotes
+
+Los conjuntos de datos pueden contener millones o miles de millones de ejemplos.
+
+Normalmente no se procesan todos al mismo tiempo.
+
+Se dividen en grupos denominados **lotes** o *batches*.
+
+Para cada lote:
+
+1. el modelo realiza predicciones;
+2. se calcula la pérdida;
+3. se obtienen los gradientes;
+4. se actualizan los parámetros.
+
+```text
+datos de entrenamiento
+├── lote 1
+├── lote 2
+├── lote 3
+└── lote 4
+```
+
+El tamaño del lote afecta al consumo de memoria, la estabilidad del entrenamiento y la velocidad de cálculo.
+
+Los modelos grandes suelen entrenarse distribuyendo los lotes entre numerosos procesadores.
+
+## Épocas e iteraciones
+
+Una **iteración** corresponde normalmente al procesamiento de un lote y a una actualización de los parámetros.
+
+Una **época** representa una vuelta completa sobre el conjunto de entrenamiento.
+
+```text
+lote 1 ┐
+lote 2 │
+lote 3 ├── una época
+lote 4 │
+lote 5 ┘
+```
+
+En conjuntos de datos enormes, el entrenamiento puede no describirse siempre mediante épocas completas. Los datos pueden organizarse como un flujo formado por múltiples fuentes y mezclas.
+
+La idea importante es que el modelo observa una gran cantidad de secuencias y actualiza repetidamente sus parámetros.
+
+## Entrenamiento autosupervisado
+
+Gran parte del entrenamiento inicial de los modelos de lenguaje se denomina **autosupervisado**.
+
+El término significa que el propio contenido proporciona el resultado esperado.
+
+Por ejemplo:
+
+> La capital de Francia es París.
+
+El modelo puede recibir:
+
+> La capital de Francia es...
+
+y utilizar «París» como continuación correcta.
+
+No es necesario que una persona etiquete manualmente cada frase.
+
+El texto ya contiene las relaciones que se utilizarán para crear el objetivo de predicción.
+
+Esto permite entrenar con cantidades muy grandes de información.
+
+Autosupervisado no significa automático ni independiente de las personas.
+
+Las personas siguen decidiendo:
+
+* qué datos utilizar;
+* qué datos excluir;
+* qué arquitectura emplear;
+* qué objetivo optimizar;
+* qué filtros aplicar;
+* cómo evaluar los resultados.
+
+## Preentrenamiento
+
+El entrenamiento general sobre grandes volúmenes de datos se denomina habitualmente **preentrenamiento**.
+
+Durante esta fase, el modelo aprende patrones amplios:
+
+* estructuras lingüísticas;
+* relaciones entre conceptos;
+* estilos de escritura;
+* formatos;
+* patrones de código;
+* asociaciones frecuentes;
+* regularidades presentes en los datos.
+
+El resultado se denomina **modelo base**.
+
+Un modelo base puede continuar texto y realizar numerosas tareas, pero no tiene por qué comportarse todavía como un asistente útil.
+
+Ante una pregunta podría:
+
+* responderla;
+* continuarla como parte de un documento;
+* generar otra pregunta parecida;
+* imitar el estilo del texto;
+* producir una continuación poco alineada con la intención del usuario.
+
+El preentrenamiento proporciona capacidad general.
+
+Las fases posteriores orientan esa capacidad hacia formas concretas de interacción.
+
+## Ajuste por instrucciones
+
+El **ajuste por instrucciones** utiliza ejemplos formados por peticiones y respuestas.
+
+Por ejemplo:
+
+```text
+Instrucción:
+Resume el siguiente texto.
+
+Respuesta:
+Resumen breve y fiel.
+```
+
+O:
+
+```text
+Instrucción:
+Explica qué hace esta función.
+
+Respuesta:
+Descripción clara de su comportamiento.
+```
+
+Mediante estos ejemplos, el modelo aprende patrones de interacción:
+
+* responder preguntas;
+* seguir restricciones;
+* respetar formatos;
+* resumir;
+* comparar;
+* transformar;
+* explicar.
+
+El modelo no aprende únicamente contenido.
+
+También aprende cómo debe reaccionar ante distintos tipos de petición.
+
+## Ajuste fino
+
+El **ajuste fino** o *fine-tuning* continúa el entrenamiento utilizando datos más específicos.
+
+Puede emplearse para:
+
+* adaptar el modelo a un dominio;
+* especializarlo en una tarea;
+* introducir vocabulario propio;
+* mejorar un formato determinado;
+* orientar su comportamiento.
+
+Por ejemplo, un modelo general puede ajustarse con:
+
+* documentación jurídica;
+* informes médicos;
+* código de una tecnología;
+* conversaciones de atención al cliente;
+* ejemplos de clasificación.
+
+El ajuste fino modifica los parámetros del modelo.
+
+Por ello debe distinguirse de proporcionar información dentro del contexto.
+
+```text
+Contexto:
+información temporal que recibe el modelo.
+
+Ajuste fino:
+entrenamiento adicional que modifica sus parámetros.
+```
+
+Si entregamos un manual durante una conversación, el modelo puede utilizarlo en esa interacción.
+
+Si ajustamos el modelo con numerosos ejemplos del manual y del dominio, modificamos su comportamiento de forma más permanente.
+
+## Ajustes eficientes
+
+Modificar todos los parámetros de un modelo grande puede requerir muchos recursos.
+
+Existen técnicas que permiten adaptar solo una parte de ellos o añadir componentes pequeños entrenables.
+
+De forma conceptual:
+
+```text
+Modelo original
+├── parámetros conservados
+└── pequeño conjunto adaptado
+```
+
+Estas técnicas pueden reducir:
+
+* la memoria necesaria;
+* el tiempo de entrenamiento;
+* el coste;
+* el espacio necesario para guardar cada variante.
+
+El resultado sigue siendo una adaptación del modelo, aunque no se hayan modificado todos sus parámetros.
+
+## Preferencias humanas
+
+Después del preentrenamiento y del ajuste por instrucciones, el modelo puede seguir produciendo varias respuestas posibles.
+
+Algunas serán más útiles, claras o seguras que otras.
+
+Para orientar el comportamiento pueden utilizarse comparaciones humanas.
+
+Una persona puede evaluar dos respuestas:
+
+```text
+Respuesta A
+Respuesta B
+```
+
+y señalar cuál considera mejor según determinados criterios.
+
+Estas comparaciones permiten crear una señal de preferencia que se utiliza para ajustar el modelo.
+
+Los criterios pueden incluir:
+
+* utilidad;
+* claridad;
+* fidelidad a la instrucción;
+* seguridad;
+* corrección;
+* tono;
+* rechazo adecuado de peticiones peligrosas.
+
+Este proceso suele agruparse bajo el concepto de **alineamiento**.
+
+## Alineamiento
+
+Alinear un modelo significa orientar su comportamiento hacia determinados objetivos, normas o preferencias.
+
+No existe una única definición ni una solución definitiva.
+
+En la práctica puede incluir:
+
+* ajuste por instrucciones;
+* ejemplos de comportamiento esperado;
+* evaluación humana;
+* modelos de recompensa;
+* optimización basada en preferencias;
+* reglas y filtros externos;
+* evaluaciones de seguridad.
+
+El alineamiento no elimina todos los errores.
+
+El modelo puede:
+
+* interpretar mal una instrucción;
+* aplicar una restricción de forma excesiva;
+* producir una respuesta segura pero poco útil;
+* seguir patrones que no coinciden con la intención real;
+* comportarse de manera diferente ante pequeñas variaciones.
+
+Alinear es orientar el comportamiento, no programarlo con precisión absoluta.
+
+## Datos sintéticos
+
+Los datos de entrenamiento no tienen que proceder siempre de personas o documentos existentes.
+
+También pueden generarse artificialmente.
+
+Los **datos sintéticos** pueden utilizarse para:
+
+* crear ejemplos adicionales;
+* cubrir situaciones poco frecuentes;
+* producir ejercicios;
+* generar variantes;
+* filtrar o mejorar conjuntos existentes;
+* entrenar modelos más pequeños con respuestas de modelos mayores.
+
+Sin embargo, presentan riesgos.
+
+Si los datos sintéticos contienen errores, estos pueden reproducirse durante el entrenamiento.
+
+Si se utilizan de forma excesiva, el modelo puede aprender una representación cada vez más alejada de los datos reales.
+
+Los datos sintéticos son una herramienta, no una fuente automática de calidad.
+
+## Entrenamiento continuo
+
+Los modelos no siempre se entrenan una sola vez.
+
+Pueden aparecer nuevas fases para:
+
+* incorporar datos recientes;
+* corregir problemas;
+* ampliar idiomas;
+* mejorar capacidades;
+* adaptar dominios;
+* ajustar comportamientos.
+
+Sin embargo, actualizar un modelo no equivale a modificar un registro en una base de datos.
+
+Añadir nueva información puede afectar también a otros comportamientos.
+
+Por ello, cada nueva versión debe evaluarse de nuevo.
+
+Un modelo actualizado puede mejorar en determinadas tareas y empeorar en otras.
+
+## Conjunto de entrenamiento, validación y prueba
+
+Para evaluar correctamente el aprendizaje, los datos suelen separarse en varios grupos.
+
+### Entrenamiento
+
+Se utiliza para ajustar los parámetros.
+
+### Validación
+
+Se utiliza durante el desarrollo para comparar configuraciones y tomar decisiones.
+
+### Prueba
+
+Se reserva para evaluar el resultado final con ejemplos que no participaron en el ajuste.
+
+```text
+datos
+├── entrenamiento
+├── validación
+└── prueba
+```
+
+Si evaluamos el modelo únicamente con ejemplos que ya ha visto, podemos obtener una impresión engañosa.
+
+La evaluación debe comprobar cómo se comporta ante datos nuevos.
+
+## Generalización
+
+La **generalización** es la capacidad de aplicar lo aprendido a ejemplos que no aparecieron exactamente durante el entrenamiento.
+
+Un modelo puede haber visto muchas funciones escritas en Java sin haber visto una función concreta creada hoy.
+
+Si ha aprendido patrones útiles, puede analizarla.
+
+Podemos distinguir:
+
+```text
+Memorización:
+reproducir un ejemplo conocido.
+
+Generalización:
+aplicar patrones a un ejemplo nuevo.
+```
+
+Los modelos pueden realizar ambas cosas.
+
+Pueden generalizar en numerosos casos y también memorizar fragmentos de los datos.
+
+Una buena capacidad de generalización es uno de los principales objetivos del entrenamiento.
+
+## Sobreajuste
+
+El **sobreajuste** aparece cuando el modelo se adapta demasiado a los ejemplos de entrenamiento y pierde capacidad para funcionar con datos nuevos.
+
+Podemos observar una situación conceptual como:
+
+$$
+L_{\text{entrenamiento}}\downarrow
+\qquad
+L_{\text{validación}}\uparrow
+$$
+
+La pérdida sobre los datos conocidos sigue bajando, pero el comportamiento sobre los datos de validación empeora.
+
+El modelo está aprendiendo particularidades de los ejemplos en lugar de patrones generales.
+
+Para reducir el sobreajuste pueden utilizarse:
+
+* más datos;
+* datos más diversos;
+* regularización;
+* detención temprana;
+* reducción de la complejidad;
+* evaluación continua.
+
+En modelos grandes, la relación entre tamaño, memorización y generalización es compleja, pero el riesgo continúa existiendo.
+
+## Subajuste
+
+El problema contrario es el **subajuste**.
+
+Aparece cuando el modelo no tiene capacidad suficiente, no se ha entrenado adecuadamente o no dispone de datos apropiados para aprender la tarea.
+
+En ese caso, el error puede ser elevado tanto en entrenamiento como en validación:
+
+$$
+L_{\text{entrenamiento}}\uparrow
+\qquad
+L_{\text{validación}}\uparrow
+$$
+
+El modelo no ha aprendido suficientemente ni siquiera los patrones básicos.
+
+Un sistema adecuado debe encontrar un equilibrio entre capacidad, datos, entrenamiento y generalización.
+
+## Olvido catastrófico
+
+Cuando un modelo se ajusta intensamente a una nueva tarea, puede deteriorar capacidades aprendidas anteriormente.
+
+Este fenómeno se denomina **olvido catastrófico**.
+
+Por ejemplo, una adaptación muy estrecha a un estilo o dominio podría hacer que el modelo respondiera peor fuera de él.
+
+El problema aparece porque los mismos parámetros participan en muchas capacidades.
+
+Modificar unos valores para mejorar una tarea puede afectar a otras relaciones.
+
+Las técnicas de adaptación eficiente, la mezcla de datos y las evaluaciones amplias intentan reducir este riesgo.
+
+## El entrenamiento no introduce hechos de forma exacta
+
+Puede parecer que entrenar un modelo con un documento equivale a guardar su contenido.
+
+No es así.
+
+Durante el entrenamiento, el documento contribuye a modificar los parámetros junto con muchos otros ejemplos.
+
+El modelo puede aprender patrones y hechos, pero no existe garantía de que:
+
+* recuerde todos los detalles;
+* los reproduzca exactamente;
+* distinga la versión vigente;
+* identifique la fuente;
+* actualice correctamente una afirmación antigua;
+* evite mezclarla con otra parecida.
+
+Para información exacta, actual o verificable suele ser preferible utilizar documentos y fuentes externas durante la inferencia.
+
+El entrenamiento proporciona capacidades y patrones generales.
+
+No sustituye necesariamente una base de conocimiento.
+
+## El entrenamiento no es memoria
+
+Supongamos que un usuario indica:
+
+> El proyecto utiliza Java 21.
+
+Guardar esa decisión en la memoria del proyecto es una operación sencilla y controlable.
+
+Entrenar el modelo para incorporar ese dato sería desproporcionado y poco preciso.
+
+Podemos distinguir:
+
+```text
+Entrenamiento:
+modifica patrones y capacidades del modelo.
+
+Memoria:
+conserva datos concretos para recuperarlos.
+
+Contexto:
+presenta esos datos durante una tarea.
+```
+
+Estas tres piezas pueden cambiar la respuesta, pero lo hacen mediante mecanismos diferentes.
+
+## Coste del entrenamiento
+
+Entrenar grandes modelos requiere importantes recursos:
+
+* procesadores especializados;
+* memoria;
+* almacenamiento;
+* comunicaciones entre equipos;
+* energía;
+* tiempo;
+* preparación de datos;
+* evaluación.
+
+El coste no procede únicamente de ejecutar las operaciones matemáticas.
+
+También incluye:
+
+* recopilar y filtrar datos;
+* detectar errores;
+* realizar pruebas;
+* revisar comportamientos;
+* comparar versiones;
+* desplegar el resultado.
+
+El entrenamiento de un modelo general de gran tamaño suele estar fuera del alcance de la mayoría de las organizaciones.
+
+Sin embargo, muchas pueden utilizar modelos existentes, adaptarlos o construir sistemas alrededor de ellos.
+
+## Entrenamiento distribuido
+
+Los modelos grandes no suelen entrenarse en una sola máquina.
+
+El trabajo se distribuye entre numerosos dispositivos.
+
+Puede dividirse:
+
+* el conjunto de datos;
+* las capas;
+* los parámetros;
+* las operaciones;
+* los lotes.
+
+Después deben coordinarse los resultados y los gradientes.
+
+De forma conceptual:
+
+```text
+datos
+├── procesador 1
+├── procesador 2
+├── procesador 3
+└── procesador 4
+        ↓
+sincronización
+        ↓
+actualización del modelo
+```
+
+Esta coordinación añade complejidad y coste.
+
+El tamaño de los modelos modernos no depende únicamente de una idea algorítmica. También depende de infraestructuras capaces de ejecutar el entrenamiento.
+
+## Entrenamiento y reproducibilidad
+
+Repetir exactamente un entrenamiento puede resultar difícil.
+
+El resultado puede depender de:
+
+* los datos utilizados;
+* su orden;
+* la inicialización;
+* los hiperparámetros;
+* el hardware;
+* las bibliotecas;
+* los valores aleatorios;
+* los filtros;
+* las decisiones tomadas durante el proceso.
+
+Por ello, resulta importante registrar:
+
+* versiones de los datos;
+* configuración;
+* código;
+* métricas;
+* evaluaciones;
+* cambios realizados;
+* modelo resultante.
+
+La trazabilidad permite comparar versiones y comprender por qué un comportamiento ha cambiado.
+
+## Evaluar durante el entrenamiento
+
+Reducir la función de pérdida no garantiza por sí solo que el modelo sea útil.
+
+También deben evaluarse comportamientos concretos.
+
+Por ejemplo:
+
+* comprensión de instrucciones;
+* precisión factual;
+* generación de código;
+* razonamiento;
+* uso de idiomas;
+* robustez;
+* seguridad;
+* presencia de sesgos;
+* resistencia a entradas adversarias.
+
+Un modelo puede mejorar en la predicción general del lenguaje y, aun así, presentar problemas en una tarea concreta.
+
+La evaluación debe reflejar el uso real previsto.
+
+## El entrenamiento termina, el aprendizaje aparente continúa
+
+Una vez finalizado el entrenamiento, los parámetros quedan preparados para utilizarse.
+
+Sin embargo, durante una conversación el modelo puede parecer que aprende.
+
+Puede adaptar su respuesta a:
+
+* instrucciones;
+* ejemplos;
+* correcciones;
+* documentos;
+* recuerdos recuperados.
+
+Este comportamiento no implica necesariamente una modificación de parámetros.
+
+Es una adaptación dentro del contexto.
+
+Por ejemplo:
+
+```text
+Usuario:
+En este proyecto, todas las fechas deben usar formato ISO.
+
+Modelo:
+Entendido.
+```
+
+En las respuestas posteriores puede utilizar:
+
+```text
+2026-07-31
+```
+
+La regla se encuentra en el contexto o en la memoria del sistema.
+
+El modelo no ha tenido que volver a entrenarse.
+
+## Un ejemplo completo
+
+Supongamos que queremos crear un modelo capaz de ayudar con documentación técnica.
+
+Durante el preentrenamiento recibe grandes cantidades de lenguaje natural y código.
+
+Aprende patrones generales sobre:
+
+* redacción;
+* programación;
+* documentación;
+* estructuras técnicas;
+* relaciones entre conceptos.
+
+Después se realiza un ajuste por instrucciones con ejemplos como:
+
+```text
+Explica esta función.
+
+Resume este diseño.
+
+Identifica los riesgos.
+
+Convierte estas notas en documentación.
+```
+
+Posteriormente puede aplicarse un ajuste especializado con ejemplos de documentación técnica de calidad.
+
+También pueden utilizarse evaluaciones humanas para favorecer respuestas:
+
+* claras;
+* precisas;
+* estructuradas;
+* prudentes ante información insuficiente.
+
+El resultado es un modelo cuyos parámetros han sido modificados mediante varias fases de entrenamiento.
+
+Cuando un usuario lo utiliza, comienza otro proceso diferente: la inferencia.
+
+## Idea clave
+
+El entrenamiento es el proceso mediante el cual se modifican los parámetros de un modelo.
+
+El modelo recibe datos, realiza predicciones, calcula una pérdida y utiliza los gradientes para ajustar su comportamiento.
+
+El preentrenamiento proporciona capacidades generales.
+
+El ajuste por instrucciones enseña formas de interacción.
+
+El ajuste fino permite adaptar el modelo a tareas o dominios concretos.
+
+Las preferencias humanas y otros mecanismos ayudan a orientar su comportamiento.
+
+Entrenar no equivale a añadir información al contexto ni a almacenarla en memoria.
+
+Podemos resumirlo así:
+
+```text
+Entrenamiento:
+modifica el modelo.
+
+Memoria:
+conserva información.
+
+Contexto:
+presenta información.
+
+Inferencia:
+utiliza el modelo ya entrenado.
+```
+
+El siguiente apartado estará dedicado precisamente a la **inferencia**, el proceso mediante el cual utilizamos un modelo para obtener resultados.
+

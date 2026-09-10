@@ -1,0 +1,257 @@
+---
+title: "Negocio y valor"
+navbar-title: "Negocio y valor"
+---
+
+Una organización no se estructura, divide el trabajo, desarrolla especializaciones, forma equipos y define roles como un fin en sí mismo.
+
+Lo hace para **alcanzar objetivos**.
+
+Esos objetivos pueden ser económicos, sociales, científicos, administrativos, operativos o combinar varias de estas dimensiones. Una empresa puede buscar rentabilidad; una administración pública, prestar un servicio; una organización científica, producir conocimiento; una asociación, satisfacer una necesidad colectiva.
+
+En todos los casos existe una idea común: la organización dispone de recursos limitados y debe decidir **dónde utilizarlos para obtener el mayor valor posible respecto a sus objetivos**.
+
+Ese es el sentido en el que utilizaremos aquí la palabra **negocio**.
+
+## Negocio no significa únicamente beneficio económico
+
+En el lenguaje empresarial, *negocio* suele asociarse inmediatamente con ingresos, costes y beneficio.
+
+Es una parte importante, pero demasiado estrecha para nuestro propósito.
+
+IASI utiliza el concepto en un sentido más amplio: el negocio representa **la razón por la que una organización realiza una actividad y el valor que espera obtener de ella**.
+
+Ese valor puede expresarse en dinero, pero también en reducción de riesgo, mejora de un servicio, cumplimiento normativo, aumento de capacidad, ahorro de tiempo, adquisición de conocimiento, satisfacción de usuarios, seguridad o cualquier otro resultado relevante para los objetivos de la organización.
+
+Por tanto, una decisión puede generar mucho valor aunque no produzca directamente ingresos.
+
+Y también puede ocurrir lo contrario: una solución técnicamente excelente puede aportar muy poco valor si resuelve una necesidad secundaria o, simplemente, la necesidad equivocada.
+
+## De la necesidad al valor
+
+Todo trabajo de ingeniería debería poder relacionarse, directa o indirectamente, con una necesidad.
+
+La secuencia conceptual es sencilla:
+
+```text
+necesidad
+   ↓
+objetivo
+   ↓
+decisión
+   ↓
+acción o solución
+   ↓
+resultado
+   ↓
+valor
+```
+
+La necesidad expresa algo que debe cambiar, conseguirse, evitarse o mejorarse.
+
+El objetivo transforma esa necesidad en una dirección sobre la que se puede actuar.
+
+La ingeniería propone y materializa soluciones.
+
+El resultado permite comprobar qué se ha conseguido realmente.
+
+Y el valor expresa **hasta qué punto ese resultado contribuye al objetivo que justificaba el trabajo**.
+
+Esta relación importa porque evita confundir actividad con progreso.
+
+Hacer más cosas no implica generar más valor.
+
+Producir más código, documentos, funcionalidades, reuniones o entregables puede incrementar la actividad del proyecto y, al mismo tiempo, alejarnos del objetivo si esos resultados no responden a una necesidad relevante.
+
+**El valor no reside en cuánto producimos, sino en cuánto contribuye lo producido al objetivo.**
+
+## Recursos limitados y decisiones
+
+Toda organización trabaja bajo restricciones.
+
+Dispone de una cantidad limitada de tiempo, dinero, personas, conocimiento, infraestructura y capacidad de atención. Incluso cuando algunos de estos recursos pueden ampliarse, hacerlo tiene un coste y requiere tiempo.
+
+Por ello, elegir una iniciativa significa normalmente renunciar, retrasar o reducir otras.
+
+Toda decisión tiene un **coste de oportunidad**.
+
+Cuando asignamos a una persona a una actividad, esa capacidad deja de estar disponible, al menos parcialmente, para otra. Cuando invertimos tiempo en perfeccionar una solución, estamos decidiendo que esa mejora aporta más valor que aquello que podríamos haber hecho durante ese mismo tiempo.
+
+La ingeniería se desarrolla, por tanto, dentro de un espacio de restricciones y compromisos.
+
+No buscamos necesariamente la solución técnicamente máxima.
+
+Buscamos una solución **suficientemente buena para satisfacer la necesidad, dentro de las restricciones existentes y con una relación justificable entre coste, riesgo y valor**.
+
+## Valor y prioridades
+
+No todas las necesidades tienen la misma importancia.
+
+Una organización debe establecer prioridades porque sus recursos no permiten abordar simultáneamente todo aquello que podría resultar útil.
+
+La prioridad no depende únicamente del beneficio esperado.
+
+Puede depender también de urgencia, riesgo, dependencias, obligaciones legales, oportunidad, coste de retraso, impacto sobre otras iniciativas o capacidad disponible.
+
+Por eso una necesidad aparentemente pequeña puede convertirse en prioritaria si bloquea una parte importante del sistema, mientras que una mejora de gran tamaño puede posponerse si su valor puede obtenerse más adelante sin consecuencias significativas.
+
+Priorizar consiste, en esencia, en responder continuamente a una pregunta:
+
+**¿dónde produce más valor la siguiente unidad de capacidad disponible?**
+
+La respuesta puede cambiar conforme cambia el proyecto.
+
+Igual que la composición del equipo no es estática, las prioridades tampoco lo son.
+
+## Valor para quién
+
+El valor tampoco existe de forma completamente abstracta.
+
+Algo es valioso **para alguien** o respecto a algún objetivo.
+
+En torno a una iniciativa pueden existir distintas partes interesadas: usuarios, clientes, dirección, equipos operativos, reguladores, proveedores, propietarios, sociedad u otras unidades de la propia organización.
+
+Sus intereses pueden coincidir, pero no necesariamente.
+
+Una funcionalidad puede resultar muy valiosa para el usuario y aumentar considerablemente el coste de operación. Una optimización económica puede perjudicar mantenibilidad o seguridad. Una medida necesaria para cumplir una regulación puede no producir ningún beneficio visible para el cliente y ser, sin embargo, imprescindible.
+
+Por tanto, hablar de valor exige identificar:
+
+- quién recibe o percibe ese valor;
+- qué necesidad se pretende satisfacer;
+- qué objetivos deben protegerse;
+- qué costes o riesgos aparecen para otras partes.
+
+La ingeniería no elimina estos conflictos.
+
+Ayuda a hacerlos explícitos, modelarlos y tomar decisiones justificadas sobre ellos.
+
+## El valor no siempre puede reducirse a una cifra
+
+Siempre que sea posible resulta útil medir.
+
+Costes, tiempos, rendimiento, disponibilidad, defectos, ingresos, utilización o satisfacción pueden proporcionar evidencia para evaluar una decisión.
+
+Pero no todo valor puede expresarse de forma completa mediante una única métrica.
+
+La mantenibilidad, la capacidad futura de cambio, el conocimiento adquirido, la confianza de los usuarios, la reducción de incertidumbre o determinadas mejoras de seguridad pueden ser difíciles de traducir a una cifra simple.
+
+Esto no significa que deban ignorarse.
+
+Significa que una decisión de ingeniería puede requerir **juicio**, además de datos.
+
+Las métricas informan.
+
+No sustituyen necesariamente a la decisión.
+
+## Ingeniería y negocio
+
+Separar excesivamente ingeniería y negocio produce un problema conocido.
+
+El negocio puede formular necesidades sin comprender suficientemente sus implicaciones técnicas. La ingeniería puede construir soluciones técnicamente excelentes sin comprender suficientemente la necesidad que las justifica.
+
+Ambos extremos son peligrosos.
+
+La ingeniería necesita entender el contexto del negocio porque las decisiones técnicas dependen de los objetivos, restricciones y prioridades de la organización.
+
+Y el negocio necesita comprender las consecuencias de determinadas decisiones técnicas porque arquitectura, calidad, seguridad, deuda, rendimiento o mantenibilidad pueden modificar profundamente el coste y el valor futuro de una solución.
+
+Por ello, la relación no debería formularse como:
+
+```text
+negocio
+   ↓
+requisitos
+   ↓
+ingeniería ejecuta
+```
+
+sino como un proceso de comprensión y decisión compartida:
+
+```text
+necesidad
+   ↕
+negocio
+   ↕
+ingeniería
+   ↓
+solución
+   ↓
+resultado y valor
+```
+
+La ingeniería no recibe simplemente una lista de instrucciones.
+
+Debe comprender **por qué** existe la necesidad para poder evaluar alternativas y tomar decisiones coherentes con ella.
+
+## Valor frente a entrega
+
+Una entrega no constituye por sí sola valor.
+
+Puede ser únicamente un mecanismo para obtenerlo.
+
+Una funcionalidad desplegada que nadie utiliza no genera el valor esperado. Una automatización que cuesta más mantener que el trabajo que elimina puede destruir valor. Un sistema entregado en plazo puede fracasar si no satisface suficientemente la necesidad que originó el proyecto.
+
+Por eso el final natural del trabajo no es siempre:
+
+```text
+entregado
+```
+
+sino:
+
+```text
+necesidad
+   ↓
+solución
+   ↓
+uso
+   ↓
+resultado
+   ↓
+validación del valor
+```
+
+Esto conecta directamente con una característica fundamental de la ingeniería: **validar**.
+
+No basta con comprobar que aquello que construimos funciona de acuerdo con su especificación.
+
+También debemos preguntarnos si aquello que funciona **sirve realmente para lo que debía servir**.
+
+## Síntesis
+
+La organización existe para alcanzar objetivos mediante recursos limitados.
+
+La división del trabajo permite manejar la complejidad.
+
+La especialización desarrolla capacidades.
+
+Los equipos combinan esas capacidades.
+
+Los roles expresan las contribuciones, responsabilidades y decisiones necesarias.
+
+Y el negocio proporciona el contexto que explica **por qué todo ello merece hacerse**.
+
+Podemos condensarlo así:
+
+```text
+necesidad
+   ↓
+objetivo
+   ↓
+valor esperado
+   ↓
+capacidades necesarias
+   ↓
+roles y equipo
+   ↓
+ingeniería
+   ↓
+resultado
+   ↓
+valor obtenido
+```
+
+La ingeniería no existe para producir artefactos.
+
+**Existe para resolver problemas y satisfacer necesidades dentro de restricciones, generando valor para la organización y para quienes esta sirve.**

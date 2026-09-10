@@ -1,0 +1,40 @@
+---
+title: "Instrucciones"
+navbar-title: "Instrucciones"
+---
+
+## El comportamiento necesita un marco
+Los modelos generativos responden en función del contexto que reciben. Una parte de ese contexto está formada por instrucciones que establecen qué papel debe adoptar el sistema, qué objetivos debe perseguir, qué restricciones debe respetar y cómo debe interpretar las peticiones. Cuando un IISS participa en tareas de ingeniería, estas instrucciones dejan de ser simples indicaciones de estilo y se convierten en una parte de su arquitectura.
+
+Una instrucción puede ser muy general, como exigir que las modificaciones respeten las políticas de seguridad del entorno, o muy específica, como indicar que un repositorio utiliza una determinada convención de nombres. Puede permanecer estable durante meses o existir únicamente para una operación. El sistema necesita distinguir estos niveles porque no toda instrucción tiene la misma autoridad, duración ni ámbito.
+
+La implementación concreta puede hablar de instrucciones del sistema, instrucciones del proyecto, archivos de contexto, políticas, reglas del agente o *prompts* persistentes. El concepto que nos interesa es más general: información normativa que condiciona cómo debe comportarse el IISS.
+
+## Ámbito y prioridad
+Una arquitectura útil separa las instrucciones por ámbito. Algunas pertenecen al entorno completo y expresan restricciones que ningún proyecto debería modificar. Otras pertenecen a una organización, un repositorio o una metodología. Finalmente existen instrucciones asociadas a la tarea concreta que se está ejecutando.
+
+Esta separación permite resolver contradicciones. Si una petición solicita modificar un archivo protegido, una instrucción de tarea no debería anular una restricción de seguridad de mayor prioridad. Si un proyecto exige utilizar una determinada versión de una tecnología, una preferencia genérica del agente no debería imponerse sobre esa decisión explícita.
+
+El sistema no necesita necesariamente representar esta jerarquía mediante una única estructura universal, pero sí debe conocerla. Cuando el orden de precedencia depende únicamente de cómo una aplicación concatena textos antes de llamar al modelo, la arquitectura se vuelve difícil de inspeccionar. Conviene que la procedencia y el ámbito de las instrucciones sean identificables.
+
+## Instrucciones y datos no son lo mismo
+Una de las fronteras más importantes consiste en diferenciar instrucciones de información. Un documento recuperado puede contener texto imperativo sin que por ello deba gobernar el comportamiento del sistema. Un archivo analizado podría incluir la frase «ignora las restricciones anteriores», pero esa frase forma parte del contenido que se estudia, no de las instrucciones que deben ejecutarse.
+
+Esta distinción es fundamental cuando el contexto se construye dinámicamente a partir de documentos, páginas, repositorios o resultados de herramientas. El sistema debe conservar la procedencia de cada fragmento y evitar que cualquier contenido incorporado al contexto adquiera automáticamente autoridad normativa.
+
+Por eso una arquitectura madura no trata el contexto como una cadena indiferenciada de texto. Aunque el modelo termine recibiendo una representación lineal, la aplicación puede conocer qué elementos son instrucciones, cuáles son datos, cuáles proceden del usuario, cuáles son resultados de herramientas y cuáles pertenecen a decisiones persistentes del proyecto.
+
+## Instrucciones persistentes y conocimiento operativo
+No todo procedimiento debe convertirse en una instrucción global. Si explicamos permanentemente todos los pasos necesarios para realizar cualquier tarea posible, el contexto crece, se hace más difícil de mantener y aumenta la posibilidad de contradicciones. Parte del conocimiento operativo pertenece mejor a una *skill*, que puede incorporarse cuando resulte relevante, o a un *workflow*, que puede definir una secuencia concreta.
+
+Las instrucciones deberían contener aquello que necesita gobernar de forma estable el comportamiento dentro de su ámbito. Las *skills* pueden contener procedimientos especializados. Las reglas pueden expresar restricciones comprobables. Las *definitions* pueden representar el estado entendido del problema. Mantener estas responsabilidades separadas reduce la tendencia a convertir un único archivo de instrucciones en un contenedor de todo el proyecto.
+
+## Evolución y trazabilidad
+Las instrucciones también evolucionan. Una convención puede cambiar, una política puede quedar obsoleta y una nueva herramienta puede exigir restricciones adicionales. Si las instrucciones influyen en decisiones importantes, deberían tratarse como cualquier otro artefacto de ingeniería: versionarse, revisarse y poder relacionar un comportamiento con el conjunto de instrucciones vigente en ese momento.
+
+Esto no significa que cada conversación necesite conservar una copia completa de todas las instrucciones utilizadas, pero sí que el sistema debería poder reconstruir qué configuración normativa estaba activa cuando se produjo una operación relevante. La trazabilidad se vuelve especialmente importante cuando los IISS modifican código, infraestructura, documentación o datos.
+
+## Relación con los demás componentes
+Las instrucciones establecen cómo debe comportarse el sistema, pero no sustituyen a los demás componentes. No describen necesariamente la estructura del problema, que corresponde a las *definitions*. No expresan una operación invocable, que corresponde a los *commands*. No proporcionan capacidad externa, que corresponde a las herramientas. No ordenan por sí solas una secuencia compleja, que corresponde a los *workflows*.
+
+Mantener estas fronteras permite que las instrucciones sean más breves, estables y comprensibles. También facilita que un *adapter* traduzca su intención a las primitivas disponibles en cada agente. Una plataforma puede ofrecer varios niveles de instrucciones y otra solo uno; el modelo canónico sigue siendo el mismo porque lo importante es conservar ámbito, prioridad y procedencia, aunque la implementación cambie.

@@ -1,0 +1,22 @@
+---
+title: "Organización y estructuración"
+navbar-title: "Organizaciones y roles"
+---
+
+La ingeniería no se ejerce en el vacío.
+
+Los sistemas que construimos requieren conocimiento, capacidades, decisiones, coordinación y responsabilidad. Cuando su complejidad supera lo que una sola persona puede asumir, necesitamos distribuir todo ello entre varias personas y organizar su participación.
+
+De ahí aparecen la división del trabajo, la especialización, las estructuras organizativas, los equipos y los roles.
+
+No nos interesa estudiar las organizaciones como un fin en sí mismas. Nos interesa comprender los mecanismos mediante los que una organización distribuye capacidades y responsabilidades para alcanzar un objetivo, porque esos mismos mecanismos condicionan cómo se ejerce la ingeniería.
+
+A lo largo de esta parte iremos descomponiendo esa estructura. Veremos cómo determinados patrones reaparecen a distintas escalas, por qué dividimos el trabajo, qué obtenemos mediante la especialización, cómo se forman equipos y, finalmente, por qué resulta útil separar a la persona, su puesto o categoría profesional y el rol que desempeña en un contexto determinado.
+
+Esta última distinción será especialmente importante más adelante.
+
+Una organización puede llamar a alguien *arquitecto*, *desarrollador*, *senior*, *junior* o utilizar cualquier otra clasificación que resulte útil para su gestión. Pero esas etiquetas no determinan necesariamente qué capacidades posee una persona, qué responsabilidades está ejerciendo ni qué decisiones le corresponden en un sistema concreto.
+
+Para nuestro propósito, esas preguntas son más importantes.
+
+Por eso, antes de estudiar cómo los Sistemas Inteligentes pueden participar en la ingeniería, necesitamos comprender primero **cómo organizamos a quienes ya participan en ella**.
