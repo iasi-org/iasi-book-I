@@ -1,0 +1,65 @@
+---
+title: "Amplificando errores"
+navbar-title: "Errores"
+---
+
+Aumentar la capacidad de una persona no significa aumentar únicamente sus virtudes.
+
+Un Sistema Inteligente asociado de forma continuada a un ingeniero aprende progresivamente cómo trabaja: qué prefiere, qué rechaza, qué considera elegante, qué riesgos acepta, cómo estructura los problemas y qué criterios utiliza para tomar decisiones.
+
+Eso hace posible una colaboración extraordinariamente eficiente.
+
+Pero tiene otra cara.
+
+El ingeniero también tiene sesgos, hábitos deficientes, zonas ciegas, preferencias injustificadas y manías.
+
+El SI puede alinearse también con ellas.
+
+Un ingeniero que explora sistemáticamente alternativas puede conseguir que su Sistema Inteligente incorpore esa forma de trabajo.
+
+Otro que salta habitualmente a la primera solución plausible puede acabar desarrollando una relación en la que el SI refuerza precisamente ese comportamiento.
+
+**La Ingeniería Aumentada amplifica capacidades, pero también puede amplificar defectos.**
+
+Esto introduce un problema particularmente interesante: el alineamiento perfecto puede no ser deseable.
+
+Queremos que el Sistema Inteligente conozca suficientemente bien al ingeniero para trabajar eficazmente con él. Pero si termina reproduciendo sistemáticamente sus mismos supuestos, preferencias y sesgos, perdemos una de sus capacidades más valiosas: proporcionar una perspectiva diferente.
+
+Una buena relación humano-SI quizá necesite simultáneamente **alineamiento y fricción**.
+
+El SI debe entender qué pretende el humano y cómo trabaja, pero conservar suficiente independencia funcional para poder decir:
+
+“Estamos contemplando cinco alternativas, pero creo que falta una sexta.”
+
+O:
+
+“Llevamos meses haciendo esto así, pero ¿por qué?”
+
+Esto convierte la relación humano-SI en un objeto que debe gestionarse conscientemente.
+
+No basta con preguntarnos cuánto sabe el modelo o qué benchmark obtiene.
+
+También importa qué tipo de relación hemos construido con él.
+
+¿Nos cuestiona suficientemente?
+
+¿Confiamos demasiado en sus respuestas?
+
+¿Ha aprendido una práctica porque es correcta o simplemente porque nosotros la repetimos?
+
+¿Estamos utilizando sus capacidades para ampliar nuestro pensamiento o para confirmar más rápidamente lo que ya pensábamos?
+
+En Ingeniería Aumentada, estas preguntas no son curiosidades psicológicas.
+
+Si el SI aumenta al ingeniero, **la calidad del aumento depende también de la calidad de aquello que estamos aumentando**.
+
+Un cerebro adicional puede ayudarnos a ver más.
+
+También puede ayudarnos a equivocarnos más deprisa y con mucha mayor capacidad de ejecución.
+
+Por eso una relación sana con un Sistema Inteligente no debería perseguir que piense exactamente como nosotros.
+
+Debe conseguir algo más difícil:
+
+**que nos conozca suficientemente bien para trabajar con nosotros y sea suficientemente diferente para seguir aportándonos algo.**
+

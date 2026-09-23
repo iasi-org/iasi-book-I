@@ -1,0 +1,58 @@
+---
+title: "Asistida o Aumentada"
+navbar-title: "Asistida o Aumentada"
+---
+
+Durante mucho tiempo hemos hablado de Ingeniería Asistida por Sistemas Inteligentes.
+
+“Asistida” parecía una palabra adecuada. El ingeniero realiza su trabajo y dispone de un Sistema Inteligente que le ayuda: genera código, busca información, redacta documentación, analiza datos, propone soluciones o automatiza determinadas tareas.
+
+Pero esa descripción se queda corta.
+
+Cuando un Sistema Inteligente participa también en la comprensión del problema, cuestiona una propuesta, explora alternativas, identifica restricciones, compara soluciones, materializa artefactos, verifica resultados y mantiene contexto durante el proceso, ya no estamos hablando simplemente de asistencia.
+
+Estamos aumentando la capacidad del ingeniero.
+
+Eso es **Ingeniería Aumentada por Sistemas Inteligentes**.
+
+Aumentada no significa automatizada.
+
+No significa que el Sistema Inteligente sustituya al ingeniero.
+
+Tampoco significa simplemente que se utilice IA durante un proceso de ingeniería. Tener un asistente de código instalado no convierte automáticamente una actividad en Ingeniería Aumentada.
+
+El objeto del aumento es **el ingeniero**.
+
+El ingeniero continúa comprendiendo, inventando, creando, definiendo, diseñando, decidiendo, supervisando, validando y asumiendo responsabilidad. Pero dispone de un Sistema Inteligente que amplía extraordinariamente su capacidad para hacerlo.
+
+Puede explorar en minutos alternativas que antes requerían horas o días. Puede materializar una idea sin escribir personalmente cada línea de código. Puede contrastar una decisión desde perspectivas diferentes. Puede trabajar sobre cantidades de información imposibles de mantener simultáneamente en su cabeza. Puede convertir una especificación en diferentes artefactos y volver a materializarlos cuando cambia el conocimiento del sistema.
+
+La relación tampoco tiene por qué ser unidireccional.
+
+El ingeniero no se limita a pensar y ordenar para que el Sistema Inteligente ejecute. El Sistema Inteligente puede proponer una alternativa que el ingeniero no había considerado, detectar una contradicción, cuestionar un criterio o introducir un nuevo eje de decisión.
+
+Después, el ingeniero decide.
+
+En otras ocasiones, la relación se invierte: el problema está suficientemente entendido y el ingeniero simplemente indica qué debe hacerse. El Sistema Inteligente materializa el cambio.
+
+Por tanto, la Ingeniería Aumentada no consiste en delegar la ingeniería en una máquina.
+
+Consiste en incorporar las capacidades de los Sistemas Inteligentes a la capacidad del ingeniero para hacer ingeniería.
+
+**IASI no pretende sustituir al ingeniero por un Sistema Inteligente. Pretende aumentar al ingeniero con uno.**
+
+Esa diferencia coloca también al Sistema Inteligente en su sitio.
+
+No es el ingeniero.
+
+Pero tampoco es necesariamente una herramienta pasiva.
+
+Puede participar activamente en el proceso de ingeniería y convertirse funcionalmente en un miembro del equipo, con capacidades, limitaciones y un ámbito de actuación que deben ser comprendidos y gestionados.
+
+La finalidad no es que la IA haga ingeniería en lugar de nosotros.
+
+La finalidad es que podamos hacer una ingeniería que antes no podíamos hacer, o no podíamos hacer con la misma amplitud, profundidad, velocidad o capacidad de exploración.
+
+**No aumentamos el software con IA. Aumentamos la capacidad de hacer ingeniería mediante Sistemas Inteligentes.**
+
+Eso es Ingeniería Aumentada.

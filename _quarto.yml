@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: _outputs
+
+  resources:
+    - LICENSES/*.txt
+    - "!_publish/**"
+    - "!release/**"
+    - "!_outputs/**"    
+
+profile:
+  group:
+    - [html, pdf, epub]
+
+metadata-files:
+  - _book-structure.yml
+
+lang: es
+
+resource-path:
+  - resources
+  
+bibliography:
+  - includes/references/historia-ia.bib
+  - includes/references/inteligencia-artificial.bib
+  - includes/references/historia-software.bib
+  - includes/references/ingenieria-software.bib
+  - includes/references/references.bib
+
+book:
+  title: "Ingeniería aumentada con sistemas inteligentes"
+  author: "Javier G. Grandez"
+  output-file: "IASI_Vol_I"
+
+copyright:
+  holder: "Javier G. Grandez"
+  year: 2026
+
+license: "CC BY"
+
+filters:
+  - iasi-plantuml
+  - resources/lua/iasi-js.lua
+
+filter-options:
+  plantuml:
+    enabled: true
+    server: http://iasi-docker:10025
+    cache: true
+    styles:
+      - resources/plantuml/iasi.puml

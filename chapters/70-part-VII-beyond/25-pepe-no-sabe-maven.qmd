@@ -1,0 +1,80 @@
+---
+title: "Javier no sabe Maven"
+navbar-title: "Amplificando a Javier"
+---
+
+Imaginemos un equipo de cuatro ingenieros.
+
+Cada uno trabaja habitualmente con su propio Sistema Inteligente.
+
+En algún momento Javier está ocupado con un problema y aparece otro asunto:
+
+“Pepe, averigua cómo se hace esto en Maven, que yo estoy liado.”
+
+Hay un pequeño detalle.
+
+Pepe no tiene ni idea de Maven.
+
+Hasta hace muy poco, eso determinaba inmediatamente qué podía hacer Pepe con la tarea. Tendría que aprender Maven, buscar a alguien especializado o devolver el problema a otro miembro del equipo.
+
+Con Ingeniería Aumentada aparece otra posibilidad.
+
+Pepe puede abordar el problema junto con su Sistema Inteligente.
+
+Puede proporcionarle el contexto, pedirle que investigue, hacer que explique los conceptos que desconoce, solicitar diferentes alternativas, comparar sus consecuencias, consultar documentación, construir una prueba y regresar al equipo con una propuesta.
+
+Pepe no se ha convertido mágicamente en experto Maven.
+
+Y esto es fundamental.
+
+Si el problema afecta a una parte crítica del sistema o requiere conocimiento especializado profundo, quizá siga siendo necesaria la intervención de un experto.
+
+Pero la frontera entre **“sé Maven”** y **“puedo abordar un problema relacionado con Maven”** ha cambiado.
+
+Para ejecutar una tarea especializada ya no siempre es necesario poseer previamente toda la especialización necesaria para realizarla.
+
+Eso puede transformar profundamente la organización de los equipos.
+
+El conocimiento experto no desaparece. Probablemente aumenta su valor en determinados lugares: validación, casos difíciles, establecimiento de límites, decisiones de alto riesgo y resolución de problemas que requieren comprensión profunda.
+
+Pero ya no necesitamos necesariamente colocar un especialista detrás de cada pequeña tarea especializada.
+
+Hay otra consecuencia importante.
+
+Javier no dice:
+
+“Pepe, dile a tu IA exactamente estas instrucciones.”
+
+Delega en **Pepe**.
+
+Pepe decide cómo utilizar su Sistema Inteligente para resolver el problema.
+
+Porque el SI está asociado a la persona a la que aumenta.
+
+Incluso si Javier y Pepe utilizan exactamente el mismo modelo base, funcionalmente no trabajan con “la misma IA”. Cada relación ha acumulado contexto, preferencias, correcciones, hábitos y formas de colaboración diferentes.
+
+El equipo no dispone simplemente de una IA compartida.
+
+Está formado por **ingenieros aumentados**.
+
+Esto conserva además una propiedad organizativa fundamental: la responsabilidad y coordinación continúan teniendo puntos humanos claros.
+
+Javier delega en Pepe.
+
+Pepe utiliza sus capacidades aumentadas.
+
+Pepe vuelve con el resultado y debe ser capaz de explicar qué ha encontrado, qué alternativas existen, qué incertidumbres permanecen y cuándo considera necesaria la intervención de alguien con mayor conocimiento especializado.
+
+La capacidad de ingeniería continúa siendo imprescindible.
+
+Pepe quizá no sepa Maven, pero debe saber comprender un problema, dirigir una investigación, comparar alternativas, detectar incoherencias, reconocer sus límites y saber cuándo no debería confiar en una respuesta.
+
+La Ingeniería Aumentada no elimina el conocimiento.
+
+Cambia nuestra relación con él.
+
+Y quizá también cambie profundamente qué queremos decir cuando afirmamos que alguien **“sabe hacer algo”**.
+
+Porque en este ejemplo no hemos hecho más inteligente a Maven.
+
+**No estamos aumentando Maven. Estamos aumentando a Pepe.**

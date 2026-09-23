@@ -1,0 +1,64 @@
+---
+title: "Un miembro mas"
+navbar-title: "IS como miembro"
+---
+
+Trabajar de manera continuada con un Sistema Inteligente produce una relación bastante diferente de la que mantenemos con una herramienta tradicional.
+
+Un compilador no necesita que aprendamos sus manías.
+
+Un martillo tampoco desarrolla progresivamente una comprensión de nuestra manera de trabajar.
+
+Con un Sistema Inteligente ocurre algo distinto.
+
+Con el tiempo, el humano aprende sus fortalezas y debilidades. Descubre dónde puede confiar mucho en él, dónde debe supervisarlo especialmente, cuándo tiende a interpretar demasiado, cuándo generaliza, cuándo construye más de lo necesario y qué tipo de problemas resuelve extraordinariamente bien.
+
+El proceso también funciona en sentido contrario.
+
+El SI acumula contexto sobre la forma de trabajar del humano: sus preferencias, criterios, decisiones anteriores y maneras habituales de abordar los problemas.
+
+La interacción empieza a tener propiedades que tradicionalmente asociábamos a la incorporación de otra persona a un equipo.
+
+Al principio es necesario explicar muchas cosas.
+
+“Aquí hacemos esto de esta manera.”
+
+Después basta con recordar determinadas reglas.
+
+Más adelante puede ser suficiente decir:
+
+“Cambia esto.”
+
+Una enorme cantidad de contexto ya está implícita en la relación de trabajo.
+
+Eso no convierte al Sistema Inteligente en una persona.
+
+**Miembro del equipo no significa persona.**
+
+Pero tampoco parece adecuado describirlo simplemente como una herramienta pasiva cuando participa en razonamiento, propone alternativas, critica decisiones, materializa soluciones y modifica la dinámica de trabajo de los demás miembros.
+
+Esto abre preguntas que no son fundamentalmente tecnológicas.
+
+¿Cómo se construye confianza con un Sistema Inteligente?
+
+¿Cómo se calibra esa confianza?
+
+¿Cuánta autonomía debe recibir?
+
+¿Cómo gestionamos una discrepancia?
+
+¿Cómo evitamos una dependencia excesiva?
+
+¿Qué ocurre cuando el SI se alinea demasiado con el humano y deja de aportar perspectivas diferentes?
+
+¿Cómo afectan estos sistemas a la fatiga, al ritmo de trabajo o a la percepción de nuestras propias capacidades?
+
+¿Qué significa una relación sana entre un humano y un Sistema Inteligente?
+
+Estas preguntas pertenecen a la psicología, sociología, organización, ética y otras disciplinas tanto como a la informática.
+
+Y no son accesorias.
+
+Si la Ingeniería Aumentada incorpora Sistemas Inteligentes a equipos humanos, tendremos que aprender a diseñar no solamente los sistemas que construimos con ellos.
+
+También tendremos que comprender **los equipos que estamos construyendo con ellos**.

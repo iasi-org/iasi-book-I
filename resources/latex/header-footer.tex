@@ -1,0 +1,35 @@
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% CABECERA
+\fancyhead[LE]{\small Ingeniería Aumentada con Sistemas Inteligentes}
+\fancyhead[RO]{\small Ingeniería Aumentada con Sistemas Inteligentes}
+
+% PIE: número de página en el exterior
+\fancyfoot[LE]{\small\thepage}
+\fancyfoot[RO]{\small\thepage}
+
+% Líneas
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Inicio de capítulo
+\fancypagestyle{plain}{
+  \fancyhf{}
+
+  % Cabecera
+  \fancyhead[LE]{\small Ingeniería Aumentada con Sistemas Inteligentes}
+  \fancyhead[RO]{\small Ingeniería Aumentada con Sistemas Inteligentes}
+
+  % Pie: número exterior
+  \fancyfoot[LE]{\small\thepage}
+  \fancyfoot[RO]{\small\thepage}
+
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% Páginas de Part: sin cabecera ni pie
+\renewcommand*{\partpagestyle}{empty}

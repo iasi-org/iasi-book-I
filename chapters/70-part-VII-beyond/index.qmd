@@ -1,0 +1,28 @@
+---
+title: "Reflexiones abiertas"
+navbar-title: "Reflexiones"
+---
+
+::::: {.construction-banner}
+![](/resources/images/banner_construction_en.png){.construction-banner-image}
+:::::
+
+Esta última parte se aparta deliberadamente del desarrollo más metodológico y técnico del libro.
+
+Aquí recogemos pensamientos, dudas, preguntas y algunas consecuencias que aparecen cuando llevamos las ideas de IASI un poco más lejos. Algunas rozan la filosofía, otras siguen siendo problemas abiertos de ingeniería y otras tienen que ver con la experiencia personal de trabajar junto a Sistemas Inteligentes.
+
+No pretendemos resolverlas todas, ni mucho menos sentar cátedra. Algunas ideas estarán todavía verdes, otras podrán ser discutibles y probablemente unas cuantas cambien con el tiempo. Ese es precisamente el propósito de esta parte: **hacer explícitas las preguntas que aparecen cuando la ingeniería nos lleva más allá de la propia ingeniería**.
+
+Las presentamos como material para pensar, discutir y seguir explorando.
+
+## Cuestiones más filosóficas
+
+Preguntas sobre conocimiento, comprensión, autoría, responsabilidad, autonomía, confianza, control y sobre qué significa realmente hacer ingeniería cuando una parte creciente de la construcción es delegada a Sistemas Inteligentes.
+
+## Preguntas abiertas
+
+Problemas que IASI todavía no puede considerar resueltos. Preguntas de ingeniería que permanecen abiertas y que deberán contrastarse con experiencia, experimentación y evolución de la propia metodología.
+
+## Temas personales
+
+Reflexiones sobre cómo esta nueva forma de trabajar afecta al ingeniero: su relación con el conocimiento, el oficio, la confianza, la dependencia, el aprendizaje y su propia identidad profesional.

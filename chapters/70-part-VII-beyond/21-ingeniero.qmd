@@ -1,0 +1,85 @@
+---
+title: "El ingeniero sigue importando"
+navbar-title: "Ingeniero"
+---
+
+La aparición de Sistemas Inteligentes capaces de generar código plantea una pregunta aparentemente inevitable: si una IA puede programar, ¿para qué necesitamos al ingeniero?
+
+La pregunta contiene ya parte del error.
+
+Confunde programación con ingeniería.
+
+Un Sistema Inteligente puede producir cantidades extraordinarias de código. Puede hacerlo rápidamente y, en muchas ocasiones, correctamente.
+
+Pero hay al menos cuatro problemas.
+
+**La IA se equivoca.**
+
+**La IA interpreta.**
+
+**Dar instrucciones precisas no es trivial.**
+
+**Alguien debe supervisar tanto el resultado como la forma en que se ha obtenido.**
+
+Este último punto es especialmente importante.
+
+Que un sistema funcione no significa que esté bien construido.
+
+Puede compilar. Puede superar todos sus tests. Puede satisfacer aparentemente los requisitos y, sin embargo, contener una arquitectura innecesariamente compleja, dependencias injustificadas, duplicación, acoplamientos peligrosos o cientos de líneas que nunca deberían haber existido.
+
+El ingeniero no solamente evita que el Sistema Inteligente haga incorrectamente las cosas.
+
+También evita algo mucho más sutil:
+
+**que haga correctamente cosas que no era necesario hacer.**
+
+Durante el desarrollo de IASI hemos encontrado repetidamente este fenómeno.
+
+Un cambio puede parecer inicialmente enorme. El Sistema Inteligente podría recibir el problema, interpretarlo y construir una solución completa. Probablemente conseguiría que funcionase.
+
+Pero cuando el problema se estudia primero desde la ingeniería, ocurre algo diferente.
+
+“Esto ya lo tenemos.”
+
+“Esto no necesita cambiar.”
+
+“Esta responsabilidad pertenece aquí.”
+
+“Solo necesitamos modificar esto y aquello.”
+
+Y de pronto, una transformación conceptualmente enorme termina materializándose mediante cambios sorprendentemente pequeños.
+
+El gran cambio estaba en el modelo mental, no necesariamente en el software.
+
+Algo parecido ocurrió al diseñar determinadas partes de IASI en Go. Se impuso deliberadamente una estructura formada por funciones muy pequeñas, muchas de apenas cuatro o cinco líneas, cuyo contenido prácticamente describe lo que hacen.
+
+Eso no solo beneficia al programador humano.
+
+También hace que el código sea mucho más seguro para un Sistema Inteligente.
+
+Una función pequeña, con una responsabilidad clara, reduce el espacio de interpretación. Un humano puede modificarla con seguridad. Un agente también.
+
+La buena ingeniería reduce la cantidad de contexto que necesitamos para realizar correctamente un cambio.
+
+Y esto conduce a una paradoja interesante:
+
+**cuanto mejor es la ingeniería, menos espectacular puede parecer la programación.**
+
+Miles de líneas generadas en segundos resultan impresionantes.
+
+Descubrir que 950 de esas mil líneas no eran necesarias es mucho más valioso.
+
+Por eso la productividad de un Sistema Inteligente no debería medirse únicamente por cuánto consigue producir.
+
+**También debe medirse por cuánto consigue no producir gracias al criterio del ingeniero.**
+
+La IA está reduciendo drásticamente el coste de materialización. Y eso desplaza el valor hacia otras capacidades: comprender, cuestionar, definir, inventar, crear, comparar, decidir y validar.
+
+En otras palabras:
+
+**La IA abarata la ejecución y encarece el criterio.**
+
+Quizá el ingeniero no se haya vuelto repentinamente más importante.
+
+Quizá simplemente habíamos terminado confundiendo una parte particularmente costosa de su trabajo, la implementación, con la propia ingeniería.
+

@@ -1,0 +1,10 @@
+---
+title: "Acerca de esta parte"
+navbar-title: "Metodologías"
+---
+
+En esta parte abordamos la evolución de las metodologías de ingeniería de software, algunas de las ideas y circunstancias que dieron lugar a ellas y los problemas que pretendían resolver. Revisaremos enfoques clásicos y modernos, junto con casos reales, para analizar qué sigue siendo válido, qué se ha perdido por el camino y qué cambia cuando los Sistemas Inteligentes pasan a participar directamente en el proceso de desarrollo.
+
+El objetivo no es encontrar una metodología universal ni sustituir automáticamente lo anterior por algo nuevo. Partiremos siempre del problema y de su contexto para determinar qué prácticas, metodologías y herramientas resultan adecuadas, y utilizaremos este recorrido para entender por qué la incorporación de los IISS exige revisar algunos de los supuestos sobre los que se construyeron las formas actuales de desarrollar software.
+
+**<span style="color:red">BORRADOR: completar esta introducción cuando esté definida la estructura definitiva de la parte, describiendo brevemente el recorrido y los capítulos que la componen.</span>**

@@ -1,0 +1,46 @@
+---
+title: "*Workflows*"
+navbar-title: "Workflows"
+---
+
+## Organizar un proceso
+Muchas tareas relevantes no consisten en una única operación. Requieren comprender una entrada, preparar información, ejecutar acciones, comprobar resultados y decidir qué hacer a continuación. Un *workflow* representa esa organización del trabajo.
+
+A diferencia de una *skill*, que puede contener conocimiento procedimental flexible, un *workflow* hace explícita la estructura de un proceso. Puede definir pasos, condiciones, dependencias, puntos de control, estados y resultados intermedios. No tiene que ser completamente automático; puede incluir decisiones humanas y actividades ejecutadas por distintos agentes o herramientas.
+
+## Secuencia y condiciones
+El caso más simple es una secuencia de pasos. Sin embargo, los procesos reales suelen necesitar bifurcaciones. Si una validación falla, el sistema puede volver a una fase anterior. Si falta una autorización, debe detenerse. Si una herramienta no está disponible, puede utilizar una alternativa o declarar que no puede continuar.
+
+Representar estas condiciones explícitamente reduce la improvisación y permite inspeccionar el proceso antes de ejecutarlo.
+
+También facilita la reanudación. Si el estado del *workflow* está persistido, un fallo no obliga a empezar desde cero ni a reconstruir manualmente qué pasos ya se completaron.
+
+## *Workflows* y *commands*
+Un *command* puede iniciar un *workflow*. La operación «publicar» puede activar una secuencia que valida el proyecto, genera formatos, prepara el artefacto, registra la publicación y despliega el resultado. Desde el punto de vista del usuario sigue siendo una intención reconocible, mientras que el *workflow* organiza su realización.
+
+Un paso del *workflow* también puede invocar otros *commands*. Esta composición permite construir procesos complejos a partir de operaciones más pequeñas y verificables.
+
+## *Workflows* y *skills*
+Una *skill* puede enseñar cómo resolver una actividad dentro del proceso. El *workflow* no necesita contener todos los detalles del conocimiento operativo. Puede indicar «revisar el cambio» y delegar en una *skill* la estrategia concreta de revisión.
+
+Esta separación evita que cada proceso duplique los mismos procedimientos. También permite actualizar una *skill* y mejorar todos los *workflows* que la utilizan.
+
+## Determinismo y razonamiento
+No todos los pasos deben estar fijados de antemano. Un *workflow* puede delegar determinadas decisiones al modelo cuando el problema requiere interpretación. La arquitectura debería distinguir entre transiciones deterministas y decisiones abiertas.
+
+Por ejemplo, comprobar si un archivo existe puede resolverse de forma determinista. Decidir qué documentación adicional necesita una tarea puede requerir razonamiento. Mezclar ambos tipos sin distinguirlos dificulta comprender qué partes del proceso son reproducibles y cuáles dependen del modelo.
+
+Una buena arquitectura utiliza determinismo donde el problema ya está resuelto y reserva el razonamiento para aquello que realmente lo necesita.
+
+## Puntos de control humanos
+Los *workflows* permiten insertar revisión humana en lugares concretos. En vez de exigir confirmación para cada acción o conceder autonomía completa, el sistema puede agrupar trabajo y detenerse cuando aparece una decisión de riesgo, una ambigüedad o un cambio irreversible.
+
+Esto hace posible ajustar la autonomía según el proceso. Un *workflow* de documentación puede ejecutarse casi por completo de forma automática, mientras que otro que modifica infraestructura puede incluir aprobaciones obligatorias.
+
+## Observabilidad
+Un proceso explícito puede informar de su estado, duración, errores y resultados. Esta observabilidad es esencial cuando los IISS ejecutan tareas largas o en segundo plano.
+
+El sistema debería poder responder qué está haciendo, qué ha completado, por qué se detuvo y qué necesita para continuar. Sin esta información, la automatización se convierte en una caja negra difícil de operar.
+
+## *Workflows* como parte de la metodología
+Una metodología puede definir *workflows* para actividades recurrentes, pero el concepto existe con independencia de una metodología concreta. Esta parte del libro estudia la necesidad arquitectónica. Más adelante será posible decidir qué procesos merece la pena formalizar, cuáles deben permanecer flexibles y cómo se representan de manera canónica.

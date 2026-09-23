@@ -1,0 +1,521 @@
+---
+title: "Zero-Code"
+navbar-title: "Zero code"
+---
+
+## Introducción
+
+En los últimos tiempos se habla cada vez más de **zero-code**.
+
+La idea resulta seductora: decimos lo que queremos y un Sistema Inteligente se ocupa del resto. Sin lenguajes, sin APIs, sin estructuras de datos, sin frameworks, sin despliegues, quizá incluso sin necesidad de conocer muchos de los detalles que tradicionalmente asociamos al desarrollo de software.
+
+En algunas presentaciones, demostraciones y mensajes comerciales, la frontera entre automatización avanzada y magia parece peligrosamente fina.
+La promesa implícita puede llegar a formularse casi así: *dime qué quieres y el sistema lo construirá por ti*. Y es posible que, en muchos casos, lo haga, la cuestión interesante empieza justo después.
+
+Porque que el código desaparezca de nuestra vista no significa necesariamente que hayan desaparecido la complejidad, las decisiones, los compromisos, los errores, el mantenimiento o la responsabilidad, puede que simplemente hayan cambiado de sitio, o que incluso que algunos de ellos se hayan vuelto menos visibles.
+
+Y entonces aparece una pregunta que parece bastante menos atractiva para una campaña de marketing, pero mucho más interesante desde el punto de vista de la ingeniería:
+
+**¿Qué significa realmente hacer ingeniería en un mundo zero-code?**
+
+Este texto nace de esa pregunta.
+
+No pretende discutir si zero-code es bueno o malo, ni anticipar si acabará sustituyendo determinadas formas actuales de desarrollo. Parte de una inquietud bastante más sencilla: si dejamos de escribir explícitamente buena parte del *cómo*, alguien, o algo, sigue teniendo que tomar esas decisiones.
+
+Y cuando empezamos a preguntar quién las toma, con qué criterios, cómo sabemos si son correctas y qué ocurre cuando queremos cambiarlas, empiezan a aparecer algunas preguntas incómodas.
+
+## Zero-code no significa zero-engineering
+
+La primera tentación es pensar que, si dejamos de escribir código, dejamos también atrás una buena parte de la ingeniería de software.
+
+No estoy tan seguro.
+
+El código ha sido durante décadas una de las principales formas de expresar decisiones de ingeniería, pero no es la ingeniería en sí misma.
+
+Antes de escribir una sola línea de código ya existen decisiones sobre objetivos, restricciones, arquitectura, seguridad, datos, rendimiento, coste, disponibilidad, mantenibilidad o evolución.
+
+Y después de escribirla siguen existiendo otras tantas.
+
+Si un Sistema Inteligente pasa a ocuparse de una parte creciente de la construcción, esas decisiones no desaparecen.
+
+Algunas podrán ser tomadas también por el propio sistema.
+
+Otras tendrán que seguir siendo nuestras.
+
+Y probablemente aparecerán otras nuevas.
+
+Por eso, para mí, una de las primeras ideas que conviene mantener presente es bastante sencilla:
+
+**Zero-code no significa zero-engineering.**
+
+Tal vez signifique que la ingeniería deja de estar tan concentrada en la descripción explícita de *cómo construir* el sistema y pasa a ocuparse cada vez más de definir **qué queremos conseguir, bajo qué condiciones y dentro de qué límites**.
+
+---
+
+## La complejidad no desaparece
+
+Una interfaz sencilla puede ocultar una maquinaria enormemente compleja.
+
+Lo sabemos desde hace mucho tiempo.
+
+Conducir un coche no exige conocer el funcionamiento detallado de un motor. Utilizar una base de datos no exige saber cómo organiza físicamente cada página en disco. Consumir una API no obliga a conocer la implementación del servicio que hay detrás.
+
+La abstracción es una de las herramientas fundamentales de la ingeniería.
+
+Zero-code puede entenderse como otra capa de abstracción.
+
+El problema aparece si confundimos **abstraer la complejidad** con **eliminarla**.
+
+Si un Sistema Inteligente decide cómo estructurar una aplicación, qué tecnología utilizar, cómo distribuir sus componentes, cómo acceder a los datos, cómo manejar errores o cómo optimizar determinados procesos, toda esa complejidad sigue existiendo.
+
+Simplemente ya no la vemos de la misma manera.
+
+Y eso tiene una consecuencia interesante.
+
+Cuanto menos visible sea el mecanismo interno, más importantes pueden volverse otras cosas: la especificación, la validación, la observabilidad, las restricciones y la capacidad de entender por qué el sistema se comporta de determinada forma.
+
+La complejidad no necesariamente desaparece.
+
+**Puede desplazarse.**
+
+Y, en algunos casos, puede quedar oculta.
+
+---
+
+## ¿Quién ajusta?
+
+Supongamos que el sistema funciona, pero no todo lo bien que podría.
+
+Consume demasiado.
+
+Es lento.
+
+Genera una arquitectura innecesariamente compleja.
+
+Selecciona siempre determinada tecnología.
+
+Produce una solución correcta, pero difícil de mantener.
+
+O simplemente hay algo que podría hacerse mejor.
+
+Entonces aparece una pregunta aparentemente trivial:
+
+**¿Quién ajusta?**
+
+Puede hacerlo el usuario.
+
+Puede hacerlo un ingeniero especializado.
+
+Puede hacerlo automáticamente el propio Sistema Inteligente.
+
+Puede hacerlo otro Sistema Inteligente dedicado a optimización o supervisión.
+
+Incluso podría hacerlo el proveedor de la plataforma sin intervención directa de quien utiliza el sistema.
+
+Pero la pregunta realmente importante quizá no sea quién *puede* realizar el ajuste.
+
+Es quién **debe poder decidirlo**.
+
+Porque capacidad técnica, responsabilidad y autoridad no son lo mismo.
+
+Un sistema puede tener la capacidad de mejorar una solución y, sin embargo, no tener autoridad para modificarla.
+
+Un ingeniero puede detectar una optimización sin ser quien deba aprobarla.
+
+Un Sistema Inteligente puede encontrar una solución aparentemente mejor que implique un cambio de tecnología, proveedor, coste o nivel de riesgo que exceda completamente el ámbito de decisión que le habíamos delegado.
+
+Por eso aparece una distinción que probablemente será cada vez más importante:
+
+**La capacidad de ajustar no puede implicar automáticamente autoridad para decidir.**
+
+---
+
+## ¿Quién decide qué es óptimo?
+
+La pregunta anterior conduce inmediatamente a otra.
+
+Supongamos que queremos que el sistema se optimice.
+
+Muy bien.
+
+¿Optimizar qué?
+
+Una solución puede ser óptima en velocidad y pésima en coste.
+
+Puede minimizar infraestructura sacrificando disponibilidad.
+
+Puede simplificar el desarrollo a costa de introducir dependencia de un proveedor.
+
+Puede reducir latencia aumentando consumo energético.
+
+Puede mejorar seguridad reduciendo usabilidad.
+
+Puede acelerar la entrega haciendo el sistema más difícil de mantener.
+
+No existe algo llamado *la solución óptima* de manera independiente al contexto.
+
+Existe una solución óptima **respecto de unos objetivos, unas restricciones y unas prioridades**.
+
+La propia idea de optimización exige una función objetivo, aunque no la escribamos con una fórmula matemática.
+
+Y ahí vuelve a aparecer la ingeniería.
+
+Alguien debe decidir qué importa.
+
+Qué se puede sacrificar.
+
+Qué no se puede vulnerar.
+
+Qué restricciones son absolutas.
+
+Cuáles admiten compromiso.
+
+Qué riesgos son aceptables.
+
+Y qué ocurre cuando varios objetivos entran en conflicto.
+
+El Sistema Inteligente podrá buscar soluciones dentro de ese espacio.
+
+Pero primero hay que definir el espacio.
+
+Tal vez una de las transformaciones importantes de la ingeniería zero-code sea precisamente esa:
+
+**en lugar de programar directamente el sistema, empezamos a especificar el espacio dentro del cual puede ser construido.**
+
+---
+
+## ¿Cómo sabemos que funciona?
+
+Esta fue una de las preguntas que más me hizo detenerme.
+
+**¿Cómo sabemos que funciona?**
+
+Parece obvia.
+
+Siempre hemos probado el software.
+
+Pero el problema cambia ligeramente cuando dejamos de controlar de forma explícita el proceso de construcción.
+
+Si un Sistema Inteligente genera una solución que supera todos nuestros tests, ¿es suficiente?
+
+Probablemente dependerá de qué estemos construyendo.
+
+Podemos verificar resultados.
+
+Podemos comprobar propiedades.
+
+Podemos medir rendimiento.
+
+Podemos someter el sistema a pruebas de seguridad.
+
+Podemos verificar invariantes.
+
+Podemos observar su comportamiento durante la ejecución.
+
+Todo eso seguirá siendo válido.
+
+Quizá incluso sea más importante que antes.
+
+Pero aparece una tensión interesante entre dos formas de confianza.
+
+Una procede de comprender cómo está construido algo.
+
+La otra procede de comprobar empíricamente que se comporta correctamente.
+
+Durante mucho tiempo hemos utilizado ambas.
+
+En zero-code quizá tengamos que aceptar que la segunda puede adquirir mucho más peso.
+
+Y eso nos obliga a preguntarnos qué nivel de evidencia consideramos suficiente para afirmar que un sistema funciona.
+
+---
+
+## ¿Cómo corregimos los fallos tontos?
+
+Hay otra situación menos trascendental, pero seguramente mucho más cotidiana.
+
+El sistema hace algo absurdo.
+
+No es un gran fallo arquitectónico.
+
+No requiere replantear toda la aplicación.
+
+Es simplemente uno de esos errores que cualquier desarrollador mira y piensa:
+
+*esto es una tontería.*
+
+En programación tradicional solemos localizarlo, modificar unas líneas y continuar.
+
+Pero en un entorno zero-code puede que esas líneas ni siquiera formen parte de la interfaz que utilizamos para trabajar con el sistema.
+
+Entonces, ¿qué hacemos?
+
+¿Le pedimos al Sistema Inteligente que lo corrija?
+
+¿Modificamos una restricción?
+
+¿Añadimos un ejemplo?
+
+¿Introducimos una regla?
+
+¿Retocamos directamente el artefacto generado?
+
+¿Y si lo hacemos, seguirá pudiendo regenerarse?
+
+¿Hemos creado entonces una divergencia entre lo que el sistema cree haber construido y lo que realmente existe?
+
+Los fallos pequeños pueden parecer poco importantes, pero son precisamente los que ponen a prueba la ergonomía real de una forma de ingeniería.
+
+Un paradigma no se demuestra únicamente cuando todo sale bien.
+
+También se demuestra en lo fácil que resulta arreglar lo que sale mal.
+
+---
+
+## ¿Cómo se mantiene?
+
+Construir un sistema es solo el principio.
+
+Después cambia el negocio.
+
+Cambian las regulaciones.
+
+Cambian las dependencias.
+
+Aparecen vulnerabilidades.
+
+Cambian los usuarios.
+
+Cambian los datos.
+
+Cambian las expectativas.
+
+Y cambia el propio Sistema Inteligente.
+
+Por eso una de las preguntas inevitables es:
+
+**¿Cómo se mantiene un sistema zero-code?**
+
+En el modelo tradicional conservamos código fuente, configuración, documentación, pruebas y otros artefactos que permiten reconstruir y modificar el sistema.
+
+En zero-code quizá la verdadera fuente esté formada por algo diferente:
+
+* objetivos;
+* requisitos;
+* restricciones;
+* invariantes;
+* políticas;
+* decisiones;
+* ejemplos;
+* criterios de aceptación;
+* pruebas;
+* permisos;
+* contexto.
+
+Tal vez eso sea lo que haya que versionar.
+
+Tal vez tengamos que registrar no solo el resultado, sino también las condiciones bajo las que fue producido.
+
+Porque si mañana pedimos al mismo Sistema Inteligente que reconstruya el sistema, no tenemos ninguna garantía de que llegue exactamente a la misma solución.
+
+Y quizá tampoco queramos que lo haga.
+
+---
+
+## ¿Cómo evoluciona?
+
+Mantener no es lo mismo que evolucionar.
+
+Podemos corregir errores manteniendo esencialmente la misma arquitectura.
+
+Pero evolucionar significa permitir que el sistema cambie de forma más profunda.
+
+Y aquí zero-code abre posibilidades interesantes.
+
+Si la fuente real es una especificación de intención, restricciones y criterios, quizá podamos pedir:
+
+> adapta el sistema para soportar diez veces más carga sin superar este presupuesto y manteniendo estas garantías de seguridad.
+
+El Sistema Inteligente podría reconstruir partes importantes de la solución.
+
+Desde cierto punto de vista, eso sería extraordinario.
+
+Desde otro, implica aceptar que la arquitectura deja de ser completamente estable.
+
+La implementación puede convertirse en algo más parecido a una **materialización temporal** de una especificación superior.
+
+Eso cambia bastante nuestra relación con el software.
+
+El sistema deja de ser únicamente *lo que hemos construido*.
+
+Empieza a ser también **lo que puede volver a construirse bajo determinadas condiciones**.
+
+---
+
+## ¿Y si abandono zero-code?
+
+Toda abstracción tiene un precio.
+
+Cuanto más alto trabajamos, más dependemos de la capa que nos permite hacerlo.
+
+Esto tampoco es nuevo.
+
+Pero con zero-code la dependencia puede llegar a ser especialmente profunda.
+
+Supongamos que una organización lleva cinco años construyendo sistemas mediante una determinada plataforma y un determinado conjunto de Sistemas Inteligentes.
+
+Y un día decide marcharse.
+
+¿Qué posee realmente?
+
+¿La aplicación?
+
+¿Su código?
+
+¿La especificación?
+
+¿Las decisiones tomadas durante años?
+
+¿Las restricciones?
+
+¿El conocimiento de por qué el sistema es como es?
+
+¿Puede reconstruirlo fuera de esa plataforma?
+
+¿Puede trasladarlo a otro Sistema Inteligente?
+
+¿O ha delegado no solo la construcción, sino también una parte importante del conocimiento necesario para continuarla?
+
+La portabilidad ya no afecta únicamente al código o a la infraestructura.
+
+Puede afectar al **conocimiento de ingeniería**.
+
+Y ese es un tipo de lock-in bastante más profundo.
+
+---
+
+## Cuando el código deja de ser la fuente
+
+Todo esto conduce a una cuestión que me parece especialmente interesante.
+
+Durante décadas hemos utilizado la expresión *source code* casi sin pensar en ella.
+
+Código fuente.
+
+La fuente desde la que se construye el sistema.
+
+Pero si un Sistema Inteligente puede generar gran parte de ese código, quizá el código deje de ser realmente la fuente.
+
+Puede convertirse en un artefacto derivado.
+
+Entonces, ¿cuál es la fuente?
+
+Quizá sea una combinación de intención, contexto, restricciones, políticas, decisiones, conocimiento de dominio y criterios de validación.
+
+El código seguiría existiendo.
+
+Incluso podría seguir siendo inspeccionable y modificable.
+
+Pero conceptualmente habría descendido un nivel.
+
+Sería una de las posibles materializaciones de algo situado por encima.
+
+Esto tiene consecuencias importantes para la ingeniería.
+
+Porque aquello que consideremos **fuente** será precisamente aquello que deberemos gobernar, versionar, revisar, proteger y comprender.
+
+---
+
+## Y aquí empiezan otras preguntas
+
+Hasta ahora todavía podemos movernos en un terreno bastante reconocible.
+
+Especificación.
+
+Validación.
+
+Mantenimiento.
+
+Optimización.
+
+Gobierno.
+
+Responsabilidad.
+
+Pero al seguir tirando del hilo aparecen preguntas un poco diferentes.
+
+Más incómodas.
+
+Y quizá más personales.
+
+¿Qué significa comprender un sistema que no hemos construido paso a paso?
+
+¿Cuánto necesitamos conocer de su interior para decir que lo entendemos?
+
+¿Podemos afirmar que conocemos un sistema porque somos capaces de especificar su comportamiento y verificarlo, aunque no podamos reconstruir mentalmente toda su implementación?
+
+¿Dónde reside el conocimiento de ingeniería cuando una parte importante de las decisiones ha sido tomada por un Sistema Inteligente?
+
+¿Quién es el autor?
+
+¿Quién tiene el control?
+
+¿Quién es responsable?
+
+¿Hasta qué punto podemos confiar en algo que sabemos verificar, pero que ya no somos capaces de abarcar completamente?
+
+No tengo respuestas claras para todas estas preguntas.
+
+Y sospecho que intentar responderlas demasiado pronto sería precisamente un error.
+
+Pero creo que merece la pena formularlas.
+
+Porque zero-code puede acabar siendo mucho más que una nueva forma de construir software.
+
+Puede obligarnos a revisar qué entendemos por **conocer, construir y controlar un sistema**.
+
+---
+
+## Una ingeniería diferente
+
+Puede que zero-code llegue muy lejos.
+
+Puede que algunas de sus promesas actuales resulten exageradas.
+
+Puede que la realidad termine siendo mucho más híbrida y sigamos escribiendo código durante muchísimo tiempo.
+
+No lo sé.
+
+Pero incluso si la evolución se queda a medio camino, la dirección resulta suficientemente interesante.
+
+A medida que los Sistemas Inteligentes asumen una parte mayor del *cómo*, el trabajo humano no desaparece necesariamente.
+
+Se desplaza.
+
+Hacia la intención.
+
+Hacia las restricciones.
+
+Hacia las decisiones.
+
+Hacia la validación.
+
+Hacia el gobierno.
+
+Hacia la definición de qué puede hacer el sistema y qué no.
+
+Hacia decidir qué significa que una solución sea suficientemente buena.
+
+Y hacia asumir la responsabilidad sobre sistemas cuya construcción conocemos cada vez menos línea a línea.
+
+Por eso quizá la pregunta equivocada sea:
+
+**¿desaparecerá la ingeniería con zero-code?**
+
+La pregunta que me parece más interesante es otra:
+
+**¿qué ingeniería necesitaremos cuando escribir el código deje de ser la parte central de construir un sistema?**
+
+Zero-code no significa zero-engineering.
+
+**Quizá signifique que tenemos que aprender a hacer ingeniería de otra manera.**

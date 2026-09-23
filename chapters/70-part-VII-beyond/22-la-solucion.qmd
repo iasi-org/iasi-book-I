@@ -1,0 +1,84 @@
+---
+title: "No exise 'La Solución'"
+navbar-title: "La Solucion"
+---
+
+Ante un problema de ingeniería, una de las respuestas que más deberían preocuparnos es:
+
+“Esta es la solución.”
+
+¿Comparada con cuáles?
+
+Un problema real rara vez tiene una única solución posible. Tiene alternativas con propiedades diferentes y la ingeniería consiste, entre otras cosas, en explorar esas alternativas y comprender sus compromisos.
+
+Una disciplina útil consiste en obligarse a construir un espacio de soluciones.
+
+Podemos imaginar, por ejemplo, seis posiciones.
+
+La **solución 0** consiste en no hacer nada o realizar el cambio mínimo posible.
+
+La **solución 5** representa la solución ideal: aquella que construiríamos si pudiéramos ignorar determinadas limitaciones prácticas.
+
+Entre ambas aparecen diferentes alternativas.
+
+Una puede maximizar el rendimiento, pero necesitar máquinas con 64 GB de memoria.
+
+Otra puede ser más lenta, pero funcionar perfectamente sobre hardware commodity.
+
+Otra puede minimizar el coste.
+
+Otra, el tiempo de implantación.
+
+Otra puede privilegiar mantenibilidad, seguridad o reversibilidad.
+
+¿Cuál es la mejor?
+
+La pregunta está incompleta.
+
+**¿Mejor según qué eje y bajo qué restricciones?**
+
+No existe “óptimo” sin una función objetivo.
+
+Esta forma de pensar adquiere todavía más importancia cuando incorporamos Sistemas Inteligentes.
+
+Un SI generativo puede producir una respuesta diferente cada vez que le planteamos el mismo problema. Pero eso no significa necesariamente que esté explorando correctamente alternativas.
+
+Cinco respuestas diferentes pueden ser cinco variaciones de una misma estrategia.
+
+**Variabilidad no es diversidad.**
+
+Por eso pedir simplemente “dame cinco soluciones” tampoco es suficiente.
+
+Una exploración de ingeniería puede exigir algo más parecido a:
+
+“Dame una solución que minimice cambios.”
+
+“Ahora otra que prime rendimiento.”
+
+“Construye otra pensando fundamentalmente en coste.”
+
+“Busca una alternativa que maximice mantenibilidad.”
+
+“Y ahora olvida temporalmente las restricciones económicas y enséñame cómo sería la solución ideal.”
+
+El Sistema Inteligente deja entonces de generar ocurrencias diferentes y comienza a ayudarnos a **explorar deliberadamente el espacio de diseño**.
+
+Pero incluso los ejes pueden estar equivocados.
+
+Quizá estamos comparando coste, rendimiento y mantenibilidad y el SI detecta que existe otro criterio decisivo: reversibilidad.
+
+Ese es uno de los puntos en los que puede participar activamente en la ingeniería.
+
+No solamente genera alternativas dentro del marco definido por el humano. Puede ayudar a cuestionar el propio marco.
+
+Después habrá que decidir si la reversibilidad importa realmente. Puede que el sistema vaya a utilizarse solamente tres meses y no importe en absoluto.
+
+La decisión depende del contexto.
+
+Y ahí vuelve a aparecer el ingeniero.
+
+Un Sistema Inteligente puede ampliar enormemente nuestra capacidad para generar, materializar y comparar alternativas.
+
+Pero alguien debe determinar qué significa que una alternativa sea mejor que otra.
+
+**La ingeniería empieza cuando dejamos de buscar “la solución” y comenzamos a comprender el espacio de soluciones.**

@@ -1,0 +1,18 @@
+type: quarto
+
+publication:
+  version: 0.2.1
+  strategy: parted
+  content-dir: chapters
+  front-matter: front-matter
+  back-matter: back-matter
+  numbered: true
+
+paths:
+  inputs: inputs
+  orchestration: orchestration
+  outputs: _outputs
+  release: release
+  
+exclude:
+  - includes
